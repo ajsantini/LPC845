@@ -61,7 +61,7 @@ void LCD_init(void)
 
 	infotronic_blocking_delay(20);
 
-	for(counter = 0; counter < 3; counter++)
+	for(counter = 0; counter < 3; i++)
 	{
 		GPIO_set_pin(LCD_D4_PORT, LCD_D4_PIN);
 		GPIO_set_pin(LCD_D5_PORT, LCD_D5_PIN);
@@ -125,65 +125,6 @@ void LCD_write(char * message, uint8_t renglon, uint8_t start_position)
 	for(counter = 0; (message[counter] != '\0') && (counter < LCD_RENGLON_LENGTH); counter++)
 	{
 		LCD_push(message[counter], LCD_DATA);
-	}
-}
-
-/**
- * @brief Callback para actualizar el LCD periodicamente (a ser llamada cada 1mseg)
- */
-void LCD_check(void)
-{
-	int32_t data = LCD_pop();
-
-	if(data != -1)
-	{
-		if((data >> 0) & 0x01 == 0x01)
-		{
-			GPIO_set_pin(LCD_D4_PORT, LCD_D4_PIN);
-		}
-		else
-		{
-			GPIO_clear_pin(LCD_D4_PORT, LCD_D4_PIN);
-		}
-
-		if((data >> 1) & 0x01 == 0x01)
-		{
-			GPIO_set_pin(LCD_D5_PORT, LCD_D5_PIN);
-		}
-		else
-		{
-			GPIO_clear_pin(LCD_D5_PORT, LCD_D5_PIN);
-		}
-
-		if((data >> 2) & 0x01 == 0x01)
-		{
-			GPIO_set_pin(LCD_D6_PORT, LCD_D6_PIN);
-		}
-		else
-		{
-			GPIO_clear_pin(LCD_D6_PORT, LCD_D6_PIN);
-		}
-
-		if((data >> 3) & 0x01 == 0x01)
-		{
-			GPIO_set_pin(LCD_D7_PORT, LCD_D7_PIN);
-		}
-		else
-		{
-			GPIO_clear_pin(LCD_D7_PORT, LCD_D7_PIN);
-		}
-
-		if(data & 0x80)
-		{
-			GPIO_clear_pin(LCD_RS_PORT, LCD_RS_PIN);
-		}
-		else
-		{
-			GPIO_set_pin(LCD_RS_PORT, LCD_RS_PIN);
-		}
-
-		GPIO_set_pin(LCD_EN_PORT, LCD_EN_PIN);
-		GPIO_clear_pin(LCD_EN_PORT, LCD_EN_PIN);
 	}
 }
 

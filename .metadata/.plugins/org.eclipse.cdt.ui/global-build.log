@@ -2330,3 +2330,112 @@ arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLi
    2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
       0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
  
+17:29:45 **** Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+../source/infotronic/LCD.c: In function 'LCD_init':
+../source/infotronic/LCD.c:64:32: error: 'i' undeclared (first use in this function)
+  for(counter = 0; counter < 3; i++)
+                                ^
+../source/infotronic/LCD.c:64:32: note: each undeclared identifier is reported only once for each function it appears in
+../source/infotronic/LCD.c: In function 'LCD_check':
+../source/infotronic/LCD.c:140:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 0) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:149:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 1) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:158:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 2) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:167:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 3) & 0x01 == 0x01)
+                  ^
+make: *** [source/infotronic/LCD.o] Error 1
+source/infotronic/subdir.mk:36: recipe for target 'source/infotronic/LCD.o' failed
+"make -r all" terminated with exit code 2. Build might be incomplete.
+17:29:59 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+../source/infotronic/LCD.c: In function 'LCD_check':
+../source/infotronic/LCD.c:140:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 0) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:149:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 1) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:158:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 2) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:167:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 3) & 0x01 == 0x01)
+                  ^
+Finished building: ../source/infotronic/LCD.c
+ 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+../source/infotronic/infotronic.c: In function 'infotronic_timer_start':
+../source/infotronic/infotronic.c:161:35: warning: passing argument 3 of 'timer_start' from incompatible pointer type [-Wincompatible-pointer-types]
+  timer_start(event_number, msecs, callback, repeat);
+                                   ^~~~~~~~
+In file included from ../source/infotronic/infotronic.c:18:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/timer.h:24:63: note: expected 'void (*)(uint8_t)' {aka 'void (*)(unsigned char)'} but argument is of type 'void (*)(void)'
+ void timer_start(uint8_t event_number, uint32_t msecs, void (*callback)(uint8_t), uint8_t repeat);
+                                                        ~~~~~~~^~~~~~~~~~~~~~~~~~
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/timer.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/timer.d" -MT"source/infotronic/timer.o" -MT"source/infotronic/timer.d" -o "source/infotronic/timer.o" "../source/infotronic/timer.c"
+../source/infotronic/timer.c: In function 'timer_start':
+../source/infotronic/timer.c:38:32: warning: assignment to 'void (*)(void)' from incompatible pointer type 'void (*)(uint8_t)' {aka 'void (*)(unsigned char)'} [-Wincompatible-pointer-types]
+  timers[event_number].callback = callback;
+                                ^
+../source/infotronic/timer.c: In function 'timer_loop':
+../source/infotronic/timer.c:100:4: error: too many arguments to function 'timers[(int)counter].callback'
+    timers[counter].callback(counter);
+    ^~~~~~
+source/infotronic/subdir.mk:36: recipe for target 'source/infotronic/timer.o' failed
+make: *** [source/infotronic/timer.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+17:30:12 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/timer.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/timer.d" -MT"source/infotronic/timer.o" -MT"source/infotronic/timer.d" -o "source/infotronic/timer.o" "../source/infotronic/timer.c"
+Finished building: ../source/infotronic/timer.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    616	      0	      4	    620	    26c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 

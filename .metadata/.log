@@ -7962,3 +7962,6 @@ java.io.IOException: Unable to resolve plug-in "com.crt.lite".
 
 !ENTRY org.eclipse.launchbar.core 2 0 2020-01-02 16:16:58.621
 !MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.jface.text 2 0 2020-01-02 16:21:33.479
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'

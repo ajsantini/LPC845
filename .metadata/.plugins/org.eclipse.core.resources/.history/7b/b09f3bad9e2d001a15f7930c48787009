@@ -18,7 +18,7 @@ typedef struct
 	uint8_t timeouted : 1;
 	uint32_t msecs;
 	uint32_t msecs_to_live;
-	void (*callback)(uint8_t);
+	void (*callback)(void);
 }timer_t;
 
 static timer_t timers[MAX_TIMERS];

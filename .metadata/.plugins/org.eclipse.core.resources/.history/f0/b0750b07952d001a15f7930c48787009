@@ -24,12 +24,6 @@
 void infotronic_init(void);
 
 /**
- * @brief Delay bloqueante
- * @param[in] mseg_to_delay Tiempo en milsegundos para bloquear
- */
-void infotronic_blocking_delay(uint32_t mseg_to_delay);
-
-/**
  * @brief Obtener tecla pulsada
  * @return Tecla pulsada (0 ~ 5 o NO_KEY), una vez leida, se limpia el buffer hasta que se presione la proxima tecla
  */

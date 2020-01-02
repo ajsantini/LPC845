@@ -61,7 +61,7 @@ void LCD_init(void)
 
 	infotronic_blocking_delay(20);
 
-	for(counter = 0; counter < 3; counter++)
+	for(counter = 0; counter < 3; i++)
 	{
 		GPIO_set_pin(LCD_D4_PORT, LCD_D4_PIN);
 		GPIO_set_pin(LCD_D5_PORT, LCD_D5_PIN);

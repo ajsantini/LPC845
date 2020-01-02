@@ -16,7 +16,6 @@
 #include <display.h>
 #include <termometro.h>
 #include <timer.h>
-#include <LCD.h>
 
 #define		TECLADO_BOUNCES_DEFAULT_MS		200
 #define		INFOTRONIC_TICK_US				1000
@@ -208,7 +207,6 @@ static void infotronic_systick_callback(void)
 	termometro_check();
 	relays_check();
 	display_check();
-	LCD_check();
 
 	if(blocking_delay_counter > 0)
 	{
