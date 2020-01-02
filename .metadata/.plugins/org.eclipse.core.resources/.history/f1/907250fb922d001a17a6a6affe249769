@@ -1,0 +1,17 @@
+/**
+ * @file salida_analogica.h
+ * @brief Declaraciones para la salida analogica
+ * @author Augusto Santini
+ * @date 1/2020
+ * @version 1.0
+ */
+
+#ifndef SALIDA_ANALOGICA_H_
+#define SALIDA_ANALOGICA_H_
+
+/**
+ * @brief Inicializacion de la salida analogica
+ */
+void salida_analogica_init(void);
+
+#endif /* SALIDA_ANALOGICA_H_ */

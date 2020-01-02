@@ -1,0 +1,3 @@
+HPL_IOCON.c:21:6:IOCON_init	8	static
+HPL_IOCON.c:31:6:IOCON_deinit	8	static
+HPL_IOCON.c:43:9:IOCON_config_io	40	static

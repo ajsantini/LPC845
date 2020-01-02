@@ -1,0 +1,17 @@
+infotronic.c:27:6:infotronic_init	8	static
+infotronic.c:48:9:infotronic_get_key	8	static
+infotronic.c:57:6:infotronic_relay_close	16	static
+infotronic.c:66:6:infotronic_relay_open	16	static
+infotronic.c:75:6:infotronic_relay_toggle	16	static
+infotronic.c:84:6:infotronic_display_off	16	static
+infotronic.c:93:6:infotronic_display_on	16	static
+infotronic.c:103:6:infotronic_display_write	16	static
+infotronic.c:113:6:infotronic_display_set_dp	16	static
+infotronic.c:123:6:infotronic_display_clear_dp	16	static
+infotronic.c:132:10:infotronic_termometro_read	8	static
+infotronic.c:144:6:infotronic_timer_start	32	static
+infotronic.c:153:6:infotronic_timer_pause	16	static
+infotronic.c:162:6:infotronic_timer_resume	16	static
+infotronic.c:171:6:infotronic_timer_stop	16	static
+infotronic.c:181:6:infotronic_timer_loop	8	static
+infotronic.c:189:13:infotronic_systick_callback	8	static

@@ -1,0 +1,9 @@
+display.c:49:6:display_init	8	static
+display.c:66:6:display_off	16	static
+display.c:80:6:display_on	16	static
+display.c:95:6:display_write	32	static
+display.c:127:6:display_set_dp	16	static
+display.c:142:6:display_clear_dp	16	static
+display.c:155:6:display_check	24	static
+display.c:197:20:display_blank_digit	8	static
+display.c:210:20:display_decode_number	16	static

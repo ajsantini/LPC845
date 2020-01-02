@@ -1,0 +1,3 @@
+HPL_SYSTICK.c:24:6:SYSTICK_init	24	static
+HPL_SYSTICK.c:61:6:SysTick_Handler	8	static
+HPL_SYSTICK.c:72:6:SYSTICK_update_callback	16	static

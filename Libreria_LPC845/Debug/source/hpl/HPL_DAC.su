@@ -1,0 +1,2 @@
+HPL_DAC.c:27:9:DAC_init	16	static
+HPL_DAC.c:71:9:DAC_update_value	16	static

@@ -1,0 +1,19 @@
+/**
+ * @file salida_analogica.c
+ * @brief Funciones de la salida analogica
+ * @author Augusto Santini
+ * @date 1/2020
+ * @version 1.0
+ */
+
+#include <stdint.h>
+#include <salida_analogica.h>
+#include <HPL_DAC.h>
+
+/**
+ * @brief Inicializacion de la salida analogica
+ */
+void salida_analogica_init(void)
+{
+	DAC_init(dac_selection, settling_time, initial_value)
+}

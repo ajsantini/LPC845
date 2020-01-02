@@ -1,0 +1,5 @@
+relays.c:36:6:relays_init	16	static
+relays.c:50:6:relays_close	16	static
+relays.c:59:6:relays_open	16	static
+relays.c:68:6:relays_toggle	16	static
+relays.c:76:6:relays_check	16	static

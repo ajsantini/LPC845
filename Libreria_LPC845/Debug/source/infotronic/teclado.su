@@ -1,0 +1,4 @@
+teclado.c:54:6:teclado_init	40	static
+teclado.c:90:9:get_key	16	static
+teclado.c:101:6:teclado_check	24	static
+teclado.c:131:16:get_current_key	16	static

@@ -1,0 +1,12 @@
+HPL_PININT.c:35:6:PININT_init	8	static
+HPL_PININT.c:45:6:PININT_deinit	8	static
+HPL_PININT.c:55:9:PININT_configure_pin_interrupt	24	static
+HPL_PININT.c:154:6:PININT0_IRQHandler	8	static
+HPL_PININT.c:168:6:PININT1_IRQHandler	8	static
+HPL_PININT.c:182:6:PININT2_IRQHandler	8	static
+HPL_PININT.c:196:6:PININT3_IRQHandler	8	static
+HPL_PININT.c:210:6:PININT4_IRQHandler	8	static
+HPL_PININT.c:224:6:PININT5_IRQHandler	8	static
+HPL_PININT.c:238:6:PININT6_IRQHandler	8	static
+HPL_PININT.c:257:6:PININT7_IRQHandler	8	static
+HPL_PININT.c:279:9:PININT_register_callback	16	static

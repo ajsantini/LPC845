@@ -1,0 +1,7 @@
+HPL_GPIO.c:23:6:GPIO_init	16	static
+HPL_GPIO.c:47:6:GPIO_deinit	16	static
+HPL_GPIO.c:72:9:GPIO_set_dir	24	static
+HPL_GPIO.c:151:9:GPIO_set_pin	16	static
+HPL_GPIO.c:202:9:GPIO_clear_pin	16	static
+HPL_GPIO.c:253:9:GPIO_toggle_pin	16	static
+HPL_GPIO.c:304:9:GPIO_read_pin	16	static
