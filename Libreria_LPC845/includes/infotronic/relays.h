@@ -15,16 +15,16 @@
 void relays_init(void);
 
 /**
- * @brief Cerrar un rele
- * @param[in] numero_rele Rele a cerrar (0 ~ 3)
+ * @brief Energizar un rele
+ * @param[in] numero_rele Rele a energizar (0 ~ 3)
  */
-void relays_close(uint8_t numero_rele);
+void relays_activate(uint8_t numero_rele);
 
 /**
- * @brief Abrir un rele
- * @param[in] numero_rele Rele a abrir (0 ~ 3)
+ * @brief Desenergizar un rele
+ * @param[in] numero_rele Rele a desenergizar (0 ~ 3)
  */
-void relays_open(uint8_t numero_rele);
+void relays_deactivate(uint8_t numero_rele);
 
 /**
  * @brief Invertir estado de un rele

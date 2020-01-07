@@ -1,8 +1,8 @@
 infotronic.c:31:6:infotronic_init	8	static
 infotronic.c:52:6:infotronic_blocking_delay	16	static
 infotronic.c:63:9:infotronic_get_key	8	static
-infotronic.c:72:6:infotronic_relay_close	16	static
-infotronic.c:81:6:infotronic_relay_open	16	static
+infotronic.c:72:6:infotronic_relay_activate	16	static
+infotronic.c:81:6:infotronic_relay_deactivate	16	static
 infotronic.c:90:6:infotronic_relay_toggle	16	static
 infotronic.c:99:6:infotronic_display_off	16	static
 infotronic.c:108:6:infotronic_display_on	16	static
@@ -15,4 +15,5 @@ infotronic.c:168:6:infotronic_timer_pause	16	static
 infotronic.c:177:6:infotronic_timer_resume	16	static
 infotronic.c:186:6:infotronic_timer_stop	16	static
 infotronic.c:196:6:infotronic_timer_loop	8	static
-infotronic.c:204:13:infotronic_systick_callback	8	static
+infotronic.c:207:6:infotronic_LCD_write	16	static
+infotronic.c:215:13:infotronic_systick_callback	8	static

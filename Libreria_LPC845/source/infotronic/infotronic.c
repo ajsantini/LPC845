@@ -66,21 +66,21 @@ uint8_t infotronic_get_key(void)
 }
 
 /**
- * @brief Cerrar un rele
- * @param[in] numero_rele Numero de rele a cerrar (0 ~ 3)
+ * @brief Energizar un rele
+ * @param[in] numero_rele Numero de rele a energizar (0 ~ 3)
  */
-void infotronic_relay_close(uint8_t numero_rele)
+void infotronic_relay_activate(uint8_t numero_rele)
 {
-	relays_close(numero_rele);
+	relays_activate(numero_rele);
 }
 
 /**
- * @brief Abrir un rele
- * @param[in] numero_rele Numero de rele a abrir (0 ~ 3)
+ * @brief Desenergizar un rele
+ * @param[in] numero_rele Numero de rele a desenergizar (0 ~ 3)
  */
-void infotronic_relay_open(uint8_t numero_rele)
+void infotronic_relay_deactivate(uint8_t numero_rele)
 {
-	relays_open(numero_rele);
+	relays_deactivate(numero_rele);
 }
 
 /**
@@ -153,10 +153,10 @@ uint32_t infotronic_termometro_read(void)
  * @brief Iniciar un timer
  * @param[in] event_number Numero de evento asociado
  * @param[in] msecs Tiempo (en milisegundos) del timer a vencer
- * @param[in] callback Callback a ejecutar una vez vencido el timer
+ * @param[in] callback Callback a ejecutar una vez vencido el timer. El parametro pasado es el numero de evento que genero el llamado
  * @param[in] repeat Si es 0 es un timer one-shot, caso contrario es repetitivo
  */
-void infotronic_timer_start(uint8_t event_number, uint32_t msecs, void (*callback)(void), uint8_t repeat)
+void infotronic_timer_start(uint8_t event_number, uint32_t msecs, void (*callback)(uint8_t), uint8_t repeat)
 {
 	timer_start(event_number, msecs, callback, repeat);
 }
@@ -196,6 +196,17 @@ void infotronic_timer_stop(uint8_t event_number)
 void infotronic_timer_loop(void)
 {
 	timer_loop();
+}
+
+/**
+ * @brief Escribir un mensaje en el display LCD
+ * @param[in] message Puntero al mensaje a escribir, terminando con el caracter nulo
+ * @param[in] renglon Renglon en cual escribir el mensaje (LCD_RENGLON_1 o LCD_RENGLON_2)
+ * @param[in] start_position Posicion del renglon a partir de la cual comenzar a escribir el mensaje
+ */
+void infotronic_LCD_write(char * message, uint8_t renglon, uint8_t start_position)
+{
+	LCD_write(message, renglon, start_position);
 }
 
 /**

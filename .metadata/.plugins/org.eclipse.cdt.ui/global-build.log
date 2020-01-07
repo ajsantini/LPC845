@@ -2439,3 +2439,686 @@ arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLi
    2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
       0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
  
+13:39:36 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+13:40:54 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+../source/infotronic/infotronic.c: In function 'infotronic_timer_start':
+../source/infotronic/infotronic.c:161:35: warning: passing argument 3 of 'timer_start' from incompatible pointer type [-Wincompatible-pointer-types]
+  timer_start(event_number, msecs, callback, repeat);
+                                   ^~~~~~~~
+In file included from ../source/infotronic/infotronic.c:18:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/timer.h:24:63: note: expected 'void (*)(uint8_t)' {aka 'void (*)(unsigned char)'} but argument is of type 'void (*)(void)'
+ void timer_start(uint8_t event_number, uint32_t msecs, void (*callback)(uint8_t), uint8_t repeat);
+                                                        ~~~~~~~^~~~~~~~~~~~~~~~~~
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/relays.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/relays.d" -MT"source/infotronic/relays.o" -MT"source/infotronic/relays.d" -o "source/infotronic/relays.o" "../source/infotronic/relays.c"
+Finished building: ../source/infotronic/relays.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    616	      0	      4	    620	    26c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+13:41:12 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+../source/infotronic/infotronic.c: In function 'infotronic_timer_start':
+../source/infotronic/infotronic.c:161:35: warning: passing argument 3 of 'timer_start' from incompatible pointer type [-Wincompatible-pointer-types]
+  timer_start(event_number, msecs, callback, repeat);
+                                   ^~~~~~~~
+In file included from ../source/infotronic/infotronic.c:18:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/timer.h:24:63: note: expected 'void (*)(uint8_t)' {aka 'void (*)(unsigned char)'} but argument is of type 'void (*)(void)'
+ void timer_start(uint8_t event_number, uint32_t msecs, void (*callback)(uint8_t), uint8_t repeat);
+                                                        ~~~~~~~^~~~~~~~~~~~~~~~~~
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/relays.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/relays.d" -MT"source/infotronic/relays.o" -MT"source/infotronic/relays.d" -o "source/infotronic/relays.o" "../source/infotronic/relays.c"
+Finished building: ../source/infotronic/relays.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    616	      0	      4	    620	    26c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+13:44:13 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+../source/infotronic/LCD.c: In function 'LCD_check':
+../source/infotronic/LCD.c:140:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 0) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:149:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 1) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:158:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 2) & 0x01 == 0x01)
+                  ^
+../source/infotronic/LCD.c:167:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if((data >> 3) & 0x01 == 0x01)
+                  ^
+Finished building: ../source/infotronic/LCD.c
+ 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/relays.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/relays.d" -MT"source/infotronic/relays.o" -MT"source/infotronic/relays.d" -o "source/infotronic/relays.o" "../source/infotronic/relays.c"
+Finished building: ../source/infotronic/relays.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    616	      0	      4	    620	    26c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+13:44:41 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+Finished building: ../source/infotronic/LCD.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    616	      0	      4	    620	    26c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+13:48:18 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+13:48:19 **** Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Building file: ../src/aeabi_romdiv_patch.s
+Building file: ../src/cr_startup_lpc84x.c
+Building file: ../src/crp.c
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__LPC84X__ -D__REDLIB__ -g3 -mcpu=cortex-m0 -mthumb -specs=redlib.specs -o "src/aeabi_romdiv_patch.o" "../src/aeabi_romdiv_patch.s"
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc84x.d" -MT"src/cr_startup_lpc84x.o" -MT"src/cr_startup_lpc84x.d" -o "src/cr_startup_lpc84x.o" "../src/cr_startup_lpc84x.c"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.o" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/aeabi_romdiv_patch.s
+ 
+Building file: ../src/mtb.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/mtb.d" -MT"src/mtb.o" -MT"src/mtb.d" -o "src/mtb.o" "../src/mtb.c"
+Finished building: ../src/crp.c
+Finished building: ../src/Test_libreria.c
+ 
+ 
+Finished building: ../src/cr_startup_lpc84x.c
+ 
+Finished building: ../src/mtb.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:         516 B        64 KB      0.79%
+        RamLoc16:           4 B        16 KB      0.02%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+    516	      0	      4	    520	    208	Test_libreria.axf
+ 
+13:50:07 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+13:50:08 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Building file: ../src/cr_startup_lpc84x.c
+Building file: ../src/crp.c
+Building file: ../src/mtb.c
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc84x.d" -MT"src/cr_startup_lpc84x.o" -MT"src/cr_startup_lpc84x.d" -o "src/cr_startup_lpc84x.o" "../src/cr_startup_lpc84x.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.o" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/mtb.d" -MT"src/mtb.o" -MT"src/mtb.d" -o "src/mtb.o" "../src/mtb.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+Finished building: ../src/mtb.c
+ 
+Finished building: ../src/crp.c
+ 
+Finished building: ../src/Test_libreria.c
+ 
+Finished building: ../src/cr_startup_lpc84x.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:         504 B        64 KB      0.77%
+        RamLoc16:          0 GB        16 KB      0.00%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+    504	      0	      0	    504	    1f8	Test_libreria.axf
+ 
+14:05:40 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+14:05:41 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+In file included from ../src/Test_libreria.c:11:
+../src/Test_libreria.c: In function 'main':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/infotronic.h:18:30: warning: implicit declaration of function 'DEC' [-Wimplicit-function-declaration]
+ #define  INFOTRONIC_SEC(x)  (DEC(x) * 10)
+                              ^~~
+../src/Test_libreria.c:24:44: note: in expansion of macro 'INFOTRONIC_SEC'
+  infotronic_timer_start(EVENT_NUMBER_1SEG, INFOTRONIC_SEC(1), timer_1seg_callback, 1);
+                                            ^~~~~~~~~~~~~~
+../src/Test_libreria.c: In function 'timer_1seg_callback':
+../src/Test_libreria.c:42:26: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if(contador & (1 << i) != 0)
+                 ~~~~~~~~~^~~~
+../src/Test_libreria.c: At top level:
+../src/Test_libreria.c:16:13: warning: 'timer_5dec_callback' used but never defined
+ static void timer_5dec_callback(uint8_t event_number);
+             ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        8168 B        64 KB     12.46%
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: ./src/Test_libreria.o: in function `main':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Test_libreria/Debug/../src/Test_libreria.c:24: undefined reference to `DEC'
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Test_libreria/Debug/../src/Test_libreria.c:28: undefined reference to `timer_5dec_callback'
+collect2: error: ld returned 1 exit status
+        RamLoc16:         400 B        16 KB      2.44%
+makefile:30: recipe for target 'Test_libreria.axf' failed
+make: *** [Test_libreria.axf] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+14:06:46 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+Finished building: ../source/infotronic/LCD.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    616	      0	      4	    620	    26c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+14:06:47 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+../src/Test_libreria.c: In function 'timer_1seg_callback':
+../src/Test_libreria.c:42:26: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if(contador & (1 << i) != 0)
+                 ~~~~~~~~~^~~~
+../src/Test_libreria.c: At top level:
+../src/Test_libreria.c:16:13: warning: 'timer_5dec_callback' used but never defined
+ static void timer_5dec_callback(uint8_t event_number);
+             ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        8156 B        64 KB     12.45%
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: ./src/Test_libreria.o: in function `main':
+        RamLoc16:         400 B        16 KB      2.44%
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Test_libreria/Debug/../src/Test_libreria.c:28: undefined reference to `timer_5dec_callback'
+makefile:30: recipe for target 'Test_libreria.axf' failed
+collect2: error: ld returned 1 exit status
+make: *** [Test_libreria.axf] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+14:07:23 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+14:07:24 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        8172 B        64 KB     12.47%
+        RamLoc16:         400 B        16 KB      2.44%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+   8164	      8	    392	   8564	   2174	Test_libreria.axf
+ 
+14:10:36 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+Finished building: ../source/infotronic/LCD.c
+ 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    664	      0	      4	    668	    29c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+14:10:37 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        8564 B        64 KB     13.07%
+        RamLoc16:         400 B        16 KB      2.44%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+   8556	      8	    392	   8956	   22fc	Test_libreria.axf
+ 
+14:20:04 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+Finished building: ../source/infotronic/LCD.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	     53	    959	    3bf	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    664	      0	      4	    668	    29c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+14:20:05 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+../src/Test_libreria.c: In function 'main':
+../src/Test_libreria.c:31:43: error: expected expression before ')' token
+  infotronic_LCD_write("Infotronic--V2.0", );
+                                           ^
+../src/Test_libreria.c:31:2: error: too few arguments to function 'infotronic_LCD_write'
+  infotronic_LCD_write("Infotronic--V2.0", );
+  ^~~~~~~~~~~~~~~~~~~~
+In file included from ../src/Test_libreria.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/infotronic.h:138:6: note: declared here
+ void infotronic_LCD_write(char * message, uint8_t renglon, uint8_t start_position);
+      ^~~~~~~~~~~~~~~~~~~~
+../src/Test_libreria.c:21:7: warning: unused variable 'mensaje_LCD' [-Wunused-variable]
+  char mensaje_LCD[17] = "Ultima tecla: -";
+       ^~~~~~~~~~~
+src/subdir.mk:31: recipe for target 'src/Test_libreria.o' failed
+make: *** [src/Test_libreria.o] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+14:20:21 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+14:20:22 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+../src/Test_libreria.c: In function 'main':
+../src/Test_libreria.c:21:7: warning: unused variable 'mensaje_LCD' [-Wunused-variable]
+  char mensaje_LCD[17] = "Ultima tecla: -";
+       ^~~~~~~~~~~
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        9048 B        64 KB     13.81%
+        RamLoc16:         404 B        16 KB      2.47%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+   9040	      8	    396	   9444	   24e4	Test_libreria.axf
+ 
+14:20:38 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+14:20:39 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        9060 B        64 KB     13.82%
+        RamLoc16:         404 B        16 KB      2.47%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+   9052	      8	    396	   9456	   24f0	Test_libreria.axf
+ 
+14:28:14 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+14:28:15 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        9144 B        64 KB     13.95%
+        RamLoc16:         404 B        16 KB      2.47%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+   9136	      8	    396	   9540	   2544	Test_libreria.axf
+ 
+14:39:14 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/LCD.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0plus -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/LCD.d" -MT"source/infotronic/LCD.o" -MT"source/infotronic/LCD.d" -o "source/infotronic/LCD.o" "../source/infotronic/LCD.c"
+Finished building: ../source/infotronic/LCD.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    664	      0	      4	    668	    29c	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1044	      0	     52	   1096	    448	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1308	      0	      4	   1312	    520	HPL_ADC.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+     24	      4	      0	     28	     1c	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    216	      0	      4	    220	     dc	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2122	      0	     40	   2162	    872	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+14:39:15 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        9144 B        64 KB     13.95%
+        RamLoc16:         552 B        16 KB      3.37%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+   9136	      8	    544	   9688	   25d8	Test_libreria.axf
+ 
+14:39:35 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+14:39:36 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+14:39:43 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+14:39:44 **** Incremental Build of configuration Debug for project Test_libreria ****
+make -r -j4 all 
+Building file: ../src/Test_libreria.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=0 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_libreria.d" -MT"src/Test_libreria.o" -MT"src/Test_libreria.d" -o "src/Test_libreria.o" "../src/Test_libreria.c"
+Finished building: ../src/Test_libreria.c
+ 
+Building target: Test_libreria.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_libreria.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_libreria_Debug.ld" -o "Test_libreria.axf"  ./src/Test_libreria.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        9144 B        64 KB     13.95%
+        RamLoc16:         552 B        16 KB      3.37%
+Finished building target: Test_libreria.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_libreria.axf"; # arm-none-eabi-objcopy -v -O binary "Test_libreria.axf" "Test_libreria.bin" ; # checksum -p LPC845 -d "Test_libreria.bin";
+   text	   data	    bss	    dec	    hex	filename
+   9136	      8	    544	   9688	   25d8	Test_libreria.axf
+ 

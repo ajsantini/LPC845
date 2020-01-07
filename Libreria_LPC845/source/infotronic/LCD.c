@@ -31,7 +31,7 @@
 
 #define		LCD_CONTROL_FLAG		(0x80)
 
-#define		LCD_BUFFER_LENGTH		50
+#define		LCD_BUFFER_LENGTH		200
 
 #define		LCD_RENGLON_LENGTH		16
 
@@ -137,7 +137,7 @@ void LCD_check(void)
 
 	if(data != -1)
 	{
-		if((data >> 0) & 0x01 == 0x01)
+		if(((data >> 0) & 0x01) == 0x01)
 		{
 			GPIO_set_pin(LCD_D4_PORT, LCD_D4_PIN);
 		}
@@ -146,7 +146,7 @@ void LCD_check(void)
 			GPIO_clear_pin(LCD_D4_PORT, LCD_D4_PIN);
 		}
 
-		if((data >> 1) & 0x01 == 0x01)
+		if(((data >> 1) & 0x01) == 0x01)
 		{
 			GPIO_set_pin(LCD_D5_PORT, LCD_D5_PIN);
 		}
@@ -155,7 +155,7 @@ void LCD_check(void)
 			GPIO_clear_pin(LCD_D5_PORT, LCD_D5_PIN);
 		}
 
-		if((data >> 2) & 0x01 == 0x01)
+		if(((data >> 2) & 0x01) == 0x01)
 		{
 			GPIO_set_pin(LCD_D6_PORT, LCD_D6_PIN);
 		}
@@ -164,7 +164,7 @@ void LCD_check(void)
 			GPIO_clear_pin(LCD_D6_PORT, LCD_D6_PIN);
 		}
 
-		if((data >> 3) & 0x01 == 0x01)
+		if(((data >> 3) & 0x01) == 0x01)
 		{
 			GPIO_set_pin(LCD_D7_PORT, LCD_D7_PIN);
 		}
