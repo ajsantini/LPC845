@@ -15,7 +15,7 @@
 #include <HRI_NVIC.h>
 #include <HRI_SWM.h>
 
-#define	ADC_MAX_FREQ	25000000 //<! Maxima frecuencia de conversion admitida por el ADC
+#define	ADC_MAX_FREQ	1.2e6 //<! Maxima frecuencia de conversion admitida por el ADC
 
 volatile ADC_per_t * const ADC = (ADC_per_t *) ADC_BASE; //!< Periferico ADC
 
@@ -28,14 +28,15 @@ static void (*adc_seqb_completed_callback)(void) = NULL; //!< Callback cuando te
  * de hardware, y fijar el clock del mismo para la frecuencia deseada.
  *
  * @param[in] adc_freq Frecuencia del ADC deseada
+ * @param[in] clock_source Seleccion de clock para el ADC
  * @return Estado de inicializacion del ADC
  */
-int32_t ADC_init(uint32_t adc_freq)
+int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source)
 {
 	ADC_CTRL_reg_t adc_ctrl_aux;
 	uint32_t *aux_reg = (uint32_t *) &adc_ctrl_aux;
-	uint64_t aux = SYSCON_get_system_clock() / adc_freq;
-	uint64_t calib_aux = SYSCON_get_system_clock() / 500000;
+	uint64_t aux;
+	uint64_t calib_aux;
 
 	if(adc_freq >= ADC_MAX_FREQ)
 	{
@@ -43,14 +44,36 @@ int32_t ADC_init(uint32_t adc_freq)
 		return ADC_INIT_CLK_OVERFLOW;
 	}
 
-	// Underflow de clock pedido
-	if(aux >= 0xFF)
+	adc_freq *= 25;
+
+	if(clock_source == ADC_CLOCK_SOURCE_FRO)
 	{
-		return ADC_INIT_CLK_UNDERFLOW;
+		aux = SYSCON_get_fro_clock() / adc_freq;
+		calib_aux = SYSCON_get_fro_clock() / 500000;
+
+		// Underflow de clock pedido
+		if(aux >= 0xFF)
+		{
+			return ADC_INIT_CLK_UNDERFLOW;
+		}
+	}
+	else
+	{
+		aux = SYSCON_get_pll_clock() / adc_freq;
+		calib_aux = SYSCON_get_pll_clock() / 500000;
+
+		// Underflow de clock pedido
+		if(aux >= 0xFF)
+		{
+			return ADC_INIT_CLK_UNDERFLOW;
+		}
 	}
 
-	// Enciendo el ADC
+	// Encendido del ADC
 	SYSCON->PDRUNCFG.ADC_PD = 0;
+
+	// Seleccion de fuente de clock del ADC
+	SYSCON->ADCCLKSEL.SEL = clock_source;
 
 	// Habilitacion del clock del ADC
 	SYSCON->SYSAHBCLKCTRL0.ADC = 1;
@@ -87,7 +110,7 @@ int32_t ADC_init(uint32_t adc_freq)
  * @param[in] conversions_config Configuracion deseada para las conversiones
  * @return Estado de la configuracion del ADC
  */
-int32_t ADC_config_conversions(ADC_conversions_config_t *conversions_config)
+int32_t ADC_config_conversions(const ADC_conversions_config_t * const conversions_config)
 {
 	uint32_t counter;
 

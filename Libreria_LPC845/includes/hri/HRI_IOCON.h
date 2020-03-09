@@ -22,17 +22,17 @@
  */
 typedef struct
 {
-	uint32_t RESERVED_1 : 3;
+	uint32_t : 3;
 	uint32_t MODE : 2;
 	uint32_t HYS : 1;
 	uint32_t INV : 1;
 	uint32_t I2CMODE : 2;
-	uint32_t RESERVED_2 : 1;
+	uint32_t : 1;
 	uint32_t OD : 1;
 	uint32_t S_MODE : 2;
 	uint32_t CLK_DIV : 3;
 	uint32_t DACMODE : 1;
-	uint32_t RESERVED_3 : 15;
+	uint32_t : 15;
 }IOCON_PIO_reg_t;
 
 typedef struct
@@ -49,14 +49,14 @@ typedef struct
 	IOCON_PIO_reg_t PIO0_16;
 	IOCON_PIO_reg_t PIO0_15;
 	IOCON_PIO_reg_t PIO0_1;
-	uint32_t _RESERVED_1;
+	const uint32_t _RESERVED_1;
 	IOCON_PIO_reg_t PIO0_9;
 	IOCON_PIO_reg_t PIO0_8;
 	IOCON_PIO_reg_t PIO0_7;
 	IOCON_PIO_reg_t PIO0_6;
 	IOCON_PIO_reg_t PIO0_0;
 	IOCON_PIO_reg_t PIO0_14;
-	uint32_t _RESERVED_2;
+	const uint32_t _RESERVED_2;
 	IOCON_PIO_reg_t PIO0_28;
 	IOCON_PIO_reg_t PIO0_27;
 	IOCON_PIO_reg_t PIO0_26;

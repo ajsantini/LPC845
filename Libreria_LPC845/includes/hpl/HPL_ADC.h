@@ -40,6 +40,12 @@ typedef struct
 	void (*conversion_ended_callback)(void);
 }ADC_conversions_config_t;
 
+typedef enum
+{
+	ADC_CLOCK_SOURCE_FRO = 0,
+	ADC_CLOCK_SOURCE_PLL
+}ADC_clock_source_en;
+
 /**
  * @brief Inicializacion del ADC
  *
@@ -47,9 +53,10 @@ typedef struct
  * de hardware, y fijar el clock del mismo para la frecuencia deseada.
  *
  * @param[in] adc_freq Frecuencia del ADC deseada
+ * @param[in] clock_source Seleccion de clock para el ADC
  * @return Estado de inicializacion del ADC
  */
-int32_t ADC_init(uint32_t adc_freq);
+int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source);
 
 /**
  * @brief Configuracion de las conversiones del ADC
@@ -62,7 +69,7 @@ int32_t ADC_init(uint32_t adc_freq);
  * @param[in] conversions_config Configuracion deseada para las conversiones
  * @return Estado de la configuracion del ADC
  */
-int32_t ADC_config_conversions(ADC_conversions_config_t *conversions_config);
+int32_t ADC_config_conversions(const ADC_conversions_config_t * const conversions_config);
 
 /**
  * @brief Iniciar conversiones de ADC

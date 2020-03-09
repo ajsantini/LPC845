@@ -1,5 +1,6 @@
 source/infotronic/infotronic.o source/infotronic/infotronic.d: \
  ../source/infotronic/infotronic.c \
+ /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h \
  /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h \
  /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_GPIO.h \
  /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSTICK.h \
@@ -10,6 +11,8 @@ source/infotronic/infotronic.o source/infotronic/infotronic.d: \
  /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/termometro.h \
  /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/timer.h \
  /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic/LCD.h
+
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:
 
 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:
 

@@ -7,6 +7,7 @@
  */
 
 #include <stdint.h>
+#include <HPL_SYSCON.h>
 #include <HPL_IOCON.h>
 #include <HPL_GPIO.h>
 #include <HPL_SYSTICK.h>
@@ -27,9 +28,16 @@ static void infotronic_systick_callback(void);
 
 /**
  * @brief Inicializacion de la placa infotronic v2
+ * @param crystal_freq Frecuencia del cristal utilizado en Hz. En caso de no utilizar cristal, pasar cero (0)
  */
-void infotronic_init(void)
+void infotronic_init(uint32_t crystal_freq)
 {
+	if(crystal_freq)
+	{
+		SYSCON_set_crystal_clock(crystal_freq);
+		SYSCON_set_system_clock_source(SYSTEM_CLOCK_SEL_EXT_CLK);
+	}
+
 	IOCON_init();
 	GPIO_init(0);
 	GPIO_init(1);

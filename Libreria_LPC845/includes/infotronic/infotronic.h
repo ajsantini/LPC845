@@ -23,8 +23,9 @@
 
 /**
  * @brief Inicializacion de la placa infotronic v2
+ * @param crystal_freq Frecuencia del cristal utilizado en Hz. En caso de no utilizar cristal, pasar cero (0)
  */
-void infotronic_init(void);
+void infotronic_init(uint32_t crystal_freq);
 
 /**
  * @brief Delay bloqueante

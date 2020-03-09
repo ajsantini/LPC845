@@ -16,74 +16,74 @@
 typedef struct
 {
 	uint32_t PMODE : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_ISEL_reg_t;
 
 typedef struct
 {
 	uint32_t ENRL : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_IENR_reg_t;
 
 typedef struct
 {
 	uint32_t SETENRL : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_SIENR_reg_t;
 
 typedef struct
 {
 	uint32_t CENRL : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_CIENR_reg_t;
 
 typedef struct
 {
 	uint32_t ENAF : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_IENF_reg_t;
 
 typedef struct
 {
 	uint32_t SETENAF : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_SIENF_reg_t;
 
 typedef struct
 {
 	uint32_t CENAF : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_CIENF_reg_t;
 
 typedef struct
 {
 	uint32_t RDET : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_RISE_reg_t;
 
 typedef struct
 {
 	uint32_t FDET : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_FALL_reg_t;
 
 typedef struct
 {
 	uint32_t PSTAT : 8;
-	uint32_t RESERVED_1 : 24;
+	uint32_t : 24;
 }PININT_IST_reg_t;
 
 typedef struct
 {
 	uint32_t SEL_PMATCH : 1;
 	uint32_t ENA_RXEV : 1;
-	uint32_t RESERVED_1 : 22;
+	uint32_t : 22;
 	uint32_t PMAT : 8;
 }PININT_PMCTRL_reg_t;
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 8;
+	uint32_t : 8;
 	uint32_t SRC0 : 3;
 	uint32_t SRC1 : 3;
 	uint32_t SRC2 : 3;
@@ -103,7 +103,7 @@ typedef struct
 	uint32_t PROD_ENDPTS4 : 1;
 	uint32_t PROD_ENDPTS5 : 1;
 	uint32_t PROD_ENDPTS6 : 1;
-	uint32_t RESERVED_1 : 1;
+	uint32_t : 1;
 	uint32_t CFG0 : 3;
 	uint32_t CFG1 : 3;
 	uint32_t CFG2 : 3;

@@ -8,5 +8,16 @@
 
 #include <stdint.h>
 #include <HRI_SWM.h>
+#include <HRI_SYSCON.h>
 
 volatile SWM_per_t * const SWM = (SWM_per_t *) SWM_BASE; //!< Periferico SWM
+
+void SWM_init(void)
+{
+	SYSCON->SYSAHBCLKCTRL0.SWM = 1;
+}
+
+void SWM_deinit(void)
+{
+	SYSCON->SYSAHBCLKCTRL0.SWM = 0;
+}

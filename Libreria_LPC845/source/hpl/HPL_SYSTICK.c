@@ -26,8 +26,9 @@ void SYSTICK_init(uint32_t tick_us, void (*systick_hook)(void))
 	uint32_t aux;
 
 	// En base a los us deseados calculo el valor de STRELOAD
-	aux = SYSCON_get_system_clock()/1000000;
+	aux = SYSCON_get_system_clock() / 10;
 	aux *= tick_us;
+	aux /= 100000; // La cuenta hecha asi aumenta la presicion sin generar nunca un overflow
 
 	aux--;
 
@@ -37,8 +38,9 @@ void SYSTICK_init(uint32_t tick_us, void (*systick_hook)(void))
 		aux = (1 << 24) - 1;
 	}
 
+	*((uint32_t *)(&SYSTICK->RVR)) = 0; // Error de implementacion rarisimo. Hay que dejarlo.
+
 	SYSTICK->RVR.RELOAD = aux;
-	SYSTICK->RVR.RESERVED = 0; // Error de implementacion rarisimo. Hay que dejarlo.
 
 	// Fijo el clock del systick como el clock de la CPU directamente
 	SYSTICK->CSR.CLKSOURCE = 1;

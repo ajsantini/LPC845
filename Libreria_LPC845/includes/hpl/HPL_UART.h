@@ -10,6 +10,7 @@
 #define HPL_UART_H_
 
 #include <stdint.h>
+#include <HPL_SYSCON.h>
 
 #define	UART_INIT_SUCCESS			0
 #define	UART_INIT_INVALID_UART		-1
@@ -27,22 +28,6 @@
 #define	UART_RX_BYTE_INVALID_UART	-1
 #define	UART_RX_BYTE_NOT_AVAILABLE	-2
 #define	UART_RX_BYTE_INVALID_BITS	-3
-
-typedef enum
-{
-	UART_OVERSAMPLING_X5 = 4,
-	UART_OVERSAMPLING_X6,
-	UART_OVERSAMPLING_X7,
-	UART_OVERSAMPLING_X8,
-	UART_OVERSAMPLING_X9,
-	UART_OVERSAMPLING_X10,
-	UART_OVERSAMPLING_X11,
-	UART_OVERSAMPLING_X12,
-	UART_OVERSAMPLING_X13,
-	UART_OVERSAMPLING_X14,
-	UART_OVERSAMPLING_X15,
-	UART_OVERSAMPLING_X16,
-}UART_oversampling_en;
 
 typedef enum
 {
@@ -64,12 +49,29 @@ typedef enum
 	UART_STOPLEN_2BIT
 }UART_stop_en;
 
+typedef enum
+{
+	UART_OVERSAMPLING_X5 = 4,
+	UART_OVERSAMPLING_X6,
+	UART_OVERSAMPLING_X7,
+	UART_OVERSAMPLING_X8,
+	UART_OVERSAMPLING_X9,
+	UART_OVERSAMPLING_X10,
+	UART_OVERSAMPLING_X11,
+	UART_OVERSAMPLING_X12,
+	UART_OVERSAMPLING_X13,
+	UART_OVERSAMPLING_X14,
+	UART_OVERSAMPLING_X15,
+	UART_OVERSAMPLING_X16,
+}UART_oversampling_en;
+
 typedef struct
 {
-	uint8_t data_length;
-	uint8_t parity;
-	uint8_t stop_bits;
-	uint8_t oversampling;
+	UART_datalen_en data_length;
+	UART_parity_en parity;
+	UART_stop_en stop_bits;
+	UART_oversampling_en oversampling;
+	peripheral_clock_selection_en clock_selection;
 	uint32_t baudrate;
 	uint32_t tx_port;
 	uint32_t tx_pin;
@@ -85,7 +87,7 @@ typedef struct
  * @param[in] config Puntero a configuracion de la UART.
  * @return Estado de la inicializacion de la UART.
  */
-int32_t UART_init(uint8_t uart_selection, UART_config_t *config);
+int32_t UART_init(uint8_t uart_selection, const UART_config_t * const config);
 
 /**
  * @brief Transmitir un dato mediante la UART.

@@ -18,11 +18,11 @@ typedef struct
 {
 	uint32_t CLKDIV : 8; //!< Divisor del clock
 	uint32_t ASYNCMODE : 1; //!< 0 -> Modo sincronico ; 1 -> Modo asincronico
-	uint32_t RESERVED_1 : 1; //!< Reservado
+	uint32_t : 1; //!< Reservado
 	uint32_t LPWRMODE : 1; //!< Modo de bajo consumo
-	uint32_t RESERVED_2 : 19;  //!< Reservado
+	uint32_t : 19;  //!< Reservado
 	uint32_t CALMODE : 1; //!< Modo calibracion
-	uint32_t RESERVED_3 : 1; //!< Reservado
+	uint32_t : 1; //!< Reservado
 }ADC_CTRL_reg_t;
 
 //! Registro de control de secuencia A del ADC
@@ -30,10 +30,10 @@ typedef struct
 {
 	uint32_t CHANNELS : 12; //!< Canales habilitados para la conversion en la secuencia
 	uint32_t TRIGGER : 3; //!< Que pin dispara la secuencia
-	uint32_t RESERVED_1 : 3; //!< Reservado
+	uint32_t : 3; //!< Reservado
 	uint32_t TRIGPOL : 1; //!< Polaridad del pin que dispara la secuencia
 	uint32_t SYNCBYPASS : 1; //!< Disparo asincronico/sincronico
-	uint32_t RESERVED_2 : 6; //!< Reservado
+	uint32_t : 6; //!< Reservado
 	uint32_t START : 1; //!< Empezar secuencia mediante software
 	uint32_t BURST : 1; //!< Habilitacion de modo rafaga
 	uint32_t SINGLESTEP : 1; //!< Un start activa un paso o la secuencia entera
@@ -47,10 +47,10 @@ typedef struct
 {
 	uint32_t CHANNELS : 12;
 	uint32_t TRIGGER : 3;
-	uint32_t RESERVED_1 : 3;
+	uint32_t : 3;
 	uint32_t TRIGPOL : 1;
 	uint32_t SYNCBYPASS : 1;
-	uint32_t RESERVED_2 : 6;
+	uint32_t : 6;
 	uint32_t START : 1;
 	uint32_t BURST : 1;
 	uint32_t SINGLESTEP : 1;
@@ -61,11 +61,11 @@ typedef struct
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 4;
+	uint32_t : 4;
 	uint32_t RESULT : 12;
 	uint32_t THCMPRANGE : 2;
 	uint32_t THCMPCROSS : 2;
-	uint32_t RESERVED_2 : 6;
+	uint32_t : 6;
 	uint32_t CHN : 4;
 	uint32_t OVERRUN : 1;
 	uint32_t DATAVALID : 1;
@@ -73,11 +73,11 @@ typedef struct
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 4;
+	uint32_t : 4;
 	uint32_t RESULT : 12;
 	uint32_t THCMPRANGE : 2;
 	uint32_t THCMPCROSS : 2;
-	uint32_t RESERVED_2 : 6;
+	uint32_t : 6;
 	uint32_t CHN : 4;
 	uint32_t OVERRUN : 1;
 	uint32_t DATAVALID : 1;
@@ -85,11 +85,11 @@ typedef struct
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 4;
+	uint32_t : 4;
 	uint32_t RESULT : 12;
 	uint32_t THCMPRANGE : 2;
 	uint32_t THCMPCROSS : 2;
-	uint32_t RESERVED_2 : 6;
+	uint32_t : 6;
 	uint32_t CHANNEL : 4;
 	uint32_t OVERRUN : 1;
 	uint32_t DATAVALID : 1;
@@ -97,16 +97,16 @@ typedef struct
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 4;
+	uint32_t : 4;
 	uint32_t THRLOW : 12;
-	uint32_t RESERVED_2 : 16;
+	uint32_t : 16;
 }ADC_THR_LOW_reg_t;
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 4;
+	uint32_t : 4;
 	uint32_t THRHIGH : 12;
-	uint32_t RESERVED_2 : 16;
+	uint32_t : 16;
 }ADC_THR_HIGH_reg_t;
 
 typedef struct
@@ -123,7 +123,7 @@ typedef struct
 	uint32_t CH9_THRSEL : 1;
 	uint32_t CH10_THRSEL : 1;
 	uint32_t CH11_THRSEL : 1;
-	uint32_t RESERVED_1 : 20;
+	uint32_t : 20;
 }ADC_CHAN_THRSEL_reg_t;
 
 typedef struct
@@ -143,7 +143,7 @@ typedef struct
 	uint32_t ADCMPINTEN9 : 2;
 	uint32_t ADCMPINTEN10 : 2;
 	uint32_t ADCMPINTEN11 : 2;
-	uint32_t RESERVED_1 : 5;
+	uint32_t : 5;
 }ADC_INTEN_reg_t;
 
 typedef struct
@@ -172,7 +172,7 @@ typedef struct
 	uint32_t OVERRUN9 : 1;
 	uint32_t OVERRUN10 : 1;
 	uint32_t OVERRUN11 : 1;
-	uint32_t RESERVED_1 : 2;
+	uint32_t : 2;
 	uint32_t SEQA_INT : 1;
 	uint32_t SEQB_INT : 1;
 	uint32_t THCMP_INT : 1;
@@ -181,21 +181,21 @@ typedef struct
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 5;
+	uint32_t : 5;
 	uint32_t VRANGE : 1;
-	uint32_t RESERVED_2 : 26;
+	uint32_t : 26;
 }ADC_TRM_reg_t;
 
 typedef struct
 {
 	ADC_CTRL_reg_t CTRL;
-	uint32_t RESERVED_1;
+	const uint32_t RESERVED_1;
 	ADC_SEQA_CTRL_reg_t SEQA_CTRL;
 	ADC_SEQB_CTRL_reg_t SEQB_CTRL;
 	ADC_SEQA_GDAT_reg_t SEQA_GDAT;
 	ADC_SEQB_GDAT_reg_t SEQB_GDAT;
-	uint32_t RESERVED_2[2];
-	ADC_DAT_reg_t DAT[12];
+	const uint32_t RESERVED_2[2];
+	const ADC_DAT_reg_t DAT[12];
 	ADC_THR_LOW_reg_t THR0_LOW;
 	ADC_THR_LOW_reg_t THR1_LOW;
 	ADC_THR_HIGH_reg_t THR0_HIGH;

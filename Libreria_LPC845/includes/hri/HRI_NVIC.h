@@ -21,7 +21,7 @@ typedef struct
 	uint32_t ISE_UART0 : 1;
 	uint32_t ISE_UART1 : 1;
 	uint32_t ISE_UART2 : 1;
-	uint32_t RESERVED_1 : 1;
+	uint32_t : 1;
 	uint32_t ISE_I2C1 : 1;
 	uint32_t ISE_I2C0 : 1;
 	uint32_t ISE_SCT : 1;
@@ -57,7 +57,7 @@ typedef struct
 	uint32_t ICE_UART0 : 1;
 	uint32_t ICE_UART1 : 1;
 	uint32_t ICE_UART2 : 1;
-	uint32_t RESERVED_1 : 1;
+	uint32_t : 1;
 	uint32_t ICE_I2C1 : 1;
 	uint32_t ICE_I2C0 : 1;
 	uint32_t ICE_SCT : 1;
@@ -93,7 +93,7 @@ typedef struct
 	uint32_t ISP_UART0 : 1;
 	uint32_t ISP_UART1 : 1;
 	uint32_t ISP_UART2 : 1;
-	uint32_t RESERVED_1 : 1;
+	uint32_t : 1;
 	uint32_t ISP_I2C1 : 1;
 	uint32_t ISP_I2C0 : 1;
 	uint32_t ISP_SCT : 1;
@@ -129,7 +129,7 @@ typedef struct
 	uint32_t ICP_UART0 : 1;
 	uint32_t ICP_UART1 : 1;
 	uint32_t ICP_UART2 : 1;
-	uint32_t RESERVED_1 : 1;
+	uint32_t : 1;
 	uint32_t ICP_I2C1 : 1;
 	uint32_t ICP_I2C0 : 1;
 	uint32_t ICP_SCT : 1;
@@ -165,7 +165,7 @@ typedef struct
 	uint32_t IAB_UART0 : 1;
 	uint32_t IAB_UART1 : 1;
 	uint32_t IAB_UART2 : 1;
-	uint32_t RESERVED_1 : 1;
+	uint32_t : 1;
 	uint32_t IAB_I2C1 : 1;
 	uint32_t IAB_I2C0 : 1;
 	uint32_t IAB_SCT : 1;
@@ -195,13 +195,13 @@ typedef struct
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 6;
+	uint32_t : 6;
 	uint32_t IP_SPI0 : 2;
-	uint32_t RESERVED_2 : 6;
+	uint32_t : 6;
 	uint32_t IP_SPI1 : 2;
-	uint32_t RESERVED_3 : 6;
+	uint32_t : 6;
 	uint32_t IP_DAC0 : 2;
-	uint32_t RESERVED_4 : 6;
+	uint32_t : 6;
 	uint32_t IP_UART0 : 2;
 }NVIC_IPR0_reg_t;
 
@@ -290,17 +290,17 @@ typedef struct
 
 typedef struct
 {
-	uint8_t RESERVED_1[0x100];
+	const uint8_t RESERVED_1[0x100];
 	NVIC_ISER0_reg_t ISER0;
-	uint8_t RESERVED_2[0x7C];
+	const uint8_t RESERVED_2[0x7C];
 	NVIC_ICER0_reg_t ICER0;
-	uint8_t RESERVED_3[0x7C];
+	const uint8_t RESERVED_3[0x7C];
 	NVIC_ISPR0_reg_t ISPR0;
-	uint8_t RESERVED_4[0x7C];
+	const uint8_t RESERVED_4[0x7C];
 	NVIC_ICPR0_reg_t ICPR0;
-	uint8_t RESERVED_5[0x7C];
-	NVIC_IABR0_reg_t IABR0;
-	uint8_t RESERVED_6[0xFC];
+	const uint8_t RESERVED_5[0x7C];
+	const NVIC_IABR0_reg_t IABR0;
+	const uint8_t RESERVED_6[0xFC];
 	NVIC_IPR0_reg_t IPR0;
 	NVIC_IPR1_reg_t IPR1;
 	NVIC_IPR2_reg_t IPR2;

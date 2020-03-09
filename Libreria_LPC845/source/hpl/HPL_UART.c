@@ -39,14 +39,7 @@ static void (*uart_tx_callback[5])(void) = { //!< Callbacks registrados a la fin
 		NULL
 };
 
-/**
- * @brief Calculo del valor para el registro de Baudrate.
- * @param[in] system_clock Clock asociado con la UART.
- * @param[in] baudrate Baudrate deseado a calcular.
- * @param[in] oversampling Oversampling deseado para la UART.
- * @return Valor a poner en el registro BRG.
- */
-static uint16_t calculate_BRGVAL(uint32_t system_clock, uint32_t baudrate, uint8_t oversampling);
+static uint16_t calculate_BRGVAL(uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling);
 
 /**
  * @brief Registrar el callback a ser llamado en la recepcion de un dato por UART.
@@ -74,13 +67,13 @@ void UART_register_tx_callback(uint32_t uart_selection, void (*new_callback)(voi
  * @param[in] config Puntero a configuracion de la UART.
  * @return Estado de la inicializacion de la UART.
  */
-int32_t UART_init(uint8_t uart_selection, UART_config_t *config)
+int32_t UART_init(uint8_t uart_selection, const UART_config_t * const config)
 {
-	uint32_t aux = calculate_BRGVAL(SYSCON_get_system_clock(), config->baudrate, config->oversampling);;
+	uint32_t aux;
 
-	if(aux > 0xFFF)
+	if(uart_selection > 4)
 	{
-		return UART_INIT_CLOCK_UNDERFLOW;
+		return UART_INIT_INVALID_UART;
 	}
 
 	if(config->rx_port > 1 || config->tx_port)
@@ -99,17 +92,24 @@ int32_t UART_init(uint8_t uart_selection, UART_config_t *config)
 		return UART_INIT_INVALID_PORTPIN;
 	}
 
-	// Configuracion de pines, NVIC y demas dependientes de que UART se eligio
-
 	// Habilitacion de la Switch-Matrix
 	SYSCON->SYSAHBCLKCTRL0.SWM = 1;
-
-	// Seleccion de clock para la UART
-	SYSCON->UARTCLKSEL[uart_selection].SEL = SYSCON_PER_CLK_SOURCE_FRO;
 
 	switch(uart_selection)
 	{
 	case 0:
+		// Seleccion de clock para la UART
+		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART0, config->clock_selection);
+
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART0),
+								config->baudrate,
+								config->oversampling);
+
+		if(aux > 0xFFF)
+		{
+			return UART_INIT_CLOCK_UNDERFLOW;
+		}
+
 		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON->SYSAHBCLKCTRL0.UART0 = 1;
 
@@ -125,6 +125,18 @@ int32_t UART_init(uint8_t uart_selection, UART_config_t *config)
 
 		break;
 	case 1:
+		// Seleccion de clock para la UART
+		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART1, config->clock_selection);
+
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART1),
+								config->baudrate,
+								config->oversampling);
+
+		if(aux > 0xFFF)
+		{
+			return UART_INIT_CLOCK_UNDERFLOW;
+		}
+
 		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON->SYSAHBCLKCTRL0.UART1 = 1;
 
@@ -140,6 +152,18 @@ int32_t UART_init(uint8_t uart_selection, UART_config_t *config)
 
 		break;
 	case 2:
+		// Seleccion de clock para la UART
+		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART2, config->clock_selection);
+
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART2),
+								config->baudrate,
+								config->oversampling);
+
+		if(aux > 0xFFF)
+		{
+			return UART_INIT_CLOCK_UNDERFLOW;
+		}
+
 		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON->SYSAHBCLKCTRL0.UART2 = 1;
 
@@ -155,6 +179,18 @@ int32_t UART_init(uint8_t uart_selection, UART_config_t *config)
 
 		break;
 	case 3:
+		// Seleccion de clock para la UART
+		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART3, config->clock_selection);
+
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART3),
+								config->baudrate,
+								config->oversampling);
+
+		if(aux > 0xFFF)
+		{
+			return UART_INIT_CLOCK_UNDERFLOW;
+		}
+
 		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON->SYSAHBCLKCTRL0.UART3 = 1;
 
@@ -170,6 +206,18 @@ int32_t UART_init(uint8_t uart_selection, UART_config_t *config)
 
 		break;
 	case 4:
+		// Seleccion de clock para la UART
+		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART4, config->clock_selection);
+
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART4),
+								config->baudrate,
+								config->oversampling);
+
+		if(aux > 0xFFF)
+		{
+			return UART_INIT_CLOCK_UNDERFLOW;
+		}
+
 		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON->SYSAHBCLKCTRL0.UART4 = 1;
 
@@ -227,14 +275,14 @@ int32_t UART_init(uint8_t uart_selection, UART_config_t *config)
 
 /**
  * @brief Calculo del valor para el registro de Baudrate.
- * @param[in] system_clock Clock asociado con la UART.
+ * @param[in] uart_clock Clock asociado con la UART.
  * @param[in] baudrate Baudrate deseado a calcular.
  * @param[in] oversampling Oversampling deseado para la UART.
  * @return Valor a poner en el registro BRG.
  */
-static uint16_t calculate_BRGVAL(uint32_t system_clock, uint32_t baudrate, uint8_t oversampling)
+static uint16_t calculate_BRGVAL(uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling)
 {
-	return ((system_clock) / ((oversampling + 1) * baudrate)) - 1;
+	return ((uart_clock) / ((oversampling + 1) * baudrate)) - 1;
 }
 
 /**

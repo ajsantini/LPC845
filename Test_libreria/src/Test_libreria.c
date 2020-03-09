@@ -10,6 +10,8 @@
 #include <cr_section_macros.h>
 #include <infotronic/infotronic.h>
 
+#define		CRYSTAL_FREQ			12e6
+
 #define		EVENT_NUMBER_5DEC		0
 #define		EVENT_NUMBER_1SEG		1
 
@@ -20,7 +22,7 @@ int main(void)
 {
 	char mensaje_LCD[17] = "Ultima tecla: -";
 
-	infotronic_init();
+	infotronic_init(CRYSTAL_FREQ);
 
 	infotronic_timer_start(EVENT_NUMBER_5DEC, INFOTRONIC_DEC(5), timer_5dec_callback, 1);
 	infotronic_timer_start(EVENT_NUMBER_1SEG, INFOTRONIC_SEC(1), timer_1seg_callback, 1);
@@ -70,4 +72,6 @@ static void timer_1seg_callback(uint8_t event_number)
 			infotronic_relay_deactivate(i);
 		}
 	}
+
+	contador = (contador + 1) % 16;
 }

@@ -91,7 +91,7 @@ void termometro_init(void)
 	adc_config.channels = ADC_CHANNEL_MASK;
 	adc_config.conversion_ended_callback = adc_conversion_finished;
 
-	ADC_init(ADC_SAMPLING_FREQUENCY);
+	ADC_init(ADC_SAMPLING_FREQUENCY, ADC_CLOCK_SOURCE_FRO);
 
 	ADC_config_conversions(&adc_config);
 }

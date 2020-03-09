@@ -169,6 +169,11 @@ typedef struct
 	uint32_t CAPT_X3 : 1;
 }SWM_PINENABLE0_reg_t;
 
+#define		PINENABLE_XTALIN_ON			0
+#define		PINENABLE_XTALIN_OFF		1
+#define		PINENABLE_XTALOUT_ON		0
+#define		PINENABLE_XTALOUT_OFF		1
+
 typedef struct
 {
 	uint32_t CAPT_X4 : 1;
@@ -178,7 +183,7 @@ typedef struct
 	uint32_t CAPT_X8 : 1;
 	uint32_t CAPT_YL : 1;
 	uint32_t CAPT_YH : 1;
-	uint32_t RESERVED : 26;
+	uint32_t : 26;
 }SWM_PINENABLE1_reg_t;
 
 typedef struct
@@ -198,7 +203,7 @@ typedef struct
 	SWM_PINASSIGN12_reg_t PINASSIGN12;
 	SWM_PINASSIGN13_reg_t PINASSIGN13;
 	SWM_PINASSIGN14_reg_t PINASSIGN14;
-	uint32_t RESERVED[(0x188 - 4) / 4];
+	const uint32_t RESERVED[(0x188 - 4) / 4];
 	SWM_PINENABLE0_reg_t PINENABLE0;
 	SWM_PINENABLE1_reg_t PINENABLE1;
 }SWM_per_t;

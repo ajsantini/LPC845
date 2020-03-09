@@ -1,6 +1,6 @@
-HPL_ADC.c:33:9:ADC_init	56	static
-HPL_ADC.c:90:9:ADC_config_conversions	32	static
-HPL_ADC.c:220:9:ADC_start_conversions	8	static
-HPL_ADC.c:251:9:ADC_get_conversion	16	static
-HPL_ADC.c:286:6:ADC_register_callback	16	static
-HPL_ADC.c:305:6:ADC_SEQB_IRQHandler	8	static
+HPL_ADC.c:34:9:ADC_init	48	static
+HPL_ADC.c:113:9:ADC_config_conversions	32	static
+HPL_ADC.c:243:9:ADC_start_conversions	8	static
+HPL_ADC.c:274:9:ADC_get_conversion	16	static
+HPL_ADC.c:309:6:ADC_register_callback	16	static
+HPL_ADC.c:328:6:ADC_SEQB_IRQHandler	8	static

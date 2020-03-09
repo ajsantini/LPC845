@@ -40,10 +40,13 @@
 		<item value="org.eclipse.wst.xml_ui.feature:3.12.0.v201811192212"/>
 		<item value="org.eclipse.wst.xsl.feature:1.3.500.v201805022145"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
 	<section name="NewWizardAction">
 		<item value="com.nxp.mcuxpresso.datamodels.wizards.SDKWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.cdt.ui.newCWizards"/>
+			<item value="com.nxp.mcuxpresso.sdk.wizard"/>
 		</list>
 	</section>
 </section>

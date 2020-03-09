@@ -16,10 +16,10 @@
 
 typedef struct
 {
-	uint32_t RESERVED_1 : 6;
+	uint32_t : 6;
 	uint32_t VALUE : 10;
 	uint32_t BIAS : 1;
-	uint32_t RESERVED_2 : 16;
+	uint32_t : 16;
 }DAC_CR_reg_t;
 
 typedef struct
@@ -28,13 +28,13 @@ typedef struct
 	uint32_t DBLBUF_ENA : 1;
 	uint32_t CNT_ENA : 1;
 	uint32_t DMA_ENA : 1;
-	uint32_t RESERVED_1 : 28;
+	uint32_t : 28;
 }DAC_CTRL_reg_t;
 
 typedef struct
 {
 	uint32_t VALUE : 16;
-	uint32_t RESERVED_1 : 16;
+	uint32_t : 16;
 }DAC_CNTVAL_reg_t;
 
 typedef struct

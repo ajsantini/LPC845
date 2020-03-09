@@ -16,7 +16,7 @@
 typedef struct
 {
 	uint8_t PBYTE : 1;
-	uint8_t RESERVED : 7;
+	uint8_t : 7;
 }GPIO_B_reg_t;
 
 typedef struct
@@ -130,7 +130,7 @@ typedef struct
 	GPIO_B_reg_t B51;
 	GPIO_B_reg_t B52;
 	GPIO_B_reg_t B53;
-	uint8_t RESERVED_1[0xFCA];
+	const uint8_t RESERVED_1[0xFCA];
 	GPIO_W_reg_t W0;
 	GPIO_W_reg_t W1;
 	GPIO_W_reg_t W2;
@@ -185,33 +185,33 @@ typedef struct
 	GPIO_W_reg_t W51;
 	GPIO_W_reg_t W52;
 	GPIO_W_reg_t W53;
-	uint8_t RESERVED_2[0xF28];
+	const uint8_t RESERVED_2[0xF28];
 	GPIO_DIR_reg_t DIR0;
 	GPIO_DIR_reg_t DIR1;
-	uint8_t RESERVED_3[0x78];
+	const uint8_t RESERVED_3[0x78];
 	GPIO_MASK_reg_t MASK0;
 	GPIO_MASK_reg_t MASK1;
-	uint8_t RESERVED_4[0x78];
+	const uint8_t RESERVED_4[0x78];
 	GPIO_PIN_reg_t PIN0;
 	GPIO_PIN_reg_t PIN1;
-	uint8_t RESERVED_5[0x78];
+	const uint8_t RESERVED_5[0x78];
 	GPIO_MPIN_reg_t MPIN0;
-	uint8_t RESERVED_6[0x79];
+	const uint8_t RESERVED_6[0x79];
 	GPIO_SET_reg_t SET0;
 	GPIO_SET_reg_t SET1;
-	uint8_t RESERVED_7[0x78];
+	const uint8_t RESERVED_7[0x78];
 	GPIO_CLR_reg_t CLR0;
 	GPIO_CLR_reg_t CLR1;
-	uint8_t RESERVED_8[0x78];
+	const uint8_t RESERVED_8[0x78];
 	GPIO_NOT_reg_t NOT0;
 	GPIO_NOT_reg_t NOT1;
-	uint8_t RESERVED_9[0x78];
+	const uint8_t RESERVED_9[0x78];
 	GPIO_DIRSET_reg_t DIRSET0;
 	GPIO_DIRSET_reg_t DIRSET1;
-	uint8_t RESERVED_10[0x78];
+	const uint8_t RESERVED_10[0x78];
 	GPIO_DIRCLR_reg_t DIRCLR0;
 	GPIO_DIRCLR_reg_t DIRCLR1;
-	uint8_t RESERVED_11[0x78];
+	const uint8_t RESERVED_11[0x78];
 	GPIO_DIRNOT_reg_t DIRNOT0;
 	GPIO_DIRNOT_reg_t DIRNOT1;
 }GPIO_per_t;
