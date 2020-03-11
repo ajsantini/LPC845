@@ -34,20 +34,20 @@ typedef enum
 	UART_DATALEN_7BIT = 0,
 	UART_DATALEN_8BIT,
 	UART_DATALEN_9BIT
-}UART_datalen_en;
+}__attribute__((packed)) UART_datalen_en;
 
 typedef enum
 {
 	UART_PARITY_NO_PARITY = 0,
 	UART_PARITY_EVEN = 2,
 	UART_PARITY_ODD
-}UART_parity_en;
+}__attribute__((packed)) UART_parity_en;
 
 typedef enum
 {
 	UART_STOPLEN_1BIT = 0,
 	UART_STOPLEN_2BIT
-}UART_stop_en;
+}__attribute__((packed)) UART_stop_en;
 
 typedef enum
 {
@@ -63,7 +63,7 @@ typedef enum
 	UART_OVERSAMPLING_X14,
 	UART_OVERSAMPLING_X15,
 	UART_OVERSAMPLING_X16,
-}UART_oversampling_en;
+}__attribute__((packed)) UART_oversampling_en;
 
 typedef struct
 {
@@ -87,7 +87,7 @@ typedef struct
  * @param[in] config Puntero a configuracion de la UART.
  * @return Estado de la inicializacion de la UART.
  */
-int32_t UART_init(uint8_t uart_selection, const UART_config_t * const config);
+int32_t UART_init(uint8_t uart_selection, const UART_config_t * config);
 
 /**
  * @brief Transmitir un dato mediante la UART.

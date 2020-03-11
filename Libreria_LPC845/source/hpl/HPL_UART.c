@@ -67,7 +67,7 @@ void UART_register_tx_callback(uint32_t uart_selection, void (*new_callback)(voi
  * @param[in] config Puntero a configuracion de la UART.
  * @return Estado de la inicializacion de la UART.
  */
-int32_t UART_init(uint8_t uart_selection, const UART_config_t * const config)
+int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 {
 	uint32_t aux;
 

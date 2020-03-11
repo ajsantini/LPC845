@@ -1,0 +1,12 @@
+HPL_CTIMER.c:44:6:CTIMER_init	16	static
+HPL_CTIMER.c:61:6:CTIMER_stop	8	static
+HPL_CTIMER.c:70:6:CTIMER_run	8	static
+HPL_CTIMER.c:82:6:CTIMER_config_mr	16	static
+HPL_CTIMER.c:150:6:CTIMER_update_mr_value	16	static
+HPL_CTIMER.c:191:6:CTIMER_update_mr_value_on_finish	16	static
+HPL_CTIMER.c:232:6:CTIMER_config_cc	16	static
+HPL_CTIMER.c:287:6:CTIMER_config_ctcr	16	static
+HPL_CTIMER.c:300:6:CTIMER_config_emr	16	static
+HPL_CTIMER.c:375:6:CTIMER_enable_pwm	16	static
+HPL_CTIMER.c:412:6:CTIMER_disable_pwm	16	static
+HPL_CTIMER.c:449:6:CTIMER0_IRQHandler	8	static
