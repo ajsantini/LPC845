@@ -136,17 +136,20 @@ void SYSCON_set_system_clock_source(system_clock_selection_en clock_selection)
 		}
 		}
 
+		SYSCON->MAINCLKSEL.SEL = clock_selection;
+		SYSCON->MAINCLKUEN.ENA = 0;
+		SYSCON->MAINCLKUEN.ENA = 1;
+
 		SYSCON->MAINCLKPLLSEL.SEL = MAINCLKPLLSEL_PRE_PLL;
+		SYSCON->MAINCLKPLLUEN.ENA = 0;
 		SYSCON->MAINCLKPLLUEN.ENA = 1;
 	}
 	else
 	{
 		current_system_clock = &current_pll_clock;
 
-		SYSCON->MAINCLKSEL.SEL = clock_selection;
-		SYSCON->MAINCLKUEN.ENA = 1;
-
 		SYSCON->MAINCLKPLLSEL.SEL = MAINCLKPLLSEL_SYS_PLL;
+		SYSCON->MAINCLKPLLUEN.ENA = 0;
 		SYSCON->MAINCLKPLLUEN.ENA = 1;
 	}
 }
@@ -239,6 +242,7 @@ void SYSCON_set_ext_in_clock(uint32_t ext_clk_frequency)
 void SYSCON_set_fro_direct(void)
 {
 	SYSCON->FROOSCCTRL.FRO_DIRECT = 1;
+	SYSCON->FRODIRECTCLKUEN.ENA = 0;
 	SYSCON->FRODIRECTCLKUEN.ENA = 1;
 
 	#warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
@@ -251,6 +255,7 @@ void SYSCON_set_fro_direct(void)
 void SYSCON_clear_fro_direct(void)
 {
 	SYSCON->FROOSCCTRL.FRO_DIRECT = 0;
+	SYSCON->FRODIRECTCLKUEN.ENA = 0;
 	SYSCON->FRODIRECTCLKUEN.ENA = 1;
 
 	#warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM

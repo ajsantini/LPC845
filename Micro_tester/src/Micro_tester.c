@@ -56,6 +56,8 @@
 #define		CTIMER_PORT			0
 #define		CTIMER_PIN			19
 
+#define		CTIMER_PRESCALER	23
+
 static void tick_callback(void);
 
 static void adc_callback(void);
@@ -105,7 +107,7 @@ static const CTIMER_MR_config_t mr_config_1 =
 
 static const CTIMER_EMR_config_t emr_config =
 {
-	.EMC = CTIMER_EMC_CONFIG_TOGGLE,
+	.EMC = CTIMER_EMC_CONFIG_DO_NOTHING,
 	.mat_enable = 1,
 	.mat_port = CTIMER_PORT,
 	.mat_pin = CTIMER_PIN
@@ -116,15 +118,13 @@ static uint32_t adc_conversion = 0;
 
 int main(void)
 {
-	SYSCON_set_crystal_clock(12e6);
-	SYSCON_set_ext_clock_source(EXT_CLOCK_SOURCE_SELECTION_CRYSTAL);
-	SYSCON_set_PLL(PLL_SOURCE_EXT_OSC, 2);
-	SYSCON_set_system_clock_source(SYSTEM_CLOCK_SEL_PLL);
+	SYSCON_set_fro_direct(); // FRO sin divisor previo (FRO = 24MHz)
+	SYSCON_set_system_clock_source(SYSTEM_CLOCK_SEL_FRO);
 
 	// Clock principal en un pin (utilizando un divisor)
 	SYSCON_set_clkout_config(CLKOUT_SOURCE_SELECTION_MAIN_CLOCK, CLOCKOUT_DIVIDER, CLOCKOUT_PORT, CLOCKOUT_PIN);
 
-	// Hasta aca queda el clock configurado con un cristal externo de 12MHz, elevado a 24MHz
+	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
 	// Como fuente utilizo el PLL a 24MHz ya configurado
@@ -140,7 +140,7 @@ int main(void)
 
 	UART_init(UART_NUMBER, &uart_config);
 
-	CTIMER_init(23);
+	CTIMER_init(CTIMER_PRESCALER);
 
 	CTIMER_config_ctcr((CTIMER_CTCR_config_t *) &ctcr_config);
 
