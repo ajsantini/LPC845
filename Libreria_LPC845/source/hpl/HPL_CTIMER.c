@@ -79,7 +79,7 @@ void CTIMER_run(void)
  * @param mr_number Numero de match a configurar
  * @param mr_config Configuracion de los match registers
  */
-void CTIMER_config_mr(uint8_t mr_number, CTIMER_MR_config_t *mr_config)
+void CTIMER_config_mr(uint8_t mr_number, const CTIMER_MR_config_t *mr_config)
 {
 	match_callbacks[mr_number] = mr_config->match_callback;
 
@@ -229,7 +229,7 @@ void CTIMER_update_mr_value_on_finish(uint8_t mr_number, uint32_t mr_value)
  * @param cc_number Numero de capture a configurar
  * @param cc_config Configuracion de los capture registers
  */
-void CTIMER_config_cc(uint8_t cc_number, CTIMER_CC_config_t *cc_config)
+void CTIMER_config_cc(uint8_t cc_number, const CTIMER_CC_config_t *cc_config)
 {
 	capture_callbacks[cc_number] = cc_config->capture_callback;
 
@@ -284,7 +284,7 @@ void CTIMER_config_cc(uint8_t cc_number, CTIMER_CC_config_t *cc_config)
  * @brief Configuracion de los registros del CTIMER correspnodientes al control del conteo
  * @param cc_config Configuracion de los capture registers
  */
-void CTIMER_config_ctcr(CTIMER_CTCR_config_t *ctcr_config)
+void CTIMER_config_ctcr(const CTIMER_CTCR_config_t *ctcr_config)
 {
 	CTIMER->CTCR.CTMODE = ctcr_config->CTMODE;
 	CTIMER->CTCR.CINSEL = ctcr_config->CINSEL;
@@ -297,7 +297,7 @@ void CTIMER_config_ctcr(CTIMER_CTCR_config_t *ctcr_config)
  * @param emc_number Numero de EMC a configurar
  * @param emc_config Configuracion del external match control register
  */
-void CTIMER_config_emr(uint8_t emr_number, CTIMER_EMR_config_t *emr_config)
+void CTIMER_config_emr(uint8_t emr_number, const CTIMER_EMR_config_t *emr_config)
 {
 	switch(emr_number)
 	{

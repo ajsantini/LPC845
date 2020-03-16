@@ -142,12 +142,12 @@ int main(void)
 
 	CTIMER_init(CTIMER_PRESCALER);
 
-	CTIMER_config_ctcr((CTIMER_CTCR_config_t *) &ctcr_config);
+	CTIMER_config_ctcr(&ctcr_config);
 
-	CTIMER_config_mr(0, (CTIMER_MR_config_t *) &mr_config_0);
-	CTIMER_config_mr(3, (CTIMER_MR_config_t *) &mr_config_1);
+	CTIMER_config_mr(0, &mr_config_0);
+	CTIMER_config_mr(3, &mr_config_1);
 
-	CTIMER_config_emr(0, (CTIMER_EMR_config_t *) &emr_config);
+	CTIMER_config_emr(0, &emr_config);
 
 	CTIMER_enable_pwm(0);
 
