@@ -3001,3 +3001,30 @@ arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test
 17:52:33 **** Incremental Build of configuration Debug for project Test_serial ****
 make -r -j4 all 
 make: Nothing to be done for 'all'.
+17:57:36 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:57:37 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=1 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        7016 B        64 KB     10.71%
+        RamLoc16:         272 B        16 KB      1.66%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   7004	     12	    260	   7276	   1c6c	Test_serial.axf
+ 
+17:57:53 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.

@@ -9993,3 +9993,12 @@ Caused by: java.lang.Exception: Unable to read memory.
 
 !ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:52:37.597
 !MESSAGE Telnet session connected on port 3331->41458 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:57:52.032
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:57:52.032
+!MESSAGE RedlinkServer telnet session connected on port 3025->34346 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:57:56.993
+!MESSAGE Telnet session connected on port 3331->41482 @ 127.0.0.1

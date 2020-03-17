@@ -1,3 +1,18 @@
+/**
+ * Descripcion del programa, simplemente utilizando el stick.
+ *
+ * El programa envia una trama constante ("Hola\n") por el puerto serie propio del debugger.
+ *
+ * En mi PC, estando en Ubuntu, el mismo aparece como el dispositivo "ttyACM0", en Windows probablemente
+ * habria que chequear que "COMn" aparece.
+ * Si el programa recibe cualquier caracter luego de haber enviado la trama constante, enciende el
+ * LED verde del stick durante un segundo, mientras que si no recibe nada durante 1 segundo entero
+ * luego de haber terminado de enviar la trama constante, encendera el LED rojo durante 2 segundos
+ * y medio. Durante el proceso de envio de la trama constante, se enciende el LED azul.
+ *
+ * El proceso se repite indefinidamente.
+ */
+
 #include <HPL_UART.h>
 #include <HPL_SYSCON.h>
 #include <HPL_SYSTICK.h>
@@ -107,6 +122,7 @@ int main(void)
 			{
 				clear_led(LED_BLUE);
 				timeout_counter_ms = TIMEOUT_TIME_MS;
+				flag_msg_received = 0;
 				state = STATE_WAITING_ANS;
 			}
 
