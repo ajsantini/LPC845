@@ -13,15 +13,16 @@
 //! Seleccion de sensores posibles
 typedef enum
 {
-	SENSOR_1 = 0,
-	SENSOR_2
-}sensor_number_selection_en;
+	SENSOR_TOPE_1 = 0,
+	SENSOR_TOPE_2
+}sensor_tope_selection_en;
 
+//! Seleccion de zona de los sensores
 typedef enum
 {
-	SENSOR_ABIERTO = 0,
-	SENSOR_CERRADO
-}sensor_zone_selection_en;
+	SENSOR_TOPE_PUENTE_ABIERTO = 0,
+	SENSOR_TOPE_PUENTE_CERRADO
+}sensor_tope_zona_en;
 
 /*!
  * @brief Inicializacion de los pines de los sensores de tope
@@ -34,7 +35,7 @@ void sensores_tope_init_pins(void);
  * @param zona Seleccion de sensor abierto o cerrado
  * @return En caso de estar accionado devuelve 1, caso contrario devuelve 0
  */
-uint8_t sensores_tope_get_state(sensor_number_selection_en sensor, sensor_zone_selection_en zona);
+uint8_t sensores_tope_get_state(sensor_tope_selection_en sensor, sensor_tope_zona_en zona);
 
 /*!
  * @brief Revision del estado de los sensores. Llamar cada 1mseg

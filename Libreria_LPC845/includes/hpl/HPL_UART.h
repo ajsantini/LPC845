@@ -10,6 +10,7 @@
 #define HPL_UART_H_
 
 #include <stdint.h>
+#include <stdio.h>
 #include <HPL_SYSCON.h>
 
 #define	UART_INIT_SUCCESS			0

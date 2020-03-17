@@ -9612,3 +9612,384 @@ java.lang.Exception: Selected thread is running.
 
 !ENTRY org.eclipse.jface.text 2 0 2020-03-16 17:24:29.698
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-17 16:55:06.208
+!MESSAGE Indexed 'Test_serial' (1 sources, 0 headers) in 0.083 sec: 121 declarations; 131 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-17 16:56:17.691
+!MESSAGE Indexed 'Test_serial' (4 sources, 2 headers) in 0.032 sec: 125 declarations; 140 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:23:43.299
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:23:43.301
+!MESSAGE RedlinkServer telnet session connected on port 3025->33572 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:23:51.239
+!MESSAGE Telnet session connected on port 3331->40708 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-17 17:24:13.225
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@410cfe4): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2020-03-17 17:24:13.225
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:24:36.400
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:24:36.402
+!MESSAGE RedlinkServer telnet session connected on port 3025->33582 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:24:41.072
+!MESSAGE Telnet session connected on port 3331->40718 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-17 17:25:18.748
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@707eb186): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2020-03-17 17:25:18.748
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:28:17.565
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:28:17.566
+!MESSAGE RedlinkServer telnet session connected on port 3025->33594 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:28:22.499
+!MESSAGE Telnet session connected on port 3331->40730 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:31:11.553
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:31:11.554
+!MESSAGE RedlinkServer telnet session connected on port 3025->33764 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:31:16.664
+!MESSAGE Telnet session connected on port 3331->40900 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:32:20.266
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:32:20.267
+!MESSAGE RedlinkServer telnet session connected on port 3025->33776 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:32:27.614
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:32:27.616
+!MESSAGE RedlinkServer telnet session connected on port 3025->33778 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:32:28.698
+!MESSAGE Telnet session connected on port 3331->40914 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:38:30.268
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:38:30.269
+!MESSAGE RedlinkServer telnet session connected on port 3025->34118 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 0 2020-03-17 17:38:35.303
+!MESSAGE Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=37865 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+
+!ENTRY com.crt.dsfdebug 4 0 2020-03-17 17:38:35.566
+!MESSAGE 02: Failed on connect: Ee(D0). Could not connect to server
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:38:35.566
+!MESSAGE 02: Failed on connect: Ee(D0). Could not connect to server
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:38:35.566
+!MESSAGE 31: No connection to chip's debug port
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:38:35.566
+!MESSAGE Debugging context: Test_serial LinkServer Debug
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:38:35.773
+!MESSAGE Stream is null in null
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-17 17:38:36.667
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.service.GDBRunControl_7_0_NS$16@3210f30a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Connection is shut down null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2020-03-17 17:38:36.667
+!MESSAGE Connection is shut down
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:38:37.128
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:38:42.133
+!MESSAGE RedlinkServer telnet session connected on port 3025->34260 @ 127.0.0.1
+
+!ENTRY com.crt.debugcommon 4 0 2020-03-17 17:38:42.135
+!MESSAGE Unable to parse ProbeList output to get probe ref count: []
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2020-03-17 17:38:42.146
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=37865 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=37865 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:242)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at com.crt.dsfdebug.dsf.override.CRTGdbLaunchDelegate.launch(CRTGdbLaunchDelegate.java:147)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 0 2020-03-17 17:38:42.147
+!MESSAGE Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=37865 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+
+!ENTRY com.crt.log 4 -1 2020-03-17 17:38:42.171
+!MESSAGE Exception
+!STACK 0
+java.lang.Exception: java.lang.NullPointerException
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.crt.dsfdebug.dsf.services.MCXTelnetService$2.run(MCXTelnetService.java:385)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.NullPointerException
+	at com.crt.dsfdebug.dsf.services.MCXTelnetService$2.run(MCXTelnetService.java:383)
+	... 1 more
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:38:45.102
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:38:45.103
+!MESSAGE RedlinkServer telnet session connected on port 3025->34262 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2020-03-17 17:38:49.257
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36235 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36235 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:242)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at com.crt.dsfdebug.dsf.override.CRTGdbLaunchDelegate.launch(CRTGdbLaunchDelegate.java:147)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 0 2020-03-17 17:38:49.257
+!MESSAGE Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36235 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 0 2020-03-17 17:38:49.260
+!MESSAGE Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36235 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+
+!ENTRY com.crt.dsfdebug 4 0 2020-03-17 17:38:49.642
+!MESSAGE 02: Failed on connect: Ee(D0). Could not connect to server
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:38:49.642
+!MESSAGE 02: Failed on connect: Ee(D0). Could not connect to server
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:38:49.642
+!MESSAGE 31: No connection to chip's debug port
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:38:49.642
+!MESSAGE Debugging context: Test_serial LinkServer Debug
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:38:49.790
+!MESSAGE Stream is null in null
+
+!ENTRY com.crt.log 4 -1 2020-03-17 17:38:49.847
+!MESSAGE Exception
+!STACK 0
+java.lang.Exception: java.lang.NullPointerException
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.crt.dsfdebug.dsf.services.MCXTelnetService$2.run(MCXTelnetService.java:385)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.NullPointerException
+	at com.crt.dsfdebug.dsf.services.MCXTelnetService$2.run(MCXTelnetService.java:382)
+	... 1 more
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-17 17:38:50.660
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.service.GDBRunControl_7_0_NS$16@1809837e): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Connection is shut down null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2020-03-17 17:38:50.660
+!MESSAGE Connection is shut down
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:39:00.580
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:39:00.581
+!MESSAGE RedlinkServer telnet session connected on port 3025->34270 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:39:05.647
+!MESSAGE Telnet session connected on port 3331->41406 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:42:58.691
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:42:58.692
+!MESSAGE RedlinkServer telnet session connected on port 3025->34288 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2020-03-17 17:43:02.412
+!MESSAGE Error in final launch sequence:
+
+Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36775 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36775 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:242)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at com.crt.dsfdebug.dsf.override.CRTGdbLaunchDelegate.launch(CRTGdbLaunchDelegate.java:147)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:862)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:720)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1029)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 0 2020-03-17 17:43:02.412
+!MESSAGE Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36775 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 0 2020-03-17 17:43:02.498
+!MESSAGE Failed to execute MI command:
+-target-select extended-remote | crt_emu_cm_redlink -msg-port=36775 -g -mi -2 -pLPC845 -vendor=NXP -vc   --reset= -ProbeHandle=1 -CoreIndex=0 --flash-driver LPC84x_64.cfx --telnet 3331
+Error message from debugger back end:
+Remote communication error.  Target disconnected.: Connection reset by peer.
+
+!ENTRY com.crt.dsfdebug 4 0 2020-03-17 17:43:02.895
+!MESSAGE 02: Failed on connect: Ee(D0). Could not connect to server
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:43:02.895
+!MESSAGE 02: Failed on connect: Ee(D0). Could not connect to server
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:43:02.895
+!MESSAGE 31: No connection to chip's debug port
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2020-03-17 17:43:02.895
+!MESSAGE Debugging context: Test_serial LinkServer Debug
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:43:03.062
+!MESSAGE Stream is null in null
+
+!ENTRY com.crt.log 4 -1 2020-03-17 17:43:03.219
+!MESSAGE Exception
+!STACK 0
+java.lang.Exception: java.lang.NullPointerException
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.crt.dsfdebug.dsf.services.MCXTelnetService$2.run(MCXTelnetService.java:385)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.NullPointerException
+	at com.crt.dsfdebug.dsf.services.MCXTelnetService$2.run(MCXTelnetService.java:382)
+	... 1 more
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-17 17:43:05.688
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.service.GDBRunControl_7_0_NS$16@170b4472): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Connection is shut down null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2020-03-17 17:43:05.688
+!MESSAGE Connection is shut down
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:43:15.405
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:43:15.407
+!MESSAGE RedlinkServer telnet session connected on port 3025->34296 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:43:20.162
+!MESSAGE Telnet session connected on port 3331->41432 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:44:30.505
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:44:30.506
+!MESSAGE RedlinkServer telnet session connected on port 3025->34306 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:44:35.280
+!MESSAGE Telnet session connected on port 3331->41442 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-17 17:50:47.468
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@24eeab2d): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2020-03-17 17:50:47.469
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 4 -1 2020-03-17 17:50:47.983
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1074151424 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1074151424 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 4 -1 2020-03-17 17:50:47.985
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1074151424 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1074151424 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 1 0 2020-03-17 17:52:32.746
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-17 17:52:32.748
+!MESSAGE RedlinkServer telnet session connected on port 3025->34322 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-17 17:52:37.597
+!MESSAGE Telnet session connected on port 3331->41458 @ 127.0.0.1

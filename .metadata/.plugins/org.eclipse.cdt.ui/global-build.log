@@ -2168,3 +2168,836 @@ arm-none-eabi-size "Puente_levadizo.axf"; # arm-none-eabi-objcopy -v -O binary "
    text	   data	    bss	    dec	    hex	filename
    6520	     16	     48	   6584	   19b8	Puente_levadizo.axf
  
+17:29:11 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:29:12 **** Incremental Build of configuration Debug for project Puente_levadizo ****
+make -r -j4 all 
+Building file: ../src/Puente_levadizo.c
+Building file: ../Modulos/sensores_tope.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Puente_levadizo.d" -MT"src/Puente_levadizo.o" -MT"src/Puente_levadizo.d" -o "src/Puente_levadizo.o" "../src/Puente_levadizo.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"Modulos/sensores_tope.d" -MT"Modulos/sensores_tope.o" -MT"Modulos/sensores_tope.d" -o "Modulos/sensores_tope.o" "../Modulos/sensores_tope.c"
+Finished building: ../src/Puente_levadizo.c
+ 
+Finished building: ../Modulos/sensores_tope.c
+ 
+Building target: Puente_levadizo.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Puente_levadizo.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Puente_levadizo_Debug.ld" -o "Puente_levadizo.axf"  ./src/Puente_levadizo.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o  ./Modulos/motores.o ./Modulos/semaforos.o ./Modulos/sensores_presencia.o ./Modulos/sensores_tope.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        6536 B        64 KB      9.97%
+        RamLoc16:          64 B        16 KB      0.39%
+Finished building target: Puente_levadizo.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Puente_levadizo.axf"; # arm-none-eabi-objcopy -v -O binary "Puente_levadizo.axf" "Puente_levadizo.bin" ; # checksum -p LPC845 -d "Puente_levadizo.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6520	     16	     48	   6584	   19b8	Puente_levadizo.axf
+ 
+17:42:02 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:42:02 **** Incremental Build of configuration Debug for project Puente_levadizo ****
+make -r -j4 all 
+Building file: ../src/Puente_levadizo.c
+Building file: ../Modulos/sensores_presencia.c
+Building file: ../Modulos/sensores_tope.c
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Puente_levadizo.d" -MT"src/Puente_levadizo.o" -MT"src/Puente_levadizo.d" -o "src/Puente_levadizo.o" "../src/Puente_levadizo.c"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"Modulos/sensores_presencia.d" -MT"Modulos/sensores_presencia.o" -MT"Modulos/sensores_presencia.d" -o "Modulos/sensores_presencia.o" "../Modulos/sensores_presencia.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"Modulos/sensores_tope.d" -MT"Modulos/sensores_tope.o" -MT"Modulos/sensores_tope.d" -o "Modulos/sensores_tope.o" "../Modulos/sensores_tope.c"
+In file included from ../Modulos/sensores_presencia.c:8:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos/sensores_presencia.h:30:38: error: unknown type name 'sensor_tope_selection_en'; did you mean 'sensor_presencia_selection_en'?
+Modulos/subdir.mk:27: recipe for target 'Modulos/sensores_presencia.o' failed
+ uint8_t sensores_presencia_get_state(sensor_tope_selection_en sensor);
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~
+                                      sensor_presencia_selection_en
+../Modulos/sensores_presencia.c: In function 'sensores_presencia_init_pins':
+../Modulos/sensores_presencia.c:35:2: error: unknown type name 'IOCON_config_t'
+  IOCON_config_t pin_config =
+src/subdir.mk:31: recipe for target 'src/Puente_levadizo.o' failed
+  ^~~~~~~~~~~~~~
+../Modulos/sensores_presencia.c:37:3: error: field name not in record or union initializer
+   .mode = PULL_NONE,
+   ^
+../Modulos/sensores_presencia.c:37:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:37:11: error: 'PULL_NONE' undeclared (first use in this function)
+   .mode = PULL_NONE,
+           ^~~~~~~~~
+../Modulos/sensores_presencia.c:37:11: note: each undeclared identifier is reported only once for each function it appears in
+../Modulos/sensores_presencia.c:38:3: error: field name not in record or union initializer
+   .hysteresis = 0,
+   ^
+../Modulos/sensores_presencia.c:38:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:38:17: warning: excess elements in scalar initializer
+   .hysteresis = 0,
+                 ^
+../Modulos/sensores_presencia.c:38:17: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:39:3: error: field name not in record or union initializer
+   .invert_input = 1,
+   ^
+../Modulos/sensores_presencia.c:39:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:39:19: warning: excess elements in scalar initializer
+   .invert_input = 1,
+                   ^
+../Modulos/sensores_presencia.c:39:19: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:40:3: error: field name not in record or union initializer
+   .open_drain = 0,
+   ^
+../Modulos/sensores_presencia.c:40:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:40:17: warning: excess elements in scalar initializer
+   .open_drain = 0,
+                 ^
+../Modulos/sensores_presencia.c:40:17: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:41:3: error: field name not in record or union initializer
+   .sample_mode = SAMPLE_MODE_BYPASS,
+   ^
+../Modulos/sensores_presencia.c:41:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:41:18: error: 'SAMPLE_MODE_BYPASS' undeclared (first use in this function)
+   .sample_mode = SAMPLE_MODE_BYPASS,
+                  ^~~~~~~~~~~~~~~~~~
+../Modulos/sensores_presencia.c:41:18: warning: excess elements in scalar initializer
+../Modulos/sensores_presencia.c:41:18: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:42:3: error: field name not in record or union initializer
+   .clk_sel = IOCON_CLK_DIV_0,
+   ^
+../Modulos/sensores_presencia.c:42:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:42:14: error: 'IOCON_CLK_DIV_0' undeclared (first use in this function)
+   .clk_sel = IOCON_CLK_DIV_0,
+              ^~~~~~~~~~~~~~~
+../Modulos/sensores_presencia.c:42:14: warning: excess elements in scalar initializer
+../Modulos/sensores_presencia.c:42:14: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:43:3: error: field name not in record or union initializer
+   .dac_mode = 0,
+   ^
+../Modulos/sensores_presencia.c:43:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:43:15: warning: excess elements in scalar initializer
+   .dac_mode = 0,
+               ^
+../Modulos/sensores_presencia.c:43:15: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:35:17: warning: unused variable 'pin_config' [-Wunused-variable]
+  IOCON_config_t pin_config =
+                 ^~~~~~~~~~
+../Modulos/sensores_presencia.c: At top level:
+../Modulos/sensores_presencia.c:59:38: error: unknown type name 'sensor_tope_selection_en'; did you mean 'sensor_presencia_selection_en'?
+ uint8_t sensores_presencia_get_state(sensor_tope_selection_en sensor)
+                                      ^~~~~~~~~~~~~~~~~~~~~~~~
+                                      sensor_presencia_selection_en
+../Modulos/sensores_presencia.c: In function 'sensores_presencia_check':
+../Modulos/sensores_presencia.c:96:8: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if(sensores_presencia_bounces[i] = 0)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Modulos/sensores_presencia.o] Error 1
+make: *** Waiting for unfinished jobs....
+../src/Puente_levadizo.c: In function 'main':
+../src/Puente_levadizo.c:51:46: error: 'SENSOR_TOPE_ABIERTO' undeclared (first use in this function); did you mean 'SENSOR_TOPE_PUENTE_ABIERTO'?
+    if(sensores_tope_get_state(SENSOR_TOPE_1, SENSOR_TOPE_ABIERTO))
+                                              ^~~~~~~~~~~~~~~~~~~
+                                              SENSOR_TOPE_PUENTE_ABIERTO
+../src/Puente_levadizo.c:51:46: note: each undeclared identifier is reported only once for each function it appears in
+../src/Puente_levadizo.c:79:46: error: 'SENSOR_TOPE_CERRADO' undeclared (first use in this function); did you mean 'SENSOR_TOPE_PUENTE_CERRADO'?
+    if(sensores_tope_get_state(SENSOR_TOPE_1, SENSOR_TOPE_CERRADO))
+                                              ^~~~~~~~~~~~~~~~~~~
+                                              SENSOR_TOPE_PUENTE_CERRADO
+../src/Puente_levadizo.c: In function 'tick_callback':
+../src/Puente_levadizo.c:117:2: warning: implicit declaration of function 'sensores_presencia_check'; did you mean 'sensores_tope_check'? [-Wimplicit-function-declaration]
+Finished building: ../Modulos/sensores_tope.c
+  sensores_presencia_check();
+  ^~~~~~~~~~~~~~~~~~~~~~~~
+  sensores_tope_check
+make: *** [src/Puente_levadizo.o] Error 1
+ 
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+17:42:17 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:42:18 **** Incremental Build of configuration Debug for project Puente_levadizo ****
+make -r -j4 all 
+Building file: ../src/Puente_levadizo.c
+Building file: ../Modulos/sensores_presencia.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Puente_levadizo.d" -MT"src/Puente_levadizo.o" -MT"src/Puente_levadizo.d" -o "src/Puente_levadizo.o" "../src/Puente_levadizo.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"Modulos/sensores_presencia.d" -MT"Modulos/sensores_presencia.o" -MT"Modulos/sensores_presencia.d" -o "Modulos/sensores_presencia.o" "../Modulos/sensores_presencia.c"
+../Modulos/sensores_presencia.c: In function 'sensores_presencia_init_pins':
+../Modulos/sensores_presencia.c:35:2: error: unknown type name 'IOCON_config_t'
+  IOCON_config_t pin_config =
+  ^~~~~~~~~~~~~~
+../Modulos/sensores_presencia.c:37:3: error: field name not in record or union initializer
+   .mode = PULL_NONE,
+   ^
+../Modulos/sensores_presencia.c:37:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:37:11: error: 'PULL_NONE' undeclared (first use in this function)
+   .mode = PULL_NONE,
+           ^~~~~~~~~
+../Modulos/sensores_presencia.c:37:11: note: each undeclared identifier is reported only once for each function it appears in
+../Modulos/sensores_presencia.c:38:3: error: field name not in record or union initializer
+   .hysteresis = 0,
+   ^
+../Modulos/sensores_presencia.c:38:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:38:17: warning: excess elements in scalar initializer
+   .hysteresis = 0,
+                 ^
+../Modulos/sensores_presencia.c:38:17: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:39:3: error: field name not in record or union initializer
+src/subdir.mk:31: recipe for target 'src/Puente_levadizo.o' failed
+   .invert_input = 1,
+   ^
+../Modulos/sensores_presencia.c:39:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:39:19: warning: excess elements in scalar initializer
+   .invert_input = 1,
+                   ^
+../Modulos/sensores_presencia.c:39:19: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:40:3: error: field name not in record or union initializer
+   .open_drain = 0,
+   ^
+../Modulos/sensores_presencia.c:40:3: note: (near initialization for 'pin_config')
+Modulos/subdir.mk:27: recipe for target 'Modulos/sensores_presencia.o' failed
+../Modulos/sensores_presencia.c:40:17: warning: excess elements in scalar initializer
+   .open_drain = 0,
+                 ^
+../Modulos/sensores_presencia.c:40:17: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:41:3: error: field name not in record or union initializer
+   .sample_mode = SAMPLE_MODE_BYPASS,
+   ^
+../Modulos/sensores_presencia.c:41:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:41:18: error: 'SAMPLE_MODE_BYPASS' undeclared (first use in this function)
+   .sample_mode = SAMPLE_MODE_BYPASS,
+                  ^~~~~~~~~~~~~~~~~~
+../Modulos/sensores_presencia.c:41:18: warning: excess elements in scalar initializer
+../Modulos/sensores_presencia.c:41:18: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:42:3: error: field name not in record or union initializer
+   .clk_sel = IOCON_CLK_DIV_0,
+   ^
+../Modulos/sensores_presencia.c:42:3: note: (near initialization for 'pin_config')
+../src/Puente_levadizo.c: In function 'main':
+../src/Puente_levadizo.c:51:46: error: 'SENSOR_TOPE_ABIERTO' undeclared (first use in this function); did you mean 'SENSOR_TOPE_PUENTE_ABIERTO'?
+    if(sensores_tope_get_state(SENSOR_TOPE_1, SENSOR_TOPE_ABIERTO))
+                                              ^~~~~~~~~~~~~~~~~~~
+                                              SENSOR_TOPE_PUENTE_ABIERTO
+../src/Puente_levadizo.c:51:46: note: each undeclared identifier is reported only once for each function it appears in
+../src/Puente_levadizo.c:79:46: error: 'SENSOR_TOPE_CERRADO' undeclared (first use in this function); did you mean 'SENSOR_TOPE_PUENTE_CERRADO'?
+    if(sensores_tope_get_state(SENSOR_TOPE_1, SENSOR_TOPE_CERRADO))
+                                              ^~~~~~~~~~~~~~~~~~~
+                                              SENSOR_TOPE_PUENTE_CERRADO
+../src/Puente_levadizo.c: In function 'tick_callback':
+../src/Puente_levadizo.c:117:2: warning: implicit declaration of function 'sensores_presencia_check'; did you mean 'sensores_tope_check'? [-Wimplicit-function-declaration]
+  sensores_presencia_check();
+  ^~~~~~~~~~~~~~~~~~~~~~~~
+  sensores_tope_check
+make: *** [src/Puente_levadizo.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Modulos/sensores_presencia.c:42:14: error: 'IOCON_CLK_DIV_0' undeclared (first use in this function)
+   .clk_sel = IOCON_CLK_DIV_0,
+              ^~~~~~~~~~~~~~~
+../Modulos/sensores_presencia.c:42:14: warning: excess elements in scalar initializer
+../Modulos/sensores_presencia.c:42:14: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:43:3: error: field name not in record or union initializer
+   .dac_mode = 0,
+   ^
+../Modulos/sensores_presencia.c:43:3: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:43:15: warning: excess elements in scalar initializer
+   .dac_mode = 0,
+               ^
+../Modulos/sensores_presencia.c:43:15: note: (near initialization for 'pin_config')
+../Modulos/sensores_presencia.c:35:17: warning: unused variable 'pin_config' [-Wunused-variable]
+  IOCON_config_t pin_config =
+                 ^~~~~~~~~~
+../Modulos/sensores_presencia.c: In function 'sensores_presencia_check':
+../Modulos/sensores_presencia.c:96:8: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if(sensores_presencia_bounces[i] = 0)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Modulos/sensores_presencia.o] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+17:42:28 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:42:29 **** Incremental Build of configuration Debug for project Puente_levadizo ****
+make -r -j4 all 
+Building file: ../src/Puente_levadizo.c
+Building file: ../Modulos/sensores_presencia.c
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Puente_levadizo.d" -MT"src/Puente_levadizo.o" -MT"src/Puente_levadizo.d" -o "src/Puente_levadizo.o" "../src/Puente_levadizo.c"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"Modulos/sensores_presencia.d" -MT"Modulos/sensores_presencia.o" -MT"Modulos/sensores_presencia.d" -o "Modulos/sensores_presencia.o" "../Modulos/sensores_presencia.c"
+../Modulos/sensores_presencia.c: In function 'sensores_presencia_init_pins':
+../Modulos/sensores_presencia.c:36:17: warning: unused variable 'pin_config' [-Wunused-variable]
+  IOCON_config_t pin_config =
+                 ^~~~~~~~~~
+../Modulos/sensores_presencia.c: In function 'sensores_presencia_check':
+../Modulos/sensores_presencia.c:97:8: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+     if(sensores_presencia_bounces[i] = 0)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/Puente_levadizo.c: In function 'main':
+../src/Puente_levadizo.c:51:46: error: 'SENSOR_TOPE_ABIERTO' undeclared (first use in this function); did you mean 'SENSOR_TOPE_PUENTE_ABIERTO'?
+    if(sensores_tope_get_state(SENSOR_TOPE_1, SENSOR_TOPE_ABIERTO))
+                                              ^~~~~~~~~~~~~~~~~~~
+                                              SENSOR_TOPE_PUENTE_ABIERTO
+../src/Puente_levadizo.c:51:46: note: each undeclared identifier is reported only once for each function it appears in
+../src/Puente_levadizo.c:79:46: error: 'SENSOR_TOPE_CERRADO' undeclared (first use in this function); did you mean 'SENSOR_TOPE_PUENTE_CERRADO'?
+    if(sensores_tope_get_state(SENSOR_TOPE_1, SENSOR_TOPE_CERRADO))
+                                              ^~~~~~~~~~~~~~~~~~~
+                                              SENSOR_TOPE_PUENTE_CERRADO
+../src/Puente_levadizo.c: In function 'tick_callback':
+../src/Puente_levadizo.c:117:2: warning: implicit declaration of function 'sensores_presencia_check'; did you mean 'sensores_tope_check'? [-Wimplicit-function-declaration]
+  sensores_presencia_check();
+  ^~~~~~~~~~~~~~~~~~~~~~~~
+  sensores_tope_check
+make: *** [src/Puente_levadizo.o] Error 1
+src/subdir.mk:31: recipe for target 'src/Puente_levadizo.o' failed
+make: *** Waiting for unfinished jobs....
+Finished building: ../Modulos/sensores_presencia.c
+ 
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+17:42:50 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:42:50 **** Incremental Build of configuration Debug for project Puente_levadizo ****
+make -r -j4 all 
+Building file: ../src/Puente_levadizo.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Puente_levadizo.d" -MT"src/Puente_levadizo.o" -MT"src/Puente_levadizo.d" -o "src/Puente_levadizo.o" "../src/Puente_levadizo.c"
+../src/Puente_levadizo.c: In function 'tick_callback':
+../src/Puente_levadizo.c:117:2: warning: implicit declaration of function 'sensores_presencia_check'; did you mean 'sensores_tope_check'? [-Wimplicit-function-declaration]
+  sensores_presencia_check();
+  ^~~~~~~~~~~~~~~~~~~~~~~~
+  sensores_tope_check
+Finished building: ../src/Puente_levadizo.c
+ 
+Building target: Puente_levadizo.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Puente_levadizo.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Puente_levadizo_Debug.ld" -o "Puente_levadizo.axf"  ./src/Puente_levadizo.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o  ./Modulos/motores.o ./Modulos/semaforos.o ./Modulos/sensores_presencia.o ./Modulos/sensores_tope.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        6740 B        64 KB     10.28%
+        RamLoc16:          72 B        16 KB      0.44%
+Finished building target: Puente_levadizo.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Puente_levadizo.axf"; # arm-none-eabi-objcopy -v -O binary "Puente_levadizo.axf" "Puente_levadizo.bin" ; # checksum -p LPC845 -d "Puente_levadizo.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6724	     16	     56	   6796	   1a8c	Puente_levadizo.axf
+ 
+17:42:59 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:43:00 **** Incremental Build of configuration Debug for project Puente_levadizo ****
+make -r -j4 all 
+Building file: ../src/Puente_levadizo.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Puente_levadizo/Modulos" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Puente_levadizo.d" -MT"src/Puente_levadizo.o" -MT"src/Puente_levadizo.d" -o "src/Puente_levadizo.o" "../src/Puente_levadizo.c"
+Finished building: ../src/Puente_levadizo.c
+ 
+Building target: Puente_levadizo.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Puente_levadizo.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Puente_levadizo_Debug.ld" -o "Puente_levadizo.axf"  ./src/Puente_levadizo.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o  ./Modulos/motores.o ./Modulos/semaforos.o ./Modulos/sensores_presencia.o ./Modulos/sensores_tope.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        6740 B        64 KB     10.28%
+        RamLoc16:          72 B        16 KB      0.44%
+Finished building target: Puente_levadizo.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Puente_levadizo.axf"; # arm-none-eabi-objcopy -v -O binary "Puente_levadizo.axf" "Puente_levadizo.bin" ; # checksum -p LPC845 -d "Puente_levadizo.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6724	     16	     56	   6796	   1a8c	Puente_levadizo.axf
+ 
+16:57:15 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+16:57:16 **** Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Building file: ../src/aeabi_romdiv_patch.s
+Building file: ../src/cr_startup_lpc84x.c
+Building file: ../src/crp.c
+Invoking: MCU Assembler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__LPC84X__ -D__REDLIB__ -g3 -mcpu=cortex-m0 -mthumb -specs=redlib.specs -o "src/aeabi_romdiv_patch.o" "../src/aeabi_romdiv_patch.s"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc84x.d" -MT"src/cr_startup_lpc84x.o" -MT"src/cr_startup_lpc84x.d" -o "src/cr_startup_lpc84x.o" "../src/cr_startup_lpc84x.c"
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.o" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/aeabi_romdiv_patch.s
+ 
+Building file: ../src/mtb.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/mtb.d" -MT"src/mtb.o" -MT"src/mtb.d" -o "src/mtb.o" "../src/mtb.c"
+../src/Test_serial.c:16:13: warning: 'rx_callback' defined but not used [-Wunused-function]
+ static void rx_callback(void)
+             ^~~~~~~~~~~
+Finished building: ../src/crp.c
+Finished building: ../src/Test_serial.c
+ 
+ 
+Finished building: ../src/cr_startup_lpc84x.c
+ 
+Finished building: ../src/mtb.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:         504 B        64 KB      0.77%
+        RamLoc16:          0 GB        16 KB      0.00%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+    504	      0	      0	    504	    1f8	Test_serial.axf
+ 
+17:02:13 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:02:13 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+../src/Test_serial.c: In function 'main':
+../src/Test_serial.c:7:22: error: expected identifier or '(' before '=' token
+  const UART_config_t =
+                      ^
+../src/Test_serial.c:26:16: error: 'uart_config' undeclared (first use in this function); did you mean 'UART_config_t'?
+  UART_init(0, &uart_config);
+                ^~~~~~~~~~~
+                UART_config_t
+../src/Test_serial.c:26:16: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/Test_serial.c:36:13: warning: 'rx_callback' defined but not used [-Wunused-function]
+ static void rx_callback(void)
+             ^~~~~~~~~~~
+src/subdir.mk:31: recipe for target 'src/Test_serial.o' failed
+make: *** [src/Test_serial.o] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+17:02:26 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:02:27 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+../src/Test_serial.c: In function 'main':
+../src/Test_serial.c:20:24: error: 'NULL' undeclared (first use in this function)
+   .tx_ready_callback = NULL
+                        ^~~~
+../src/Test_serial.c:20:24: note: 'NULL' is defined in header '<stddef.h>'; did you forget to '#include <stddef.h>'?
+../src/Test_serial.c:2:1:
++#include <stddef.h>
+ 
+../src/Test_serial.c:20:24:
+   .tx_ready_callback = NULL
+                        ^~~~
+../src/Test_serial.c:20:24: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:31: recipe for target 'src/Test_serial.o' failed
+make: *** [src/Test_serial.o] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+17:02:56 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_UART.d" -MT"source/hpl/HPL_UART.o" -MT"source/hpl/HPL_UART.d" -o "source/hpl/HPL_UART.o" "../source/hpl/HPL_UART.c"
+Finished building: ../source/hpl/HPL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1048	      0	     52	   1100	    44c	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1432	      0	      4	   1436	    59c	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2330	      0	     40	   2370	    942	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+17:02:57 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        3056 B        64 KB      4.66%
+        RamLoc16:          76 B        16 KB      0.46%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   3044	     12	     64	   3120	    c30	Test_serial.axf
+ 
+17:23:13 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:23:14 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+../src/Test_serial.c: In function 'main':
+../src/Test_serial.c:84:2: error: too few arguments to function 'SYSTICK_init'
+  SYSTICK_init(TICK_TIME_US);
+  ^~~~~~~~~~~~
+In file included from ../src/Test_serial.c:3:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSTICK.h:19:6: note: declared here
+ void SYSTICK_init(uint32_t tick_us, void (*systick_hook)(void));
+      ^~~~~~~~~~~~
+At top level:
+../src/Test_serial.c:186:13: warning: 'tick_callback' defined but not used [-Wunused-function]
+ static void tick_callback(void)
+             ^~~~~~~~~~~~~
+src/subdir.mk:31: recipe for target 'src/Test_serial.o' failed
+make: *** [src/Test_serial.o] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+17:23:27 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:23:27 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        5472 B        64 KB      8.35%
+        RamLoc16:          88 B        16 KB      0.54%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   5460	     12	     76	   5548	   15ac	Test_serial.axf
+ 
+17:23:47 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:24:24 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:24:25 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        5472 B        64 KB      8.35%
+        RamLoc16:          88 B        16 KB      0.54%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   5460	     12	     76	   5548	   15ac	Test_serial.axf
+ 
+17:24:37 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:27:14 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:27:15 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        5528 B        64 KB      8.44%
+        RamLoc16:          88 B        16 KB      0.54%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   5516	     12	     76	   5604	   15e4	Test_serial.axf
+ 
+17:28:07 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:28:08 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        5556 B        64 KB      8.48%
+        RamLoc16:          88 B        16 KB      0.54%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   5544	     12	     76	   5632	   1600	Test_serial.axf
+ 
+17:28:18 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:31:12 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:32:21 **** Clean-only build of configuration Debug for project Test_serial ****
+make -r -j4 clean 
+rm -rf  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o  ./src/Test_serial.d ./src/cr_startup_lpc84x.d ./src/crp.d ./src/mtb.d  Test_serial.axf
+ 
+17:32:21 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Building file: ../src/aeabi_romdiv_patch.s
+Building file: ../src/crp.c
+Building file: ../src/cr_startup_lpc84x.c
+Invoking: MCU C Compiler
+Invoking: MCU Assembler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=0 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__LPC84X__ -D__REDLIB__ -g3 -mcpu=cortex-m0 -mthumb -specs=redlib.specs -o "src/aeabi_romdiv_patch.o" "../src/aeabi_romdiv_patch.s"
+Invoking: MCU C Compiler
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=0 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.o" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=0 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc84x.d" -MT"src/cr_startup_lpc84x.o" -MT"src/cr_startup_lpc84x.d" -o "src/cr_startup_lpc84x.o" "../src/cr_startup_lpc84x.c"
+Finished building: ../src/aeabi_romdiv_patch.s
+ 
+Building file: ../src/mtb.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=0 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/mtb.d" -MT"src/mtb.o" -MT"src/mtb.d" -o "src/mtb.o" "../src/mtb.c"
+Finished building: ../src/crp.c
+ 
+Finished building: ../src/cr_startup_lpc84x.c
+Finished building: ../src/Test_serial.c
+ 
+ 
+Finished building: ../src/mtb.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        6968 B        64 KB     10.63%
+        RamLoc16:         272 B        16 KB      1.66%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6956	     12	    260	   7228	   1c3c	Test_serial.axf
+ 
+17:38:31 **** Clean-only build of configuration Debug for project Test_serial ****
+make -r -j4 clean 
+rm -rf  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o  ./src/Test_serial.d ./src/cr_startup_lpc84x.d ./src/crp.d ./src/mtb.d  Test_serial.axf
+ 
+17:38:32 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Building file: ../src/aeabi_romdiv_patch.s
+Building file: ../src/cr_startup_lpc84x.c
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__LPC84X__ -D__REDLIB__ -g3 -mcpu=cortex-m0 -mthumb -specs=redlib.specs -o "src/aeabi_romdiv_patch.o" "../src/aeabi_romdiv_patch.s"
+Building file: ../src/crp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=1 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=1 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc84x.d" -MT"src/cr_startup_lpc84x.o" -MT"src/cr_startup_lpc84x.d" -o "src/cr_startup_lpc84x.o" "../src/cr_startup_lpc84x.c"
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=1 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.o" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/aeabi_romdiv_patch.s
+ 
+Building file: ../src/mtb.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=1 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/mtb.d" -MT"src/mtb.o" -MT"src/mtb.d" -o "src/mtb.o" "../src/mtb.c"
+Finished building: ../src/crp.c
+ 
+Finished building: ../src/cr_startup_lpc84x.c
+ 
+Finished building: ../src/mtb.c
+ 
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        6924 B        64 KB     10.57%
+        RamLoc16:         272 B        16 KB      1.66%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6912	     12	    260	   7184	   1c10	Test_serial.axf
+ 
+17:38:46 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:39:01 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:42:53 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:42:53 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=1 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        6924 B        64 KB     10.57%
+        RamLoc16:         272 B        16 KB      1.66%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6912	     12	    260	   7184	   1c10	Test_serial.axf
+ 
+17:42:59 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:43:16 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:44:11 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+make: Nothing to be done for 'all'.
+17:44:12 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building file: ../src/Test_serial.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -DSDK_DEBUGCONSOLE=1 -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_serial.d" -MT"src/Test_serial.o" -MT"src/Test_serial.d" -o "src/Test_serial.o" "../src/Test_serial.c"
+Finished building: ../src/Test_serial.c
+ 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        6924 B        64 KB     10.57%
+        RamLoc16:         272 B        16 KB      1.66%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6912	     12	    260	   7184	   1c10	Test_serial.axf
+ 
+17:44:31 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+17:52:05 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_UART.d" -MT"source/hpl/HPL_UART.o" -MT"source/hpl/HPL_UART.d" -o "source/hpl/HPL_UART.o" "../source/hpl/HPL_UART.c"
+Finished building: ../source/hpl/HPL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+   1048	      0	     52	   1100	    44c	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   1432	      0	      4	   1436	    59c	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    384	      0	      0	    384	    180	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+17:52:06 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+Building target: Test_serial.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_serial.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_serial_Debug.ld" -o "Test_serial.axf"  ./src/Test_serial.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        7008 B        64 KB     10.69%
+        RamLoc16:         272 B        16 KB      1.66%
+Finished building target: Test_serial.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_serial.axf"; # arm-none-eabi-objcopy -v -O binary "Test_serial.axf" "Test_serial.bin" ; # checksum -p LPC845 -d "Test_serial.bin";
+   text	   data	    bss	    dec	    hex	filename
+   6996	     12	    260	   7268	   1c64	Test_serial.axf
+ 
+17:52:33 **** Incremental Build of configuration Debug for project Test_serial ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.

@@ -26,12 +26,6 @@ static const uint8_t sensores_tope_pins[SENSORES_AMOUNT][SENSORES_ZONAS] = //!< 
 	{ 18, 19 }
 };
 
-static uint8_t sensores_tope_bounces[SENSORES_AMOUNT][SENSORES_ZONAS] = //!< Rebotes actuales de los sensores
-{
-	{ 0, 0 },
-	{ 0, 0 }
-};
-
 static uint8_t sensores_tope_states[SENSORES_AMOUNT][SENSORES_ZONAS] = //!< Estado actual de los sensores
 {
 	{ 0, 0 },
@@ -57,12 +51,13 @@ void sensores_tope_init_pins(void)
 	uint8_t i, j;
 
 	IOCON_init();
-	GPIO_init(0);
 
 	for(i = 0; i < SENSORES_AMOUNT; i++)
 	{
 		for(j = 0; j < SENSORES_ZONAS; j++)
 		{
+			GPIO_init(sensores_tope_ports[i][j]);
+
 			IOCON_config_io(sensores_tope_ports[i][j], sensores_tope_pins[i][j], &pin_config);
 			GPIO_set_dir(sensores_tope_ports[i][j], sensores_tope_pins[i][j], GPIO_DIR_INPUT, 0);
 		}
@@ -75,7 +70,7 @@ void sensores_tope_init_pins(void)
  * @param zona Seleccion de sensor abierto o cerrado
  * @return En caso de estar accionado devuelve 1, caso contrario devuelve 0
  */
-uint8_t sensores_tope_get_state(sensor_number_selection_en sensor, sensor_zone_selection_en zona)
+uint8_t sensores_tope_get_state(sensor_tope_selection_en sensor, sensor_tope_zona_en zona)
 {
 	return sensores_tope_states[sensor][zona];
 }
@@ -85,6 +80,12 @@ uint8_t sensores_tope_get_state(sensor_number_selection_en sensor, sensor_zone_s
  */
 void sensores_tope_check(void)
 {
+	static uint8_t sensores_tope_bounces[SENSORES_AMOUNT][SENSORES_ZONAS] = //!< Rebotes actuales de los sensores
+	{
+		{ 0, 0 },
+		{ 0, 0 }
+	};
+
 	uint8_t i, j;
 
 	for(i = 0; i < SENSORES_AMOUNT; i++)

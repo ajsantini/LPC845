@@ -6,8 +6,6 @@
  * @version 1.0
  */
 
-#include <stdio.h>
-#include <stdint.h>
 #include <HPL_UART.h>
 #include <HPL_SYSCON.h>
 #include <HRI_SYSCON.h>
@@ -371,7 +369,7 @@ int32_t UART_rx_byte(uint32_t uart_selection, uint32_t *data)
  */
 void UART0_IRQHandler(void)
 {
-	if(UART[0]->STAT.RXRDY)
+	if(UART[0]->INTSTAT.RXRDY && UART[0]->STAT.RXRDY)
 	{
 		if(uart_rx_callback[0] != NULL)
 		{
@@ -382,7 +380,7 @@ void UART0_IRQHandler(void)
 		(void) UART[0]->RXDAT.RXDAT;
 	}
 
-	if(UART[0]->STAT.TXRDY)
+	if(UART[0]->INTSTAT.TXRDY && UART[0]->STAT.TXRDY)
 	{
 		// Deshabilito interrupciones
 		UART[0]->INTENCLR.TXRDYCLR = 1;
@@ -399,7 +397,7 @@ void UART0_IRQHandler(void)
  */
 void UART1_IRQHandler(void)
 {
-	if(UART[1]->STAT.RXRDY)
+	if(UART[1]->INTSTAT.RXRDY && UART[1]->STAT.RXRDY)
 	{
 		if(uart_rx_callback[1] != NULL)
 		{
@@ -410,7 +408,7 @@ void UART1_IRQHandler(void)
 		(void) UART[1]->RXDAT.RXDAT;
 	}
 
-	if(UART[1]->STAT.TXRDY)
+	if(UART[1]->INTSTAT.TXRDY && UART[1]->STAT.TXRDY)
 	{
 		// Deshabilito interrupciones
 		UART[1]->INTENCLR.TXRDYCLR = 1;
@@ -427,7 +425,7 @@ void UART1_IRQHandler(void)
  */
 void UART2_IRQHandler(void)
 {
-	if(UART[2]->STAT.RXRDY)
+	if(UART[2]->INTSTAT.RXRDY && UART[2]->STAT.RXRDY)
 	{
 		if(uart_rx_callback[2] != NULL)
 		{
@@ -438,7 +436,7 @@ void UART2_IRQHandler(void)
 		(void) UART[2]->RXDAT.RXDAT;
 	}
 
-	if(UART[2]->STAT.TXRDY)
+	if(UART[2]->INTSTAT.TXRDY && UART[2]->STAT.TXRDY)
 	{
 		// Deshabilito interrupciones
 		UART[2]->INTENCLR.TXRDYCLR = 1;
@@ -467,7 +465,7 @@ void UART2_IRQHandler(void)
  */
 void UART3_irq(void)
 {
-	if(UART[3]->STAT.RXRDY)
+	if(UART[3]->INTSTAT.RXRDY && UART[3]->STAT.RXRDY)
 	{
 		if(uart_rx_callback[3] != NULL)
 		{
@@ -478,7 +476,7 @@ void UART3_irq(void)
 		(void) UART[3]->RXDAT.RXDAT;
 	}
 
-	if(UART[3]->STAT.TXRDY)
+	if(UART[3]->INTSTAT.TXRDY && UART[3]->STAT.TXRDY)
 	{
 		// Deshabilito interrupciones
 		UART[3]->INTENCLR.TXRDYCLR = 1;
@@ -495,7 +493,7 @@ void UART3_irq(void)
  */
 void UART4_irq(void)
 {
-	if(UART[4]->STAT.RXRDY)
+	if(UART[4]->INTSTAT.RXRDY && UART[4]->STAT.RXRDY)
 	{
 		if(uart_rx_callback[4] != NULL)
 		{
@@ -506,7 +504,7 @@ void UART4_irq(void)
 		(void) UART[4]->RXDAT.RXDAT;
 	}
 
-	if(UART[4]->STAT.TXRDY)
+	if(UART[4]->INTSTAT.TXRDY && UART[4]->STAT.TXRDY)
 	{
 		// Deshabilito interrupciones
 		UART[4]->INTENCLR.TXRDYCLR = 1;
