@@ -4216,3 +4216,1232 @@ arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLi
    2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
       0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
  
+18:24:31 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_DAC.d" -MT"source/hpl/HPL_DAC.o" -MT"source/hpl/HPL_DAC.d" -o "source/hpl/HPL_DAC.o" "../source/hpl/HPL_DAC.c"
+In file included from ../source/hpl/HPL_DAC.c:10:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_DAC.h:40:15: error: unknown type name 'DAC_selection_en'; did you mean 'DAC_sel_en'?
+ void DAC_init(DAC_selection_en dac, DAC_settling_time_sel_en settling_time, uint16_t initial_value);
+               ^~~~~~~~~~~~~~~~
+               DAC_sel_en
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_DAC.h:47:23: error: unknown type name 'DAC_selection_en'; did you mean 'DAC_sel_en'?
+ void DAC_update_value(DAC_selection_en dac, uint16_t new_value);
+                       ^~~~~~~~~~~~~~~~
+                       DAC_sel_en
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_DAC.h:54:22: error: unknown type name 'DAC_selection_en'; did you mean 'DAC_sel_en'?
+ void DAC_config_ctrl(DAC_selection_en dac, DAC_ctrl_config_t * config);
+                      ^~~~~~~~~~~~~~~~
+                      DAC_sel_en
+../source/hpl/HPL_DAC.c:26:15: error: unknown type name 'DAC_selection_en'; did you mean 'DAC_sel_en'?
+ void DAC_init(DAC_selection_en dac, DAC_settling_time_sel_en settling_time, uint16_t initial_value)
+               ^~~~~~~~~~~~~~~~
+               DAC_sel_en
+../source/hpl/HPL_DAC.c:67:22: error: unknown type name 'DAC_selection_en'; did you mean 'DAC_sel_en'?
+ void DAC_config_ctrl(DAC_selection_en dac, DAC_ctrl_config_t * config)
+                      ^~~~~~~~~~~~~~~~
+                      DAC_sel_en
+source/hpl/subdir.mk:51: recipe for target 'source/hpl/HPL_DAC.o' failed
+make: *** [source/hpl/HPL_DAC.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+18:24:53 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_DAC.d" -MT"source/hpl/HPL_DAC.o" -MT"source/hpl/HPL_DAC.d" -o "source/hpl/HPL_DAC.o" "../source/hpl/HPL_DAC.c"
+Finished building: ../source/hpl/HPL_DAC.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    404	      0	      0	    404	    194	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1176	      0	      0	   1176	    498	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:44:20 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/teclado.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/teclado.d" -MT"source/infotronic/teclado.o" -MT"source/infotronic/teclado.d" -o "source/infotronic/teclado.o" "../source/infotronic/teclado.c"
+Finished building: ../source/infotronic/teclado.c
+ 
+Building file: ../source/hpl/HPL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_DAC.d" -MT"source/hpl/HPL_DAC.o" -MT"source/hpl/HPL_DAC.d" -o "source/hpl/HPL_DAC.o" "../source/hpl/HPL_DAC.c"
+Finished building: ../source/hpl/HPL_DAC.c
+ 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c:21:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+   ^
+../source/hpl/HPL_IOCON.c:21:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                   ^
+../source/hpl/HPL_IOCON.c:21:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                                   ^
+../source/hpl/HPL_IOCON.c:21:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                                                   ^
+../source/hpl/HPL_IOCON.c:22:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+   ^
+../source/hpl/HPL_IOCON.c:22:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                   ^
+../source/hpl/HPL_IOCON.c:22:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:22:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:23:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+   ^
+../source/hpl/HPL_IOCON.c:23:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                   ^
+../source/hpl/HPL_IOCON.c:23:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:23:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:24:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+   ^
+../source/hpl/HPL_IOCON.c:24:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                    ^
+../source/hpl/HPL_IOCON.c:24:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:24:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:25:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+   ^
+../source/hpl/HPL_IOCON.c:25:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                    ^
+../source/hpl/HPL_IOCON.c:25:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:25:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:26:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+   ^
+../source/hpl/HPL_IOCON.c:26:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                    ^
+../source/hpl/HPL_IOCON.c:26:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                     ^
+../source/hpl/HPL_IOCON.c:26:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                                      ^
+../source/hpl/HPL_IOCON.c:27:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+   ^
+../source/hpl/HPL_IOCON.c:27:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                    ^
+../source/hpl/HPL_IOCON.c:27:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                     ^
+../source/hpl/HPL_IOCON.c:27:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                                      ^
+../source/hpl/HPL_IOCON.c:28:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+   ^
+../source/hpl/HPL_IOCON.c:28:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                    ^
+../source/hpl/HPL_IOCON.c:28:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                     ^
+../source/hpl/HPL_IOCON.c:28:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                                      ^
+../source/hpl/HPL_IOCON.c:32:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+   ^
+../source/hpl/HPL_IOCON.c:32:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                   ^
+../source/hpl/HPL_IOCON.c:32:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                   ^
+../source/hpl/HPL_IOCON.c:32:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                                   ^
+../source/hpl/HPL_IOCON.c:33:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+   ^
+../source/hpl/HPL_IOCON.c:33:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                   ^
+../source/hpl/HPL_IOCON.c:33:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:33:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:34:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+   ^
+../source/hpl/HPL_IOCON.c:34:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                   ^
+../source/hpl/HPL_IOCON.c:34:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:34:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:35:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+   ^
+../source/hpl/HPL_IOCON.c:35:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                    ^
+../source/hpl/HPL_IOCON.c:35:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:35:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:36:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+   ^
+../source/hpl/HPL_IOCON.c:36:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                    ^
+../source/hpl/HPL_IOCON.c:36:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:36:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:37:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+   ^
+../source/hpl/HPL_IOCON.c:37:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+                    ^
+In file included from ../source/hpl/HPL_IOCON.c:10:
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:14:33: warning: 'return' with a value, in function returning void
+ #define IOCON_CONFIG_SUCCESS    0
+                                 ^
+../source/hpl/HPL_IOCON.c:256:9: note: in expansion of macro 'IOCON_CONFIG_SUCCESS'
+  return IOCON_CONFIG_SUCCESS;
+         ^~~~~~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:69:6: note: declared here
+ void IOCON_config_io(uint32_t port, uint32_t pin, IOCON_config_t *pin_config)
+      ^~~~~~~~~~~~~~~
+At top level:
+../source/hpl/HPL_IOCON.c:18:38: warning: 'IOCON_PIN_TABLE' defined but not used [-Wunused-const-variable=]
+ static const IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
+                                      ^~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:248:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:261:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1296	      0	      4	   1300	    514	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:46:15 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c:21:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+   ^
+../source/hpl/HPL_IOCON.c:21:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                   ^
+../source/hpl/HPL_IOCON.c:21:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                                   ^
+../source/hpl/HPL_IOCON.c:21:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                                                   ^
+../source/hpl/HPL_IOCON.c:22:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+   ^
+../source/hpl/HPL_IOCON.c:22:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                   ^
+../source/hpl/HPL_IOCON.c:22:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:22:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:23:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+   ^
+../source/hpl/HPL_IOCON.c:23:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                   ^
+../source/hpl/HPL_IOCON.c:23:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:23:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:24:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+   ^
+../source/hpl/HPL_IOCON.c:24:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                    ^
+../source/hpl/HPL_IOCON.c:24:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:24:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:25:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+   ^
+../source/hpl/HPL_IOCON.c:25:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                    ^
+../source/hpl/HPL_IOCON.c:25:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:25:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:26:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+   ^
+../source/hpl/HPL_IOCON.c:26:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                    ^
+../source/hpl/HPL_IOCON.c:26:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                     ^
+../source/hpl/HPL_IOCON.c:26:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                                      ^
+../source/hpl/HPL_IOCON.c:27:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+   ^
+../source/hpl/HPL_IOCON.c:27:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                    ^
+../source/hpl/HPL_IOCON.c:27:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                     ^
+../source/hpl/HPL_IOCON.c:27:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                                      ^
+../source/hpl/HPL_IOCON.c:28:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+   ^
+../source/hpl/HPL_IOCON.c:28:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                    ^
+../source/hpl/HPL_IOCON.c:28:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                     ^
+../source/hpl/HPL_IOCON.c:28:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                                      ^
+../source/hpl/HPL_IOCON.c:32:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+   ^
+../source/hpl/HPL_IOCON.c:32:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                   ^
+../source/hpl/HPL_IOCON.c:32:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                   ^
+../source/hpl/HPL_IOCON.c:32:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                                   ^
+../source/hpl/HPL_IOCON.c:33:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+   ^
+../source/hpl/HPL_IOCON.c:33:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                   ^
+../source/hpl/HPL_IOCON.c:33:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:33:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:34:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+   ^
+../source/hpl/HPL_IOCON.c:34:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                   ^
+../source/hpl/HPL_IOCON.c:34:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:34:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:35:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+   ^
+../source/hpl/HPL_IOCON.c:35:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                    ^
+../source/hpl/HPL_IOCON.c:35:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:35:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:36:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+   ^
+../source/hpl/HPL_IOCON.c:36:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                    ^
+../source/hpl/HPL_IOCON.c:36:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:36:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:37:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+   ^
+../source/hpl/HPL_IOCON.c:37:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+                    ^
+In file included from ../source/hpl/HPL_IOCON.c:10:
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:14:33: warning: 'return' with a value, in function returning void
+ #define IOCON_CONFIG_SUCCESS    0
+                                 ^
+../source/hpl/HPL_IOCON.c:256:9: note: in expansion of macro 'IOCON_CONFIG_SUCCESS'
+  return IOCON_CONFIG_SUCCESS;
+         ^~~~~~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:69:6: note: declared here
+ void IOCON_config_io(uint32_t port, uint32_t pin, IOCON_config_t *pin_config)
+      ^~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1040	    256	      4	   1300	    514	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:46:51 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c:21:46: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                                              ^
+../source/hpl/HPL_IOCON.c:21:62: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                                                              ^
+../source/hpl/HPL_IOCON.c:21:78: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO0_0, &IOCON->PIO0_1, &IOCON->PIO0_2, &IOCON->PIO0_3,
+                                                                              ^
+../source/hpl/HPL_IOCON.c:22:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+   ^
+../source/hpl/HPL_IOCON.c:22:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                   ^
+../source/hpl/HPL_IOCON.c:22:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:22:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:23:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+   ^
+../source/hpl/HPL_IOCON.c:23:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                   ^
+../source/hpl/HPL_IOCON.c:23:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:23:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:24:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+   ^
+../source/hpl/HPL_IOCON.c:24:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                    ^
+../source/hpl/HPL_IOCON.c:24:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:24:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:25:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+   ^
+../source/hpl/HPL_IOCON.c:25:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                    ^
+../source/hpl/HPL_IOCON.c:25:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:25:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:26:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+   ^
+../source/hpl/HPL_IOCON.c:26:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                    ^
+../source/hpl/HPL_IOCON.c:26:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                     ^
+../source/hpl/HPL_IOCON.c:26:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                                      ^
+../source/hpl/HPL_IOCON.c:27:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+   ^
+../source/hpl/HPL_IOCON.c:27:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                    ^
+../source/hpl/HPL_IOCON.c:27:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                     ^
+../source/hpl/HPL_IOCON.c:27:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                                      ^
+../source/hpl/HPL_IOCON.c:28:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+   ^
+../source/hpl/HPL_IOCON.c:28:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                    ^
+../source/hpl/HPL_IOCON.c:28:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                     ^
+../source/hpl/HPL_IOCON.c:28:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                                      ^
+../source/hpl/HPL_IOCON.c:32:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+   ^
+../source/hpl/HPL_IOCON.c:32:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                   ^
+../source/hpl/HPL_IOCON.c:32:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                   ^
+../source/hpl/HPL_IOCON.c:32:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                                   ^
+../source/hpl/HPL_IOCON.c:33:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+   ^
+../source/hpl/HPL_IOCON.c:33:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                   ^
+../source/hpl/HPL_IOCON.c:33:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:33:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:34:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+   ^
+../source/hpl/HPL_IOCON.c:34:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                   ^
+../source/hpl/HPL_IOCON.c:34:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:34:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:35:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+   ^
+../source/hpl/HPL_IOCON.c:35:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                    ^
+../source/hpl/HPL_IOCON.c:35:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:35:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:36:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+   ^
+../source/hpl/HPL_IOCON.c:36:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                    ^
+../source/hpl/HPL_IOCON.c:36:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:36:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:37:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+   ^
+../source/hpl/HPL_IOCON.c:37:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+                    ^
+In file included from ../source/hpl/HPL_IOCON.c:10:
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:14:33: warning: 'return' with a value, in function returning void
+ #define IOCON_CONFIG_SUCCESS    0
+                                 ^
+../source/hpl/HPL_IOCON.c:256:9: note: in expansion of macro 'IOCON_CONFIG_SUCCESS'
+  return IOCON_CONFIG_SUCCESS;
+         ^~~~~~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:69:6: note: declared here
+ void IOCON_config_io(uint32_t port, uint32_t pin, IOCON_config_t *pin_config)
+      ^~~~~~~~~~~~~~~
+At top level:
+../source/hpl/HPL_IOCON.c:18:38: warning: 'IOCON_PIN_TABLE' defined but not used [-Wunused-const-variable=]
+ static const IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
+                                      ^~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1296	      0	      4	   1300	    514	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:47:17 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c:22:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+   ^
+../source/hpl/HPL_IOCON.c:22:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                   ^
+../source/hpl/HPL_IOCON.c:22:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:22:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_4, &IOCON->PIO0_5, &IOCON->PIO0_6, &IOCON->PIO0_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:23:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+   ^
+../source/hpl/HPL_IOCON.c:23:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                   ^
+../source/hpl/HPL_IOCON.c:23:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:23:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_8, &IOCON->PIO0_9, &IOCON->PIO0_10, &IOCON->PIO0_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:24:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+   ^
+../source/hpl/HPL_IOCON.c:24:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                    ^
+../source/hpl/HPL_IOCON.c:24:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:24:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_12, &IOCON->PIO0_13, &IOCON->PIO0_14, &IOCON->PIO0_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:25:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+   ^
+../source/hpl/HPL_IOCON.c:25:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                    ^
+../source/hpl/HPL_IOCON.c:25:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:25:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_16, &IOCON->PIO0_17, &IOCON->PIO0_18, &IOCON->PIO0_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:26:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+   ^
+../source/hpl/HPL_IOCON.c:26:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                    ^
+../source/hpl/HPL_IOCON.c:26:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                     ^
+../source/hpl/HPL_IOCON.c:26:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_20, &IOCON->PIO0_21, &IOCON->PIO0_22, &IOCON->PIO0_23,
+                                                      ^
+../source/hpl/HPL_IOCON.c:27:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+   ^
+../source/hpl/HPL_IOCON.c:27:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                    ^
+../source/hpl/HPL_IOCON.c:27:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                     ^
+../source/hpl/HPL_IOCON.c:27:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_24, &IOCON->PIO0_25, &IOCON->PIO0_26, &IOCON->PIO0_27,
+                                                      ^
+../source/hpl/HPL_IOCON.c:28:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+   ^
+../source/hpl/HPL_IOCON.c:28:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                    ^
+../source/hpl/HPL_IOCON.c:28:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                     ^
+../source/hpl/HPL_IOCON.c:28:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO0_28, &IOCON->PIO0_29, &IOCON->PIO0_30, &IOCON->PIO0_31
+                                                      ^
+../source/hpl/HPL_IOCON.c:32:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+   ^
+../source/hpl/HPL_IOCON.c:32:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                   ^
+../source/hpl/HPL_IOCON.c:32:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                   ^
+../source/hpl/HPL_IOCON.c:32:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                                   ^
+../source/hpl/HPL_IOCON.c:33:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+   ^
+../source/hpl/HPL_IOCON.c:33:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                   ^
+../source/hpl/HPL_IOCON.c:33:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                   ^
+../source/hpl/HPL_IOCON.c:33:51: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                                   ^
+../source/hpl/HPL_IOCON.c:34:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+   ^
+../source/hpl/HPL_IOCON.c:34:19: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                   ^
+../source/hpl/HPL_IOCON.c:34:35: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                   ^
+../source/hpl/HPL_IOCON.c:34:52: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                                    ^
+../source/hpl/HPL_IOCON.c:35:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+   ^
+../source/hpl/HPL_IOCON.c:35:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                    ^
+../source/hpl/HPL_IOCON.c:35:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                     ^
+../source/hpl/HPL_IOCON.c:35:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                                      ^
+../source/hpl/HPL_IOCON.c:36:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+   ^
+../source/hpl/HPL_IOCON.c:36:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                    ^
+../source/hpl/HPL_IOCON.c:36:37: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                     ^
+../source/hpl/HPL_IOCON.c:36:54: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                                      ^
+../source/hpl/HPL_IOCON.c:37:3: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+   ^
+../source/hpl/HPL_IOCON.c:37:20: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+                    ^
+In file included from ../source/hpl/HPL_IOCON.c:10:
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:14:33: warning: 'return' with a value, in function returning void
+ #define IOCON_CONFIG_SUCCESS    0
+                                 ^
+../source/hpl/HPL_IOCON.c:256:9: note: in expansion of macro 'IOCON_CONFIG_SUCCESS'
+  return IOCON_CONFIG_SUCCESS;
+         ^~~~~~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:69:6: note: declared here
+ void IOCON_config_io(uint32_t port, uint32_t pin, IOCON_config_t *pin_config)
+      ^~~~~~~~~~~~~~~
+At top level:
+../source/hpl/HPL_IOCON.c:18:38: warning: 'IOCON_PIN_TABLE' defined but not used [-Wunused-const-variable=]
+ static const IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
+                                      ^~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1296	      0	      4	   1300	    514	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:48:25 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c:40:46: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                              ^
+../source/hpl/HPL_IOCON.c:40:62: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                                              ^
+../source/hpl/HPL_IOCON.c:40:78: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_0, &IOCON->PIO1_1, &IOCON->PIO1_2, &IOCON->PIO1_3,
+                                                                              ^
+../source/hpl/HPL_IOCON.c:41:46: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                              ^
+../source/hpl/HPL_IOCON.c:41:62: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                                              ^
+../source/hpl/HPL_IOCON.c:41:78: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_4, &IOCON->PIO1_5, &IOCON->PIO1_6, &IOCON->PIO1_7,
+                                                                              ^
+../source/hpl/HPL_IOCON.c:42:46: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                              ^
+../source/hpl/HPL_IOCON.c:42:62: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                                              ^
+../source/hpl/HPL_IOCON.c:42:79: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_8, &IOCON->PIO1_9, &IOCON->PIO1_10, &IOCON->PIO1_11,
+                                                                               ^
+../source/hpl/HPL_IOCON.c:43:47: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                               ^
+../source/hpl/HPL_IOCON.c:43:64: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                                                ^
+../source/hpl/HPL_IOCON.c:43:81: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_12, &IOCON->PIO1_13, &IOCON->PIO1_14, &IOCON->PIO1_15,
+                                                                                 ^
+../source/hpl/HPL_IOCON.c:44:47: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                               ^
+../source/hpl/HPL_IOCON.c:44:64: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                                                ^
+../source/hpl/HPL_IOCON.c:44:81: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_16, &IOCON->PIO1_17, &IOCON->PIO1_18, &IOCON->PIO1_19,
+                                                                                 ^
+../source/hpl/HPL_IOCON.c:45:47: warning: initialization discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   (const IOCON_PIO_reg_t * ) &IOCON->PIO1_20, &IOCON->PIO1_21, &dummy_reg, &dummy_reg,
+                                               ^
+In file included from ../source/hpl/HPL_IOCON.c:10:
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:14:33: warning: 'return' with a value, in function returning void
+ #define IOCON_CONFIG_SUCCESS    0
+                                 ^
+../source/hpl/HPL_IOCON.c:264:9: note: in expansion of macro 'IOCON_CONFIG_SUCCESS'
+  return IOCON_CONFIG_SUCCESS;
+         ^~~~~~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:77:6: note: declared here
+ void IOCON_config_io(uint32_t port, uint32_t pin, IOCON_config_t *pin_config)
+      ^~~~~~~~~~~~~~~
+At top level:
+../source/hpl/HPL_IOCON.c:18:38: warning: 'IOCON_PIN_TABLE' defined but not used [-Wunused-const-variable=]
+ static const IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
+                                      ^~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1296	      0	      4	   1300	    514	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:48:57 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+In file included from ../source/hpl/HPL_IOCON.c:10:
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:14:33: warning: 'return' with a value, in function returning void
+ #define IOCON_CONFIG_SUCCESS    0
+                                 ^
+../source/hpl/HPL_IOCON.c:270:9: note: in expansion of macro 'IOCON_CONFIG_SUCCESS'
+  return IOCON_CONFIG_SUCCESS;
+         ^~~~~~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:83:6: note: declared here
+ void IOCON_config_io(uint32_t port, uint32_t pin, IOCON_config_t *pin_config)
+      ^~~~~~~~~~~~~~~
+At top level:
+../source/hpl/HPL_IOCON.c:18:38: warning: 'IOCON_PIN_TABLE' defined but not used [-Wunused-const-variable=]
+ static const IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
+                                      ^~~~~~~~~~~~~~~
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    750	      2	      8	    760	    2f8	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+   1296	      0	      4	   1300	    514	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:53:28 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/teclado.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/teclado.d" -MT"source/infotronic/teclado.o" -MT"source/infotronic/teclado.d" -o "source/infotronic/teclado.o" "../source/infotronic/teclado.c"
+Finished building: ../source/infotronic/teclado.c
+ 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+../source/hpl/HPL_IOCON.c:106:36: error: assignment of member 'MODE' in read-only object
+   IOCON_PIN_TABLE[port][pin]->MODE = config->mode;
+                                    ^
+../source/hpl/HPL_IOCON.c:109:34: error: assignment of member 'HYS' in read-only object
+  IOCON_PIN_TABLE[port][pin]->HYS = config->hysteresis;
+                                  ^
+../source/hpl/HPL_IOCON.c:110:34: error: assignment of member 'INV' in read-only object
+  IOCON_PIN_TABLE[port][pin]->INV = config->invert_input;
+                                  ^
+../source/hpl/HPL_IOCON.c:111:33: error: assignment of member 'OD' in read-only object
+  IOCON_PIN_TABLE[port][pin]->OD = config->open_drain;
+                                 ^
+../source/hpl/HPL_IOCON.c:112:37: error: assignment of member 'S_MODE' in read-only object
+  IOCON_PIN_TABLE[port][pin]->S_MODE = config->sample_mode;
+                                     ^
+../source/hpl/HPL_IOCON.c:113:38: error: assignment of member 'CLK_DIV' in read-only object
+  IOCON_PIN_TABLE[port][pin]->CLK_DIV = config->clk_sel;
+                                      ^
+../source/hpl/HPL_IOCON.c:86:18: warning: unused variable 'pio_reg_to_write' [-Wunused-variable]
+  IOCON_PIO_reg_t pio_reg_to_write;
+                  ^~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:85:19: warning: unused variable 'pio_reg' [-Wunused-variable]
+  IOCON_PIO_reg_t *pio_reg;
+                   ^~~~~~~
+make: *** [source/hpl/HPL_IOCON.o] Error 1
+source/hpl/subdir.mk:51: recipe for target 'source/hpl/HPL_IOCON.o' failed
+"make -r all" terminated with exit code 2. Build might be incomplete.
+18:54:27 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c: In function 'IOCON_config_io':
+../source/hpl/HPL_IOCON.c:86:18: warning: unused variable 'pio_reg_to_write' [-Wunused-variable]
+  IOCON_PIO_reg_t pio_reg_to_write;
+                  ^~~~~~~~~~~~~~~~
+../source/hpl/HPL_IOCON.c:85:19: warning: unused variable 'pio_reg' [-Wunused-variable]
+  IOCON_PIO_reg_t *pio_reg;
+                   ^~~~~~~
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:248:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:261:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+18:54:35 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    528	      0	      0	    528	    210	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+   1364	      0	     32	   1396	    574	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+     60	      0	      0	     60	     3c	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2336	     12	     24	   2372	    944	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 

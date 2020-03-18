@@ -11,12 +11,6 @@
 
 #include <stdint.h>
 
-#define	IOCON_CONFIG_SUCCESS				0
-#define	IOCON_CONFIG_IOCON_NOT_CLOCKED		-1
-#define	IOCON_CONFIG_INVALID_PORT			-2
-#define	IOCON_CONFIG_INVALID_PIN			-3
-#define	IOCON_CONFIG_INVALID_PORTPIN		-4
-
 typedef enum
 {
 	IOCON_PULL_NONE = 0,
@@ -82,8 +76,7 @@ void IOCON_deinit(void);
  * @param[in] port Puerto del pin a configurar
  * @param[in] pin Numero del pin a configurar
  * @param[in] pin_config Puntero a estructura de configuracion del pin
- * @return Estado de configuracion del pin
  */
-int32_t IOCON_config_io(uint32_t port, uint32_t pin, IOCON_config_t *pin_config);
+void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config);
 
 #endif /* HPL_IOCON_H_ */

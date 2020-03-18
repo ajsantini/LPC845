@@ -11,27 +11,46 @@
 
 #include <stdint.h>
 
-#define	DAC_INIT_SUCCESS			0
-#define	DAC_INIT_INVALID_DAC		-1
+typedef enum
+{
+	DAC_SEL_0 = 0,
+	DAC_SEL_1
+}DAC_sel_en;
 
-#define	DAC_UPDATE_SUCCESS			0
-#define	DAC_UPDATE_INVALID_DAC		-1
+typedef enum
+{
+	DAC_SETTLING_TIME_SEL_1US_MAX = 0,
+	DAC_SETTLING_TIME_SEL_2_5US_MAX
+}DAC_settling_time_sel_en;
+
+typedef struct
+{
+	uint8_t dma_request : 1;
+	uint8_t double_buffering : 1;
+	uint8_t count_enable : 1;
+	uint8_t dma_enable : 1;
+}DAC_ctrl_config_t;
 
 /**
  * @brief Inicializacion del DAC
- * @param[in] dac_selection Cual de los dos DACS inicializar.
- * @param[in] settling_time Velocidad de conversion del DAC. Cero es velocidad baja, cualquier otra cosa es velocidad rapida.
+ * @param[in] dac Cual de los dos DACs inicializar
+ * @param[in] settling_time Velocidad de conversion del DAC
  * @param[in] initial_value Valor inicial del DAC
- * @return Estado de inicializacion del DAC
  */
-int32_t DAC_init(uint8_t dac_selection, uint8_t settling_time, uint32_t initial_value);
+void DAC_init(DAC_sel_en dac, DAC_settling_time_sel_en settling_time, uint16_t initial_value);
 
 /**
  * @brief Actualizacion del valor actual del DAC
- * @param[in] dac_selection DAC en el cual actualizar el valor
+ * @param[in] dac En que DAC actualizar el valor
  * @param[in] new_value Nuevo valor a poner en el DAC
- * @return Resultado de la actualizacion
  */
-int32_t DAC_update_value(uint8_t dac_selection, uint32_t new_value);
+void DAC_update_value(DAC_sel_en dac, uint16_t new_value);
+
+/**
+ * @brief Configuracion del registro de control del DAC
+ * @param[in] dac Que DAC configurar
+ * @param[in] config Configuracion deseada
+ */
+void DAC_config_ctrl(DAC_sel_en dac, DAC_ctrl_config_t * config);
 
 #endif /* HPL_DAC_H_ */
