@@ -25,7 +25,7 @@ typedef struct
 	uint32_t : 1; //!< Reservado
 }ADC_CTRL_reg_t;
 
-//! Registro de control de secuencia A del ADC
+//! Registro de control de secuencia A y B del ADC
 typedef struct
 {
 	uint32_t CHANNELS : 12; //!< Canales habilitados para la conversion en la secuencia
@@ -37,27 +37,10 @@ typedef struct
 	uint32_t START : 1; //!< Empezar secuencia mediante software
 	uint32_t BURST : 1; //!< Habilitacion de modo rafaga
 	uint32_t SINGLESTEP : 1; //!< Un start activa un paso o la secuencia entera
-	uint32_t LOWPRIO : 1; //!< Prioridad. La secuencia B puede interrumpir a la A
+	uint32_t LOWPRIO : 1; //!< Prioridad. Solo lo tiene la secuencia A
 	uint32_t MODE : 1; //!< Interrupcion por cada conversion o al final de la secuencia
-	uint32_t SEQA_ENA : 1; //!< Habilitacion de secuencia A
-}ADC_SEQA_CTRL_reg_t;
-
-//! Registro de control de secuencia B del ADC
-typedef struct
-{
-	uint32_t CHANNELS : 12;
-	uint32_t TRIGGER : 3;
-	uint32_t : 3;
-	uint32_t TRIGPOL : 1;
-	uint32_t SYNCBYPASS : 1;
-	uint32_t : 6;
-	uint32_t START : 1;
-	uint32_t BURST : 1;
-	uint32_t SINGLESTEP : 1;
-	uint32_t LOWPRIO : 1;
-	uint32_t MODE : 1;
-	uint32_t SEQB_ENA : 1;
-}ADC_SEQB_CTRL_reg_t;
+	uint32_t SEQ_ENA : 1; //!< Habilitacion de secuencia
+}ADC_SEQ_CTRL_reg_t;
 
 typedef struct
 {
@@ -190,16 +173,13 @@ typedef struct
 {
 	ADC_CTRL_reg_t CTRL;
 	const uint32_t RESERVED_1;
-	ADC_SEQA_CTRL_reg_t SEQA_CTRL;
-	ADC_SEQB_CTRL_reg_t SEQB_CTRL;
+	ADC_SEQ_CTRL_reg_t SEQ_CTRL[2];
 	ADC_SEQA_GDAT_reg_t SEQA_GDAT;
 	ADC_SEQB_GDAT_reg_t SEQB_GDAT;
 	const uint32_t RESERVED_2[2];
 	const ADC_DAT_reg_t DAT[12];
-	ADC_THR_LOW_reg_t THR0_LOW;
-	ADC_THR_LOW_reg_t THR1_LOW;
-	ADC_THR_HIGH_reg_t THR0_HIGH;
-	ADC_THR_HIGH_reg_t THR1_HIGH;
+	ADC_THR_LOW_reg_t THR_LOW[2];
+	ADC_THR_HIGH_reg_t THR_HIGH[2];
 	ADC_CHAN_THRSEL_reg_t CHAN_THRSEL;
 	ADC_INTEN_reg_t INTEN;
 	ADC_FLAGS_reg_t FLAGS;

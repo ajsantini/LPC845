@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="${workspace_loc:/Libreria_LPC845/includes/hri}" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="Libreria_LPC845" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="Default C source template" key="LastUsedSourceTemplate"/>
 	<item value="Default C header template" key="LastUsedHeaderTemplate"/>
 	<section name="org.eclipse.cdt.internal.ui.text.QuickOutline">
@@ -12,6 +12,8 @@
 		<item value="602" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="PDOMSearchPage">
 	</section>
 	<section name="RenameInformationPopup">
 	</section>
