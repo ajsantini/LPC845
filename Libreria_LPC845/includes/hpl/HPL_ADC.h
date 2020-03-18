@@ -13,26 +13,6 @@
 
 #define MAX_ADC_CONVERSION_VALUE				0xFFF
 
-#define	ADC_INIT_SUCCESS						0
-#define	ADC_INIT_CLK_OVERFLOW					-1
-#define	ADC_INIT_CLK_UNDERFLOW					-2
-
-#define	ADC_CONFIG_CONVERSIONS_SUCCESS			0
-#define	ADC_CONFIG_CONVERSIONS_NOT_POWERED		-1
-#define	ADC_CONFIG_CONVERSIONS_NOT_CLOCKED		-2
-#define	ADC_CONFIG_CONVERSIONS_INVALID_CHANNELS	-3
-
-#define	ADC_START_CONVERSIONS_SUCCESS			0
-#define	ADC_START_CONVERSIONS_BURST_MODE		-1
-#define	ADC_START_CONVERSIONS_NOT_POWERED		-2
-#define	ADC_START_CONVERSIONS_NOT_CLOCKED		-3
-
-#define	ADC_GET_CONVERSION_SUCCESS				0
-#define	ADC_GET_CONVERSION_NOT_POWERED			-1
-#define ADC_GET_CONVERSION_NOT_CLOCKED			-2
-#define	ADC_GET_CONVERSION_INVALID_CHANNEL		-3
-#define	ADC_GET_CONVERSION_NOT_FINISHED			-4
-
 typedef struct
 {
 	uint16_t channels;
@@ -40,23 +20,51 @@ typedef struct
 	void (*conversion_ended_callback)(void);
 }ADC_conversions_config_t;
 
+typedef struct
+{
+	uint8_t clock_div;
+	uint8_t async_mode : 1;
+	uint8_t low_power_mode : 1;
+}ADC_config_t;
+
 typedef enum
 {
 	ADC_CLOCK_SOURCE_FRO = 0,
 	ADC_CLOCK_SOURCE_PLL
-}ADC_clock_source_en;
+}__attribute__((packed)) ADC_clock_source_en;
+
+typedef enum
+{
+	ADC_SEQUENCE_SEL_A = 0,
+	ADC_SEQUENCE_SEL_B
+}__attribute__((packed)) ADC_sequence_sel_en;
+
+typedef enum
+{
+	ADC_INTERRUPT_MODE_EOC = 0,
+	ADC_INTERRUPT_MODE_EOS
+}__attribute__((packed)) ADC_interrupt_mode_en;
+
+typedef struct
+{
+	uint16_t channels;
+	uint8_t trigger;
+	uint8_t trigger_polarity;
+	uint8_t sync_bypass;
+	uint8_t burst;
+	uint8_t single_step;
+	uint8_t low_priority;
+	uint8_t interrupt_mode;
+}ADC_sequence_config_t;
 
 /**
  * @brief Inicializacion del ADC
- *
- * Inicializa el ADC. Se ocupa de encender el periferico, clockear el mismo, la calibracion
- * de hardware, y fijar el clock del mismo para la frecuencia deseada.
- *
- * @param[in] adc_freq Frecuencia del ADC deseada
  * @param[in] clock_source Seleccion de clock para el ADC
- * @return Estado de inicializacion del ADC
+ * @param[in] adc_config Configuracion del ADC deseada
  */
-int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source);
+void ADC_init(ADC_clock_source_en clock_source, const ADC_config_t *adc_config);
+
+void ADC_config_sequence(ADC_sequence_sel_en, )
 
 /**
  * @brief Configuracion de las conversiones del ADC
@@ -67,33 +75,27 @@ int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source);
  * -) Las interrupciones seran una vez que termine la conversion de toda la secuencia
  *
  * @param[in] conversions_config Configuracion deseada para las conversiones
- * @return Estado de la configuracion del ADC
  */
-int32_t ADC_config_conversions(const ADC_conversions_config_t * const conversions_config);
+void ADC_config_conversions(const ADC_conversions_config_t * const conversions_config);
 
 /**
  * @brief Iniciar conversiones de ADC
  *
  * El ADC debe haber sido previamente configurado correctamente.
- *
- * @return Estado del inicio de conversiones del ADC
  */
-int32_t ADC_start_conversions(void);
+void ADC_start_conversions(void);
 
 /**
  * @brief Obtener resultado de conversiones de ADC de un canal en particular
  * @param[in] channel Canal del cual obtener el resultado
  * @param[out] conversion Resultado de la conversion de ADC del canal asociado
- * @return Estado del pedido de resultado de conversion
  */
-int32_t ADC_get_conversion(uint8_t channel, uint32_t *conversion);
+void ADC_get_conversion(uint8_t channel, uint32_t *conversion);
 
 /**
  * @brief Registrar un callback a llamar en la funcion de interrupcion cuando termina la secuencia de conversiones
  * @param new_callback Puntero a funcion a llamar una vez terminada la secuencia de conversiones
  */
 void ADC_register_callback(void (*new_callback)(void));
-
-void ADC_SEQB_IRQHandler(void);
 
 #endif /* HPL_ADC_H_ */

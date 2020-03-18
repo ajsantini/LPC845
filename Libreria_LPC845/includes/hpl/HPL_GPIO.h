@@ -11,8 +11,12 @@
 
 #include <stdint.h>
 
-#define	GPIO_DIR_INPUT						0
-#define	GPIO_DIR_OUTPUT						1
+//! Enumeraciones para las direcciones de las GPIO posibles
+typedef enum
+{
+	GPIO_DIR_INPUT = 0,
+	GPIO_DIR_OUTPUT
+}GPIO_dir_en;
 
 #define	GPIO_SET_DIR_SUCCESS				0
 #define	GPIO_SET_DIR_NOT_CLOCKED			-1

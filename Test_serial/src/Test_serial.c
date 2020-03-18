@@ -81,7 +81,7 @@ int main(void)
 		.parity = UART_PARITY_NO_PARITY,
 		.stop_bits = UART_STOPLEN_1BIT,
 		.oversampling = UART_OVERSAMPLING_X16,
-		.clock_selection = PERIPHERAL_CLOCK_SELECTION_FRO,
+		.clock_selection = SYSCON_PERIPHERAL_CLOCK_SEL_FRO,
 		.baudrate = 9600,
 		.tx_port = 0,
 		.tx_pin = 25,
@@ -94,7 +94,7 @@ int main(void)
 	states_en state = STATE_SENDING_MSG;
 
 	SYSCON_set_fro_direct();
-	SYSCON_set_system_clock_source(SYSTEM_CLOCK_SEL_FRO);
+	SYSCON_set_system_clock_source(SYSCON_SYSTEM_CLOCK_SEL_FRO);
 
 	init_led_gpio();
 

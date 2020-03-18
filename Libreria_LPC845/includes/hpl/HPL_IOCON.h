@@ -19,18 +19,18 @@
 
 typedef enum
 {
-	PULL_NONE = 0,
-	PULL_DOWN,
-	PULL_UP,
-	PULL_REPEATER
+	IOCON_PULL_NONE = 0,
+	IOCON_PULL_DOWN,
+	IOCON_PULL_UP,
+	IOCON_PULL_REPEATER
 }IOCON_pull_mode_en;
 
 typedef enum
 {
-	SAMPLE_MODE_BYPASS = 0,
-	SAMPLE_MODE_1_CLOCK,
-	SAMPLE_MODE_2_CLOCK,
-	SAMPLE_MODE_3_CLOCK
+	IOCON_SAMPLE_MODE_BYPASS = 0,
+	IOCON_SAMPLE_MODE_1_CLOCK,
+	IOCON_SAMPLE_MODE_2_CLOCK,
+	IOCON_SAMPLE_MODE_3_CLOCK
 }IOCON_sample_mode_en;
 
 typedef enum
@@ -42,13 +42,13 @@ typedef enum
 	IOCON_CLK_DIV_4,
 	IOCON_CLK_DIV_5,
 	IOCON_CLK_DIV_6
-}IOCON_clk_sel_en;
+}IOCON_clk_div_en;
 
 typedef enum
 {
-	IIC_MODE_STANDARD = 0,
-	IIC_MODE_GPIO,
-	IIC_MODE_FAST_MODE
+	IOCON_IIC_MODE_STANDARD = 0,
+	IOCON_IIC_MODE_GPIO,
+	IOCON_IIC_MODE_FAST_MODE
 }IOCON_iic_mode_en;
 
 typedef struct
@@ -58,7 +58,7 @@ typedef struct
 	uint8_t invert_input;
 	uint8_t open_drain;
 	IOCON_sample_mode_en sample_mode;
-	IOCON_clk_sel_en clk_sel;
+	IOCON_clk_div_en clk_sel;
 	uint8_t dac_mode;
 	IOCON_iic_mode_en iic_mode;
 }IOCON_config_t;

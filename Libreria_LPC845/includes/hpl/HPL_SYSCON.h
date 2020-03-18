@@ -13,91 +13,91 @@
 
 typedef enum
 {
-	SYSTEM_CLOCK_SEL_FRO = 0,
-	SYSTEM_CLOCK_SEL_EXT_CLK,
-	SYSTEM_CLOCK_SEL_WATCHDOG,
-	SYSTEM_CLOCK_SEL_FRO_DIV,
-	SYSTEM_CLOCK_SEL_PLL
-}system_clock_selection_en;
+	SYSCON_SYSTEM_CLOCK_SEL_FRO = 0,
+	SYSCON_SYSTEM_CLOCK_SEL_EXT_CLK,
+	SYSCON_SYSTEM_CLOCK_SEL_WATCHDOG,
+	SYSCON_SYSTEM_CLOCK_SEL_FRO_DIV,
+	SYSCON_SYSTEM_CLOCK_SEL_PLL
+}SYSCON_system_clock_sel_en;
 
 typedef enum
 {
-	EXT_CLOCK_SOURCE_SELECTION_CRYSTAL = 0,
-	EXT_CLOCK_SOURCE_SELECTION_CLK_IN
-}ext_clock_source_selection_en;
+	SYSCON_EXT_CLOCK_SOURCE_SEL_CRYSTAL = 0,
+	SYSCON_EXT_CLOCK_SOURCE_SEL_CLK_IN
+}SYSCON_ext_clock_source_sel_en;
 
 typedef enum
 {
-	WATCHDOG_CLKANA_0KHZ = 0,
-	WATCHDOG_CLKANA_600KHZ,
-	WATCHDOG_CLKANA_1050KHZ,
-	WATCHDOG_CLKANA_1400KHZ,
-	WATCHDOG_CLKANA_1750KHZ,
-	WATCHDOG_CLKANA_2100KHZ,
-	WATCHDOG_CLKANA_2400KHZ,
-	WATCHDOG_CLKANA_3000KHZ,
-	WATCHDOG_CLKANA_3250KHZ,
-	WATCHDOG_CLKANA_3500KHZ,
-	WATCHDOG_CLKANA_3750KHZ,
-	WATCHDOG_CLKANA_4000KHZ,
-	WATCHDOG_CLKANA_4200KHZ,
-	WATCHDOG_CLKANA_4400KHZ,
-	WATCHDOG_CLKANA_4600KHZ
-}watchdog_clkana_selection_en;
+	SYSCON_WATCHDOG_CLKANA_0KHZ = 0,
+	SYSCON_WATCHDOG_CLKANA_600KHZ,
+	SYSCON_WATCHDOG_CLKANA_1050KHZ,
+	SYSCON_WATCHDOG_CLKANA_1400KHZ,
+	SYSCON_WATCHDOG_CLKANA_1750KHZ,
+	SYSCON_WATCHDOG_CLKANA_2100KHZ,
+	SYSCON_WATCHDOG_CLKANA_2400KHZ,
+	SYSCON_WATCHDOG_CLKANA_3000KHZ,
+	SYSCON_WATCHDOG_CLKANA_3250KHZ,
+	SYSCON_WATCHDOG_CLKANA_3500KHZ,
+	SYSCON_WATCHDOG_CLKANA_3750KHZ,
+	SYSCON_WATCHDOG_CLKANA_4000KHZ,
+	SYSCON_WATCHDOG_CLKANA_4200KHZ,
+	SYSCON_WATCHDOG_CLKANA_4400KHZ,
+	SYSCON_WATCHDOG_CLKANA_4600KHZ
+}SYSCON_watchdog_clkana_sel_en;
 
 typedef enum
 {
-	PLL_SOURCE_FRO = 0,
-	PLL_SOURCE_EXT_OSC
-}pll_source_selection_en;
+	SYSCON_PLL_SOURCE_SEL_FRO = 0,
+	SYSCON_PLL_SOURCE_EXT_SEL_OSC
+}SYSCON_pll_source_sel_en;
 
 typedef enum
 {
-	PERIPHERAL_SELECTION_UART0 = 0,
-	PERIPHERAL_SELECTION_UART1,
-	PERIPHERAL_SELECTION_UART2,
-	PERIPHERAL_SELECTION_UART3,
-	PERIPHERAL_SELECTION_UART4,
-	PERIPHERAL_SELECTION_I2C0,
-	PERIPHERAL_SELECTION_I2C1,
-	PERIPHERAL_SELECTION_I2C2,
-	PERIPHERAL_SELECTION_I2C3,
-	PERIPHERAL_SELECTION_SPI0,
-	PERIPHERAL_SELECTION_SPI1
-}peripheral_selection_en;
+	SYSCON_PERIPHERAL_SEL_UART0 = 0,
+	SYSCON_PERIPHERAL_SEL_UART1,
+	SYSCON_PERIPHERAL_SEL_UART2,
+	SYSCON_PERIPHERAL_SEL_UART3,
+	SYSCON_PERIPHERAL_SEL_UART4,
+	SYSCON_PERIPHERAL_SEL_I2C0,
+	SYSCON_PERIPHERAL_SEL_I2C1,
+	SYSCON_PERIPHERAL_SEL_I2C2,
+	SYSCON_PERIPHERAL_SEL_I2C3,
+	SYSCON_PERIPHERAL_SEL_SPI0,
+	SYSCON_PERIPHERAL_SEL_SPI1
+}SYSCON_peripheral_sel_en;
 
 typedef enum
 {
-	PERIPHERAL_CLOCK_SELECTION_FRO = 0,
-	PERIPHERAL_CLOCK_SELECTION_MAIN,
-	PERIPHERAL_CLOCK_SELECTION_FRG0,
-	PERIPHERAL_CLOCK_SELECTION_FRG1,
-	PERIPHERAL_CLOCK_SELECTION_FRO_DIV,
-	PERIPHERAL_CLOCK_SELECTION_NONE = 7
-}peripheral_clock_selection_en;
+	SYSCON_PERIPHERAL_CLOCK_SEL_FRO = 0,
+	SYSCON_PERIPHERAL_CLOCK_SEL_MAIN,
+	SYSCON_PERIPHERAL_CLOCK_SEL_FRG0,
+	SYSCON_PERIPHERAL_CLOCK_SEL_FRG1,
+	SYSCON_PERIPHERAL_CLOCK_SEL_FRO_DIV,
+	SYSCON_PERIPHERAL_CLOCK_SEL_NONE = 7
+}SYSCON_peripheral_clock_sel_en;
 
 typedef enum
 {
-	FRG_CLOCK_SELECTION_FRO = 0,
-	FRG_CLOCK_SELECTION_MAIN_CLOCK,
-	FRG_CLOCK_SELECTION_SYS_PLL,
-	FRG_CLOCK_SELECTION_NONE
-}frg_clock_selection_en;
+	SYSCON_FRG_CLOCK_SEL_FRO = 0,
+	SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK,
+	SYSCON_FRG_CLOCK_SEL_SYS_PLL,
+	SYSCON_FRG_CLOCK_SEL_NONE
+}SYSCON_frg_clock_sel_en;
 
 typedef enum
 {
-	CLKOUT_SOURCE_SELECTION_FRO = 0,
-	CLKOUT_SOURCE_SELECTION_MAIN_CLOCK,
-	CLKOUT_SOURCE_SELECTION_SYS_PLL,
-	CLKOUT_SOURCE_SELECTION_EXT_CLOCK,
-	CLKOUT_SOURCE_SELECTION_WATCHDOG_OSC
-}clkout_source_selection_en;
+	SYSCON_CLKOUT_SOURCE_SEL_FRO = 0,
+	SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK,
+	SYSCON_CLKOUT_SOURCE_SEL_SYS_PLL,
+	SYSCON_CLKOUT_SOURCE_SEL_EXT_CLOCK,
+	SYSCON_CLKOUT_SOURCE_SEL_WATCHDOG_OSC
+}SYSCON_clkout_source_sel_en;
 
 /*
  * @brief Seleccion de fuente de clock para el clock principal
  * @param[in] clock_selection Seleccion de clock deseada
  */
-void SYSCON_set_system_clock_source(system_clock_selection_en clock_selection);
+void SYSCON_set_system_clock_source(SYSCON_system_clock_sel_en clock_selection);
 
 /**
  * @brief Obtencion de la frecuencia de clock actual
@@ -127,7 +127,7 @@ void SYSCON_set_system_clock_divider(uint8_t divider);
  * @brief Seleccion de fuente para el clock externo
  * @param[in] source_selection Seleccion deseada
  */
-void SYSCON_set_ext_clock_source(ext_clock_source_selection_en source_selection);
+void SYSCON_set_ext_clock_source(SYSCON_ext_clock_source_sel_en source_selection);
 
 /**
  * @brief Inicializacion del clock con cristal externo
@@ -156,28 +156,28 @@ void SYSCON_clear_fro_direct(void);
  * @param[in] clkana_selection Seleccion de la frecuencia base
  * @param[in] divider Divisor deseado (se redondeara al multiplo de 2 mas cercano)
  */
-void SYSCON_set_watchdog_osc_clock(watchdog_clkana_selection_en clkana_selection, uint8_t divider);
+void SYSCON_set_watchdog_osc_clock(SYSCON_watchdog_clkana_sel_en clkana_selection, uint8_t divider);
 
 /**
  * @brief Inicializacion del PLL
  * @param[in] pll_source Fuente de entrada para el PLL
  * @param[in] pll_multiplier Multiplicador de frecuencia del PLL
  */
-void SYSCON_set_PLL(pll_source_selection_en pll_source, uint8_t pll_multiplier);
+void SYSCON_set_PLL(SYSCON_pll_source_sel_en pll_source, uint8_t pll_multiplier);
 
 /**
  * @brief Seleccion de fuente de clock para los distintos perifericos
  * @param[in] peripheral Periferico cuya fuente seleccionar
  * @param[in] clock Fuente de clock para el periferico seleccionada
  */
-void SYSCON_set_peripheral_clock_source(peripheral_selection_en peripheral, peripheral_clock_selection_en clock);
+void SYSCON_set_peripheral_clock_source(SYSCON_peripheral_sel_en peripheral, SYSCON_peripheral_clock_sel_en clock);
 
 /**
  * @brief Obtencion del clock de los distintos perifericos
  * @param[in] peripheral Periferico cuya fuente seleccionar
  * @return Frecuencia del clock del periferico, en Hz
  */
-uint32_t SYSCON_get_peripheral_clock(peripheral_selection_en peripheral);
+uint32_t SYSCON_get_peripheral_clock(SYSCON_peripheral_sel_en peripheral);
 
 /**
  * @brief Configuracion del FRG
@@ -186,7 +186,7 @@ uint32_t SYSCON_get_peripheral_clock(peripheral_selection_en peripheral);
  * @param[in] mul Multiplicador del FRG 0 ~ 255
  * @param[in] div Divisor del FRG 1~256
  */
-void SYSCON_set_frg_config(uint8_t frg_selection, frg_clock_selection_en clock_source, uint8_t mul, uint16_t div);
+void SYSCON_set_frg_config(uint8_t frg_selection, SYSCON_frg_clock_sel_en clock_source, uint8_t mul, uint16_t div);
 
 /**
  * @brief Seleccion de fuente para el CLOCK OUT
@@ -195,6 +195,6 @@ void SYSCON_set_frg_config(uint8_t frg_selection, frg_clock_selection_en clock_s
  * @param[in] port Puerto por el cual sacar el CLOCK OUT
  * @param[in] pin Pin por el cual sacar el CLOCK_OUT
  */
-void SYSCON_set_clkout_config(clkout_source_selection_en clock_source, uint8_t divider, uint8_t port, uint8_t pin);
+void SYSCON_set_clkout_config(SYSCON_clkout_source_sel_en clock_source, uint8_t divider, uint8_t port, uint8_t pin);
 
 #endif /* HPL_SYSCON_H_ */

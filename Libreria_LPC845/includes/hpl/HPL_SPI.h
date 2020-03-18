@@ -40,7 +40,7 @@ typedef struct
 	SPI_CPHA_select_en CPHA;
 	SPI_CPOL_select_en CPOL;
 	uint8_t loop;
-	peripheral_clock_selection_en clock_selection;
+	SYSCON_peripheral_clock_sel_en clock_selection;
 	uint32_t baudrate;
 	uint8_t sck_port;
 	uint8_t sck_pin;

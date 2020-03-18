@@ -97,9 +97,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 	{
 	case 0:
 		// Seleccion de clock para la UART
-		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART0, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART0),
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART0),
 								config->baudrate,
 								config->oversampling);
 
@@ -124,9 +124,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		break;
 	case 1:
 		// Seleccion de clock para la UART
-		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART1, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART1),
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART1),
 								config->baudrate,
 								config->oversampling);
 
@@ -151,9 +151,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		break;
 	case 2:
 		// Seleccion de clock para la UART
-		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART2, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART2),
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART2),
 								config->baudrate,
 								config->oversampling);
 
@@ -178,9 +178,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		break;
 	case 3:
 		// Seleccion de clock para la UART
-		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART3, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART3),
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART3),
 								config->baudrate,
 								config->oversampling);
 
@@ -205,9 +205,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		break;
 	case 4:
 		// Seleccion de clock para la UART
-		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_UART4, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(PERIPHERAL_SELECTION_UART4),
+		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART4),
 								config->baudrate,
 								config->oversampling);
 

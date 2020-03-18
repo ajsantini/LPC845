@@ -15,11 +15,29 @@
 #include <HRI_NVIC.h>
 #include <HRI_SWM.h>
 
-#define	ADC_MAX_FREQ	1.2e6 //<! Maxima frecuencia de conversion admitida por el ADC
+#define	ADC_MAX_FREQ			1.2e6 //<! Maxima frecuencia de conversion admitida por el ADC
+#define	ADC_COMPARE_AMOUNT		12 //!< Cantidad de canales de comparacion admitidos por el ADC
 
 volatile ADC_per_t * const ADC = (ADC_per_t *) ADC_BASE; //!< Periferico ADC
 
-static void (*adc_seqb_completed_callback)(void) = NULL; //!< Callback cuando termina la secuencia de conversiones
+static void (*adc_seqa_completed_callback)(void) = NULL; //!< Callback cuando termina la secuencia A de conversiones
+static void (*adc_seqb_completed_callback)(void) = NULL; //!< Callback cuando termina la secuencia B de conversiones
+static void (*adc_overrun_callback)(void) = NULL; //!< Callback cuando ocurre un overrun
+static void (*adc_compare_callback[ADC_COMPARE_AMOUNT])(void) = //!< Callbacks para las comparaciones de ADC
+{
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+};
 
 /**
  * @brief Inicializacion del ADC
@@ -29,20 +47,13 @@ static void (*adc_seqb_completed_callback)(void) = NULL; //!< Callback cuando te
  *
  * @param[in] adc_freq Frecuencia del ADC deseada
  * @param[in] clock_source Seleccion de clock para el ADC
- * @return Estado de inicializacion del ADC
  */
-int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source)
+void ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source)
 {
 	ADC_CTRL_reg_t adc_ctrl_aux;
 	uint32_t *aux_reg = (uint32_t *) &adc_ctrl_aux;
 	uint64_t aux;
 	uint64_t calib_aux;
-
-	if(adc_freq >= ADC_MAX_FREQ)
-	{
-		// Overflow de clock pedido
-		return ADC_INIT_CLK_OVERFLOW;
-	}
 
 	adc_freq *= 25;
 
@@ -50,23 +61,11 @@ int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source)
 	{
 		aux = SYSCON_get_fro_clock() / adc_freq;
 		calib_aux = SYSCON_get_fro_clock() / 500000;
-
-		// Underflow de clock pedido
-		if(aux >= 0xFF)
-		{
-			return ADC_INIT_CLK_UNDERFLOW;
-		}
 	}
 	else
 	{
 		aux = SYSCON_get_pll_clock() / adc_freq;
 		calib_aux = SYSCON_get_pll_clock() / 500000;
-
-		// Underflow de clock pedido
-		if(aux >= 0xFF)
-		{
-			return ADC_INIT_CLK_UNDERFLOW;
-		}
 	}
 
 	// Encendido del ADC
@@ -95,8 +94,6 @@ int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source)
 
 	// Una vez calibrado, configuro el clock deseado y queda listo para trabajar
 	ADC->CTRL.CLKDIV = aux;
-
-	return ADC_INIT_SUCCESS;
 }
 
 /**
@@ -108,26 +105,10 @@ int32_t ADC_init(uint32_t adc_freq, ADC_clock_source_en clock_source)
  * -) Las interrupciones seran una vez que termine la conversion de toda la secuencia
  *
  * @param[in] conversions_config Configuracion deseada para las conversiones
- * @return Estado de la configuracion del ADC
  */
-int32_t ADC_config_conversions(const ADC_conversions_config_t * const conversions_config)
+void ADC_config_conversions(const ADC_conversions_config_t * const conversions_config)
 {
 	uint32_t counter;
-
-	if(conversions_config->channels >= 0x1000)
-	{
-		return ADC_CONFIG_CONVERSIONS_INVALID_CHANNELS;
-	}
-
-	if(SYSCON->PDRUNCFG.ADC_PD)
-	{
-		return ADC_CONFIG_CONVERSIONS_NOT_POWERED;
-	}
-
-	if(!SYSCON->SYSAHBCLKCTRL0.ADC)
-	{
-		return ADC_CONFIG_CONVERSIONS_NOT_CLOCKED;
-	}
 
 	// Habilitacion del clock de la Switch Matrix
 	SYSCON->SYSAHBCLKCTRL0.SWM = 1;
@@ -176,18 +157,12 @@ int32_t ADC_config_conversions(const ADC_conversions_config_t * const conversion
 				SWM->PINENABLE0.ADC_11 = 0;
 				break;
 			default: break;
-			} // End switch
+			} // End switch(counter)
 		}
-
 	}
 
 	// Inhabilitacion del clock de la Switch Matrix
 	SYSCON->SYSAHBCLKCTRL0.SWM = 0;
-
-	/*
-	 * Por default, el clock seleccionado es el interno del microcontrolador
-	 * y los divisores estan en /1.
-	 */
 
 	// Solo conversiones por software, deshabilito las de hardware
 	ADC->SEQB_CTRL.TRIGGER = 0;
@@ -229,39 +204,19 @@ int32_t ADC_config_conversions(const ADC_conversions_config_t * const conversion
 		// Para iniciar una conversion, hay que llamar a la funcion:
 		// ADC_start_conversions()
 	}
-
-	return ADC_CONFIG_CONVERSIONS_SUCCESS;
 }
 
 /**
  * @brief Iniciar conversiones de ADC
  *
  * El ADC debe haber sido previamente configurado correctamente.
- *
- * @return Estado del inicio de conversiones del ADC
  */
-int32_t ADC_start_conversions(void)
+void ADC_start_conversions(void)
 {
-	if(SYSCON->PDRUNCFG.ADC_PD)
-	{
-		return ADC_START_CONVERSIONS_NOT_POWERED;
-	}
-
-	if(!SYSCON->SYSAHBCLKCTRL0.ADC)
-	{
-		return ADC_START_CONVERSIONS_NOT_CLOCKED;
-	}
-
 	if(!ADC->SEQB_CTRL.BURST)
 	{
 		// Solo disparo con el start si no esta en modo BURST
 		ADC->SEQB_CTRL.START = 1;
-
-		return ADC_START_CONVERSIONS_SUCCESS;
-	}
-	else
-	{
-		return ADC_START_CONVERSIONS_BURST_MODE;
 	}
 }
 
@@ -269,36 +224,12 @@ int32_t ADC_start_conversions(void)
  * @brief Obtener resultado de conversiones de ADC de un canal en particular
  * @param[in] channel Canal del cual obtener el resultado
  * @param[out] conversion Resultado de la conversion de ADC del canal asociado
- * @return Estado del pedido de resultado de conversion
  */
-int32_t ADC_get_conversion(uint8_t channel, uint32_t *conversion)
+void ADC_get_conversion(uint8_t channel, uint32_t *conversion)
 {
-	if(SYSCON->PDRUNCFG.ADC_PD)
+	if(ADC->DAT[channel].DATAVALID)
 	{
-		return ADC_GET_CONVERSION_NOT_POWERED;
-	}
-
-	if(!SYSCON->SYSAHBCLKCTRL0.ADC)
-	{
-		return ADC_GET_CONVERSION_NOT_CLOCKED;
-	}
-
-	if(channel >= 12)
-	{
-		return ADC_GET_CONVERSION_INVALID_CHANNEL;
-	}
-	else
-	{
-		if(ADC->DAT[channel].DATAVALID)
-		{
-			*conversion = ADC->DAT[channel].RESULT;
-
-			return ADC_GET_CONVERSION_SUCCESS;
-		}
-		else
-		{
-			return ADC_GET_CONVERSION_NOT_FINISHED;
-		}
+		*conversion = ADC->DAT[channel].RESULT;
 	}
 }
 

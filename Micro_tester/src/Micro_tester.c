@@ -77,7 +77,7 @@ static const UART_config_t uart_config =
 	.parity = UART_PARITY_NO_PARITY,
 	.stop_bits = UART_STOPLEN_1BIT,
 	.oversampling = UART_OVERSAMPLING_X16,
-	.clock_selection = PERIPHERAL_CLOCK_SELECTION_FRG0,
+	.clock_selection = SYSCON_PERIPHERAL_CLOCK_SEL_FRG0,
 	.baudrate = UART_BAUDRATE,
 	.tx_port = TX_PORT,
 	.tx_pin = TX_PIN,
@@ -119,17 +119,17 @@ static uint32_t adc_conversion = 0;
 int main(void)
 {
 	SYSCON_set_fro_direct(); // FRO sin divisor previo (FRO = 24MHz)
-	SYSCON_set_system_clock_source(SYSTEM_CLOCK_SEL_FRO);
+	SYSCON_set_system_clock_source(SYSCON_SYSTEM_CLOCK_SEL_FRO);
 
 	// Clock principal en un pin (utilizando un divisor)
-	SYSCON_set_clkout_config(CLKOUT_SOURCE_SELECTION_MAIN_CLOCK, CLOCKOUT_DIVIDER, CLOCKOUT_PORT, CLOCKOUT_PIN);
+	SYSCON_set_clkout_config(SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER, CLOCKOUT_PORT, CLOCKOUT_PIN);
 
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
 	// Como fuente utilizo el PLL a 24MHz ya configurado
 	// 24MHz / (1 + (47 / 256)) = 20.27722772MHz
-	SYSCON_set_frg_config(0, FRG_CLOCK_SELECTION_MAIN_CLOCK, 47, 256);
+	SYSCON_set_frg_config(0, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47, 256);
 
 	GPIO_init(LED_PORT);
 

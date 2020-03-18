@@ -35,7 +35,7 @@ void infotronic_init(uint32_t crystal_freq)
 	if(crystal_freq)
 	{
 		SYSCON_set_crystal_clock(crystal_freq);
-		SYSCON_set_system_clock_source(SYSTEM_CLOCK_SEL_EXT_CLK);
+		SYSCON_set_system_clock_source(SYSCON_SYSTEM_CLOCK_SEL_EXT_CLK);
 	}
 
 	IOCON_init();

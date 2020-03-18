@@ -12,11 +12,17 @@
 
 volatile SWM_per_t * const SWM = (SWM_per_t *) SWM_BASE; //!< Periferico SWM
 
+/**
+ * @brief Inicializacion de la Switch Matrix
+ */
 void SWM_init(void)
 {
 	SYSCON->SYSAHBCLKCTRL0.SWM = 1;
 }
 
+/**
+ * @brief Deinicializacion de la Switch Matrix
+ */
 void SWM_deinit(void)
 {
 	SYSCON->SYSAHBCLKCTRL0.SWM = 0;

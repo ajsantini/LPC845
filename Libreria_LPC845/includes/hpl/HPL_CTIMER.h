@@ -98,16 +98,6 @@ void CTIMER_stop(void);
 void CTIMER_run(void);
 
 /**
- * @brief Iniciar el reset del conteo
- */
-void CTIMER_assert_reset(void);
-
-/**
- * @brief Finalizar el reset del conteo
- */
-void CTIMER_clear_reset(void);
-
-/**
  * @brief Configuracion de los registros del CTIMER correspnodientes a los match registers
  * @param mr_number Numero de match a configurar
  * @param mr_config Configuracion de los match registers

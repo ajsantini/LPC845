@@ -42,7 +42,7 @@ int32_t SPI_init(uint8_t spi_selection, const SPI_config_t * config)
 	case 0:
 	{
 		// Seleccion de clock
-		SYSCON_set_peripheral_clock_source(PERIPHERAL_SELECTION_SPI0, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_SPI0, config->clock_selection);
 
 		SWM->PINASSIGN3.SPI0_SCK_IO = (config->sck_port * 32) + config->sck_pin;
 		SWM->PINASSIGN4.SPI0_MISO_IO = (config->miso_port * 32) + config->miso_pin;

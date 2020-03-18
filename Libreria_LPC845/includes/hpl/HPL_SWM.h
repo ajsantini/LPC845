@@ -9,8 +9,14 @@
 #ifndef HPL_SWM_H_
 #define HPL_SWM_H_
 
+/**
+ * @brief Inicializacion de la Switch Matrix
+ */
 void SWM_init(void);
 
+/**
+ * @brief Deinicializacion de la Switch Matrix
+ */
 void SWM_deinit(void);
 
 #endif /* HPL_SWM_H_ */

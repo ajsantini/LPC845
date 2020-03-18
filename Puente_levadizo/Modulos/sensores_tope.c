@@ -39,7 +39,7 @@ void sensores_tope_init_pins(void)
 {
 	IOCON_config_t pin_config =
 	{
-		.mode = PULL_UP,
+		.mode = IOCON_PULL_UP,
 		.hysteresis = 0,
 		.invert_input = 1,
 		.open_drain = 0,

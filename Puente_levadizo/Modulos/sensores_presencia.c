@@ -35,11 +35,11 @@ void sensores_presencia_init_pins(void)
 {
 	IOCON_config_t pin_config =
 	{
-		.mode = PULL_NONE,
+		.mode = IOCON_PULL_NONE,
 		.hysteresis = 0,
 		.invert_input = 1,
 		.open_drain = 0,
-		.sample_mode = SAMPLE_MODE_BYPASS,
+		.sample_mode = IOCON_SAMPLE_MODE_BYPASS,
 		.clk_sel = IOCON_CLK_DIV_0,
 		.dac_mode = 0,
 	};

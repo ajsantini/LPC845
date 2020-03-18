@@ -72,7 +72,7 @@ typedef struct
 	UART_parity_en parity;
 	UART_stop_en stop_bits;
 	UART_oversampling_en oversampling;
-	peripheral_clock_selection_en clock_selection;
+	SYSCON_peripheral_clock_sel_en clock_selection;
 	uint32_t baudrate;
 	uint32_t tx_port;
 	uint32_t tx_pin;
