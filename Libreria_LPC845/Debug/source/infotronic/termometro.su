@@ -1,4 +1,4 @@
-termometro.c:86:6:termometro_init	16	static
-termometro.c:102:6:termometro_check	8	static
-termometro.c:118:10:termometro_read	8	static
-termometro.c:126:13:adc_conversion_finished	32	static
+termometro.c:86:6:termometro_init	8	static
+termometro.c:104:6:termometro_check	8	static
+termometro.c:121:10:termometro_read	8	static
+termometro.c:129:13:adc_conversion_finished	8	static

@@ -20,27 +20,17 @@
 
 volatile ADC_per_t * const ADC = (ADC_per_t *) ADC_BASE; //!< Periferico ADC
 
+static void dummy_irq_callback(void);
+
 static void (*adc_seq_completed_callback[2])(void) = //!< Callback cuando terminan las secuencias de conversion
 {
-	NULL, NULL
+	dummy_irq_callback,
+	dummy_irq_callback
 };
 
-static void (*adc_overrun_callback)(void) = NULL; //!< Callback cuando ocurre un overrun
-static void (*adc_compare_callback[ADC_COMPARE_AMOUNT])(void) = //!< Callbacks para las comparaciones de ADC
-{
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL,
-	NULL
-};
+static void (*adc_overrun_callback)(void) = dummy_irq_callback; //!< Callback cuando ocurre un overrun
+
+static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
 
 /**
  * @brief Inicializacion del ADC
@@ -50,10 +40,7 @@ static void (*adc_compare_callback[ADC_COMPARE_AMOUNT])(void) = //!< Callbacks p
 void ADC_init(ADC_clock_source_en clock_source, const ADC_config_t *adc_config)
 {
 	ADC_CTRL_reg_t adc_ctrl_aux;
-	uint32_t aux;
 	uint32_t calib_aux;
-
-	adc_freq *= 25;
 
 	if(clock_source == ADC_CLOCK_SOURCE_FRO)
 	{
@@ -88,6 +75,7 @@ void ADC_init(ADC_clock_source_en clock_source, const ADC_config_t *adc_config)
 	// Poll el bit de calibracion hasta que la termine
 	while(ADC->CTRL.CALMODE);
 
+	ADC->TRM.VRANGE = adc_config->voltage_range;
 	ADC->CTRL.ASYNCMODE = adc_config->async_mode;
 	ADC->CTRL.LPWRMODE = adc_config->low_power_mode;
 	ADC->CTRL.CLKDIV = adc_config->clock_div;
@@ -126,7 +114,7 @@ void ADC_start_burst_in_sequence(ADC_sequence_sel_en sequence)
 	adc_sec_ctrl.BURST = 1;
 	adc_sec_ctrl.SEQ_ENA = 1;
 
-	*((uint32_t *) ADC->SEQ_CTRL[sequence]) = *((uint32_t *) &adc_sec_ctrl);
+	*((uint32_t *) &ADC->SEQ_CTRL[sequence]) = *((uint32_t *) &adc_sec_ctrl);
 }
 
 /**
@@ -211,6 +199,38 @@ void ADC_set_channel_threshold(uint8_t channel, ADC_threshold_sel_en threshold_s
 }
 
 /**
+ * @brief Habilitacion de interrupcion de secuencia
+ * @param[in] sequence Sobre que secuencia habilitar la interrupcion
+ */
+void ADC_enable_sequence_interrupt(ADC_sequence_sel_en sequence)
+{
+	if(sequence == ADC_SEQUENCE_SEL_A)
+	{
+		ADC->INTEN.SEQA_INTEN = 1;
+	}
+	else
+	{
+		ADC->INTEN.SEQB_INTEN = 1;
+	}
+}
+
+/**
+ * @brief Inhabilitacion de interrupcion de secuencia
+ * @param[in] sequence Sobre que secuencia inhabilitar la interrupcion
+ */
+void ADC_disable_sequence_interrupt(ADC_sequence_sel_en sequence)
+{
+	if(sequence == ADC_SEQUENCE_SEL_A)
+	{
+		ADC->INTEN.SEQA_INTEN = 0;
+	}
+	else
+	{
+		ADC->INTEN.SEQB_INTEN = 0;
+	}
+}
+
+/**
  * @brief Configurar un callback para cuando se genera una interrupcion de secuencia
  * @param[in] sequence Sobre que secuencia configurar el callback
  * @param[in] callback Puntero a la funcion a ejecutar cuando ocurra la interrupcion
@@ -221,160 +241,112 @@ void ADC_set_sequence_callback(ADC_sequence_sel_en sequence, void (*callback)(vo
 }
 
 /**
- * @brief Configuracion de las conversiones del ADC
- *
- * Configura el ADC con las siguientes salvedades:
- * -) Solo se permiten conversiones disparadas por software
- * -) Un disparo de conversion, convertira todos los canales habilitados
- * -) Las interrupciones seran una vez que termine la conversion de toda la secuencia
- *
- * @param[in] conversions_config Configuracion deseada para las conversiones
+ * @brief Habilitacion de interrupcion de overrun
  */
-void ADC_config_conversions(const ADC_conversions_config_t * const conversions_config)
+void ADC_enable_overrun_interrupt(void)
 {
-	uint32_t counter;
+	ADC->INTEN.OVR_INTEN = 1;
+}
 
-	// Habilitacion del clock de la Switch Matrix
-	SYSCON->SYSAHBCLKCTRL0.SWM = 1;
+/**
+ * @brief Inhabilitacion de interrupcion de overrun
+ */
+void ADC_disable_overrun_interrupt(void)
+{
+	ADC->INTEN.OVR_INTEN = 0;
+}
 
-	// Configuracion de pines necesarios de ADC en la Switch-Matrix
-	for(counter = 0; counter < 12; counter++)
+/**
+ * @brief Configurar un callback para cuando se genera una interrupcion de overrun
+ * @param[in] callback Puntero a la funcion a ejecutar cuando ocurra la interrupcion
+ */
+void ADC_set_overrun_callback(void (*callback)(void))
+{
+	adc_overrun_callback = callback;
+}
+
+/**
+ * @brief Habilitacion de interrupcion de threshold
+ * @param[in] channel Sobre que canal habilitar la interrupcion
+ * @param[in] mode Modo de interrupcion
+ */
+void ADC_enable_threshold_interrupt(uint8_t channel, ADC_threshold_interrupt_sel_en mode)
+{
+	switch(channel)
 	{
-		if(conversions_config->channels & (1 << counter))
-		{
-			switch(counter)
-			{
-			case 0:
-				SWM->PINENABLE0.ADC_0 = 0;
-				break;
-			case 1:
-				SWM->PINENABLE0.ADC_1 = 0;
-				break;
-			case 2:
-				SWM->PINENABLE0.ADC_2 = 0;
-				break;
-			case 3:
-				SWM->PINENABLE0.ADC_3 = 0;
-				break;
-			case 4:
-				SWM->PINENABLE0.ADC_4 = 0;
-				break;
-			case 5:
-				SWM->PINENABLE0.ADC_5 = 0;
-				break;
-			case 6:
-				SWM->PINENABLE0.ADC_6 = 0;
-				break;
-			case 7:
-				SWM->PINENABLE0.ADC_7 = 0;
-				break;
-			case 8:
-				SWM->PINENABLE0.ADC_8 = 0;
-				break;
-			case 9:
-				SWM->PINENABLE0.ADC_9 = 0;
-				break;
-			case 10:
-				SWM->PINENABLE0.ADC_10 = 0;
-				break;
-			case 11:
-				SWM->PINENABLE0.ADC_11 = 0;
-				break;
-			default: break;
-			} // End switch(counter)
-		}
-	}
-
-	// Inhabilitacion del clock de la Switch Matrix
-	SYSCON->SYSAHBCLKCTRL0.SWM = 0;
-
-	// Solo conversiones por software, deshabilito las de hardware
-	ADC->SEQB_CTRL.TRIGGER = 0;
-
-	// Canales a convertir
-	ADC->SEQB_CTRL.CHANNELS = conversions_config->channels;
-
-	// Polaridad del START
-	ADC->SEQB_CTRL.TRIGPOL = 1;
-
-	// Un start de conversion, convierte todos los canales habilitados directamente
-	ADC->SEQB_CTRL.SINGLESTEP = 0;
-
-	// Interrupciones al final de cada secuencia
-	ADC->SEQB_CTRL.MODE = 1;
-	ADC->INTEN.SEQB_INTEN = 1;
-
-	// Configuro el callback correspondiente y habilito/inhabilito interrupciones en NVIC
-	ADC_register_callback(conversions_config->conversion_ended_callback);
-
-	// Habilitacion de la secuencia
-	if(conversions_config->burst)
-	{
-		// Si se configura por burst, el bit BURST y ENABLE deben ser escritos a la vez
-		ADC_SEQB_CTRL_reg_t aux;
-		uint32_t *aux1 = (uint32_t *) &aux;
-
-		aux.BURST = 1;
-		aux.SEQB_ENA = 1;
-
-		// Despues de esta linea ya comienzan las conversiones
-		*((uint32_t *) &ADC->SEQB_CTRL) = *aux1;
-	}
-	else
-	{
-		// Si no es por burst, simplemente habilito la secuencia
-		ADC->SEQB_CTRL.SEQB_ENA = 1;
-
-		// Para iniciar una conversion, hay que llamar a la funcion:
-		// ADC_start_conversions()
+	case 0: { ADC->INTEN.ADCMPINTEN0 = mode; break; }
+	case 1: { ADC->INTEN.ADCMPINTEN1 = mode; break; }
+	case 2: { ADC->INTEN.ADCMPINTEN2 = mode; break; }
+	case 3: { ADC->INTEN.ADCMPINTEN3 = mode; break; }
+	case 4: { ADC->INTEN.ADCMPINTEN4 = mode; break; }
+	case 5: { ADC->INTEN.ADCMPINTEN5 = mode; break; }
+	case 6: { ADC->INTEN.ADCMPINTEN6 = mode; break; }
+	case 7: { ADC->INTEN.ADCMPINTEN7 = mode; break; }
+	case 8: { ADC->INTEN.ADCMPINTEN8 = mode; break; }
+	case 9: { ADC->INTEN.ADCMPINTEN9 = mode; break; }
+	case 10: { ADC->INTEN.ADCMPINTEN10 = mode; break; }
+	case 11: { ADC->INTEN.ADCMPINTEN11 = mode; break; }
 	}
 }
 
 /**
- * @brief Iniciar conversiones de ADC
- *
- * El ADC debe haber sido previamente configurado correctamente.
+ * @brief Inhabilitacion de interrupcion de threshold
+ * @param[in] channel Sobre que canal inhabilitar la interrupcion
  */
-void ADC_start_conversions(void)
+void ADC_disable_threshold_interrupt(uint8_t channel)
 {
-	if(!ADC->SEQB_CTRL.BURST)
+	switch(channel)
 	{
-		// Solo disparo con el start si no esta en modo BURST
-		ADC->SEQB_CTRL.START = 1;
+	case 0: { ADC->INTEN.ADCMPINTEN0 = 0; break; }
+	case 1: { ADC->INTEN.ADCMPINTEN1 = 0; break; }
+	case 2: { ADC->INTEN.ADCMPINTEN2 = 0; break; }
+	case 3: { ADC->INTEN.ADCMPINTEN3 = 0; break; }
+	case 4: { ADC->INTEN.ADCMPINTEN4 = 0; break; }
+	case 5: { ADC->INTEN.ADCMPINTEN5 = 0; break; }
+	case 6: { ADC->INTEN.ADCMPINTEN6 = 0; break; }
+	case 7: { ADC->INTEN.ADCMPINTEN7 = 0; break; }
+	case 8: { ADC->INTEN.ADCMPINTEN8 = 0; break; }
+	case 9: { ADC->INTEN.ADCMPINTEN9 = 0; break; }
+	case 10: { ADC->INTEN.ADCMPINTEN10 = 0; break; }
+	case 11: { ADC->INTEN.ADCMPINTEN11 = 0; break; }
 	}
 }
 
 /**
- * @brief Obtener resultado de conversiones de ADC de un canal en particular
- * @param[in] channel Canal del cual obtener el resultado
- * @param[out] conversion Resultado de la conversion de ADC del canal asociado
+ * @brief Configurar un callback para cuando se genera una interrupcion de threshold
+ * @param[in] callback Puntero a la funcion a ejecutar cuando ocurra la interrupcion
  */
-void ADC_get_conversion(uint8_t channel, uint32_t *conversion)
+void ADC_set_threshold_callback(void (*callback)(void))
 {
-	if(ADC->DAT[channel].DATAVALID)
-	{
-		*conversion = ADC->DAT[channel].RESULT;
-	}
+	adc_compare_callback = callback;
 }
 
 /**
- * @brief Registrar un callback a llamar en la funcion de interrupcion cuando termina la secuencia de conversiones
- * @param[in] new_callback Puntero a funcion a llamar una vez terminada la secuencia de conversiones
+ * @brief Leer alguno de los registros globales de resultado de conversion
+ * @param[in] seequence De que secuencia leer el resultado global de conversion
+ * @param[out] data Contenido del registro
  */
-void ADC_register_callback(void (*new_callback)(void))
+void ADC_get_global_data(ADC_sequence_sel_en sequence, ADC_global_data_t *data)
 {
-	adc_seqb_completed_callback = new_callback;
+	*data = *((ADC_global_data_t *) &ADC->SEQ_GDAT[sequence]);
+}
 
-	if(new_callback != NULL)
-	{
-		// Habilito interrupciones en el NVIC
-		NVIC->ISER0.ISE_ADC_SEQB = 1;
-	}
-	else
-	{
-		// Inhabilito interrupciones en el NVIC
-		NVIC->ICER0.ICE_ADC_SEQB = 1;
-	}
+/**
+ * @brief Leer alguno de los registros de canal de resultado de conversion
+ * @param[in] channel De que canal leer el resultado de canal de conversion
+ * @param[out] data Contenido del registro
+ */
+void ADC_get_channel_data(uint8_t channel, ADC_channel_data_t *data)
+{
+	*data = *((ADC_channel_data_t *) &ADC->DAT[channel]);
+}
+
+/**
+ * @brief Funcion dummy para usar como default para las interrupciones
+ */
+static void dummy_irq_callback(void)
+{
+	return;
 }
 
 /**
@@ -382,13 +354,12 @@ void ADC_register_callback(void (*new_callback)(void))
  */
 void ADC_SEQA_IRQHandler(void)
 {
-	if(adc_seqb_completed_callback != NULL)
-	{
-		adc_seq_completed_callback[ADC_SEQUENCE_SEL_A]();
-	}
+	adc_seq_completed_callback[ADC_SEQUENCE_SEL_A]();
 
-	// Limpio interrupcion de secuencia A completa
-	ADC->FLAGS.SEQA_INT = 1;
+	if(ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].MODE == 1)
+	{
+		ADC->FLAGS.SEQA_INT = 1;
+	}
 }
 
 /**
@@ -396,27 +367,26 @@ void ADC_SEQA_IRQHandler(void)
  */
 void ADC_SEQB_IRQHandler(void)
 {
-	if(adc_seqb_completed_callback != NULL)
-	{
-		adc_seq_completed_callback[ADC_SEQUENCE_SEL_B]();
-	}
+	adc_seq_completed_callback[ADC_SEQUENCE_SEL_B]();
 
-	// Limpio interrupcion de secuencia B completa
-	ADC->FLAGS.SEQB_INT = 1;
+	if(ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_B].MODE == 1)
+	{
+		ADC->FLAGS.SEQB_INT = 1;
+	}
 }
 
 /**
- * @brief Funcion de interrupcion cuando se detecta la condicion de threshold establecida
+ * @brief Funcion de interrupcion cuando se detecta alguna de las condiciones de threshold establecidas
  */
 void ADC_THCMP_IRQHandler(void)
 {
-
+	adc_compare_callback();
 }
 
 /**
- * @brief Funcion de interrupcion cuando se detecta una condicion de OVERRUN
+ * @brief Funcion de interrupcion cuando se detecta alguna de las condiciones de overrun
  */
 void ADC_OVR_IRQHandler(void)
 {
-
+	adc_overrun_callback();
 }

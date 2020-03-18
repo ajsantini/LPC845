@@ -25,6 +25,7 @@ typedef struct
 	uint8_t clock_div;
 	uint8_t async_mode : 1;
 	uint8_t low_power_mode : 1;
+	uint8_t voltage_range : 1;
 }ADC_config_t;
 
 typedef enum
@@ -51,6 +52,12 @@ typedef enum
 	ADC_INTERRUPT_MODE_EOS
 }__attribute__((packed)) ADC_interrupt_mode_en;
 
+typedef enum
+{
+	ADC_THRESHOLD_INTERRUPT_SEL_OUTSIDE = 1,
+	ADC_THRESHOLD_INTERRUPT_SEL_CROSSING
+}__attribute__((packed)) ADC_threshold_interrupt_sel_en;
+
 typedef struct
 {
 	uint16_t channels;
@@ -61,6 +68,30 @@ typedef struct
 	uint8_t low_priority;
 	uint8_t interrupt_mode;
 }ADC_sequence_config_t;
+
+typedef struct
+{
+	uint32_t : 4;
+	uint32_t RESULT : 12;
+	uint32_t THCMPRANGE : 2;
+	uint32_t THCMPCROSS : 2;
+	uint32_t : 6;
+	uint32_t CHANNEL : 4;
+	uint32_t OVERRUN : 1;
+	uint32_t DATAVALID : 1;
+}ADC_global_data_t;
+
+typedef struct
+{
+	uint32_t : 4;
+	uint32_t RESULT : 12;
+	uint32_t THCMPRANGE : 2;
+	uint32_t THCMPCROSS : 2;
+	uint32_t : 6;
+	uint32_t CHANNEL : 4;
+	uint32_t OVERRUN : 1;
+	uint32_t DATAVALID : 1;
+}ADC_channel_data_t;
 
 /**
  * @brief Inicializacion del ADC
@@ -128,6 +159,18 @@ void ADC_set_compare_high_threshold(ADC_threshold_sel_en threshold_selection, ui
 void ADC_set_channel_threshold(uint8_t channel, ADC_threshold_sel_en threshold_selection);
 
 /**
+ * @brief Habilitacion de interrupcion de secuencia
+ * @param[in] sequence Sobre que secuencia habilitar la interrupcion
+ */
+void ADC_enable_sequence_interrupt(ADC_sequence_sel_en sequence);
+
+/**
+ * @brief Inhabilitacion de interrupcion de secuencia
+ * @param[in] sequence Sobre que secuencia inhabilitar la interrupcion
+ */
+void ADC_disable_sequence_interrupt(ADC_sequence_sel_en sequence);
+
+/**
  * @brief Configurar un callback para cuando se genera una interrupcion de secuencia
  * @param[in] sequence Sobre que secuencia configurar el callback
  * @param[in] callback Puntero a la funcion a ejecutar cuando ocurra la interrupcion
@@ -135,35 +178,52 @@ void ADC_set_channel_threshold(uint8_t channel, ADC_threshold_sel_en threshold_s
 void ADC_set_sequence_callback(ADC_sequence_sel_en sequence, void (*callback)(void));
 
 /**
- * @brief Configuracion de las conversiones del ADC
- *
- * Configura el ADC con las siguientes salvedades:
- * -) Solo se permiten conversiones disparadas por software
- * -) Un disparo de conversion, convertira todos los canales habilitados
- * -) Las interrupciones seran una vez que termine la conversion de toda la secuencia
- *
- * @param[in] conversions_config Configuracion deseada para las conversiones
+ * @brief Habilitacion de interrupcion de overrun
  */
-void ADC_config_conversions(const ADC_conversions_config_t * const conversions_config);
+void ADC_enable_overrun_interrupt(void);
 
 /**
- * @brief Iniciar conversiones de ADC
- *
- * El ADC debe haber sido previamente configurado correctamente.
+ * @brief Inhabilitacion de interrupcion de overrun
  */
-void ADC_start_conversions(void);
+void ADC_disable_overrun_interrupt(void);
 
 /**
- * @brief Obtener resultado de conversiones de ADC de un canal en particular
- * @param[in] channel Canal del cual obtener el resultado
- * @param[out] conversion Resultado de la conversion de ADC del canal asociado
+ * @brief Configurar un callback para cuando se genera una interrupcion de overrun
+ * @param[in] callback Puntero a la funcion a ejecutar cuando ocurra la interrupcion
  */
-void ADC_get_conversion(uint8_t channel, uint32_t *conversion);
+void ADC_set_overrun_callback(void (*callback)(void));
 
 /**
- * @brief Registrar un callback a llamar en la funcion de interrupcion cuando termina la secuencia de conversiones
- * @param new_callback Puntero a funcion a llamar una vez terminada la secuencia de conversiones
+ * @brief Habilitacion de interrupcion de threshold
+ * @param[in] channel Sobre que canal habilitar la interrupcion
+ * @param[in] mode Modo de interrupcion
  */
-void ADC_register_callback(void (*new_callback)(void));
+void ADC_enable_threshold_interrupt(uint8_t channel, ADC_threshold_interrupt_sel_en mode);
+
+/**
+ * @brief Inhabilitacion de interrupcion de threshold
+ * @param[in] channel Sobre que canal inhabilitar la interrupcion
+ */
+void ADC_disable_threshold_interrupt(uint8_t channel);
+
+/**
+ * @brief Configurar un callback para cuando se genera una interrupcion de threshold
+ * @param[in] callback Puntero a la funcion a ejecutar cuando ocurra la interrupcion
+ */
+void ADC_set_threshold_callback(void (*callback)(void));
+
+/**
+ * @brief Leer alguno de los registros globales de resultado de conversion
+ * @param[in] seequence De que secuencia leer el resultado global de conversion
+ * @param[out] data Contenido del registro
+ */
+void ADC_get_global_data(ADC_sequence_sel_en sequence, ADC_global_data_t *data);
+
+/**
+ * @brief Leer alguno de los registros de canal de resultado de conversion
+ * @param[in] channel De que canal leer el resultado de canal de conversion
+ * @param[out] data Contenido del registro
+ */
+void ADC_get_channel_data(uint8_t channel, ADC_channel_data_t *data);
 
 #endif /* HPL_ADC_H_ */

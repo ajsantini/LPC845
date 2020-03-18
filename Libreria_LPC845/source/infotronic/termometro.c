@@ -85,15 +85,17 @@ static void adc_conversion_finished(void);
  */
 void termometro_init(void)
 {
-	ADC_conversions_config_t adc_config;
+	#warning Actualizar esta funcion
+	/*ADC_conversions_config_t adc_config;
 
 	adc_config.burst = 0;
 	adc_config.channels = ADC_CHANNEL_MASK;
 	adc_config.conversion_ended_callback = adc_conversion_finished;
 
+
 	ADC_init(ADC_SAMPLING_FREQUENCY, ADC_CLOCK_SOURCE_FRO);
 
-	ADC_config_conversions(&adc_config);
+	ADC_config_conversions(&adc_config);*/
 }
 
 /**
@@ -101,14 +103,15 @@ void termometro_init(void)
  */
 void termometro_check(void)
 {
-	static uint32_t msec_counter = 0;
+	#warning Actualizar esta funcion
+	/*static uint32_t msec_counter = 0;
 
 	msec_counter = (msec_counter + 1) % CONVERSION_PERIOD_MSEC;
 
 	if(msec_counter == 0)
 	{
 		ADC_start_conversions();
-	}
+	}*/
 }
 
 /**
@@ -125,7 +128,8 @@ uint32_t termometro_read(void)
  */
 static void adc_conversion_finished(void)
 {
-	uint32_t adc_value;
+	#warning Actualizar esta funcion
+	/*uint32_t adc_value;
 
 	if(ADC_get_conversion(ADC_CHANNEL, &adc_value) == ADC_GET_CONVERSION_SUCCESS)
 	{
@@ -184,5 +188,5 @@ static void adc_conversion_finished(void)
 				}
 			}
 		}
-	}
+	}*/
 }

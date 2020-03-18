@@ -49,22 +49,10 @@ typedef struct
 	uint32_t THCMPRANGE : 2;
 	uint32_t THCMPCROSS : 2;
 	uint32_t : 6;
-	uint32_t CHN : 4;
+	uint32_t CHANNEL : 4;
 	uint32_t OVERRUN : 1;
 	uint32_t DATAVALID : 1;
-}ADC_SEQA_GDAT_reg_t;
-
-typedef struct
-{
-	uint32_t : 4;
-	uint32_t RESULT : 12;
-	uint32_t THCMPRANGE : 2;
-	uint32_t THCMPCROSS : 2;
-	uint32_t : 6;
-	uint32_t CHN : 4;
-	uint32_t OVERRUN : 1;
-	uint32_t DATAVALID : 1;
-}ADC_SEQB_GDAT_reg_t;
+}ADC_SEQ_GDAT_reg_t;
 
 typedef struct
 {
@@ -174,8 +162,7 @@ typedef struct
 	ADC_CTRL_reg_t CTRL;
 	const uint32_t RESERVED_1;
 	ADC_SEQ_CTRL_reg_t SEQ_CTRL[2];
-	ADC_SEQA_GDAT_reg_t SEQA_GDAT;
-	ADC_SEQB_GDAT_reg_t SEQB_GDAT;
+	ADC_SEQ_GDAT_reg_t SEQ_GDAT[2];
 	const uint32_t RESERVED_2[2];
 	const ADC_DAT_reg_t DAT[12];
 	ADC_THR_LOW_reg_t THR_LOW[2];
