@@ -216,6 +216,6 @@ typedef struct
 	GPIO_DIRNOT_reg_t DIRNOT1;
 }GPIO_per_t;
 
-volatile GPIO_per_t * const GPIO = (GPIO_per_t *) GPIO_BASE; //!< Periferico GPIO
+extern volatile GPIO_per_t * const GPIO; //!< Periferico GPIO
 
 #endif /* HRI_GPIO_H_ */

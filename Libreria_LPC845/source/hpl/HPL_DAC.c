@@ -12,6 +12,11 @@
 #include <HRI_SYSCON.h>
 #include <HRI_SWM.h>
 
+volatile DAC_per_t * const DAC[] = { //!< Perifericos DAC
+		(DAC_per_t *) DAC0_BASE,
+		(DAC_per_t *) DAC1_BASE
+};
+
 /**
  * @brief Inicializacion del DAC
  * @param[in] dac Cual de los dos DACs inicializar

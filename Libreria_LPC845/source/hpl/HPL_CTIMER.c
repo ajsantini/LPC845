@@ -19,6 +19,8 @@
 #define		MATCH_AMOUNT		4
 #define		CAPTURE_AMOUNT		4
 
+volatile CTIMER_per_t * const CTIMER = (volatile CTIMER_per_t *) CTIMER_BASE; //!< Periferico CTIMER
+
 void (*match_callbacks[MATCH_AMOUNT])(void) = //!< Callbacks para interrupciones de match
 {
 	NULL,

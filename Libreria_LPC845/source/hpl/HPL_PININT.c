@@ -15,6 +15,8 @@
 #include <HRI_SWM.h>
 #include <HRI_UART.h>
 
+volatile PININT_per_t * const PININT = (PININT_per_t *) PININT_BASE; //!< Periferico PININT
+
 static void dummy_irq_callback(void);
 
 static void (*pinint_callbacks[8])(void) = { //!< Callbacks para las 8 interrupciones disponibles

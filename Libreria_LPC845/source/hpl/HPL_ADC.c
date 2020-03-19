@@ -18,6 +18,8 @@
 #define	ADC_MAX_FREQ			1.2e6 //<! Maxima frecuencia de conversion admitida por el ADC
 #define	ADC_COMPARE_AMOUNT		12 //!< Cantidad de canales de comparacion admitidos por el ADC
 
+volatile ADC_per_t * const ADC = (ADC_per_t *) ADC_BASE; //!< Periferico ADC
+
 static void dummy_irq_callback(void);
 
 static void (*adc_seq_completed_callback[2])(void) = //!< Callback cuando terminan las secuencias de conversion
@@ -36,7 +38,7 @@ static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks p
  */
 void ADC_config_control(const ADC_config_t *adc_config)
 {
-	ADC_CTRL_reg_t adc_ctrl_aux;
+	/*ADC_CTRL_reg_t adc_ctrl_aux;
 	uint32_t calib_aux;
 
 	if(clock_source == ADC_CLOCK_SOURCE_FRO)
@@ -70,7 +72,7 @@ void ADC_config_control(const ADC_config_t *adc_config)
 	*((uint32_t *) &ADC->CTRL) = *((uint32_t *) &adc_ctrl_aux);
 
 	// Poll el bit de calibracion hasta que la termine
-	while(ADC->CTRL.CALMODE);
+	while(ADC->CTRL.CALMODE);*/
 
 	ADC->TRM.VRANGE = adc_config->voltage_range;
 	ADC->CTRL.ASYNCMODE = adc_config->async_mode;

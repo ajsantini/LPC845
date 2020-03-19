@@ -95,6 +95,6 @@ typedef struct
 	IOCON_PIO_reg_t PIO1_10;
 }IOCON_per_t;
 
-volatile IOCON_per_t * const IOCON = (IOCON_per_t *) IOCON_BASE; //!< Periferico IOCON
+extern volatile IOCON_per_t * const IOCON; //!< Periferico IOCON
 
 #endif /* HRI_IOCON_H_ */

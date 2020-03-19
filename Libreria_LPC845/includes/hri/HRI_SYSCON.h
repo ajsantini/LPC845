@@ -504,6 +504,6 @@ typedef struct
 	const SYSCON_DEVICE_ID_reg_t DEVICE_ID;
 }SYSCON_per_t;
 
-volatile SYSCON_per_t * const SYSCON = (SYSCON_per_t *) SYSCON_BASE; //!< Periferico SYSCON
+extern volatile SYSCON_per_t * const SYSCON; //!< Periferico SYSCON
 
 #endif /* HRI_SYSCON_H_ */

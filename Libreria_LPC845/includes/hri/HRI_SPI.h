@@ -154,9 +154,6 @@ typedef struct
 	const SPI_INTSTAT_reg_t INTSTAT;
 }SPI_per_t;
 
-volatile SPI_per_t * const SPI[] = { //!< Perifericos SPI
-		(SPI_per_t *) SPI0_BASE,
-		(SPI_per_t *) SPI1_BASE
-};
+extern volatile SPI_per_t * const SPI[]; //!< Perifericos SPI
 
 #endif /* HRI_SPI_H_ */

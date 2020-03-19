@@ -131,6 +131,6 @@ typedef struct
 	PININT_PMCFG_reg_t PMCFG;
 }PININT_per_t;
 
-volatile PININT_per_t * const PININT = (PININT_per_t *) PININT_BASE; //!< Periferico PININT
+extern volatile PININT_per_t * const PININT; //!< Periferico PININT
 
 #endif /* HRI_PININT_H_ */

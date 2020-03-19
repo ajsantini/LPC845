@@ -1,4 +1,4 @@
-HPL_DAC.c:21:6:DAC_init	24	static
-HPL_DAC.c:50:6:DAC_deinit	16	static
-HPL_DAC.c:71:6:DAC_update_value	16	static
-HPL_DAC.c:81:6:DAC_config_ctrl	16	static
+HPL_DAC.c:26:6:DAC_init	24	static
+HPL_DAC.c:55:6:DAC_deinit	16	static
+HPL_DAC.c:76:6:DAC_update_value	16	static
+HPL_DAC.c:86:6:DAC_config_ctrl	16	static

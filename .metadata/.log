@@ -10777,3 +10777,12 @@ java.io.FileNotFoundException: /icons/peripheral.gif
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-18 23:34:37.181
+!MESSAGE Indexed 'Test_development' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-03-18 23:39:54.356
+!MESSAGE Indexed 'Test_development' (4 sources, 9 headers) in 0.244 sec: 1,105 declarations; 1,203 references; 0 unresolved inclusions; 0 syntax errors; 18 unresolved names (0.77%)
+
+!ENTRY org.eclipse.jface.text 2 0 2020-03-19 00:32:23.544
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'

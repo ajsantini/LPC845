@@ -11,6 +11,8 @@
 #include <HRI_GPIO.h>
 #include <HRI_SYSCON.h>
 
+volatile GPIO_per_t * const GPIO = (GPIO_per_t *) GPIO_BASE; //!< Periferico GPIO
+
 /**
  * @brief Inicializa el puerto
  *

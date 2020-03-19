@@ -9,7 +9,8 @@
 #include <stdint.h>
 #include <HPL_IOCON.h>
 #include <HRI_IOCON.h>
-#include <HRI_SYSCON.h>
+
+volatile IOCON_per_t * const IOCON = (IOCON_per_t *) IOCON_BASE; //!< Periferico IOCON
 
 static IOCON_PIO_reg_t dummy_reg; //!< Registro dummy para los pines no disponibles en el encapsulado
 
@@ -59,7 +60,8 @@ static IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros 
  */
 void IOCON_init(void)
 {
-	SYSCON->SYSAHBCLKCTRL0.IOCON = 1;
+	#warning actualizar
+	//SYSCON->SYSAHBCLKCTRL0.IOCON = 1;
 }
 
 /**
@@ -69,7 +71,8 @@ void IOCON_init(void)
  */
 void IOCON_deinit(void)
 {
-	SYSCON->SYSAHBCLKCTRL0.IOCON = 0;
+	#warning actualizar
+	//SYSCON->SYSAHBCLKCTRL0.IOCON = 0;
 }
 
 /**

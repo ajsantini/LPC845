@@ -1,3 +1,6 @@
-HPL_SYSTICK.c:22:6:SYSTICK_init	24	static
-HPL_SYSTICK.c:61:6:SysTick_Handler	8	static
-HPL_SYSTICK.c:72:6:SYSTICK_update_callback	16	static
+HPL_SYSCON.h:189:6:SYSCON_set_fro_direct	8	static
+HPL_SYSCON.h:199:6:SYSCON_clear_fro_direct	8	static
+HPL_SYSCON.h:253:6:SYSCON_set_frg_config	24	static
+HPL_SYSTICK.c:24:6:SYSTICK_init	24	static
+HPL_SYSTICK.c:63:6:SysTick_Handler	8	static
+HPL_SYSTICK.c:74:6:SYSTICK_update_callback	16	static

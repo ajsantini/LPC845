@@ -12,6 +12,8 @@
 #include <HPL_SYSCON.h>
 #include <HRI_SYSTICK.h>
 
+volatile SYSTICK_reg_t * const SYSTICK = (SYSTICK_reg_t *) SYSTICK_BASE; //!< Periferico SYSTICK
+
 static void (*systick_callback)(void) = NULL; //!< Callback a llamar en la interrupcion
 
 /**

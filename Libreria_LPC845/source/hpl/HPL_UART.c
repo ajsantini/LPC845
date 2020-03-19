@@ -13,6 +13,14 @@
 #include <HRI_NVIC.h>
 #include <HRI_UART.h>
 
+volatile UART_per_t * const UART[] = { //!< Perifericos USART
+		(UART_per_t *) UART0_BASE,
+		(UART_per_t *) UART1_BASE,
+		(UART_per_t *) UART2_BASE,
+		(UART_per_t *) UART3_BASE,
+		(UART_per_t *) UART4_BASE
+};
+
 static void (*uart_rx_callback[])(void) = { //!< Callbacks registrados a la recepcion de un dato por UART
 		NULL,
 		NULL,

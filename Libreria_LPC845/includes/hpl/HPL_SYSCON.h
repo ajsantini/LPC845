@@ -94,29 +94,126 @@ typedef enum
 	SYSCON_CLKOUT_SOURCE_SEL_WATCHDOG_OSC
 }SYSCON_clkout_source_sel_en;
 
+typedef enum
+{
+	SYSCON_BYPASS_DISABLED = 0,
+	SYSCON_BYPASS_ENABLED
+}SYSCON_bypass_sel_en;
+
+typedef enum
+{
+	SYSCON_FREQRANGE_MINUS_20MHZ = 0,
+	SYSCON_FREQRANGE_PLUS_20MHZ
+}SYSCON_freqrange_sel_en;
+
 /*
  * @brief Seleccion de fuente de clock para el clock principal
  * @param[in] clock_selection Seleccion de clock deseada
  */
-void SYSCON_set_system_clock_source(SYSCON_system_clock_sel_en clock_selection);
+static inline void SYSCON_set_system_clock_source(SYSCON_system_clock_sel_en clock_selection)
+{
+	if(clock_selection != SYSCON_SYSTEM_CLOCK_SEL_PLL)
+	{
+		SYSCON->MAINCLKSEL.SEL = clock_selection;
+		SYSCON->MAINCLKUEN.ENA = 0;
+		SYSCON->MAINCLKUEN.ENA = 1;
+
+		SYSCON->MAINCLKPLLSEL.SEL = 0;
+		SYSCON->MAINCLKPLLUEN.ENA = 0;
+		SYSCON->MAINCLKPLLUEN.ENA = 1;
+	}
+	else
+	{
+		SYSCON->MAINCLKPLLSEL.SEL = 1;
+		SYSCON->MAINCLKPLLUEN.ENA = 0;
+		SYSCON->MAINCLKPLLUEN.ENA = 1;
+	}
+}
 
 /**
- * @brief Obtencion de la frecuencia de clock actual
- * @return Frecuencia del clock actual en Hz
+ * @brief Configuracion del registro de control del PLL
+ * @param[in] m Valor del divisor del feedback
+ * @param[in] p Valor del post divisor
  */
-uint32_t SYSCON_get_system_clock(void);
+static inline void SYSCON_set_pll_control(uint8_t m, uint8_t p)
+{
+	SYSCON->SYSPLLCTRL.MSEL = m;
+	SYSCON->SYSPLLCTRL.PSEL = p;
+}
 
 /**
- * @brief Obtencion de la frecuencia del FRO actual
- * @return Frecuencia del FRO actual en Hz
+ * @brief Obtener estado de lock del PLL
+ * @return Valor del estado de lock del PLL
  */
-uint32_t SYSCON_get_fro_clock(void);
+static inline uint8_t SYSCON_get_pll_lock_status(void)
+{
+	return SYSCON->SYSPLLSTAT.LOCK;
+}
 
 /**
- * @brief Obtencion de la frecuencia del PLL actual
- * @return Frecuencia del PLL actual en Hz
+ * @brief Configurar el registro de control del sistema del oscilador
+ * @param[in] bypass Seleccion de bypass
+ * @param[in] freqrange Rango de frecuencia a utilizar
  */
-uint32_t SYSCON_get_pll_clock(void);
+static inline void SYSCON_set_oscillator_control(SYSCON_bypass_sel_en bypass, SYSCON_freqrange_sel_en freqrange)
+{
+	SYSCON->SYSOSCCTRL.BYPASS = bypass;
+	SYSCON->SYSOSCCTRL.FREQRANGE = freqrange;
+}
+
+/**
+ * @brief Configuracion del registro de control del oscilador del watchdog
+ * @param[in] divsel Seleccion de divsel
+ * @param[in] clkana_sel Seleccion de frecuencia base
+ */
+static inline void SYSCON_set_watchdog_oscillator_control(uint8_t divsel, SYSCON_watchdog_clkana_sel_en clkana_sel)
+{
+	SYSCON->WDTOSCCTRL.DIVSEL = divsel;
+	SYSCON->WDTOSCCTRL.FREQSEL = clkana_sel;
+}
+
+/**
+ * @brief Inicializacion del clock watchdog oscillator
+ * @param[in] clkana_selection Seleccion de la frecuencia base
+ * @param[in] divider Divisor deseado (se redondeara al multiplo de 2 mas cercano)
+ */
+static inline void SYSCON_set_watchdog_osc_clock(SYSCON_watchdog_clkana_sel_en clkana_selection, uint8_t divider)
+{
+	SYSCON->WDTOSCCTRL.FREQSEL = clkana_selection;
+	SYSCON->WDTOSCCTRL.DIVSEL = divider;
+}
+
+/**
+ * @brief Configuracion del FRO para que sea el oscilador directo (sin division)
+ */
+void SYSCON_set_fro_direct(void)
+{
+	SYSCON->FROOSCCTRL.FRO_DIRECT = 1;
+	SYSCON->FRODIRECTCLKUEN.ENA = 0;
+	SYSCON->FRODIRECTCLKUEN.ENA = 1;
+}
+
+/**
+ * @brief Configuracion del FRO para que sea el oscilador dividido (con division dependiente de FAIM)
+ */
+void SYSCON_clear_fro_direct(void)
+{
+	SYSCON->FROOSCCTRL.FRO_DIRECT = 0;
+	SYSCON->FRODIRECTCLKUEN.ENA = 0;
+	SYSCON->FRODIRECTCLKUEN.ENA = 1;
+}
+
+/**
+ * @brief Configuracion de la fuente de clock para el PLL
+ * @param[in] pll_source Fuente de entrada para el PLL
+ */
+static inline void SYSCON_set_pll_clk_source(SYSCON_pll_source_sel_en pll_source)
+{
+	SYSCON->SYSPLLCLKSEL.SEL = pll_source;
+
+	SYSCON->SYSPLLCLKUEN.ENA = 0;
+	SYSCON->SYSPLLCLKUEN.ENA = 1;
+}
 
 /*
  * @brief Seleccion del divisor del system clock
@@ -137,42 +234,6 @@ static inline void SYSCON_set_ext_clock_source(SYSCON_ext_clock_source_sel_en so
 }
 
 /**
- * @brief Inicializacion del clock con cristal externo
- * @param[in] crystal_frequency Frecuencia del cristal externo utilizado en Hz
- */
-void SYSCON_set_crystal_clock(uint32_t crystal_frequency);
-
-/**
- * @brief Inicializacion del clock externo (EXT CLK IN)
- * @param[in] ext_clk_frequency Frecuencia de la fuente externa utilizada, en Hz
- */
-void SYSCON_set_ext_in_clock(uint32_t ext_clk_frequency);
-
-/**
- * @brief Configuracion del FRO para que sea el oscilador directo (sin division)
- */
-void SYSCON_set_fro_direct(void);
-
-/**
- * @brief Configuracion del FRO para que sea el oscilador dividido (con division dependiente de FAIM)
- */
-void SYSCON_clear_fro_direct(void);
-
-/**
- * @brief Inicializacion del clock watchdog oscillator
- * @param[in] clkana_selection Seleccion de la frecuencia base
- * @param[in] divider Divisor deseado (se redondeara al multiplo de 2 mas cercano)
- */
-void SYSCON_set_watchdog_osc_clock(SYSCON_watchdog_clkana_sel_en clkana_selection, uint8_t divider);
-
-/**
- * @brief Inicializacion del PLL
- * @param[in] pll_source Fuente de entrada para el PLL
- * @param[in] pll_multiplier Multiplicador de frecuencia del PLL
- */
-void SYSCON_set_PLL(SYSCON_pll_source_sel_en pll_source, uint8_t pll_multiplier);
-
-/**
  * @brief Seleccion de fuente de clock para los distintos perifericos
  * @param[in] peripheral Periferico cuya fuente seleccionar
  * @param[in] clock Fuente de clock para el periferico seleccionada
@@ -183,20 +244,27 @@ static inline void SYSCON_set_peripheral_clock_source(SYSCON_peripheral_sel_en p
 }
 
 /**
- * @brief Obtencion del clock de los distintos perifericos
- * @param[in] peripheral Periferico cuya fuente seleccionar
- * @return Frecuencia del clock del periferico, en Hz
- */
-uint32_t SYSCON_get_peripheral_clock(SYSCON_peripheral_sel_en peripheral);
-
-/**
  * @brief Configuracion del FRG
  * @param[in] frg_selection Cual de los FRG configurar, cero o uno
  * @param[in] clock_source Fuente de clock del FRG
  * @param[in] mul Multiplicador del FRG 0 ~ 255
- * @param[in] div Divisor del FRG 1~256
+ * @param[in] div Divisor del FRG 0~255
  */
-void SYSCON_set_frg_config(uint8_t frg_selection, SYSCON_frg_clock_sel_en clock_source, uint8_t mul, uint16_t div);
+void SYSCON_set_frg_config(uint8_t frg_selection, SYSCON_frg_clock_sel_en clock_source, uint8_t mul, uint8_t div)
+{
+	if(frg_selection == 0)
+	{
+		SYSCON->FRG0CLKSEL.SEL = clock_source;
+		SYSCON->FRG0DIV.DIV = div;
+		SYSCON->FRG0MUL.MULT = mul;
+	}
+	else if(frg_selection == 1)
+	{
+		SYSCON->FRG1CLKSEL.SEL = clock_source;
+		SYSCON->FRG1DIV.DIV = div;
+		SYSCON->FRG1MUL.MULT = mul;
+	}
+}
 
 /**
  * @brief Seleccion de fuente para el CLOCK OUT
