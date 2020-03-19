@@ -1,7 +1,7 @@
-HPL_SYSCON.h:189:6:SYSCON_set_fro_direct	8	static
-HPL_SYSCON.h:199:6:SYSCON_clear_fro_direct	8	static
-HPL_SYSCON.h:241:20:SYSCON_set_peripheral_clock_source	24	static
-HPL_SYSCON.h:253:6:SYSCON_set_frg_config	24	static
+HPL_SYSCON.h:329:6:SYSCON_set_fro_direct	8	static
+HPL_SYSCON.h:339:6:SYSCON_clear_fro_direct	8	static
+HPL_SYSCON.h:504:20:SYSCON_set_peripheral_clock_source	24	static
+HPL_SYSCON.h:516:6:SYSCON_set_frg_config	24	static
 HPL_UART.c:47:6:UART_register_rx_callback	16	static
 HPL_UART.c:57:6:UART_register_tx_callback	16	static
 HPL_UART.c:68:9:UART_init	24	static

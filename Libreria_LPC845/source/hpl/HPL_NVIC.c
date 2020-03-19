@@ -1,8 +1,9 @@
-/*
- * HPL_NVIC.c
- *
- *  Created on: Mar 19, 2020
- *      Author: augusto
+/**
+ * @file HPL_NVIC.c
+ * @brief Funciones a nivel de abstraccion de periferico para el NVIC (LPC845)
+ * @author Augusto Santini
+ * @date 6/2019
+ * @version 1.0
  */
 
 #include <HRI_NVIC.h>

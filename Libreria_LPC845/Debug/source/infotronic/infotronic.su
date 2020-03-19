@@ -1,7 +1,6 @@
-HPL_SYSCON.h:113:20:SYSCON_set_system_clock_source	16	static
-HPL_SYSCON.h:189:6:SYSCON_set_fro_direct	8	static
-HPL_SYSCON.h:199:6:SYSCON_clear_fro_direct	8	static
-HPL_SYSCON.h:253:6:SYSCON_set_frg_config	24	static
+HPL_SYSCON.h:329:6:SYSCON_set_fro_direct	8	static
+HPL_SYSCON.h:339:6:SYSCON_clear_fro_direct	8	static
+HPL_SYSCON.h:516:6:SYSCON_set_frg_config	24	static
 infotronic.c:33:6:infotronic_init	16	static
 infotronic.c:60:6:infotronic_blocking_delay	16	static
 infotronic.c:71:9:infotronic_get_key	8	static

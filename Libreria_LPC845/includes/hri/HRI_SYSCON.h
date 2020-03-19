@@ -229,7 +229,7 @@ typedef struct
 	uint32_t CTIMER0_RST_N : 1;
 	uint32_t : 1;
 	uint32_t DAC0_RST_N : 1;
-	uint32_t GPIO_RST_N : 1;
+	uint32_t GPIOINT_RST_N : 1;
 	uint32_t DMA_RST_N : 1;
 	uint32_t UART3_RST_N : 1;
 	uint32_t UART4_RST_N : 1;
@@ -237,7 +237,7 @@ typedef struct
 
 typedef struct
 {
-	uint32_t CAPT0_RST_N : 1;
+	uint32_t CAPT_RST_N : 1;
 	uint32_t DAC1_RST_N : 1;
 	uint32_t : 1;
 	uint32_t FRG0_RST_N : 1;
@@ -381,7 +381,7 @@ typedef struct
 
 typedef struct
 {
-	uint32_t FR0OUT_PD : 1;
+	uint32_t FRO_OUT_PD : 1;
 	uint32_t FRO_PD : 1;
 	uint32_t FLASH_PD : 1;
 	uint32_t BOD_PD : 1;
@@ -476,8 +476,7 @@ typedef struct
 	SYSCON_CLKOUTDIV_reg_t CLKOUTDIV;
 	const SYSCON_RESERVED_reg_t RESERVED_19;
 	SYSCON_EXTTRACECMD_reg_t EXTTRACECMD;
-	const SYSCON_PIOPORCAP_reg_t PIOPORCAP0;
-	const SYSCON_PIOPORCAP_reg_t PIOPORCAP1;
+	const SYSCON_PIOPORCAP_reg_t PIOPORCAP[2];
 	const SYSCON_RESERVED_reg_t RESERVED_20[0x2C / 4];
 	SYSCON_IOCONCLKDIV_reg_t IOCONCLKDIV6;
 	SYSCON_IOCONCLKDIV_reg_t IOCONCLKDIV5;
