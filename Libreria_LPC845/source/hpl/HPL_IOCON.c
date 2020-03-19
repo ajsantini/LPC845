@@ -11,8 +11,6 @@
 #include <HRI_IOCON.h>
 #include <HRI_SYSCON.h>
 
-volatile IOCON_per_t * const IOCON = (IOCON_per_t *) IOCON_BASE; //!< Periferico IOCON
-
 static IOCON_PIO_reg_t dummy_reg; //!< Registro dummy para los pines no disponibles en el encapsulado
 
 static IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
@@ -80,7 +78,7 @@ void IOCON_deinit(void)
  * @param[in] pin Numero del pin a configurar
  * @param[in] pin_config Puntero a estructura de configuracion del pin
  */
-void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config)
+void IOCON_config_io(uint8_t port, uint8_t pin, const IOCON_config_t *config)
 {
 	if(port == 0 && pin == 17)
 	{

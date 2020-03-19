@@ -1,1 +1,2 @@
-HPL_SPI.c:35:9:SPI_init	16	static
+HPL_SYSCON.h:182:20:SYSCON_set_peripheral_clock_source	24	static
+HPL_SPI.c:28:9:SPI_init	16	static

@@ -1,3 +1,3 @@
-HPL_IOCON.c:62:6:IOCON_init	8	static
-HPL_IOCON.c:72:6:IOCON_deinit	8	static
-HPL_IOCON.c:83:6:IOCON_config_io	16	static
+HPL_IOCON.c:60:6:IOCON_init	8	static
+HPL_IOCON.c:70:6:IOCON_deinit	8	static
+HPL_IOCON.c:81:6:IOCON_config_io	16	static

@@ -151,4 +151,6 @@ typedef struct
 	CTIMER_MSR_reg_t MSR[4];
 }CTIMER_per_t;
 
+volatile CTIMER_per_t * const CTIMER = (volatile CTIMER_per_t *) CTIMER_BASE; //!< Periferico CTIMER
+
 #endif /* HRI_CTIMER_H_ */

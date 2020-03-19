@@ -27,13 +27,10 @@
 
 typedef struct
 {
-	uint32_t port;
-	uint32_t pin;
-	uint8_t interrupt;
+	uint8_t channel;
 	uint8_t mode;
 	uint8_t int_on_rising_edge;
 	uint8_t int_on_falling_edge;
-	void (*int_callback)(void);
 }PININT_config_t;
 
 /**
@@ -53,9 +50,8 @@ void PININT_deinit(void);
 /**
  * @brief Configurar interrupciones de pin
  * @param[in] config Puntero a configuracion de interrupciones de pin
- * @return Estado de la configuracion de interrupcion del pin
  */
-int32_t PININT_configure_pin_interrupt(PININT_config_t *config);
+void PININT_configure_pin_interrupt(PININT_config_t *config);
 
 /**
  * @brief Registrar callback a llamar en interrupcion de PININTn

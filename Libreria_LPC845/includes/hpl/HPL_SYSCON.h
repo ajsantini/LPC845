@@ -10,6 +10,7 @@
 #define HPL_SYSCON_H_
 
 #include <stdint.h>
+#include <HRI_SYSCON.h>
 
 typedef enum
 {
@@ -121,13 +122,19 @@ uint32_t SYSCON_get_pll_clock(void);
  * @brief Seleccion del divisor del system clock
  * @param[in] divider division deseada (cero desactiva el system clock)
  */
-void SYSCON_set_system_clock_divider(uint8_t divider);
+static inline void SYSCON_set_system_clock_divider(uint8_t divider)
+{
+	SYSCON->SYSAHBCLKDIV.DIV = divider;
+}
 
 /**
  * @brief Seleccion de fuente para el clock externo
  * @param[in] source_selection Seleccion deseada
  */
-void SYSCON_set_ext_clock_source(SYSCON_ext_clock_source_sel_en source_selection);
+static inline void SYSCON_set_ext_clock_source(SYSCON_ext_clock_source_sel_en source_selection)
+{
+	SYSCON->EXTCLKSEL.SEL = source_selection;
+}
 
 /**
  * @brief Inicializacion del clock con cristal externo
@@ -170,7 +177,10 @@ void SYSCON_set_PLL(SYSCON_pll_source_sel_en pll_source, uint8_t pll_multiplier)
  * @param[in] peripheral Periferico cuya fuente seleccionar
  * @param[in] clock Fuente de clock para el periferico seleccionada
  */
-void SYSCON_set_peripheral_clock_source(SYSCON_peripheral_sel_en peripheral, SYSCON_peripheral_clock_sel_en clock);
+static inline void SYSCON_set_peripheral_clock_source(SYSCON_peripheral_sel_en peripheral, SYSCON_peripheral_clock_sel_en clock)
+{
+	SYSCON->PERCLKSEL[peripheral].SEL = clock;
+}
 
 /**
  * @brief Obtencion del clock de los distintos perifericos
@@ -192,9 +202,22 @@ void SYSCON_set_frg_config(uint8_t frg_selection, SYSCON_frg_clock_sel_en clock_
  * @brief Seleccion de fuente para el CLOCK OUT
  * @param[in] clock_source Fuente deseada
  * @param[in] divider Divisor del CLOCK OUT
- * @param[in] port Puerto por el cual sacar el CLOCK OUT
- * @param[in] pin Pin por el cual sacar el CLOCK_OUT
  */
-void SYSCON_set_clkout_config(SYSCON_clkout_source_sel_en clock_source, uint8_t divider, uint8_t port, uint8_t pin);
+static inline void SYSCON_set_clkout_config(SYSCON_clkout_source_sel_en clock_source, uint8_t divider)
+{
+	SYSCON->CLKOUTSEL.SEL = clock_source;
+	SYSCON->CLKOUTDIV.DIV = divider;
+}
+
+/**
+ * @brief Configurar algun registro PINTSEL
+ * @param[in] pintsel Cual de los registros configurar 0~7
+ * @param[in] port Numero de puerto al cual asignar la funcion
+ * @param[in] pin Numero de pin al cual asignar la funcion
+ */
+static inline void SYSCON_set_pintsel(uint8_t pintsel, uint8_t port, uint8_t pin)
+{
+	SYSCON->PINTSEL[pintsel].INTPIN = (port * 32) + pin;
+}
 
 #endif /* HPL_SYSCON_H_ */

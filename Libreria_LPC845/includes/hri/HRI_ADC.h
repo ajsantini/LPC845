@@ -173,6 +173,6 @@ typedef struct
 	ADC_TRM_reg_t TRM;
 }ADC_per_t;
 
-extern volatile ADC_per_t * const ADC; //!< Periferico ADC
+volatile ADC_per_t * const ADC = (ADC_per_t *) ADC_BASE; //!< Periferico ADC
 
 #endif /* HRI_ADC_H_ */

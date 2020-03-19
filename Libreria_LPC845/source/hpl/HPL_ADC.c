@@ -18,8 +18,6 @@
 #define	ADC_MAX_FREQ			1.2e6 //<! Maxima frecuencia de conversion admitida por el ADC
 #define	ADC_COMPARE_AMOUNT		12 //!< Cantidad de canales de comparacion admitidos por el ADC
 
-volatile ADC_per_t * const ADC = (ADC_per_t *) ADC_BASE; //!< Periferico ADC
-
 static void dummy_irq_callback(void);
 
 static void (*adc_seq_completed_callback[2])(void) = //!< Callback cuando terminan las secuencias de conversion
@@ -34,10 +32,9 @@ static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks p
 
 /**
  * @brief Inicializacion del ADC
- * @param[in] clock_source Seleccion de clock para el ADC
  * @param[in] adc_config Configuracion del ADC deseada
  */
-void ADC_init(ADC_clock_source_en clock_source, const ADC_config_t *adc_config)
+void ADC_config_control(const ADC_config_t *adc_config)
 {
 	ADC_CTRL_reg_t adc_ctrl_aux;
 	uint32_t calib_aux;

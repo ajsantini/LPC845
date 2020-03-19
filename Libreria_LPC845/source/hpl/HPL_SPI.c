@@ -15,14 +15,7 @@
 #include <HRI_NVIC.h>
 #include <HRI_SPI.h>
 
-#define		SPI_AMOUNT		2
-
-volatile SPI_per_t * const SPI[SPI_AMOUNT] = { //!< Perifericos SPI
-		(SPI_per_t *) SPI0_BASE,
-		(SPI_per_t *) SPI1_BASE
-};
-
-static void (*spi_transfer_ready_callback[SPI_AMOUNT])(void) = { //!< Callbacks registrados a la finalizacion de una transferencia por SPI
+static void (*spi_transfer_ready_callback[])(void) = { //!< Callbacks registrados a la finalizacion de una transferencia por SPI
 		NULL,
 		NULL
 };

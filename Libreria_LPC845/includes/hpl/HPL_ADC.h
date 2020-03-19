@@ -95,10 +95,9 @@ typedef struct
 
 /**
  * @brief Inicializacion del ADC
- * @param[in] clock_source Seleccion de clock para el ADC
  * @param[in] adc_config Configuracion del ADC deseada
  */
-void ADC_init(ADC_clock_source_en clock_source, const ADC_config_t *adc_config);
+void ADC_config_control(const ADC_config_t *adc_config);
 
 /**
  * @brief Configuracion de una secuencia del ADC

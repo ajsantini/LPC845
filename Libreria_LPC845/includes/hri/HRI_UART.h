@@ -199,7 +199,13 @@ typedef struct
 	UART_ADDR_reg_t ADDR;
 }UART_per_t;
 
-extern volatile UART_per_t * const UART[]; //!< Perifericos UART
+volatile UART_per_t * const UART[] = { //!< Perifericos USART
+		(UART_per_t *) UART0_BASE,
+		(UART_per_t *) UART1_BASE,
+		(UART_per_t *) UART2_BASE,
+		(UART_per_t *) UART3_BASE,
+		(UART_per_t *) UART4_BASE
+};
 
 /**
  * @brief Interrupcion de UART3

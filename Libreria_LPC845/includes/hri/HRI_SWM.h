@@ -208,6 +208,6 @@ typedef struct
 	SWM_PINENABLE1_reg_t PINENABLE1;
 }SWM_per_t;
 
-extern volatile SWM_per_t * const SWM; //!< Periferico SWM
+volatile SWM_per_t * const SWM = (SWM_per_t *) SWM_BASE; //!< Periferico SWM
 
 #endif /* HRI_SWM_H_ */

@@ -5445,3 +5445,983 @@ arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLi
    2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
       0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
  
+22:18:43 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/hpl/HPL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_ADC.d" -MT"source/hpl/HPL_ADC.o" -MT"source/hpl/HPL_ADC.d" -o "source/hpl/HPL_ADC.o" "../source/hpl/HPL_ADC.c"
+Finished building: ../source/hpl/HPL_ADC.c
+ 
+Building file: ../source/hpl/HPL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_CTIMER.d" -MT"source/hpl/HPL_CTIMER.o" -MT"source/hpl/HPL_CTIMER.d" -o "source/hpl/HPL_CTIMER.o" "../source/hpl/HPL_CTIMER.c"
+Finished building: ../source/hpl/HPL_CTIMER.c
+ 
+Building file: ../source/hpl/HPL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_DAC.d" -MT"source/hpl/HPL_DAC.o" -MT"source/hpl/HPL_DAC.d" -o "source/hpl/HPL_DAC.o" "../source/hpl/HPL_DAC.c"
+Finished building: ../source/hpl/HPL_DAC.c
+ 
+Building file: ../source/hpl/HPL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_PININT.d" -MT"source/hpl/HPL_PININT.o" -MT"source/hpl/HPL_PININT.d" -o "source/hpl/HPL_PININT.o" "../source/hpl/HPL_PININT.c"
+Finished building: ../source/hpl/HPL_PININT.c
+ 
+Building file: ../source/hpl/HPL_SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SPI.d" -MT"source/hpl/HPL_SPI.o" -MT"source/hpl/HPL_SPI.d" -o "source/hpl/HPL_SPI.o" "../source/hpl/HPL_SPI.c"
+../source/hpl/HPL_SPI.c: In function 'SPI_init':
+../source/hpl/HPL_SPI.c:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../source/hpl/HPL_SPI.c:25:15: warning: 'spi_transfer_ready_callback' defined but not used [-Wunused-variable]
+ static void (*spi_transfer_ready_callback[SPI_AMOUNT])(void) = { //!< Callbacks registrados a la finalizacion de una transferencia por SPI
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_SPI.c
+ 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_uart_SCLK':
+../source/hpl/HPL_SWM.c:110:2: error: duplicate case value
+  case 1: { SWM->PINASSIGN2.U1_SCLK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:109:2: note: previously used here
+  case 1: { SWM->PINASSIGN1.U0_SCLK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_SCK':
+../source/hpl/HPL_SWM.c:128:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN5.SPI1_SCK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:127:2: note: previously used here
+  case 0: { SWM->PINASSIGN3.SPI0_SCK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_MOSI':
+../source/hpl/HPL_SWM.c:143:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN5.SPI1_MOSI_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:142:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_MOSI_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_MISO':
+../source/hpl/HPL_SWM.c:158:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN6.SPI1_MISO_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:157:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_MISO_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_SSEL0':
+../source/hpl/HPL_SWM.c:173:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN6.SPI1_SSEL0_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:172:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_SSEL0_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_SSEL1':
+../source/hpl/HPL_SWM.c:188:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN6.SPI1_SSEL1_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:187:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_SSEL1_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_T0_CAP':
+../source/hpl/HPL_SWM.c:425:9: error: 'mat' undeclared (first use in this function)
+  switch(mat)
+         ^~~
+../source/hpl/HPL_SWM.c:425:9: note: each undeclared identifier is reported only once for each function it appears in
+../source/hpl/HPL_SWM.c: At top level:
+../source/hpl/HPL_SWM.c:438:36: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_ACMP(uint8_t acmp, SWM_enable_en en_dis)
+                                    ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:454:23: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_SWCLK(SWM_enable_en en_dis)
+                       ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:463:23: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_SWDIO(SWM_enable_en en_dis)
+                       ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:472:24: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_XTALIN(SWM_enable_en en_dis)
+                        ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:481:25: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_XTALOUT(SWM_enable_en en_dis)
+                         ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:490:24: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_RESETN(SWM_enable_en en_dis)
+                        ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:499:23: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_CLKIN(SWM_enable_en en_dis)
+                       ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:508:24: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_VDDCMP(SWM_enable_en en_dis)
+                        ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:518:34: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_ADC(uint8_t adc, SWM_enable_en en_dis)
+                                  ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:542:34: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_DAC(uint8_t dac, SWM_enable_en en_dis)
+                                  ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:556:38: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_CAPTX(uint8_t captx, SWM_enable_en en_dis)
+                                      ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:576:23: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_CAPYL(SWM_enable_en en_dis)
+                       ^~~~~~~~~~~~~
+../source/hpl/HPL_SWM.c:585:23: error: unknown type name 'SWM_enable_en'
+ void SWM_enable_CAPYH(SWM_enable_en en_dis)
+                       ^~~~~~~~~~~~~
+make: *** [source/hpl/HPL_SWM.o] Error 1
+source/hpl/subdir.mk:51: recipe for target 'source/hpl/HPL_SWM.o' failed
+"make -r all" terminated with exit code 2. Build might be incomplete.
+22:19:15 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_uart_SCLK':
+../source/hpl/HPL_SWM.c:111:2: error: duplicate case value
+  case 1: { SWM->PINASSIGN2.U1_SCLK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:110:2: note: previously used here
+  case 1: { SWM->PINASSIGN1.U0_SCLK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_SCK':
+../source/hpl/HPL_SWM.c:129:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN5.SPI1_SCK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:128:2: note: previously used here
+  case 0: { SWM->PINASSIGN3.SPI0_SCK_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_MOSI':
+../source/hpl/HPL_SWM.c:144:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN5.SPI1_MOSI_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:143:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_MOSI_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_MISO':
+../source/hpl/HPL_SWM.c:159:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN6.SPI1_MISO_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:158:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_MISO_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_SSEL0':
+../source/hpl/HPL_SWM.c:174:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN6.SPI1_SSEL0_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:173:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_SSEL0_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_spi_SSEL1':
+../source/hpl/HPL_SWM.c:189:2: error: duplicate case value
+  case 0: { SWM->PINASSIGN6.SPI1_SSEL1_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c:188:2: note: previously used here
+  case 0: { SWM->PINASSIGN4.SPI0_SSEL1_IO = (port * 32) + pin; break; }
+  ^~~~
+../source/hpl/HPL_SWM.c: In function 'SWM_assign_T0_CAP':
+../source/hpl/HPL_SWM.c:426:9: error: 'mat' undeclared (first use in this function)
+  switch(mat)
+         ^~~
+../source/hpl/HPL_SWM.c:426:9: note: each undeclared identifier is reported only once for each function it appears in
+source/hpl/subdir.mk:51: recipe for target 'source/hpl/HPL_SWM.o' failed
+make: *** [source/hpl/HPL_SWM.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+22:19:50 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+Finished building: ../source/hpl/HPL_SWM.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:248:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:261:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building file: ../source/hpl/HPL_SYSTICK.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSTICK.d" -MT"source/hpl/HPL_SYSTICK.o" -MT"source/hpl/HPL_SYSTICK.d" -o "source/hpl/HPL_SYSTICK.o" "../source/hpl/HPL_SYSTICK.c"
+Finished building: ../source/hpl/HPL_SYSTICK.c
+ 
+Building file: ../source/hpl/HPL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_UART.d" -MT"source/hpl/HPL_UART.o" -MT"source/hpl/HPL_UART.d" -o "source/hpl/HPL_UART.o" "../source/hpl/HPL_UART.c"
+Finished building: ../source/hpl/HPL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    672	      0	      0	    672	    2a0	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+    926	     32	      0	    958	    3be	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+   5548	      0	      0	   5548	   15ac	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2428	     12	     24	   2464	    9a0	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+22:23:20 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_CTIMER.d" -MT"source/hpl/HPL_CTIMER.o" -MT"source/hpl/HPL_CTIMER.d" -o "source/hpl/HPL_CTIMER.o" "../source/hpl/HPL_CTIMER.c"
+In file included from ../source/hpl/HPL_CTIMER.c:17:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SWM.h:34:13: warning: inline function 'SWM_assign_uart_TXD' declared but never defined
+ inline void SWM_assign_uart_TXD(uint8_t uart, uint8_t port, uint8_t pin);
+             ^~~~~~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_CTIMER.c
+ 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+Finished building: ../source/hpl/HPL_SWM.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:248:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:261:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+In file included from ../source/hpl/HPL_SYSCON.c:13:
+../source/hpl/HPL_SYSCON.c: At top level:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SWM.h:34:13: warning: inline function 'SWM_assign_uart_TXD' declared but never defined
+ inline void SWM_assign_uart_TXD(uint8_t uart, uint8_t port, uint8_t pin);
+             ^~~~~~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    672	      0	      0	    672	    2a0	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+    926	     32	      0	    958	    3be	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+   5280	      0	      0	   5280	   14a0	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2428	     12	     24	   2464	    9a0	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+22:24:41 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_CTIMER.d" -MT"source/hpl/HPL_CTIMER.o" -MT"source/hpl/HPL_CTIMER.d" -o "source/hpl/HPL_CTIMER.o" "../source/hpl/HPL_CTIMER.c"
+Finished building: ../source/hpl/HPL_CTIMER.c
+ 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+Finished building: ../source/hpl/HPL_SWM.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:248:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:261:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    672	      0	      0	    672	    2a0	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+    926	     32	      0	    958	    3be	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+   5280	      0	      0	   5280	   14a0	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2428	     12	     24	   2464	    9a0	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+22:25:28 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_CTIMER.d" -MT"source/hpl/HPL_CTIMER.o" -MT"source/hpl/HPL_CTIMER.d" -o "source/hpl/HPL_CTIMER.o" "../source/hpl/HPL_CTIMER.c"
+Finished building: ../source/hpl/HPL_CTIMER.c
+ 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+Finished building: ../source/hpl/HPL_SWM.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:248:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:261:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2858	     16	      0	   2874	    b3a	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2520	      0	     32	   2552	    9f8	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    672	      0	      0	    672	    2a0	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+    926	     32	      0	    958	    3be	HPL_PININT.o (ex libLibreria_LPC845.a)
+    584	      0	      8	    592	    250	HPL_SPI.o (ex libLibreria_LPC845.a)
+   5016	      0	      0	   5016	   1398	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2428	     12	     24	   2464	    9a0	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2470	      0	     40	   2510	    9ce	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+22:40:00 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_ADC.d" -MT"source/hpl/HPL_ADC.o" -MT"source/hpl/HPL_ADC.d" -o "source/hpl/HPL_ADC.o" "../source/hpl/HPL_ADC.c"
+Finished building: ../source/hpl/HPL_ADC.c
+ 
+Building file: ../source/hpl/HPL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_CTIMER.d" -MT"source/hpl/HPL_CTIMER.o" -MT"source/hpl/HPL_CTIMER.d" -o "source/hpl/HPL_CTIMER.o" "../source/hpl/HPL_CTIMER.c"
+Finished building: ../source/hpl/HPL_CTIMER.c
+ 
+Building file: ../source/hpl/HPL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_DAC.d" -MT"source/hpl/HPL_DAC.o" -MT"source/hpl/HPL_DAC.d" -o "source/hpl/HPL_DAC.o" "../source/hpl/HPL_DAC.c"
+Finished building: ../source/hpl/HPL_DAC.c
+ 
+Building file: ../source/hpl/HPL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_PININT.d" -MT"source/hpl/HPL_PININT.o" -MT"source/hpl/HPL_PININT.d" -o "source/hpl/HPL_PININT.o" "../source/hpl/HPL_PININT.c"
+Finished building: ../source/hpl/HPL_PININT.c
+ 
+Building file: ../source/hpl/HPL_SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SPI.d" -MT"source/hpl/HPL_SPI.o" -MT"source/hpl/HPL_SPI.d" -o "source/hpl/HPL_SPI.o" "../source/hpl/HPL_SPI.c"
+../source/hpl/HPL_SPI.c: In function 'SPI_init':
+../source/hpl/HPL_SPI.c:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../source/hpl/HPL_SPI.c:25:15: warning: 'spi_transfer_ready_callback' defined but not used [-Wunused-variable]
+ static void (*spi_transfer_ready_callback[SPI_AMOUNT])(void) = { //!< Callbacks registrados a la finalizacion de una transferencia por SPI
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_SPI.c
+ 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+Finished building: ../source/hpl/HPL_SWM.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:248:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:261:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building file: ../source/hpl/HPL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_UART.d" -MT"source/hpl/HPL_UART.o" -MT"source/hpl/HPL_UART.d" -o "source/hpl/HPL_UART.o" "../source/hpl/HPL_UART.c"
+Finished building: ../source/hpl/HPL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2862	     16	      0	   2878	    b3e	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2572	      0	     32	   2604	    a2c	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    668	      0	      0	    668	    29c	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1304	      0	      0	   1304	    518	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+    930	     32	      0	    962	    3c2	HPL_PININT.o (ex libLibreria_LPC845.a)
+    576	      0	      8	    584	    248	HPL_SPI.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+   2484	     12	     24	   2520	    9d8	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2454	      0	     40	   2494	    9be	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+22:46:57 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_ADC.d" -MT"source/hpl/HPL_ADC.o" -MT"source/hpl/HPL_ADC.d" -o "source/hpl/HPL_ADC.o" "../source/hpl/HPL_ADC.c"
+Finished building: ../source/hpl/HPL_ADC.c
+ 
+Building file: ../source/hpl/HPL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_CTIMER.d" -MT"source/hpl/HPL_CTIMER.o" -MT"source/hpl/HPL_CTIMER.d" -o "source/hpl/HPL_CTIMER.o" "../source/hpl/HPL_CTIMER.c"
+Finished building: ../source/hpl/HPL_CTIMER.c
+ 
+Building file: ../source/hpl/HPL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_DAC.d" -MT"source/hpl/HPL_DAC.o" -MT"source/hpl/HPL_DAC.d" -o "source/hpl/HPL_DAC.o" "../source/hpl/HPL_DAC.c"
+Finished building: ../source/hpl/HPL_DAC.c
+ 
+Building file: ../source/hpl/HPL_GPIO.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_GPIO.d" -MT"source/hpl/HPL_GPIO.o" -MT"source/hpl/HPL_GPIO.d" -o "source/hpl/HPL_GPIO.o" "../source/hpl/HPL_GPIO.c"
+Finished building: ../source/hpl/HPL_GPIO.c
+ 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building file: ../source/hpl/HPL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_PININT.d" -MT"source/hpl/HPL_PININT.o" -MT"source/hpl/HPL_PININT.d" -o "source/hpl/HPL_PININT.o" "../source/hpl/HPL_PININT.c"
+Finished building: ../source/hpl/HPL_PININT.c
+ 
+Building file: ../source/hpl/HPL_SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SPI.d" -MT"source/hpl/HPL_SPI.o" -MT"source/hpl/HPL_SPI.d" -o "source/hpl/HPL_SPI.o" "../source/hpl/HPL_SPI.c"
+../source/hpl/HPL_SPI.c: In function 'SPI_init':
+../source/hpl/HPL_SPI.c:96:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../source/hpl/HPL_SPI.c:18:15: warning: 'spi_transfer_ready_callback' defined but not used [-Wunused-variable]
+ static void (*spi_transfer_ready_callback[])(void) = { //!< Callbacks registrados a la finalizacion de una transferencia por SPI
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_SPI.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:246:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:259:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building file: ../source/hpl/HPL_SYSTICK.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSTICK.d" -MT"source/hpl/HPL_SYSTICK.o" -MT"source/hpl/HPL_SYSTICK.d" -o "source/hpl/HPL_SYSTICK.o" "../source/hpl/HPL_SYSTICK.c"
+Finished building: ../source/hpl/HPL_SYSTICK.c
+ 
+Building file: ../source/hpl/HPL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_UART.d" -MT"source/hpl/HPL_UART.o" -MT"source/hpl/HPL_UART.d" -o "source/hpl/HPL_UART.o" "../source/hpl/HPL_UART.c"
+Finished building: ../source/hpl/HPL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    688	      0	      4	    692	    2b4	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2862	     16	      0	   2878	    b3e	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2572	      0	     32	   2604	    a2c	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    652	      0	      0	    652	    28c	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1280	      0	      0	   1280	    500	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+    950	     32	      0	    982	    3d6	HPL_PININT.o (ex libLibreria_LPC845.a)
+    576	      0	      8	    584	    248	HPL_SPI.o (ex libLibreria_LPC845.a)
+   2484	     12	     24	   2520	    9d8	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    228	      0	      4	    232	     e8	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2426	      0	     40	   2466	    9a2	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+22:52:22 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+In file included from ../source/infotronic/infotronic.c:10:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_system_clock_divider':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:126:2: error: 'SYSCON' undeclared (first use in this function)
+  SYSCON->SYSAHBCLKDIV.DIV = divider;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:126:2: note: each undeclared identifier is reported only once for each function it appears in
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_ext_clock_source':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:135:2: error: 'SYSCON' undeclared (first use in this function)
+  SYSCON->EXTCLKSEL.SEL = source_selection;
+  ^~~~~~
+In file included from ../source/infotronic/infotronic.c:10:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_peripheral_clock_source':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:181:2: error: 'SYSCON' undeclared (first use in this function)
+  SYSCON->PERCLKSEL[peripheral].SEL = clock;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_clkout_config':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:209:2: error: 'SYSCON' undeclared (first use in this function)
+  SYSCON->CLKOUTSEL.SEL = clock_source;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:214:3: warning: implicit declaration of function 'SWM_init'; did you mean '_exit_init'? [-Wimplicit-function-declaration]
+   SWM_init();
+   ^~~~~~~~
+   _exit_init
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:216:3: error: 'SWM' undeclared (first use in this function)
+   SWM->PINASSIGN11.CLKOUT_O = (port * 32) + pin;
+   ^~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:218:3: warning: implicit declaration of function 'SWM_deinit' [-Wimplicit-function-declaration]
+   SWM_deinit();
+   ^~~~~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_pintsel':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:230:2: error: 'SYSCON' undeclared (first use in this function)
+  SYSCON->PINTSEL[pintsel].INTPIN = (port * 32) + pin;
+  ^~~~~~
+source/infotronic/subdir.mk:36: recipe for target 'source/infotronic/infotronic.o' failed
+make: *** [source/infotronic/infotronic.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+22:52:49 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+In file included from ../source/infotronic/infotronic.c:10:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_clkout_config':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:216:3: warning: implicit declaration of function 'SWM_init'; did you mean 'SWM_BASE'? [-Wimplicit-function-declaration]
+   SWM_init();
+   ^~~~~~~~
+   SWM_BASE
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:220:3: warning: implicit declaration of function 'SWM_deinit' [-Wimplicit-function-declaration]
+   SWM_deinit();
+   ^~~~~~~~~~
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/hpl/HPL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_ADC.d" -MT"source/hpl/HPL_ADC.o" -MT"source/hpl/HPL_ADC.d" -o "source/hpl/HPL_ADC.o" "../source/hpl/HPL_ADC.c"
+In file included from ../source/hpl/HPL_ADC.c:12:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_clkout_config':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:216:3: warning: implicit declaration of function 'SWM_init'; did you mean 'ADC_init'? [-Wimplicit-function-declaration]
+   SWM_init();
+   ^~~~~~~~
+   ADC_init
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:220:3: warning: implicit declaration of function 'SWM_deinit'; did you mean 'ADC_init'? [-Wimplicit-function-declaration]
+   SWM_deinit();
+   ^~~~~~~~~~
+   ADC_init
+Finished building: ../source/hpl/HPL_ADC.c
+ 
+Building file: ../source/hpl/HPL_SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SPI.d" -MT"source/hpl/HPL_SPI.o" -MT"source/hpl/HPL_SPI.d" -o "source/hpl/HPL_SPI.o" "../source/hpl/HPL_SPI.c"
+In file included from /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SPI.h:13,
+                 from ../source/hpl/HPL_SPI.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_clkout_config':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:216:3: warning: implicit declaration of function 'SWM_init'; did you mean 'SWM_BASE'? [-Wimplicit-function-declaration]
+   SWM_init();
+   ^~~~~~~~
+   SWM_BASE
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:220:3: warning: implicit declaration of function 'SWM_deinit' [-Wimplicit-function-declaration]
+   SWM_deinit();
+   ^~~~~~~~~~
+../source/hpl/HPL_SPI.c: In function 'SPI_init':
+../source/hpl/HPL_SPI.c:96:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../source/hpl/HPL_SPI.c:18:15: warning: 'spi_transfer_ready_callback' defined but not used [-Wunused-variable]
+ static void (*spi_transfer_ready_callback[])(void) = { //!< Callbacks registrados a la finalizacion de una transferencia por SPI
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_SPI.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+In file included from ../source/hpl/HPL_SYSCON.c:12:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_clkout_config':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:216:3: warning: implicit declaration of function 'SWM_init'; did you mean 'SWM_BASE'? [-Wimplicit-function-declaration]
+   SWM_init();
+   ^~~~~~~~
+   SWM_BASE
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:220:3: warning: implicit declaration of function 'SWM_deinit'; did you mean 'IOCON_deinit'? [-Wimplicit-function-declaration]
+   SWM_deinit();
+   ^~~~~~~~~~
+   IOCON_deinit
+In file included from ../source/hpl/HPL_SYSCON.c:13:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SWM.h: At top level:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SWM.h:24:20: warning: conflicting types for 'SWM_init'
+ static inline void SWM_init(void)
+                    ^~~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SWM.h:24:20: error: static declaration of 'SWM_init' follows non-static declaration
+In file included from ../source/hpl/HPL_SYSCON.c:12:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:216:3: note: previous implicit declaration of 'SWM_init' was here
+   SWM_init();
+   ^~~~~~~~
+In file included from ../source/hpl/HPL_SYSCON.c:13:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SWM.h:32:20: warning: conflicting types for 'SWM_deinit'
+ static inline void SWM_deinit(void)
+                    ^~~~~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SWM.h:32:20: error: static declaration of 'SWM_deinit' follows non-static declaration
+In file included from ../source/hpl/HPL_SYSCON.c:12:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:220:3: note: previous implicit declaration of 'SWM_deinit' was here
+   SWM_deinit();
+   ^~~~~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_crystal_clock':
+../source/hpl/HPL_SYSCON.c:175:43: warning: passing argument 3 of 'IOCON_config_io' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  IOCON_config_io(XTALIN_PORT, XTALIN_PIN, &xtal_pin_config);
+                                           ^~~~~~~~~~~~~~~~
+In file included from ../source/hpl/HPL_SYSCON.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:80:65: note: expected 'IOCON_config_t *' {aka 'struct <anonymous> *'} but argument is of type 'const IOCON_config_t *' {aka 'const struct <anonymous> *'}
+ void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config);
+                                                 ~~~~~~~~~~~~~~~~^~~~~~
+../source/hpl/HPL_SYSCON.c:176:45: warning: passing argument 3 of 'IOCON_config_io' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  IOCON_config_io(XTALOUT_PORT, XTALOUT_PIN, &xtal_pin_config);
+                                             ^~~~~~~~~~~~~~~~
+In file included from ../source/hpl/HPL_SYSCON.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:80:65: note: expected 'IOCON_config_t *' {aka 'struct <anonymous> *'} but argument is of type 'const IOCON_config_t *' {aka 'const struct <anonymous> *'}
+ void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config);
+                                                 ~~~~~~~~~~~~~~~~^~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:229:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:242:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+source/hpl/subdir.mk:45: recipe for target 'source/hpl/HPL_SYSCON.o' failed
+make: *** [source/hpl/HPL_SYSCON.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+22:53:48 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/hpl/HPL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_ADC.d" -MT"source/hpl/HPL_ADC.o" -MT"source/hpl/HPL_ADC.d" -o "source/hpl/HPL_ADC.o" "../source/hpl/HPL_ADC.c"
+Finished building: ../source/hpl/HPL_ADC.c
+ 
+Building file: ../source/hpl/HPL_SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SPI.d" -MT"source/hpl/HPL_SPI.o" -MT"source/hpl/HPL_SPI.d" -o "source/hpl/HPL_SPI.o" "../source/hpl/HPL_SPI.c"
+../source/hpl/HPL_SPI.c: In function 'SPI_init':
+../source/hpl/HPL_SPI.c:96:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../source/hpl/HPL_SPI.c:18:15: warning: 'spi_transfer_ready_callback' defined but not used [-Wunused-variable]
+ static void (*spi_transfer_ready_callback[])(void) = { //!< Callbacks registrados a la finalizacion de una transferencia por SPI
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../source/hpl/HPL_SPI.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_crystal_clock':
+../source/hpl/HPL_SYSCON.c:175:43: warning: passing argument 3 of 'IOCON_config_io' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  IOCON_config_io(XTALIN_PORT, XTALIN_PIN, &xtal_pin_config);
+                                           ^~~~~~~~~~~~~~~~
+In file included from ../source/hpl/HPL_SYSCON.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:80:65: note: expected 'IOCON_config_t *' {aka 'struct <anonymous> *'} but argument is of type 'const IOCON_config_t *' {aka 'const struct <anonymous> *'}
+ void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config);
+                                                 ~~~~~~~~~~~~~~~~^~~~~~
+../source/hpl/HPL_SYSCON.c:176:45: warning: passing argument 3 of 'IOCON_config_io' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  IOCON_config_io(XTALOUT_PORT, XTALOUT_PIN, &xtal_pin_config);
+                                             ^~~~~~~~~~~~~~~~
+In file included from ../source/hpl/HPL_SYSCON.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:80:65: note: expected 'IOCON_config_t *' {aka 'struct <anonymous> *'} but argument is of type 'const IOCON_config_t *' {aka 'const struct <anonymous> *'}
+ void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config);
+                                                 ~~~~~~~~~~~~~~~~^~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:229:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:242:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building file: ../source/hpl/HPL_SYSTICK.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSTICK.d" -MT"source/hpl/HPL_SYSTICK.o" -MT"source/hpl/HPL_SYSTICK.d" -o "source/hpl/HPL_SYSTICK.o" "../source/hpl/HPL_SYSTICK.c"
+Finished building: ../source/hpl/HPL_SYSTICK.c
+ 
+Building file: ../source/hpl/HPL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_UART.d" -MT"source/hpl/HPL_UART.o" -MT"source/hpl/HPL_UART.d" -o "source/hpl/HPL_UART.o" "../source/hpl/HPL_UART.c"
+Finished building: ../source/hpl/HPL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    696	      0	      4	    700	    2bc	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2862	     16	      0	   2878	    b3e	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2572	      0	     32	   2604	    a2c	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    652	      0	      0	    652	    28c	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1280	      0	      0	   1280	    500	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+    950	     32	      0	    982	    3d6	HPL_PININT.o (ex libLibreria_LPC845.a)
+    640	      0	      8	    648	    288	HPL_SPI.o (ex libLibreria_LPC845.a)
+   2036	     12	     24	   2072	    818	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    236	      0	      4	    240	     f0	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2490	      0	     40	   2530	    9e2	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+22:53:59 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+../source/hpl/HPL_IOCON.c:81:6: error: conflicting types for 'IOCON_config_io'
+ void IOCON_config_io(uint8_t port, uint8_t pin, const IOCON_config_t *config)
+      ^~~~~~~~~~~~~~~
+In file included from ../source/hpl/HPL_IOCON.c:10:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:80:6: note: previous declaration of 'IOCON_config_io' was here
+ void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config);
+      ^~~~~~~~~~~~~~~
+make: *** [source/hpl/HPL_IOCON.o] Error 1
+source/hpl/subdir.mk:45: recipe for target 'source/hpl/HPL_IOCON.o' failed
+"make -r all" terminated with exit code 2. Build might be incomplete.
+22:54:08 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/teclado.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/teclado.d" -MT"source/infotronic/teclado.o" -MT"source/infotronic/teclado.d" -o "source/infotronic/teclado.o" "../source/infotronic/teclado.c"
+Finished building: ../source/infotronic/teclado.c
+ 
+Building file: ../source/hpl/HPL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_IOCON.d" -MT"source/hpl/HPL_IOCON.o" -MT"source/hpl/HPL_IOCON.d" -o "source/hpl/HPL_IOCON.o" "../source/hpl/HPL_IOCON.c"
+Finished building: ../source/hpl/HPL_IOCON.c
+ 
+Building file: ../source/hpl/HPL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SYSCON.d" -MT"source/hpl/HPL_SYSCON.o" -MT"source/hpl/HPL_SYSCON.d" -o "source/hpl/HPL_SYSCON.o" "../source/hpl/HPL_SYSCON.c"
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_set_fro_direct':
+../source/hpl/HPL_SYSCON.c:229:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+../source/hpl/HPL_SYSCON.c: In function 'SYSCON_clear_fro_direct':
+../source/hpl/HPL_SYSCON.c:242:3: warning: #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM [-Wcpp]
+  #warning Ojo, en realidad esto tendria que cambiar dependiendo de las configuraciones FAIM
+   ^~~~~~~
+Finished building: ../source/hpl/HPL_SYSCON.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    696	      0	      4	    700	    2bc	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+    410	      0	     48	    458	    1ca	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+   2862	     16	      0	   2878	    b3e	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2572	      0	     32	   2604	    a2c	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+    652	      0	      0	    652	    28c	HPL_DAC.o (ex libLibreria_LPC845.a)
+   1280	      0	      0	   1280	    500	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    808	      0	      4	    812	    32c	HPL_IOCON.o (ex libLibreria_LPC845.a)
+    950	     32	      0	    982	    3d6	HPL_PININT.o (ex libLibreria_LPC845.a)
+    640	      0	      8	    648	    288	HPL_SPI.o (ex libLibreria_LPC845.a)
+   2036	     12	     24	   2072	    818	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+    236	      0	      4	    240	     f0	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2490	      0	     40	   2530	    9e2	HPL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+23:05:37 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/termometro.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/termometro.d" -MT"source/infotronic/termometro.o" -MT"source/infotronic/termometro.d" -o "source/infotronic/termometro.o" "../source/infotronic/termometro.c"
+../source/infotronic/termometro.c: In function 'termometro_init':
+../source/infotronic/termometro.c:88:3: warning: #warning Actualizar esta funcion [-Wcpp]
+  #warning Actualizar esta funcion
+   ^~~~~~~
+../source/infotronic/termometro.c: In function 'termometro_check':
+../source/infotronic/termometro.c:106:3: warning: #warning Actualizar esta funcion [-Wcpp]
+  #warning Actualizar esta funcion
+   ^~~~~~~
+../source/infotronic/termometro.c: In function 'adc_conversion_finished':
+../source/infotronic/termometro.c:131:3: warning: #warning Actualizar esta funcion [-Wcpp]
+  #warning Actualizar esta funcion
+   ^~~~~~~
+At top level:
+../source/infotronic/termometro.c:129:13: warning: 'adc_conversion_finished' defined but not used [-Wunused-function]
+ static void adc_conversion_finished(void)
+             ^~~~~~~~~~~~~~~~~~~~~~~
+../source/infotronic/termometro.c:78:17: warning: 'conversion_buffer_idx' defined but not used [-Wunused-variable]
+ static uint32_t conversion_buffer_idx = 0;
+                 ^~~~~~~~~~~~~~~~~~~~~
+../source/infotronic/termometro.c:77:17: warning: 'conversion_buffer' defined but not used [-Wunused-variable]
+ static uint32_t conversion_buffer[CONVERSION_BUFFER_LENGTH];
+                 ^~~~~~~~~~~~~~~~~
+../source/infotronic/termometro.c:28:35: warning: 'conversion_table' defined but not used [-Wunused-const-variable=]
+ static const temperature_counts_t conversion_table[] = /**< Tabla de conversiones de temperatura a cuentas */
+                                   ^~~~~~~~~~~~~~~~
+Finished building: ../source/infotronic/termometro.c
+ 
+Building file: ../source/hpl/HPL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_ADC.d" -MT"source/hpl/HPL_ADC.o" -MT"source/hpl/HPL_ADC.d" -o "source/hpl/HPL_ADC.o" "../source/hpl/HPL_ADC.c"
+../source/hpl/HPL_ADC.c: In function 'ADC_config_control':
+../source/hpl/HPL_ADC.c:42:5: error: 'clock_source' undeclared (first use in this function); did you mean 'clock_t'?
+  if(clock_source == ADC_CLOCK_SOURCE_FRO)
+     ^~~~~~~~~~~~
+     clock_t
+../source/hpl/HPL_ADC.c:42:5: note: each undeclared identifier is reported only once for each function it appears in
+source/hpl/subdir.mk:45: recipe for target 'source/hpl/HPL_ADC.o' failed
+make: *** [source/hpl/HPL_ADC.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.

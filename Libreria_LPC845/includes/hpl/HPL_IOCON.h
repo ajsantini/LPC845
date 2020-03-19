@@ -77,6 +77,6 @@ void IOCON_deinit(void);
  * @param[in] pin Numero del pin a configurar
  * @param[in] pin_config Puntero a estructura de configuracion del pin
  */
-void IOCON_config_io(uint8_t port, uint8_t pin, IOCON_config_t *config);
+void IOCON_config_io(uint8_t port, uint8_t pin, const IOCON_config_t *config);
 
 #endif /* HPL_IOCON_H_ */

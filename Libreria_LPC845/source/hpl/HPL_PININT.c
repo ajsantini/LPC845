@@ -15,16 +15,16 @@
 #include <HRI_SWM.h>
 #include <HRI_UART.h>
 
-volatile PININT_per_t * const PININT = (PININT_per_t *) PININT_BASE; //!< Periferico PININT
+static void dummy_irq_callback(void);
 
 static void (*pinint_callbacks[8])(void) = { //!< Callbacks para las 8 interrupciones disponibles
-		NULL,
-		NULL,
-		NULL,
-		NULL,
-		NULL,
-		NULL,
-		NULL
+		dummy_irq_callback,
+		dummy_irq_callback,
+		dummy_irq_callback,
+		dummy_irq_callback,
+		dummy_irq_callback,
+		dummy_irq_callback,
+		dummy_irq_callback
 };
 
 /**
@@ -50,102 +50,38 @@ void PININT_deinit(void)
 /**
  * @brief Configurar interrupciones de pin
  * @param[in] config Puntero a configuracion de interrupciones de pin
- * @return Estado de la configuracion de interrupcion de pin
  */
-int32_t PININT_configure_pin_interrupt(PININT_config_t *config)
+void PININT_configure_pin_interrupt(PININT_config_t *config)
 {
-	if(config->port > 1)
-	{
-		return PININT_CONFIGURE_INVALID_PORT;
-	}
-
-	if(config->pin > 31)
-	{
-		return PININT_CONFIGURE_INVALID_PIN;
-	}
-
-	if(config->port == 1 && config->pin > 9)
-	{
-		return PININT_CONFIGURE_INVALID_PORTPIN;
-	}
-
-	if(config->interrupt > 8)
-	{
-		return PININT_CONFIGURE_INVALID_INTERRUPT;
-	}
-
-	if(!SYSCON->SYSAHBCLKCTRL0.GPIO_INT)
-	{
-		return PININT_CONFIGURE_NOT_CLOCKED;
-	}
-
 	// Modo: Nivel o Flanco
 	if(config->mode)
 	{
-		PININT->ISEL.PMODE |= (1 << config->interrupt);
+		PININT->ISEL.PMODE |= (1 << config->channel);
 	}
 	else
 	{
-		PININT->ISEL.PMODE &= ~(1 << config->interrupt);
+		PININT->ISEL.PMODE &= ~(1 << config->channel);
 	}
 
 	// Interrupciones en flanco/nivel positivo
 	if(config->int_on_rising_edge)
 	{
-		PININT->IENR.ENRL |= (1 << config->interrupt);
+		PININT->IENR.ENRL |= (1 << config->channel);
 	}
 	else
 	{
-		PININT->IENR.ENRL &= ~(1 << config->interrupt);
+		PININT->IENR.ENRL &= ~(1 << config->channel);
 	}
 
 	// Interrupciones en flanco/nivel negativo
 	if(config->int_on_falling_edge)
 	{
-		PININT->IENF.ENAF |= (1 << config->interrupt);
+		PININT->IENF.ENAF |= (1 << config->channel);
 	}
 	else
 	{
-		PININT->IENF.ENAF &= ~(1 << config->interrupt);
+		PININT->IENF.ENAF &= ~(1 << config->channel);
 	}
-
-	// Registro callback a llamar para la interrupcion configurada;
-	PININT_register_callback(config->int_callback, config->interrupt);
-
-	// Habilitacion de interrupcion de pin
-	SYSCON->PINTSEL[config->interrupt].INTPIN = (config->port * 32) + config->pin;
-
-	// Habilitacion de interrupciones en el NVIC
-	switch(config->interrupt)
-	{
-	case 0:
-		NVIC->ISER0.ISE_PININT0 = 1;
-		break;
-	case 1:
-		NVIC->ISER0.ISE_PININT1 = 1;
-		break;
-	case 2:
-		NVIC->ISER0.ISE_PININT2 = 1;
-		break;
-	case 3:
-		NVIC->ISER0.ISE_PININT3 = 1;
-		break;
-	case 4:
-		NVIC->ISER0.ISE_PININT4 = 1;
-		break;
-	case 5:
-		NVIC->ISER0.ISE_PININT5 = 1;
-		break;
-	case 6:
-		NVIC->ISER0.ISE_PININT6 = 1;
-		break;
-	case 7:
-		NVIC->ISER0.ISE_PININT7 = 1;
-		break;
-	default: break;
-	}
-
-	return PININT_CONFIGURE_SUCCESS;
 }
 
 /**
@@ -153,13 +89,10 @@ int32_t PININT_configure_pin_interrupt(PININT_config_t *config)
  */
 void PININT0_IRQHandler(void)
 {
-	if(pinint_callbacks[0] != NULL)
-	{
-		pinint_callbacks[0]();
+	pinint_callbacks[0]();
 
-		// Limpio flag de interrupcion
-		PININT->IST.PSTAT |= (1 << 0);
-	}
+	// Limpio flag de interrupcion
+	PININT->IST.PSTAT |= (1 << 0);
 }
 
 /**
@@ -167,13 +100,10 @@ void PININT0_IRQHandler(void)
  */
 void PININT1_IRQHandler(void)
 {
-	if(pinint_callbacks[1] != NULL)
-	{
-		pinint_callbacks[1]();
+	pinint_callbacks[1]();
 
-		// Limpio flag de interrupcion
-		PININT->IST.PSTAT |= (1 << 1);
-	}
+	// Limpio flag de interrupcion
+	PININT->IST.PSTAT |= (1 << 1);
 }
 
 /**
@@ -181,13 +111,10 @@ void PININT1_IRQHandler(void)
  */
 void PININT2_IRQHandler(void)
 {
-	if(pinint_callbacks[2] != NULL)
-	{
-		pinint_callbacks[2]();
+	pinint_callbacks[2]();
 
-		// Limpio flag de interrupcion
-		PININT->IST.PSTAT |= (1 << 2);
-	}
+	// Limpio flag de interrupcion
+	PININT->IST.PSTAT |= (1 << 2);
 }
 
 /**
@@ -195,13 +122,10 @@ void PININT2_IRQHandler(void)
  */
 void PININT3_IRQHandler(void)
 {
-	if(pinint_callbacks[3] != NULL)
-	{
-		pinint_callbacks[3]();
+	pinint_callbacks[3]();
 
-		// Limpio flag de interrupcion
-		PININT->IST.PSTAT |= (1 << 3);
-	}
+	// Limpio flag de interrupcion
+	PININT->IST.PSTAT |= (1 << 3);
 }
 
 /**
@@ -209,13 +133,10 @@ void PININT3_IRQHandler(void)
  */
 void PININT4_IRQHandler(void)
 {
-	if(pinint_callbacks[4] != NULL)
-	{
-		pinint_callbacks[4]();
+	pinint_callbacks[4]();
 
-		// Limpio flag de interrupcion
-		PININT->IST.PSTAT |= (1 << 4);
-	}
+	// Limpio flag de interrupcion
+	PININT->IST.PSTAT |= (1 << 4);
 }
 
 /**
@@ -223,13 +144,10 @@ void PININT4_IRQHandler(void)
  */
 void PININT5_IRQHandler(void)
 {
-	if(pinint_callbacks[5] != NULL)
-	{
-		pinint_callbacks[5]();
+	pinint_callbacks[5]();
 
-		// Limpio flag de interrupcion
-		PININT->IST.PSTAT |= (1 << 5);
-	}
+	// Limpio flag de interrupcion
+	PININT->IST.PSTAT |= (1 << 5);
 }
 
 /**
@@ -239,13 +157,10 @@ void PININT6_IRQHandler(void)
 {
 	if(PININT->IST.PSTAT & (1 << 6))
 	{
-		if(pinint_callbacks[6] != NULL)
-		{
-			pinint_callbacks[6]();
+		pinint_callbacks[6]();
 
-			// Limpio flag de interrupcion
-			PININT->IST.PSTAT |= (1 << 6);
-		}
+		// Limpio flag de interrupcion
+		PININT->IST.PSTAT |= (1 << 6);
 	}
 
 	UART3_irq();
@@ -258,13 +173,10 @@ void PININT7_IRQHandler(void)
 {
 	if(PININT->IST.PSTAT & (1 << 7))
 	{
-		if(pinint_callbacks[7] != NULL)
-		{
-			pinint_callbacks[7]();
+		pinint_callbacks[7]();
 
-			// Limpio flag de interrupcion
-			PININT->IST.PSTAT |= (1 << 7);
-		}
+		// Limpio flag de interrupcion
+		PININT->IST.PSTAT |= (1 << 7);
 	}
 
 	UART4_irq();
@@ -291,4 +203,12 @@ int32_t PININT_register_callback(void (*new_callback)(void), uint32_t interrupt)
 	pinint_callbacks[interrupt] = new_callback;
 
 	return PININT_REGISTER_CALLBACK_SUCCESS;
+}
+
+/**
+ * @brief Funcion dummy para inicializar los punteros de interrupciones
+ */
+static void dummy_irq_callback(void)
+{
+	return;
 }

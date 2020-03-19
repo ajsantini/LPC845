@@ -40,6 +40,12 @@ typedef struct
 void DAC_init(DAC_sel_en dac, DAC_settling_time_sel_en settling_time, uint16_t initial_value);
 
 /**
+ * @brief Deinicializacion del DAC
+ * @param[in] dac Cual de los dos DACs deinicializar
+ */
+void DAC_deinit(DAC_sel_en dac);
+
+/**
  * @brief Actualizacion del valor actual del DAC
  * @param[in] dac En que DAC actualizar el valor
  * @param[in] new_value Nuevo valor a poner en el DAC

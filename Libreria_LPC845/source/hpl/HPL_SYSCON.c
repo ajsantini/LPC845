@@ -37,8 +37,6 @@
 
 #define		DEFAULT_SYSTEM_CLOCK				12e6
 
-volatile SYSCON_per_t * const SYSCON = (SYSCON_per_t *) SYSCON_BASE; //!< Periferico SYSCON
-
 static uint32_t current_crystal_clock = 0; //!< Frecuencia del cristal actual
 static uint32_t current_ext_in_clock = 0; //!< Frecuencia del EXT IN CLK
 static uint32_t current_fro_clock = DEFAULT_SYSTEM_CLOCK; //!< Frecuencia por default del FRO
@@ -154,24 +152,6 @@ void SYSCON_set_system_clock_source(SYSCON_system_clock_sel_en clock_selection)
 	}
 }
 
-/*
- * @brief Seleccion del divisor del system clock
- * @param[in] divider division deseada (cero desactiva el system clock)
- */
-void SYSCON_set_system_clock_divider(uint8_t divider)
-{
-	SYSCON->SYSAHBCLKDIV.DIV = divider;
-}
-
-/**
- * @brief Seleccion de fuente para el clock externo
- * @param[in] source_selection Seleccion deseada
- */
-void SYSCON_set_ext_clock_source(SYSCON_ext_clock_source_sel_en source_selection)
-{
-	SYSCON->EXTCLKSEL.SEL = source_selection;
-}
-
 /**
  * @brief Inicializacion del clock con cristal externo
  * @param[in] crystal_frequency Frecuencia del cristal externo utilizado en Hz
@@ -179,16 +159,17 @@ void SYSCON_set_ext_clock_source(SYSCON_ext_clock_source_sel_en source_selection
 void SYSCON_set_crystal_clock(uint32_t crystal_frequency)
 {
 	uint32_t counter_delay;
-	IOCON_config_t xtal_pin_config;
-
-	xtal_pin_config.mode = IOCON_PULL_NONE;
-	xtal_pin_config.clk_sel = IOCON_CLK_DIV_0;
-	xtal_pin_config.dac_mode = 0;
-	xtal_pin_config.hysteresis = 0;
-	xtal_pin_config.iic_mode = 0;
-	xtal_pin_config.invert_input = 0;
-	xtal_pin_config.open_drain = 0;
-	xtal_pin_config.sample_mode = IOCON_SAMPLE_MODE_BYPASS;
+	const IOCON_config_t xtal_pin_config =
+	{
+		.mode = IOCON_PULL_NONE,
+		.clk_sel = IOCON_CLK_DIV_0,
+		.dac_mode = 0,
+		.hysteresis = 0,
+		.iic_mode = 0,
+		.invert_input = 0,
+		.open_drain = 0,
+		.sample_mode = IOCON_SAMPLE_MODE_BYPASS
+	};
 
 	IOCON_init();
 	IOCON_config_io(XTALIN_PORT, XTALIN_PIN, &xtal_pin_config);
@@ -336,15 +317,6 @@ void SYSCON_set_PLL(SYSCON_pll_source_sel_en pll_source, uint8_t pll_multiplier)
 	}
 }
 
-/**
- * @brief Seleccion de fuente de clock para los distintos perifericos
- * @param[in] peripheral Periferico cuya fuente seleccionar
- * @param[in] clock Fuente de clock para el periferico seleccionada
- */
-void SYSCON_set_peripheral_clock_source(SYSCON_peripheral_sel_en peripheral, SYSCON_peripheral_clock_sel_en clock)
-{
-	SYSCON->PERCLKSEL[peripheral].SEL = clock;
-}
 
 /**
  * @brief Obtencion del clock de los distintos perifericos
@@ -460,27 +432,5 @@ void SYSCON_set_frg_config(uint8_t frg_selection, SYSCON_frg_clock_sel_en clock_
 		SYSCON->FRG1MUL.MULT = mul;
 
 		current_frg1_clock = frg_clock_source_freq /(double)(1.0 + ((double)(mul)/(double)(div)));
-	}
-}
-
-/**
- * @brief Seleccion de fuente para el CLOCK OUT
- * @param[in] clock_source Fuente deseada
- * @param[in] divider Divisor del CLOCK OUT
- * @param[in] port Puerto por el cual sacar el CLOCK OUT
- * @param[in] pin Pin por el cual sacar el CLOCK_OUT
- */
-void SYSCON_set_clkout_config(SYSCON_clkout_source_sel_en clock_source, uint8_t divider, uint8_t port, uint8_t pin)
-{
-	SYSCON->CLKOUTSEL.SEL = clock_source;
-	SYSCON->CLKOUTDIV.DIV = divider;
-
-	if(port <= 1)
-	{
-		SWM_init();
-
-		SWM->PINASSIGN11.CLKOUT_O = (port * 32) + pin;
-
-		SWM_deinit();
 	}
 }
