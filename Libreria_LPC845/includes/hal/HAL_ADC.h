@@ -10,14 +10,44 @@
 #define HAL_ADC_H_
 
 #include <stdint.h>
-#include <HPL_ADC.h>
+
+typedef enum
+{
+	HAL_ADC_SEQUENCE_SEL_A = 0,
+	HAL_ADC_SEQUENCE_SEL_B
+}hal_adc_sequence_sel_en;
+
+typedef enum
+{
+	HAL_ADC_TRIGGER_SEL_NONE = 0,
+	HAL_ADC_TRIGGER_SEL_PININT0_IRQ,
+	HAL_ADC_TRIGGER_SEL_PININT1_IRQ,
+	HAL_ADC_TRIGGER_SEL_SCT0_OUT3,
+	HAL_ADC_TRIGGER_SEL_SCT0_OUT4,
+	HAL_ADC_TRIGGER_SEL_T0_MAT3,
+	HAL_ADC_TRIGGER_SEL_CMP0_OUT_ADC,
+	HAL_ADC_TRIGGER_SEL_GPIO_INT_BMAT,
+	HAL_ADC_TRIGGER_SEL_ARM_TXEV
+}hal_adc_trigger_sel_en;
+
+typedef enum
+{
+	HAL_ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE = 0,
+	HAL_ADC_TRIGGER_POL_SEL_POSITIVE_EDGE
+}hal_adc_trigger_pol_sel_en;
+
+typedef enum
+{
+	HAL_ADC_SYNC_SEL_ENABLE_SYNC = 0,
+	HAL_ADC_SYNC_SEL_BYPASS_SYNC
+}hal_adc_sync_sel_en;
 
 typedef struct
 {
 	uint16_t channels;
-	ADC_trigger_sel_en trigger;
-	ADC_trigger_pol_sel_en trigger_pol;
-	ADC_sync_sel_en sync_bypass;
+	hal_adc_trigger_sel_en trigger;
+	hal_adc_trigger_pol_sel_en trigger_pol;
+	hal_adc_sync_sel_en sync_bypass;
 	uint8_t burst;
 	uint8_t single_step;
 	uint8_t low_priority;
@@ -72,7 +102,7 @@ void hal_adc_init(uint32_t sample_freq);
  * @param[in] sequence Seleccion de secuencia a configurar
  * @param[in] config Configuracion deseada para la secuencia
  */
-void hal_adc_config_sequence(ADC_sequence_sel_en sequence, const hal_adc_sequence_config_t *config);
+void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config);
 
 /**
  * @brief Disparar conversiones en una secuencia
@@ -82,7 +112,7 @@ void hal_adc_config_sequence(ADC_sequence_sel_en sequence, const hal_adc_sequenc
  *
  * @param[in] sequence Secuencia a disparar
  */
-void hal_adc_start_sequence(ADC_sequence_sel_en sequence);
+void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence);
 
 /**
  * @brief Obtener resultado de la secuencia
@@ -97,6 +127,6 @@ void hal_adc_start_sequence(ADC_sequence_sel_en sequence);
  * @param[out] result Lugares donde guardar los resultados de la secuencia
  * @return Resultado de la funcion
  */
-hal_adc_sequence_result_en hal_adc_get_sequence_result(ADC_sequence_sel_en sequence, hal_adc_sequence_result_t *result[]);
+hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result[]);
 
 #endif /* HAL_ADC_H_ */

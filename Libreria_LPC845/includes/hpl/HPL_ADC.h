@@ -12,7 +12,11 @@
 #include <stdint.h>
 #include <HRI_ADC.h>
 
-#define MAX_ADC_CONVERSION_VALUE				0xFFF
+typedef enum
+{
+	ADC_SEQUENCE_SEL_A = 0,
+	ADC_SEQUENCE_SEL_B
+}ADC_sequence_sel_en;
 
 typedef enum
 {
@@ -25,12 +29,6 @@ typedef enum
 	ADC_LOW_POWER_MODE_DISABLED = 0,
 	ADC_LOW_POWER_MODE_ENABLED
 }ADC_low_power_mode_en;
-
-typedef enum
-{
-	ADC_SEQUENCE_SEL_A = 0,
-	ADC_SEQUENCE_SEL_B
-}ADC_sequence_sel_en;
 
 typedef enum
 {

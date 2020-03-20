@@ -8,7 +8,7 @@
 
 #include <stdint.h>
 #include <termometro.h>
-#include <HPL_ADC.h>
+#include <HAL_ADC.h>
 
 #define		ADC_SAMPLING_FREQUENCY			100000
 #define		ADC_CHANNEL						1
@@ -17,6 +17,8 @@
 #define		CONVERSION_PERIOD_MSEC			25
 
 #define		CONVERSION_BUFFER_LENGTH		10
+
+#define		ADC_TERMOMETRO_SEQUENCE			HAL_ADC_SEQUENCE_SEL_A
 
 /** Estructura para definir relaciones temperatura/cuentas */
 typedef struct
@@ -85,17 +87,17 @@ static void adc_conversion_finished(void);
  */
 void termometro_init(void)
 {
-	#warning Actualizar esta funcion
-	/*ADC_conversions_config_t adc_config;
+	hal_adc_sequence_config_t adc_config;
 
 	adc_config.burst = 0;
 	adc_config.channels = ADC_CHANNEL_MASK;
-	adc_config.conversion_ended_callback = adc_conversion_finished;
+	adc_config.callback = adc_conversion_finished;
+	adc_config.single_step = 0;
+	adc_config.trigger = HAL_ADC_TRIGGER_SEL_NONE;
 
+	hal_adc_init(ADC_SAMPLING_FREQUENCY);
 
-	ADC_init(ADC_SAMPLING_FREQUENCY, ADC_CLOCK_SOURCE_FRO);
-
-	ADC_config_conversions(&adc_config);*/
+	hal_adc_config_sequence(ADC_TERMOMETRO_SEQUENCE, &adc_config);
 }
 
 /**
@@ -103,15 +105,14 @@ void termometro_init(void)
  */
 void termometro_check(void)
 {
-	#warning Actualizar esta funcion
-	/*static uint32_t msec_counter = 0;
+	static uint32_t msec_counter = 0;
 
 	msec_counter = (msec_counter + 1) % CONVERSION_PERIOD_MSEC;
 
 	if(msec_counter == 0)
 	{
-		ADC_start_conversions();
-	}*/
+		hal_adc_start_sequence(ADC_TERMOMETRO_SEQUENCE);
+	}
 }
 
 /**
@@ -128,11 +129,13 @@ uint32_t termometro_read(void)
  */
 static void adc_conversion_finished(void)
 {
-	#warning Actualizar esta funcion
-	/*uint32_t adc_value;
+	uint32_t adc_value;
+	hal_adc_sequence_result_t adc_result;
+	hal_adc_sequence_result_t *adc_result_p = &adc_result;
 
-	if(ADC_get_conversion(ADC_CHANNEL, &adc_value) == ADC_GET_CONVERSION_SUCCESS)
+	if(hal_adc_get_sequence_result(ADC_TERMOMETRO_SEQUENCE, &adc_result_p) == HAL_ADC_SEQUENCE_RESULT_VALID)
 	{
+		adc_value = adc_result.result;
 		conversion_buffer[conversion_buffer_idx] = adc_value;
 
 		conversion_buffer_idx = (conversion_buffer_idx + 1) % CONVERSION_BUFFER_LENGTH;
@@ -188,5 +191,5 @@ static void adc_conversion_finished(void)
 				}
 			}
 		}
-	}*/
+	}
 }

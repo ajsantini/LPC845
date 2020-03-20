@@ -9,8 +9,8 @@
 #include <stdint.h>
 #include <teclado.h>
 #include <HPL_GPIO.h>
-#include <HPL_IOCON.h>
-#include <HPL_SYSTICK.h>
+#include <HAL_IOCON.h>
+#include <HAL_SYSTICK.h>
 
 #define		TECLADO_CANTIDAD_FILAS			2
 #define		TECLADO_CANTIDAD_COLUMNAS		3
@@ -54,7 +54,7 @@ static uint8_t get_current_key(void);
 void teclado_init(uint32_t bounces)
 {
 	uint8_t counter;
-	IOCON_config_t pin_config;
+	hal_iocon_config_t pin_config;
 
 	pin_config.clk_sel = IOCON_CLK_DIV_0;
 	pin_config.dac_mode = 0;
@@ -70,7 +70,7 @@ void teclado_init(uint32_t bounces)
 	{
 		GPIO_set_dir(teclado_filas_port[counter], teclado_filas_pin[counter], GPIO_DIR_INPUT, 0);
 
-		IOCON_config_io(teclado_filas_port[counter], teclado_filas_pin[counter], &pin_config);
+		hal_iocon_config_io(teclado_filas_port[counter], teclado_filas_pin[counter], &pin_config);
 	}
 
 	// Columnas como salidas

@@ -24,14 +24,10 @@
 #include <stdio.h>
 
 #include <HAL_ADC.h>
+#include <HAL_SYSCON.h>
 #include <HAL_SYSTICK.h>
 
 #include <HPL_GPIO.h>
-#include <HPL_ADC.h>
-#include <HPL_SYSCON.h>
-#include <HPL_SWM.h>
-#include <HRI_SWM.h>
-#include <HPL_SYSTICK.h>
 #include <HPL_UART.h>
 #include <HPL_CTIMER.h>
 
@@ -43,6 +39,8 @@
 
 #define		ADC_CHANNEL			0
 #define		ADC_FREQUENCY		500e3
+
+#define		ADC_SEQUENCE		HAL_ADC_SEQUENCE_SEL_A
 
 #define		RX_PORT				0
 #define		RX_PIN				17
@@ -71,9 +69,9 @@ static void rx_callback(void);
 static const hal_adc_sequence_config_t adc_config =
 {
 	.channels = (1 << ADC_CHANNEL),
-	.trigger = ADC_TRIGGER_SEL_NONE,
-	.trigger_pol = ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE,
-	.sync_bypass = ADC_SYNC_SEL_BYPASS_SYNC,
+	.trigger = HAL_ADC_TRIGGER_SEL_NONE,
+	.trigger_pol = HAL_ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE,
+	.sync_bypass = HAL_ADC_SYNC_SEL_BYPASS_SYNC,
 	.burst = 0,
 	.single_step = 0,
 	.low_priority = 0,
@@ -127,28 +125,24 @@ static uint32_t adc_conversion = 0;
 
 int main(void)
 {
-	SYSCON_set_fro_direct(); // FRO sin divisor previo (FRO = 24MHz)
-	SYSCON_set_system_clock_source(SYSCON_MAIN_CLOCK_SEL_FRO);
+	hal_syscon_config_fro_direct(1, 1);
 
 	// Clock principal en un pin (utilizando un divisor)
-	SYSCON_set_clkout_config(SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
-	SWM_init();
-	SWM_assign_CLKOUT(CLOCKOUT_PORT, CLOCKOUT_PIN);
-	SWM_deinit();
+	hal_syscon_config_clkout(CLOCKOUT_PORT, CLOCKOUT_PIN, SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
 
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
 	// Como fuente utilizo el PLL a 24MHz ya configurado
 	// 24MHz / (1 + (29 / 256)) = 21.55789474Hz
-	SYSCON_set_frg_config(0, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 29, 255);
+	hal_syscon_config_frg(0, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 29);
 
 	GPIO_init(LED_PORT);
 
 	GPIO_set_dir(LED_PORT, LED_PIN, GPIO_DIR_OUTPUT, 0);
 
 	hal_adc_init(ADC_FREQUENCY);
-	hal_adc_config_sequence(ADC_SEQUENCE_SEL_A, &adc_config);
+	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
 
 	UART_init(UART_NUMBER, &uart_config);
 
@@ -190,7 +184,7 @@ static void tick_callback(void)
 
 	if(adc_counter == 0)
 	{
-		hal_adc_start_sequence(ADC_SEQUENCE_SEL_A);
+		hal_adc_start_sequence(ADC_SEQUENCE);
 	}
 }
 
@@ -199,7 +193,7 @@ static void adc_callback(void)
 	hal_adc_sequence_result_t adc_result;
 	hal_adc_sequence_result_t *adc_result_p = &adc_result;
 
-	if(hal_adc_get_sequence_result(ADC_SEQUENCE_SEL_A, &adc_result_p) == HAL_ADC_SEQUENCE_RESULT_VALID)
+	if(hal_adc_get_sequence_result(ADC_SEQUENCE, &adc_result_p) == HAL_ADC_SEQUENCE_RESULT_VALID)
 	{
 		adc_conversion = adc_result.result;
 	}

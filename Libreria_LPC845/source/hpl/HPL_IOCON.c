@@ -12,9 +12,9 @@
 
 volatile IOCON_per_t * const IOCON = (IOCON_per_t *) IOCON_BASE; //!< Periferico IOCON
 
-static IOCON_PIO_reg_t dummy_reg; //!< Registro dummy para los pines no disponibles en el encapsulado
+volatile IOCON_PIO_reg_t dummy_reg; //!< Registro dummy para los pines no disponibles en el encapsulado
 
-static IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
+volatile IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros de configuracion
 {
 	{ // Port 0
 		(IOCON_PIO_reg_t * ) &IOCON->PIO0_0, (IOCON_PIO_reg_t * ) &IOCON->PIO0_1,
@@ -52,39 +52,3 @@ static IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros 
 		&dummy_reg, &dummy_reg, &dummy_reg, &dummy_reg
 	},
 };
-
-/**
- * @brief Configuracion de un pin
- * @param[in] port Puerto del pin a configurar
- * @param[in] pin Numero del pin a configurar
- * @param[in] pin_config Puntero a estructura de configuracion del pin
- */
-void IOCON_config_io(uint8_t port, uint8_t pin, const IOCON_config_t *config)
-{
-	if(port == 0 && pin == 17)
-	{
-		// Este pin tiene configuracion DAC
-		IOCON->PIO0_17.DACMODE = config->dac_mode;
-	}
-	else if(port == 0 && pin == 11)
-	{
-		// Este pin tiene I2C
-		IOCON->PIO0_11.I2CMODE = config->iic_mode;
-	}
-	else if(port == 0 && pin == 10)
-	{
-		// Este pin tiene I2C
-		IOCON->PIO0_10.I2CMODE = config->iic_mode;
-	}
-	else
-	{
-		// Los pines que no tienen I2C, tienen MODE
-		IOCON_PIN_TABLE[port][pin]->MODE = config->pull_mode;
-	}
-
-	IOCON_PIN_TABLE[port][pin]->HYS = config->hysteresis;
-	IOCON_PIN_TABLE[port][pin]->INV = config->invert_input;
-	IOCON_PIN_TABLE[port][pin]->OD = config->open_drain;
-	IOCON_PIN_TABLE[port][pin]->S_MODE = config->sample_mode;
-	IOCON_PIN_TABLE[port][pin]->CLK_DIV = config->clk_sel;
-}

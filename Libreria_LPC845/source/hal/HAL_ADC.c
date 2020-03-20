@@ -10,6 +10,7 @@
 #include <HAL_SYSCON.h>
 #include <HPL_ADC.h>
 #include <HPL_SYSCON.h>
+#include <HPL_SWM.h>
 
 #define	ADC_MAX_FREQ			((uint32_t) 1.2e6) //<! Maxima frecuencia de conversion admitida por el ADC
 #define	ADC_CHANNEL_AMOUNT		12
@@ -60,9 +61,24 @@ void hal_adc_init(uint32_t sample_freq)
  * @param[in] sequence Seleccion de secuencia a configurar
  * @param[in] config Configuracion deseada para la secuencia
  */
-void hal_adc_config_sequence(ADC_sequence_sel_en sequence, const hal_adc_sequence_config_t *config)
+void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config)
 {
+	uint8_t counter;
+
 	ADC_sequence_config_channels(sequence, config->channels);
+
+	SWM_init();
+
+	for(counter = 0; counter < ADC_CHANNEL_AMOUNT; counter++)
+	{
+		if(config->channels & (1 << counter))
+		{
+			SWM_enable_ADC(counter, SWM_ENABLE);
+		}
+	}
+
+	SWM_deinit();
+
 	ADC_sequence_config_trigger(sequence, config->trigger);
 	ADC_sequence_config_trigger_pol(sequence, config->trigger_pol);
 	ADC_sequence_config_sync(sequence, config->sync_bypass);
@@ -76,7 +92,7 @@ void hal_adc_config_sequence(ADC_sequence_sel_en sequence, const hal_adc_sequenc
 		ADC_sequence_clear_singlestep(sequence);
 	}
 
-	if(sequence == ADC_SEQUENCE_SEL_A)
+	if(sequence == HAL_ADC_SEQUENCE_SEL_A)
 	{
 		if(config->low_priority)
 		{
@@ -108,7 +124,7 @@ void hal_adc_config_sequence(ADC_sequence_sel_en sequence, const hal_adc_sequenc
  *
  * @param[in] sequence Secuencia a disparar
  */
-void hal_adc_start_sequence(ADC_sequence_sel_en sequence)
+void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
 {
 	ADC_sequence_set_start(sequence);
 }
@@ -126,7 +142,7 @@ void hal_adc_start_sequence(ADC_sequence_sel_en sequence)
  * @param[out] result Lugares donde guardar los resultados de la secuencia
  * @return Resultado de la funcion
  */
-hal_adc_sequence_result_en hal_adc_get_sequence_result(ADC_sequence_sel_en sequence, hal_adc_sequence_result_t *result[])
+hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result[])
 {
 	if(ADC_sequence_get_mode(sequence) == ADC_INTERRUPT_MODE_EOC)
 	{
@@ -158,7 +174,7 @@ hal_adc_sequence_result_en hal_adc_get_sequence_result(ADC_sequence_sel_en seque
 
 				if(data.DATAVALID)
 				{
-					(*result[result_counter]).channel = channel_counter;
+					(*result[result_counter]).channel = (hal_adc_result_channel_en) channel_counter;
 					(*result[result_counter++]).result = data.RESULT;
 				}
 			}

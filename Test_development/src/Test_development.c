@@ -1,3 +1,7 @@
+/**
+ * Ejemplo utilizando nivel HPL (sin usar la capa de aplicacion)
+ */
+
 #include <HPL_SYSCON.h>
 #include <HPL_SWM.h>
 #include <HPL_IOCON.h>
@@ -14,22 +18,10 @@ int main(void)
 {
 	uint32_t counter;
 
-	const IOCON_config_t xtal_pin_config =
-	{
-		.pull_mode = IOCON_PULL_NONE,
-		.hysteresis = 0,
-		.invert_input = 0,
-		.open_drain = 0,
-		.sample_mode = IOCON_SAMPLE_MODE_BYPASS,
-		.clk_sel = IOCON_CLK_DIV_0,
-		.dac_mode = 0,
-		.iic_mode = IOCON_IIC_MODE_GPIO
-	};
-
 	// Remocion de pull ups en los pines XTAL
 	IOCON_init();
-	IOCON_config_io(XTALIN_PORT, XTALIN_PIN, &xtal_pin_config);
-	IOCON_config_io(XTALOUT_PORT, XTALOUT_PIN, &xtal_pin_config);
+	IOCON_config_pull_mode(XTALIN_PORT, XTALIN_PIN, IOCON_PULL_NONE);
+	IOCON_config_pull_mode(XTALOUT_PORT, XTALOUT_PIN, IOCON_PULL_NONE);
 
 	// Habilitacion de los pines XTAL
 	SWM_init();
