@@ -1,1 +1,2 @@
-HAL_SYSCON.c:18:10:hal_syscon_get_system_clock	8	static
+HAL_SYSCON.c:19:10:hal_syscon_get_system_clock	8	static
+HAL_SYSCON.c:28:10:hal_syscon_get_fro_clock	8	static

@@ -68,11 +68,16 @@ static void adc_callback(void);
 
 static void rx_callback(void);
 
-static const ADC_conversions_config_t adc_config =
+static const hal_adc_sequence_config_t adc_config =
 {
 	.channels = (1 << ADC_CHANNEL),
+	.trigger = ADC_TRIGGER_SEL_NONE,
+	.trigger_pol = ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE,
+	.sync_bypass = ADC_SYNC_SEL_BYPASS_SYNC,
 	.burst = 0,
-	.conversion_ended_callback = adc_callback
+	.single_step = 0,
+	.low_priority = 0,
+	.callback = adc_callback
 };
 
 static const UART_config_t uart_config =
@@ -142,8 +147,8 @@ int main(void)
 
 	GPIO_set_dir(LED_PORT, LED_PIN, GPIO_DIR_OUTPUT, 0);
 
-	hal_adc_init(ADC_FREQUENCY, ADC_CLOCK_SOURCE_PLL, ADC_VRANGE_HIGH_VOLTAGE);
-	ADC_config_conversions(&adc_config);
+	hal_adc_init(ADC_FREQUENCY);
+	hal_adc_config_sequence(ADC_SEQUENCE_SEL_A, &adc_config);
 
 	UART_init(UART_NUMBER, &uart_config);
 
@@ -185,13 +190,19 @@ static void tick_callback(void)
 
 	if(adc_counter == 0)
 	{
-		ADC_start_conversions();
+		hal_adc_start_sequence(ADC_SEQUENCE_SEL_A);
 	}
 }
 
 static void adc_callback(void)
 {
-	ADC_get_conversion(ADC_CHANNEL, &adc_conversion);
+	hal_adc_sequence_result_t adc_result;
+	hal_adc_sequence_result_t *adc_result_p = &adc_result;
+
+	if(hal_adc_get_sequence_result(ADC_SEQUENCE_SEL_A, &adc_result_p) == HAL_ADC_SEQUENCE_RESULT_VALID)
+	{
+		adc_conversion = adc_result.result;
+	}
 
 	adc_conversion /= 4; // 0 ~ 1023
 

@@ -65,7 +65,7 @@ typedef struct
  */
 static inline void IOCON_init(void)
 {
-	SYSCON_enable_clock(SYSCON_ENABLE_DISABLE_CLOCK_SEL_IOCON);
+	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_IOCON);
 }
 
 /**
@@ -75,7 +75,7 @@ static inline void IOCON_init(void)
  */
 static inline void IOCON_deinit(void)
 {
-	SYSCON_disable_clock(SYSCON_ENABLE_DISABLE_CLOCK_SEL_IOCON);
+	SYSCON_disable_clock(SYSCON_ENABLE_CLOCK_SEL_IOCON);
 }
 
 /**

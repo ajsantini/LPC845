@@ -34,7 +34,8 @@ typedef enum
 
 typedef enum
 {
-	ADC_TRIGGER_SEL_PININT0_IRQ = 1,
+	ADC_TRIGGER_SEL_NONE = 0,
+	ADC_TRIGGER_SEL_PININT0_IRQ,
 	ADC_TRIGGER_SEL_PININT1_IRQ,
 	ADC_TRIGGER_SEL_SCT0_OUT3,
 	ADC_TRIGGER_SEL_SCT0_OUT4,
@@ -134,6 +135,16 @@ static inline void ADC_sequence_config_channels(ADC_sequence_sel_en sequence, ui
 }
 
 /**
+ * @brief Obtener los canales configuados en la secuencia
+ * @param[in] sequence Secuencia a consultar
+ * @return Mascara de canales habilitados en la secuencia
+ */
+static inline uint16_t ADC_sequence_get_channels(ADC_sequence_sel_en sequence)
+{
+	return ADC->SEQ_CTRL[sequence].CHANNELS;
+}
+
+/**
  * @brief Configuracion de trigger en una secuencia
  * @param[in] sequence Secuencia a configurar
  * @param[in] trigger Fuente de trigger deseada
@@ -200,7 +211,7 @@ static inline void ADC_sequence_clear_burst(ADC_sequence_sel_en sequence)
  * @brief Fijar modo singlestep
  * @param[in] sequence Secuencia a configurar
  */
-static inline void ADC_sequence_singlestep_set(ADC_sequence_sel_en sequence)
+static inline void ADC_sequence_set_singlestep(ADC_sequence_sel_en sequence)
 {
 	ADC->SEQ_CTRL[sequence].SINGLESTEP = 1;
 }
@@ -209,7 +220,7 @@ static inline void ADC_sequence_singlestep_set(ADC_sequence_sel_en sequence)
  * @brief Limpiar modo singlestep
  * @param[in] sequence Secuencia a configurar
  */
-static inline void ADC_sequence_singlestep_clear(ADC_sequence_sel_en sequence)
+static inline void ADC_sequence_clear_singlestep(ADC_sequence_sel_en sequence)
 {
 	ADC->SEQ_CTRL[sequence].SINGLESTEP = 0;
 }
@@ -238,6 +249,16 @@ static inline void ADC_sequence_A_lowpriority_clear(void)
 static inline void ADC_sequence_config_interrupt_mode(ADC_sequence_sel_en sequence, ADC_interrupt_mode_en mode)
 {
 	ADC->SEQ_CTRL[sequence].MODE = mode;
+}
+
+/**
+ * @brief Obtener modo de interrupcion de una secuencia
+ * @param[in] sequence Secuencia a consultar
+ * @return Modo de interrupcion de la secuencia
+ */
+static inline ADC_interrupt_mode_en ADC_sequence_get_mode(ADC_sequence_sel_en sequence)
+{
+	return ADC->SEQ_CTRL[sequence].MODE;
 }
 
 /**
@@ -424,6 +445,26 @@ static inline ADC_channel_data_t ADC_get_channel_data(uint8_t channel)
 static inline void ADC_set_vrange(ADC_vrange_sel_en vrange)
 {
 	ADC->TRM.VRANGE = vrange;
+}
+
+/**
+ * @brief Realizacion de calibracion de hardware
+ * @param[in] div Divisor utilizado para lograr los 500KHz de clock
+ */
+static inline void ADC_hardware_calib(uint8_t div)
+{
+	ADC_CTRL_reg_t adc_ctrl_original = ADC->CTRL;
+	ADC_CTRL_reg_t adc_ctrl_aux = ADC->CTRL;
+
+	adc_ctrl_aux.CLKDIV = div;
+	adc_ctrl_aux.CALMODE = 1;
+	adc_ctrl_aux.LPWRMODE = 0;
+
+	*((uint32_t *) &ADC->CTRL) = *((uint32_t *) &adc_ctrl_aux);
+
+	while(ADC->CTRL.CALMODE);
+
+	*((uint32_t *) &ADC->CTRL) = *((uint32_t *) &adc_ctrl_original);
 }
 
 #endif /* HPL_ADC_H_ */

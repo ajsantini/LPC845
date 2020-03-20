@@ -99,9 +99,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		// Seleccion de clock para la UART
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART0),
+		/*aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART0),
 								config->baudrate,
-								config->oversampling);
+								config->oversampling);*/
 
 		if(aux > 0xFFF)
 		{
@@ -126,9 +126,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		// Seleccion de clock para la UART
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART1),
+		/*aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART1),
 								config->baudrate,
-								config->oversampling);
+								config->oversampling);*/
 
 		if(aux > 0xFFF)
 		{
@@ -153,9 +153,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		// Seleccion de clock para la UART
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART2),
+		/*aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART2),
 								config->baudrate,
-								config->oversampling);
+								config->oversampling);*/
 
 		if(aux > 0xFFF)
 		{
@@ -180,9 +180,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		// Seleccion de clock para la UART
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART3),
+		/*aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART3),
 								config->baudrate,
-								config->oversampling);
+								config->oversampling);*/
 
 		if(aux > 0xFFF)
 		{
@@ -207,9 +207,9 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 		// Seleccion de clock para la UART
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
 
-		aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART4),
+		/*aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART4),
 								config->baudrate,
-								config->oversampling);
+								config->oversampling);*/
 
 		if(aux > 0xFFF)
 		{
