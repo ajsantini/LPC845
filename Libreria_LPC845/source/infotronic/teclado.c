@@ -61,7 +61,7 @@ void teclado_init(uint32_t bounces)
 	pin_config.hysteresis = 0;
 	pin_config.iic_mode = 0;
 	pin_config.invert_input = 0;
-	pin_config.mode = IOCON_PULL_DOWN;
+	pin_config.pull_mode = IOCON_PULL_DOWN;
 	pin_config.open_drain = 0;
 	pin_config.sample_mode = IOCON_SAMPLE_MODE_BYPASS;
 

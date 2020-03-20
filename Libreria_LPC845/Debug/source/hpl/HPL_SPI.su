@@ -1,5 +1,2 @@
-HPL_SYSCON.h:329:6:SYSCON_set_fro_direct	8	static
-HPL_SYSCON.h:339:6:SYSCON_clear_fro_direct	8	static
 HPL_SYSCON.h:504:20:SYSCON_set_peripheral_clock_source	24	static
-HPL_SYSCON.h:516:6:SYSCON_set_frg_config	24	static
 HPL_SPI.c:33:9:SPI_init	16	static

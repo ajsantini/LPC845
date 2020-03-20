@@ -54,28 +54,6 @@ static IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32] = //!< Tabla de registros 
 };
 
 /**
- * @brief Inicializacion del modulo IOCON
- *
- * Unicamente habilita el clock del modulo
- */
-void IOCON_init(void)
-{
-	#warning actualizar
-	//SYSCON->SYSAHBCLKCTRL0.IOCON = 1;
-}
-
-/**
- * @brief Inhabilitacion del modulo IOCON
- *
- * Unicamente inhabilita el clock del modulo
- */
-void IOCON_deinit(void)
-{
-	#warning actualizar
-	//SYSCON->SYSAHBCLKCTRL0.IOCON = 0;
-}
-
-/**
  * @brief Configuracion de un pin
  * @param[in] port Puerto del pin a configurar
  * @param[in] pin Numero del pin a configurar
@@ -101,7 +79,7 @@ void IOCON_config_io(uint8_t port, uint8_t pin, const IOCON_config_t *config)
 	else
 	{
 		// Los pines que no tienen I2C, tienen MODE
-		IOCON_PIN_TABLE[port][pin]->MODE = config->mode;
+		IOCON_PIN_TABLE[port][pin]->MODE = config->pull_mode;
 	}
 
 	IOCON_PIN_TABLE[port][pin]->HYS = config->hysteresis;

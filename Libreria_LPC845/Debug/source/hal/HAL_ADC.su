@@ -1,0 +1,5 @@
+HAL_ADC.c:29:13:dummy_irq_callback	8	static
+HAL_ADC.c:37:6:ADC_SEQA_IRQHandler	8	static
+HAL_ADC.c:50:6:ADC_SEQB_IRQHandler	8	static
+HAL_ADC.c:63:6:ADC_THCMP_IRQHandler	8	static
+HAL_ADC.c:71:6:ADC_OVR_IRQHandler	8	static

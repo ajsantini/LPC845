@@ -10,7 +10,7 @@
 #include <HPL_SYSCON.h>
 #include <HPL_IOCON.h>
 #include <HPL_GPIO.h>
-#include <HPL_SYSTICK.h>
+#include <HAL_SYSTICK.h>
 #include <HPL_ADC.h>
 #include <teclado.h>
 #include <relays.h>
@@ -50,7 +50,7 @@ void infotronic_init(uint32_t crystal_freq)
 
 	termometro_init();
 
-	SYSTICK_init(INFOTRONIC_TICK_US, infotronic_systick_callback);
+	hal_systick_init(INFOTRONIC_TICK_US, infotronic_systick_callback);
 }
 
 /**

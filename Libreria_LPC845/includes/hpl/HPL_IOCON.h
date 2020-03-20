@@ -10,6 +10,7 @@
 #define HPL_IOCON_H_
 
 #include <stdint.h>
+#include <HPL_SYSCON.h>
 
 typedef enum
 {
@@ -47,7 +48,7 @@ typedef enum
 
 typedef struct
 {
-	IOCON_pull_mode_en mode;
+	IOCON_pull_mode_en pull_mode;
 	uint8_t hysteresis;
 	uint8_t invert_input;
 	uint8_t open_drain;
@@ -62,14 +63,20 @@ typedef struct
  *
  * Unicamente habilita el clock del modulo
  */
-void IOCON_init(void);
+static inline void IOCON_init(void)
+{
+	SYSCON_enable_clock(SYSCON_ENABLE_DISABLE_CLOCK_SEL_IOCON);
+}
 
 /**
  * @brief Inhabilitacion del modulo IOCON
  *
  * Unicamente inhabilita el clock del modulo
  */
-void IOCON_deinit(void);
+static inline void IOCON_deinit(void)
+{
+	SYSCON_disable_clock(SYSCON_ENABLE_DISABLE_CLOCK_SEL_IOCON);
+}
 
 /**
  * @brief Configuracion de un pin

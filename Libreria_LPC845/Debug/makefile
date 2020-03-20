@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include source/infotronic/subdir.mk
 -include source/hpl/subdir.mk
+-include source/hal/subdir.mk
 -include source/subdir.mk
 -include subdir.mk
 -include objects.mk

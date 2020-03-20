@@ -14,6 +14,7 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+source/hal \
 source/hpl \
 source/infotronic \
 source \

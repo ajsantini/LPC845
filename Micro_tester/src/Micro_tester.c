@@ -22,6 +22,10 @@
 
 #include <cr_section_macros.h>
 #include <stdio.h>
+
+#include <HAL_ADC.h>
+#include <HAL_SYSTICK.h>
+
 #include <HPL_GPIO.h>
 #include <HPL_ADC.h>
 #include <HPL_SYSCON.h>
@@ -119,23 +123,26 @@ static uint32_t adc_conversion = 0;
 int main(void)
 {
 	SYSCON_set_fro_direct(); // FRO sin divisor previo (FRO = 24MHz)
-	SYSCON_set_system_clock_source(SYSCON_SYSTEM_CLOCK_SEL_FRO);
+	SYSCON_set_system_clock_source(SYSCON_MAIN_CLOCK_SEL_FRO);
 
 	// Clock principal en un pin (utilizando un divisor)
-	SYSCON_set_clkout_config(SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER, CLOCKOUT_PORT, CLOCKOUT_PIN);
+	SYSCON_set_clkout_config(SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
+	SWM_init();
+	SWM_assign_CLKOUT(CLOCKOUT_PORT, CLOCKOUT_PIN);
+	SWM_deinit();
 
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
 	// Como fuente utilizo el PLL a 24MHz ya configurado
-	// 24MHz / (1 + (47 / 256)) = 20.27722772MHz
-	SYSCON_set_frg_config(0, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47, 256);
+	// 24MHz / (1 + (29 / 256)) = 21.55789474Hz
+	SYSCON_set_frg_config(0, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 29, 255);
 
 	GPIO_init(LED_PORT);
 
 	GPIO_set_dir(LED_PORT, LED_PIN, GPIO_DIR_OUTPUT, 0);
 
-	ADC_init(ADC_FREQUENCY, ADC_CLOCK_SOURCE_PLL);
+	hal_adc_init(ADC_FREQUENCY, ADC_CLOCK_SOURCE_PLL, ADC_VRANGE_HIGH_VOLTAGE);
 	ADC_config_conversions(&adc_config);
 
 	UART_init(UART_NUMBER, &uart_config);
@@ -153,7 +160,7 @@ int main(void)
 
 	CTIMER_run();
 
-	SYSTICK_init(TICK_PERIOD_US, tick_callback);
+	hal_systick_init(TICK_PERIOD_US, tick_callback);
 
 	while(1)
 	{

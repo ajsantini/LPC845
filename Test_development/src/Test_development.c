@@ -12,9 +12,11 @@
 
 int main(void)
 {
+	uint32_t counter;
+
 	const IOCON_config_t xtal_pin_config =
 	{
-		.mode = IOCON_PULL_NONE,
+		.pull_mode = IOCON_PULL_NONE,
 		.hysteresis = 0,
 		.invert_input = 0,
 		.open_drain = 0,
@@ -36,7 +38,12 @@ int main(void)
 	SWM_deinit();
 
 	SYSCON_set_oscillator_control(SYSCON_BYPASS_DISABLED, SYSCON_FREQRANGE_MINUS_20MHZ);
-	#error Falta configurar el PDRUNCFG, hay que hacer la funcion en HPL_SYSCON.h
+	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_SYSOSC);
+
+	counter = 12e3; // Delay de aprox 1mseg a lo guaso
+	while(counter) counter--; // Estabilizacion del cristal
+
+
 
 	while(1)
 	{
