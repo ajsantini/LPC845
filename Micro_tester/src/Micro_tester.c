@@ -1,6 +1,8 @@
 /*
  * Descripcion del programa de testeo:
  *
+ * Unicamente se utilizan las librerias de la capa de aplicacion (excepto para el CTIMER)
+ *
  * En primer lugar se configura el sistema de clock con las siguientes caracteristicas:
  * -) Configuracion de cristal externo (utilizar un cristal de 12MHz)
  * -) Se configura el PLL para incrementar la frecuencia a 24MHz y se lo selecciona como clock de sistema
@@ -31,8 +33,8 @@
 #include <HPL_UART.h>
 #include <HPL_CTIMER.h>
 
-#define		LED_PORT			0
-#define		LED_PIN				1
+#define		LED_PORT			1
+#define		LED_PIN				2
 
 #define		TICK_PERIOD_US		1000
 #define		CONVERSION_TIME_MS	50
@@ -72,8 +74,9 @@ static const hal_adc_sequence_config_t adc_config =
 	.trigger = HAL_ADC_TRIGGER_SEL_NONE,
 	.trigger_pol = HAL_ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE,
 	.sync_bypass = HAL_ADC_SYNC_SEL_BYPASS_SYNC,
+	.mode = HAL_ADC_INTERRUPT_MODE_EOS,
 	.burst = 0,
-	.single_step = 0,
+	.single_step = 1,
 	.low_priority = 0,
 	.callback = adc_callback
 };
@@ -160,6 +163,7 @@ int main(void)
 	CTIMER_run();
 
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
+	hal_adc_enable_sequence(ADC_SEQUENCE);
 
 	while(1)
 	{

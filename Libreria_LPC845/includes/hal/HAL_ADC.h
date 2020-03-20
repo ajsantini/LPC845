@@ -42,12 +42,19 @@ typedef enum
 	HAL_ADC_SYNC_SEL_BYPASS_SYNC
 }hal_adc_sync_sel_en;
 
+typedef enum
+{
+	HAL_ADC_INTERRUPT_MODE_EOC = 0,
+	HAL_ADC_INTERRUPT_MODE_EOS
+}hal_adc_interrupt_mode_en;
+
 typedef struct
 {
 	uint16_t channels;
 	hal_adc_trigger_sel_en trigger;
 	hal_adc_trigger_pol_sel_en trigger_pol;
 	hal_adc_sync_sel_en sync_bypass;
+	hal_adc_interrupt_mode_en mode;
 	uint8_t burst;
 	uint8_t single_step;
 	uint8_t low_priority;
@@ -103,6 +110,12 @@ void hal_adc_init(uint32_t sample_freq);
  * @param[in] config Configuracion deseada para la secuencia
  */
 void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config);
+
+/**
+ * @brief Habilitar una secuencia
+ * @param[in] sequence Secuencia a habilitar
+ */
+void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence);
 
 /**
  * @brief Disparar conversiones en una secuencia

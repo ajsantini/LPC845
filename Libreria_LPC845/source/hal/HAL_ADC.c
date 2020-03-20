@@ -11,6 +11,7 @@
 #include <HPL_ADC.h>
 #include <HPL_SYSCON.h>
 #include <HPL_SWM.h>
+#include <HPL_NVIC.h>
 
 #define	ADC_MAX_FREQ			((uint32_t) 1.2e6) //<! Maxima frecuencia de conversion admitida por el ADC
 #define	ADC_CHANNEL_AMOUNT		12
@@ -42,7 +43,7 @@ void hal_adc_init(uint32_t sample_freq)
 
 	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_ADC);
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_ADC);
-	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 0);
+	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
 	// Calibracion por hardware
@@ -92,6 +93,8 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 		ADC_sequence_clear_singlestep(sequence);
 	}
 
+	ADC_sequence_config_interrupt_mode(sequence, config->mode);
+
 	if(sequence == HAL_ADC_SEQUENCE_SEL_A)
 	{
 		if(config->low_priority)
@@ -114,6 +117,26 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 	{
 		ADC_sequence_clear_burst(sequence);
 	}
+
+	ADC_enable_sequence_interrupt(sequence);
+
+	if(sequence == HAL_ADC_SEQUENCE_SEL_A)
+	{
+		NVIC_enable_interrupt(NVIC_IRQ_SEL_ADC_SEQA);
+	}
+	else
+	{
+		NVIC_enable_interrupt(NVIC_IRQ_SEL_ADC_SEQB);
+	}
+}
+
+/**
+ * @brief Habilitar una secuencia
+ * @param[in] sequence Secuencia a habilitar
+ */
+void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence)
+{
+	ADC_sequence_enable(sequence);
 }
 
 /**

@@ -1144,3 +1144,290 @@ java.io.FileNotFoundException: /icons/peripheral.gif
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1474)
+
+!ENTRY com.crt.log 1 0 2020-03-20 19:15:50.624
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-20 19:15:50.626
+!MESSAGE RedlinkServer telnet session connected on port 3025->38416 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-20 19:15:58.097
+!MESSAGE Telnet session connected on port 3330->40580 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-20 19:21:07.693
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@19fca985): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2020-03-20 19:21:07.693
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 1 0 2020-03-20 19:31:30.739
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-20 19:31:30.742
+!MESSAGE RedlinkServer telnet session connected on port 3025->38732 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-20 19:31:36.097
+!MESSAGE Telnet session connected on port 3330->40896 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-20 19:34:55.698
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-20 19:34:55.699
+!MESSAGE RedlinkServer telnet session connected on port 3025->38918 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-20 19:35:00.644
+!MESSAGE Telnet session connected on port 3330->41086 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-20 19:42:17.243
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@2a299948): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2020-03-20 19:42:17.244
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 4 -1 2020-03-20 19:42:17.750
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 4 -1 2020-03-20 19:42:17.753
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 1 0 2020-03-20 19:42:56.120
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-20 19:42:56.121
+!MESSAGE RedlinkServer telnet session connected on port 3025->38960 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-20 19:43:01.025
+!MESSAGE Telnet session connected on port 3330->41124 @ 127.0.0.1
+
+!ENTRY com.crt.log 1 0 2020-03-20 19:46:10.756
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-20 19:46:10.757
+!MESSAGE RedlinkServer telnet session connected on port 3025->39064 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-20 19:46:15.461
+!MESSAGE Telnet session connected on port 3330->41228 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-20 19:52:11.200
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@2a197d01): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2020-03-20 19:52:11.200
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 4 -1 2020-03-20 19:52:11.714
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 4 -1 2020-03-20 19:52:11.715
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 4 -1 2020-03-20 19:52:13.258
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Connection is shut down
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Connection is shut down
+	... 7 more
+
+!ENTRY com.crt.log 1 0 2020-03-20 19:54:40.471
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-20 19:54:40.472
+!MESSAGE RedlinkServer telnet session connected on port 3025->39082 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-20 19:54:45.174
+!MESSAGE Telnet session connected on port 3330->41246 @ 127.0.0.1
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2020-03-20 19:56:08.974
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.ImmediateRequestMonitor@61d6af49): Status ERROR: org.eclipse.cdt.dsf.gdb code=10003 Invalid context type. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10003 2020-03-20 19:56:08.974
+!MESSAGE Invalid context type.
+
+!ENTRY com.crt.log 4 -1 2020-03-20 19:56:09.485
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.log 4 -1 2020-03-20 19:56:09.494
+!MESSAGE Error reading memory block (ExecutionException)
+!STACK 0
+java.lang.Exception: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.crt.utils.general.Reporter.log(Reporter.java:579)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:93)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.debug.core.DebugException: Error reading memory block (ExecutionException)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:144)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.updateRegister(MCXPeripheralRegister.java:343)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:180)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.update(MCXPeripheralRegister.java:175)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.memory.MCXPeripheralMemoryBlockExtension$1.run(MCXPeripheralMemoryBlockExtension.java:85)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at com.nxp.mcuxpresso.core.debug.services.peripherals.data.MCXPeripheralRegister.fetchMemoryBlock(MCXPeripheralRegister.java:139)
+	... 5 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-data-read-memory-bytes 1073856512 4
+Error message from debugger back end:
+Unable to read memory.
+	... 7 more
+Caused by: java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY com.crt.debugcommon 4 0 2020-03-20 19:56:11.029
+!MESSAGE Unable to parse ProbeList output to get probe ref count: []
+
+!ENTRY com.crt.log 1 0 2020-03-20 19:56:43.883
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-03-20 19:56:43.885
+!MESSAGE RedlinkServer telnet session connected on port 3025->39092 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-03-20 19:56:48.661
+!MESSAGE Telnet session connected on port 3330->41256 @ 127.0.0.1
