@@ -19,9 +19,11 @@
 
 #define		FRO_DIRECT_FREQ		24e6
 
-static uint32_t current_main_clock = FRO_DIRECT_FREQ / 2; //!< Frecuencia actual del main clock
-static uint32_t current_fro_clock = FRO_DIRECT_FREQ / 2; //!< Frecuencia actual del FRO
+static uint32_t current_main_freq = FRO_DIRECT_FREQ / 2; //!< Frecuencia actual del main clock
+static uint32_t current_fro_freq = FRO_DIRECT_FREQ / 2; //!< Frecuencia actual del FRO
 static uint32_t current_crystal_freq = 0; //!< Frecuencia del cristal configurada
+static uint32_t current_frg_freq[2] = { 0, 0 }; //!< Frecuencia de los FRG
+static uint32_t current_pll_freq = 0; //!< Frecuencia del PLL
 
 /**
  * @brief Obtener la frecuencia actual del main clock
@@ -29,7 +31,7 @@ static uint32_t current_crystal_freq = 0; //!< Frecuencia del cristal configurad
  */
 uint32_t hal_syscon_get_system_clock(void)
 {
-	return current_main_clock;
+	return current_main_freq;
 }
 
 /**
@@ -38,7 +40,7 @@ uint32_t hal_syscon_get_system_clock(void)
  */
 uint32_t hal_syscon_get_fro_clock(void)
 {
-	return current_fro_clock;
+	return current_fro_freq;
 }
 
 /**
@@ -81,7 +83,7 @@ void hal_syscon_config_external_crystal(uint32_t crystal_freq, uint8_t use_as_ma
 	if(use_as_main)
 	{
 		SYSCON_set_system_clock_source(SYSCON_MAIN_CLOCK_SEL_EXT_CLK);
-		current_main_clock = current_crystal_freq;
+		current_main_freq = current_crystal_freq;
 	}
 }
 
@@ -95,17 +97,18 @@ void hal_syscon_config_fro_direct(uint8_t direct, uint8_t use_as_main)
 	if(direct)
 	{
 		SYSCON_set_fro_direct();
-		current_fro_clock = (uint32_t) (FRO_DIRECT_FREQ);
+		current_fro_freq = (uint32_t) (FRO_DIRECT_FREQ);
 	}
 	else
 	{
 		SYSCON_clear_fro_direct();
-		current_fro_clock = (uint32_t) (FRO_DIRECT_FREQ / 2);
+		current_fro_freq = (uint32_t) (FRO_DIRECT_FREQ / 2);
 	}
 
 	if(use_as_main)
 	{
 		SYSCON_set_system_clock_source(SYSCON_MAIN_CLOCK_SEL_FRO);
+		current_main_freq = current_fro_freq;
 	}
 }
 
@@ -136,5 +139,49 @@ void hal_syscon_config_clkout(uint8_t port, uint8_t pin, hal_syscon_clkout_sourc
  */
 void hal_syscon_config_frg(uint8_t inst, hal_syscon_frg_clock_sel_en clock_source, uint32_t mul)
 {
+	uint32_t aux_freq;
+
 	SYSCON_set_frg_config(inst, clock_source, mul, 0xFF);
+
+	switch(clock_source)
+	{
+	case HAL_SYSCON_FRG_CLOCK_SEL_FRO: { aux_freq = current_fro_freq; break; }
+	case HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK: { aux_freq = current_main_freq; break; }
+	case HAL_SYSCON_FRG_CLOCK_SEL_NONE: { aux_freq = 0; break; }
+	case HAL_SYSCON_FRG_CLOCK_SEL_SYS_PLL: { aux_freq = current_pll_freq; break; }
+	}
+
+	current_frg_freq[inst] = (uint32_t) (aux_freq / (1 + ((double) mul / 256)));
+}
+
+/**
+ * @brief Fijar la fuente de clock de un periferico
+ * @param[in] peripheral Periferico deseado
+ * @param[in] clock_source Fuente de clock deseada
+ */
+void hal_syscon_set_peripheral_clock(hal_syscon_peripheral_sel_en peripheral, hal_syscon_peripheral_clock_sel_en clock_source)
+{
+	SYSCON->PERCLKSEL[peripheral].SEL = clock_source;
+}
+
+/**
+ * @brief Obtener la frecuencia de clock en Hz configurada para cierto periferico
+ * @param[in] peripheral Periferico deseado
+ * @return Frecuencia en Hz del clock del periferico
+ */
+uint32_t hal_syscon_get_peripheral_clock(hal_syscon_peripheral_sel_en peripheral)
+{
+	uint32_t ret;
+
+	switch(SYSCON->PERCLKSEL[peripheral].SEL)
+	{
+	case HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRG0: { ret = current_frg_freq[0]; break; }
+	case HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRG1: { ret = current_frg_freq[1]; break; }
+	case HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRO: { ret = current_fro_freq; break; }
+	case HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRO_DIV: { ret = current_fro_freq / 2; break; }
+	case HAL_SYSCON_PERIPHERAL_CLOCK_SEL_MAIN: { ret = current_main_freq; break; }
+	case HAL_SYSCON_PERIPHERAL_CLOCK_SEL_NONE: { ret = 0; break; }
+	}
+
+	return ret;
 }

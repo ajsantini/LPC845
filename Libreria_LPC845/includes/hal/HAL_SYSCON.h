@@ -28,6 +28,31 @@ typedef enum
 	HAL_SYSCON_FRG_CLOCK_SEL_NONE
 }hal_syscon_frg_clock_sel_en;
 
+typedef enum
+{
+	HAL_SYSCON_PERIPHERAL_SEL_UART0 = 0,
+	HAL_SYSCON_PERIPHERAL_SEL_UART1,
+	HAL_SYSCON_PERIPHERAL_SEL_UART2,
+	HAL_SYSCON_PERIPHERAL_SEL_UART3,
+	HAL_SYSCON_PERIPHERAL_SEL_UART4,
+	HAL_SYSCON_PERIPHERAL_SEL_IIC0,
+	HAL_SYSCON_PERIPHERAL_SEL_IIC1,
+	HAL_SYSCON_PERIPHERAL_SEL_IIC2,
+	HAL_SYSCON_PERIPHERAL_SEL_IIC3,
+	HAL_SYSCON_PERIPHERAL_SEL_SPI0,
+	HAL_SYSCON_PERIPHERAL_SEL_SPI1
+}hal_syscon_peripheral_sel_en;
+
+typedef enum
+{
+	HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRO = 0,
+	HAL_SYSCON_PERIPHERAL_CLOCK_SEL_MAIN,
+	HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRG0,
+	HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRG1,
+	HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRO_DIV,
+	HAL_SYSCON_PERIPHERAL_CLOCK_SEL_NONE = 7
+}hal_syscon_peripheral_clock_sel_en;
+
 /**
  * @brief Obtener la frecuencia actual del main clock
  * @return Frecuencia del main clock en Hz
@@ -73,5 +98,19 @@ void hal_syscon_config_clkout(uint8_t port, uint8_t pin, hal_syscon_clkout_sourc
  * @param[in] mul Multiplicador deseado
  */
 void hal_syscon_config_frg(uint8_t inst, hal_syscon_frg_clock_sel_en clock_source, uint32_t mul);
+
+/**
+ * @brief Fijar la fuente de clock de un periferico
+ * @param[in] peripheral Periferico deseado
+ * @param[in] clock_source Fuente de clock deseada
+ */
+void hal_syscon_set_peripheral_clock(hal_syscon_peripheral_sel_en peripheral, hal_syscon_peripheral_clock_sel_en clock_source);
+
+/**
+ * @brief Obtener la frecuencia de clock en Hz configurada para cierto periferico
+ * @param[in] peripheral Periferico deseado
+ * @return Frecuencia en Hz del clock del periferico
+ */
+uint32_t hal_syscon_get_peripheral_clock(hal_syscon_peripheral_sel_en peripheral);
 
 #endif /* HAL_SYSCON_H_ */

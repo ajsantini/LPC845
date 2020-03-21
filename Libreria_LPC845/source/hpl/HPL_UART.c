@@ -6,6 +6,7 @@
  * @version 1.0
  */
 
+#include <HAL_SYSCON.h>
 #include <HPL_UART.h>
 #include <HPL_SYSCON.h>
 #include <HRI_SYSCON.h>
@@ -97,11 +98,11 @@ int32_t UART_init(uint8_t uart_selection, const UART_config_t * config)
 	{
 	case 0:
 		// Seleccion de clock para la UART
-		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
+		hal_syscon_set_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
-		/*aux = calculate_BRGVAL(SYSCON_get_peripheral_clock(SYSCON_PERIPHERAL_SEL_UART0),
+		aux = calculate_BRGVAL(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART0),
 								config->baudrate,
-								config->oversampling);*/
+								config->oversampling);
 
 		if(aux > 0xFFF)
 		{

@@ -14,9 +14,11 @@ HPL_SWM.h:32:20:SWM_deinit	8	static
 HPL_SWM.h:391:20:SWM_assign_CLKOUT	16	static
 HPL_SWM.h:478:20:SWM_enable_XTALIN	24	static
 HPL_SWM.h:487:20:SWM_enable_XTALOUT	24	static
-HAL_SYSCON.c:30:10:hal_syscon_get_system_clock	8	static
-HAL_SYSCON.c:39:10:hal_syscon_get_fro_clock	8	static
-HAL_SYSCON.c:49:6:hal_syscon_config_external_crystal	24	static
-HAL_SYSCON.c:93:6:hal_syscon_config_fro_direct	16	static
-HAL_SYSCON.c:119:6:hal_syscon_config_clkout	24	static
-HAL_SYSCON.c:137:6:hal_syscon_config_frg	16	static
+HAL_SYSCON.c:32:10:hal_syscon_get_system_clock	8	static
+HAL_SYSCON.c:41:10:hal_syscon_get_fro_clock	8	static
+HAL_SYSCON.c:51:6:hal_syscon_config_external_crystal	24	static
+HAL_SYSCON.c:95:6:hal_syscon_config_fro_direct	16	static
+HAL_SYSCON.c:122:6:hal_syscon_config_clkout	24	static
+HAL_SYSCON.c:140:6:hal_syscon_config_frg	32	static
+HAL_SYSCON.c:162:6:hal_syscon_set_peripheral_clock	24	static
+HAL_SYSCON.c:172:10:hal_syscon_get_peripheral_clock	24	static

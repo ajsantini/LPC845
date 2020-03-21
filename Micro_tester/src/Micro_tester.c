@@ -45,10 +45,10 @@
 #define		ADC_SEQUENCE		HAL_ADC_SEQUENCE_SEL_A
 
 #define		RX_PORT				0
-#define		RX_PIN				17
+#define		RX_PIN				8
 
 #define		TX_PORT				0
-#define		TX_PIN				16
+#define		TX_PIN				9
 
 #define		UART_NUMBER			0
 #define		UART_BAUDRATE		115200
@@ -67,6 +67,8 @@ static void tick_callback(void);
 static void adc_callback(void);
 
 static void rx_callback(void);
+
+static void tx_callback(void);
 
 static const hal_adc_sequence_config_t adc_config =
 {
@@ -87,14 +89,14 @@ static const UART_config_t uart_config =
 	.parity = UART_PARITY_NO_PARITY,
 	.stop_bits = UART_STOPLEN_1BIT,
 	.oversampling = UART_OVERSAMPLING_X16,
-	.clock_selection = SYSCON_PERIPHERAL_CLOCK_SEL_FRG0,
+	.clock_selection = SYSCON_PERIPHERAL_CLOCK_SEL_MAIN,
 	.baudrate = UART_BAUDRATE,
 	.tx_port = TX_PORT,
 	.tx_pin = TX_PIN,
 	.rx_port = RX_PORT,
 	.rx_pin = RX_PIN,
 	.rx_ready_callback = rx_callback,
-	.tx_ready_callback = NULL
+	.tx_ready_callback = tx_callback
 };
 
 static const CTIMER_CTCR_config_t ctcr_config =
@@ -136,9 +138,9 @@ int main(void)
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
-	// Como fuente utilizo el PLL a 24MHz ya configurado
+	// Como fuente utilizo el FRO a 24MHz ya configurado
 	// 24MHz / (1 + (29 / 256)) = 21.55789474Hz
-	hal_syscon_config_frg(0, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 29);
+	hal_syscon_config_frg(1, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
 	GPIO_init(LED_PORT);
 
@@ -209,6 +211,9 @@ static void adc_callback(void)
 	CTIMER_update_mr_value_on_finish(0, 1e6 - ((adc_conversion * 1e6) / 1023));
 }
 
+static char trama[] = "Trama de prueba para ver que onda\n";
+static uint32_t trama_counter = 0;
+
 static void rx_callback(void)
 {
 	uint32_t data;
@@ -217,6 +222,18 @@ static void rx_callback(void)
 
 	if((char) data == ' ')
 	{
-		UART_tx_byte(UART_NUMBER, 'a');
+		UART_tx_byte(UART_NUMBER, trama[trama_counter++]);
+	}
+}
+
+static void tx_callback(void)
+{
+	if(trama[trama_counter] != '\0')
+	{
+		UART_tx_byte(UART_NUMBER, trama[trama_counter++]);
+	}
+	else
+	{
+		trama_counter = 0;
 	}
 }
