@@ -33,7 +33,7 @@ static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks p
  *
  * Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
  * Asume tension de trabajo alta y utiliza como fuente de clock el FRO sin dividir.
- * Configura el ADC obviando el modo bajo consumo.
+ * Configura el ADC asumiendo el modo NO bajo consumo.
  *
  * @param[in] sample_freq Frecuencia de sampleo deseada
  */

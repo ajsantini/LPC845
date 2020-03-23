@@ -1,3 +1,4 @@
+description.snapshotinterval=60000
 eclipse.preferences.version=1
 pathvariable.SDK_LPC_RESOURCES=/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.core.datamodels.resources_11.0.0.201902141834/override
 version=1

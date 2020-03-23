@@ -4,6 +4,7 @@ HPL_SYSCON.h:339:20:SYSCON_clear_fro_direct	8	static
 HPL_SYSCON.h:362:20:SYSCON_set_system_clock_source	16	static
 HPL_SYSCON.h:426:20:SYSCON_set_ext_clock_source	16	static
 HPL_SYSCON.h:435:20:SYSCON_enable_clock	16	static
+HPL_SYSCON.h:504:20:SYSCON_set_peripheral_clock_source	24	static
 HPL_SYSCON.h:516:20:SYSCON_set_frg_config	24	static
 HPL_SYSCON.h:537:20:SYSCON_set_clkout_config	24	static
 HPL_SYSCON.h:688:20:SYSCON_power_up_peripheral	16	static
@@ -20,5 +21,5 @@ HAL_SYSCON.c:51:6:hal_syscon_config_external_crystal	24	static
 HAL_SYSCON.c:95:6:hal_syscon_config_fro_direct	16	static
 HAL_SYSCON.c:122:6:hal_syscon_config_clkout	24	static
 HAL_SYSCON.c:140:6:hal_syscon_config_frg	32	static
-HAL_SYSCON.c:162:6:hal_syscon_set_peripheral_clock	24	static
+HAL_SYSCON.c:162:6:hal_syscon_set_peripheral_clock_source	16	static
 HAL_SYSCON.c:172:10:hal_syscon_get_peripheral_clock	24	static

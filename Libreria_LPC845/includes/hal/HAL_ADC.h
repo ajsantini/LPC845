@@ -48,19 +48,6 @@ typedef enum
 	HAL_ADC_INTERRUPT_MODE_EOS
 }hal_adc_interrupt_mode_en;
 
-typedef struct
-{
-	uint16_t channels;
-	hal_adc_trigger_sel_en trigger;
-	hal_adc_trigger_pol_sel_en trigger_pol;
-	hal_adc_sync_sel_en sync_bypass;
-	hal_adc_interrupt_mode_en mode;
-	uint8_t burst;
-	uint8_t single_step;
-	uint8_t low_priority;
-	void (*callback)(void);
-}hal_adc_sequence_config_t;
-
 typedef enum
 {
 	HAL_ADC_RESULT_CHANNEL_0 = 0,
@@ -78,17 +65,30 @@ typedef enum
 	HAL_ADC_RESULT_CHANNEL_GLOBAL
 }hal_adc_result_channel_en;
 
-typedef struct
-{
-	hal_adc_result_channel_en channel;
-	uint16_t result;
-}hal_adc_sequence_result_t;
-
 typedef enum
 {
 	HAL_ADC_SEQUENCE_RESULT_VALID = 0,
 	HAL_ADC_SEQUENCE_RESULT_INVALID
 }hal_adc_sequence_result_en;
+
+typedef struct
+{
+	uint16_t channels;
+	hal_adc_trigger_sel_en trigger;
+	hal_adc_trigger_pol_sel_en trigger_pol;
+	hal_adc_sync_sel_en sync_bypass;
+	hal_adc_interrupt_mode_en mode;
+	uint8_t burst;
+	uint8_t single_step;
+	uint8_t low_priority;
+	void (*callback)(void);
+}hal_adc_sequence_config_t;
+
+typedef struct
+{
+	hal_adc_result_channel_en channel;
+	uint16_t result;
+}hal_adc_sequence_result_t;
 
 /**
  * @brief Inicializar el ADC

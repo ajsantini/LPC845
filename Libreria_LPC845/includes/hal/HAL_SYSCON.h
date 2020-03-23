@@ -104,7 +104,7 @@ void hal_syscon_config_frg(uint8_t inst, hal_syscon_frg_clock_sel_en clock_sourc
  * @param[in] peripheral Periferico deseado
  * @param[in] clock_source Fuente de clock deseada
  */
-void hal_syscon_set_peripheral_clock(hal_syscon_peripheral_sel_en peripheral, hal_syscon_peripheral_clock_sel_en clock_source);
+void hal_syscon_set_peripheral_clock_source(hal_syscon_peripheral_sel_en peripheral, hal_syscon_peripheral_clock_sel_en clock_source);
 
 /**
  * @brief Obtener la frecuencia de clock en Hz configurada para cierto periferico

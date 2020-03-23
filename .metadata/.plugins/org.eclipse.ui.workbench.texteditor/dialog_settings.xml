@@ -6,12 +6,16 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ADC_enable_sequence_interrupt" key="selection"/>
+		<item value="INTENCLR" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="INTENSET"/>
+			<item value="enable"/>
+			<item value="Habilitar"/>
+			<item value="get_"/>
 			<item value="ADC_enable_sequence_interrupt"/>
 			<item value="PINENABLE0"/>
 			<item value="ENABLE"/>
@@ -23,12 +27,11 @@
 			<item value="PDRU"/>
 			<item value="CAPT_RST_N"/>
 			<item value="RESERVED"/>
-			<item value="piopor"/>
-			<item value="define"/>
-			<item value="SYSOSCCTRL"/>
-			<item value="SYSOSC_PD"/>
 		</list>
 		<list key="replacehistory">
+			<item value="INTENCLR"/>
+			<item value="disable"/>
+			<item value="Inhabilitar"/>
 			<item value="inline"/>
 		</list>
 	</section>
@@ -36,7 +39,7 @@
 		<item value="312" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="446" key="DIALOG_HEIGHT"/>
-		<item value="563" key="DIALOG_X_ORIGIN"/>
+		<item value="27" key="DIALOG_X_ORIGIN"/>
 		<item value="295" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -28,10 +28,13 @@
 #include <HAL_ADC.h>
 #include <HAL_SYSCON.h>
 #include <HAL_SYSTICK.h>
+#include <HAL_UART.h>
 
 #include <HPL_GPIO.h>
 #include <HPL_UART.h>
 #include <HPL_CTIMER.h>
+
+#include <HRI_UART.h>
 
 #define		LED_PORT			1
 #define		LED_PIN				2
@@ -83,13 +86,13 @@ static const hal_adc_sequence_config_t adc_config =
 	.callback = adc_callback
 };
 
-static const UART_config_t uart_config =
+static const hal_uart_config_t uart_config =
 {
-	.data_length = UART_DATALEN_8BIT,
-	.parity = UART_PARITY_NO_PARITY,
-	.stop_bits = UART_STOPLEN_1BIT,
-	.oversampling = UART_OVERSAMPLING_X16,
-	.clock_selection = SYSCON_PERIPHERAL_CLOCK_SEL_MAIN,
+	.data_length = HAL_UART_DATALEN_8BIT,
+	.parity = HAL_UART_PARITY_NO_PARITY,
+	.stop_bits = HAL_UART_STOPLEN_1BIT,
+	.oversampling = HAL_UART_OVERSAMPLING_X16,
+	.clock_selection = HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRG0,
 	.baudrate = UART_BAUDRATE,
 	.tx_port = TX_PORT,
 	.tx_pin = TX_PIN,
@@ -133,14 +136,14 @@ int main(void)
 	hal_syscon_config_fro_direct(1, 1);
 
 	// Clock principal en un pin (utilizando un divisor)
-	hal_syscon_config_clkout(CLOCKOUT_PORT, CLOCKOUT_PIN, SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
+	hal_syscon_config_clkout(CLOCKOUT_PORT, CLOCKOUT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
 
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
 	// Como fuente utilizo el FRO a 24MHz ya configurado
-	// 24MHz / (1 + (29 / 256)) = 21.55789474Hz
-	hal_syscon_config_frg(1, SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
+	// 24MHz / (1 + (47 / 256)) = 20.2772272MHz
+	hal_syscon_config_frg(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
 	GPIO_init(LED_PORT);
 
@@ -149,7 +152,7 @@ int main(void)
 	hal_adc_init(ADC_FREQUENCY);
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
 
-	UART_init(UART_NUMBER, &uart_config);
+	hal_uart_init(UART_NUMBER, &uart_config);
 
 	CTIMER_init(CTIMER_PRESCALER);
 
@@ -218,11 +221,11 @@ static void rx_callback(void)
 {
 	uint32_t data;
 
-	UART_rx_byte(UART_NUMBER, &data);
+	hal_uart_rx_byte(UART_NUMBER, &data);
 
 	if((char) data == ' ')
 	{
-		UART_tx_byte(UART_NUMBER, trama[trama_counter++]);
+		hal_uart_tx_byte(UART_NUMBER, trama[trama_counter++]);
 	}
 }
 
@@ -230,7 +233,7 @@ static void tx_callback(void)
 {
 	if(trama[trama_counter] != '\0')
 	{
-		UART_tx_byte(UART_NUMBER, trama[trama_counter++]);
+		hal_uart_tx_byte(UART_NUMBER, trama[trama_counter++]);
 	}
 	else
 	{
