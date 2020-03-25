@@ -29,15 +29,11 @@
 #include <HAL_SYSCON.h>
 #include <HAL_SYSTICK.h>
 #include <HAL_UART.h>
+#include <HAL_GPIO.h>
 
-#include <HPL_GPIO.h>
-#include <HPL_UART.h>
 #include <HPL_CTIMER.h>
 
-#include <HRI_UART.h>
-
-#define		LED_PORT			1
-#define		LED_PIN				2
+#define		LED_PORT_PIN		HAL_GPIO_PORTPIN_1_2
 
 #define		TICK_PERIOD_US		1000
 #define		CONVERSION_TIME_MS	50
@@ -145,9 +141,9 @@ int main(void)
 	// 24MHz / (1 + (47 / 256)) = 20.2772272MHz
 	hal_syscon_config_frg(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
-	GPIO_init(LED_PORT);
+	hal_gpio_init(LED_PORT_PIN);
 
-	GPIO_set_dir(LED_PORT, LED_PIN, GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(LED_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 0);
 
 	hal_adc_init(ADC_FREQUENCY);
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
@@ -188,7 +184,7 @@ static void tick_callback(void)
 
 	if(tick_counter == 0)
 	{
-		GPIO_toggle_pin(LED_PORT, LED_PIN);
+		hal_gpio_toggle_pin(LED_PORT_PIN);
 	}
 
 	if(adc_counter == 0)

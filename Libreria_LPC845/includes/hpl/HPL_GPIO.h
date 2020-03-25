@@ -10,101 +10,256 @@
 #define HPL_GPIO_H_
 
 #include <stdint.h>
+#include <HRI_GPIO.h>
 
-//! Enumeraciones para las direcciones de las GPIO posibles
 typedef enum
 {
 	GPIO_DIR_INPUT = 0,
 	GPIO_DIR_OUTPUT
 }GPIO_dir_en;
 
-#define	GPIO_SET_DIR_SUCCESS				0
-#define	GPIO_SET_DIR_NOT_CLOCKED			-1
-#define	GPIO_SET_DIR_INVALID_PORT			-2
-#define	GPIO_SET_DIR_INVALID_PIN			-3
-#define	GPIO_SET_DIR_INVALID_PORTPIN		-4
+typedef enum
+{
+	GPIO_PORT_0 = 0,
+	GPIO_PORT_1
+}GPIO_port_en;
 
-#define	GPIO_SET_PIN_SUCCESS				0
-#define	GPIO_SET_PIN_NOT_CLOCKED			-1
-#define	GPIO_SET_PIN_INVALID_PORT			-2
-#define	GPIO_SET_PIN_INVALID_PIN			-3
-#define	GPIO_SET_PIN_INVALID_PORTPIN		-4
-
-#define	GPIO_CLEAR_PIN_SUCCESS				0
-#define	GPIO_CLEAR_PIN_NOT_CLOCKED			-1
-#define	GPIO_CLEAR_PIN_INVALID_PORT			-2
-#define	GPIO_CLEAR_PIN_INVALID_PIN			-3
-#define	GPIO_CLEAR_PIN_INVALID_PORTPIN		-4
-
-#define	GPIO_TOGGLE_PIN_SUCCESS				0
-#define	GPIO_TOGGLE_PIN_NOT_CLOCKED			-1
-#define	GPIO_TOGGLE_PIN_INVALID_PORT		-2
-#define	GPIO_TOGGLE_PIN_INVALID_PIN			-3
-#define	GPIO_TOGGLE_PIN_INVALID_PORTPIN		-4
-
-#define	GPIO_READ_PIN_NOT_CLOCKED			-1
-#define	GPIO_READ_PIN_INVALID_PORT			-2
-#define	GPIO_READ_PIN_INVALID_PIN			-3
-#define	GPIO_READ_PIN_INVALID_PORTPIN		-4
-
-/**
- * @brief Inicializa el puerto
- *
- * Lo unico que hace es habilitar el clock para el puerto requerido
- *
- * @param[in] port Puerto a inicializar. Si se pasa un puerto invalido no hace nada
- */
-void GPIO_init(uint32_t port);
-
-/**
- * @brief Inhabilita el puerto
- *
- * Lo unico que hace es inhabilitar el clock para el puerto requerido
- *
- * @param[in] port Puerto a inhabilitar. Si se pasa un puerto invalido no hace nada
- */
-void GPIO_deinit(uint32_t port);
-
-/**
- * @brief Inicializar un pin como entrada o salida
- * @param[in] port Puerto del pin a inicializar
- * @param[in] pin Numero del pin a inicializar
- * @param[in] dir Direccion del pin a inicializar. GPIO_DIR_INPUT o GPIO_DIR_OUTPUT
- * @param[in] initial_state Estado inicial del pin en caso de ser configurado como salida.
- * @return Estado del inicio de conversiones del ADC
- */
-int32_t GPIO_set_dir(uint32_t port, uint32_t pin, uint8_t dir, uint8_t initial_state);
-
-/**
- * @brief Fijar nivel del pin en esatado alto
- * @param[in] port Puerto del pin a accionar
- * @param[in] pin Numero del pin a accionar
- * @return Estado de accionado del pin
- */
-int32_t GPIO_set_pin(uint32_t port, uint32_t pin);
-
-/**
- * @brief Fijar nivel del pin en estado bajo
- * @param[in] port Puerto del pin a accionar
- * @param[in] pin Numero del pin a accionar
- * @return Estado de accionado del pin
- */
-int32_t GPIO_clear_pin(uint32_t port, uint32_t pin);
+typedef enum
+{
+	GPIO_PORTPIN_0_0 = 0,
+	GPIO_PORTPIN_0_1,
+	GPIO_PORTPIN_0_2,
+	GPIO_PORTPIN_0_3,
+	GPIO_PORTPIN_0_4,
+	GPIO_PORTPIN_0_5,
+	GPIO_PORTPIN_0_6,
+	GPIO_PORTPIN_0_7,
+	GPIO_PORTPIN_0_8,
+	GPIO_PORTPIN_0_9,
+	GPIO_PORTPIN_0_10,
+	GPIO_PORTPIN_0_11,
+	GPIO_PORTPIN_0_12,
+	GPIO_PORTPIN_0_13,
+	GPIO_PORTPIN_0_14,
+	GPIO_PORTPIN_0_15,
+	GPIO_PORTPIN_0_16,
+	GPIO_PORTPIN_0_17,
+	GPIO_PORTPIN_0_18,
+	GPIO_PORTPIN_0_19,
+	GPIO_PORTPIN_0_20,
+	GPIO_PORTPIN_0_21,
+	GPIO_PORTPIN_0_22,
+	GPIO_PORTPIN_0_23,
+	GPIO_PORTPIN_0_24,
+	GPIO_PORTPIN_0_25,
+	GPIO_PORTPIN_0_26,
+	GPIO_PORTPIN_0_27,
+	GPIO_PORTPIN_0_28,
+	GPIO_PORTPIN_0_29,
+	GPIO_PORTPIN_0_30,
+	GPIO_PORTPIN_0_31,
+	GPIO_PORTPIN_1_0,
+	GPIO_PORTPIN_1_1,
+	GPIO_PORTPIN_1_2,
+	GPIO_PORTPIN_1_3,
+	GPIO_PORTPIN_1_4,
+	GPIO_PORTPIN_1_5,
+	GPIO_PORTPIN_1_6,
+	GPIO_PORTPIN_1_7,
+	GPIO_PORTPIN_1_8,
+	GPIO_PORTPIN_1_9,
+	GPIO_PORTPIN_1_10,
+	GPIO_PORTPIN_1_11,
+	GPIO_PORTPIN_1_12,
+	GPIO_PORTPIN_1_13,
+	GPIO_PORTPIN_1_14,
+	GPIO_PORTPIN_1_15,
+	GPIO_PORTPIN_1_16,
+	GPIO_PORTPIN_1_17,
+	GPIO_PORTPIN_1_18,
+	GPIO_PORTPIN_1_19,
+	GPIO_PORTPIN_1_20,
+	GPIO_PORTPIN_1_21
+}GPIO_portpin_en;
 
 /**
- * @brief Invertir estado actual del pin
- * @param[in] port Puerto del pin a accionar
- * @param[in] pin Numero del pin a accionar
- * @return Estado de inversion del pin
+ * @brief Leer estado del pin absoluto (sin importar mascaras ni funcion alternativa)
+ * @param[in] portpin Numero de port/pin a consultar
+ * @return Estado del pin absoluto
  */
-int32_t GPIO_toggle_pin(uint32_t port, uint32_t pin);
+static inline uint8_t GPIO_read_port_byte(GPIO_portpin_en portpin)
+{
+	return GPIO->B[portpin].PBYTE;
+}
 
 /**
- * @brief Lectura del estado de un pin
- * @param[in] port Puerto del pin a leer
- * @param[in] pin Numero del pin a leer
- * @return Lectura del pin. Puede devolver errores
+ * @brief Escribir estado del pin absoluto (sin importar mascaras ni funcion alternativa)
+ * @param[in] portpin Numero de port/pin a escribir
+ * @param[in] value Valor a escribir
  */
-int32_t GPIO_read_pin(uint32_t port, uint32_t pin);
+static inline void GPIO_write_port_byte(GPIO_portpin_en portpin, uint8_t value)
+{
+	GPIO->B[portpin].PBYTE = value;
+}
+
+/**
+ * @brief Leer estado del pin absoluto (sin importar mascaras ni funcion alternativa)
+ * @param[in] portpin Numero de port/pin a consultar
+ * @return Estado del pin absoluto
+ */
+static inline uint8_t GPIO_read_port_word(GPIO_portpin_en portpin)
+{
+	return GPIO->W[portpin].PWORD;
+}
+
+/**
+ * @brief Escribir estado del pin absoluto (sin importar mascaras ni funcion alternativa)
+ * @param[in] portpin Numero de port/pin a escribir
+ * @param[in] value Valor a escribir
+ */
+static inline void GPIO_write_port_word(GPIO_portpin_en portpin, uint8_t value)
+{
+	GPIO->W[portpin].PWORD = value;
+}
+
+/**
+ * @brief Leer registro de direccion
+ * @param[in] port Numero de puerto a consultar
+ * @return Valor del registro
+ */
+static inline uint32_t GPIO_read_dir(GPIO_port_en port)
+{
+	return GPIO->DIR[port].DIRP;
+}
+
+/**
+ * @brief Escribir registro de direccion
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_dir(GPIO_port_en port, uint32_t value)
+{
+	GPIO->DIR[port].DIRP = value;
+}
+
+/**
+ * @brief Leer registro de mascara
+ * @param[in] port Numero de puerto a consultar
+ * @return Valor del registro
+ */
+static inline uint32_t GPIO_read_mask(GPIO_port_en port)
+{
+	return GPIO->MASK[port].MASKP;
+}
+
+/**
+ * @brief Escribir registro de mascara
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_mask(GPIO_port_en port, uint32_t value)
+{
+	GPIO->MASK[port].MASKP = value;
+}
+
+/**
+ * @brief Leer registro de puerto/pin
+ * @param[in] port Numero de puerto a consultar
+ * @return Valor del registro
+ */
+static inline uint32_t GPIO_read_portpin(GPIO_port_en port)
+{
+	return GPIO->PIN[port].PORT;
+}
+
+/**
+ * @brief Escribir registro de puerto/pin
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_portpin(GPIO_port_en port, uint32_t value)
+{
+	GPIO->PIN[port].PORT = value;
+}
+
+/**
+ * @brief Leer registro de puerto/pin enmascarado
+ * @param[in] port Numero de puerto a consultar
+ * @return Valor del registro
+ */
+static inline uint32_t GPIO_read_masked_portpin(GPIO_port_en port)
+{
+	return GPIO->MPIN[port].MPORTP;
+}
+
+/**
+ * @brief Escribir registro de puerto/pin enmascarado
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_masked_portpin(GPIO_port_en port, uint32_t value)
+{
+	GPIO->MPIN[port].MPORTP = value;
+}
+
+/**
+ * @brief Escribir registro de set
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_set(GPIO_port_en port, uint32_t value)
+{
+	GPIO->SET[port].SETP = value;
+}
+
+/**
+ * @brief Escribir registro de clear
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_clear(GPIO_port_en port, uint32_t value)
+{
+	GPIO->CLR[port].CLRP = value;
+}
+
+/**
+ * @brief Escribir registro de toggle
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_toggle(GPIO_port_en port, uint32_t value)
+{
+	GPIO->NOT[port].NOTP = value;
+}
+
+/**
+ * @brief Escribir registro de direction set
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_dir_set(GPIO_port_en port, uint32_t value)
+{
+	GPIO->DIRSET[port].DIRSETP = value;
+}
+
+/**
+ * @brief Escribir registro de direction clear
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_dir_clear(GPIO_port_en port, uint32_t value)
+{
+	GPIO->DIRCLR[port].DIRCLRP = value;
+}
+
+/**
+ * @brief Escribir registro de direction toggle
+ * @param[in] port Numero de puerto a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void GPIO_write_dir_toggle(GPIO_port_en port, uint32_t value)
+{
+	GPIO->DIRNOT[port].DIRNOTP = value;
+}
 
 #endif /* HPL_GPIO_H_ */

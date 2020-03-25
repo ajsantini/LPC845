@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="INTENCLR" key="selection"/>
+		<item value="HAL_GPIO_" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="HAL_"/>
 			<item value="INTENSET"/>
 			<item value="enable"/>
 			<item value="Habilitar"/>
@@ -26,9 +27,11 @@
 			<item value="clkout_c"/>
 			<item value="PDRU"/>
 			<item value="CAPT_RST_N"/>
-			<item value="RESERVED"/>
 		</list>
 		<list key="replacehistory">
+			<item value="HAL_GPIO_"/>
+			<item value="GPIO_"/>
+			<item value=""/>
 			<item value="INTENCLR"/>
 			<item value="disable"/>
 			<item value="Inhabilitar"/>

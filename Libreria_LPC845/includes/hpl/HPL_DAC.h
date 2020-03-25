@@ -10,6 +10,7 @@
 #define HPL_DAC_H_
 
 #include <stdint.h>
+#include <HRI_DAC.h>
 
 typedef enum
 {
@@ -21,42 +22,108 @@ typedef enum
 {
 	DAC_SETTLING_TIME_SEL_1US_MAX = 0,
 	DAC_SETTLING_TIME_SEL_2_5US_MAX
-}DAC_settling_time_sel_en;
-
-typedef struct
-{
-	uint8_t dma_request : 1;
-	uint8_t double_buffering : 1;
-	uint8_t count_enable : 1;
-	uint8_t dma_enable : 1;
-}DAC_ctrl_config_t;
-
-/**
- * @brief Inicializacion del DAC
- * @param[in] dac Cual de los dos DACs inicializar
- * @param[in] settling_time Velocidad de conversion del DAC
- * @param[in] initial_value Valor inicial del DAC
- */
-void DAC_init(DAC_sel_en dac, DAC_settling_time_sel_en settling_time, uint16_t initial_value);
-
-/**
- * @brief Deinicializacion del DAC
- * @param[in] dac Cual de los dos DACs deinicializar
- */
-void DAC_deinit(DAC_sel_en dac);
+}DAC_settling_time_en;
 
 /**
  * @brief Actualizacion del valor actual del DAC
- * @param[in] dac En que DAC actualizar el valor
+ * @param[in] dac Instancia a actualizar
  * @param[in] new_value Nuevo valor a poner en el DAC
  */
-void DAC_update_value(DAC_sel_en dac, uint16_t new_value);
+static inline void DAC_write(DAC_sel_en dac, uint16_t new_value)
+{
+	DAC[dac]->CR.VALUE = new_value;
+}
 
 /**
- * @brief Configuracion del registro de control del DAC
- * @param[in] dac Que DAC configurar
- * @param[in] config Configuracion deseada
+ * @brief Configuracion del settling time del DAC
+ * @param[in] dac Instancia a configurar
+ * @param[in] settling_time Configuracion deseada
  */
-void DAC_config_ctrl(DAC_sel_en dac, DAC_ctrl_config_t * config);
+static inline void DAC_config_settling_time(DAC_sel_en dac, DAC_settling_time_en settling_time)
+{
+	DAC[dac]->CR.BIAS = settling_time;
+}
+
+/**
+ * @brief Habilitar interrupcion de DMA cuando el timer tiemoutea
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_enable_DMA_request(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.INT_DMA_REQ = 1;
+}
+
+/**
+ * @brief Inhabilitar interrupcion de DMA cuando el timer tiemoutea
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_disable_DMA_request(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.INT_DMA_REQ = 0;
+}
+
+/**
+ * @brief Habilitar double buffering
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_enable_double_buffer(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.DBLBUF_ENA = 1;
+}
+
+/**
+ * @brief Inhabilitar double buffering
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_disable_double_buffer(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.DBLBUF_ENA = 0;
+}
+
+/**
+ * @brief Habilitar operacion del timer
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_enable_timer(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.CNT_ENA = 1;
+}
+
+/**
+ * @brief Inhabilitar operacion del timer
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_disable_timer(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.CNT_ENA = 0;
+}
+
+/**
+ * @brief Habilitar DMA request asociada al DAC
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_enable_DMA(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.DMA_ENA = 1;
+}
+
+/**
+ * @brief Inhabilitar DMA request asociada al DAC
+ * @param[in] dac Instancia a configurar
+ */
+static inline void DAC_disable_DMA(DAC_sel_en dac)
+{
+	DAC[dac]->CTRL.DMA_ENA = 0;
+}
+
+/**
+ * @brief Escribir valor a recargar para el timer de DMA
+ * @param[in] dac Instancia a configurar
+ * @param[in] value Valor deseado
+ */
+static inline void DAC_write_reaload_value(DAC_sel_en dac, uint16_t value)
+{
+	DAC[dac]->CNTVAL.VALUE = value;
+}
 
 #endif /* HPL_DAC_H_ */
