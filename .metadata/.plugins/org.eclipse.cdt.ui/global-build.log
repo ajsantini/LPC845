@@ -20608,3 +20608,219 @@ arm-none-eabi-size "Test_development.axf"; # arm-none-eabi-objcopy -v -O binary 
    text	   data	    bss	    dec	    hex	filename
    1392	      0	      4	   1396	    574	Test_development.axf
  
+15:42:34 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_PININT.d" -MT"source/hpl/HPL_PININT.o" -MT"source/hpl/HPL_PININT.d" -o "source/hpl/HPL_PININT.o" "../source/hpl/HPL_PININT.c"
+In file included from ../source/hpl/HPL_PININT.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_PININT.h:121:23: error: redefinition of 'PININT_get_rising_edge_active'
+ static inline uint8_t PININT_get_rising_edge_active(void)
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_PININT.h:112:23: note: previous definition of 'PININT_get_rising_edge_active' was here
+ static inline uint8_t PININT_get_rising_edge_active(void)
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+source/hpl/subdir.mk:51: recipe for target 'source/hpl/HPL_PININT.o' failed
+make: *** [source/hpl/HPL_PININT.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+15:42:35 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+15:42:36 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+15:42:57 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_PININT.d" -MT"source/hpl/HPL_PININT.o" -MT"source/hpl/HPL_PININT.d" -o "source/hpl/HPL_PININT.o" "../source/hpl/HPL_PININT.c"
+Finished building: ../source/hpl/HPL_PININT.c
+ 
+Building file: ../source/hal/HAL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_PININT.d" -MT"source/hal/HAL_PININT.o" -MT"source/hal/HAL_PININT.d" -o "source/hal/HAL_PININT.o" "../source/hal/HAL_PININT.c"
+In file included from ../source/hal/HAL_PININT.c:9:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal/HAL_PININT.h:41:2: error: unknown type name 'uint8_t'
+  uint8_t int_on_rising_edge;
+  ^~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal/HAL_PININT.h:42:2: error: unknown type name 'uint8_t'
+  uint8_t int_on_falling_edge;
+  ^~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal/HAL_PININT.h:61:63: error: unknown type name 'uint8_t'
+ void hal_pinint_register_callback(void (*new_callback)(void), uint8_t interrupt);
+                                                               ^~~~~~~
+../source/hal/HAL_PININT.c: In function 'PININT6_IRQHandler':
+../source/hal/HAL_PININT.c:158:2: warning: implicit declaration of function 'UART3_irq' [-Wimplicit-function-declaration]
+  UART3_irq();
+  ^~~~~~~~~
+../source/hal/HAL_PININT.c: In function 'PININT7_IRQHandler':
+../source/hal/HAL_PININT.c:171:2: warning: implicit declaration of function 'UART4_irq' [-Wimplicit-function-declaration]
+  UART4_irq();
+  ^~~~~~~~~
+make: *** [source/hal/HAL_PININT.o] Error 1
+source/hal/subdir.mk:39: recipe for target 'source/hal/HAL_PININT.o' failed
+"make -r all" terminated with exit code 2. Build might be incomplete.
+15:42:58 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+15:42:58 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+15:43:13 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hal/HAL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_PININT.d" -MT"source/hal/HAL_PININT.o" -MT"source/hal/HAL_PININT.d" -o "source/hal/HAL_PININT.o" "../source/hal/HAL_PININT.c"
+../source/hal/HAL_PININT.c: In function 'PININT6_IRQHandler':
+../source/hal/HAL_PININT.c:158:2: warning: implicit declaration of function 'UART3_irq' [-Wimplicit-function-declaration]
+  UART3_irq();
+  ^~~~~~~~~
+../source/hal/HAL_PININT.c: In function 'PININT7_IRQHandler':
+../source/hal/HAL_PININT.c:171:2: warning: implicit declaration of function 'UART4_irq' [-Wimplicit-function-declaration]
+  UART4_irq();
+  ^~~~~~~~~
+Finished building: ../source/hal/HAL_PININT.c
+ 
+Building file: ../source/hal/HAL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_UART.d" -MT"source/hal/HAL_UART.o" -MT"source/hal/HAL_UART.d" -o "source/hal/HAL_UART.o" "../source/hal/HAL_UART.c"
+In file included from ../source/hal/HAL_UART.c:12:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_NVIC.h:96:2: warning: #warning Faltan las funciones para fijar niveles de prioridad de irqs [-Wcpp]
+ #warning Faltan las funciones para fijar niveles de prioridad de irqs
+  ^~~~~~~
+Finished building: ../source/hal/HAL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/hal/HAL_ADC.o ./source/hal/HAL_DAC.o ./source/hal/HAL_GPIO.o ./source/hal/HAL_IOCON.o ./source/hal/HAL_PININT.o ./source/hal/HAL_SYSCON.o ./source/hal/HAL_SYSTICK.o ./source/hal/HAL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    788	      0	      4	    792	    318	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+   1076	      0	     52	   1128	    468	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2576	      0	     32	   2608	    a30	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+      8	      0	      0	      8	      8	HPL_DAC.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    260	      0	      4	    264	    108	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_PININT.o (ex libLibreria_LPC845.a)
+    652	      0	      8	    660	    294	HPL_SPI.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+     20	      0	      0	     20	     14	HPL_UART.o (ex libLibreria_LPC845.a)
+   3184	     16	      0	   3200	    c80	HAL_ADC.o (ex libLibreria_LPC845.a)
+   1118	      0	      0	   1118	    45e	HAL_DAC.o (ex libLibreria_LPC845.a)
+    758	      0	      0	    758	    2f6	HAL_GPIO.o (ex libLibreria_LPC845.a)
+    484	      0	      0	    484	    1e4	HAL_IOCON.o (ex libLibreria_LPC845.a)
+   1048	     32	      0	   1080	    438	HAL_PININT.o (ex libLibreria_LPC845.a)
+   2132	      8	     16	   2156	    86c	HAL_SYSCON.o (ex libLibreria_LPC845.a)
+    378	      4	      0	    382	    17e	HAL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2640	     40	      0	   2680	    a78	HAL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+15:43:14 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+15:43:14 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.
+15:43:57 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_PININT.d" -MT"source/hpl/HPL_PININT.o" -MT"source/hpl/HPL_PININT.d" -o "source/hpl/HPL_PININT.o" "../source/hpl/HPL_PININT.c"
+Finished building: ../source/hpl/HPL_PININT.c
+ 
+Building file: ../source/hpl/HPL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_UART.d" -MT"source/hpl/HPL_UART.o" -MT"source/hpl/HPL_UART.d" -o "source/hpl/HPL_UART.o" "../source/hpl/HPL_UART.c"
+Finished building: ../source/hpl/HPL_UART.c
+ 
+Building file: ../source/hal/HAL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_PININT.d" -MT"source/hal/HAL_PININT.o" -MT"source/hal/HAL_PININT.d" -o "source/hal/HAL_PININT.o" "../source/hal/HAL_PININT.c"
+Finished building: ../source/hal/HAL_PININT.c
+ 
+Building file: ../source/hal/HAL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_UART.d" -MT"source/hal/HAL_UART.o" -MT"source/hal/HAL_UART.d" -o "source/hal/HAL_UART.o" "../source/hal/HAL_UART.c"
+In file included from ../source/hal/HAL_UART.c:12:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_NVIC.h:96:2: warning: #warning Faltan las funciones para fijar niveles de prioridad de irqs [-Wcpp]
+ #warning Faltan las funciones para fijar niveles de prioridad de irqs
+  ^~~~~~~
+Finished building: ../source/hal/HAL_UART.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o  ./source/hal/HAL_ADC.o ./source/hal/HAL_DAC.o ./source/hal/HAL_GPIO.o ./source/hal/HAL_IOCON.o ./source/hal/HAL_PININT.o ./source/hal/HAL_SYSCON.o ./source/hal/HAL_SYSTICK.o ./source/hal/HAL_UART.o  ./source/mtb.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    906	      0	    203	   1109	    455	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    788	      0	      4	    792	    318	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    746	      2	      8	    756	    2f4	teclado.o (ex libLibreria_LPC845.a)
+   1076	      0	     52	   1128	    468	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_ADC.o (ex libLibreria_LPC845.a)
+   2576	      0	     32	   2608	    a30	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+      8	      0	      0	      8	      8	HPL_DAC.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    260	      0	      4	    264	    108	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_PININT.o (ex libLibreria_LPC845.a)
+    652	      0	      8	    660	    294	HPL_SPI.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+     20	      0	      0	     20	     14	HPL_UART.o (ex libLibreria_LPC845.a)
+   3184	     16	      0	   3200	    c80	HAL_ADC.o (ex libLibreria_LPC845.a)
+   1118	      0	      0	   1118	    45e	HAL_DAC.o (ex libLibreria_LPC845.a)
+    758	      0	      0	    758	    2f6	HAL_GPIO.o (ex libLibreria_LPC845.a)
+    484	      0	      0	    484	    1e4	HAL_IOCON.o (ex libLibreria_LPC845.a)
+   1048	     32	      0	   1080	    438	HAL_PININT.o (ex libLibreria_LPC845.a)
+   2132	      8	     16	   2156	    86c	HAL_SYSCON.o (ex libLibreria_LPC845.a)
+    378	      4	      0	    382	    17e	HAL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2640	     40	      0	   2680	    a78	HAL_UART.o (ex libLibreria_LPC845.a)
+      0	    128	      0	    128	     80	mtb.o (ex libLibreria_LPC845.a)
+ 
+15:43:59 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building file: ../src/Micro_tester.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Micro_tester.d" -MT"src/Micro_tester.o" -MT"src/Micro_tester.d" -o "src/Micro_tester.o" "../src/Micro_tester.c"
+Finished building: ../src/Micro_tester.c
+ 
+Building target: Micro_tester.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Micro_tester.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Micro_tester_Debug.ld" -o "Micro_tester.axf"  ./src/Micro_tester.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:       13028 B        64 KB     19.88%
+        RamLoc16:         168 B        16 KB      1.03%
+Finished building target: Micro_tester.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Micro_tester.axf"; # arm-none-eabi-objcopy -v -O binary "Micro_tester.axf" "Micro_tester.bin" ; # checksum -p LPC845 -d "Micro_tester.bin";
+   text	   data	    bss	    dec	    hex	filename
+  12924	    104	     64	  13092	   3324	Micro_tester.axf
+ 
+15:44:00 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+make: Nothing to be done for 'all'.

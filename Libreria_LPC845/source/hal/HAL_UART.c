@@ -33,8 +33,8 @@ static void (*uart_tx_callback[])(void) = //!< Callbacks registrados a la finali
 		dummy_callback
 };
 
-static inline uint16_t uart_calculate_brgval(uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling);
-static void uart_handle_irq(uint8_t inst);
+static inline uint16_t hal_uart_calculate_brgval(uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling);
+static void hal_uart_handle_irq(uint8_t inst);
 
 /**
  * @brief Inicializar UART con los parametros deseados
@@ -56,7 +56,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
-		aux = uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART0),
+		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART0),
 								config->baudrate,
 								config->oversampling);
 
@@ -74,7 +74,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
 
-		aux = uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART1),
+		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART1),
 								config->baudrate,
 								config->oversampling);
 
@@ -92,7 +92,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
 
-		aux = uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART2),
+		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART2),
 								config->baudrate,
 								config->oversampling);
 
@@ -110,7 +110,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
 
-		aux = uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART3),
+		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART3),
 								config->baudrate,
 								config->oversampling);
 
@@ -128,7 +128,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
 
-		aux = uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART4),
+		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART4),
 								config->baudrate,
 								config->oversampling);
 
@@ -252,12 +252,12 @@ static void dummy_callback(void)
  * @param[in] oversampling Oversampling deseado para la UART.
  * @return Valor a poner en el registro BRG.
  */
-static inline uint16_t uart_calculate_brgval(uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling)
+static inline uint16_t hal_uart_calculate_brgval(uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling)
 {
 	return ((uart_clock) / ((oversampling + 1) * baudrate)) - 1;
 }
 
-static void uart_handle_irq(uint8_t inst)
+static void hal_uart_handle_irq(uint8_t inst)
 {
 	if(UART_get_irq_status_RXRDY(inst) && UART_get_flag_RXRDY(inst))
 	{
@@ -285,7 +285,7 @@ static void uart_handle_irq(uint8_t inst)
  */
 void UART0_IRQHandler(void)
 {
-	uart_handle_irq(0);
+	hal_uart_handle_irq(0);
 }
 
 /**
@@ -293,7 +293,7 @@ void UART0_IRQHandler(void)
  */
 void UART1_IRQHandler(void)
 {
-	uart_handle_irq(1);
+	hal_uart_handle_irq(1);
 }
 
 /**
@@ -301,7 +301,7 @@ void UART1_IRQHandler(void)
  */
 void UART2_IRQHandler(void)
 {
-	uart_handle_irq(2);
+	hal_uart_handle_irq(2);
 }
 
 /*
@@ -321,7 +321,7 @@ void UART2_IRQHandler(void)
  */
 void UART3_irq(void)
 {
-	uart_handle_irq(3);
+	hal_uart_handle_irq(3);
 }
 
 /**
@@ -329,5 +329,5 @@ void UART3_irq(void)
  */
 void UART4_irq(void)
 {
-	uart_handle_irq(4);
+	hal_uart_handle_irq(4);
 }

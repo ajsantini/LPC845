@@ -201,14 +201,4 @@ typedef struct
 
 extern volatile UART_per_t * const UART[]; //!< Perifericos USART
 
-/**
- * @brief Interrupcion de UART3
- */
-void UART3_irq(void);
-
-/**
- * @brief Interrupcion de UART4
- */
-void UART4_irq(void);
-
 #endif /* HRI_UART_H_ */

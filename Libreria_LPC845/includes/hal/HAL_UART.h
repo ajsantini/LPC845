@@ -112,4 +112,14 @@ void hal_uart_register_tx_callback(uint8_t inst, void (*new_callback)(void));
  */
 void hal_uart_register_rx_callback(uint8_t inst, void (*new_callback)(void));
 
+/**
+ * @brief Interrupcion de UART3
+ */
+void UART3_irq(void);
+
+/**
+ * @brief Interrupcion de UART4
+ */
+void UART4_irq(void);
+
 #endif /* HAL_UART_H_ */

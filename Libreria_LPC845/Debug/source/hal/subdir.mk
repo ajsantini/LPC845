@@ -8,6 +8,7 @@ C_SRCS += \
 ../source/hal/HAL_DAC.c \
 ../source/hal/HAL_GPIO.c \
 ../source/hal/HAL_IOCON.c \
+../source/hal/HAL_PININT.c \
 ../source/hal/HAL_SYSCON.c \
 ../source/hal/HAL_SYSTICK.c \
 ../source/hal/HAL_UART.c 
@@ -17,6 +18,7 @@ OBJS += \
 ./source/hal/HAL_DAC.o \
 ./source/hal/HAL_GPIO.o \
 ./source/hal/HAL_IOCON.o \
+./source/hal/HAL_PININT.o \
 ./source/hal/HAL_SYSCON.o \
 ./source/hal/HAL_SYSTICK.o \
 ./source/hal/HAL_UART.o 
@@ -26,6 +28,7 @@ C_DEPS += \
 ./source/hal/HAL_DAC.d \
 ./source/hal/HAL_GPIO.d \
 ./source/hal/HAL_IOCON.d \
+./source/hal/HAL_PININT.d \
 ./source/hal/HAL_SYSCON.d \
 ./source/hal/HAL_SYSTICK.d \
 ./source/hal/HAL_UART.d 

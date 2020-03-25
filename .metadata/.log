@@ -7147,3 +7147,6 @@ java.io.FileNotFoundException: /icons/peripheral.gif
 
 !ENTRY org.eclipse.jface.text 2 0 2020-03-25 14:39:39.200
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.jface.text 2 0 2020-03-25 14:51:16.405
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
