@@ -611,6 +611,11 @@ static inline void SYSCON_set_nmi_source(uint8_t irq, SYSCON_nmi_enable_en enabl
 	SYSCON->NMISRC.NMIEN = enable;
 }
 
+static inline void SYSCON_set_pinint_pin(uint8_t channel, uint8_t port, uint8_t pin)
+{
+	SYSCON->PINTSEL[channel].INTPIN = (port * 32) + pin;
+}
+
 /**
  * @brief Habilitar alguna de las interrupciones del periferico seleccionado como fuente de wakeup
  * @param[in] peripheral Periferico deseado

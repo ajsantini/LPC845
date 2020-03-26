@@ -70,7 +70,6 @@ void CTIMER_stop(void)
 void CTIMER_run(void)
 {
 	CTIMER->TCR.CRST = 0;
-	asm("nop");
 	CTIMER->TCR.CEN = 1;
 }
 

@@ -10,6 +10,8 @@
 #include <HAL_UART.h>
 #include <HPL_PININT.h>
 #include <HPL_SYSCON.h>
+#include <HPL_SWM.h>
+#include <HPL_NVIC.h>
 
 static void dummy_irq_callback(void);
 
@@ -64,16 +66,32 @@ void hal_pinint_configure_pin_interrupt(hal_pinint_config_t *config)
 			PININT_enable_falling_edge(config->channel);
 		}
 	}
+
+	pinint_callbacks[config->channel] = config->callback;
+
+	SYSCON_set_pinint_pin(config->channel, config->portpin / 32, config->portpin % 32);
+
+	switch(config->channel)
+	{
+	case 0: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT0); break; }
+	case 1: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT1); break; }
+	case 2: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT2); break; }
+	case 3: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT3); break; }
+	case 4: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT4); break; }
+	case 5: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT5_DAC1); break; }
+	case 6: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT6_UART3); break; }
+	case 7: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT7_UART4); break; }
+	}
 }
 
 /**
  * @brief Registrar callback a llamar en interrupcion de PININTn
+ * @param[in] channel Canal al cual registrar el callback
  * @param[in] new_callback Puntero a funcion a ejecutar
- * @param[in] interrupt Numero de PININT al cual registrar el callback
  */
-void hal_pinint_register_callback(void (*new_callback)(void), uint8_t interrupt)
+void hal_pinint_register_callback(hal_pinint_channel_en channel, void (*new_callback)(void))
 {
-
+	pinint_callbacks[channel] = new_callback;
 }
 
 /**

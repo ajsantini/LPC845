@@ -1,2 +1,12 @@
+com.nxp.mcuxpresso.trace.ui.marker.pref.textStyle=NONE
+com.nxp.mcuxpresso.trace.ui.marker.profile.pref.text=false
 eclipse.preferences.version=1
+occurrenceHighlighting=false
+occurrenceIndication=true
+occurrenceTextStyle=BOX
+org.eclipse.cdt.ui.occurrenceHighlighting=false
+org.eclipse.cdt.ui.occurrenceIndication=true
+org.eclipse.cdt.ui.occurrenceTextStyle=DASHED_BOX
+org.eclipse.cdt.ui.writeOccurrenceHighlighting=false
+org.eclipse.cdt.ui.writeOccurrenceTextStyle=DASHED_BOX
 overviewRuler_migration=migrated_3.1

@@ -10,6 +10,7 @@
 #define HAL_PININT_H_
 
 #include <stdint.h>
+#include <HAL_GPIO.h>
 
 typedef enum
 {
@@ -42,6 +43,8 @@ typedef struct
 	hal_pinint_level_int_en int_on_level;
 	uint8_t int_on_rising_edge;
 	uint8_t int_on_falling_edge;
+	hal_gpio_portpin_en portpin;
+	void (*callback)(void);
 }hal_pinint_config_t;
 
 /**
@@ -57,9 +60,9 @@ void hal_pinint_configure_pin_interrupt(hal_pinint_config_t *config);
 
 /**
  * @brief Registrar callback a llamar en interrupcion de PININTn
+ * @param[in] channel Canal al cual registrar el callback
  * @param[in] new_callback Puntero a funcion a ejecutar
- * @param[in] interrupt Numero de PININT al cual registrar el callback
  */
-void hal_pinint_register_callback(void (*new_callback)(void), uint8_t interrupt);
+void hal_pinint_register_callback(hal_pinint_channel_en channel, void (*new_callback)(void));
 
 #endif /* HAL_PININT_H_ */

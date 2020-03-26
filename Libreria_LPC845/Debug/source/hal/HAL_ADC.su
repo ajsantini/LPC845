@@ -21,7 +21,7 @@ HPL_ADC.h:443:20:ADC_set_vrange	16	static
 HPL_ADC.h:452:20:ADC_hardware_calib	24	static
 HPL_SYSCON.h:405:20:SYSCON_set_adc_clock	16	static
 HPL_SYSCON.h:435:20:SYSCON_enable_clock	16	static
-HPL_SYSCON.h:688:20:SYSCON_power_up_peripheral	16	static
+HPL_SYSCON.h:693:20:SYSCON_power_up_peripheral	16	static
 HPL_SWM.h:24:20:SWM_init	8	static
 HPL_SWM.h:32:20:SWM_deinit	8	static
 HPL_SWM.h:524:20:SWM_enable_ADC	24	static
