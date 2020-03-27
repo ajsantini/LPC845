@@ -16,26 +16,7 @@
 #include <HPL_CTIMER.h>
 #include <HPL_SWM.h>
 
-#define		MATCH_AMOUNT		4
-#define		CAPTURE_AMOUNT		4
-
 volatile CTIMER_per_t * const CTIMER = (volatile CTIMER_per_t *) CTIMER_BASE; //!< Periferico CTIMER
-
-void (*match_callbacks[MATCH_AMOUNT])(void) = //!< Callbacks para interrupciones de match
-{
-	NULL,
-	NULL,
-	NULL,
-	NULL
-};
-
-void (*capture_callbacks[CAPTURE_AMOUNT])(void) = //!< Callbacks para interrupciones de capture
-{
-	NULL,
-	NULL,
-	NULL,
-	NULL
-};
 
 /**
  * @brief Inicializacion del CTIMER
@@ -440,58 +421,4 @@ void CTIMER_disable_pwm(uint8_t pwm_number)
 		break;
 	}
 	} // End switch(pwm_number)
-}
-
-/**
- * @brief Interrupcion de CTIMER
- */
-void CTIMER0_IRQHandler(void)
-{
-	if(CTIMER->IR.MR0INT)
-	{
-		match_callbacks[0]();
-		CTIMER->IR.MR0INT = 1;
-	}
-
-	if(CTIMER->IR.MR1INT)
-	{
-		match_callbacks[1]();
-		CTIMER->IR.MR1INT = 1;
-	}
-
-	if(CTIMER->IR.MR2INT)
-	{
-		match_callbacks[2]();
-		CTIMER->IR.MR2INT = 1;
-	}
-
-	if(CTIMER->IR.MR3INT)
-	{
-		match_callbacks[3]();
-		CTIMER->IR.MR3INT = 1;
-	}
-
-	if(CTIMER->IR.CR0INT)
-	{
-		capture_callbacks[0]();
-		CTIMER->IR.CR0INT = 1;
-	}
-
-	if(CTIMER->IR.CR1INT)
-	{
-		capture_callbacks[1]();
-		CTIMER->IR.CR1INT = 1;
-	}
-
-	if(CTIMER->IR.CR2INT)
-	{
-		capture_callbacks[2]();
-		CTIMER->IR.CR2INT = 1;
-	}
-
-	if(CTIMER->IR.CR3INT)
-	{
-		capture_callbacks[3]();
-		CTIMER->IR.CR3INT = 1;
-	}
 }

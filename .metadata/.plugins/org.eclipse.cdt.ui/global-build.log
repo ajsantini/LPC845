@@ -21296,3 +21296,229 @@ arm-none-eabi-size "Test_development.axf"; # arm-none-eabi-objcopy -v -O binary 
    text	   data	    bss	    dec	    hex	filename
    1392	      0	      4	   1396	    574	Test_development.axf
  
+12:47:06 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hpl/HPL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_CTIMER.d" -MT"source/hpl/HPL_CTIMER.o" -MT"source/hpl/HPL_CTIMER.d" -o "source/hpl/HPL_CTIMER.o" "../source/hpl/HPL_CTIMER.c"
+In file included from ../source/hpl/HPL_CTIMER.c:16:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:408:20: error: redefinition of 'CTIMER_write_match_value'
+ static inline void CTIMER_write_match_value(CTIMER_match_sel_en match, uint32_t value)
+                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:398:20: note: previous definition of 'CTIMER_write_match_value' was here
+ static inline void CTIMER_write_match_value(CTIMER_match_sel_en match, uint32_t value)
+                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../source/hpl/HPL_CTIMER.c: In function 'CTIMER_config_mr':
+../source/hpl/HPL_CTIMER.c:64:2: error: 'match_callbacks' undeclared (first use in this function)
+  match_callbacks[mr_number] = mr_config->match_callback;
+  ^~~~~~~~~~~~~~~
+../source/hpl/HPL_CTIMER.c:64:2: note: each undeclared identifier is reported only once for each function it appears in
+../source/hpl/HPL_CTIMER.c: In function 'CTIMER_config_cc':
+../source/hpl/HPL_CTIMER.c:214:2: error: 'capture_callbacks' undeclared (first use in this function)
+  capture_callbacks[cc_number] = cc_config->capture_callback;
+  ^~~~~~~~~~~~~~~~~
+../source/hpl/HPL_CTIMER.c: At top level:
+../source/hpl/HPL_CTIMER.c:355:6: error: redefinition of 'CTIMER_enable_pwm'
+ void CTIMER_enable_pwm(uint8_t pwm_number)
+      ^~~~~~~~~~~~~~~~~
+In file included from ../source/hpl/HPL_CTIMER.c:16:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:604:20: note: previous definition of 'CTIMER_enable_pwm' was here
+ static inline void CTIMER_enable_pwm(CTIMER_pwm_channel_en pwm)
+                    ^~~~~~~~~~~~~~~~~
+../source/hpl/HPL_CTIMER.c:392:6: error: redefinition of 'CTIMER_disable_pwm'
+ void CTIMER_disable_pwm(uint8_t pwm_number)
+      ^~~~~~~~~~~~~~~~~~
+In file included from ../source/hpl/HPL_CTIMER.c:16:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:618:20: note: previous definition of 'CTIMER_disable_pwm' was here
+ static inline void CTIMER_disable_pwm(CTIMER_pwm_channel_en pwm)
+                    ^~~~~~~~~~~~~~~~~~
+make: *** [source/hpl/HPL_CTIMER.o] Error 1
+source/hpl/subdir.mk:51: recipe for target 'source/hpl/HPL_CTIMER.o' failed
+"make -r all" terminated with exit code 2. Build might be incomplete.
+12:47:11 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building file: ../src/Micro_tester.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Micro_tester.d" -MT"src/Micro_tester.o" -MT"src/Micro_tester.d" -o "src/Micro_tester.o" "../src/Micro_tester.c"
+In file included from ../src/Micro_tester.c:34:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_get_match_irq_flag':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:152:36: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { return CTIMER->IR.MR0INT; break; }
+                                    ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:152:36: note: each undeclared identifier is reported only once for each function it appears in
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_get_capture_irq_flag':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:168:38: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { return CTIMER->IR.CR0INT; break; }
+                                      ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_clear_match_irq_flag':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:183:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->IR.MR0INT = 1; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_clear_capture_irq_flag':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:198:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { CTIMER->IR.CR0INT = 1; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_counter':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:210:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->TCR.CEN = 1;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_counter':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:218:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->TCR.CEN = 0;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_assert_counter_reset':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:226:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->TCR.CRST = 1;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_clear_counter_reset':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:234:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->TCR.CRST = 0;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_write_counter':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:243:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->TC.TCVAL = value;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_read_counter':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:252:9: error: 'CTIMER' undeclared (first use in this function)
+  return CTIMER->TC.TCVAL;
+         ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_write_prescaler':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:261:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->PC.PCVAL = value;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_read_prescaler':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:270:9: error: 'CTIMER' undeclared (first use in this function)
+  return CTIMER->PC.PCVAL;
+         ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_interrupt_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:281:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0I = 1; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_interrupt_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:296:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0I = 0; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_reset_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:311:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0R = 1; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_reset_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:326:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0R = 0; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_stop_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:341:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0S = 1; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_stop_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:356:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0S = 0; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_reload_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:371:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0RL = 1; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_reload_on_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:386:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->MCR.MR0RL = 0; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_write_match_value':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:400:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->MR[match].MATCH = value;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: At top level:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:408:20: error: redefinition of 'CTIMER_write_match_value'
+ static inline void CTIMER_write_match_value(CTIMER_match_sel_en match, uint32_t value)
+                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:398:20: note: previous definition of 'CTIMER_write_match_value' was here
+ static inline void CTIMER_write_match_value(CTIMER_match_sel_en match, uint32_t value)
+                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_write_match_value':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:410:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->MR[match].MATCH = value;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_read_match_value':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:420:9: error: 'CTIMER' undeclared (first use in this function)
+  return CTIMER->MR[match].MATCH;
+         ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_rising_edge_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:431:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { CTIMER->CCR.CAP0RE = 1; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_rising_edge_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:446:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { CTIMER->CCR.CAP0RE = 0; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_falling_edge_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:461:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { CTIMER->CCR.CAP0FE = 1; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_falling_edge_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:476:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { CTIMER->CCR.CAP0FE = 0; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_interrupt_on_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:491:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { CTIMER->CCR.CAP0I = 1; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_interrupt_on_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:506:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_CAPTURE_SEL_0: { CTIMER->CCR.CAP0I = 0; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_read_capture_value':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:520:9: error: 'CTIMER' undeclared (first use in this function)
+  return CTIMER->CR[capture].CAP;
+         ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_read_match_status':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:532:36: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { return CTIMER->EMR.EM0; break; }
+                                    ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_config_external_match':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:550:29: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_MATCH_SEL_0: { CTIMER->EMR.EMC0 = action; break; }
+                             ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_config_counter_timer_mode':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:563:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->CTCR.CTMODE = mode;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_config_counter_input':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:572:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->CTCR.CINSEL = count_in;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_count_reset_on_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:580:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->CTCR.ENCC = 1;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_count_reset_on_capture':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:588:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->CTCR.ENCC = 0;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_config_capture_reset':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:597:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->CTCR.SELCC = capture_sel;
+  ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_enable_pwm':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:608:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_PWM_CHANNEL_0: { CTIMER->PWMC.PWMEN0 = 1; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_disable_pwm':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:622:31: error: 'CTIMER' undeclared (first use in this function)
+  case CTIMER_PWM_CHANNEL_0: { CTIMER->PWMC.PWMEN0 = 0; break; }
+                               ^~~~~~
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h: In function 'CTIMER_write_shadow_register':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_CTIMER.h:635:2: error: 'CTIMER' undeclared (first use in this function)
+  CTIMER->MSR[match].SHADOW = value;
+  ^~~~~~
+make: *** [src/Micro_tester.o] Error 1
+src/subdir.mk:31: recipe for target 'src/Micro_tester.o' failed
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+12:47:12 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+Building target: Test_development.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_development.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_development_Debug.ld" -o "Test_development.axf"  ./src/Test_development.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+make: *** [Test_development.axf] Error 1
+makefile:30: recipe for target 'Test_development.axf' failed
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.

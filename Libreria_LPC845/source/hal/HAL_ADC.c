@@ -43,6 +43,8 @@ void hal_adc_init(uint32_t sample_freq)
 
 	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_ADC);
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_ADC);
+	SYSCON_clear_reset(SYSCON_RESET_SEL_ADC);
+
 	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
