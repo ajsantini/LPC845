@@ -10,6 +10,7 @@
 #define HPL_CTIMER_H_
 
 #include <stdint.h>
+#include <HRI_CTIMER.h>
 
 typedef struct
 {
@@ -154,6 +155,8 @@ static inline uint8_t CTIMER_get_match_irq_flag(CTIMER_match_sel_en match)
 	case CTIMER_MATCH_SEL_2: { return CTIMER->IR.MR2INT; break; }
 	case CTIMER_MATCH_SEL_3: { return CTIMER->IR.MR3INT; break; }
 	}
+
+	return 0;
 }
 
 /**
@@ -170,6 +173,8 @@ static inline uint8_t CTIMER_get_capture_irq_flag(CTIMER_capture_sel_en capture)
 	case CTIMER_CAPTURE_SEL_2: { return CTIMER->IR.CR2INT; break; }
 	case CTIMER_CAPTURE_SEL_3: { return CTIMER->IR.CR3INT; break; }
 	}
+
+	return 0;
 }
 
 /**
@@ -388,16 +393,6 @@ static inline void CTIMER_disable_reload_on_match(CTIMER_match_sel_en match)
 	case CTIMER_MATCH_SEL_2: { CTIMER->MCR.MR2RL = 0; break; }
 	case CTIMER_MATCH_SEL_3: { CTIMER->MCR.MR3RL = 0; break; }
 	}
-}
-
-/**
- * @brief Escribir un registro de match
- * @param[in] match Numero de match a configurar
- * @param[in] value Valor de match deseado
- */
-static inline void CTIMER_write_match_value(CTIMER_match_sel_en match, uint32_t value)
-{
-	CTIMER->MR[match].MATCH = value;
 }
 
 /**

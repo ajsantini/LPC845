@@ -23,16 +23,18 @@
  */
 
 #include <cr_section_macros.h>
-#include <stdio.h>
+#include <stddef.h>
 
 #include <HAL_ADC.h>
 #include <HAL_SYSCON.h>
 #include <HAL_SYSTICK.h>
 #include <HAL_UART.h>
 #include <HAL_GPIO.h>
+#include <HAL_CTIMER.h>
 
-#include <HPL_CTIMER.h>
+#define		CTIMER_IN_PWM_MODE
 
+#define		LED_PORT			HAL_GPIO_PORT_1
 #define		LED_PORT_PIN		HAL_GPIO_PORTPIN_1_2
 
 #define		TICK_PERIOD_US		1000
@@ -56,10 +58,8 @@
 #define		CLOCKOUT_PORT		0
 #define		CLOCKOUT_PIN		18
 
-#define		CTIMER_PORT			0
-#define		CTIMER_PIN			19
-
-#define		CTIMER_PRESCALER	23
+#define		CTIMER_PORT			HAL_GPIO_PORT_0
+#define		CTIMER_PORT_PIN		HAL_GPIO_PORTPIN_0_16
 
 static void tick_callback(void);
 
@@ -68,6 +68,8 @@ static void adc_callback(void);
 static void rx_callback(void);
 
 static void tx_callback(void);
+
+static void match_callback(void);
 
 static const hal_adc_sequence_config_t adc_config =
 {
@@ -98,31 +100,48 @@ static const hal_uart_config_t uart_config =
 	.tx_ready_callback = tx_callback
 };
 
-static const CTIMER_CTCR_config_t ctcr_config =
+#ifndef 	CTIMER_IN_PWM_MODE
+static const hal_ctimer_match_config_t match_config =
 {
-	.CTMODE = CTIMER_CTMODE_CONFIG_TIMER_MODE,
-	.ENCC = 0
+	.interrupt_on_match = 0,
+	.reset_on_match = 1,
+	.stop_on_match = 0,
+	.match_value_useg = 2500,
+	.match_action = HAL_CTIMER_MATCH_TOGGLE_PIN,
+	.enable_external_pin = 1,
+	.match_pin = CTIMER_PORT_PIN,
+	.callback = match_callback
 };
 
-static const CTIMER_MR_config_t mr_config_0 =
+static const hal_ctimer_timer_config_t ctimer_config =
 {
-	.interrupt_on_match = 0, .reset_on_match = 0, .stop_on_match = 0,
-	.reload_on_match = 0, .match_callback = NULL, .match_value = 0
+	.clock_div = 0,
+	.match_config[0] = &match_config,
+	.match_config[1] = NULL,
+	.match_config[2] = NULL,
+	.match_config[3] = NULL
 };
 
-static const CTIMER_MR_config_t mr_config_1 =
+#else
+
+static const hal_ctimer_pwm_channel_config_t pwm_channel_config =
 {
-	.interrupt_on_match = 0, .reset_on_match = 1, .stop_on_match = 0,
-	.reload_on_match = 0, .match_callback = NULL, .match_value = 1e6
+	.interrupt_on_action = 0,
+	.duty = 1000,
+	.channel_pin = CTIMER_PORT_PIN
 };
 
-static const CTIMER_EMR_config_t emr_config =
+static const hal_ctimer_pwm_config_t pwm_config =
 {
-	.EMC = CTIMER_EMC_CONFIG_DO_NOTHING,
-	.mat_enable = 1,
-	.mat_port = CTIMER_PORT,
-	.mat_pin = CTIMER_PIN
+	.clock_div = 0,
+	.pwm_period_useg = 1000,
+	.interrupt_on_period = 0,
+	.channels[0] = &pwm_channel_config,
+	.channels[1] = NULL,
+	.channels[2] = NULL,
 };
+
+#endif
 
 static uint32_t blink_time_ms = 0;
 static uint32_t adc_conversion = 0;
@@ -141,27 +160,26 @@ int main(void)
 	// 24MHz / (1 + (47 / 256)) = 20.2772272MHz
 	hal_syscon_config_frg(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
-	hal_gpio_init(LED_PORT_PIN);
+	hal_gpio_init(LED_PORT);
+	hal_gpio_init(CTIMER_PORT);
 
 	hal_gpio_set_dir(LED_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(CTIMER_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 1);
 
 	hal_adc_init(ADC_FREQUENCY);
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
 
 	hal_uart_init(UART_NUMBER, &uart_config);
 
-	CTIMER_init(CTIMER_PRESCALER);
+#ifndef	CTIMER_IN_PWM_MODE
+	hal_ctimer_timer_mode_init(&ctimer_config);
 
-	CTIMER_config_ctcr(&ctcr_config);
+	hal_ctimer_timer_mode_run();
+#else
+	hal_ctimer_pwm_mode_init(&pwm_config);
 
-	CTIMER_config_mr(0, &mr_config_0);
-	CTIMER_config_mr(3, &mr_config_1);
-
-	CTIMER_config_emr(0, &emr_config);
-
-	CTIMER_enable_pwm(0);
-
-	CTIMER_run();
+	hal_ctimer_pwm_mode_run();
+#endif
 
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
 	hal_adc_enable_sequence(ADC_SEQUENCE);
@@ -207,7 +225,7 @@ static void adc_callback(void)
 
 	blink_time_ms = adc_conversion; // 0mseg ~ 1023mseg
 
-	CTIMER_update_mr_value_on_finish(0, 1e6 - ((adc_conversion * 1e6) / 1023));
+	//CTIMER_update_mr_value_on_finish(0, 1e6 - ((adc_conversion * 1e6) / 1023));
 }
 
 static char trama[] = "Trama de prueba para ver que onda\n";
@@ -235,4 +253,9 @@ static void tx_callback(void)
 	{
 		trama_counter = 0;
 	}
+}
+
+static void match_callback(void)
+{
+	//hal_gpio_toggle_pin(CTIMER_PORT_PIN);
 }

@@ -151,7 +151,7 @@ void hal_syscon_config_frg(uint8_t inst, hal_syscon_frg_clock_sel_en clock_sourc
 	case HAL_SYSCON_FRG_CLOCK_SEL_SYS_PLL: { aux_freq = current_pll_freq; break; }
 	}
 
-	current_frg_freq[inst] = (uint32_t) (aux_freq / (1 + ((double) mul / 256)));
+	current_frg_freq[inst] = (uint32_t) (aux_freq / (1 + ((float) mul / 256)));
 }
 
 /**
