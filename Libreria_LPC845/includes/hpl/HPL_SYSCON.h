@@ -11,6 +11,9 @@
 
 #include <stdint.h>
 #include <HRI_SYSCON.h>
+#include <HPL_GPIO.h>
+
+extern volatile SYSCON_per_t * const SYSCON; //!< Periferico SYSCON
 
 typedef enum
 {
@@ -611,9 +614,14 @@ static inline void SYSCON_set_nmi_source(uint8_t irq, SYSCON_nmi_enable_en enabl
 	SYSCON->NMISRC.NMIEN = enable;
 }
 
-static inline void SYSCON_set_pinint_pin(uint8_t channel, uint8_t port, uint8_t pin)
+/**
+ * @brief Configurar pin a utilizar como fuente de PININT
+ * @param[in] channel Canal de PININT a configurar
+ * @param[in] portpin Puerto/pin a utilizar
+ */
+static inline void SYSCON_set_pinint_pin(uint8_t channel, GPIO_portpin_en portpin)
 {
-	SYSCON->PINTSEL[channel].INTPIN = (port * 32) + pin;
+	SYSCON->PINTSEL[channel].INTPIN = portpin;
 }
 
 /**

@@ -1,8 +1,8 @@
-HPL_SYSTICK.h:24:20:SYSTICK_enable_count	8	static
-HPL_SYSTICK.h:40:20:SYSTICK_enable_interrupt	8	static
-HPL_SYSTICK.h:57:20:SYSTICK_select_clock_source	16	static
-HPL_SYSTICK.h:74:20:SYSTICK_set_reload	16	static
-HPL_SYSTICK.h:88:20:SYSTICK_set_clear_current_value	8	static
+HPL_SYSTICK.h:26:20:SYSTICK_enable_count	8	static
+HPL_SYSTICK.h:42:20:SYSTICK_enable_interrupt	8	static
+HPL_SYSTICK.h:59:20:SYSTICK_select_clock_source	16	static
+HPL_SYSTICK.h:76:20:SYSTICK_set_reload	16	static
+HPL_SYSTICK.h:90:20:SYSTICK_set_clear_current_value	8	static
 HAL_SYSTICK.c:22:6:hal_systick_init	24	static
 HAL_SYSTICK.c:56:6:hal_systick_update_callback	16	static
 HAL_SYSTICK.c:64:6:SysTick_Handler	8	static

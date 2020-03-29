@@ -35,8 +35,9 @@ typedef struct
 {
 	uint32_t PRE_DELAY : 4;
 	uint32_t POST_DELAY : 4;
+	uint32_t FRAME_DELAY : 4;
 	uint32_t TRANSFER_DELAY : 4;
-	uint32_t : 20;
+	uint32_t : 16;
 }SPI_DLY_reg_t;
 
 typedef struct
@@ -153,7 +154,5 @@ typedef struct
 	SPI_DIV_reg_t DIV;
 	const SPI_INTSTAT_reg_t INTSTAT;
 }SPI_per_t;
-
-extern volatile SPI_per_t * const SPI[]; //!< Perifericos SPI
 
 #endif /* HRI_SPI_H_ */

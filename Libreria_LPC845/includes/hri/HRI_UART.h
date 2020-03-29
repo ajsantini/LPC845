@@ -199,6 +199,4 @@ typedef struct
 	UART_ADDR_reg_t ADDR;
 }UART_per_t;
 
-extern volatile UART_per_t * const UART[]; //!< Perifericos USART
-
 #endif /* HRI_UART_H_ */

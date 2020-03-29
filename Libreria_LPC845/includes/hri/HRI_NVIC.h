@@ -311,6 +311,4 @@ typedef struct
 	NVIC_IPR7_reg_t IPR7;
 }NVIC_per_t;
 
-extern volatile NVIC_per_t * const NVIC; //!< Periferico NVIC
-
 #endif /* HRI_NVIC_H_ */

@@ -12,25 +12,27 @@
 
 /**
  * @brief Configuracion de un pin
- * @param[in] port Puerto del pin a configurar
- * @param[in] pin Numero del pin a configurar
+ * @param[in] portpin Puerto/pin a configurar
  * @param[in] pin_config Puntero a estructura de configuracion del pin
  */
-void hal_iocon_config_io(uint8_t port, uint8_t pin, const hal_iocon_config_t *config)
+void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *config)
 {
+	uint8_t port = HAL_GPIO_PORTPIN_TO_PORT(portpin);
+	uint8_t pin = HAL_GPIO_PORTPIN_TO_PIN(portpin);
+
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_IOCON);
 
-	if(port == 0 && pin == 17)
+	if(portpin == HAL_GPIO_PORTPIN_0_17)
 	{
 		// Este pin tiene configuracion DAC
 		IOCON->PIO0_17.DACMODE = config->dac_mode;
 	}
-	else if(port == 0 && pin == 11)
+	else if(portpin == HAL_GPIO_PORTPIN_0_11)
 	{
 		// Este pin tiene I2C
 		IOCON->PIO0_11.I2CMODE = config->iic_mode;
 	}
-	else if(port == 0 && pin == 10)
+	else if(portpin == HAL_GPIO_PORTPIN_0_10)
 	{
 		// Este pin tiene I2C
 		IOCON->PIO0_10.I2CMODE = config->iic_mode;

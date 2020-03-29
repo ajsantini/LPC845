@@ -10,6 +10,7 @@
 #define HAL_IOCON_H_
 
 #include <HPL_IOCON.h>
+#include <HAL_GPIO.h>
 
 typedef enum
 {
@@ -59,10 +60,9 @@ typedef struct
 
 /**
  * @brief Configuracion de un pin
- * @param[in] port Puerto del pin a configurar
- * @param[in] pin Numero del pin a configurar
+ * @param[in] portpin Puerto/pin a configurar
  * @param[in] pin_config Puntero a estructura de configuracion del pin
  */
-void hal_iocon_config_io(uint8_t port, uint8_t pin, const hal_iocon_config_t *config);
+void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *config);
 
 #endif /* HAL_IOCON_H_ */

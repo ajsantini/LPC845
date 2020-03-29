@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <HRI_CTIMER.h>
 
+extern volatile CTIMER_per_t * const CTIMER; //!< Periferico CTIMER
+
 typedef struct
 {
 	uint8_t interrupt_on_match : 1;

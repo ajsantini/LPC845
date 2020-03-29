@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <HRI_ADC.h>
 
+extern volatile ADC_per_t * const ADC; //!< Periferico ADC
+
 typedef enum
 {
 	ADC_SEQUENCE_SEL_A = 0,

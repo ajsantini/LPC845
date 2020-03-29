@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <HRI_SYSTICK.h>
 
+extern volatile SYSTICK_reg_t * const SYSTICK; //!< Periferico SYSTICK
+
 typedef enum
 {
 	SYSTICK_CLOCK_SOURCE_MAIN_CLOCK_2 = 0,

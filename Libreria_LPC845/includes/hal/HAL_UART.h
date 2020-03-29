@@ -11,6 +11,7 @@
 
 #include <stdint.h>
 #include <HAL_SYSCON.h>
+#include <HAL_GPIO.h>
 
 typedef enum
 {
@@ -68,10 +69,8 @@ typedef struct
 	hal_uart_oversampling_en oversampling;
 	hal_syscon_peripheral_clock_sel_en clock_selection;
 	uint32_t baudrate;
-	uint8_t tx_port;
-	uint8_t tx_pin;
-	uint8_t rx_port;
-	uint8_t rx_pin;
+	hal_gpio_portpin_en tx_portpin;
+	hal_gpio_portpin_en rx_portpin;
 	void (*rx_ready_callback)(void);
 	void (*tx_ready_callback)(void);
 }hal_uart_config_t;

@@ -44,6 +44,4 @@ typedef struct
 	DAC_CNTVAL_reg_t CNTVAL;
 }DAC_per_t;
 
-extern volatile DAC_per_t * const DAC[]; //!< Perifericos DAC
-
 #endif /* HRI_DAC_H_ */

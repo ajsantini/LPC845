@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <HRI_PININT.h>
 
+extern volatile PININT_per_t * const PININT; //!< Periferico PININT
+
 typedef enum
 {
 	PININT_INTERRUPT_MODE_EDGE = 0,

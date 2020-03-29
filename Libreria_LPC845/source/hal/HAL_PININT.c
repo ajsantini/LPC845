@@ -69,7 +69,7 @@ void hal_pinint_configure_pin_interrupt(const hal_pinint_config_t *config)
 
 	pinint_callbacks[config->channel] = config->callback;
 
-	SYSCON_set_pinint_pin(config->channel, config->portpin / 32, config->portpin % 32);
+	SYSCON_set_pinint_pin(config->channel, config->portpin);
 
 	switch(config->channel)
 	{

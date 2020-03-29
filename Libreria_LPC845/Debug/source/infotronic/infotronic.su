@@ -1,5 +1,5 @@
-HPL_SYSCON.h:435:20:SYSCON_enable_clock	16	static
-HPL_IOCON.h:57:20:IOCON_init	8	static
+HPL_SYSCON.h:438:20:SYSCON_enable_clock	16	static
+HPL_IOCON.h:58:20:IOCON_init	8	static
 infotronic.c:33:6:infotronic_init	16	static
 infotronic.c:60:6:infotronic_blocking_delay	16	static
 infotronic.c:71:9:infotronic_get_key	8	static

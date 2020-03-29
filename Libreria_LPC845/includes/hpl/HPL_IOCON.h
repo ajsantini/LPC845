@@ -13,6 +13,7 @@
 #include <HPL_SYSCON.h>
 #include <HRI_IOCON.h>
 
+extern volatile IOCON_per_t * const IOCON; //!< Periferico IOCON
 extern volatile IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32];//!< Tabla de registros de configuracion
 
 typedef enum

@@ -11,6 +11,8 @@
 
 #include <HRI_UART.h>
 
+extern volatile UART_per_t * const UART[]; //!< Perifericos USART
+
 typedef enum
 {
 	UART_DATALEN_7BIT = 0,

@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <HRI_NVIC.h>
 
+extern volatile NVIC_per_t * const NVIC; //!< Periferico NVIC
+
 typedef enum
 {
 	NVIC_IRQ_SEL_SPI0 = 0,

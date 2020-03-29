@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <HRI_GPIO.h>
 
+extern volatile GPIO_per_t * const GPIO; //!< Periferico GPIO
+
 typedef enum
 {
 	GPIO_DIR_INPUT = 0,

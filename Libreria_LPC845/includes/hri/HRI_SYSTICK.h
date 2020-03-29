@@ -57,6 +57,4 @@ typedef struct
 	SYSTICK_CALIB_reg_t CALIB;
 }SYSTICK_reg_t;
 
-extern volatile SYSTICK_reg_t * const SYSTICK; //!< Periferico SYSTICK
-
 #endif /* HRI_SYSTICK_H_ */

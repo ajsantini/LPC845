@@ -46,8 +46,17 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	uint32_t aux;
 
 	SWM_init();
-	SWM_assign_uart_RXD(inst, config->rx_port, config->rx_pin);
-	SWM_assign_uart_TXD(inst, config->tx_port, config->tx_pin);
+
+	if(config->rx_portpin != HAL_GPIO_PORTPIN_NOT_USED)
+	{
+		SWM_assign_uart_RXD(inst, HAL_GPIO_PORTPIN_TO_PORT(config->rx_portpin), HAL_GPIO_PORTPIN_TO_PIN(config->rx_portpin));
+	}
+
+	if(config->tx_portpin != HAL_GPIO_PORTPIN_NOT_USED)
+	{
+		SWM_assign_uart_TXD(inst, HAL_GPIO_PORTPIN_TO_PORT(config->tx_portpin), HAL_GPIO_PORTPIN_TO_PIN(config->tx_portpin));
+	}
+
 	SWM_deinit();
 
 	switch(inst)

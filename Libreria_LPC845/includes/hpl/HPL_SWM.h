@@ -10,7 +10,9 @@
 #define HPL_SWM_H_
 
 #include <HRI_SWM.h>
-#include <HRI_SYSCON.h>
+#include <HPL_SYSCON.h>
+
+extern volatile SWM_per_t * const SWM; //!< Periferico SWM
 
 typedef enum
 {

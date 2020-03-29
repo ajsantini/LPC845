@@ -12,6 +12,8 @@
 #include <stdint.h>
 #include <HRI_DAC.h>
 
+extern volatile DAC_per_t * const DAC[]; //!< Perifericos DAC
+
 typedef enum
 {
 	DAC_SEL_0 = 0,

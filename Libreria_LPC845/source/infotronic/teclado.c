@@ -8,37 +8,24 @@
 
 #include <stdint.h>
 #include <teclado.h>
-#include <HPL_GPIO.h>
+#include <HAL_GPIO.h>
 #include <HAL_IOCON.h>
 #include <HAL_SYSTICK.h>
 
 #define		TECLADO_CANTIDAD_FILAS			2
 #define		TECLADO_CANTIDAD_COLUMNAS		3
 
-static const uint8_t teclado_filas_port[TECLADO_CANTIDAD_FILAS] =
+static const hal_gpio_portpin_en teclado_filas_portpin[TECLADO_CANTIDAD_FILAS] =
 {
-	0,
-	0
+	HAL_GPIO_PORTPIN_0_27,
+	HAL_GPIO_PORTPIN_0_29
 };
 
-static const uint8_t teclado_filas_pin[TECLADO_CANTIDAD_FILAS] =
+static const hal_gpio_portpin_en teclado_columnas_portpin[TECLADO_CANTIDAD_COLUMNAS] =
 {
-	27,
-	29
-};
-
-static const uint8_t teclado_columnas_port[TECLADO_CANTIDAD_COLUMNAS] =
-{
-	0,
-	0,
-	0
-};
-
-static const uint8_t teclado_columnas_pin[TECLADO_CANTIDAD_COLUMNAS] =
-{
-	8,
-	31,
-	30
+	HAL_GPIO_PORTPIN_0_8,
+	HAL_GPIO_PORTPIN_0_31,
+	HAL_GPIO_PORTPIN_0_30
 };
 
 static uint8_t key_buffer = NO_KEY;
@@ -68,15 +55,15 @@ void teclado_init(uint32_t bounces)
 	// Filas como entradas con pull-down
 	for(counter = 0; counter < TECLADO_CANTIDAD_FILAS; counter++)
 	{
-		GPIO_set_dir(teclado_filas_port[counter], teclado_filas_pin[counter], GPIO_DIR_INPUT, 0);
+		hal_gpio_set_dir(teclado_filas_portpin[counter], HAL_GPIO_DIR_INPUT, 0);
 
-		hal_iocon_config_io(teclado_filas_port[counter], teclado_filas_pin[counter], &pin_config);
+		hal_iocon_config_io(teclado_filas_portpin[counter], &pin_config);
 	}
 
 	// Columnas como salidas
 	for(counter = 0; counter < TECLADO_CANTIDAD_COLUMNAS; counter++)
 	{
-		GPIO_set_dir(teclado_columnas_port[counter], teclado_columnas_pin[counter], GPIO_DIR_OUTPUT, 0);
+		hal_gpio_set_dir(teclado_columnas_portpin[counter], HAL_GPIO_DIR_OUTPUT, 0);
 	}
 
 	// Rebotes para tomar una tecla como valida/invalida
@@ -135,25 +122,25 @@ static uint8_t get_current_key(void)
 
 	for(counter_columnas = 0; counter_columnas < TECLADO_CANTIDAD_COLUMNAS; counter_columnas++)
 	{
-		GPIO_set_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
-		GPIO_set_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
-		GPIO_set_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
+		hal_gpio_set_pin(teclado_columnas_portpin[counter_columnas]);
+		hal_gpio_set_pin(teclado_columnas_portpin[counter_columnas]);
+		hal_gpio_set_pin(teclado_columnas_portpin[counter_columnas]);
 
 		for(counter_filas = 0; counter_filas < TECLADO_CANTIDAD_FILAS; counter_filas++)
 		{
-			if(GPIO_read_pin(teclado_filas_port[counter_filas], teclado_filas_pin[counter_filas]) == 1)
+			if(hal_gpio_read_pin(teclado_filas_portpin[counter_filas]) == 1)
 			{
-				GPIO_clear_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
-				GPIO_clear_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
-				GPIO_clear_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
+				hal_gpio_clear_pin(teclado_columnas_portpin[counter_columnas]);
+				hal_gpio_clear_pin(teclado_columnas_portpin[counter_columnas]);
+				hal_gpio_clear_pin(teclado_columnas_portpin[counter_columnas]);
 
 				return ((counter_columnas * TECLADO_CANTIDAD_FILAS) + counter_filas);
 			}
 		}
 
-		GPIO_clear_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
-		GPIO_clear_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
-		GPIO_clear_pin(teclado_columnas_port[counter_columnas], teclado_columnas_pin[counter_columnas]);
+		hal_gpio_clear_pin(teclado_columnas_portpin[counter_columnas]);
+		hal_gpio_clear_pin(teclado_columnas_portpin[counter_columnas]);
+		hal_gpio_clear_pin(teclado_columnas_portpin[counter_columnas]);
 	}
 
 	return NO_KEY;

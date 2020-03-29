@@ -47,11 +47,8 @@
 
 #define		ADC_SEQUENCE		HAL_ADC_SEQUENCE_SEL_A
 
-#define		RX_PORT				0
-#define		RX_PIN				8
-
-#define		TX_PORT				0
-#define		TX_PIN				9
+#define		UART_RX_PORTPIN		HAL_GPIO_PORTPIN_0_8
+#define		UART_TX_PORTPIN		HAL_GPIO_PORTPIN_0_9
 
 #define		UART_NUMBER			0
 #define		UART_BAUDRATE		115200
@@ -98,12 +95,10 @@ static const hal_uart_config_t uart_config =
 	.oversampling = HAL_UART_OVERSAMPLING_X16,
 	.clock_selection = HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRG0,
 	.baudrate = UART_BAUDRATE,
-	.tx_port = TX_PORT,
-	.tx_pin = TX_PIN,
-	.rx_port = RX_PORT,
-	.rx_pin = RX_PIN,
-	.rx_ready_callback = rx_callback,
-	.tx_ready_callback = tx_callback
+	.tx_portpin = UART_TX_PORTPIN,
+	.rx_portpin = UART_RX_PORTPIN,
+	.tx_ready_callback = tx_callback,
+	.rx_ready_callback = rx_callback
 };
 
 static const hal_pinint_config_t pinint_config =
@@ -180,7 +175,7 @@ int main(void)
 	// Divisor para glitches de IOCON
 	hal_syscon_set_iocon_glitch_divider(HAL_SYSCON_IOCON_GLITCH_SEL_0, 255);
 
-	hal_iocon_config_io(KEY_PORTPIN / 32, KEY_PORTPIN % 32, &pin_config);
+	hal_iocon_config_io(KEY_PORTPIN, &pin_config);
 
 	hal_gpio_init(LED_PORT);
 	hal_gpio_init(CTIMER_PORT);

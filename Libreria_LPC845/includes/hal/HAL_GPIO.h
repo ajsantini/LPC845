@@ -11,6 +11,9 @@
 
 #include <stdint.h>
 
+#define		HAL_GPIO_PORTPIN_TO_PORT(x)		(x / 32)
+#define		HAL_GPIO_PORTPIN_TO_PIN(x)		(x % 32)
+
 typedef enum
 {
 	HAL_GPIO_PORT_0 = 0,
@@ -72,7 +75,8 @@ typedef enum
 	HAL_GPIO_PORTPIN_1_18,
 	HAL_GPIO_PORTPIN_1_19,
 	HAL_GPIO_PORTPIN_1_20,
-	HAL_GPIO_PORTPIN_1_21
+	HAL_GPIO_PORTPIN_1_21,
+	HAL_GPIO_PORTPIN_NOT_USED
 }hal_gpio_portpin_en;
 
 typedef enum
