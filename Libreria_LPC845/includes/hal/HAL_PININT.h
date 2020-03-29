@@ -56,7 +56,7 @@ void hal_pinint_init(void);
  * @brief Configurar interrupciones de pin
  * @param[in] config Configuracion de interrupciones de pin
  */
-void hal_pinint_configure_pin_interrupt(hal_pinint_config_t *config);
+void hal_pinint_configure_pin_interrupt(const hal_pinint_config_t *config);
 
 /**
  * @brief Registrar callback a llamar en interrupcion de PININTn

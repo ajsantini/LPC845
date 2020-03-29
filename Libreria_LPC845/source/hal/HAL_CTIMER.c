@@ -41,12 +41,13 @@ void (*capture_callbacks[CAPTURE_AMOUNT])(void) = //!< Callbacks para interrupci
 
 /**
  * @brief Inicializacion del periferico en modo timer
- * @param[in] config Configuracion deseada
+ *
+ * Esta funcion no pone a correr el contador.
+ *
+ * @param[in] clock_div Divisor del clock principal deseado (el valor efectivo es este valor + 1)
  */
-void hal_ctimer_timer_mode_init(const hal_ctimer_timer_config_t *config)
+void hal_ctimer_timer_mode_init(uint32_t clock_div)
 {
-	uint8_t counter;
-
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_CTIMER);
 	SYSCON_clear_reset(SYSCON_RESET_SEL_CTIMER);
 
@@ -54,74 +55,74 @@ void hal_ctimer_timer_mode_init(const hal_ctimer_timer_config_t *config)
 	CTIMER_disable_counter();
 	CTIMER_clear_counter_reset();
 
-	CTIMER_write_prescaler(config->clock_div);
+	CTIMER_write_prescaler(clock_div);
 
 	CTIMER_config_counter_timer_mode(CTIMER_MODE_TIMER);
 
-	for(counter = 0; counter < MATCH_AMOUNT; counter++)
+	NVIC_enable_interrupt(NVIC_IRQ_SEL_CTIMER);
+}
+
+/**
+ * @brief Configurar un canal de match
+ * @param[in] match_sel Match a configurar
+ * @param[in] match_config Configuracion deseada
+ */
+void hal_ctimer_timer_mode_config_match(hal_ctimer_match_sel_en match_sel, const hal_ctimer_match_config_t *match_config)
+{
+	SWM_init();
+
+	if(match_config->enable_external_pin)
 	{
-		if(config->match_config[counter] != NULL)
-		{
-			const hal_ctimer_match_config_t *this_match = config->match_config[counter];
-
-			CTIMER_write_match_value(counter, hal_ctimer_calc_match_value(this_match->match_value_useg));
-
-			CTIMER_config_external_match(counter, this_match->match_action);
-
-			SWM_init();
-
-			if(this_match->enable_external_pin)
-			{
-				SWM_assign_T0_MAT(counter, this_match->match_pin / 32, this_match->match_pin % 32);
-			}
-			else
-			{
-				SWM_assign_T0_MAT(counter, 0xFF, 0xFF);
-			}
-
-			SWM_deinit();
-
-			if(this_match->interrupt_on_match)
-			{
-				CTIMER_enable_interrupt_on_match(counter);
-				match_callbacks[counter] = this_match->callback;
-			}
-			else
-			{
-				CTIMER_disable_interrupt_on_match(counter);
-				match_callbacks[counter] = dummy_irq;
-			}
-
-			if(this_match->reset_on_match)
-			{
-				CTIMER_enable_reset_on_match(counter);
-			}
-			else
-			{
-				CTIMER_disable_reset_on_match(counter);
-			}
-
-			if(this_match->stop_on_match)
-			{
-				CTIMER_enable_stop_on_match(counter);
-			}
-			else
-			{
-				CTIMER_disable_stop_on_match(counter);
-			}
-
-			if(this_match->reload_on_match)
-			{
-				CTIMER_enable_reload_on_match(counter);
-			}
-			else
-			{
-				CTIMER_disable_reload_on_match(counter);
-			}
-		}
+		SWM_assign_T0_MAT(match_sel, match_config->match_pin / 32, match_config->match_pin % 32);
+	}
+	else
+	{
+		SWM_assign_T0_MAT(match_sel, 0xFF, 0xFF);
 	}
 
-	NVIC_enable_interrupt(NVIC_IRQ_SEL_CTIMER);
+	SWM_deinit();
+
+	if(match_config->interrupt_on_match)
+	{
+		CTIMER_enable_interrupt_on_match(match_sel);
+		match_callbacks[match_sel] = match_config->callback;
+	}
+	else
+	{
+		CTIMER_disable_interrupt_on_match(match_sel);
+		match_callbacks[match_sel] = dummy_irq;
+	}
+
+	if(match_config->reset_on_match)
+	{
+		CTIMER_enable_reset_on_match(match_sel);
+	}
+	else
+	{
+		CTIMER_disable_reset_on_match(match_sel);
+	}
+
+	if(match_config->stop_on_match)
+	{
+		CTIMER_enable_stop_on_match(match_sel);
+	}
+	else
+	{
+		CTIMER_disable_stop_on_match(match_sel);
+	}
+
+	if(match_config->reload_on_match)
+	{
+		CTIMER_enable_reload_on_match(match_sel);
+	}
+	else
+	{
+		CTIMER_disable_reload_on_match(match_sel);
+	}
+
+	CTIMER_write_match_value(match_sel, hal_ctimer_calc_match_value(match_config->match_value_useg));
+
+	CTIMER_config_external_match(match_sel, match_config->match_action);
 }
 
 /**
@@ -155,8 +156,6 @@ void hal_ctimer_timer_mode_reset(void)
  */
 void hal_ctimer_pwm_mode_init(const hal_ctimer_pwm_config_t *config)
 {
-	uint8_t counter;
-
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_CTIMER);
 	SYSCON_clear_reset(SYSCON_RESET_SEL_CTIMER);
 
@@ -168,93 +167,82 @@ void hal_ctimer_pwm_mode_init(const hal_ctimer_pwm_config_t *config)
 
 	CTIMER_config_counter_timer_mode(CTIMER_MODE_TIMER);
 
-	// El canal 3 se utiliza como delimitador del periodo del PWM
-	CTIMER_write_match_value(CTIMER_MATCH_SEL_3, hal_ctimer_calc_match_value(config->pwm_period_useg));
-
+	CTIMER_enable_reload_on_match(CTIMER_MATCH_SEL_3);
 	CTIMER_enable_reset_on_match(CTIMER_MATCH_SEL_3);
 	CTIMER_disable_stop_on_match(CTIMER_MATCH_SEL_3);
 
+	// El canal 3 se utiliza como delimitador del periodo del PWM
+	CTIMER_write_match_value(CTIMER_MATCH_SEL_3, hal_ctimer_calc_match_value(config->pwm_period_useg));
+	CTIMER_write_shadow_register(CTIMER_MATCH_SEL_3, hal_ctimer_calc_match_value(config->pwm_period_useg));
+
 	if(config->interrupt_on_period)
 	{
-		CTIMER_enable_interrupt_on_capture(CTIMER_MATCH_SEL_3);
-		match_callbacks[3] = config->callback;
+		CTIMER_enable_interrupt_on_match(CTIMER_MATCH_SEL_3);
+		match_callbacks[CTIMER_MATCH_SEL_3] = config->callback;
 	}
 	else
 	{
-		CTIMER_disable_interrupt_on_capture(CTIMER_MATCH_SEL_3);
-		match_callbacks[3] = dummy_irq;
-	}
-
-	CTIMER_disable_reload_on_match(CTIMER_MATCH_SEL_3);
-
-	for(counter = 0; counter < PWM_CHANNELS; counter++)
-	{
-		if(config->channels[counter] != NULL)
-		{
-			const hal_ctimer_pwm_channel_config_t *this_channel = config->channels[counter];
-			float aux_calc;
-
-			if(this_channel->duty >= 1000)
-			{
-				aux_calc = 0.0;
-			}
-			else if(this_channel->duty > 0)
-			{
-				aux_calc = (((float) this_channel->duty) * CTIMER_read_match_value(CTIMER_MATCH_SEL_3)) / 1000.0;
-				aux_calc = ((float) CTIMER_read_match_value(CTIMER_MATCH_SEL_3)) - aux_calc;
-			}
-			else
-			{
-				aux_calc = (float) (CTIMER_read_match_value(CTIMER_MATCH_SEL_3) + 1);
-			}
-
-			CTIMER_write_match_value(counter, (uint32_t) (aux_calc));
-
-			SWM_init();
-			SWM_assign_T0_MAT(counter, this_channel->channel_pin / 32, this_channel->channel_pin % 32);
-			SWM_deinit();
-
-			if(this_channel->interrupt_on_action)
-			{
-				CTIMER_enable_interrupt_on_match(counter);
-				match_callbacks[counter] = this_channel->callback;
-			}
-			else
-			{
-				CTIMER_disable_interrupt_on_match(counter);
-				match_callbacks[counter] = dummy_irq;
-			}
-
-			CTIMER_enable_pwm(counter);
-		}
+		CTIMER_disable_interrupt_on_match(CTIMER_MATCH_SEL_3);
+		match_callbacks[CTIMER_MATCH_SEL_3] = dummy_irq;
 	}
 
 	NVIC_enable_interrupt(NVIC_IRQ_SEL_CTIMER);
-}
 
-/**
- * @brief Habilitar el conteo del ctimer
- */
-void hal_ctimer_pwm_mode_run(void)
-{
 	CTIMER_enable_counter();
 }
 
 /**
- * @brief Inhabilitar el conteo del ctimer
+ * @brief Actualizar el periodo en modo PWM
+ * @param[in] period_useg Nuevo periodo deseado en microsegundos
  */
-void hal_ctimer_pwm_mode_stop(void)
+void hal_ctimer_pwm_mode_set_period(uint32_t period_useg)
 {
-	CTIMER_disable_counter();
+	CTIMER_write_shadow_register(CTIMER_MATCH_SEL_3, hal_ctimer_calc_match_value(period_useg));
 }
 
 /**
- * @brief Reiniciar el conteo del ctimer
+ * @brief Actualizar configuracion de algun canal de PWM
+ * @param[in] channel_sel Seleccion de canal a configurar
+ * @param[in] channel_config Configuracion del canal de PWM
  */
-void hal_ctimer_pwm_mode_reset(void)
+void hal_ctimer_pwm_mode_config_channel(hal_ctimer_pwm_channel_sel_en channel_sel, const hal_ctimer_pwm_channel_config_t *channel_config)
 {
-	CTIMER_assert_counter_reset();
-	CTIMER_clear_counter_reset();
+	float aux_calc;
+
+	CTIMER_enable_reload_on_match(channel_sel);
+
+	if(channel_config->duty >= 1000)
+	{
+		aux_calc = 0.0;
+	}
+	else if(channel_config->duty > 0)
+	{
+		aux_calc = (((float) channel_config->duty) * CTIMER_read_match_value(CTIMER_MATCH_SEL_3)) / 1000.0;
+		aux_calc = ((float) CTIMER_read_match_value(CTIMER_MATCH_SEL_3)) - aux_calc;
+	}
+	else
+	{
+		aux_calc = (float) (CTIMER_read_match_value(CTIMER_MATCH_SEL_3) + 1);
+	}
+
+	CTIMER_write_shadow_register(channel_sel, (uint32_t) (aux_calc));
+
+	SWM_init();
+	SWM_assign_T0_MAT(channel_sel, channel_config->channel_pin / 32, channel_config->channel_pin % 32);
+	SWM_deinit();
+
+	if(channel_config->interrupt_on_action)
+	{
+		CTIMER_enable_interrupt_on_match(channel_sel);
+		match_callbacks[channel_sel] = channel_config->callback;
+	}
+	else
+	{
+		CTIMER_disable_interrupt_on_match(channel_sel);
+		match_callbacks[channel_sel] = dummy_irq;
+	}
+
+	CTIMER_enable_pwm(channel_sel);
 }
 
 /**

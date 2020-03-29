@@ -8,6 +8,7 @@
 
 #include <HAL_IOCON.h>
 #include <HPL_IOCON.h>
+#include <HPL_SYSCON.h>
 
 /**
  * @brief Configuracion de un pin
@@ -17,6 +18,8 @@
  */
 void hal_iocon_config_io(uint8_t port, uint8_t pin, const hal_iocon_config_t *config)
 {
+	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_IOCON);
+
 	if(port == 0 && pin == 17)
 	{
 		// Este pin tiene configuracion DAC
@@ -43,4 +46,6 @@ void hal_iocon_config_io(uint8_t port, uint8_t pin, const hal_iocon_config_t *co
 	IOCON_PIN_TABLE[port][pin]->OD = config->open_drain;
 	IOCON_PIN_TABLE[port][pin]->S_MODE = config->sample_mode;
 	IOCON_PIN_TABLE[port][pin]->CLK_DIV = config->clk_sel;
+
+	SYSCON_disable_clock(SYSCON_ENABLE_CLOCK_SEL_IOCON);
 }

@@ -31,6 +31,8 @@
 #include <HAL_UART.h>
 #include <HAL_GPIO.h>
 #include <HAL_CTIMER.h>
+#include <HAL_PININT.h>
+#include <HAL_IOCON.h>
 
 #define		CTIMER_IN_PWM_MODE
 
@@ -61,6 +63,8 @@
 #define		CTIMER_PORT			HAL_GPIO_PORT_0
 #define		CTIMER_PORT_PIN		HAL_GPIO_PORTPIN_0_16
 
+#define		KEY_PORTPIN			HAL_GPIO_PORTPIN_0_4
+
 static void tick_callback(void);
 
 static void adc_callback(void);
@@ -68,6 +72,8 @@ static void adc_callback(void);
 static void rx_callback(void);
 
 static void tx_callback(void);
+
+static void pinint_callback(void);
 
 static void match_callback(void);
 
@@ -100,6 +106,28 @@ static const hal_uart_config_t uart_config =
 	.tx_ready_callback = tx_callback
 };
 
+static const hal_pinint_config_t pinint_config =
+{
+	.channel = HAL_PININT_CHANNEL_0,
+	.mode = HAL_PININT_INTERRUPT_MODE_EDGE,
+	.int_on_rising_edge = 0,
+	.int_on_falling_edge = 1,
+	.portpin = KEY_PORTPIN,
+	.callback = pinint_callback
+};
+
+static const hal_iocon_config_t pin_config =
+{
+	.pull_mode = HAL_IOCON_PULL_UP,
+	.hysteresis = 0,
+	.invert_input = 0,
+	.open_drain = 0,
+	.sample_mode = HAL_IOCON_SAMPLE_MODE_3_CLOCK,
+	.clk_sel = HAL_IOCON_CLK_DIV_0,
+	.dac_mode = 0,
+	.iic_mode = HAL_IOCON_IIC_MODE_GPIO
+};
+
 #ifndef 	CTIMER_IN_PWM_MODE
 static const hal_ctimer_match_config_t match_config =
 {
@@ -113,21 +141,12 @@ static const hal_ctimer_match_config_t match_config =
 	.callback = match_callback
 };
 
-static const hal_ctimer_timer_config_t ctimer_config =
-{
-	.clock_div = 0,
-	.match_config[0] = &match_config,
-	.match_config[1] = NULL,
-	.match_config[2] = NULL,
-	.match_config[3] = NULL
-};
-
 #else
 
-static const hal_ctimer_pwm_channel_config_t pwm_channel_config =
+static hal_ctimer_pwm_channel_config_t pwm_channel_config =
 {
 	.interrupt_on_action = 0,
-	.duty = 1000,
+	.duty = 0,
 	.channel_pin = CTIMER_PORT_PIN
 };
 
@@ -135,10 +154,8 @@ static const hal_ctimer_pwm_config_t pwm_config =
 {
 	.clock_div = 0,
 	.pwm_period_useg = 1000,
-	.interrupt_on_period = 0,
-	.channels[0] = &pwm_channel_config,
-	.channels[1] = NULL,
-	.channels[2] = NULL,
+	.interrupt_on_period = 1,
+	.callback = match_callback
 };
 
 #endif
@@ -160,6 +177,11 @@ int main(void)
 	// 24MHz / (1 + (47 / 256)) = 20.2772272MHz
 	hal_syscon_config_frg(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
+	// Divisor para glitches de IOCON
+	hal_syscon_set_iocon_glitch_divider(HAL_SYSCON_IOCON_GLITCH_SEL_0, 255);
+
+	hal_iocon_config_io(KEY_PORTPIN / 32, KEY_PORTPIN % 32, &pin_config);
+
 	hal_gpio_init(LED_PORT);
 	hal_gpio_init(CTIMER_PORT);
 
@@ -171,14 +193,20 @@ int main(void)
 
 	hal_uart_init(UART_NUMBER, &uart_config);
 
+	hal_pinint_init();
+
+	hal_pinint_configure_pin_interrupt(&pinint_config);
+
 #ifndef	CTIMER_IN_PWM_MODE
-	hal_ctimer_timer_mode_init(&ctimer_config);
+	hal_ctimer_timer_mode_init(0); // Divisor de prescaler en 1
+
+	hal_ctimer_timer_mode_config_match(&match_config);
 
 	hal_ctimer_timer_mode_run();
 #else
 	hal_ctimer_pwm_mode_init(&pwm_config);
 
-	hal_ctimer_pwm_mode_run();
+	hal_ctimer_pwm_mode_config_channel(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
 #endif
 
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
@@ -225,7 +253,16 @@ static void adc_callback(void)
 
 	blink_time_ms = adc_conversion; // 0mseg ~ 1023mseg
 
-	//CTIMER_update_mr_value_on_finish(0, 1e6 - ((adc_conversion * 1e6) / 1023));
+	if(adc_conversion > 1000)
+	{
+		pwm_channel_config.duty = 1000;
+	}
+	else
+	{
+		pwm_channel_config.duty = adc_conversion;
+	}
+
+	hal_ctimer_pwm_mode_config_channel(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
 }
 
 static char trama[] = "Trama de prueba para ver que onda\n";
@@ -255,7 +292,27 @@ static void tx_callback(void)
 	}
 }
 
+static void pinint_callback(void)
+{
+	static uint8_t state = 0;
+
+	if(state == 0)
+	{
+		state = 1;
+
+		hal_ctimer_pwm_mode_set_period(2000);
+	}
+	else
+	{
+		state = 0;
+
+		hal_ctimer_pwm_mode_set_period(1000);
+	}
+}
+
 static void match_callback(void)
 {
-	//hal_gpio_toggle_pin(CTIMER_PORT_PIN);
+	static uint8_t counter = 0;
+
+	counter++;
 }

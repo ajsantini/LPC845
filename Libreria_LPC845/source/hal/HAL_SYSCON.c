@@ -185,3 +185,13 @@ uint32_t hal_syscon_get_peripheral_clock(hal_syscon_peripheral_sel_en peripheral
 
 	return ret;
 }
+
+/**
+ * @brief Configurar divisor para el clock de glitches del IOCON
+ * @param[in] sel Seleccion de divisor
+ * @param[in] div Valor de division deseado
+ */
+void hal_syscon_set_iocon_glitch_divider(hal_syscon_iocon_glitch_sel_en sel, uint32_t div)
+{
+	SYSCON_set_iocon_glitch_divider(sel, div);
+}
