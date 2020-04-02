@@ -273,7 +273,13 @@ static inline uint8_t SPI_clear_status_flag(uint8_t inst, SPI_status_flag_en fla
 	case SPI_STATUS_FLAG_SSA: { SPI[inst]->STAT.SSA = 1; break; }
 	case SPI_STATUS_FLAG_SSD: { SPI[inst]->STAT.SSD = 1; break; }
 	case SPI_STATUS_FLAG_ENDTRANSFER: { SPI[inst]->STAT.ENDTRANSFER = 1; break; }
+	case SPI_STATUS_FLAG_MSTIDLE: break;
+	case SPI_STATUS_FLAG_RXRDY: break;
+	case SPI_STATUS_FLAG_STALLED: break;
+	case SPI_STATUS_FLAG_TXRDY: break;
 	}
+
+	return 0;
 }
 
 /**
@@ -292,6 +298,8 @@ static inline uint8_t SPI_enable_irq(uint8_t inst, SPI_irq_sel_en irq)
 	case SPI_IRQ_SSA: { SPI[inst]->INTENSET.SSAEN = 1; break; }
 	case SPI_IRQ_SSD: { SPI[inst]->INTENSET.SSDEN = 1; break; }
 	}
+
+	return 0;
 }
 
 /**
@@ -310,6 +318,8 @@ static inline uint8_t SPI_disable_irq(uint8_t inst, SPI_irq_sel_en irq)
 	case SPI_IRQ_SSA: { SPI[inst]->INTENCLR.SSAEN = 1; break; }
 	case SPI_IRQ_SSD: { SPI[inst]->INTENCLR.SSDEN = 1; break; }
 	}
+
+	return 0;
 }
 
 /**
@@ -368,10 +378,11 @@ static inline void SPI_select_slave(uint8_t inst, uint8_t channel)
 {
 	switch(channel)
 	{
-	case 0: { SPI[inst]->TXCTL.TXSSEL0_N = 1; SPI[inst]->TXCTL.TXSSEL1_N = 0; SPI[inst]->TXCTL.TXSSEL2_N = 0; SPI[inst]->TXCTL.TXSSEL3_N = 0; break; }
-	case 1: { SPI[inst]->TXCTL.TXSSEL0_N = 0; SPI[inst]->TXCTL.TXSSEL1_N = 1; SPI[inst]->TXCTL.TXSSEL2_N = 0; SPI[inst]->TXCTL.TXSSEL3_N = 0; break; }
-	case 2: { SPI[inst]->TXCTL.TXSSEL0_N = 0; SPI[inst]->TXCTL.TXSSEL1_N = 0; SPI[inst]->TXCTL.TXSSEL2_N = 1; SPI[inst]->TXCTL.TXSSEL3_N = 0; break; }
-	case 3: { SPI[inst]->TXCTL.TXSSEL1_N = 0; SPI[inst]->TXCTL.TXSSEL1_N = 0; SPI[inst]->TXCTL.TXSSEL2_N = 0; SPI[inst]->TXCTL.TXSSEL3_N = 1; break; }
+	case 0: { SPI[inst]->TXCTL.TXSSEL0_N = 0; SPI[inst]->TXCTL.TXSSEL1_N = 1; SPI[inst]->TXCTL.TXSSEL2_N = 1; SPI[inst]->TXCTL.TXSSEL3_N = 1; break; }
+	case 1: { SPI[inst]->TXCTL.TXSSEL0_N = 1; SPI[inst]->TXCTL.TXSSEL1_N = 0; SPI[inst]->TXCTL.TXSSEL2_N = 1; SPI[inst]->TXCTL.TXSSEL3_N = 1; break; }
+	case 2: { SPI[inst]->TXCTL.TXSSEL0_N = 1; SPI[inst]->TXCTL.TXSSEL1_N = 1; SPI[inst]->TXCTL.TXSSEL2_N = 0; SPI[inst]->TXCTL.TXSSEL3_N = 1; break; }
+	case 3: { SPI[inst]->TXCTL.TXSSEL0_N = 1; SPI[inst]->TXCTL.TXSSEL1_N = 1; SPI[inst]->TXCTL.TXSSEL2_N = 1; SPI[inst]->TXCTL.TXSSEL3_N = 0; break; }
+	default:{ SPI[inst]->TXCTL.TXSSEL0_N = 1; SPI[inst]->TXCTL.TXSSEL1_N = 1; SPI[inst]->TXCTL.TXSSEL2_N = 1; SPI[inst]->TXCTL.TXSSEL3_N = 1; break; }
 	}
 }
 
@@ -440,11 +451,21 @@ static inline void SPI_set_data_length(uint8_t inst, SPI_data_length_en data_len
 }
 
 /**
+ * @brief Escribir data a transmitir y control al mismo tiempo (en una unica escritura)
+ * @param[in] inst Instancia a utilizar
+ * @param[in] data_and_control Dato a transmitir y control
+ */
+static inline void SPI_set_data_and_control(uint8_t inst, SPI_TXDATCTL_reg_t *data_and_control)
+{
+	SPI[inst]->TXDATCTL = *data_and_control;
+}
+
+/**
  * @brief Configurar divisor de clock
  * @param[in] inst Instancia a configurar
  * @param[in] div Divisor deseado (el valor efectivo es este valor +1)
  */
-static inline void SPI_set_data_length(uint8_t inst, uint16_t div)
+static inline void SPI_set_clock_div(uint8_t inst, uint16_t div)
 {
 	SPI[inst]->DIV.DIVVAL = div;
 }
@@ -465,6 +486,8 @@ static inline uint8_t SPI_get_irq_flag_status(uint8_t inst, SPI_irq_sel_en irq)
 	case SPI_IRQ_SSA: { return SPI[inst]->INTSTAT.SSA; break; }
 	case SPI_IRQ_SSD: { return SPI[inst]->INTSTAT.SSD; break; }
 	}
+
+	return 0;
 }
 
 #endif /* HPL_SPI_H_ */

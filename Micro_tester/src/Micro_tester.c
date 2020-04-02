@@ -1,25 +1,5 @@
-/*
- * Descripcion del programa de testeo:
- *
- * Unicamente se utilizan las librerias de la capa de aplicacion (excepto para el CTIMER)
- *
- * En primer lugar se configura el sistema de clock con las siguientes caracteristicas:
- * -) Configuracion de cristal externo (utilizar un cristal de 12MHz)
- * -) Se configura el PLL para incrementar la frecuencia a 24MHz y se lo selecciona como clock de sistema
- *
- * Luego se configura en un pin, la salida del clock del sistema post division.
- * Esto es util para corroborar la presicion y los valores del clock del sistema.
- *
- * Luego se configura el clock con divisor fraccional, para lograr mejor presicion para
- * el periferico UART. Las cuentas se realizaron externamente para lograr una buena presicion
- * con un baudrate de 115200bps.
- *
- * Se configura el periferico GPIO para generar un blink de periodo variable (duty 50%) por software
- * utilizando como base de tiempo el SYSTICK, y como manejador del periodo el ADC, con el preset
- * propio del stick.
- *
- * Tambien se configura el periferico CTIMER para controlar un PWM sin intervencion de software, cuyo
- * ajuste de duty tambien se controla mediante el mismo ADC mencionado anteriormente.
+/**
+ * TODO: Descripcion del programa de testeo
  */
 
 #include <cr_section_macros.h>
@@ -33,6 +13,7 @@
 #include <HAL_CTIMER.h>
 #include <HAL_PININT.h>
 #include <HAL_IOCON.h>
+#include <HAL_SPI.h>
 
 #define		CTIMER_IN_PWM_MODE
 
@@ -41,6 +22,7 @@
 
 #define		TICK_PERIOD_US		1000
 #define		CONVERSION_TIME_MS	50
+#define		NRF_TIME_MS			1000
 
 #define		ADC_CHANNEL			0
 #define		ADC_FREQUENCY		500e3
@@ -62,6 +44,16 @@
 
 #define		KEY_PORTPIN			HAL_GPIO_PORTPIN_0_4
 
+#define		SPI_MOSI_PORTPIN	HAL_GPIO_PORTPIN_0_26
+#define		SPI_MISO_PORTPIN	HAL_GPIO_PORTPIN_0_27
+#define		SPI_SCK_PORTPIN		HAL_GPIO_PORTPIN_0_28
+#define		SPI_SSEL_PORTPIN	HAL_GPIO_PORTPIN_0_29
+
+#define		SPI_INSTANCE		0
+
+#define		NRF_IRQ_PORTPIN		HAL_GPIO_PORTPIN_0_22
+#define		NRF_CEN_PORTPIN		HAL_GPIO_PORTPIN_0_23
+
 static void tick_callback(void);
 
 static void adc_callback(void);
@@ -73,6 +65,12 @@ static void tx_callback(void);
 static void pinint_callback(void);
 
 static void match_callback(void);
+
+static void spi_tx_callback(void);
+
+static void spi_rx_callback(void);
+
+static void nrf_irq_callback(void);
 
 static const hal_adc_sequence_config_t adc_config =
 {
@@ -109,6 +107,16 @@ static const hal_pinint_config_t pinint_config =
 	.int_on_falling_edge = 1,
 	.portpin = KEY_PORTPIN,
 	.callback = pinint_callback
+};
+
+static const hal_pinint_config_t nrf_pinint_config =
+{
+	.channel = HAL_PININT_CHANNEL_1,
+	.mode = HAL_PININT_INTERRUPT_MODE_EDGE,
+	.int_on_rising_edge = 0,
+	.int_on_falling_edge = 1,
+	.portpin = NRF_IRQ_PORTPIN,
+	.callback = nrf_irq_callback
 };
 
 static const hal_iocon_config_t pin_config =
@@ -155,8 +163,78 @@ static const hal_ctimer_pwm_config_t pwm_config =
 
 #endif
 
+static const hal_spi_master_mode_config_t spi_master_config =
+{
+	.clock_source = HAL_SYSCON_PERIPHERAL_CLOCK_SEL_MAIN,
+	.pre_delay = 4,
+	.post_delay = 4,
+	.transfer_delay = 4,
+	.frame_delay = 4,
+	.sck_portpin = SPI_SCK_PORTPIN,
+	.mosi_portpin = SPI_MOSI_PORTPIN,
+	.miso_portpin = SPI_MISO_PORTPIN,
+	.ssel_portpin[0] = SPI_SSEL_PORTPIN,
+	.ssel_portpin[1] = HAL_GPIO_PORTPIN_NOT_USED,
+	.ssel_portpin[2] = HAL_GPIO_PORTPIN_NOT_USED,
+	.ssel_portpin[3] = HAL_GPIO_PORTPIN_NOT_USED,
+	.ssel_polarity[0] = HAL_SPI_SSEL_POLARITY_LOW,
+	.ssel_polarity[1] = HAL_SPI_SSEL_POLARITY_LOW,
+	.ssel_polarity[2] = HAL_SPI_SSEL_POLARITY_LOW,
+	.ssel_polarity[3] = HAL_SPI_SSEL_POLARITY_LOW,
+	.tx_free_callback = spi_tx_callback,
+	.rx_ready_callback = spi_rx_callback
+};
+
+static const hal_spi_master_mode_tx_config_t spi_tx_config =
+{
+	.clock_mode = HAL_SPI_CLOCK_MODE_0,
+	.clock_div = 23
+};
+
 static uint32_t blink_time_ms = 0;
 static uint32_t adc_conversion = 0;
+
+static uint32_t spi_tx_idx = 0;
+static uint32_t spi_rx_idx = 0;
+
+/*
+ * Nota: En este caso se manda un buffer constante, lo cual hace parecer poco practico el metodo.
+ * En aplicaciones reales, los datos a enviar probablemente se carguen en un buffer auxiliar,
+ * de modo tal que en todos se deberia configurar el dato, el esclavo al cual enviar el mismo,
+ * y tamaño en bits del dato, mientras que solo en el ultimo dato se debera indicar final de
+ * transfer/frame. Tambien es util el bit rxignore, para comandos donde solo se desee escribir, o se
+ * quiera aprovechar el tamaño del buffer de recepcion, ignorando los bytes de comando al dispositivo.
+ */
+static const hal_spi_master_mode_tx_data_t spi_tx_buff[2] =
+{
+	{
+		.data = 0x05,
+		.ssel0_n = 0,
+		.ssel1_n = 1,
+		.ssel2_n = 1,
+		.ssel3_n = 1,
+		.eot = 0,
+		.eof = 0,
+		.rxignore = 1,
+		.data_length = HAL_SPI_DATA_LENGTH_8_BIT
+	},
+
+	{
+		.data = HAL_SPI_DUMMY_BYTE,
+		.ssel0_n = 0,
+		.ssel1_n = 1,
+		.ssel2_n = 1,
+		.ssel3_n = 1,
+		.eot = 1,
+		.eof = 0,
+		.rxignore = 0,
+		.data_length = HAL_SPI_DATA_LENGTH_8_BIT
+	},
+};
+
+static uint8_t spi_rx_buff[10];
+
+static uint8_t spi_rx_complete_flag = 0;
 
 int main(void)
 {
@@ -177,11 +255,13 @@ int main(void)
 
 	hal_iocon_config_io(KEY_PORTPIN, &pin_config);
 
-	hal_gpio_init(LED_PORT);
-	hal_gpio_init(CTIMER_PORT);
+	hal_gpio_init(HAL_GPIO_PORT_0);
+	hal_gpio_init(HAL_GPIO_PORT_1);
 
 	hal_gpio_set_dir(LED_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 0);
 	hal_gpio_set_dir(CTIMER_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 1);
+
+	hal_gpio_set_dir(NRF_CEN_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
 
 	hal_adc_init(ADC_FREQUENCY);
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
@@ -191,6 +271,7 @@ int main(void)
 	hal_pinint_init();
 
 	hal_pinint_configure_pin_interrupt(&pinint_config);
+	hal_pinint_configure_pin_interrupt(&nrf_pinint_config);
 
 #ifndef	CTIMER_IN_PWM_MODE
 	hal_ctimer_timer_mode_init(0); // Divisor de prescaler en 1
@@ -204,12 +285,17 @@ int main(void)
 	hal_ctimer_pwm_mode_config_channel(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
 #endif
 
+	hal_spi_master_mode_init(SPI_INSTANCE, &spi_master_config);
+
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
 	hal_adc_enable_sequence(ADC_SEQUENCE);
 
 	while(1)
 	{
-
+		if(spi_rx_complete_flag)
+		{
+			spi_rx_complete_flag = 0;
+		}
 	}
 
 	return 0;
@@ -219,9 +305,11 @@ static void tick_callback(void)
 {
 	static uint32_t tick_counter = 0;
 	static uint32_t adc_counter = 0;
+	static uint32_t nrf_counter = 0;
 
 	tick_counter = (tick_counter + 1) % blink_time_ms;
 	adc_counter = (adc_counter + 1) % CONVERSION_TIME_MS;
+	nrf_counter = (nrf_counter + 1) % NRF_TIME_MS;
 
 	if(tick_counter == 0)
 	{
@@ -231,6 +319,15 @@ static void tick_callback(void)
 	if(adc_counter == 0)
 	{
 		hal_adc_start_sequence(ADC_SEQUENCE);
+	}
+
+	if(nrf_counter == 0)
+	{
+		hal_spi_master_mode_config_tx(SPI_INSTANCE, &spi_tx_config);
+
+		spi_tx_idx = 0;
+		spi_rx_idx = 0;
+		hal_spi_master_mode_tx_data(SPI_INSTANCE, &spi_tx_buff[spi_tx_idx++]);
 	}
 }
 
@@ -310,4 +407,28 @@ static void match_callback(void)
 	static uint8_t counter = 0;
 
 	counter++;
+}
+
+static void spi_tx_callback(void)
+{
+	if(spi_tx_idx < (sizeof(spi_tx_buff)/sizeof(spi_tx_buff[0])))
+	{
+		hal_spi_master_mode_tx_data(SPI_INSTANCE, &spi_tx_buff[spi_tx_idx++]);
+	}
+	else
+	{
+		// Indicar finalizacion de transmision de ser necesario
+	}
+}
+
+static void spi_rx_callback(void)
+{
+	spi_rx_buff[spi_rx_idx++] = hal_spi_master_mode_rx_data(SPI_INSTANCE);
+
+	spi_rx_complete_flag = 1;
+}
+
+static void nrf_irq_callback(void)
+{
+
 }

@@ -1,5 +1,5 @@
-LCD.c:49:6:LCD_init	16	static
-LCD.c:104:6:LCD_write	24	static
-LCD.c:134:6:LCD_check	16	static
-LCD.c:193:13:LCD_push	16	static
-LCD.c:225:16:LCD_pop	16	static
+LCD.c:43:6:LCD_init	16	static
+LCD.c:98:6:LCD_write	24	static
+LCD.c:128:6:LCD_check	16	static
+LCD.c:187:13:LCD_push	16	static
+LCD.c:219:16:LCD_pop	16	static

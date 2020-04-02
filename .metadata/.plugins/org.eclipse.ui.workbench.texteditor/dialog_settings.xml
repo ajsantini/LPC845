@@ -6,12 +6,15 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="HAL_SPI" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="NULL"/>
+			<item value="polari"/>
+			<item value="clock"/>
 			<item value="SPI"/>
 			<item value="port"/>
 			<item value="double"/>
@@ -24,9 +27,6 @@
 			<item value="PINENABLE0"/>
 			<item value="ENABLE"/>
 			<item value="PINENAB"/>
-			<item value="adc"/>
-			<item value="singlestep"/>
-			<item value="CLKOUT"/>
 		</list>
 		<list key="replacehistory">
 			<item value="HAL_SPI"/>

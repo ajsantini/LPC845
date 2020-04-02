@@ -6,6 +6,7 @@
  * @version 1.0
  */
 
+#include <stddef.h>
 #include <HAL_UART.h>
 #include <HAL_SYSCON.h>
 #include <HPL_UART.h>
@@ -62,123 +63,101 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	switch(inst)
 	{
 	case 0:
-		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART0),
 								config->baudrate,
 								config->oversampling);
 
-		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART0);
 
-		// Limpiar los resets de las USARTS en PRESETCTRL register
 		SYSCON_clear_reset(SYSCON_RESET_SEL_UART0);
 
-		// Habilitacion de interrupciones en NVIC
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_UART0);
 
 		break;
 	case 1:
-		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART1),
 								config->baudrate,
 								config->oversampling);
 
-		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART1);
 
-		// Limpiar los resets de las USARTS en PRESETCTRL register
 		SYSCON_clear_reset(SYSCON_RESET_SEL_UART1);
 
-		// Habilitacion de interrupciones en NVIC
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_UART1);
 
 		break;
 	case 2:
-		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART2),
 								config->baudrate,
 								config->oversampling);
 
-		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART2);
 
-		// Limpiar los resets de las USARTS en PRESETCTRL register
 		SYSCON_clear_reset(SYSCON_RESET_SEL_UART2);
 
-		// Habilitacion de interrupciones en NVIC
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_UART2);
 
 		break;
 	case 3:
-		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART3),
 								config->baudrate,
 								config->oversampling);
 
-		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART3);
 
-		// Limpiar los resets de las USARTS en PRESETCTRL register
 		SYSCON_clear_reset(SYSCON_RESET_SEL_UART3);
 
-		// Habilitacion de interrupciones en NVIC
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT6_UART3);
 
 		break;
 	case 4:
-		// Seleccion de clock para la UART
 		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART4),
 								config->baudrate,
 								config->oversampling);
 
-		// Habilitacion en el SYSAHBCLKCTRL register
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART4);
 
-		// Limpiar los resets de las USARTS en PRESETCTRL register
 		SYSCON_clear_reset(SYSCON_RESET_SEL_UART4);
 
-		// Habilitacion de interrupciones en NVIC
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT7_UART4);
 
 		break;
 	default: { return; break; }
 	}
 
-	// Oversampling
 	UART_set_OSRVAL(inst, config->oversampling);
 
-	// Largo de caracter
 	UART_config_data_length(inst, config->data_length);
 
-	// Paridad
 	UART_config_parity(inst, config->parity);
 
-	// Bits de stop
 	UART_config_stop_bits(inst, config->stop_bits);
 
-	// Baud rate
 	UART_set_BRGVAL(inst, aux);
-
-	// Habilitacion de interrupciones de RX
-	UART_enable_irq_RXRDY(inst);
 
 	// Las interrupciones de TX se habilitaran cuando se envie algun byte
 
-	// Callbacks de interrupciones
-	hal_uart_register_rx_callback(inst, config->rx_ready_callback);
-	hal_uart_register_tx_callback(inst, config->tx_ready_callback);
+	if(config->rx_ready_callback != NULL)
+	{
+		UART_enable_irq_RXRDY(inst);
+		hal_uart_register_rx_callback(inst, config->rx_ready_callback);
+	}
 
-	// Habilitacion de UART
+	if(config->tx_ready_callback != NULL)
+	{
+		hal_uart_register_tx_callback(inst, config->tx_ready_callback);
+	}
+
 	UART_enable(inst);
 }
 

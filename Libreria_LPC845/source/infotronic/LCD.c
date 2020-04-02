@@ -9,22 +9,16 @@
 #include <stdint.h>
 #include <LCD.h>
 #include <infotronic.h>
-#include <HPL_GPIO.h>
+#include <HAL_GPIO.h>
 
-#define		LCD_D4_PORT				0
-#define		LCD_D4_PIN				9
-#define		LCD_D5_PORT				0
-#define		LCD_D5_PIN				10
-#define		LCD_D6_PORT				0
-#define		LCD_D6_PIN				11
-#define		LCD_D7_PORT				0
-#define		LCD_D7_PIN				13
+#define		LCD_D4_PORTPIN			HAL_GPIO_PORTPIN_0_9
+#define		LCD_D5_PORTPIN			HAL_GPIO_PORTPIN_0_10
+#define		LCD_D6_PORTPIN			HAL_GPIO_PORTPIN_0_11
+#define		LCD_D7_PORTPIN			HAL_GPIO_PORTPIN_0_13
 
-#define		LCD_EN_PORT				0
-#define		LCD_EN_PIN				14
+#define		LCD_EN_PORTPIN			HAL_GPIO_PORTPIN_0_14
 
-#define		LCD_RS_PORT				0
-#define		LCD_RS_PIN				15
+#define		LCD_RS_PORTPIN			HAL_GPIO_PORTPIN_0_15
 
 #define		LCD_CONTROL				0
 #define		LCD_DATA				1
@@ -50,41 +44,41 @@ void LCD_init(void)
 {
 	uint32_t counter;
 
-	GPIO_set_dir(LCD_D4_PORT, LCD_D4_PIN, GPIO_DIR_OUTPUT, 0);
-	GPIO_set_dir(LCD_D5_PORT, LCD_D5_PIN, GPIO_DIR_OUTPUT, 0);
-	GPIO_set_dir(LCD_D6_PORT, LCD_D6_PIN, GPIO_DIR_OUTPUT, 0);
-	GPIO_set_dir(LCD_D7_PORT, LCD_D7_PIN, GPIO_DIR_OUTPUT, 0);
-	GPIO_set_dir(LCD_EN_PORT, LCD_EN_PIN, GPIO_DIR_OUTPUT, 0);
-	GPIO_set_dir(LCD_RS_PORT, LCD_RS_PIN, GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(LCD_D4_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(LCD_D5_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(LCD_D6_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(LCD_D7_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(LCD_EN_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
+	hal_gpio_set_dir(LCD_RS_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
 
-	GPIO_clear_pin(LCD_EN_PORT, LCD_EN_PIN);
+	hal_gpio_clear_pin(LCD_EN_PORTPIN);
 
 	infotronic_blocking_delay(20);
 
 	for(counter = 0; counter < 3; counter++)
 	{
-		GPIO_set_pin(LCD_D4_PORT, LCD_D4_PIN);
-		GPIO_set_pin(LCD_D5_PORT, LCD_D5_PIN);
-		GPIO_clear_pin(LCD_D6_PORT, LCD_D6_PIN);
-		GPIO_clear_pin(LCD_D7_PORT, LCD_D7_PIN);
+		hal_gpio_set_pin(LCD_D4_PORTPIN);
+		hal_gpio_set_pin(LCD_D5_PORTPIN);
+		hal_gpio_clear_pin(LCD_D6_PORTPIN);
+		hal_gpio_clear_pin(LCD_D7_PORTPIN);
 
-		GPIO_clear_pin(LCD_RS_PORT, LCD_RS_PIN);
+		hal_gpio_clear_pin(LCD_RS_PORTPIN);
 
-		GPIO_set_pin(LCD_EN_PORT, LCD_EN_PIN);
-		GPIO_clear_pin(LCD_EN_PORT, LCD_EN_PIN);
+		hal_gpio_set_pin(LCD_EN_PORTPIN);
+		hal_gpio_clear_pin(LCD_EN_PORTPIN);
 
 		infotronic_blocking_delay(4);
 	}
 
-	GPIO_clear_pin(LCD_D4_PORT, LCD_D4_PIN);
-	GPIO_set_pin(LCD_D5_PORT, LCD_D5_PIN);
-	GPIO_clear_pin(LCD_D6_PORT, LCD_D6_PIN);
-	GPIO_clear_pin(LCD_D7_PORT, LCD_D7_PIN);
+	hal_gpio_clear_pin(LCD_D4_PORTPIN);
+	hal_gpio_set_pin(LCD_D5_PORTPIN);
+	hal_gpio_clear_pin(LCD_D6_PORTPIN);
+	hal_gpio_clear_pin(LCD_D7_PORTPIN);
 
-	GPIO_clear_pin(LCD_RS_PORT, LCD_RS_PIN);
+	hal_gpio_clear_pin(LCD_RS_PORTPIN);
 
-	GPIO_set_pin(LCD_EN_PORT, LCD_EN_PIN);
-	GPIO_clear_pin(LCD_EN_PORT, LCD_EN_PIN);
+	hal_gpio_set_pin(LCD_EN_PORTPIN);
+	hal_gpio_clear_pin(LCD_EN_PORTPIN);
 
 	infotronic_blocking_delay(2);
 
@@ -139,51 +133,51 @@ void LCD_check(void)
 	{
 		if(((data >> 0) & 0x01) == 0x01)
 		{
-			GPIO_set_pin(LCD_D4_PORT, LCD_D4_PIN);
+			hal_gpio_set_pin(LCD_D4_PORTPIN);
 		}
 		else
 		{
-			GPIO_clear_pin(LCD_D4_PORT, LCD_D4_PIN);
+			hal_gpio_clear_pin(LCD_D4_PORTPIN);
 		}
 
 		if(((data >> 1) & 0x01) == 0x01)
 		{
-			GPIO_set_pin(LCD_D5_PORT, LCD_D5_PIN);
+			hal_gpio_set_pin(LCD_D5_PORTPIN);
 		}
 		else
 		{
-			GPIO_clear_pin(LCD_D5_PORT, LCD_D5_PIN);
+			hal_gpio_clear_pin(LCD_D5_PORTPIN);
 		}
 
 		if(((data >> 2) & 0x01) == 0x01)
 		{
-			GPIO_set_pin(LCD_D6_PORT, LCD_D6_PIN);
+			hal_gpio_set_pin(LCD_D6_PORTPIN);
 		}
 		else
 		{
-			GPIO_clear_pin(LCD_D6_PORT, LCD_D6_PIN);
+			hal_gpio_clear_pin(LCD_D6_PORTPIN);
 		}
 
 		if(((data >> 3) & 0x01) == 0x01)
 		{
-			GPIO_set_pin(LCD_D7_PORT, LCD_D7_PIN);
+			hal_gpio_set_pin(LCD_D7_PORTPIN);
 		}
 		else
 		{
-			GPIO_clear_pin(LCD_D7_PORT, LCD_D7_PIN);
+			hal_gpio_clear_pin(LCD_D7_PORTPIN);
 		}
 
 		if(data & 0x80)
 		{
-			GPIO_clear_pin(LCD_RS_PORT, LCD_RS_PIN);
+			hal_gpio_clear_pin(LCD_RS_PORTPIN);
 		}
 		else
 		{
-			GPIO_set_pin(LCD_RS_PORT, LCD_RS_PIN);
+			hal_gpio_set_pin(LCD_RS_PORTPIN);
 		}
 
-		GPIO_set_pin(LCD_EN_PORT, LCD_EN_PIN);
-		GPIO_clear_pin(LCD_EN_PORT, LCD_EN_PIN);
+		hal_gpio_set_pin(LCD_EN_PORTPIN);
+		hal_gpio_clear_pin(LCD_EN_PORTPIN);
 	}
 }
 
