@@ -174,8 +174,11 @@ hal_uart_tx_result hal_uart_tx_byte(uint8_t inst, uint32_t data)
 		// Escribo data
 		UART_write_data(inst, data);
 
-		// Habilito interrupciones de TXRDY
-		UART_enable_irq_TXRDY(inst);
+		if(uart_tx_callback[inst] != dummy_callback)
+		{
+			// Habilito interrupciones de TXRDY unicamente si se paso un callback
+			UART_enable_irq_TXRDY(inst);
+		}
 	}
 	else
 	{
@@ -212,7 +215,16 @@ hal_uart_rx_result hal_uart_rx_byte(uint8_t inst, uint32_t *data)
  */
 void hal_uart_register_rx_callback(uint8_t inst, void (*new_callback)(void))
 {
-	uart_rx_callback[inst] = new_callback;
+	if(new_callback == NULL)
+	{
+		UART_disable_irq_RXRDY(inst);
+		uart_rx_callback[inst] = dummy_callback;
+	}
+	else
+	{
+		UART_enable_irq_RXRDY(inst);
+		uart_rx_callback[inst] = new_callback;
+	}
 }
 
 /**
@@ -222,7 +234,15 @@ void hal_uart_register_rx_callback(uint8_t inst, void (*new_callback)(void))
  */
 void hal_uart_register_tx_callback(uint8_t inst, void (*new_callback)(void))
 {
-	uart_tx_callback[inst] = new_callback;
+	if(new_callback == NULL)
+	{
+		uart_tx_callback[inst] = dummy_callback;
+	}
+	else
+	{
+		// Las interrupciones de TX se habilitaran (en caso de ser necesario) en el envio de un dato
+		uart_tx_callback[inst] = new_callback;
+	}
 }
 
 /**

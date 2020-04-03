@@ -257,6 +257,8 @@ static inline uint8_t SPI_get_status_flag(uint8_t inst, SPI_status_flag_en flag)
 	case SPI_STATUS_FLAG_ENDTRANSFER: { return SPI[inst]->STAT.ENDTRANSFER; break; }
 	case SPI_STATUS_FLAG_MSTIDLE: { return SPI[inst]->STAT.MSTIDLE; break; }
 	}
+
+	return 0;
 }
 
 /**

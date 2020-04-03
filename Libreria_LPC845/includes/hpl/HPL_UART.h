@@ -247,7 +247,7 @@ static inline void UART_enable_rx_invert(uint8_t inst)
  * @brief Inhabilitar inversion para recepcion
  * @param[in] inst Instancia a configurar
  */
-static inline void UART_disable_rx_inver(uint8_t inst)
+static inline void UART_disable_rx_invert(uint8_t inst)
 {
 	UART[inst]->CFG.RXPOL = 0;
 }
@@ -265,7 +265,7 @@ static inline void UART_enable_tx_invert(uint8_t inst)
  * @brief Inhabilitar inversion para transmision
  * @param[in] inst Instancia a configurar
  */
-static inline void UART_disable_tx_inver(uint8_t inst)
+static inline void UART_disable_tx_invert(uint8_t inst)
 {
 	UART[inst]->CFG.TXPOL = 0;
 }

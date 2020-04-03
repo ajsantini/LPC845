@@ -182,12 +182,39 @@ void hal_spi_master_mode_tx_data(hal_spi_sel_en inst, const hal_spi_master_mode_
 }
 
 /**
- * @brief Indicar finalizacion de transmision de datos
- * @param[in] inst Instancia a utilizar
+ * @brief Actualizar callback en TXRDY
+ * @param[in] inst Instancia a configurar
+ * @param[in] new_callback Nuevo callback a ejecutar en TXRDY
  */
-void hal_spi_master_mode_tx_end(hal_spi_sel_en inst)
+void hal_spi_master_mode_register_tx_callback(hal_spi_sel_en inst, void (*new_callback)(void))
 {
-	SPI_set_end_of_transmission(inst);
+	if(new_callback == NULL)
+	{
+		spi_tx_callback[inst] = dummy_irq;
+	}
+	else
+	{
+		spi_tx_callback[inst] = new_callback;
+	}
+}
+
+/**
+ * @brief Actualizar callback en RXRDY
+ * @param[in] inst Instancia a configurar
+ * @param[in] new_callback Nuevo callback a ejecutar en RXRDY
+ */
+void hal_spi_master_mode_register_rx_callback(hal_spi_sel_en inst, void (*new_callback)(void))
+{
+	if(new_callback == NULL)
+	{
+		SPI_disable_irq(inst, SPI_IRQ_RXRDY);
+		spi_rx_callback[inst] = dummy_irq;
+	}
+	else
+	{
+		SPI_enable_irq(inst, SPI_IRQ_RXRDY);
+		spi_rx_callback[inst] = new_callback;
+	}
 }
 
 /*
@@ -204,7 +231,7 @@ static void dummy_irq(void)
  */
 static void spi_irq_handler(uint8_t inst)
 {
-	if(SPI_get_irq_flag_status(inst, SPI_IRQ_RXRDY))
+	if(SPI_get_irq_flag_status(inst, SPI_IRQ_RXRDY) && SPI_get_status_flag(inst, SPI_STATUS_FLAG_RXRDY))
 	{
 		spi_rx_callback[inst]();
 
@@ -212,7 +239,7 @@ static void spi_irq_handler(uint8_t inst)
 		(void) SPI_read_rx_data(inst);
 	}
 
-	if(SPI_get_irq_flag_status(inst, SPI_IRQ_TXRDY))
+	if(SPI_get_irq_flag_status(inst, SPI_IRQ_TXRDY) && SPI_get_status_flag(inst, SPI_STATUS_FLAG_TXRDY))
 	{
 		// Inhabilitacion de interrupcion de TX por si no se envia mas informacion
 		SPI_disable_irq(inst, SPI_IRQ_TXRDY);

@@ -123,14 +123,14 @@ typedef struct
 
 typedef struct
 {
-	uint32_t RXDAT : 8;
-	uint32_t : 24;
+	uint32_t RXDAT : 9;
+	uint32_t : 23;
 }UART_RXDAT_reg_t;
 
 typedef struct
 {
-	uint32_t RXDAT : 8;
-	uint32_t : 4;
+	uint32_t RXDAT : 9;
+	uint32_t : 3;
 	uint32_t FRAMERR : 1;
 	uint32_t PARITYERR : 1;
 	uint32_t RXNOISE : 1;
@@ -140,8 +140,8 @@ typedef struct
 
 typedef struct
 {
-	uint32_t TXDAT : 8;
-	uint32_t : 24;
+	uint32_t TXDAT : 9;
+	uint32_t : 23;
 }UART_TXDAT_reg_t;
 
 typedef struct

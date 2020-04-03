@@ -129,4 +129,18 @@ void hal_spi_master_mode_config_tx(hal_spi_sel_en inst, const hal_spi_master_mod
  */
 void hal_spi_master_mode_tx_data(hal_spi_sel_en inst, const hal_spi_master_mode_tx_data_t *data);
 
+/**
+ * @brief Actualizar callback en TXRDY
+ * @param[in] inst Instancia a configurar
+ * @param[in] new_callback Nuevo callback a ejecutar en TXRDY
+ */
+void hal_spi_master_mode_register_tx_callback(hal_spi_sel_en inst, void (*new_callback)(void));
+
+/**
+ * @brief Actualizar callback en RXRDY
+ * @param[in] inst Instancia a configurar
+ * @param[in] new_callback Nuevo callback a ejecutar en RXRDY
+ */
+void hal_spi_master_mode_register_rx_callback(hal_spi_sel_en inst, void (*new_callback)(void));
+
 #endif /* HAL_SPI_H_ */

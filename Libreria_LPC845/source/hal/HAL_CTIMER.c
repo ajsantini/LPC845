@@ -85,7 +85,15 @@ void hal_ctimer_timer_mode_config_match(hal_ctimer_match_sel_en match_sel, const
 	if(match_config->interrupt_on_match)
 	{
 		CTIMER_enable_interrupt_on_match(match_sel);
-		match_callbacks[match_sel] = match_config->callback;
+
+		if(match_config->callback != NULL)
+		{
+			match_callbacks[match_sel] = match_config->callback;
+		}
+		else
+		{
+			match_callbacks[match_sel] = dummy_irq;
+		}
 	}
 	else
 	{

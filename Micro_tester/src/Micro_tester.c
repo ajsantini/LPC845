@@ -51,9 +51,6 @@
 
 #define		SPI_INSTANCE		0
 
-#define		NRF_IRQ_PORTPIN		HAL_GPIO_PORTPIN_0_22
-#define		NRF_CEN_PORTPIN		HAL_GPIO_PORTPIN_0_23
-
 static void tick_callback(void);
 
 static void adc_callback(void);
@@ -69,8 +66,6 @@ static void match_callback(void);
 static void spi_tx_callback(void);
 
 static void spi_rx_callback(void);
-
-static void nrf_irq_callback(void);
 
 static const hal_adc_sequence_config_t adc_config =
 {
@@ -107,16 +102,6 @@ static const hal_pinint_config_t pinint_config =
 	.int_on_falling_edge = 1,
 	.portpin = KEY_PORTPIN,
 	.callback = pinint_callback
-};
-
-static const hal_pinint_config_t nrf_pinint_config =
-{
-	.channel = HAL_PININT_CHANNEL_1,
-	.mode = HAL_PININT_INTERRUPT_MODE_EDGE,
-	.int_on_rising_edge = 0,
-	.int_on_falling_edge = 1,
-	.portpin = NRF_IRQ_PORTPIN,
-	.callback = nrf_irq_callback
 };
 
 static const hal_iocon_config_t pin_config =
@@ -261,8 +246,6 @@ int main(void)
 	hal_gpio_set_dir(LED_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 0);
 	hal_gpio_set_dir(CTIMER_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 1);
 
-	hal_gpio_set_dir(NRF_CEN_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
-
 	hal_adc_init(ADC_FREQUENCY);
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
 
@@ -271,7 +254,6 @@ int main(void)
 	hal_pinint_init();
 
 	hal_pinint_configure_pin_interrupt(&pinint_config);
-	hal_pinint_configure_pin_interrupt(&nrf_pinint_config);
 
 #ifndef	CTIMER_IN_PWM_MODE
 	hal_ctimer_timer_mode_init(0); // Divisor de prescaler en 1
@@ -426,9 +408,4 @@ static void spi_rx_callback(void)
 	spi_rx_buff[spi_rx_idx++] = hal_spi_master_mode_rx_data(SPI_INSTANCE);
 
 	spi_rx_complete_flag = 1;
-}
-
-static void nrf_irq_callback(void)
-{
-
 }
