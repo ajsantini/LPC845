@@ -17,5 +17,4 @@ SUBDIRS := \
 source/hal \
 source/hpl \
 source/infotronic \
-source \
 

@@ -135,16 +135,26 @@
 							<tool id="com.crt.advproject.ar.lib.debug.1170401296" name="MCU Archiver" superClass="com.crt.advproject.ar.lib.debug"/>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="com.crt.advproject.config.lib.debug.941861798.726292640" name="/" resourcePath="source">
+						<toolChain id="com.crt.advproject.toolchain.lib.debug.927740280" name="NXP MCU Tools" superClass="com.crt.advproject.toolchain.lib.debug" unusedChildren="">
+							<tool id="com.crt.advproject.cpp.lib.debug.1926209987" name="MCU C++ Compiler" superClass="com.crt.advproject.cpp.lib.debug.1280746103"/>
+							<tool id="com.crt.advproject.gcc.lib.debug.482766032" name="MCU C Compiler" superClass="com.crt.advproject.gcc.lib.debug.2004063862">
+								<inputType id="com.crt.advproject.compiler.input.1509034169" superClass="com.crt.advproject.compiler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.gas.lib.debug.1017103392" name="MCU Assembler" superClass="com.crt.advproject.gas.lib.debug.356328795">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2039100387" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="com.crt.advproject.assembler.input.1346294118" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.ar.lib.debug.1666330076" name="MCU Archiver" superClass="com.crt.advproject.ar.lib.debug.1170401296"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
 						<entry excluding="hal|infotronic|hpl|hri" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes/hal"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes/hpl"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes/hri"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes/infotronic"/>
-						<entry excluding="hal|infotronic|hpl|hri" flags="LOCAL|VALUE_WORKSPACE_PATH" kind="sourcePath" name="source"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source/hal"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source/hpl"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source/infotronic"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="source"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -296,10 +306,6 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes/hpl"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes/hri"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="includes/infotronic"/>
-						<entry excluding="hal|infotronic|hpl|hri" flags="LOCAL|VALUE_WORKSPACE_PATH" kind="sourcePath" name="source"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source/hal"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source/hpl"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source/infotronic"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
