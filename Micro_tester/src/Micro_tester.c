@@ -14,6 +14,7 @@
 #include <HAL_PININT.h>
 #include <HAL_IOCON.h>
 #include <HAL_SPI.h>
+#include <HAL_WKT.h>
 
 #define		CTIMER_IN_PWM_MODE
 
@@ -32,12 +33,12 @@
 #define		UART_RX_PORTPIN		HAL_GPIO_PORTPIN_0_8
 #define		UART_TX_PORTPIN		HAL_GPIO_PORTPIN_0_9
 
-#define		UART_NUMBER			0
-#define		UART_BAUDRATE		115200
-
-#define		CLOCKOUT_DIVIDER	10
 #define		CLOCKOUT_PORT		0
 #define		CLOCKOUT_PIN		18
+#define		CLOCKOUT_DIVIDER	10
+
+#define		UART_NUMBER			0
+#define		UART_BAUDRATE		115200
 
 #define		CTIMER_PORT			HAL_GPIO_PORT_0
 #define		CTIMER_PORT_PIN		HAL_GPIO_PORTPIN_0_16
@@ -50,6 +51,10 @@
 #define		SPI_SSEL_PORTPIN	HAL_GPIO_PORTPIN_0_29
 
 #define		SPI_INSTANCE		0
+
+#define		WKT_OUT_PORTPIN		HAL_GPIO_PORTPIN_0_17
+
+#define		WKT_TIME_USEG		(5000)
 
 static void tick_callback(void);
 
@@ -66,6 +71,8 @@ static void match_callback(void);
 static void spi_tx_callback(void);
 
 static void spi_rx_callback(void);
+
+static void wkt_callback(void);
 
 static const hal_adc_sequence_config_t adc_config =
 {
@@ -245,6 +252,7 @@ int main(void)
 
 	hal_gpio_set_dir(LED_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 0);
 	hal_gpio_set_dir(CTIMER_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 1);
+	hal_gpio_set_dir(WKT_OUT_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
 
 	hal_adc_init(ADC_FREQUENCY);
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
@@ -271,6 +279,9 @@ int main(void)
 
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
 	hal_adc_enable_sequence(ADC_SEQUENCE);
+
+	hal_wkt_init(HAL_WKT_CLOCK_SOURCE_FRO_DIV, 0, wkt_callback);
+	hal_wkt_start_count(WKT_TIME_USEG);
 
 	while(1)
 	{
@@ -408,4 +419,10 @@ static void spi_rx_callback(void)
 	spi_rx_buff[spi_rx_idx++] = hal_spi_master_mode_rx_data(SPI_INSTANCE);
 
 	spi_rx_complete_flag = 1;
+}
+
+static void wkt_callback(void)
+{
+	hal_gpio_toggle_pin(WKT_OUT_PORTPIN);
+	hal_wkt_start_count(WKT_TIME_USEG);
 }

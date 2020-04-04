@@ -13,7 +13,8 @@ C_SRCS += \
 ../source/hal/HAL_SPI.c \
 ../source/hal/HAL_SYSCON.c \
 ../source/hal/HAL_SYSTICK.c \
-../source/hal/HAL_UART.c 
+../source/hal/HAL_UART.c \
+../source/hal/HAL_WKT.c 
 
 OBJS += \
 ./source/hal/HAL_ADC.o \
@@ -25,7 +26,8 @@ OBJS += \
 ./source/hal/HAL_SPI.o \
 ./source/hal/HAL_SYSCON.o \
 ./source/hal/HAL_SYSTICK.o \
-./source/hal/HAL_UART.o 
+./source/hal/HAL_UART.o \
+./source/hal/HAL_WKT.o 
 
 C_DEPS += \
 ./source/hal/HAL_ADC.d \
@@ -37,7 +39,8 @@ C_DEPS += \
 ./source/hal/HAL_SPI.d \
 ./source/hal/HAL_SYSCON.d \
 ./source/hal/HAL_SYSTICK.d \
-./source/hal/HAL_UART.d 
+./source/hal/HAL_UART.d \
+./source/hal/HAL_WKT.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

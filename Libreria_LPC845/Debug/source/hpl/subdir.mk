@@ -15,7 +15,8 @@ C_SRCS += \
 ../source/hpl/HPL_SWM.c \
 ../source/hpl/HPL_SYSCON.c \
 ../source/hpl/HPL_SYSTICK.c \
-../source/hpl/HPL_UART.c 
+../source/hpl/HPL_UART.c \
+../source/hpl/HPL_WKT.c 
 
 OBJS += \
 ./source/hpl/HPL_ADC.o \
@@ -29,7 +30,8 @@ OBJS += \
 ./source/hpl/HPL_SWM.o \
 ./source/hpl/HPL_SYSCON.o \
 ./source/hpl/HPL_SYSTICK.o \
-./source/hpl/HPL_UART.o 
+./source/hpl/HPL_UART.o \
+./source/hpl/HPL_WKT.o 
 
 C_DEPS += \
 ./source/hpl/HPL_ADC.d \
@@ -43,7 +45,8 @@ C_DEPS += \
 ./source/hpl/HPL_SWM.d \
 ./source/hpl/HPL_SYSCON.d \
 ./source/hpl/HPL_SYSTICK.d \
-./source/hpl/HPL_UART.d 
+./source/hpl/HPL_UART.d \
+./source/hpl/HPL_WKT.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -7,7 +7,6 @@
  */
 
 #include <HRI_UART.h>
-#include <HPL_UART.h>
 
 volatile UART_per_t * const UART[] = { //!< Perifericos USART
 		(UART_per_t *) UART0_BASE,

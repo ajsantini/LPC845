@@ -4149,3 +4149,15 @@ java.io.IOException: Unable to resolve plug-in "com.crt.lite".
 
 !ENTRY org.eclipse.jface.text 2 0 2020-04-03 20:45:45.405
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.jface.text 2 0 2020-04-03 20:57:34.757
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY com.crt.log 1 0 2020-04-03 22:08:04.389
+!MESSAGE Trying to connect to redlink server on port 3025.
+
+!ENTRY com.crt.debugcommon 1 0 2020-04-03 22:08:04.392
+!MESSAGE RedlinkServer telnet session connected on port 3025->49178 @ 127.0.0.1
+
+!ENTRY com.crt.dsfdebug 1 0 2020-04-03 22:10:21.060
+!MESSAGE Telnet session connected on port 3330->56870 @ 127.0.0.1
