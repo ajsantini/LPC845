@@ -14,7 +14,8 @@
 #include <HPL_SWM.h>
 #include <HPL_NVIC.h>
 
-#define	ADC_MAX_FREQ			((uint32_t) 1.2e6) //<! Maxima frecuencia de conversion admitida por el ADC
+#define	ADC_MAX_FREQ_SYNC		((uint32_t) 1.2e6) //<! Maxima frecuencia de conversion admitida por el ADC (modo sincronico)
+#define	ADC_MAX_FREQ_ASYNC		((uint32_t) 0.6e6) //<! Maxima frecuencia de conversion admitida por el ADC (modo asincronico)
 #define	ADC_CHANNEL_AMOUNT		12
 
 static void dummy_irq_callback(void);
@@ -35,15 +36,13 @@ static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks p
  * Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
  *
  * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] div Divisor para la logica del ADC (tambien afecta a la frecuencia de sampleo en modo sincronico)
+ * @param[in] div Divisor para la logica del ADC (solo importa para modo asincronico)
  * @param[in] clock_source Fuente de clock para el ADC (solo importa para modo asincronico)
  * @param[in] mode Seleccion de modo de operacion, sincronico o asincronico
  * @param[in] low_power Seleccion de modo de bajo consumo
  */
 void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power)
 {
-	sample_freq %= ADC_MAX_FREQ;
-
 	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_ADC);
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_ADC);
 	SYSCON_clear_reset(SYSCON_RESET_SEL_ADC);
@@ -57,6 +56,8 @@ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clo
 	{
 		uint32_t aux;
 
+		sample_freq %= ADC_MAX_FREQ_ASYNC;
+
 		// El calculo de la frecuencia de sampleo se hace con una frecuencia
 		// que depende de la seleccion de clock en el SYSCON
 		if(clock_source == HAL_ADC_CLOCK_SOURCE_FRO)
@@ -68,15 +69,31 @@ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clo
 			aux = hal_syscon_get_pll_clock() / sample_freq;
 		}
 
+		if(aux > 0)
+		{
+			aux--;
+		}
+
 		SYSCON_set_adc_clock(clock_source, (uint8_t) aux);
 
 		ADC_control_config(div, mode, low_power);
 	}
 	else
 	{
+		uint32_t aux;
+
 		// El calculo de la frecuencia de sampleo se hace con la frecuencia
-		// del main clock, ya dividida
-		ADC_control_config(div, mode, low_power);
+		// del main clock
+		sample_freq %= ADC_MAX_FREQ_SYNC;
+
+		aux = hal_syscon_get_system_clock() / sample_freq;
+
+		if(aux > 0)
+		{
+			aux--;
+		}
+
+		ADC_control_config((uint8_t) aux, mode, low_power);
 	}
 }
 

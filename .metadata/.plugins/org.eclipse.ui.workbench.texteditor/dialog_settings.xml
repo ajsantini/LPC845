@@ -6,12 +6,16 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="inver" key="selection"/>
+		<item value="SYSCON_pll_source_sel_en" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="SYSCON_pll_source_sel_en"/>
+			<item value="pll"/>
+			<item value="hal_syscon_frg_clock_sel_en"/>
+			<item value="adc"/>
 			<item value="inver"/>
 			<item value="NULL"/>
 			<item value="polari"/>
@@ -23,10 +27,6 @@
 			<item value="INTENSET"/>
 			<item value="enable"/>
 			<item value="Habilitar"/>
-			<item value="get_"/>
-			<item value="ADC_enable_sequence_interrupt"/>
-			<item value="PINENABLE0"/>
-			<item value="ENABLE"/>
 		</list>
 		<list key="replacehistory">
 			<item value="HAL_SPI"/>

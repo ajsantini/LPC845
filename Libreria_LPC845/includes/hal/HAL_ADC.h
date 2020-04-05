@@ -114,7 +114,7 @@ typedef struct
  * Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
  *
  * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] div Divisor para la logica del ADC (tambien afecta a la frecuencia de sampleo en modo sincronico)
+ * @param[in] div Divisor para la logica del ADC (solo importa para modo asincronico)
  * @param[in] clock_source Fuente de clock para el ADC (solo importa para modo asincronico)
  * @param[in] mode Seleccion de modo de operacion, sincronico o asincronico
  * @param[in] low_power Seleccion de modo de bajo consumo
