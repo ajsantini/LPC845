@@ -26,7 +26,7 @@ HPL_SYSCON.h:701:20:SYSCON_power_up_peripheral	16	static
 HPL_SWM.h:26:20:SWM_init	8	static
 HPL_SWM.h:34:20:SWM_deinit	8	static
 HPL_SWM.h:526:20:SWM_enable_ADC	24	static
-HPL_NVIC.h:56:20:NVIC_enable_interrupt	16	static
+HPL_NVIC.h:64:20:NVIC_enable_interrupt	16	static
 HAL_ADC.c:40:6:hal_adc_init	24	static
 HAL_ADC.c:67:6:hal_adc_config_sequence	24	static
 HAL_ADC.c:139:6:hal_adc_enable_sequence	16	static

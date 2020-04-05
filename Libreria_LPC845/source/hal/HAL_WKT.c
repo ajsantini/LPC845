@@ -12,6 +12,7 @@
 #include <HPL_WKT.h>
 #include <HPL_NVIC.h>
 #include <HPL_SYSCON.h>
+#include <HPL_PMU.h>
 
 #define		HAL_WKT_DIVIDE_VALUE		(16)
 #define		HAL_WKT_LOW_POWER_OSC_FREQ	(10e3)
@@ -52,6 +53,7 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 	{
 	case HAL_WKT_CLOCK_SOURCE_FRO_DIV:
 	{
+		PMU_disable_wake_up_clock_pin();
 		WKT_set_internal_clock_source();
 		WKT_select_clock_source(WKT_CLOCK_SOURCE_DIVIDED_FRO);
 
@@ -60,6 +62,7 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 
 	case HAL_WKT_CLOCK_SOURCE_LOW_POWER_OSC:
 	{
+		PMU_disable_wake_up_clock_pin();
 		WKT_set_internal_clock_source();
 		WKT_select_clock_source(WKT_CLOCK_SOURCE_LOW_POWER_CLOCK);
 
@@ -68,7 +71,7 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 
 	case HAL_WKT_CLOCK_SOURCE_EXTERNAL:
 	{
-		#warning Falta activar la fuente externa de clock para este periferico
+		PMU_enable_wake_up_clock_pin();
 		current_ext_clock = ext_clock_value;
 		WKT_set_external_clock_source();
 

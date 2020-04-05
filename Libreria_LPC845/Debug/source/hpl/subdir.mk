@@ -9,8 +9,10 @@ C_SRCS += \
 ../source/hpl/HPL_DAC.c \
 ../source/hpl/HPL_GPIO.c \
 ../source/hpl/HPL_IOCON.c \
+../source/hpl/HPL_MRT.c \
 ../source/hpl/HPL_NVIC.c \
 ../source/hpl/HPL_PININT.c \
+../source/hpl/HPL_PMU.c \
 ../source/hpl/HPL_SPI.c \
 ../source/hpl/HPL_SWM.c \
 ../source/hpl/HPL_SYSCON.c \
@@ -24,8 +26,10 @@ OBJS += \
 ./source/hpl/HPL_DAC.o \
 ./source/hpl/HPL_GPIO.o \
 ./source/hpl/HPL_IOCON.o \
+./source/hpl/HPL_MRT.o \
 ./source/hpl/HPL_NVIC.o \
 ./source/hpl/HPL_PININT.o \
+./source/hpl/HPL_PMU.o \
 ./source/hpl/HPL_SPI.o \
 ./source/hpl/HPL_SWM.o \
 ./source/hpl/HPL_SYSCON.o \
@@ -39,8 +43,10 @@ C_DEPS += \
 ./source/hpl/HPL_DAC.d \
 ./source/hpl/HPL_GPIO.d \
 ./source/hpl/HPL_IOCON.d \
+./source/hpl/HPL_MRT.d \
 ./source/hpl/HPL_NVIC.d \
 ./source/hpl/HPL_PININT.d \
+./source/hpl/HPL_PMU.d \
 ./source/hpl/HPL_SPI.d \
 ./source/hpl/HPL_SWM.d \
 ./source/hpl/HPL_SYSCON.d \

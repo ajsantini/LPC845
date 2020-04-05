@@ -7,7 +7,6 @@
  */
 
 #include <stdint.h>
-#include <HPL_IOCON.h>
 #include <HRI_IOCON.h>
 
 volatile IOCON_per_t * const IOCON = (IOCON_per_t *) IOCON_BASE; //!< Periferico IOCON
