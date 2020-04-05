@@ -6,6 +6,7 @@
  * @version 1.0
  */
 
+#include <stddef.h>
 #include <HAL_ADC.h>
 #include <HAL_SYSCON.h>
 #include <HPL_ADC.h>
@@ -32,12 +33,14 @@ static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks p
  * @brief Inicializar el ADC
  *
  * Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
- * Asume tension de trabajo alta y utiliza como fuente de clock el FRO sin dividir.
- * Configura el ADC asumiendo el modo NO bajo consumo.
  *
  * @param[in] sample_freq Frecuencia de sampleo deseada
+ * @param[in] div Divisor para la logica del ADC (tambien afecta a la frecuencia de sampleo en modo sincronico)
+ * @param[in] clock_source Fuente de clock para el ADC (solo importa para modo asincronico)
+ * @param[in] mode Seleccion de modo de operacion, sincronico o asincronico
+ * @param[in] low_power Seleccion de modo de bajo consumo
  */
-void hal_adc_init(uint32_t sample_freq)
+void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power)
 {
 	sample_freq %= ADC_MAX_FREQ;
 
@@ -48,12 +51,33 @@ void hal_adc_init(uint32_t sample_freq)
 	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
-	// Calibracion por hardware
 	ADC_hardware_calib(hal_syscon_get_fro_clock() / 500e3);
 
-	ADC_control_config(hal_syscon_get_fro_clock() / sample_freq,
-						ADC_OPERATION_MODE_ASYNCHRONOUS,
-						ADC_LOW_POWER_MODE_DISABLED);
+	if(mode == HAL_ADC_OPERATION_MODE_ASYNCHRONOUS)
+	{
+		uint32_t aux;
+
+		// El calculo de la frecuencia de sampleo se hace con una frecuencia
+		// que depende de la seleccion de clock en el SYSCON
+		if(clock_source == HAL_ADC_CLOCK_SOURCE_FRO)
+		{
+			aux = hal_syscon_get_fro_clock() / sample_freq;
+		}
+		else
+		{
+			aux = hal_syscon_get_pll_clock() / sample_freq;
+		}
+
+		SYSCON_set_adc_clock(clock_source, (uint8_t) aux);
+
+		ADC_control_config(div, mode, low_power);
+	}
+	else
+	{
+		// El calculo de la frecuencia de sampleo se hace con la frecuencia
+		// del main clock, ya dividida
+		ADC_control_config(div, mode, low_power);
+	}
 }
 
 /**
@@ -109,7 +133,17 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 		}
 	}
 
-	adc_seq_completed_callback[sequence] = config->callback;
+	if(config->callback != NULL)
+	{
+		adc_seq_completed_callback[sequence] = config->callback;
+		ADC_enable_sequence_interrupt(sequence);
+	}
+	else
+	{
+		adc_seq_completed_callback[sequence] = dummy_irq_callback;
+		ADC_disable_sequence_interrupt(sequence);
+	}
+
 
 	if(config->burst)
 	{
@@ -119,8 +153,6 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 	{
 		ADC_sequence_clear_burst(sequence);
 	}
-
-	ADC_enable_sequence_interrupt(sequence);
 
 	if(sequence == HAL_ADC_SEQUENCE_SEL_A)
 	{

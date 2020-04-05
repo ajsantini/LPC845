@@ -13,6 +13,24 @@
 
 typedef enum
 {
+	HAL_ADC_CLOCK_SOURCE_FRO = 0,
+	HAL_ADC_CLOCK_SYS_PLL
+}hal_adc_clock_source_en;
+
+typedef enum
+{
+	HAL_ADC_OPERATION_MODE_SYNCHRONOUS = 0,
+	HAL_ADC_OPERATION_MODE_ASYNCHRONOUS
+}hal_adc_operation_mode_en;
+
+typedef enum
+{
+	HAL_ADC_LOW_POWER_MODE_DISABLED = 0,
+	HAL_ADC_LOW_POWER_MODE_ENABLED
+}hal_adc_low_power_mode_en;
+
+typedef enum
+{
 	HAL_ADC_SEQUENCE_SEL_A = 0,
 	HAL_ADC_SEQUENCE_SEL_B
 }hal_adc_sequence_sel_en;
@@ -94,12 +112,14 @@ typedef struct
  * @brief Inicializar el ADC
  *
  * Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
- * Asume tension de trabajo alta y utiliza como fuente de clock el FRO sin dividir.
- * Configura el ADC obviando el modo bajo consumo.
  *
  * @param[in] sample_freq Frecuencia de sampleo deseada
+ * @param[in] div Divisor para la logica del ADC (tambien afecta a la frecuencia de sampleo en modo sincronico)
+ * @param[in] clock_source Fuente de clock para el ADC (solo importa para modo asincronico)
+ * @param[in] mode Seleccion de modo de operacion, sincronico o asincronico
+ * @param[in] low_power Seleccion de modo de bajo consumo
  */
-void hal_adc_init(uint32_t sample_freq);
+void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power);
 
 /**
  * @brief Configurar una secuencia de conversion

@@ -195,3 +195,23 @@ void hal_syscon_set_iocon_glitch_divider(hal_syscon_iocon_glitch_sel_en sel, uin
 {
 	SYSCON_set_iocon_glitch_divider(sel, div);
 }
+
+/**
+ * @brief Configurar el PLL
+ * @param[in] clock_source Fuente de clock de referencia para el PLL
+ * @param[in] freq Frecuencia deseada de salida del PLL
+ */
+void hal_syscon_config_pll(hal_syscon_pll_source_sel_en clock_source, uint32_t freq)
+{
+	// TODO: HAY QUE HACER ESTA FUNCION!!!
+	current_pll_freq = 0; // Tiene que dejar el valor correcto de la frecuencia del PLL, en Hz
+}
+
+/**
+ * @brief Obtener frecuencia actual configurada del PLL
+ * @return Frecuencia actual del PLL en Hz
+ */
+uint32_t hal_syscon_get_pll_clock(void)
+{
+	return current_pll_freq;
+}

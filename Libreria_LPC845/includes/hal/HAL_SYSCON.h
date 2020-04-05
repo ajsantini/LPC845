@@ -65,6 +65,14 @@ typedef enum
 	HAL_SYSCON_IOCON_GLITCH_SEL_7
 }hal_syscon_iocon_glitch_sel_en;
 
+typedef enum
+{
+	HAL_SYSCON_PLL_SOURCE_SEL_FRO = 0,
+	HAL_SYSCON_PLL_SOURCE_SEL_EXT_CLK,
+	HAL_SYSCON_PLL_SOURCE_SEL_WATCHDOG,
+	HAL_SYSCON_PLL_SOURCE_SEL_FRO_DIV
+}hal_syscon_pll_source_sel_en;
+
 /**
  * @brief Obtener la frecuencia actual del main clock
  * @return Frecuencia del main clock en Hz
@@ -131,5 +139,18 @@ uint32_t hal_syscon_get_peripheral_clock(hal_syscon_peripheral_sel_en peripheral
  * @param[in] div Valor de division deseado
  */
 void hal_syscon_set_iocon_glitch_divider(hal_syscon_iocon_glitch_sel_en sel, uint32_t div);
+
+/**
+ * @brief Configurar el PLL
+ * @param[in] clock_source Fuente de clock de referencia para el PLL
+ * @param[in] freq Frecuencia deseada de salida del PLL
+ */
+void hal_syscon_config_pll(hal_syscon_pll_source_sel_en clock_source, uint32_t freq);
+
+/**
+ * @brief Obtener frecuencia actual configurada del PLL
+ * @return Frecuencia actual del PLL en Hz
+ */
+uint32_t hal_syscon_get_pll_clock(void);
 
 #endif /* HAL_SYSCON_H_ */

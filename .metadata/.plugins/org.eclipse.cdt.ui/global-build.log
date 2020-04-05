@@ -1030,3 +1030,440 @@ arm-none-eabi-size "Test_development.axf"; # arm-none-eabi-objcopy -v -O binary 
    text	   data	    bss	    dec	    hex	filename
    1392	      0	      4	   1396	    574	Test_development.axf
  
+18:58:01 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+../source/infotronic/infotronic.c: In function 'infotronic_init':
+../source/infotronic/infotronic.c:42:2: warning: implicit declaration of function 'GPIO_init'; did you mean 'LCD_init'? [-Wimplicit-function-declaration]
+  GPIO_init(0);
+  ^~~~~~~~~
+  LCD_init
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/teclado.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/teclado.d" -MT"source/infotronic/teclado.o" -MT"source/infotronic/teclado.d" -o "source/infotronic/teclado.o" "../source/infotronic/teclado.c"
+Finished building: ../source/infotronic/teclado.c
+ 
+Building file: ../source/infotronic/termometro.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/termometro.d" -MT"source/infotronic/termometro.o" -MT"source/infotronic/termometro.d" -o "source/infotronic/termometro.o" "../source/infotronic/termometro.c"
+../source/infotronic/termometro.c: In function 'termometro_init':
+../source/infotronic/termometro.c:98:2: error: too few arguments to function 'hal_adc_init'
+source/infotronic/subdir.mk:36: recipe for target 'source/infotronic/termometro.o' failed
+  hal_adc_init(ADC_SAMPLING_FREQUENCY);
+  ^~~~~~~~~~~~
+In file included from ../source/infotronic/termometro.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal/HAL_ADC.h:122:6: note: declared here
+ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power);
+      ^~~~~~~~~~~~
+make: *** [source/infotronic/termometro.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+18:58:03 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building file: ../src/Micro_tester.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Micro_tester.d" -MT"src/Micro_tester.o" -MT"src/Micro_tester.d" -o "src/Micro_tester.o" "../src/Micro_tester.c"
+../src/Micro_tester.c: In function 'main':
+../src/Micro_tester.c:257:2: error: too few arguments to function 'hal_adc_init'
+  hal_adc_init(ADC_FREQUENCY);
+  ^~~~~~~~~~~~
+In file included from ../src/Micro_tester.c:8:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal/HAL_ADC.h:122:6: note: declared here
+ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power);
+src/subdir.mk:31: recipe for target 'src/Micro_tester.o' failed
+      ^~~~~~~~~~~~
+make: *** [src/Micro_tester.o] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+18:58:04 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+Building file: ../src/Test_development.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_development.d" -MT"src/Test_development.o" -MT"src/Test_development.d" -o "src/Test_development.o" "../src/Test_development.c"
+Finished building: ../src/Test_development.c
+ 
+Building target: Test_development.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_development.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_development_Debug.ld" -o "Test_development.axf"  ./src/Test_development.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+makefile:30: recipe for target 'Test_development.axf' failed
+make: *** [Test_development.axf] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+18:59:36 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/termometro.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/termometro.d" -MT"source/infotronic/termometro.o" -MT"source/infotronic/termometro.d" -o "source/infotronic/termometro.o" "../source/infotronic/termometro.c"
+../source/infotronic/termometro.c: In function 'termometro_init':
+../source/infotronic/termometro.c:98:2: error: too few arguments to function 'hal_adc_init'
+  hal_adc_init(ADC_SAMPLING_FREQUENCY);
+  ^~~~~~~~~~~~
+In file included from ../source/infotronic/termometro.c:11:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal/HAL_ADC.h:122:6: note: declared here
+ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power);
+      ^~~~~~~~~~~~
+make: *** [source/infotronic/termometro.o] Error 1
+source/infotronic/subdir.mk:36: recipe for target 'source/infotronic/termometro.o' failed
+"make -r all" terminated with exit code 2. Build might be incomplete.
+18:59:37 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building file: ../src/Micro_tester.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Micro_tester.d" -MT"src/Micro_tester.o" -MT"src/Micro_tester.d" -o "src/Micro_tester.o" "../src/Micro_tester.c"
+Finished building: ../src/Micro_tester.c
+ 
+Building target: Micro_tester.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Micro_tester.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Micro_tester_Debug.ld" -o "Micro_tester.axf"  ./src/Micro_tester.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+makefile:30: recipe for target 'Micro_tester.axf' failed
+make: *** [Micro_tester.axf] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+18:59:38 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+Building target: Test_development.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_development.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_development_Debug.ld" -o "Test_development.axf"  ./src/Test_development.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+make: *** [Test_development.axf] Error 1
+makefile:30: recipe for target 'Test_development.axf' failed
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+19:00:05 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/termometro.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/termometro.d" -MT"source/infotronic/termometro.o" -MT"source/infotronic/termometro.d" -o "source/infotronic/termometro.o" "../source/infotronic/termometro.c"
+Finished building: ../source/infotronic/termometro.c
+ 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+Finished building: ../source/hpl/HPL_SWM.c
+ 
+Building file: ../source/hal/HAL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_ADC.d" -MT"source/hal/HAL_ADC.o" -MT"source/hal/HAL_ADC.d" -o "source/hal/HAL_ADC.o" "../source/hal/HAL_ADC.c"
+../source/hal/HAL_ADC.c: In function 'hal_adc_config_sequence':
+../source/hal/HAL_ADC.c:135:25: error: 'NULL' undeclared (first use in this function)
+  if(config->callback != NULL)
+                         ^~~~
+../source/hal/HAL_ADC.c:135:25: note: 'NULL' is defined in header '<stddef.h>'; did you forget to '#include <stddef.h>'?
+../source/hal/HAL_ADC.c:15:1:
++#include <stddef.h>
+ 
+../source/hal/HAL_ADC.c:135:25:
+  if(config->callback != NULL)
+                         ^~~~
+../source/hal/HAL_ADC.c:135:25: note: each undeclared identifier is reported only once for each function it appears in
+source/hal/subdir.mk:48: recipe for target 'source/hal/HAL_ADC.o' failed
+make: *** [source/hal/HAL_ADC.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+19:00:06 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building target: Micro_tester.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Micro_tester.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Micro_tester_Debug.ld" -o "Micro_tester.axf"  ./src/Micro_tester.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+make: *** [Micro_tester.axf] Error 1
+makefile:30: recipe for target 'Micro_tester.axf' failed
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+19:00:07 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+Building target: Test_development.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_development.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_development_Debug.ld" -o "Test_development.axf"  ./src/Test_development.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+makefile:30: recipe for target 'Test_development.axf' failed
+make: *** [Test_development.axf] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+19:00:19 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/hal/HAL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_ADC.d" -MT"source/hal/HAL_ADC.o" -MT"source/hal/HAL_ADC.d" -o "source/hal/HAL_ADC.o" "../source/hal/HAL_ADC.c"
+Finished building: ../source/hal/HAL_ADC.c
+ 
+Building file: ../source/hal/HAL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_CTIMER.d" -MT"source/hal/HAL_CTIMER.o" -MT"source/hal/HAL_CTIMER.d" -o "source/hal/HAL_CTIMER.o" "../source/hal/HAL_CTIMER.c"
+Finished building: ../source/hal/HAL_CTIMER.c
+ 
+Building file: ../source/hal/HAL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_DAC.d" -MT"source/hal/HAL_DAC.o" -MT"source/hal/HAL_DAC.d" -o "source/hal/HAL_DAC.o" "../source/hal/HAL_DAC.c"
+Finished building: ../source/hal/HAL_DAC.c
+ 
+Building file: ../source/hal/HAL_GPIO.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_GPIO.d" -MT"source/hal/HAL_GPIO.o" -MT"source/hal/HAL_GPIO.d" -o "source/hal/HAL_GPIO.o" "../source/hal/HAL_GPIO.c"
+Finished building: ../source/hal/HAL_GPIO.c
+ 
+Building file: ../source/hal/HAL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_IOCON.d" -MT"source/hal/HAL_IOCON.o" -MT"source/hal/HAL_IOCON.d" -o "source/hal/HAL_IOCON.o" "../source/hal/HAL_IOCON.c"
+Finished building: ../source/hal/HAL_IOCON.c
+ 
+Building file: ../source/hal/HAL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_PININT.d" -MT"source/hal/HAL_PININT.o" -MT"source/hal/HAL_PININT.d" -o "source/hal/HAL_PININT.o" "../source/hal/HAL_PININT.c"
+Finished building: ../source/hal/HAL_PININT.c
+ 
+Building file: ../source/hal/HAL_SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_SPI.d" -MT"source/hal/HAL_SPI.o" -MT"source/hal/HAL_SPI.d" -o "source/hal/HAL_SPI.o" "../source/hal/HAL_SPI.c"
+Finished building: ../source/hal/HAL_SPI.c
+ 
+Building file: ../source/hal/HAL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_SYSCON.d" -MT"source/hal/HAL_SYSCON.o" -MT"source/hal/HAL_SYSCON.d" -o "source/hal/HAL_SYSCON.o" "../source/hal/HAL_SYSCON.c"
+../source/hal/HAL_SYSCON.c: In function 'hal_syscon_config_external_crystal':
+../source/hal/HAL_SYSCON.c:85:34: error: 'SYSCON_MAIN_CLOCK_SEL_EXT_CLK' undeclared (first use in this function); did you mean 'SYSCON_MAIN_CLOCK_SEL_PLL'?
+   SYSCON_set_system_clock_source(SYSCON_MAIN_CLOCK_SEL_EXT_CLK);
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                  SYSCON_MAIN_CLOCK_SEL_PLL
+../source/hal/HAL_SYSCON.c:85:34: note: each undeclared identifier is reported only once for each function it appears in
+source/hal/subdir.mk:48: recipe for target 'source/hal/HAL_SYSCON.o' failed
+make: *** [source/hal/HAL_SYSCON.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+19:00:22 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building target: Micro_tester.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Micro_tester.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Micro_tester_Debug.ld" -o "Micro_tester.axf"  ./src/Micro_tester.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+makefile:30: recipe for target 'Micro_tester.axf' failed
+make: *** [Micro_tester.axf] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+19:00:23 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+Building target: Test_development.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_development.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_development_Debug.ld" -o "Test_development.axf"  ./src/Test_development.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+/usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ld: cannot find -lLibreria_LPC845
+collect2: error: ld returned 1 exit status
+make: *** [Test_development.axf] Error 1
+makefile:30: recipe for target 'Test_development.axf' failed
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+19:02:12 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+In file included from ../source/infotronic/infotronic.c:10:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_system_clock_source':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:368:24: error: 'SYSCON_MAIN_CLOCK_SEL_PLL' undeclared (first use in this function); did you mean 'SYSCON_MAIN_CLOCK_SEL_FRO'?
+  if(clock_selection != SYSCON_MAIN_CLOCK_SEL_PLL)
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+                        SYSCON_MAIN_CLOCK_SEL_FRO
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:368:24: note: each undeclared identifier is reported only once for each function it appears in
+../source/infotronic/infotronic.c: In function 'infotronic_init':
+../source/infotronic/infotronic.c:42:2: warning: implicit declaration of function 'GPIO_init'; did you mean 'LCD_init'? [-Wimplicit-function-declaration]
+  GPIO_init(0);
+  ^~~~~~~~~
+  LCD_init
+source/infotronic/subdir.mk:36: recipe for target 'source/infotronic/infotronic.o' failed
+make: *** [source/infotronic/infotronic.o] Error 1
+"make -r all" terminated with exit code 2. Build might be incomplete.
+19:02:13 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building file: ../src/Micro_tester.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Micro_tester.d" -MT"src/Micro_tester.o" -MT"src/Micro_tester.d" -o "src/Micro_tester.o" "../src/Micro_tester.c"
+In file included from /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_IOCON.h:13,
+                 from /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal/HAL_IOCON.h:12,
+                 from ../src/Micro_tester.c:15:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_system_clock_source':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:368:24: error: 'SYSCON_MAIN_CLOCK_SEL_PLL' undeclared (first use in this function); did you mean 'SYSCON_MAIN_CLOCK_SEL_FRO'?
+  if(clock_selection != SYSCON_MAIN_CLOCK_SEL_PLL)
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+                        SYSCON_MAIN_CLOCK_SEL_FRO
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:368:24: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:31: recipe for target 'src/Micro_tester.o' failed
+make: *** [src/Micro_tester.o] Error 1
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+19:02:14 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+Building file: ../src/Test_development.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_development.d" -MT"src/Test_development.o" -MT"src/Test_development.d" -o "src/Test_development.o" "../src/Test_development.c"
+In file included from ../src/Test_development.c:5:
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h: In function 'SYSCON_set_system_clock_source':
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:368:24: error: 'SYSCON_MAIN_CLOCK_SEL_PLL' undeclared (first use in this function); did you mean 'SYSCON_MAIN_CLOCK_SEL_FRO'?
+  if(clock_selection != SYSCON_MAIN_CLOCK_SEL_PLL)
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+                        SYSCON_MAIN_CLOCK_SEL_FRO
+/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl/HPL_SYSCON.h:368:24: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/Test_development.o] Error 1
+src/subdir.mk:31: recipe for target 'src/Test_development.o' failed
+"make -r -j4 all" terminated with exit code 2. Build might be incomplete.
+19:03:04 **** Incremental Build of configuration Debug for project Libreria_LPC845 ****
+make -r all 
+Building file: ../source/infotronic/infotronic.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/infotronic.d" -MT"source/infotronic/infotronic.o" -MT"source/infotronic/infotronic.d" -o "source/infotronic/infotronic.o" "../source/infotronic/infotronic.c"
+../source/infotronic/infotronic.c: In function 'infotronic_init':
+../source/infotronic/infotronic.c:42:2: warning: implicit declaration of function 'GPIO_init'; did you mean 'LCD_init'? [-Wimplicit-function-declaration]
+  GPIO_init(0);
+  ^~~~~~~~~
+  LCD_init
+Finished building: ../source/infotronic/infotronic.c
+ 
+Building file: ../source/infotronic/teclado.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/infotronic/teclado.d" -MT"source/infotronic/teclado.o" -MT"source/infotronic/teclado.d" -o "source/infotronic/teclado.o" "../source/infotronic/teclado.c"
+Finished building: ../source/infotronic/teclado.c
+ 
+Building file: ../source/hpl/HPL_SWM.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hpl/HPL_SWM.d" -MT"source/hpl/HPL_SWM.o" -MT"source/hpl/HPL_SWM.d" -o "source/hpl/HPL_SWM.o" "../source/hpl/HPL_SWM.c"
+Finished building: ../source/hpl/HPL_SWM.c
+ 
+Building file: ../source/hal/HAL_ADC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_ADC.d" -MT"source/hal/HAL_ADC.o" -MT"source/hal/HAL_ADC.d" -o "source/hal/HAL_ADC.o" "../source/hal/HAL_ADC.c"
+Finished building: ../source/hal/HAL_ADC.c
+ 
+Building file: ../source/hal/HAL_CTIMER.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_CTIMER.d" -MT"source/hal/HAL_CTIMER.o" -MT"source/hal/HAL_CTIMER.d" -o "source/hal/HAL_CTIMER.o" "../source/hal/HAL_CTIMER.c"
+Finished building: ../source/hal/HAL_CTIMER.c
+ 
+Building file: ../source/hal/HAL_DAC.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_DAC.d" -MT"source/hal/HAL_DAC.o" -MT"source/hal/HAL_DAC.d" -o "source/hal/HAL_DAC.o" "../source/hal/HAL_DAC.c"
+Finished building: ../source/hal/HAL_DAC.c
+ 
+Building file: ../source/hal/HAL_GPIO.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_GPIO.d" -MT"source/hal/HAL_GPIO.o" -MT"source/hal/HAL_GPIO.d" -o "source/hal/HAL_GPIO.o" "../source/hal/HAL_GPIO.c"
+Finished building: ../source/hal/HAL_GPIO.c
+ 
+Building file: ../source/hal/HAL_IOCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_IOCON.d" -MT"source/hal/HAL_IOCON.o" -MT"source/hal/HAL_IOCON.d" -o "source/hal/HAL_IOCON.o" "../source/hal/HAL_IOCON.c"
+Finished building: ../source/hal/HAL_IOCON.c
+ 
+Building file: ../source/hal/HAL_PININT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_PININT.d" -MT"source/hal/HAL_PININT.o" -MT"source/hal/HAL_PININT.d" -o "source/hal/HAL_PININT.o" "../source/hal/HAL_PININT.c"
+Finished building: ../source/hal/HAL_PININT.c
+ 
+Building file: ../source/hal/HAL_SPI.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_SPI.d" -MT"source/hal/HAL_SPI.o" -MT"source/hal/HAL_SPI.d" -o "source/hal/HAL_SPI.o" "../source/hal/HAL_SPI.c"
+Finished building: ../source/hal/HAL_SPI.c
+ 
+Building file: ../source/hal/HAL_SYSCON.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_SYSCON.d" -MT"source/hal/HAL_SYSCON.o" -MT"source/hal/HAL_SYSCON.d" -o "source/hal/HAL_SYSCON.o" "../source/hal/HAL_SYSCON.c"
+Finished building: ../source/hal/HAL_SYSCON.c
+ 
+Building file: ../source/hal/HAL_SYSTICK.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_SYSTICK.d" -MT"source/hal/HAL_SYSTICK.o" -MT"source/hal/HAL_SYSTICK.d" -o "source/hal/HAL_SYSTICK.o" "../source/hal/HAL_SYSTICK.c"
+Finished building: ../source/hal/HAL_SYSTICK.c
+ 
+Building file: ../source/hal/HAL_UART.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_UART.d" -MT"source/hal/HAL_UART.o" -MT"source/hal/HAL_UART.d" -o "source/hal/HAL_UART.o" "../source/hal/HAL_UART.c"
+Finished building: ../source/hal/HAL_UART.c
+ 
+Building file: ../source/hal/HAL_WKT.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DCPU_LPC845M301JBD48 -DCPU_LPC845M301JBD48_cm0plus -DSDK_DEBUGCONSOLE=1 -DCR_INTEGER_PRINTF -DPRINTF_FLOAT_ENABLE=0 -D__MCUXPRESSO -DDEBUG -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/infotronic" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -ffunction-sections -fdata-sections -ffreestanding -fno-builtin -mcpu=cortex-m0 -mthumb -D__REDLIB__ -fstack-usage -specs=redlib.specs -MMD -MP -MF"source/hal/HAL_WKT.d" -MT"source/hal/HAL_WKT.o" -MT"source/hal/HAL_WKT.d" -o "source/hal/HAL_WKT.o" "../source/hal/HAL_WKT.c"
+Finished building: ../source/hal/HAL_WKT.c
+ 
+Building target: libLibreria_LPC845.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libLibreria_LPC845.a"  ./source/infotronic/LCD.o ./source/infotronic/display.o ./source/infotronic/infotronic.o ./source/infotronic/relays.o ./source/infotronic/teclado.o ./source/infotronic/termometro.o ./source/infotronic/timer.o  ./source/hpl/HPL_ADC.o ./source/hpl/HPL_CTIMER.o ./source/hpl/HPL_DAC.o ./source/hpl/HPL_GPIO.o ./source/hpl/HPL_IOCON.o ./source/hpl/HPL_MRT.o ./source/hpl/HPL_NVIC.o ./source/hpl/HPL_PININT.o ./source/hpl/HPL_PMU.o ./source/hpl/HPL_SPI.o ./source/hpl/HPL_SWM.o ./source/hpl/HPL_SYSCON.o ./source/hpl/HPL_SYSTICK.o ./source/hpl/HPL_UART.o ./source/hpl/HPL_WKT.o  ./source/hal/HAL_ADC.o ./source/hal/HAL_CTIMER.o ./source/hal/HAL_DAC.o ./source/hal/HAL_GPIO.o ./source/hal/HAL_IOCON.o ./source/hal/HAL_PININT.o ./source/hal/HAL_SPI.o ./source/hal/HAL_SYSCON.o ./source/hal/HAL_SYSTICK.o ./source/hal/HAL_UART.o ./source/hal/HAL_WKT.o   
+arm-none-eabi-ar: creating libLibreria_LPC845.a
+Finished building target: libLibreria_LPC845.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libLibreria_LPC845.a" ; # arm-none-eabi-objdump -h -S "libLibreria_LPC845.a" >"libLibreria_LPC845.lss"
+   text	   data	    bss	    dec	    hex	filename
+    840	      0	    203	   1043	    413	LCD.o (ex libLibreria_LPC845.a)
+    968	      0	     15	    983	    3d7	display.o (ex libLibreria_LPC845.a)
+    788	      0	      4	    792	    318	infotronic.o (ex libLibreria_LPC845.a)
+    392	      0	      2	    394	    18a	relays.o (ex libLibreria_LPC845.a)
+    597	      2	      8	    607	    25f	teclado.o (ex libLibreria_LPC845.a)
+   1084	      0	     52	   1136	    470	termometro.o (ex libLibreria_LPC845.a)
+    648	      0	    240	    888	    378	timer.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_ADC.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_CTIMER.o (ex libLibreria_LPC845.a)
+      8	      0	      0	      8	      8	HPL_DAC.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_GPIO.o (ex libLibreria_LPC845.a)
+    260	      0	      4	    264	    108	HPL_IOCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_MRT.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_NVIC.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_PININT.o (ex libLibreria_LPC845.a)
+      8	      0	      0	      8	      8	HPL_PMU.o (ex libLibreria_LPC845.a)
+      8	      0	      0	      8	      8	HPL_SPI.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SWM.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SYSCON.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_SYSTICK.o (ex libLibreria_LPC845.a)
+     20	      0	      0	     20	     14	HPL_UART.o (ex libLibreria_LPC845.a)
+      4	      0	      0	      4	      4	HPL_WKT.o (ex libLibreria_LPC845.a)
+   3496	     16	      0	   3512	    db8	HAL_ADC.o (ex libLibreria_LPC845.a)
+   3666	     32	      0	   3698	    e72	HAL_CTIMER.o (ex libLibreria_LPC845.a)
+   1118	      0	      0	   1118	    45e	HAL_DAC.o (ex libLibreria_LPC845.a)
+    758	      0	      0	    758	    2f6	HAL_GPIO.o (ex libLibreria_LPC845.a)
+    708	      0	      0	    708	    2c4	HAL_IOCON.o (ex libLibreria_LPC845.a)
+   1350	     32	      0	   1382	    566	HAL_PININT.o (ex libLibreria_LPC845.a)
+   4738	     16	      0	   4754	   1292	HAL_SPI.o (ex libLibreria_LPC845.a)
+   2478	      8	     16	   2502	    9c6	HAL_SYSCON.o (ex libLibreria_LPC845.a)
+    378	      4	      0	    382	    17e	HAL_SYSTICK.o (ex libLibreria_LPC845.a)
+   2838	     40	      0	   2878	    b3e	HAL_UART.o (ex libLibreria_LPC845.a)
+   1050	      4	      5	   1059	    423	HAL_WKT.o (ex libLibreria_LPC845.a)
+ 
+19:03:07 **** Incremental Build of configuration Debug for project Micro_tester ****
+make -r -j4 all 
+Building file: ../src/Micro_tester.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hal" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Micro_tester.d" -MT"src/Micro_tester.o" -MT"src/Micro_tester.d" -o "src/Micro_tester.o" "../src/Micro_tester.c"
+Finished building: ../src/Micro_tester.c
+ 
+Building target: Micro_tester.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Micro_tester.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Micro_tester_Debug.ld" -o "Micro_tester.axf"  ./src/Micro_tester.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:       23124 B        64 KB     35.28%
+        RamLoc16:         276 B        16 KB      1.68%
+Finished building target: Micro_tester.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Micro_tester.axf"; # arm-none-eabi-objcopy -v -O binary "Micro_tester.axf" "Micro_tester.bin" ; # checksum -p LPC845 -d "Micro_tester.bin";
+   text	   data	    bss	    dec	    hex	filename
+  22920	    204	     72	  23196	   5a9c	Micro_tester.axf
+ 
+19:03:08 **** Incremental Build of configuration Debug for project Test_development ****
+make -r -j4 all 
+Building file: ../src/Test_development.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0PLUS -D__MTB_DISABLE -D__MTB_BUFFER_SIZE=256 -D__LPC84X__ -D__REDLIB__ -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hpl" -I"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/includes/hri" -O0 -fno-common -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -fstack-usage -specs=redlib.specs -MMD -MP -MF"src/Test_development.d" -MT"src/Test_development.o" -MT"src/Test_development.d" -o "src/Test_development.o" "../src/Test_development.c"
+Finished building: ../src/Test_development.c
+ 
+Building target: Test_development.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug" -Xlinker -Map="Test_development.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m0 -mthumb -T "Test_development_Debug.ld" -o "Test_development.axf"  ./src/Test_development.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc84x.o ./src/crp.o ./src/mtb.o   -lLibreria_LPC845
+Memory region         Used Size  Region Size  %age Used
+        MFlash64:        1392 B        64 KB      2.12%
+        RamLoc16:           4 B        16 KB      0.02%
+Finished building target: Test_development.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Test_development.axf"; # arm-none-eabi-objcopy -v -O binary "Test_development.axf" "Test_development.bin" ; # checksum -p LPC845 -d "Test_development.bin";
+   text	   data	    bss	    dec	    hex	filename
+   1392	      0	      4	   1396	    574	Test_development.axf
+ 
