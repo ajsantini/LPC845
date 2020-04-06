@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Libreria LPC845: Referencia del Archivo source/infotronic/timer.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Libreria LPC845
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_900fbaa61fa9ce7fa545184492570cb0.html">infotronic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estructuras de datos</a> &#124;
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo timer.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funciones para el manejo de timers por software.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="timer_8h_source.html">timer.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para timer.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="timer_8c__incl.png" border="0" usemap="#source_2infotronic_2timer_8c" alt=""/></div>
+<map name="source_2infotronic_2timer_8c" id="source_2infotronic_2timer_8c">
+<area shape="rect" id="node3" href="timer_8h.html" title="Declaraciones para los timers por software. " alt="" coords="99,80,162,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtimer__t.html">timer_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a79fd3eac646964332ed33ec7dd40f208"><td class="memItemLeft" align="right" valign="top"><a id="a79fd3eac646964332ed33ec7dd40f208"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_TIMERS</b>&#160;&#160;&#160;15</td></tr>
+<tr class="separator:a79fd3eac646964332ed33ec7dd40f208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a6d1d10160c59ff60b07a6fb76689321f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#a6d1d10160c59ff60b07a6fb76689321f">timer_start</a> (uint8_t event_number, uint32_t msecs, void(*callback)(uint8_t), uint8_t repeat)</td></tr>
+<tr class="memdesc:a6d1d10160c59ff60b07a6fb76689321f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iniciar un timer.  <a href="#a6d1d10160c59ff60b07a6fb76689321f">Más...</a><br /></td></tr>
+<tr class="separator:a6d1d10160c59ff60b07a6fb76689321f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bf254aa44da60f0e48bd3db88acc0ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#a4bf254aa44da60f0e48bd3db88acc0ba">timer_pause</a> (uint8_t event_number)</td></tr>
+<tr class="memdesc:a4bf254aa44da60f0e48bd3db88acc0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausar un timer.  <a href="#a4bf254aa44da60f0e48bd3db88acc0ba">Más...</a><br /></td></tr>
+<tr class="separator:a4bf254aa44da60f0e48bd3db88acc0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f9f37159d599c0ea39ffdcf6d3500d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#a07f9f37159d599c0ea39ffdcf6d3500d">timer_resume</a> (uint8_t event_number)</td></tr>
+<tr class="memdesc:a07f9f37159d599c0ea39ffdcf6d3500d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Despausar/resumir un timer.  <a href="#a07f9f37159d599c0ea39ffdcf6d3500d">Más...</a><br /></td></tr>
+<tr class="separator:a07f9f37159d599c0ea39ffdcf6d3500d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff93b9e9f92080026f8227a4962c7399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#aff93b9e9f92080026f8227a4962c7399">timer_stop</a> (uint8_t event_number)</td></tr>
+<tr class="memdesc:aff93b9e9f92080026f8227a4962c7399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detener un timer.  <a href="#aff93b9e9f92080026f8227a4962c7399">Más...</a><br /></td></tr>
+<tr class="separator:aff93b9e9f92080026f8227a4962c7399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63aec9ffc89d719500cb055335ffc3a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#a63aec9ffc89d719500cb055335ffc3a2">timer_loop</a> (void)</td></tr>
+<tr class="memdesc:a63aec9ffc89d719500cb055335ffc3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion a ejecutar en el loop principal.  <a href="#a63aec9ffc89d719500cb055335ffc3a2">Más...</a><br /></td></tr>
+<tr class="separator:a63aec9ffc89d719500cb055335ffc3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60727b3dd3618599df4f447cf07614a8"><td class="memItemLeft" align="right" valign="top"><a id="a60727b3dd3618599df4f447cf07614a8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8c.html#a60727b3dd3618599df4f447cf07614a8">timer_check</a> (void)</td></tr>
+<tr class="memdesc:a60727b3dd3618599df4f447cf07614a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback para revisar la maquinaria de timers (a ejecutar cada 1mseg) <br /></td></tr>
+<tr class="separator:a60727b3dd3618599df4f447cf07614a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac981e4c5b6c9ef02bce0bed39b7729ed"><td class="memItemLeft" align="right" valign="top"><a id="ac981e4c5b6c9ef02bce0bed39b7729ed"></a>
+static <a class="el" href="structtimer__t.html">timer_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>timers</b> [MAX_TIMERS]</td></tr>
+<tr class="separator:ac981e4c5b6c9ef02bce0bed39b7729ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Funciones para el manejo de timers por software. </p>
+<dl class="section author"><dt>Autor</dt><dd>Augusto Santini </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>12/2019 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a6d1d10160c59ff60b07a6fb76689321f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d1d10160c59ff60b07a6fb76689321f">&#9670;&nbsp;</a></span>timer_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer_start </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>event_number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>msecs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(uint8_t)&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>repeat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iniciar un timer. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_number</td><td>Numero de evento asociado </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">msecs</td><td>Tiempo (en milisegundos) del timer a vencer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Callback a ejecutar una vez vencido el timer. El parametro pasado al callback es el numero de evento que genero el llamado. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">repeat</td><td>Si es 0 es un timer one-shot, caso contrario es repetitivo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4bf254aa44da60f0e48bd3db88acc0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bf254aa44da60f0e48bd3db88acc0ba">&#9670;&nbsp;</a></span>timer_pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer_pause </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>event_number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pausar un timer. </p>
+<p>Ejecutar esta funcion con un timer que no esta corriendo no tiene ningun efecto.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_number</td><td>Numero de evento asociado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a07f9f37159d599c0ea39ffdcf6d3500d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f9f37159d599c0ea39ffdcf6d3500d">&#9670;&nbsp;</a></span>timer_resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer_resume </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>event_number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Despausar/resumir un timer. </p>
+<p>Ejecutar esta funcion con un timer que esta corriendo no tiene ningun efecto.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_number</td><td>Numero de evento asociado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aff93b9e9f92080026f8227a4962c7399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff93b9e9f92080026f8227a4962c7399">&#9670;&nbsp;</a></span>timer_stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer_stop </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>event_number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Detener un timer. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_number</td><td>Numero de evento asociado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a63aec9ffc89d719500cb055335ffc3a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63aec9ffc89d719500cb055335ffc3a2">&#9670;&nbsp;</a></span>timer_loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer_loop </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion a ejecutar en el loop principal. </p>
+<p>Esta funcion se encargara de llamar a los callbacks de los timers que hayan vencido </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

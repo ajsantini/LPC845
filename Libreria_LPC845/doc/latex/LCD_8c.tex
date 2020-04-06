@@ -1,0 +1,134 @@
+\hypertarget{LCD_8c}{}\section{Referencia del Archivo source/infotronic/\+L\+CD.c}
+\label{LCD_8c}\index{source/infotronic/\+L\+C\+D.\+c@{source/infotronic/\+L\+C\+D.\+c}}
+
+
+Funciones del display L\+CD (2x16)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$L\+C\+D.\+h$>$}\newline
+{\ttfamily \#include $<$infotronic.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+G\+P\+I\+O.\+h$>$}\newline
+Dependencia gráfica adjunta para L\+C\+D.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{LCD_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{LCD_8c_af401d8f4781937e4b44d3114e0416004}\label{LCD_8c_af401d8f4781937e4b44d3114e0416004}} 
+\#define {\bfseries L\+C\+D\+\_\+\+D4\+\_\+\+P\+O\+R\+T\+P\+IN}~H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+9
+\item 
+\mbox{\Hypertarget{LCD_8c_a2ba5b56bdbb834389ff6e61d7b05d233}\label{LCD_8c_a2ba5b56bdbb834389ff6e61d7b05d233}} 
+\#define {\bfseries L\+C\+D\+\_\+\+D5\+\_\+\+P\+O\+R\+T\+P\+IN}~H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+10
+\item 
+\mbox{\Hypertarget{LCD_8c_a2da3882bb7551216fc4f611f1d9dca4b}\label{LCD_8c_a2da3882bb7551216fc4f611f1d9dca4b}} 
+\#define {\bfseries L\+C\+D\+\_\+\+D6\+\_\+\+P\+O\+R\+T\+P\+IN}~H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+11
+\item 
+\mbox{\Hypertarget{LCD_8c_aad8e01059f8a2ce70e869497bc174da2}\label{LCD_8c_aad8e01059f8a2ce70e869497bc174da2}} 
+\#define {\bfseries L\+C\+D\+\_\+\+D7\+\_\+\+P\+O\+R\+T\+P\+IN}~H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+13
+\item 
+\mbox{\Hypertarget{LCD_8c_a292ce26a4223aaaeb63cf4df453189c1}\label{LCD_8c_a292ce26a4223aaaeb63cf4df453189c1}} 
+\#define {\bfseries L\+C\+D\+\_\+\+E\+N\+\_\+\+P\+O\+R\+T\+P\+IN}~H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+14
+\item 
+\mbox{\Hypertarget{LCD_8c_a990529913aeb4c4624474301160b2464}\label{LCD_8c_a990529913aeb4c4624474301160b2464}} 
+\#define {\bfseries L\+C\+D\+\_\+\+R\+S\+\_\+\+P\+O\+R\+T\+P\+IN}~H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+15
+\item 
+\mbox{\Hypertarget{LCD_8c_acab2b60f7dac0a43694b105a013c5039}\label{LCD_8c_acab2b60f7dac0a43694b105a013c5039}} 
+\#define {\bfseries L\+C\+D\+\_\+\+C\+O\+N\+T\+R\+OL}~0
+\item 
+\mbox{\Hypertarget{LCD_8c_a25e9d818788f36ed74d7c4579f87f2a6}\label{LCD_8c_a25e9d818788f36ed74d7c4579f87f2a6}} 
+\#define {\bfseries L\+C\+D\+\_\+\+D\+A\+TA}~1
+\item 
+\mbox{\Hypertarget{LCD_8c_afcc44d381d27717bc799c47d02ec04e1}\label{LCD_8c_afcc44d381d27717bc799c47d02ec04e1}} 
+\#define {\bfseries L\+C\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+F\+L\+AG}~(0x80)
+\item 
+\mbox{\Hypertarget{LCD_8c_ae7f99b386189b835b3b97639f5403913}\label{LCD_8c_ae7f99b386189b835b3b97639f5403913}} 
+\#define {\bfseries L\+C\+D\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}~200
+\item 
+\mbox{\Hypertarget{LCD_8c_af09e60a7c510fe7bb16cd126c19fe9fa}\label{LCD_8c_af09e60a7c510fe7bb16cd126c19fe9fa}} 
+\#define {\bfseries L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+\+L\+E\+N\+G\+TH}~16
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{LCD_8c_a769e0e95a4cadf74b49b8b40e7846f7b}\label{LCD_8c_a769e0e95a4cadf74b49b8b40e7846f7b}} 
+static void \hyperlink{LCD_8c_a769e0e95a4cadf74b49b8b40e7846f7b}{L\+C\+D\+\_\+push} (uint8\+\_\+t data, uint8\+\_\+t control)
+\begin{DoxyCompactList}\small\item\em Colocar un dato (control o data) en el L\+CD. \end{DoxyCompactList}\item 
+static int32\+\_\+t \hyperlink{LCD_8c_a0951988f21893d271e6d6b65f70faad0}{L\+C\+D\+\_\+pop} (void)
+\begin{DoxyCompactList}\small\item\em Colocar un dato (control o data) en el L\+CD. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LCD_8c_a301a0b73016a44e015dbd374c08243d4}\label{LCD_8c_a301a0b73016a44e015dbd374c08243d4}} 
+void \hyperlink{LCD_8c_a301a0b73016a44e015dbd374c08243d4}{L\+C\+D\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializacion del display L\+CD (2x16) \end{DoxyCompactList}\item 
+void \hyperlink{LCD_8c_ab51fa1fb6b467f1960e41f522c447b3e}{L\+C\+D\+\_\+write} (char $\ast$message, uint8\+\_\+t renglon, uint8\+\_\+t start\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Escribir un mensaje en el display L\+CD. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LCD_8c_af1489e992bb7800c12ff940e0ef7c0d0}\label{LCD_8c_af1489e992bb7800c12ff940e0ef7c0d0}} 
+void \hyperlink{LCD_8c_af1489e992bb7800c12ff940e0ef7c0d0}{L\+C\+D\+\_\+check} (void)
+\begin{DoxyCompactList}\small\item\em Callback para actualizar el L\+CD periodicamente (a ser llamada cada 1mseg) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{LCD_8c_a7a4f6f5e30f4676e3e215a86ce95a9e1}\label{LCD_8c_a7a4f6f5e30f4676e3e215a86ce95a9e1}} 
+static uint8\+\_\+t {\bfseries L\+C\+D\+\_\+buffer} \mbox{[}L\+C\+D\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH\mbox{]}
+\item 
+\mbox{\Hypertarget{LCD_8c_aa5df0617c986a1d3d52414e383b0deb5}\label{LCD_8c_aa5df0617c986a1d3d52414e383b0deb5}} 
+static uint8\+\_\+t {\bfseries L\+C\+D\+\_\+out\+\_\+idx}
+\item 
+\mbox{\Hypertarget{LCD_8c_aa04b95570252efbff93a35612f63db01}\label{LCD_8c_aa04b95570252efbff93a35612f63db01}} 
+static uint8\+\_\+t {\bfseries L\+C\+D\+\_\+in\+\_\+idx}
+\item 
+\mbox{\Hypertarget{LCD_8c_accdb9885f5fc8141d33502b89b753aaf}\label{LCD_8c_accdb9885f5fc8141d33502b89b753aaf}} 
+static uint8\+\_\+t {\bfseries L\+C\+D\+\_\+buffer\+\_\+counter} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Funciones del display L\+CD (2x16) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+1/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{LCD_8c_a0951988f21893d271e6d6b65f70faad0}\label{LCD_8c_a0951988f21893d271e6d6b65f70faad0}} 
+\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+pop@{L\+C\+D\+\_\+pop}}
+\index{L\+C\+D\+\_\+pop@{L\+C\+D\+\_\+pop}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+pop()}{LCD\_pop()}}
+{\footnotesize\ttfamily static int32\+\_\+t L\+C\+D\+\_\+pop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Colocar un dato (control o data) en el L\+CD. 
+
+\begin{DoxyReturn}{Devuelve}
+En caso de no haber dato -\/1, caso contrario el dato en el buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{LCD_8c_ab51fa1fb6b467f1960e41f522c447b3e}\label{LCD_8c_ab51fa1fb6b467f1960e41f522c447b3e}} 
+\index{L\+C\+D.\+c@{L\+C\+D.\+c}!L\+C\+D\+\_\+write@{L\+C\+D\+\_\+write}}
+\index{L\+C\+D\+\_\+write@{L\+C\+D\+\_\+write}!L\+C\+D.\+c@{L\+C\+D.\+c}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+write()}{LCD\_write()}}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write (\begin{DoxyParamCaption}\item[{char $\ast$}]{message,  }\item[{uint8\+\_\+t}]{renglon,  }\item[{uint8\+\_\+t}]{start\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Escribir un mensaje en el display L\+CD. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em message} & Puntero al mensaje a escribir, terminando con el caracter nulo \\
+\hline
+\mbox{\tt in}  & {\em renglon} & Renglon en cual escribir el mensaje (L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+1 o L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+2) \\
+\hline
+\mbox{\tt in}  & {\em start\+\_\+position} & Posicion del renglon a partir de la cual comenzar a escribir el mensaje \\
+\hline
+\end{DoxyParams}

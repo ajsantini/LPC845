@@ -9,7 +9,6 @@
 #ifndef HPL_SPI_H_
 #define HPL_SPI_H_
 
-#include <stdint.h>
 #include <HRI_SPI.h>
 
 extern volatile SPI_per_t * const SPI[]; //!< Perifericos SPI

@@ -16,11 +16,15 @@
 
 #define	ADC_MAX_FREQ_SYNC		((uint32_t) 1.2e6) //<! Maxima frecuencia de conversion admitida por el ADC (modo sincronico)
 #define	ADC_MAX_FREQ_ASYNC		((uint32_t) 0.6e6) //<! Maxima frecuencia de conversion admitida por el ADC (modo asincronico)
-#define	ADC_CHANNEL_AMOUNT		12
+
+#define	ADC_CYCLE_DELAY			(25)
+
+#define	ADC_CHANNEL_AMOUNT		(12)
 
 static void dummy_irq_callback(void);
 
-static void (*adc_seq_completed_callback[2])(void) = //!< Callback cuando terminan las secuencias de conversion
+/** Callback cuando terminan las secuencias de conversion */
+static void (*adc_seq_completed_callback[2])(void) =
 {
 	dummy_irq_callback,
 	dummy_irq_callback
@@ -31,15 +35,18 @@ static void (*adc_overrun_callback)(void) = dummy_irq_callback; //!< Callback cu
 static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
 
 /**
- * @brief Inicializar el ADC
+ * @brief Inicializar el \e ADC
  *
- * Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
+ * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
+ * @see hal_adc_clock_source_en
+ * @see hal_adc_operation_mode_en
+ * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] div Divisor para la logica del ADC (solo importa para modo asincronico)
- * @param[in] clock_source Fuente de clock para el ADC (solo importa para modo asincronico)
- * @param[in] mode Seleccion de modo de operacion, sincronico o asincronico
- * @param[in] low_power Seleccion de modo de bajo consumo
+ * @param[in] div Divisor para la lógica del \e ADC (solo importa para modo asincrónico)
+ * @param[in] clock_source Fuente de clock para el \e ADC (solo importa para modo asincrónico)
+ * @param[in] mode Selección de modo de operación, sincrónico o asincrónico
+ * @param[in] low_power Selección de modo de bajo consumo
  */
 void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power)
 {
@@ -56,7 +63,12 @@ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clo
 	{
 		uint32_t aux;
 
-		sample_freq %= ADC_MAX_FREQ_ASYNC;
+		if(sample_freq > ADC_MAX_FREQ_ASYNC)
+		{
+			sample_freq = ADC_MAX_FREQ_ASYNC;
+		}
+
+		sample_freq *= ADC_CYCLE_DELAY;
 
 		// El calculo de la frecuencia de sampleo se hace con una frecuencia
 		// que depende de la seleccion de clock en el SYSCON
@@ -84,7 +96,13 @@ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clo
 
 		// El calculo de la frecuencia de sampleo se hace con la frecuencia
 		// del main clock
-		sample_freq %= ADC_MAX_FREQ_SYNC;
+
+		if(sample_freq > ADC_MAX_FREQ_SYNC)
+		{
+			sample_freq = ADC_MAX_FREQ_SYNC;
+		}
+
+		sample_freq *= ADC_CYCLE_DELAY;
 
 		aux = hal_syscon_get_system_clock() / sample_freq;
 
@@ -98,10 +116,12 @@ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clo
 }
 
 /**
- * @brief Configurar una secuencia de conversion
+ * @brief Configurar una secuencia de conversión
  *
- * Esta funcion no habilita la secuencia, al menos que el parametro burst este activo
+ * Esta función no habilita la secuencia, al menos que el parametro \b burst este activo
  *
+ * @see hal_adc_sequence_sel_en
+ * @see hal_adc_sequence_config_t
  * @param[in] sequence Seleccion de secuencia a configurar
  * @param[in] config Configuracion deseada para la secuencia
  */
@@ -183,6 +203,7 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 
 /**
  * @brief Habilitar una secuencia
+ * @see hal_adc_sequence_sel_en
  * @param[in] sequence Secuencia a habilitar
  */
 void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence)
@@ -193,9 +214,10 @@ void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence)
 /**
  * @brief Disparar conversiones en una secuencia
  *
- * La configuracion de la secuencia, en particular el parametro single_step, influye
+ * La configuración de la secuencia, en particular el parametro \b single_step, influye
  * en si esta funcion dispara una secuencia entera o un paso de la misma.
  *
+ * @see hal_adc_sequence_sel_en
  * @param[in] sequence Secuencia a disparar
  */
 void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
@@ -206,15 +228,18 @@ void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
 /**
  * @brief Obtener resultado de la secuencia
  *
- * El comportamiento de esta funcion depende de la configuracion de la secuencia, en particular
+ * El comportamiento de esta funcion depende de la configuración de la secuencia, en particular
  * de la configuracion <b>MODE</b>. En caso de estar configurada para interrumpir al final de cada
- * conversion, la funcion unicamente guardara el resultado de la conversion en el primer lugar
- * del parametro <e>result</e>, caso contrario, guardara la cantidad de canales habilitados en la
- * conversion en los distintos lugares del parametro <e>result</e>.
+ * conversión, la función únicamente guardara el resultado de la conversión en el primer lugar
+ * del parámetro <e>result</e>, caso contrario, guardara la cantidad de canales habilitados en la
+ * conversión en los distintos lugares del parámetro <e>result</e>.
  *
+ * @see hal_adc_sequence_result_en
+ * @see hal_adc_sequence_sel_en
+ * @see hal_adc_sequence_result_t
  * @param[in] sequence Secuencia de la cual obtener el resultado
  * @param[out] result Lugares donde guardar los resultados de la secuencia
- * @return Resultado de la funcion
+ * @return Resultado de la función
  */
 hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result[])
 {

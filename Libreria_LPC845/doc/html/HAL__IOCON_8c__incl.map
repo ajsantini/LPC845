@@ -1,0 +1,10 @@
+<map id="source/hal/HAL_IOCON.c" name="source/hal/HAL_IOCON.c">
+<area shape="rect" id="node2" href="$HAL__IOCON_8h.html" title="Declaraciones a nivel de aplicacion del periferico IOCON (LPC845) " alt="" coords="23,80,134,107"/>
+<area shape="rect" id="node3" href="$HPL__IOCON_8h.html" title="Declaraciones a nivel de abstraccion de periferico del IOCON (LPC845) " alt="" coords="95,155,206,181"/>
+<area shape="rect" id="node4" href="$HPL__SYSCON_8h.html" title="Declaraciones a nivel de abstraccion de periferico del SYSCON (LPC845) " alt="" coords="183,229,305,256"/>
+<area shape="rect" id="node10" href="$HAL__GPIO_8h.html" title="Declaraciones a nivel de aplicacion del periferico GPIO (LPC845) " alt="" coords="5,229,104,256"/>
+<area shape="rect" id="node9" href="$HRI__IOCON_8h_source.html" title="HRI_IOCON.h" alt="" coords="93,304,201,331"/>
+<area shape="rect" id="node5" href="$HRI__SYSCON_8h.html" title="Definiciones a nivel de registros del modulo SYSCON (LPC845) " alt="" coords="161,379,282,405"/>
+<area shape="rect" id="node7" href="$HPL__GPIO_8h.html" title="Declaraciones a nivel de abstraccion de periferico del GPIO (LPC845) " alt="" coords="292,304,391,331"/>
+<area shape="rect" id="node8" href="$HRI__GPIO_8h.html" title="Definiciones a nivel de registros del modulo GPIO (LPC845) " alt="" coords="306,379,403,405"/>
+</map>

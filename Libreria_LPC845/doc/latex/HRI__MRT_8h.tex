@@ -1,0 +1,278 @@
+\hypertarget{HRI__MRT_8h}{}\section{Referencia del Archivo includes/hri/\+H\+R\+I\+\_\+\+M\+RT.h}
+\label{HRI__MRT_8h}\index{includes/hri/\+H\+R\+I\+\_\+\+M\+R\+T.\+h@{includes/hri/\+H\+R\+I\+\_\+\+M\+R\+T.\+h}}
+
+
+Definiciones a nivel de registros del periferico M\+RT (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+R\+I\+\_\+\+M\+R\+T.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{HRI__MRT_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{HRI__MRT_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__INTVAL__reg__t}{M\+R\+T\+\_\+\+I\+N\+T\+V\+A\+L\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__TIMER__reg__t}{M\+R\+T\+\_\+\+T\+I\+M\+E\+R\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__CTRL__reg__t}{M\+R\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__STAT__reg__t}{M\+R\+T\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__IDLE__CH__reg__t}{M\+R\+T\+\_\+\+I\+D\+L\+E\+\_\+\+C\+H\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__IRQ__FLAG__reg__t}{M\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+F\+L\+A\+G\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__CHN__reg__t}{M\+R\+T\+\_\+\+C\+H\+N\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__MRT_8h_structMRT__per__t}{M\+R\+T\+\_\+per\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HRI__MRT_8h_afd3f80e7b7c6019e6580c1d96325a87c}\label{HRI__MRT_8h_afd3f80e7b7c6019e6580c1d96325a87c}} 
+\#define {\bfseries M\+R\+T\+\_\+\+B\+A\+SE}~0x40004000
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Definiciones a nivel de registros del periferico M\+RT (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{M\+R\+T\+\_\+\+I\+N\+T\+V\+A\+L\+\_\+reg\+\_\+t@{M\+R\+T\+\_\+\+I\+N\+T\+V\+A\+L\+\_\+reg\+\_\+t}}\label{structMRT__INTVAL__reg__t}
+\Hypertarget{HRI__MRT_8h_structMRT__INTVAL__reg__t}
+\subsubsection{struct M\+R\+T\+\_\+\+I\+N\+T\+V\+A\+L\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_ac808a2ad10933f7082510146f75367f0}\label{HRI__MRT_8h_ac808a2ad10933f7082510146f75367f0}} 
+uint32\_t&
+LVALUE: 31&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a1359ae7c3bb85fa0e97d1f85988a6885}\label{HRI__MRT_8h_a1359ae7c3bb85fa0e97d1f85988a6885}} 
+uint32\_t&
+LOAD: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{M\+R\+T\+\_\+\+T\+I\+M\+E\+R\+\_\+reg\+\_\+t@{M\+R\+T\+\_\+\+T\+I\+M\+E\+R\+\_\+reg\+\_\+t}}\label{structMRT__TIMER__reg__t}
+\Hypertarget{HRI__MRT_8h_structMRT__TIMER__reg__t}
+\subsubsection{struct M\+R\+T\+\_\+\+T\+I\+M\+E\+R\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_a55319869a6b860ced29d6047414c1529}\label{HRI__MRT_8h_a55319869a6b860ced29d6047414c1529}} 
+uint32\_t&
+VALUE: 31&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_af9f117d4ae50494590399adfcba26fb8}\label{HRI__MRT_8h_af9f117d4ae50494590399adfcba26fb8}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{M\+R\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t@{M\+R\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}}\label{structMRT__CTRL__reg__t}
+\Hypertarget{HRI__MRT_8h_structMRT__CTRL__reg__t}
+\subsubsection{struct M\+R\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_ab15d747fdae0bd583ca20692a5792181}\label{HRI__MRT_8h_ab15d747fdae0bd583ca20692a5792181}} 
+uint32\_t&
+INTEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_ac3c76a0616e97b85e75884c6b20c733d}\label{HRI__MRT_8h_ac3c76a0616e97b85e75884c6b20c733d}} 
+uint32\_t&
+MODE: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_aea5b6452ff0e88433ea24a786bc18778}\label{HRI__MRT_8h_aea5b6452ff0e88433ea24a786bc18778}} 
+uint32\_t&
+\_\_pad0\_\_: 29&
+\\
+\hline
+
+\end{DoxyFields}
+\index{M\+R\+T\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t@{M\+R\+T\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t}}\label{structMRT__STAT__reg__t}
+\Hypertarget{HRI__MRT_8h_structMRT__STAT__reg__t}
+\subsubsection{struct M\+R\+T\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_a41b78a5c892cfd968f4dae820ba16f03}\label{HRI__MRT_8h_a41b78a5c892cfd968f4dae820ba16f03}} 
+uint32\_t&
+INTFLAG: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a4f0b2a1037e3f6f98f2c92cfd6b1ec3d}\label{HRI__MRT_8h_a4f0b2a1037e3f6f98f2c92cfd6b1ec3d}} 
+uint32\_t&
+RUN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a69e8903fa39670173d5e1987b8f7ae8e}\label{HRI__MRT_8h_a69e8903fa39670173d5e1987b8f7ae8e}} 
+uint32\_t&
+\_\_pad0\_\_: 30&
+\\
+\hline
+
+\end{DoxyFields}
+\index{M\+R\+T\+\_\+\+I\+D\+L\+E\+\_\+\+C\+H\+\_\+reg\+\_\+t@{M\+R\+T\+\_\+\+I\+D\+L\+E\+\_\+\+C\+H\+\_\+reg\+\_\+t}}\label{structMRT__IDLE__CH__reg__t}
+\Hypertarget{HRI__MRT_8h_structMRT__IDLE__CH__reg__t}
+\subsubsection{struct M\+R\+T\+\_\+\+I\+D\+L\+E\+\_\+\+C\+H\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_a23cc23a843d5faedd933a30aa104ec53}\label{HRI__MRT_8h_a23cc23a843d5faedd933a30aa104ec53}} 
+uint32\_t&
+\_\_pad0\_\_: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a7c8c13c32de71fd7b6d829275025bead}\label{HRI__MRT_8h_a7c8c13c32de71fd7b6d829275025bead}} 
+uint32\_t&
+CHAN: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a481eb33287a73c647602ad3771cffe49}\label{HRI__MRT_8h_a481eb33287a73c647602ad3771cffe49}} 
+uint32\_t&
+\_\_pad1\_\_: 24&
+\\
+\hline
+
+\end{DoxyFields}
+\index{M\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+F\+L\+A\+G\+\_\+reg\+\_\+t@{M\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+F\+L\+A\+G\+\_\+reg\+\_\+t}}\label{structMRT__IRQ__FLAG__reg__t}
+\Hypertarget{HRI__MRT_8h_structMRT__IRQ__FLAG__reg__t}
+\subsubsection{struct M\+R\+T\+\_\+\+I\+R\+Q\+\_\+\+F\+L\+A\+G\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_a7d5b3fdfb77f65d383df4f027aa8b7df}\label{HRI__MRT_8h_a7d5b3fdfb77f65d383df4f027aa8b7df}} 
+uint32\_t&
+CFLAG0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a6567abe751f5e2df6927e7673a61ee35}\label{HRI__MRT_8h_a6567abe751f5e2df6927e7673a61ee35}} 
+uint32\_t&
+CFLAG1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_ae0739fd5652a7cf257f8997f432dcf8f}\label{HRI__MRT_8h_ae0739fd5652a7cf257f8997f432dcf8f}} 
+uint32\_t&
+CFLAG2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_aff70969a10aa520b8369adfcc1a21cf4}\label{HRI__MRT_8h_aff70969a10aa520b8369adfcc1a21cf4}} 
+uint32\_t&
+CFLAG3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a833a50042c300b4870c23c22ff3eea56}\label{HRI__MRT_8h_a833a50042c300b4870c23c22ff3eea56}} 
+uint32\_t&
+\_\_pad0\_\_: 28&
+\\
+\hline
+
+\end{DoxyFields}
+\index{M\+R\+T\+\_\+\+C\+H\+N\+\_\+reg\+\_\+t@{M\+R\+T\+\_\+\+C\+H\+N\+\_\+reg\+\_\+t}}\label{structMRT__CHN__reg__t}
+\Hypertarget{HRI__MRT_8h_structMRT__CHN__reg__t}
+\subsubsection{struct M\+R\+T\+\_\+\+C\+H\+N\+\_\+reg\+\_\+t}
+
+
+Diagrama de colaboración para M\+R\+T\+\_\+\+C\+H\+N\+\_\+reg\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structMRT__CHN__reg__t__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_a692dd4e46461a6ddcef5f47763bd2eb1}\label{HRI__MRT_8h_a692dd4e46461a6ddcef5f47763bd2eb1}} 
+\hyperlink{HRI__MRT_8h_structMRT__INTVAL__reg__t}{MRT\_INTVAL\_reg\_t}&
+INTVAL&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a535b093d0d200f031d8034ea8f57a238}\label{HRI__MRT_8h_a535b093d0d200f031d8034ea8f57a238}} 
+const \hyperlink{HRI__MRT_8h_structMRT__TIMER__reg__t}{MRT\_TIMER\_reg\_t}&
+TIMER&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a7d74866cd63318e974733595f142d1d1}\label{HRI__MRT_8h_a7d74866cd63318e974733595f142d1d1}} 
+\hyperlink{HRI__MRT_8h_structMRT__CTRL__reg__t}{MRT\_CTRL\_reg\_t}&
+CTRL&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_ab3f1e448681b71a79f50f1d988231795}\label{HRI__MRT_8h_ab3f1e448681b71a79f50f1d988231795}} 
+\hyperlink{HRI__MRT_8h_structMRT__STAT__reg__t}{MRT\_STAT\_reg\_t}&
+STAT&
+\\
+\hline
+
+\end{DoxyFields}
+\index{M\+R\+T\+\_\+per\+\_\+t@{M\+R\+T\+\_\+per\+\_\+t}}\label{structMRT__per__t}
+\Hypertarget{HRI__MRT_8h_structMRT__per__t}
+\subsubsection{struct M\+R\+T\+\_\+per\+\_\+t}
+
+
+Diagrama de colaboración para M\+R\+T\+\_\+per\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structMRT__per__t__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__MRT_8h_a475ec82883473ed0b31b94f22cbed6e1}\label{HRI__MRT_8h_a475ec82883473ed0b31b94f22cbed6e1}} 
+\hyperlink{HRI__MRT_8h_structMRT__CHN__reg__t}{MRT\_CHN\_reg\_t}&
+CHN\mbox{[}4\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a0cf41da72a21b29f1af73edd32284d85}\label{HRI__MRT_8h_a0cf41da72a21b29f1af73edd32284d85}} 
+const uint32\_t&
+RESERVED&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a4755fbe4f7f46037b85175d7de70624a}\label{HRI__MRT_8h_a4755fbe4f7f46037b85175d7de70624a}} 
+const \hyperlink{HRI__MRT_8h_structMRT__IDLE__CH__reg__t}{MRT\_IDLE\_CH\_reg\_t}&
+IDLE\_CH&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__MRT_8h_a233ebcab84abfe60913f663240efbb78}\label{HRI__MRT_8h_a233ebcab84abfe60913f663240efbb78}} 
+\hyperlink{HRI__MRT_8h_structMRT__IRQ__FLAG__reg__t}{MRT\_IRQ\_FLAG\_reg\_t}&
+IRQ\_FLAG&
+\\
+\hline
+
+\end{DoxyFields}

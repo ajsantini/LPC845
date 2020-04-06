@@ -1,0 +1,14 @@
+<map id="GPIO_per_t" name="GPIO_per_t">
+<area shape="rect" id="node2" href="$HRI__GPIO_8h.html#structGPIO__W__reg__t" title="GPIO_W_reg_t" alt="" coords="25,5,136,32"/>
+<area shape="rect" id="node3" href="$HRI__GPIO_8h.html#structGPIO__DIRNOT__reg__t" title="GPIO_DIRNOT_reg_t" alt="" coords="5,56,156,83"/>
+<area shape="rect" id="node4" href="$HRI__GPIO_8h.html#structGPIO__MASK__reg__t" title="GPIO_MASK_reg_t" alt="" coords="13,107,149,133"/>
+<area shape="rect" id="node5" href="$HRI__GPIO_8h.html#structGPIO__DIR__reg__t" title="GPIO_DIR_reg_t" alt="" coords="19,157,142,184"/>
+<area shape="rect" id="node6" href="$HRI__GPIO_8h.html#structGPIO__CLR__reg__t" title="GPIO_CLR_reg_t" alt="" coords="18,208,143,235"/>
+<area shape="rect" id="node7" href="$HRI__GPIO_8h.html#structGPIO__DIRSET__reg__t" title="GPIO_DIRSET_reg_t" alt="" coords="7,259,155,285"/>
+<area shape="rect" id="node8" href="$HRI__GPIO_8h.html#structGPIO__DIRCLR__reg__t" title="GPIO_DIRCLR_reg_t" alt="" coords="6,309,155,336"/>
+<area shape="rect" id="node9" href="$HRI__GPIO_8h.html#structGPIO__NOT__reg__t" title="GPIO_NOT_reg_t" alt="" coords="17,360,144,387"/>
+<area shape="rect" id="node10" href="$HRI__GPIO_8h.html#structGPIO__SET__reg__t" title="GPIO_SET_reg_t" alt="" coords="19,411,143,437"/>
+<area shape="rect" id="node11" href="$HRI__GPIO_8h.html#structGPIO__MPIN__reg__t" title="GPIO_MPIN_reg_t" alt="" coords="15,461,147,488"/>
+<area shape="rect" id="node12" href="$HRI__GPIO_8h.html#structGPIO__B__reg__t" title="GPIO_B_reg_t" alt="" coords="27,512,134,539"/>
+<area shape="rect" id="node13" href="$HRI__GPIO_8h.html#structGPIO__PIN__reg__t" title="GPIO_PIN_reg_t" alt="" coords="20,563,141,589"/>
+</map>

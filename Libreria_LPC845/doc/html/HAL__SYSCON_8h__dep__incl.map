@@ -1,0 +1,12 @@
+<map id="includes/hal/HAL_SYSCON.h" name="includes/hal/HAL_SYSCON.h">
+<area shape="rect" id="node2" href="$HAL__SPI_8h.html" title="Declaraciones a nivel de aplicacion del periferico SPI (LPC845) " alt="" coords="33,80,194,107"/>
+<area shape="rect" id="node4" href="$HAL__UART_8h.html" title="Declaraciones a nivel de aplicacion del periferico UART (LPC845) " alt="" coords="235,80,411,107"/>
+<area shape="rect" id="node6" href="$HAL__UART_8c.html" title="Funciones a nivel de aplicacion del periferico UART (LPC845) " alt="" coords="381,155,547,181"/>
+<area shape="rect" id="node7" href="$HAL__ADC_8c.html" title="Funciones a nivel de aplicacion del periferico ADC (LPC845) " alt="" coords="486,80,645,107"/>
+<area shape="rect" id="node8" href="$HAL__CTIMER_8c.html" title="Funciones a nivel de aplicacion del periferico CTIMER (LPC845) " alt="" coords="669,80,851,107"/>
+<area shape="rect" id="node9" href="$HAL__SYSCON_8c.html" title="Funciones a nivel de aplicacion para el SYSCON (LPC845) " alt="" coords="876,80,1063,107"/>
+<area shape="rect" id="node10" href="$HAL__SYSTICK_8c.html" title="Funciones a nivel de aplicacion para el SYSTICK (LPC845) " alt="" coords="1087,80,1275,107"/>
+<area shape="rect" id="node11" href="$HAL__WKT_8c.html" title="Funciones a nivel de aplicacion del periferico WKT (LPC845) " alt="" coords="1300,80,1460,107"/>
+<area shape="rect" id="node3" href="$HAL__SPI_8c.html" title="Funciones a nivel de aplicacion del periferico SPI (LPC845) " alt="" coords="5,155,157,181"/>
+<area shape="rect" id="node5" href="$HAL__PININT_8c.html" title="Funciones a nivel de aplicacion del periferico PININT (LPC845) " alt="" coords="182,155,357,181"/>
+</map>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Libreria LPC845: Fichero Fuente includes/infotronic/display.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Libreria LPC845
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_035bb69b6919dedf8325aca13d7087a8.html">infotronic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">display.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="display_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef DISPLAY_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define DISPLAY_H_</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#a407d5033a6f0198221c8a9081d7e807e">display_init</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#a8115993b5fa64551edb772962840c334">display_off</a>(uint8_t display);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#afcb17d2f3b6f8e14604fe31e82536bfd">display_on</a>(uint8_t display);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#ac27fb2409df03b01a0ae10616133edc9">display_write</a>(uint8_t display, uint32_t number);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#aac96b3adba740c8d6a6c873def736fad">display_set_dp</a>(uint8_t display, uint8_t digit);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#a2652e5a8993aa735d6f063e9f70dec77">display_clear_dp</a>(uint8_t display, uint8_t digit);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="display_8h.html#ac4214eed5f67e15daf64de9a7da8a964">display_check</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DISPLAY_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="display_8h_html_ac27fb2409df03b01a0ae10616133edc9"><div class="ttname"><a href="display_8h.html#ac27fb2409df03b01a0ae10616133edc9">display_write</a></div><div class="ttdeci">void display_write(uint8_t display, uint32_t number)</div><div class="ttdoc">Escribir display. </div><div class="ttdef"><b>Definition:</b> display.c:95</div></div>
+<div class="ttc" id="display_8h_html_afcb17d2f3b6f8e14604fe31e82536bfd"><div class="ttname"><a href="display_8h.html#afcb17d2f3b6f8e14604fe31e82536bfd">display_on</a></div><div class="ttdeci">void display_on(uint8_t display)</div><div class="ttdoc">Encender display. </div><div class="ttdef"><b>Definition:</b> display.c:80</div></div>
+<div class="ttc" id="display_8h_html_a8115993b5fa64551edb772962840c334"><div class="ttname"><a href="display_8h.html#a8115993b5fa64551edb772962840c334">display_off</a></div><div class="ttdeci">void display_off(uint8_t display)</div><div class="ttdoc">Apagar display. </div><div class="ttdef"><b>Definition:</b> display.c:66</div></div>
+<div class="ttc" id="display_8h_html_ac4214eed5f67e15daf64de9a7da8a964"><div class="ttname"><a href="display_8h.html#ac4214eed5f67e15daf64de9a7da8a964">display_check</a></div><div class="ttdeci">void display_check(void)</div><div class="ttdoc">Callback para actualizar el display periodicamente. </div><div class="ttdef"><b>Definition:</b> display.c:155</div></div>
+<div class="ttc" id="display_8h_html_a2652e5a8993aa735d6f063e9f70dec77"><div class="ttname"><a href="display_8h.html#a2652e5a8993aa735d6f063e9f70dec77">display_clear_dp</a></div><div class="ttdeci">void display_clear_dp(uint8_t display, uint8_t digit)</div><div class="ttdoc">Apagar el display point de un digito de un display. </div><div class="ttdef"><b>Definition:</b> display.c:142</div></div>
+<div class="ttc" id="display_8h_html_aac96b3adba740c8d6a6c873def736fad"><div class="ttname"><a href="display_8h.html#aac96b3adba740c8d6a6c873def736fad">display_set_dp</a></div><div class="ttdeci">void display_set_dp(uint8_t display, uint8_t digit)</div><div class="ttdoc">Encender el display point de un digito de un display. </div><div class="ttdef"><b>Definition:</b> display.c:127</div></div>
+<div class="ttc" id="display_8h_html_a407d5033a6f0198221c8a9081d7e807e"><div class="ttname"><a href="display_8h.html#a407d5033a6f0198221c8a9081d7e807e">display_init</a></div><div class="ttdeci">void display_init(void)</div><div class="ttdoc">Inicializacion de los display. </div><div class="ttdef"><b>Definition:</b> display.c:49</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

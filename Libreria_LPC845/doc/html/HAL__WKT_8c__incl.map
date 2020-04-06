@@ -1,0 +1,14 @@
+<map id="source/hal/HAL_WKT.c" name="source/hal/HAL_WKT.c">
+<area shape="rect" id="node3" href="$HAL__WKT_8h.html" title="Declaraciones a nivel de aplicacion del periferico WKT (LPC845) " alt="" coords="5,229,101,256"/>
+<area shape="rect" id="node5" href="$HAL__SYSCON_8h.html" title="Declaraciones a nivel de aplicacion del periferico SYSCON (LPC845) " alt="" coords="125,229,248,256"/>
+<area shape="rect" id="node6" href="$HPL__WKT_8h.html" title="Declaraciones a nivel de abstraccion de periferico del WKT (LPC845) " alt="" coords="247,155,343,181"/>
+<area shape="rect" id="node8" href="$HPL__NVIC_8h.html" title="Declaraciones a nivel de abstraccion de periferico del NVIC (LPC845) " alt="" coords="313,80,412,107"/>
+<area shape="rect" id="node10" href="$HPL__SYSCON_8h.html" title="Declaraciones a nivel de abstraccion de periferico del SYSCON (LPC845) " alt="" coords="436,80,559,107"/>
+<area shape="rect" id="node14" href="$HPL__PMU_8h.html" title="Declaraciones a nivel de abstraccion de periferico del PMU (LPC845) " alt="" coords="635,80,731,107"/>
+<area shape="rect" id="node7" href="$HRI__WKT_8h.html" title="Definiciones a nivel de registros del periferico WKT (LPC845) " alt="" coords="273,229,367,256"/>
+<area shape="rect" id="node9" href="$HRI__NVIC_8h.html" title="Definiciones a nivel de registros del modulo NVIC (LPC845) " alt="" coords="391,229,489,256"/>
+<area shape="rect" id="node11" href="$HRI__SYSCON_8h.html" title="Definiciones a nivel de registros del modulo SYSCON (LPC845) " alt="" coords="418,155,539,181"/>
+<area shape="rect" id="node12" href="$HPL__GPIO_8h.html" title="Declaraciones a nivel de abstraccion de periferico del GPIO (LPC845) " alt="" coords="564,155,663,181"/>
+<area shape="rect" id="node13" href="$HRI__GPIO_8h.html" title="Definiciones a nivel de registros del modulo GPIO (LPC845) " alt="" coords="565,229,662,256"/>
+<area shape="rect" id="node15" href="$HRI__PMU_8h.html" title="Definiciones a nivel de registros del modulo PMU (LPC845) " alt="" coords="687,155,782,181"/>
+</map>

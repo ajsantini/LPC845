@@ -1,0 +1,132 @@
+\hypertarget{HRI__WKT_8h}{}\section{Referencia del Archivo includes/hri/\+H\+R\+I\+\_\+\+W\+KT.h}
+\label{HRI__WKT_8h}\index{includes/hri/\+H\+R\+I\+\_\+\+W\+K\+T.\+h@{includes/hri/\+H\+R\+I\+\_\+\+W\+K\+T.\+h}}
+
+
+Definiciones a nivel de registros del periferico W\+KT (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+R\+I\+\_\+\+W\+K\+T.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{HRI__WKT_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{HRI__WKT_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{HRI__WKT_8h_structWKT__CTRL__reg__t}{W\+K\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__WKT_8h_structWKT__COUNT__reg__t}{W\+K\+T\+\_\+\+C\+O\+U\+N\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__WKT_8h_structWKT__per__t}{W\+K\+T\+\_\+per\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HRI__WKT_8h_a3722eeb96d2dd5f79d4b3eb5a8a43ac9}\label{HRI__WKT_8h_a3722eeb96d2dd5f79d4b3eb5a8a43ac9}} 
+\#define {\bfseries W\+K\+T\+\_\+\+B\+A\+SE}~0x40008000
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Definiciones a nivel de registros del periferico W\+KT (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{W\+K\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t@{W\+K\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}}\label{structWKT__CTRL__reg__t}
+\Hypertarget{HRI__WKT_8h_structWKT__CTRL__reg__t}
+\subsubsection{struct W\+K\+T\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__WKT_8h_a0d58abf091a504d7b5d90cc39f7f7c34}\label{HRI__WKT_8h_a0d58abf091a504d7b5d90cc39f7f7c34}} 
+uint32\_t&
+CLKSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__WKT_8h_a923704dacbd79a13d76a79ff32d3a693}\label{HRI__WKT_8h_a923704dacbd79a13d76a79ff32d3a693}} 
+uint32\_t&
+ALARMFLAG: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__WKT_8h_a9ed0f999d9cb6ce1573a0c944d83db09}\label{HRI__WKT_8h_a9ed0f999d9cb6ce1573a0c944d83db09}} 
+uint32\_t&
+CLEARCTR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__WKT_8h_a8a82e06a55face59021a56c4b62899c3}\label{HRI__WKT_8h_a8a82e06a55face59021a56c4b62899c3}} 
+uint32\_t&
+SEL\_EXTCLK: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__WKT_8h_a1b20759951a72b8e0f62c1a9b95b6bbe}\label{HRI__WKT_8h_a1b20759951a72b8e0f62c1a9b95b6bbe}} 
+uint32\_t&
+\_\_pad0\_\_: 28&
+\\
+\hline
+
+\end{DoxyFields}
+\index{W\+K\+T\+\_\+\+C\+O\+U\+N\+T\+\_\+reg\+\_\+t@{W\+K\+T\+\_\+\+C\+O\+U\+N\+T\+\_\+reg\+\_\+t}}\label{structWKT__COUNT__reg__t}
+\Hypertarget{HRI__WKT_8h_structWKT__COUNT__reg__t}
+\subsubsection{struct W\+K\+T\+\_\+\+C\+O\+U\+N\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__WKT_8h_accaf4360c66b920b680ffa4001bbae3c}\label{HRI__WKT_8h_accaf4360c66b920b680ffa4001bbae3c}} 
+uint32\_t&
+VALUE&
+\\
+\hline
+
+\end{DoxyFields}
+\index{W\+K\+T\+\_\+per\+\_\+t@{W\+K\+T\+\_\+per\+\_\+t}}\label{structWKT__per__t}
+\Hypertarget{HRI__WKT_8h_structWKT__per__t}
+\subsubsection{struct W\+K\+T\+\_\+per\+\_\+t}
+
+
+Diagrama de colaboración para W\+K\+T\+\_\+per\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{structWKT__per__t__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__WKT_8h_ad402191567a65df2683db9e8008b890e}\label{HRI__WKT_8h_ad402191567a65df2683db9e8008b890e}} 
+\hyperlink{HRI__WKT_8h_structWKT__CTRL__reg__t}{WKT\_CTRL\_reg\_t}&
+CTRL&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__WKT_8h_a4bbacc77d13dc3784963223fc98ac999}\label{HRI__WKT_8h_a4bbacc77d13dc3784963223fc98ac999}} 
+const uint32\_t&
+RESERVED\mbox{[}2\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__WKT_8h_a575d6ce6ec89cb431f74f250ee8e608b}\label{HRI__WKT_8h_a575d6ce6ec89cb431f74f250ee8e608b}} 
+\hyperlink{HRI__WKT_8h_structWKT__COUNT__reg__t}{WKT\_COUNT\_reg\_t}&
+COUNT&
+\\
+\hline
+
+\end{DoxyFields}

@@ -1,0 +1,13 @@
+<map id="SPI_per_t" name="SPI_per_t">
+<area shape="rect" id="node2" href="$db/d98/HRI__SPI_8h.html#dc/d3a/structSPI__TXDAT__reg__t" title="SPI_TXDAT_reg_t" alt="" coords="18,5,149,32"/>
+<area shape="rect" id="node3" href="$db/d98/HRI__SPI_8h.html#d0/d0f/structSPI__TXCTL__reg__t" title="SPI_TXCTL_reg_t" alt="" coords="19,56,148,83"/>
+<area shape="rect" id="node4" href="$db/d98/HRI__SPI_8h.html#d4/d09/structSPI__INTENCLR__reg__t" title="SPI_INTENCLR_reg_t" alt="" coords="6,107,161,133"/>
+<area shape="rect" id="node5" href="$db/d98/HRI__SPI_8h.html#dc/df1/structSPI__TXDATCTL__reg__t" title="SPI_TXDATCTL_reg_t" alt="" coords="5,157,161,184"/>
+<area shape="rect" id="node6" href="$db/d98/HRI__SPI_8h.html#de/dc0/structSPI__INTENSET__reg__t" title="SPI_INTENSET_reg_t" alt="" coords="6,208,161,235"/>
+<area shape="rect" id="node7" href="$db/d98/HRI__SPI_8h.html#d0/d76/structSPI__INTSTAT__reg__t" title="SPI_INTSTAT_reg_t" alt="" coords="12,259,155,285"/>
+<area shape="rect" id="node8" href="$db/d98/HRI__SPI_8h.html#d7/d42/structSPI__CFG__reg__t" title="SPI_CFG_reg_t" alt="" coords="26,309,141,336"/>
+<area shape="rect" id="node9" href="$db/d98/HRI__SPI_8h.html#da/dc7/structSPI__STAT__reg__t" title="SPI_STAT_reg_t" alt="" coords="23,360,144,387"/>
+<area shape="rect" id="node10" href="$db/d98/HRI__SPI_8h.html#d7/dfb/structSPI__DLY__reg__t" title="SPI_DLY_reg_t" alt="" coords="27,411,140,437"/>
+<area shape="rect" id="node11" href="$db/d98/HRI__SPI_8h.html#d9/d27/structSPI__DIV__reg__t" title="SPI_DIV_reg_t" alt="" coords="28,461,139,488"/>
+<area shape="rect" id="node12" href="$db/d98/HRI__SPI_8h.html#d0/d27/structSPI__RXDAT__reg__t" title="SPI_RXDAT_reg_t" alt="" coords="17,512,150,539"/>
+</map>

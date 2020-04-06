@@ -1,0 +1,14 @@
+<map id="UART_per_t" name="UART_per_t">
+<area shape="rect" id="node2" href="$HRI__UART_8h.html#structUART__CFG__reg__t" title="UART_CFG_reg_t" alt="" coords="31,5,162,32"/>
+<area shape="rect" id="node3" href="$HRI__UART_8h.html#structUART__CTL__reg__t" title="UART_CTL_reg_t" alt="" coords="33,56,160,83"/>
+<area shape="rect" id="node4" href="$HRI__UART_8h.html#structUART__STAT__reg__t" title="UART_STAT_reg_t" alt="" coords="29,107,165,133"/>
+<area shape="rect" id="node5" href="$HRI__UART_8h.html#structUART__INTSTAT__reg__t" title="UART_INTSTAT_reg_t" alt="" coords="17,157,176,184"/>
+<area shape="rect" id="node6" href="$HRI__UART_8h.html#structUART__TXDAT__reg__t" title="UART_TXDAT_reg_t" alt="" coords="23,208,170,235"/>
+<area shape="rect" id="node7" href="$HRI__UART_8h.html#structUART__INTENSET__reg__t" title="UART_INTENSET_reg_t" alt="" coords="12,259,181,285"/>
+<area shape="rect" id="node8" href="$HRI__UART_8h.html#structUART__INTENCLR__reg__t" title="UART_INTENCLR_reg_t" alt="" coords="11,309,182,336"/>
+<area shape="rect" id="node9" href="$HRI__UART_8h.html#structUART__RXDATSTAT__reg__t" title="UART_RXDATSTAT_reg_t" alt="" coords="5,360,188,387"/>
+<area shape="rect" id="node10" href="$HRI__UART_8h.html#structUART__BRG__reg__t" title="UART_BRG_reg_t" alt="" coords="31,411,162,437"/>
+<area shape="rect" id="node11" href="$HRI__UART_8h.html#structUART__ADDR__reg__t" title="UART_ADDR_reg_t" alt="" coords="26,461,167,488"/>
+<area shape="rect" id="node12" href="$HRI__UART_8h.html#structUART__RXDAT__reg__t" title="UART_RXDAT_reg_t" alt="" coords="23,512,171,539"/>
+<area shape="rect" id="node13" href="$HRI__UART_8h.html#structUART__OSR__reg__t" title="UART_OSR_reg_t" alt="" coords="31,563,162,589"/>
+</map>

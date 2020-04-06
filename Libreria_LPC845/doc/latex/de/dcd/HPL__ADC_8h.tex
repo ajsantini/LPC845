@@ -1,0 +1,721 @@
+\hypertarget{HPL__ADC_8h}{}\section{Referencia del Archivo includes/hpl/\+H\+P\+L\+\_\+\+A\+DC.h}
+\label{HPL__ADC_8h}\index{includes/hpl/\+H\+P\+L\+\_\+\+A\+D\+C.\+h@{includes/hpl/\+H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+
+
+Declaraciones a nivel de abstraccion de periferico del A\+DC (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$H\+R\+I\+\_\+\+A\+D\+C.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+P\+L\+\_\+\+A\+D\+C.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{d1/d94/HPL__ADC_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d8d/HPL__ADC_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{HPL__ADC_8h_d8/d2c/structADC__global__data__t}{A\+D\+C\+\_\+global\+\_\+data\+\_\+t}
+\item 
+struct \hyperlink{HPL__ADC_8h_dd/dd6/structADC__channel__data__t}{A\+D\+C\+\_\+channel\+\_\+data\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a00ba32f1aa7a302714f67324f1debf18}\label{HPL__ADC_8h_a00ba32f1aa7a302714f67324f1debf18}} 
+enum {\bfseries A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+S\+E\+L\+\_\+A} = 0, 
+{\bfseries A\+D\+C\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+S\+E\+L\+\_\+B}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_ab21589108767870dc4eb185316681091}\label{HPL__ADC_8h_ab21589108767870dc4eb185316681091}} 
+enum {\bfseries A\+D\+C\+\_\+operation\+\_\+mode\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US} = 0, 
+{\bfseries A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a1731e86f61a94ef27562f6e66f60ce26}\label{HPL__ADC_8h_a1731e86f61a94ef27562f6e66f60ce26}} 
+enum {\bfseries A\+D\+C\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+D\+I\+S\+A\+B\+L\+ED} = 0, 
+{\bfseries A\+D\+C\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+E\+N\+A\+B\+L\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a662858cc3be775892471d2ca73428e0d}\label{HPL__ADC_8h_a662858cc3be775892471d2ca73428e0d}} 
+enum {\bfseries A\+D\+C\+\_\+trigger\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+I\+N\+T0\+\_\+\+I\+RQ}, 
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+I\+N\+T1\+\_\+\+I\+RQ}, 
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+C\+T0\+\_\+\+O\+U\+T3}, 
+\newline
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+C\+T0\+\_\+\+O\+U\+T4}, 
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+T0\+\_\+\+M\+A\+T3}, 
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+C\+M\+P0\+\_\+\+O\+U\+T\+\_\+\+A\+DC}, 
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+B\+M\+AT}, 
+\newline
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+A\+R\+M\+\_\+\+T\+X\+EV}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a7d0c909ad610582ac96c96866b7193eb}\label{HPL__ADC_8h_a7d0c909ad610582ac96c96866b7193eb}} 
+enum {\bfseries A\+D\+C\+\_\+trigger\+\_\+pol\+\_\+sel\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+P\+O\+L\+\_\+\+S\+E\+L\+\_\+\+N\+E\+G\+A\+T\+I\+V\+E\+\_\+\+E\+D\+GE} = 0, 
+{\bfseries A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+P\+O\+L\+\_\+\+S\+E\+L\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+\+E\+D\+GE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_aac1bf6af7948a81c95143081b616279a}\label{HPL__ADC_8h_aac1bf6af7948a81c95143081b616279a}} 
+enum {\bfseries A\+D\+C\+\_\+sync\+\_\+sel\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+E\+L\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+Y\+NC} = 0, 
+{\bfseries A\+D\+C\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+E\+L\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+Y\+NC}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a1b2d533a0938903eac4d1b2b093fc2e2}\label{HPL__ADC_8h_a1b2d533a0938903eac4d1b2b093fc2e2}} 
+enum {\bfseries A\+D\+C\+\_\+clock\+\_\+source\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO} = 0, 
+{\bfseries A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+P\+LL}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a7539c07e0b39410f0c6c81fad7ccc671}\label{HPL__ADC_8h_a7539c07e0b39410f0c6c81fad7ccc671}} 
+enum {\bfseries A\+D\+C\+\_\+threshold\+\_\+sel\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+S\+E\+L\+\_\+0} = 0, 
+{\bfseries A\+D\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+S\+E\+L\+\_\+1}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a5c583dfdfe19856a56d143273c39bf5a}\label{HPL__ADC_8h_a5c583dfdfe19856a56d143273c39bf5a}} 
+enum {\bfseries A\+D\+C\+\_\+interrupt\+\_\+mode\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+\+E\+OC} = 0, 
+{\bfseries A\+D\+C\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+\+E\+OS}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a4a0eebd9bcb2d639500a76e286d1ed37}\label{HPL__ADC_8h_a4a0eebd9bcb2d639500a76e286d1ed37}} 
+enum {\bfseries A\+D\+C\+\_\+threshold\+\_\+interrupt\+\_\+sel\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+E\+L\+\_\+\+O\+U\+T\+S\+I\+DE} = 1, 
+{\bfseries A\+D\+C\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+S\+E\+L\+\_\+\+C\+R\+O\+S\+S\+I\+NG}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_ad2890355fdb5e4822e667c93717208b8}\label{HPL__ADC_8h_ad2890355fdb5e4822e667c93717208b8}} 
+enum {\bfseries A\+D\+C\+\_\+vrange\+\_\+sel\+\_\+en} \{ {\bfseries A\+D\+C\+\_\+\+V\+R\+A\+N\+G\+E\+\_\+\+H\+I\+G\+H\+\_\+\+V\+O\+L\+T\+A\+GE} = 0, 
+{\bfseries A\+D\+C\+\_\+\+V\+R\+A\+N\+G\+E\+\_\+\+L\+O\+W\+\_\+\+V\+O\+L\+T\+A\+GE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{HPL__ADC_8h_ab24094d357db84e562e43bf824fc729a}{A\+D\+C\+\_\+control\+\_\+config} (uint8\+\_\+t div, A\+D\+C\+\_\+operation\+\_\+mode\+\_\+en operation, A\+D\+C\+\_\+low\+\_\+power\+\_\+mode\+\_\+en power)
+\begin{DoxyCompactList}\small\item\em Configuracion del registro de control del A\+DC. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a5bd10e5f94ea00aec42b2defa70b99d3}{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+channels} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence, uint16\+\_\+t channels)
+\begin{DoxyCompactList}\small\item\em Configuracion de canales habilitados en una secuencia. \end{DoxyCompactList}\item 
+static uint16\+\_\+t \hyperlink{HPL__ADC_8h_a2d748808e448e5a38ae21a5460396329}{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+channels} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Obtener los canales configuados en la secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a9e34b22664fd6353bf02f63a3a1d2e8f}{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence, A\+D\+C\+\_\+trigger\+\_\+sel\+\_\+en trigger)
+\begin{DoxyCompactList}\small\item\em Configuracion de trigger en una secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a1d7a8e03098fa6be24327b606422e76f}{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger\+\_\+pol} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence, A\+D\+C\+\_\+trigger\+\_\+pol\+\_\+sel\+\_\+en pol)
+\begin{DoxyCompactList}\small\item\em Configuracion de la polaridad del trigger en una secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a20ef73fe9712291f6e93501cc18f17fc}{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+sync} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence, A\+D\+C\+\_\+sync\+\_\+sel\+\_\+en sync)
+\begin{DoxyCompactList}\small\item\em Configuracion de la sincronizacion en una secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a4ef125eab51dd46357acd54ac57e817e}{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+start} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Iniciar conversiones por software en una secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a32cbfd500dd8c6daa9ea1e80f4af363e}{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+burst} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Iniciar conversiones en rafaga en una secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a01d3167d81f527fc8e0cad1a576270af}{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+burst} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Detener conversiones en rafaga en una secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a3b513d17cc16f27aa5fe2d145f9934e6}{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+singlestep} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Fijar modo singlestep. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_ac14967725662ff5f3d3db72086ece29c}{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+singlestep} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Limpiar modo singlestep. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__ADC_8h_ae450f32fa863a87a91ccf60351daac06}\label{HPL__ADC_8h_ae450f32fa863a87a91ccf60351daac06}} 
+static void \hyperlink{HPL__ADC_8h_ae450f32fa863a87a91ccf60351daac06}{A\+D\+C\+\_\+sequence\+\_\+\+A\+\_\+lowpriority\+\_\+set} (void)
+\begin{DoxyCompactList}\small\item\em Fijar baja prioridad para la secuencia A. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__ADC_8h_aecf6fef0ff0634e679ce1f5fb0c62d36}\label{HPL__ADC_8h_aecf6fef0ff0634e679ce1f5fb0c62d36}} 
+static void \hyperlink{HPL__ADC_8h_aecf6fef0ff0634e679ce1f5fb0c62d36}{A\+D\+C\+\_\+sequence\+\_\+\+A\+\_\+lowpriority\+\_\+clear} (void)
+\begin{DoxyCompactList}\small\item\em Fijar baja prioridad para la secuencia A. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a80eb450b5275099b1bd103d825a8b9cb}{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+interrupt\+\_\+mode} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence, A\+D\+C\+\_\+interrupt\+\_\+mode\+\_\+en mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo de interrupcion para una secuencia. \end{DoxyCompactList}\item 
+static A\+D\+C\+\_\+interrupt\+\_\+mode\+\_\+en \hyperlink{HPL__ADC_8h_a357f428e72206972a091543c07e88dcb}{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+mode} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Obtener modo de interrupcion de una secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a0b105b65c13d7312dd765a1c5d83f8bd}{A\+D\+C\+\_\+sequence\+\_\+enable} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Habilitar secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a27e30232babfc8efabde71d710230d6a}{A\+D\+C\+\_\+sequence\+\_\+disable} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Inhabilitar secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a40e55bd01ba1890ac40787480f302b9e}{A\+D\+C\+\_\+set\+\_\+compare\+\_\+low\+\_\+threshold} (A\+D\+C\+\_\+threshold\+\_\+sel\+\_\+en threshold\+\_\+selection, uint16\+\_\+t threshold\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Fijar valor de umbral de comparacion (parte baja) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_acbfda715d41b3d1d513839ec9b9be670}{A\+D\+C\+\_\+set\+\_\+compare\+\_\+high\+\_\+threshold} (A\+D\+C\+\_\+threshold\+\_\+sel\+\_\+en threshold\+\_\+selection, uint16\+\_\+t threshold\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Fijar valor de umbral de comparacion (parte alta) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a0f1716162caa91bfd5d0e22714acd42a}{A\+D\+C\+\_\+set\+\_\+channel\+\_\+threshold} (uint8\+\_\+t channel, A\+D\+C\+\_\+threshold\+\_\+sel\+\_\+en threshold\+\_\+selection)
+\begin{DoxyCompactList}\small\item\em Fijar contra que umbral de comparacion se compara el canal. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a3baa06cc859a55bbed8b675cec046907}{A\+D\+C\+\_\+enable\+\_\+sequence\+\_\+interrupt} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Habilitacion de interrupcion de secuencia. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a94c3744333bc599df2967b25dabc3e59}{A\+D\+C\+\_\+disable\+\_\+sequence\+\_\+interrupt} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Inhabilitacion de interrupcion de secuencia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a993b110e06626d4d276586798e5428e6}\label{HPL__ADC_8h_a993b110e06626d4d276586798e5428e6}} 
+static void \hyperlink{HPL__ADC_8h_a993b110e06626d4d276586798e5428e6}{A\+D\+C\+\_\+enable\+\_\+overrun\+\_\+interrupt} (void)
+\begin{DoxyCompactList}\small\item\em Habilitacion de interrupcion de overrun. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a3223d60148565f93f922bf2417baf4fa}\label{HPL__ADC_8h_a3223d60148565f93f922bf2417baf4fa}} 
+static void \hyperlink{HPL__ADC_8h_a3223d60148565f93f922bf2417baf4fa}{A\+D\+C\+\_\+disable\+\_\+overrun\+\_\+interrupt} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilitacion de interrupcion de overrun. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a0d018bcac75ee493255a3223ffd45c99}{A\+D\+C\+\_\+enable\+\_\+threshold\+\_\+interrupt} (uint8\+\_\+t channel, A\+D\+C\+\_\+threshold\+\_\+interrupt\+\_\+sel\+\_\+en mode)
+\begin{DoxyCompactList}\small\item\em Habilitacion de interrupcion de threshold. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a78ca67ffe41bebeff3b49d1134e7cd40}{A\+D\+C\+\_\+disable\+\_\+threshold\+\_\+interrupt} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Inhabilitacion de interrupcion de threshold. \end{DoxyCompactList}\item 
+static \hyperlink{HPL__ADC_8h_d8/d2c/structADC__global__data__t}{A\+D\+C\+\_\+global\+\_\+data\+\_\+t} \hyperlink{HPL__ADC_8h_a81fa7ba195be27691183f4a28ee93802}{A\+D\+C\+\_\+get\+\_\+global\+\_\+data} (A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Leer alguno de los registros globales de resultado de conversion. \end{DoxyCompactList}\item 
+static \hyperlink{HPL__ADC_8h_dd/dd6/structADC__channel__data__t}{A\+D\+C\+\_\+channel\+\_\+data\+\_\+t} \hyperlink{HPL__ADC_8h_a1a439ff65b76837563262f3c0c565526}{A\+D\+C\+\_\+get\+\_\+channel\+\_\+data} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Leer alguno de los registros de canal de resultado de conversion. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a4fc78512b7f19599f3faa80f09acacd8}{A\+D\+C\+\_\+set\+\_\+vrange} (A\+D\+C\+\_\+vrange\+\_\+sel\+\_\+en vrange)
+\begin{DoxyCompactList}\small\item\em Configuracion de rango de tension. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__ADC_8h_a506c5d55578997c4cc94c6ccc574af13}{A\+D\+C\+\_\+hardware\+\_\+calib} (uint8\+\_\+t div)
+\begin{DoxyCompactList}\small\item\em Realizacion de calibracion de hardware. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__ADC_8h_a20f80b6ba6ee12bb8fd2b5293aedef41}\label{HPL__ADC_8h_a20f80b6ba6ee12bb8fd2b5293aedef41}} 
+volatile \hyperlink{HRI__ADC_8h_df/dda/structADC__per__t}{A\+D\+C\+\_\+per\+\_\+t} $\ast$const \hyperlink{HPL__ADC_8h_a20f80b6ba6ee12bb8fd2b5293aedef41}{A\+DC}
+\begin{DoxyCompactList}\small\item\em Periferico A\+DC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de abstraccion de periferico del A\+DC (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{A\+D\+C\+\_\+global\+\_\+data\+\_\+t@{A\+D\+C\+\_\+global\+\_\+data\+\_\+t}}\label{structADC__global__data__t}
+\Hypertarget{HPL__ADC_8h_structADC__global__data__t}
+\subsubsection{struct A\+D\+C\+\_\+global\+\_\+data\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HPL__ADC_8h_aab0d5f63ec03ccf3e1378d124af2b962}\label{HPL__ADC_8h_aab0d5f63ec03ccf3e1378d124af2b962}} 
+uint32\_t&
+\_\_pad0\_\_: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a87f69474b4ba4c403f8f29a373ccc42d}\label{HPL__ADC_8h_a87f69474b4ba4c403f8f29a373ccc42d}} 
+uint32\_t&
+RESULT: 12&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_af077de9fd4cf1f80ce410fed7568e2dd}\label{HPL__ADC_8h_af077de9fd4cf1f80ce410fed7568e2dd}} 
+uint32\_t&
+THCMPRANGE: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_aeea85ce6bba27d40558b56b4f63039a8}\label{HPL__ADC_8h_aeea85ce6bba27d40558b56b4f63039a8}} 
+uint32\_t&
+THCMPCROSS: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a9f4d339958628366c8f3422d7f26d84b}\label{HPL__ADC_8h_a9f4d339958628366c8f3422d7f26d84b}} 
+uint32\_t&
+\_\_pad1\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_aed70fd36a160eb8380682f31071652d2}\label{HPL__ADC_8h_aed70fd36a160eb8380682f31071652d2}} 
+uint32\_t&
+CHANNEL: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a3e65c5ce5e7b0bf74cef8606efb80a2f}\label{HPL__ADC_8h_a3e65c5ce5e7b0bf74cef8606efb80a2f}} 
+uint32\_t&
+OVERRUN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a44b75180884f744bf69c08bb27989eb7}\label{HPL__ADC_8h_a44b75180884f744bf69c08bb27989eb7}} 
+uint32\_t&
+DATAVALID: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+channel\+\_\+data\+\_\+t@{A\+D\+C\+\_\+channel\+\_\+data\+\_\+t}}\label{structADC__channel__data__t}
+\Hypertarget{HPL__ADC_8h_structADC__channel__data__t}
+\subsubsection{struct A\+D\+C\+\_\+channel\+\_\+data\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HPL__ADC_8h_a72cb5ef1ab3f6dfff0c8a9874287eb43}\label{HPL__ADC_8h_a72cb5ef1ab3f6dfff0c8a9874287eb43}} 
+uint32\_t&
+\_\_pad0\_\_: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a20c3198ed83cba0a0fdafb7077de28ca}\label{HPL__ADC_8h_a20c3198ed83cba0a0fdafb7077de28ca}} 
+uint32\_t&
+RESULT: 12&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a2ef5429ff6c6b00e8048a468c7854025}\label{HPL__ADC_8h_a2ef5429ff6c6b00e8048a468c7854025}} 
+uint32\_t&
+THCMPRANGE: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a2a656fa23fd2ef1181936eee78933dd8}\label{HPL__ADC_8h_a2a656fa23fd2ef1181936eee78933dd8}} 
+uint32\_t&
+THCMPCROSS: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_abf93e87eae03aa86a0d0f789b7df39aa}\label{HPL__ADC_8h_abf93e87eae03aa86a0d0f789b7df39aa}} 
+uint32\_t&
+\_\_pad1\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a54a0fe0508c391a3acf39af24543f881}\label{HPL__ADC_8h_a54a0fe0508c391a3acf39af24543f881}} 
+uint32\_t&
+CHANNEL: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a2d765bb0a974a3887ea027180ed7320e}\label{HPL__ADC_8h_a2d765bb0a974a3887ea027180ed7320e}} 
+uint32\_t&
+OVERRUN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__ADC_8h_a9e33795dd1f15a8624535b0b555fa9f0}\label{HPL__ADC_8h_a9e33795dd1f15a8624535b0b555fa9f0}} 
+uint32\_t&
+DATAVALID: 1&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HPL__ADC_8h_ab24094d357db84e562e43bf824fc729a}\label{HPL__ADC_8h_ab24094d357db84e562e43bf824fc729a}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+control\+\_\+config@{A\+D\+C\+\_\+control\+\_\+config}}
+\index{A\+D\+C\+\_\+control\+\_\+config@{A\+D\+C\+\_\+control\+\_\+config}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+control\+\_\+config()}{ADC\_control\_config()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+control\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{div,  }\item[{A\+D\+C\+\_\+operation\+\_\+mode\+\_\+en}]{operation,  }\item[{A\+D\+C\+\_\+low\+\_\+power\+\_\+mode\+\_\+en}]{power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion del registro de control del A\+DC. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em div} & Divisor deseado \\
+\hline
+\mbox{\tt in}  & {\em operation} & Modo de operacion sincronico/asincronico \\
+\hline
+\mbox{\tt in}  & {\em power} & Modo de consumo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a5bd10e5f94ea00aec42b2defa70b99d3}\label{HPL__ADC_8h_a5bd10e5f94ea00aec42b2defa70b99d3}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+config\+\_\+channels@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+channels}}
+\index{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+channels@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+channels}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+channels()}{ADC\_sequence\_config\_channels()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+config\+\_\+channels (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{uint16\+\_\+t}]{channels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion de canales habilitados en una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\mbox{\tt in}  & {\em channels} & Canales a habilitar en forma de mascara \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a2d748808e448e5a38ae21a5460396329}\label{HPL__ADC_8h_a2d748808e448e5a38ae21a5460396329}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+get\+\_\+channels@{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+channels}}
+\index{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+channels@{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+channels}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+channels()}{ADC\_sequence\_get\_channels()}}
+{\footnotesize\ttfamily static uint16\+\_\+t A\+D\+C\+\_\+sequence\+\_\+get\+\_\+channels (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener los canales configuados en la secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Mascara de canales habilitados en la secuencia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__ADC_8h_a9e34b22664fd6353bf02f63a3a1d2e8f}\label{HPL__ADC_8h_a9e34b22664fd6353bf02f63a3a1d2e8f}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger}}
+\index{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger()}{ADC\_sequence\_config\_trigger()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{A\+D\+C\+\_\+trigger\+\_\+sel\+\_\+en}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion de trigger en una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\mbox{\tt in}  & {\em trigger} & Fuente de trigger deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a1d7a8e03098fa6be24327b606422e76f}\label{HPL__ADC_8h_a1d7a8e03098fa6be24327b606422e76f}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger\+\_\+pol@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger\+\_\+pol}}
+\index{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger\+\_\+pol@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger\+\_\+pol}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger\+\_\+pol()}{ADC\_sequence\_config\_trigger\_pol()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+config\+\_\+trigger\+\_\+pol (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{A\+D\+C\+\_\+trigger\+\_\+pol\+\_\+sel\+\_\+en}]{pol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion de la polaridad del trigger en una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\mbox{\tt in}  & {\em pol} & Polaridad del trigger deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a20ef73fe9712291f6e93501cc18f17fc}\label{HPL__ADC_8h_a20ef73fe9712291f6e93501cc18f17fc}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+config\+\_\+sync@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+sync}}
+\index{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+sync@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+sync}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+sync()}{ADC\_sequence\_config\_sync()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+config\+\_\+sync (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{A\+D\+C\+\_\+sync\+\_\+sel\+\_\+en}]{sync }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion de la sincronizacion en una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\mbox{\tt in}  & {\em sync} & Metodo de sincronizacion deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a4ef125eab51dd46357acd54ac57e817e}\label{HPL__ADC_8h_a4ef125eab51dd46357acd54ac57e817e}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+set\+\_\+start@{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+start}}
+\index{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+start@{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+start}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+start()}{ADC\_sequence\_set\_start()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+set\+\_\+start (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Iniciar conversiones por software en una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a32cbfd500dd8c6daa9ea1e80f4af363e}\label{HPL__ADC_8h_a32cbfd500dd8c6daa9ea1e80f4af363e}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+set\+\_\+burst@{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+burst}}
+\index{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+burst@{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+burst}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+burst()}{ADC\_sequence\_set\_burst()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+set\+\_\+burst (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Iniciar conversiones en rafaga en una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a01d3167d81f527fc8e0cad1a576270af}\label{HPL__ADC_8h_a01d3167d81f527fc8e0cad1a576270af}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+burst@{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+burst}}
+\index{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+burst@{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+burst}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+burst()}{ADC\_sequence\_clear\_burst()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+burst (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Detener conversiones en rafaga en una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a3b513d17cc16f27aa5fe2d145f9934e6}\label{HPL__ADC_8h_a3b513d17cc16f27aa5fe2d145f9934e6}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+set\+\_\+singlestep@{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+singlestep}}
+\index{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+singlestep@{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+singlestep}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+set\+\_\+singlestep()}{ADC\_sequence\_set\_singlestep()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+set\+\_\+singlestep (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar modo singlestep. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_ac14967725662ff5f3d3db72086ece29c}\label{HPL__ADC_8h_ac14967725662ff5f3d3db72086ece29c}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+singlestep@{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+singlestep}}
+\index{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+singlestep@{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+singlestep}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+singlestep()}{ADC\_sequence\_clear\_singlestep()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+clear\+\_\+singlestep (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Limpiar modo singlestep. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a80eb450b5275099b1bd103d825a8b9cb}\label{HPL__ADC_8h_a80eb450b5275099b1bd103d825a8b9cb}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+config\+\_\+interrupt\+\_\+mode@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+interrupt\+\_\+mode}}
+\index{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+interrupt\+\_\+mode@{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+interrupt\+\_\+mode}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+config\+\_\+interrupt\+\_\+mode()}{ADC\_sequence\_config\_interrupt\_mode()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+config\+\_\+interrupt\+\_\+mode (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{A\+D\+C\+\_\+interrupt\+\_\+mode\+\_\+en}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo de interrupcion para una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Que secuencia configurar \\
+\hline
+\mbox{\tt in}  & {\em mode} & Modo de interrupcion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a357f428e72206972a091543c07e88dcb}\label{HPL__ADC_8h_a357f428e72206972a091543c07e88dcb}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+get\+\_\+mode@{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+mode}}
+\index{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+mode@{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+mode}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+get\+\_\+mode()}{ADC\_sequence\_get\_mode()}}
+{\footnotesize\ttfamily static A\+D\+C\+\_\+interrupt\+\_\+mode\+\_\+en A\+D\+C\+\_\+sequence\+\_\+get\+\_\+mode (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener modo de interrupcion de una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Modo de interrupcion de la secuencia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__ADC_8h_a0b105b65c13d7312dd765a1c5d83f8bd}\label{HPL__ADC_8h_a0b105b65c13d7312dd765a1c5d83f8bd}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+enable@{A\+D\+C\+\_\+sequence\+\_\+enable}}
+\index{A\+D\+C\+\_\+sequence\+\_\+enable@{A\+D\+C\+\_\+sequence\+\_\+enable}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+enable()}{ADC\_sequence\_enable()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+enable (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Que secuencia habilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a27e30232babfc8efabde71d710230d6a}\label{HPL__ADC_8h_a27e30232babfc8efabde71d710230d6a}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+sequence\+\_\+disable@{A\+D\+C\+\_\+sequence\+\_\+disable}}
+\index{A\+D\+C\+\_\+sequence\+\_\+disable@{A\+D\+C\+\_\+sequence\+\_\+disable}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+sequence\+\_\+disable()}{ADC\_sequence\_disable()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+sequence\+\_\+disable (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Que secuencia inhabilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a40e55bd01ba1890ac40787480f302b9e}\label{HPL__ADC_8h_a40e55bd01ba1890ac40787480f302b9e}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+set\+\_\+compare\+\_\+low\+\_\+threshold@{A\+D\+C\+\_\+set\+\_\+compare\+\_\+low\+\_\+threshold}}
+\index{A\+D\+C\+\_\+set\+\_\+compare\+\_\+low\+\_\+threshold@{A\+D\+C\+\_\+set\+\_\+compare\+\_\+low\+\_\+threshold}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+set\+\_\+compare\+\_\+low\+\_\+threshold()}{ADC\_set\_compare\_low\_threshold()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+set\+\_\+compare\+\_\+low\+\_\+threshold (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+threshold\+\_\+sel\+\_\+en}]{threshold\+\_\+selection,  }\item[{uint16\+\_\+t}]{threshold\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar valor de umbral de comparacion (parte baja) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em threshold\+\_\+selection} & Que threshold fijar \\
+\hline
+\mbox{\tt in}  & {\em threshold\+\_\+value} & Valor de threshold a fijar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_acbfda715d41b3d1d513839ec9b9be670}\label{HPL__ADC_8h_acbfda715d41b3d1d513839ec9b9be670}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+set\+\_\+compare\+\_\+high\+\_\+threshold@{A\+D\+C\+\_\+set\+\_\+compare\+\_\+high\+\_\+threshold}}
+\index{A\+D\+C\+\_\+set\+\_\+compare\+\_\+high\+\_\+threshold@{A\+D\+C\+\_\+set\+\_\+compare\+\_\+high\+\_\+threshold}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+set\+\_\+compare\+\_\+high\+\_\+threshold()}{ADC\_set\_compare\_high\_threshold()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+set\+\_\+compare\+\_\+high\+\_\+threshold (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+threshold\+\_\+sel\+\_\+en}]{threshold\+\_\+selection,  }\item[{uint16\+\_\+t}]{threshold\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar valor de umbral de comparacion (parte alta) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em threshold\+\_\+selection} & Que threshold fijar \\
+\hline
+\mbox{\tt in}  & {\em threshold\+\_\+value} & Valor de threshold a fijar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a0f1716162caa91bfd5d0e22714acd42a}\label{HPL__ADC_8h_a0f1716162caa91bfd5d0e22714acd42a}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+set\+\_\+channel\+\_\+threshold@{A\+D\+C\+\_\+set\+\_\+channel\+\_\+threshold}}
+\index{A\+D\+C\+\_\+set\+\_\+channel\+\_\+threshold@{A\+D\+C\+\_\+set\+\_\+channel\+\_\+threshold}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+set\+\_\+channel\+\_\+threshold()}{ADC\_set\_channel\_threshold()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+set\+\_\+channel\+\_\+threshold (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{A\+D\+C\+\_\+threshold\+\_\+sel\+\_\+en}]{threshold\+\_\+selection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar contra que umbral de comparacion se compara el canal. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Numero de canal \\
+\hline
+\mbox{\tt in}  & {\em threshold\+\_\+selection} & Contra que umbral de comparacion comparar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a3baa06cc859a55bbed8b675cec046907}\label{HPL__ADC_8h_a3baa06cc859a55bbed8b675cec046907}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+enable\+\_\+sequence\+\_\+interrupt@{A\+D\+C\+\_\+enable\+\_\+sequence\+\_\+interrupt}}
+\index{A\+D\+C\+\_\+enable\+\_\+sequence\+\_\+interrupt@{A\+D\+C\+\_\+enable\+\_\+sequence\+\_\+interrupt}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+enable\+\_\+sequence\+\_\+interrupt()}{ADC\_enable\_sequence\_interrupt()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+enable\+\_\+sequence\+\_\+interrupt (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitacion de interrupcion de secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Sobre que secuencia habilitar la interrupcion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a94c3744333bc599df2967b25dabc3e59}\label{HPL__ADC_8h_a94c3744333bc599df2967b25dabc3e59}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+disable\+\_\+sequence\+\_\+interrupt@{A\+D\+C\+\_\+disable\+\_\+sequence\+\_\+interrupt}}
+\index{A\+D\+C\+\_\+disable\+\_\+sequence\+\_\+interrupt@{A\+D\+C\+\_\+disable\+\_\+sequence\+\_\+interrupt}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+disable\+\_\+sequence\+\_\+interrupt()}{ADC\_disable\_sequence\_interrupt()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+disable\+\_\+sequence\+\_\+interrupt (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitacion de interrupcion de secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Sobre que secuencia inhabilitar la interrupcion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a0d018bcac75ee493255a3223ffd45c99}\label{HPL__ADC_8h_a0d018bcac75ee493255a3223ffd45c99}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+enable\+\_\+threshold\+\_\+interrupt@{A\+D\+C\+\_\+enable\+\_\+threshold\+\_\+interrupt}}
+\index{A\+D\+C\+\_\+enable\+\_\+threshold\+\_\+interrupt@{A\+D\+C\+\_\+enable\+\_\+threshold\+\_\+interrupt}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+enable\+\_\+threshold\+\_\+interrupt()}{ADC\_enable\_threshold\_interrupt()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+enable\+\_\+threshold\+\_\+interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{A\+D\+C\+\_\+threshold\+\_\+interrupt\+\_\+sel\+\_\+en}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitacion de interrupcion de threshold. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Sobre que canal habilitar la interrupcion \\
+\hline
+\mbox{\tt in}  & {\em mode} & Modo de interrupcion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a78ca67ffe41bebeff3b49d1134e7cd40}\label{HPL__ADC_8h_a78ca67ffe41bebeff3b49d1134e7cd40}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+disable\+\_\+threshold\+\_\+interrupt@{A\+D\+C\+\_\+disable\+\_\+threshold\+\_\+interrupt}}
+\index{A\+D\+C\+\_\+disable\+\_\+threshold\+\_\+interrupt@{A\+D\+C\+\_\+disable\+\_\+threshold\+\_\+interrupt}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+disable\+\_\+threshold\+\_\+interrupt()}{ADC\_disable\_threshold\_interrupt()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+disable\+\_\+threshold\+\_\+interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitacion de interrupcion de threshold. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Sobre que canal inhabilitar la interrupcion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a81fa7ba195be27691183f4a28ee93802}\label{HPL__ADC_8h_a81fa7ba195be27691183f4a28ee93802}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+get\+\_\+global\+\_\+data@{A\+D\+C\+\_\+get\+\_\+global\+\_\+data}}
+\index{A\+D\+C\+\_\+get\+\_\+global\+\_\+data@{A\+D\+C\+\_\+get\+\_\+global\+\_\+data}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+get\+\_\+global\+\_\+data()}{ADC\_get\_global\_data()}}
+{\footnotesize\ttfamily static \hyperlink{HPL__ADC_8h_d8/d2c/structADC__global__data__t}{A\+D\+C\+\_\+global\+\_\+data\+\_\+t} A\+D\+C\+\_\+get\+\_\+global\+\_\+data (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer alguno de los registros globales de resultado de conversion. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & De que secuencia leer el resultado global de conversion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Contenido del registro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__ADC_8h_a1a439ff65b76837563262f3c0c565526}\label{HPL__ADC_8h_a1a439ff65b76837563262f3c0c565526}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+get\+\_\+channel\+\_\+data@{A\+D\+C\+\_\+get\+\_\+channel\+\_\+data}}
+\index{A\+D\+C\+\_\+get\+\_\+channel\+\_\+data@{A\+D\+C\+\_\+get\+\_\+channel\+\_\+data}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+get\+\_\+channel\+\_\+data()}{ADC\_get\_channel\_data()}}
+{\footnotesize\ttfamily static \hyperlink{HPL__ADC_8h_dd/dd6/structADC__channel__data__t}{A\+D\+C\+\_\+channel\+\_\+data\+\_\+t} A\+D\+C\+\_\+get\+\_\+channel\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer alguno de los registros de canal de resultado de conversion. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & De que canal leer el resultado de canal de conversion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Contenido del registro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__ADC_8h_a4fc78512b7f19599f3faa80f09acacd8}\label{HPL__ADC_8h_a4fc78512b7f19599f3faa80f09acacd8}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+set\+\_\+vrange@{A\+D\+C\+\_\+set\+\_\+vrange}}
+\index{A\+D\+C\+\_\+set\+\_\+vrange@{A\+D\+C\+\_\+set\+\_\+vrange}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+set\+\_\+vrange()}{ADC\_set\_vrange()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+set\+\_\+vrange (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+vrange\+\_\+sel\+\_\+en}]{vrange }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion de rango de tension. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em vrange} & Rango de tension de trabajo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__ADC_8h_a506c5d55578997c4cc94c6ccc574af13}\label{HPL__ADC_8h_a506c5d55578997c4cc94c6ccc574af13}} 
+\index{H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}!A\+D\+C\+\_\+hardware\+\_\+calib@{A\+D\+C\+\_\+hardware\+\_\+calib}}
+\index{A\+D\+C\+\_\+hardware\+\_\+calib@{A\+D\+C\+\_\+hardware\+\_\+calib}!H\+P\+L\+\_\+\+A\+D\+C.\+h@{H\+P\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+hardware\+\_\+calib()}{ADC\_hardware\_calib()}}
+{\footnotesize\ttfamily static void A\+D\+C\+\_\+hardware\+\_\+calib (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{div }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Realizacion de calibracion de hardware. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em div} & Divisor utilizado para lograr los 500\+K\+Hz de clock \\
+\hline
+\end{DoxyParams}

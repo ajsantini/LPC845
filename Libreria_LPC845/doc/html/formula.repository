@@ -1,0 +1,3 @@
+\form#0:$ADC_{res} = \frac{V_{ref_{p}}}{2^N}$
+\form#1:$ ADC_{res} = \frac{V_{ref_{p}}}{2^N} $
+\form#2:$ ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}} $

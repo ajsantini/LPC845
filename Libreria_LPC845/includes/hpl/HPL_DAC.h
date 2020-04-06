@@ -9,7 +9,6 @@
 #ifndef HPL_DAC_H_
 #define HPL_DAC_H_
 
-#include <stdint.h>
 #include <HRI_DAC.h>
 
 extern volatile DAC_per_t * const DAC[]; //!< Perifericos DAC

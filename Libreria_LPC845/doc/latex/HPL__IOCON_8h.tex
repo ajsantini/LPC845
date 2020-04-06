@@ -1,0 +1,334 @@
+\hypertarget{HPL__IOCON_8h}{}\section{Referencia del Archivo includes/hpl/\+H\+P\+L\+\_\+\+I\+O\+C\+ON.h}
+\label{HPL__IOCON_8h}\index{includes/hpl/\+H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{includes/hpl/\+H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+
+
+Declaraciones a nivel de abstraccion de periferico del I\+O\+C\+ON (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+R\+I\+\_\+\+I\+O\+C\+O\+N.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{HPL__IOCON_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HPL__IOCON_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_aa8ba7d9a2ec6e147ae5eeb52fa8fc1c7}\label{HPL__IOCON_8h_aa8ba7d9a2ec6e147ae5eeb52fa8fc1c7}} 
+enum {\bfseries I\+O\+C\+O\+N\+\_\+pull\+\_\+mode\+\_\+en} \{ {\bfseries I\+O\+C\+O\+N\+\_\+\+P\+U\+L\+L\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+P\+U\+L\+L\+\_\+\+D\+O\+WN}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+P\+U\+L\+L\+\_\+\+UP}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+P\+U\+L\+L\+\_\+\+R\+E\+P\+E\+A\+T\+ER}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_aeef5b33358336e2f33f7ab699d8d118f}\label{HPL__IOCON_8h_aeef5b33358336e2f33f7ab699d8d118f}} 
+enum {\bfseries I\+O\+C\+O\+N\+\_\+sample\+\_\+mode\+\_\+en} \{ {\bfseries I\+O\+C\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+M\+O\+D\+E\+\_\+\+B\+Y\+P\+A\+SS} = 0, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+M\+O\+D\+E\+\_\+1\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+M\+O\+D\+E\+\_\+2\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+M\+O\+D\+E\+\_\+3\+\_\+\+C\+L\+O\+CK}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_a823cad956b251f0bff16c6992beb82a7}\label{HPL__IOCON_8h_a823cad956b251f0bff16c6992beb82a7}} 
+enum {\bfseries I\+O\+C\+O\+N\+\_\+clk\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries I\+O\+C\+O\+N\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V\+\_\+0} = 0, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V\+\_\+1}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V\+\_\+2}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V\+\_\+3}, 
+\newline
+{\bfseries I\+O\+C\+O\+N\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V\+\_\+4}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V\+\_\+5}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+C\+L\+K\+\_\+\+D\+I\+V\+\_\+6}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_a3434ae16a3ced0b0569ca1731bb008d1}\label{HPL__IOCON_8h_a3434ae16a3ced0b0569ca1731bb008d1}} 
+enum {\bfseries I\+O\+C\+O\+N\+\_\+iic\+\_\+mode\+\_\+en} \{ {\bfseries I\+O\+C\+O\+N\+\_\+\+I\+I\+C\+\_\+\+M\+O\+D\+E\+\_\+\+S\+T\+A\+N\+D\+A\+RD} = 0, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+I\+I\+C\+\_\+\+M\+O\+D\+E\+\_\+\+G\+P\+IO}, 
+{\bfseries I\+O\+C\+O\+N\+\_\+\+I\+I\+C\+\_\+\+M\+O\+D\+E\+\_\+\+F\+A\+S\+T\+\_\+\+M\+O\+DE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{HPL__IOCON_8h_ac8a793d4b6c1f6eca58555f942ff721b}{I\+O\+C\+O\+N\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializacion del modulo I\+O\+C\+ON. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_aa6a1f1da78d1e9eea04e2265daac7e1c}{I\+O\+C\+O\+N\+\_\+deinit} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilitacion del modulo I\+O\+C\+ON. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_a531eb5245577caa96015eaceff8449a1}{I\+O\+C\+O\+N\+\_\+config\+\_\+pull\+\_\+mode} (uint8\+\_\+t port, uint8\+\_\+t pin, I\+O\+C\+O\+N\+\_\+pull\+\_\+mode\+\_\+en pull\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo de funcionamiento (pull up, pull down, etc) en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_ac80b6a592161cd0f5124dbffafe552cb}{I\+O\+C\+O\+N\+\_\+enable\+\_\+hysteresis} (uint8\+\_\+t port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Habilitar histeresis en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_a657c0c0341ebbb9d43f4fbdf1a9027fb}{I\+O\+C\+O\+N\+\_\+disable\+\_\+hysteresis} (uint8\+\_\+t port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Inhabilitar histeresis en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_a2a9ae7bdc92fd6325ec38befb01feb51}{I\+O\+C\+O\+N\+\_\+enable\+\_\+invert} (uint8\+\_\+t port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Habilitar inversion en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_a434cae72963baffec893aa3b035c64fd}{I\+O\+C\+O\+N\+\_\+disable\+\_\+invert} (uint8\+\_\+t port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Inhabilitar inversion en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_aa774324a17698d6dc3054bed0e3322fe}{I\+O\+C\+O\+N\+\_\+enable\+\_\+open\+\_\+drain} (uint8\+\_\+t port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Habilitar modo open drain en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_abdece1a8e22fa543fcf02f54342c4f15}{I\+O\+C\+O\+N\+\_\+disable\+\_\+open\+\_\+drain} (uint8\+\_\+t port, uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Inhabilitar modo open drain en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_a25612d6c9182b6e8442548d48807239b}{I\+O\+C\+O\+N\+\_\+config\+\_\+sample\+\_\+mode} (uint8\+\_\+t port, uint8\+\_\+t pin, I\+O\+C\+O\+N\+\_\+sample\+\_\+mode\+\_\+en sample\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo de sampleo en un pin. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_ac2081ddb1da6aaacf941a346387f896d}{I\+O\+C\+O\+N\+\_\+config\+\_\+clock\+\_\+source} (uint8\+\_\+t port, uint8\+\_\+t pin, I\+O\+C\+O\+N\+\_\+clk\+\_\+sel\+\_\+en clock\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Configurar fuente utilizada para el sampleo en un pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_a23ad5a4fdce8f99274d24f6e6a7db41f}\label{HPL__IOCON_8h_a23ad5a4fdce8f99274d24f6e6a7db41f}} 
+static void \hyperlink{HPL__IOCON_8h_a23ad5a4fdce8f99274d24f6e6a7db41f}{I\+O\+C\+O\+N\+\_\+enable\+\_\+dac0} (void)
+\begin{DoxyCompactList}\small\item\em Habilitar D\+A\+C0 en P\+I\+O0\+\_\+17. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_a9ee9d893a205ef3bc7a4f26c5abac66e}\label{HPL__IOCON_8h_a9ee9d893a205ef3bc7a4f26c5abac66e}} 
+static void \hyperlink{HPL__IOCON_8h_a9ee9d893a205ef3bc7a4f26c5abac66e}{I\+O\+C\+O\+N\+\_\+enable\+\_\+dac1} (void)
+\begin{DoxyCompactList}\small\item\em Habilitar D\+A\+C1 en P\+I\+O0\+\_\+29. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_a5c8853d382380971b344feb2e9e0ac0d}\label{HPL__IOCON_8h_a5c8853d382380971b344feb2e9e0ac0d}} 
+static void \hyperlink{HPL__IOCON_8h_a5c8853d382380971b344feb2e9e0ac0d}{I\+O\+C\+O\+N\+\_\+disable\+\_\+dac0} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilitar D\+A\+C0 en P\+I\+O0\+\_\+17. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_affc3d0c98316505129248f5f421e675d}\label{HPL__IOCON_8h_affc3d0c98316505129248f5f421e675d}} 
+static void \hyperlink{HPL__IOCON_8h_affc3d0c98316505129248f5f421e675d}{I\+O\+C\+O\+N\+\_\+disable\+\_\+dac1} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilitar D\+A\+C1 en P\+I\+O0\+\_\+29. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_a866abbda2b6102011bb4a9341709ce8a}{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+scl} (I\+O\+C\+O\+N\+\_\+iic\+\_\+mode\+\_\+en iic\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Habilitar I\+I\+C0\+\_\+\+S\+CL en P\+I\+O0\+\_\+10. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__IOCON_8h_a298d06693808eca45844c48c855a706c}{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+sda} (I\+O\+C\+O\+N\+\_\+iic\+\_\+mode\+\_\+en iic\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Habilitar I\+IC S\+DA en P\+I\+O0\+\_\+11. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_a446b5ff38614b88495bb5a5d7574f96d}\label{HPL__IOCON_8h_a446b5ff38614b88495bb5a5d7574f96d}} 
+volatile \hyperlink{structIOCON__per__t}{I\+O\+C\+O\+N\+\_\+per\+\_\+t} $\ast$const \hyperlink{HPL__IOCON_8h_a446b5ff38614b88495bb5a5d7574f96d}{I\+O\+C\+ON}
+\begin{DoxyCompactList}\small\item\em Periferico I\+O\+C\+ON. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__IOCON_8h_a3eabc50cf92c5f45256fa84022787c2b}\label{HPL__IOCON_8h_a3eabc50cf92c5f45256fa84022787c2b}} 
+volatile \hyperlink{structIOCON__PIO__reg__t}{I\+O\+C\+O\+N\+\_\+\+P\+I\+O\+\_\+reg\+\_\+t} $\ast$const \hyperlink{HPL__IOCON_8h_a3eabc50cf92c5f45256fa84022787c2b}{I\+O\+C\+O\+N\+\_\+\+P\+I\+N\+\_\+\+T\+A\+B\+LE} \mbox{[}2\mbox{]}\mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tabla de registros de configuracion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de abstraccion de periferico del I\+O\+C\+ON (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HPL__IOCON_8h_ac8a793d4b6c1f6eca58555f942ff721b}\label{HPL__IOCON_8h_ac8a793d4b6c1f6eca58555f942ff721b}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+init@{I\+O\+C\+O\+N\+\_\+init}}
+\index{I\+O\+C\+O\+N\+\_\+init@{I\+O\+C\+O\+N\+\_\+init}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+init()}{IOCON\_init()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inicializacion del modulo I\+O\+C\+ON. 
+
+Unicamente habilita el clock del modulo \mbox{\Hypertarget{HPL__IOCON_8h_aa6a1f1da78d1e9eea04e2265daac7e1c}\label{HPL__IOCON_8h_aa6a1f1da78d1e9eea04e2265daac7e1c}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+deinit@{I\+O\+C\+O\+N\+\_\+deinit}}
+\index{I\+O\+C\+O\+N\+\_\+deinit@{I\+O\+C\+O\+N\+\_\+deinit}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+deinit()}{IOCON\_deinit()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+deinit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitacion del modulo I\+O\+C\+ON. 
+
+Unicamente inhabilita el clock del modulo \mbox{\Hypertarget{HPL__IOCON_8h_a531eb5245577caa96015eaceff8449a1}\label{HPL__IOCON_8h_a531eb5245577caa96015eaceff8449a1}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+config\+\_\+pull\+\_\+mode@{I\+O\+C\+O\+N\+\_\+config\+\_\+pull\+\_\+mode}}
+\index{I\+O\+C\+O\+N\+\_\+config\+\_\+pull\+\_\+mode@{I\+O\+C\+O\+N\+\_\+config\+\_\+pull\+\_\+mode}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+config\+\_\+pull\+\_\+mode()}{IOCON\_config\_pull\_mode()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+config\+\_\+pull\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{I\+O\+C\+O\+N\+\_\+pull\+\_\+mode\+\_\+en}]{pull\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo de funcionamiento (pull up, pull down, etc) en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\mbox{\tt in}  & {\em pull\+\_\+mode} & Modo de funcionamiento \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_ac80b6a592161cd0f5124dbffafe552cb}\label{HPL__IOCON_8h_ac80b6a592161cd0f5124dbffafe552cb}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+enable\+\_\+hysteresis@{I\+O\+C\+O\+N\+\_\+enable\+\_\+hysteresis}}
+\index{I\+O\+C\+O\+N\+\_\+enable\+\_\+hysteresis@{I\+O\+C\+O\+N\+\_\+enable\+\_\+hysteresis}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+enable\+\_\+hysteresis()}{IOCON\_enable\_hysteresis()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+enable\+\_\+hysteresis (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar histeresis en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_a657c0c0341ebbb9d43f4fbdf1a9027fb}\label{HPL__IOCON_8h_a657c0c0341ebbb9d43f4fbdf1a9027fb}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+disable\+\_\+hysteresis@{I\+O\+C\+O\+N\+\_\+disable\+\_\+hysteresis}}
+\index{I\+O\+C\+O\+N\+\_\+disable\+\_\+hysteresis@{I\+O\+C\+O\+N\+\_\+disable\+\_\+hysteresis}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+disable\+\_\+hysteresis()}{IOCON\_disable\_hysteresis()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+disable\+\_\+hysteresis (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar histeresis en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_a2a9ae7bdc92fd6325ec38befb01feb51}\label{HPL__IOCON_8h_a2a9ae7bdc92fd6325ec38befb01feb51}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+enable\+\_\+invert@{I\+O\+C\+O\+N\+\_\+enable\+\_\+invert}}
+\index{I\+O\+C\+O\+N\+\_\+enable\+\_\+invert@{I\+O\+C\+O\+N\+\_\+enable\+\_\+invert}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+enable\+\_\+invert()}{IOCON\_enable\_invert()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+enable\+\_\+invert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar inversion en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_a434cae72963baffec893aa3b035c64fd}\label{HPL__IOCON_8h_a434cae72963baffec893aa3b035c64fd}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+disable\+\_\+invert@{I\+O\+C\+O\+N\+\_\+disable\+\_\+invert}}
+\index{I\+O\+C\+O\+N\+\_\+disable\+\_\+invert@{I\+O\+C\+O\+N\+\_\+disable\+\_\+invert}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+disable\+\_\+invert()}{IOCON\_disable\_invert()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+disable\+\_\+invert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar inversion en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_aa774324a17698d6dc3054bed0e3322fe}\label{HPL__IOCON_8h_aa774324a17698d6dc3054bed0e3322fe}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+enable\+\_\+open\+\_\+drain@{I\+O\+C\+O\+N\+\_\+enable\+\_\+open\+\_\+drain}}
+\index{I\+O\+C\+O\+N\+\_\+enable\+\_\+open\+\_\+drain@{I\+O\+C\+O\+N\+\_\+enable\+\_\+open\+\_\+drain}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+enable\+\_\+open\+\_\+drain()}{IOCON\_enable\_open\_drain()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+enable\+\_\+open\+\_\+drain (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar modo open drain en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_abdece1a8e22fa543fcf02f54342c4f15}\label{HPL__IOCON_8h_abdece1a8e22fa543fcf02f54342c4f15}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+disable\+\_\+open\+\_\+drain@{I\+O\+C\+O\+N\+\_\+disable\+\_\+open\+\_\+drain}}
+\index{I\+O\+C\+O\+N\+\_\+disable\+\_\+open\+\_\+drain@{I\+O\+C\+O\+N\+\_\+disable\+\_\+open\+\_\+drain}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+disable\+\_\+open\+\_\+drain()}{IOCON\_disable\_open\_drain()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+disable\+\_\+open\+\_\+drain (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar modo open drain en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_a25612d6c9182b6e8442548d48807239b}\label{HPL__IOCON_8h_a25612d6c9182b6e8442548d48807239b}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+config\+\_\+sample\+\_\+mode@{I\+O\+C\+O\+N\+\_\+config\+\_\+sample\+\_\+mode}}
+\index{I\+O\+C\+O\+N\+\_\+config\+\_\+sample\+\_\+mode@{I\+O\+C\+O\+N\+\_\+config\+\_\+sample\+\_\+mode}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+config\+\_\+sample\+\_\+mode()}{IOCON\_config\_sample\_mode()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+config\+\_\+sample\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{I\+O\+C\+O\+N\+\_\+sample\+\_\+mode\+\_\+en}]{sample\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo de sampleo en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\mbox{\tt in}  & {\em sample\+\_\+mode} & Modo de sampleo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_ac2081ddb1da6aaacf941a346387f896d}\label{HPL__IOCON_8h_ac2081ddb1da6aaacf941a346387f896d}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+config\+\_\+clock\+\_\+source@{I\+O\+C\+O\+N\+\_\+config\+\_\+clock\+\_\+source}}
+\index{I\+O\+C\+O\+N\+\_\+config\+\_\+clock\+\_\+source@{I\+O\+C\+O\+N\+\_\+config\+\_\+clock\+\_\+source}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+config\+\_\+clock\+\_\+source()}{IOCON\_config\_clock\_source()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+config\+\_\+clock\+\_\+source (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{I\+O\+C\+O\+N\+\_\+clk\+\_\+sel\+\_\+en}]{clock\+\_\+source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar fuente utilizada para el sampleo en un pin. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_a866abbda2b6102011bb4a9341709ce8a}\label{HPL__IOCON_8h_a866abbda2b6102011bb4a9341709ce8a}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+scl@{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+scl}}
+\index{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+scl@{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+scl}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+scl()}{IOCON\_select\_iic0\_scl()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+scl (\begin{DoxyParamCaption}\item[{I\+O\+C\+O\+N\+\_\+iic\+\_\+mode\+\_\+en}]{iic\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar I\+I\+C0\+\_\+\+S\+CL en P\+I\+O0\+\_\+10. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em iic\+\_\+mode} & Modo de I\+IC \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__IOCON_8h_a298d06693808eca45844c48c855a706c}\label{HPL__IOCON_8h_a298d06693808eca45844c48c855a706c}} 
+\index{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}!I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+sda@{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+sda}}
+\index{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+sda@{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+sda}!H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+I\+O\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+sda()}{IOCON\_select\_iic0\_sda()}}
+{\footnotesize\ttfamily static void I\+O\+C\+O\+N\+\_\+select\+\_\+iic0\+\_\+sda (\begin{DoxyParamCaption}\item[{I\+O\+C\+O\+N\+\_\+iic\+\_\+mode\+\_\+en}]{iic\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar I\+IC S\+DA en P\+I\+O0\+\_\+11. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em iic\+\_\+mode} & Modo de I\+IC \\
+\hline
+\end{DoxyParams}

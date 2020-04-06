@@ -9,7 +9,6 @@
 #ifndef HPL_GPIO_H_
 #define HPL_GPIO_H_
 
-#include <stdint.h>
 #include <HRI_GPIO.h>
 
 extern volatile GPIO_per_t * const GPIO; //!< Periferico GPIO

@@ -9,7 +9,6 @@
 #ifndef HPL_MRT_H_
 #define HPL_MRT_H_
 
-#include <stdint.h>
 #include <HRI_MRT.h>
 
 extern volatile MRT_per_t * const MRT; //!< Periferico MRT

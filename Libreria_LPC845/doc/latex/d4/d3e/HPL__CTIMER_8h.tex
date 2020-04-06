@@ -1,0 +1,809 @@
+\hypertarget{HPL__CTIMER_8h}{}\section{Referencia del Archivo includes/hpl/\+H\+P\+L\+\_\+\+C\+T\+I\+M\+ER.h}
+\label{HPL__CTIMER_8h}\index{includes/hpl/\+H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{includes/hpl/\+H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+
+
+Definiciones a nivel de abstraccion del periferico C\+T\+I\+M\+ER (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$H\+R\+I\+\_\+\+C\+T\+I\+M\+E\+R.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{db/da7/HPL__CTIMER_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{d0/dac/HPL__CTIMER_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCTIMER__MR__config__t}{C\+T\+I\+M\+E\+R\+\_\+\+M\+R\+\_\+config\+\_\+t}
+\item 
+struct \hyperlink{structCTIMER__CC__config__t}{C\+T\+I\+M\+E\+R\+\_\+\+C\+C\+\_\+config\+\_\+t}
+\item 
+struct \hyperlink{HPL__CTIMER_8h_db/d46/structCTIMER__CTCR__config__t}{C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+C\+R\+\_\+config\+\_\+t}
+\item 
+struct \hyperlink{HPL__CTIMER_8h_d7/d01/structCTIMER__EMR__config__t}{C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+R\+\_\+config\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_af928ad22d833d18f756a2eeadf9e2b19}\label{HPL__CTIMER_8h_af928ad22d833d18f756a2eeadf9e2b19}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+C\+\_\+config\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+D\+O\+\_\+\+N\+O\+T\+H\+I\+NG} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+L\+E\+AR}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+ET}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+O\+G\+G\+LE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a3f1fe1a67aba7d85c4c384f0ac2f9146}\label{HPL__CTIMER_8h_a3f1fe1a67aba7d85c4c384f0ac2f9146}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+M\+O\+D\+E\+\_\+config\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+M\+O\+D\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+I\+M\+E\+R\+\_\+\+M\+O\+DE} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+M\+O\+D\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+M\+O\+D\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+M\+O\+D\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+E\+D\+GE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a5ae62580297d949c9fd128a527b02aa5}\label{HPL__CTIMER_8h_a5ae62580297d949c9fd128a527b02aa5}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+I\+N\+S\+E\+L\+\_\+config\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+I\+N\+S\+E\+L\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+A\+P0} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+I\+N\+S\+E\+L\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+A\+P1}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+I\+N\+S\+E\+L\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+A\+P2}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+I\+N\+S\+E\+L\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+A\+P3}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a6ec341be1a3ee9c83eb87a75a32dec63}\label{HPL__CTIMER_8h_a6ec341be1a3ee9c83eb87a75a32dec63}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+config\+\_\+en} \{ \newline
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H0\+\_\+\+R\+I\+S\+I\+NG} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H0\+\_\+\+F\+A\+L\+L\+I\+NG}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H1\+\_\+\+R\+I\+S\+I\+NG}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H1\+\_\+\+F\+A\+L\+L\+I\+NG}, 
+\newline
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H2\+\_\+\+R\+I\+S\+I\+NG}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H2\+\_\+\+F\+A\+L\+L\+I\+NG}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H3\+\_\+\+R\+I\+S\+I\+NG}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+S\+E\+L\+C\+C\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H3\+\_\+\+F\+A\+L\+L\+I\+NG}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a6684a2bed0c670847086b40e414d10d4}\label{HPL__CTIMER_8h_a6684a2bed0c670847086b40e414d10d4}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+0} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+1}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+2}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+A\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+3}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a0e00df05efb00db54b812f76a233a6cd}\label{HPL__CTIMER_8h_a0e00df05efb00db54b812f76a233a6cd}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+S\+E\+L\+\_\+0} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+S\+E\+L\+\_\+1}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+S\+E\+L\+\_\+2}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+S\+E\+L\+\_\+3}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a71294965d41d77a3fa7a7d886bef65d8}\label{HPL__CTIMER_8h_a71294965d41d77a3fa7a7d886bef65d8}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+external\+\_\+match\+\_\+action\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+M\+A\+T\+C\+H\+\_\+\+D\+O\+\_\+\+N\+O\+T\+H\+I\+NG} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+L\+E\+AR}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+M\+A\+T\+C\+H\+\_\+\+S\+ET}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+E\+X\+T\+E\+R\+N\+A\+L\+\_\+\+M\+A\+T\+C\+H\+\_\+\+T\+O\+G\+G\+LE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a77d4c14b5af2cc9def38720f1d4d1812}\label{HPL__CTIMER_8h_a77d4c14b5af2cc9def38720f1d4d1812}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+mode\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+T\+I\+M\+ER} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+D\+U\+A\+L\+\_\+\+E\+D\+GE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a8f54fcb7d048a1820a5ca749e01d0c6d}\label{HPL__CTIMER_8h_a8f54fcb7d048a1820a5ca749e01d0c6d}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+count\+\_\+in\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+O\+U\+N\+T\+\_\+\+I\+N\+\_\+\+C\+A\+P0} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+O\+U\+N\+T\+\_\+\+I\+N\+\_\+\+C\+A\+P1}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+O\+U\+N\+T\+\_\+\+I\+N\+\_\+\+C\+A\+P2}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a4fe6ab5089c4c8b2ae92f9959091d4ec}\label{HPL__CTIMER_8h_a4fe6ab5089c4c8b2ae92f9959091d4ec}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+reset\+\_\+edge\+\_\+en} \{ \newline
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H0\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H0\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H1\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H1\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+\newline
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H2\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H2\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H3\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+H3\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a4e02f1bf48b11dc8eba13f67d299b547}\label{HPL__CTIMER_8h_a4e02f1bf48b11dc8eba13f67d299b547}} 
+enum {\bfseries C\+T\+I\+M\+E\+R\+\_\+pwm\+\_\+channel\+\_\+en} \{ {\bfseries C\+T\+I\+M\+E\+R\+\_\+\+P\+W\+M\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0} = 0, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+P\+W\+M\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1}, 
+{\bfseries C\+T\+I\+M\+E\+R\+\_\+\+P\+W\+M\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \hyperlink{HPL__CTIMER_8h_a27f58db77aa91c27bb58b4dc22c91e2b}{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+match\+\_\+irq\+\_\+flag} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Obtener estado de flag de interrupcion de algun match. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__CTIMER_8h_a2f08c330c1bab94262042334e4522337}{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+capture\+\_\+irq\+\_\+flag} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Obtener estado de flag de interrupcion de algun capture. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a02278e366d5b2bba8e5f0283f27fceb1}{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+match\+\_\+irq\+\_\+flag} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Limpiar flag de interrupcion de match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_ab5afd3ccd798e81cfa7fd0ba53c93d2f}{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+capture\+\_\+irq\+\_\+flag} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Limpiar flag de interrupcion de capture. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a06102d2946e10f19b8802ad5ef7d2cf2}\label{HPL__CTIMER_8h_a06102d2946e10f19b8802ad5ef7d2cf2}} 
+static void \hyperlink{HPL__CTIMER_8h_a06102d2946e10f19b8802ad5ef7d2cf2}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+counter} (void)
+\begin{DoxyCompactList}\small\item\em Habilitar el contador. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a529c8e39e28441bd0e36197782b71de5}\label{HPL__CTIMER_8h_a529c8e39e28441bd0e36197782b71de5}} 
+static void \hyperlink{HPL__CTIMER_8h_a529c8e39e28441bd0e36197782b71de5}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+counter} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilitar el contador. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_aeb8cc3dc974555acf640f29de584cc3d}\label{HPL__CTIMER_8h_aeb8cc3dc974555acf640f29de584cc3d}} 
+static void \hyperlink{HPL__CTIMER_8h_aeb8cc3dc974555acf640f29de584cc3d}{C\+T\+I\+M\+E\+R\+\_\+assert\+\_\+counter\+\_\+reset} (void)
+\begin{DoxyCompactList}\small\item\em Accionar el reset del contador. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a32d33ac3c7011c4f9c931b227053fb1c}\label{HPL__CTIMER_8h_a32d33ac3c7011c4f9c931b227053fb1c}} 
+static void \hyperlink{HPL__CTIMER_8h_a32d33ac3c7011c4f9c931b227053fb1c}{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+counter\+\_\+reset} (void)
+\begin{DoxyCompactList}\small\item\em Limpiar el reset del contador. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a4a09c347d419c5e761d2d8b2cff4b646}{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+counter} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Escribir conteo. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__CTIMER_8h_a91b7495b9001807664b3613d227dee65}{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+counter} (void)
+\begin{DoxyCompactList}\small\item\em Leer valor de conteo actual. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a42ec527736e7adf1cc560d9c4918a909}{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+prescaler} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Escribir valor de prescaler. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__CTIMER_8h_a5c85c03ad0e02e34aa0a878f5a3f8a1a}{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+prescaler} (void)
+\begin{DoxyCompactList}\small\item\em Leer el valor del prescaler. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_ac94ae7e453c538f62dbb50b758ac4cec}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_af570a1acf253b98b8d3ea2677896b5f6}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a5cd9b664313ff34738259160c707ce43}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reset\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Habilitar reset en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_afc1cf25a3c8b142ec2b68c4fe8fc456c}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reset\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Inhabilitar reset en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a62eb47a45ab7070f3bb40fb66182f153}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+stop\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Habilitar stop en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a2467c66ac8cf923c094b0bc3f279a6b9}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+stop\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Inhabilitar stop en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a5d091e95e0ab42266c9da7a0afef41a9}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reload\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Habilitar reload en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_af19c694590afb2191cf2fbefc43259ac}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reload\+\_\+on\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Inhabilitar reload en match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_af235f6203f9261b7247aa8f2fb6259e5}{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+match\+\_\+value} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Escribir un registro de match. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__CTIMER_8h_a0c67ada8fa3f35a67fb3581619d9d725}{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+value} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Leer un registro de match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_afc2b3db7bd1f92634e37282aa97fbf11}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+rising\+\_\+edge\+\_\+capture} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Habilitar captura en flanco ascendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a605f604bdf706687cd9e95d03ac73970}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+rising\+\_\+edge\+\_\+capture} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Inhabilitar captura en flanco ascendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_acd4a2d9d965de648290fb19e08f14d40}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+falling\+\_\+edge\+\_\+capture} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Habilitar captura en flanco descendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a6fb57e3ec340ae4d678fab5585c14458}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+falling\+\_\+edge\+\_\+capture} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Inhabilitar captura en flanco descendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a9af81d869d38a2ac20a39d47cf34b2cf}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+capture} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en captura. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a34c093f3fd326baef174bbe5da35a938}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+capture} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en captura. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__CTIMER_8h_a3e3b8370e211113b7b0043f609a61697}{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+capture\+\_\+value} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en capture)
+\begin{DoxyCompactList}\small\item\em Leer registro de captura. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__CTIMER_8h_a1b55bf06c9f93d0918c8b10aea9edeed}{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+status} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match)
+\begin{DoxyCompactList}\small\item\em Leer estado de match externo. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_aadf0218b584d38881950dff1e92db07d}{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+external\+\_\+match} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match, C\+T\+I\+M\+E\+R\+\_\+external\+\_\+match\+\_\+action\+\_\+en action)
+\begin{DoxyCompactList}\small\item\em Configurar accion en match externo. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a6798b925cb94fc45b0f249f3c4a9caf4}{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+timer\+\_\+mode} (C\+T\+I\+M\+E\+R\+\_\+mode\+\_\+en mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo de funcionamiento. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a7a4d992f6953fb02924c7737c861bd79}{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+input} (C\+T\+I\+M\+E\+R\+\_\+count\+\_\+in\+\_\+en count\+\_\+in)
+\begin{DoxyCompactList}\small\item\em Configurar entrada de conteo (modo counter rising/falling/dual edge) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a68baceeab28547d0fb2b05857fc970c0}\label{HPL__CTIMER_8h_a68baceeab28547d0fb2b05857fc970c0}} 
+static void \hyperlink{HPL__CTIMER_8h_a68baceeab28547d0fb2b05857fc970c0}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+count\+\_\+reset\+\_\+on\+\_\+capture} (void)
+\begin{DoxyCompactList}\small\item\em Habilitar reset de conteo y prescaler en captura. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a45fa3e21b83935acc1238b622b088f3a}\label{HPL__CTIMER_8h_a45fa3e21b83935acc1238b622b088f3a}} 
+static void \hyperlink{HPL__CTIMER_8h_a45fa3e21b83935acc1238b622b088f3a}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+count\+\_\+reset\+\_\+on\+\_\+capture} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilitar reset de conteo y prescaler en captura. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a259b66e8bfdc6189db35771e14260fc9}{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+capture\+\_\+reset} (C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+reset\+\_\+edge\+\_\+en capture\+\_\+sel)
+\begin{DoxyCompactList}\small\item\em Configurar captura que genera reset de conteo y prescaler (si esta habilitado) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a4b1bc88a3c5f6892f3aab229298b077d}{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+pwm} (C\+T\+I\+M\+E\+R\+\_\+pwm\+\_\+channel\+\_\+en pwm)
+\begin{DoxyCompactList}\small\item\em Habilitar canal de P\+WM. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_a352d401a756799aee87c1163655764af}{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+pwm} (C\+T\+I\+M\+E\+R\+\_\+pwm\+\_\+channel\+\_\+en pwm)
+\begin{DoxyCompactList}\small\item\em Inhabilitar canal de P\+WM. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__CTIMER_8h_ae4feb6e8e07b4362382c66cc8c2aa79b}{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+shadow\+\_\+register} (C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en match, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Escribir registros fantasma de match. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__CTIMER_8h_a8150dcb6b90800d1dfe8669e1f21f549}\label{HPL__CTIMER_8h_a8150dcb6b90800d1dfe8669e1f21f549}} 
+volatile \hyperlink{HRI__CTIMER_8h_d1/de3/structCTIMER__per__t}{C\+T\+I\+M\+E\+R\+\_\+per\+\_\+t} $\ast$const \hyperlink{HPL__CTIMER_8h_a8150dcb6b90800d1dfe8669e1f21f549}{C\+T\+I\+M\+ER}
+\begin{DoxyCompactList}\small\item\em Periferico C\+T\+I\+M\+ER. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Definiciones a nivel de abstraccion del periferico C\+T\+I\+M\+ER (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+C\+R\+\_\+config\+\_\+t@{C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+C\+R\+\_\+config\+\_\+t}}\label{structCTIMER__CTCR__config__t}
+\Hypertarget{HPL__CTIMER_8h_structCTIMER__CTCR__config__t}
+\subsubsection{struct C\+T\+I\+M\+E\+R\+\_\+\+C\+T\+C\+R\+\_\+config\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a811f4b8928005a600b0e6d759ef618ea}\label{HPL__CTIMER_8h_a811f4b8928005a600b0e6d759ef618ea}} 
+CTIMER\_CTMODE\_config\_en&
+CTMODE&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__CTIMER_8h_a97b7d399f4822bd1f54944b3802014d4}\label{HPL__CTIMER_8h_a97b7d399f4822bd1f54944b3802014d4}} 
+CTIMER\_CINSEL\_config\_en&
+CINSEL&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__CTIMER_8h_aeddd5c43fb661be27ce9806df57ba1c4}\label{HPL__CTIMER_8h_aeddd5c43fb661be27ce9806df57ba1c4}} 
+uint8\_t&
+ENCC&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__CTIMER_8h_a23d7dfc8be8a94623276db706356e066}\label{HPL__CTIMER_8h_a23d7dfc8be8a94623276db706356e066}} 
+CTIMER\_SELCC\_config\_en&
+SELCC&
+\\
+\hline
+
+\end{DoxyFields}
+\index{C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+R\+\_\+config\+\_\+t@{C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+R\+\_\+config\+\_\+t}}\label{structCTIMER__EMR__config__t}
+\Hypertarget{HPL__CTIMER_8h_structCTIMER__EMR__config__t}
+\subsubsection{struct C\+T\+I\+M\+E\+R\+\_\+\+E\+M\+R\+\_\+config\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a045d8792b3c1b5e3590a04258a6f6e03}\label{HPL__CTIMER_8h_a045d8792b3c1b5e3590a04258a6f6e03}} 
+CTIMER\_EMC\_config\_en&
+EMC&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__CTIMER_8h_a48ab702d15103d11869acaeb9d0d1526}\label{HPL__CTIMER_8h_a48ab702d15103d11869acaeb9d0d1526}} 
+uint8\_t&
+mat\_enable&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__CTIMER_8h_a370bb6219d7674f84de88cae6d20d18d}\label{HPL__CTIMER_8h_a370bb6219d7674f84de88cae6d20d18d}} 
+uint8\_t&
+mat\_port&
+\\
+\hline
+
+\mbox{\Hypertarget{HPL__CTIMER_8h_ac960df15af423ab34179e05a8d515297}\label{HPL__CTIMER_8h_ac960df15af423ab34179e05a8d515297}} 
+uint8\_t&
+mat\_pin&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a27f58db77aa91c27bb58b4dc22c91e2b}\label{HPL__CTIMER_8h_a27f58db77aa91c27bb58b4dc22c91e2b}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+get\+\_\+match\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+match\+\_\+irq\+\_\+flag}}
+\index{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+match\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+match\+\_\+irq\+\_\+flag}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+match\+\_\+irq\+\_\+flag()}{CTIMER\_get\_match\_irq\_flag()}}
+{\footnotesize\ttfamily static uint8\+\_\+t C\+T\+I\+M\+E\+R\+\_\+get\+\_\+match\+\_\+irq\+\_\+flag (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado de flag de interrupcion de algun match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor del flag actual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a2f08c330c1bab94262042334e4522337}\label{HPL__CTIMER_8h_a2f08c330c1bab94262042334e4522337}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+get\+\_\+capture\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+capture\+\_\+irq\+\_\+flag}}
+\index{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+capture\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+capture\+\_\+irq\+\_\+flag}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+get\+\_\+capture\+\_\+irq\+\_\+flag()}{CTIMER\_get\_capture\_irq\_flag()}}
+{\footnotesize\ttfamily static uint8\+\_\+t C\+T\+I\+M\+E\+R\+\_\+get\+\_\+capture\+\_\+irq\+\_\+flag (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado de flag de interrupcion de algun capture. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de capture a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor del flag actual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a02278e366d5b2bba8e5f0283f27fceb1}\label{HPL__CTIMER_8h_a02278e366d5b2bba8e5f0283f27fceb1}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+match\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+match\+\_\+irq\+\_\+flag}}
+\index{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+match\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+match\+\_\+irq\+\_\+flag}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+match\+\_\+irq\+\_\+flag()}{CTIMER\_clear\_match\_irq\_flag()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+match\+\_\+irq\+\_\+flag (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Limpiar flag de interrupcion de match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a limpiar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_ab5afd3ccd798e81cfa7fd0ba53c93d2f}\label{HPL__CTIMER_8h_ab5afd3ccd798e81cfa7fd0ba53c93d2f}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+capture\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+capture\+\_\+irq\+\_\+flag}}
+\index{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+capture\+\_\+irq\+\_\+flag@{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+capture\+\_\+irq\+\_\+flag}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+capture\+\_\+irq\+\_\+flag()}{CTIMER\_clear\_capture\_irq\_flag()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+clear\+\_\+capture\+\_\+irq\+\_\+flag (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Limpiar flag de interrupcion de capture. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de capture a limpiar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a4a09c347d419c5e761d2d8b2cff4b646}\label{HPL__CTIMER_8h_a4a09c347d419c5e761d2d8b2cff4b646}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+write\+\_\+counter@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+counter}}
+\index{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+counter@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+counter}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+counter()}{CTIMER\_write\_counter()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+write\+\_\+counter (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Escribir conteo. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em value} & Valor deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a91b7495b9001807664b3613d227dee65}\label{HPL__CTIMER_8h_a91b7495b9001807664b3613d227dee65}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+read\+\_\+counter@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+counter}}
+\index{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+counter@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+counter}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+counter()}{CTIMER\_read\_counter()}}
+{\footnotesize\ttfamily static uint32\+\_\+t C\+T\+I\+M\+E\+R\+\_\+read\+\_\+counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer valor de conteo actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Valor actual de conteo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a42ec527736e7adf1cc560d9c4918a909}\label{HPL__CTIMER_8h_a42ec527736e7adf1cc560d9c4918a909}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+write\+\_\+prescaler@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+prescaler}}
+\index{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+prescaler@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+prescaler}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+prescaler()}{CTIMER\_write\_prescaler()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+write\+\_\+prescaler (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Escribir valor de prescaler. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em value} & Valor de prescaler deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a5c85c03ad0e02e34aa0a878f5a3f8a1a}\label{HPL__CTIMER_8h_a5c85c03ad0e02e34aa0a878f5a3f8a1a}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+read\+\_\+prescaler@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+prescaler}}
+\index{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+prescaler@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+prescaler}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+prescaler()}{CTIMER\_read\_prescaler()}}
+{\footnotesize\ttfamily static uint32\+\_\+t C\+T\+I\+M\+E\+R\+\_\+read\+\_\+prescaler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer el valor del prescaler. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em Valor} & de prescaler actual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_ac94ae7e453c538f62dbb50b758ac4cec}\label{HPL__CTIMER_8h_ac94ae7e453c538f62dbb50b758ac4cec}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+match()}{CTIMER\_enable\_interrupt\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_af570a1acf253b98b8d3ea2677896b5f6}\label{HPL__CTIMER_8h_af570a1acf253b98b8d3ea2677896b5f6}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+match()}{CTIMER\_disable\_interrupt\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a5cd9b664313ff34738259160c707ce43}\label{HPL__CTIMER_8h_a5cd9b664313ff34738259160c707ce43}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reset\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reset\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reset\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reset\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reset\+\_\+on\+\_\+match()}{CTIMER\_enable\_reset\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reset\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar reset en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_afc1cf25a3c8b142ec2b68c4fe8fc456c}\label{HPL__CTIMER_8h_afc1cf25a3c8b142ec2b68c4fe8fc456c}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reset\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reset\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reset\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reset\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reset\+\_\+on\+\_\+match()}{CTIMER\_disable\_reset\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reset\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar reset en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a62eb47a45ab7070f3bb40fb66182f153}\label{HPL__CTIMER_8h_a62eb47a45ab7070f3bb40fb66182f153}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+stop\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+stop\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+stop\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+stop\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+stop\+\_\+on\+\_\+match()}{CTIMER\_enable\_stop\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+stop\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar stop en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a2467c66ac8cf923c094b0bc3f279a6b9}\label{HPL__CTIMER_8h_a2467c66ac8cf923c094b0bc3f279a6b9}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+stop\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+stop\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+stop\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+stop\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+stop\+\_\+on\+\_\+match()}{CTIMER\_disable\_stop\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+stop\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar stop en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a5d091e95e0ab42266c9da7a0afef41a9}\label{HPL__CTIMER_8h_a5d091e95e0ab42266c9da7a0afef41a9}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reload\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reload\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reload\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reload\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reload\+\_\+on\+\_\+match()}{CTIMER\_enable\_reload\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+reload\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar reload en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_af19c694590afb2191cf2fbefc43259ac}\label{HPL__CTIMER_8h_af19c694590afb2191cf2fbefc43259ac}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reload\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reload\+\_\+on\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reload\+\_\+on\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reload\+\_\+on\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reload\+\_\+on\+\_\+match()}{CTIMER\_disable\_reload\_on\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+reload\+\_\+on\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar reload en match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_af235f6203f9261b7247aa8f2fb6259e5}\label{HPL__CTIMER_8h_af235f6203f9261b7247aa8f2fb6259e5}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+write\+\_\+match\+\_\+value@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+match\+\_\+value}}
+\index{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+match\+\_\+value@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+match\+\_\+value}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+match\+\_\+value()}{CTIMER\_write\_match\_value()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+write\+\_\+match\+\_\+value (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Escribir un registro de match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\mbox{\tt in}  & {\em value} & Valor de match deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a0c67ada8fa3f35a67fb3581619d9d725}\label{HPL__CTIMER_8h_a0c67ada8fa3f35a67fb3581619d9d725}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+value@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+value}}
+\index{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+value@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+value}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+value()}{CTIMER\_read\_match\_value()}}
+{\footnotesize\ttfamily static uint32\+\_\+t C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+value (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer un registro de match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de match actual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__CTIMER_8h_afc2b3db7bd1f92634e37282aa97fbf11}\label{HPL__CTIMER_8h_afc2b3db7bd1f92634e37282aa97fbf11}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+rising\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+rising\+\_\+edge\+\_\+capture}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+rising\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+rising\+\_\+edge\+\_\+capture}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+rising\+\_\+edge\+\_\+capture()}{CTIMER\_enable\_rising\_edge\_capture()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+rising\+\_\+edge\+\_\+capture (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar captura en flanco ascendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture} & Numero de capture a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a605f604bdf706687cd9e95d03ac73970}\label{HPL__CTIMER_8h_a605f604bdf706687cd9e95d03ac73970}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+rising\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+rising\+\_\+edge\+\_\+capture}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+rising\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+rising\+\_\+edge\+\_\+capture}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+rising\+\_\+edge\+\_\+capture()}{CTIMER\_disable\_rising\_edge\_capture()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+rising\+\_\+edge\+\_\+capture (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar captura en flanco ascendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture} & Numero de capture a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_acd4a2d9d965de648290fb19e08f14d40}\label{HPL__CTIMER_8h_acd4a2d9d965de648290fb19e08f14d40}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+falling\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+falling\+\_\+edge\+\_\+capture}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+falling\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+falling\+\_\+edge\+\_\+capture}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+falling\+\_\+edge\+\_\+capture()}{CTIMER\_enable\_falling\_edge\_capture()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+falling\+\_\+edge\+\_\+capture (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar captura en flanco descendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture} & Numero de capture a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a6fb57e3ec340ae4d678fab5585c14458}\label{HPL__CTIMER_8h_a6fb57e3ec340ae4d678fab5585c14458}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+falling\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+falling\+\_\+edge\+\_\+capture}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+falling\+\_\+edge\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+falling\+\_\+edge\+\_\+capture}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+falling\+\_\+edge\+\_\+capture()}{CTIMER\_disable\_falling\_edge\_capture()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+falling\+\_\+edge\+\_\+capture (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar captura en flanco descendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture} & Numero de capture a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a9af81d869d38a2ac20a39d47cf34b2cf}\label{HPL__CTIMER_8h_a9af81d869d38a2ac20a39d47cf34b2cf}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+capture}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+capture}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+capture()}{CTIMER\_enable\_interrupt\_on\_capture()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+interrupt\+\_\+on\+\_\+capture (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en captura. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture} & Numero de capture a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a34c093f3fd326baef174bbe5da35a938}\label{HPL__CTIMER_8h_a34c093f3fd326baef174bbe5da35a938}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+capture}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+capture@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+capture}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+capture()}{CTIMER\_disable\_interrupt\_on\_capture()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+interrupt\+\_\+on\+\_\+capture (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en captura. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture} & Numero de capture a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a3e3b8370e211113b7b0043f609a61697}\label{HPL__CTIMER_8h_a3e3b8370e211113b7b0043f609a61697}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+read\+\_\+capture\+\_\+value@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+capture\+\_\+value}}
+\index{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+capture\+\_\+value@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+capture\+\_\+value}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+capture\+\_\+value()}{CTIMER\_read\_capture\_value()}}
+{\footnotesize\ttfamily static uint32\+\_\+t C\+T\+I\+M\+E\+R\+\_\+read\+\_\+capture\+\_\+value (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+sel\+\_\+en}]{capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer registro de captura. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture} & Numero de captura a leer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor actual de la captura 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a1b55bf06c9f93d0918c8b10aea9edeed}\label{HPL__CTIMER_8h_a1b55bf06c9f93d0918c8b10aea9edeed}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+status@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+status}}
+\index{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+status@{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+status}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+status()}{CTIMER\_read\_match\_status()}}
+{\footnotesize\ttfamily static uint8\+\_\+t C\+T\+I\+M\+E\+R\+\_\+read\+\_\+match\+\_\+status (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de match externo. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match externo a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del match actual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__CTIMER_8h_aadf0218b584d38881950dff1e92db07d}\label{HPL__CTIMER_8h_aadf0218b584d38881950dff1e92db07d}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+config\+\_\+external\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+external\+\_\+match}}
+\index{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+external\+\_\+match@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+external\+\_\+match}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+external\+\_\+match()}{CTIMER\_config\_external\_match()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+config\+\_\+external\+\_\+match (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match,  }\item[{C\+T\+I\+M\+E\+R\+\_\+external\+\_\+match\+\_\+action\+\_\+en}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar accion en match externo. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Numero de match a configurar \\
+\hline
+\mbox{\tt in}  & {\em action} & Accion a realizar en match externo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a6798b925cb94fc45b0f249f3c4a9caf4}\label{HPL__CTIMER_8h_a6798b925cb94fc45b0f249f3c4a9caf4}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+timer\+\_\+mode@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+timer\+\_\+mode}}
+\index{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+timer\+\_\+mode@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+timer\+\_\+mode}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+timer\+\_\+mode()}{CTIMER\_config\_counter\_timer\_mode()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+timer\+\_\+mode (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+mode\+\_\+en}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo de funcionamiento. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em mode} & Modo de funcionamiento \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a7a4d992f6953fb02924c7737c861bd79}\label{HPL__CTIMER_8h_a7a4d992f6953fb02924c7737c861bd79}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+input@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+input}}
+\index{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+input@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+input}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+input()}{CTIMER\_config\_counter\_input()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+config\+\_\+counter\+\_\+input (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+count\+\_\+in\+\_\+en}]{count\+\_\+in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar entrada de conteo (modo counter rising/falling/dual edge) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em count\+\_\+in} & Entrada de conteo deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a259b66e8bfdc6189db35771e14260fc9}\label{HPL__CTIMER_8h_a259b66e8bfdc6189db35771e14260fc9}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+config\+\_\+capture\+\_\+reset@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+capture\+\_\+reset}}
+\index{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+capture\+\_\+reset@{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+capture\+\_\+reset}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+config\+\_\+capture\+\_\+reset()}{CTIMER\_config\_capture\_reset()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+config\+\_\+capture\+\_\+reset (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+capture\+\_\+reset\+\_\+edge\+\_\+en}]{capture\+\_\+sel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar captura que genera reset de conteo y prescaler (si esta habilitado) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em capture\+\_\+sel} & Captura que genera el reset de conteo y prescaler \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a4b1bc88a3c5f6892f3aab229298b077d}\label{HPL__CTIMER_8h_a4b1bc88a3c5f6892f3aab229298b077d}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+pwm@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+pwm}}
+\index{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+pwm@{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+pwm}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+pwm()}{CTIMER\_enable\_pwm()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+enable\+\_\+pwm (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+pwm\+\_\+channel\+\_\+en}]{pwm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar canal de P\+WM. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em pwm} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_a352d401a756799aee87c1163655764af}\label{HPL__CTIMER_8h_a352d401a756799aee87c1163655764af}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+pwm@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+pwm}}
+\index{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+pwm@{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+pwm}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+pwm()}{CTIMER\_disable\_pwm()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+disable\+\_\+pwm (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+pwm\+\_\+channel\+\_\+en}]{pwm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar canal de P\+WM. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em pwm} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__CTIMER_8h_ae4feb6e8e07b4362382c66cc8c2aa79b}\label{HPL__CTIMER_8h_ae4feb6e8e07b4362382c66cc8c2aa79b}} 
+\index{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!C\+T\+I\+M\+E\+R\+\_\+write\+\_\+shadow\+\_\+register@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+shadow\+\_\+register}}
+\index{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+shadow\+\_\+register@{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+shadow\+\_\+register}!H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\subsubsection{\texorpdfstring{C\+T\+I\+M\+E\+R\+\_\+write\+\_\+shadow\+\_\+register()}{CTIMER\_write\_shadow\_register()}}
+{\footnotesize\ttfamily static void C\+T\+I\+M\+E\+R\+\_\+write\+\_\+shadow\+\_\+register (\begin{DoxyParamCaption}\item[{C\+T\+I\+M\+E\+R\+\_\+match\+\_\+sel\+\_\+en}]{match,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Escribir registros fantasma de match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match} & Match a escribir \\
+\hline
+\mbox{\tt in}  & {\em value} & Valor deseado \\
+\hline
+\end{DoxyParams}

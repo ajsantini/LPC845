@@ -1,0 +1,276 @@
+\hypertarget{HAL__ADC_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+A\+DC.h}
+\label{HAL__ADC_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+A\+D\+C.\+h@{includes/hal/\+H\+A\+L\+\_\+\+A\+D\+C.\+h}}
+
+
+Declaraciones a nivel de aplicacion del periferico A\+DC (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+A\+D\+C.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{de/d89/HAL__ADC_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d26/HAL__ADC_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t}
+\item 
+struct \hyperlink{HAL__ADC_8h_d8/dc0/structhal__adc__sequence__result__t}{hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} \{ \hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51a75a03c616d0b74267642f2b860b19a4c}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO} = 0, 
+\hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51ad8be01dc9a2af6e29ab24f823fc40560}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_a21b6c00c4fe5d9ba0d36440222e5d210}\label{HAL__ADC_8h_a21b6c00c4fe5d9ba0d36440222e5d210}} 
+enum {\bfseries hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_af1570443ca3570a7ae83b90307bbecca}\label{HAL__ADC_8h_af1570443ca3570a7ae83b90307bbecca}} 
+enum {\bfseries hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+D\+I\+S\+A\+B\+L\+ED} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+E\+N\+A\+B\+L\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_a9297d7b14d7018a94bce94f0103d8559}\label{HAL__ADC_8h_a9297d7b14d7018a94bce94f0103d8559}} 
+enum {\bfseries hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+S\+E\+L\+\_\+A} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+S\+E\+L\+\_\+B}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_a67fe859b54301579f1b1daef874514ca}\label{HAL__ADC_8h_a67fe859b54301579f1b1daef874514ca}} 
+enum {\bfseries hal\+\_\+adc\+\_\+trigger\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+N\+O\+NE} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+I\+N\+T0\+\_\+\+I\+RQ}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+I\+N\+T1\+\_\+\+I\+RQ}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+C\+T0\+\_\+\+O\+U\+T3}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+C\+T0\+\_\+\+O\+U\+T4}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+T0\+\_\+\+M\+A\+T3}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+C\+M\+P0\+\_\+\+O\+U\+T\+\_\+\+A\+DC}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O\+\_\+\+I\+N\+T\+\_\+\+B\+M\+AT}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+S\+E\+L\+\_\+\+A\+R\+M\+\_\+\+T\+X\+EV}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_a4c5aa9e0991c432640845d2aedb971b2}\label{HAL__ADC_8h_a4c5aa9e0991c432640845d2aedb971b2}} 
+enum {\bfseries hal\+\_\+adc\+\_\+trigger\+\_\+pol\+\_\+sel\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+P\+O\+L\+\_\+\+S\+E\+L\+\_\+\+N\+E\+G\+A\+T\+I\+V\+E\+\_\+\+E\+D\+GE} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+P\+O\+L\+\_\+\+S\+E\+L\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+\+E\+D\+GE}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_a8aa0efd767a9edc5a80b80c4061e0904}\label{HAL__ADC_8h_a8aa0efd767a9edc5a80b80c4061e0904}} 
+enum {\bfseries hal\+\_\+adc\+\_\+sync\+\_\+sel\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+E\+L\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+Y\+NC} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+S\+Y\+N\+C\+\_\+\+S\+E\+L\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+S\+Y\+NC}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_af4981172881d597ede49249ba04fcafe}\label{HAL__ADC_8h_af4981172881d597ede49249ba04fcafe}} 
+enum {\bfseries hal\+\_\+adc\+\_\+interrupt\+\_\+mode\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+\+E\+OC} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+\+E\+OS}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_a99371f47be5b6b4b61c32a1ea86f2b6c}\label{HAL__ADC_8h_a99371f47be5b6b4b61c32a1ea86f2b6c}} 
+enum {\bfseries hal\+\_\+adc\+\_\+result\+\_\+channel\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+4}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+5}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+6}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+7}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+8}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+9}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+10}, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+11}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+G\+L\+O\+B\+AL}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8h_a7761986f9c56b809bce1299c6c32eddd}\label{HAL__ADC_8h_a7761986f9c56b809bce1299c6c32eddd}} 
+enum {\bfseries hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+V\+A\+L\+ID} = 0, 
+{\bfseries H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+N\+V\+A\+L\+ID}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{HAL__ADC_8h_ad44f4eb2585a9292ff4b66ceceb2f75f}{hal\+\_\+adc\+\_\+init} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en mode, hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el A\+DC. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__ADC_8h_adcef726eaa85af74ade96c14f9a48feb}{hal\+\_\+adc\+\_\+config\+\_\+sequence} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence, const \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Configurar una secuencia de conversion. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__ADC_8h_a678f2df33d79c246b175d0dd36405430}{hal\+\_\+adc\+\_\+enable\+\_\+sequence} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Habilitar una secuencia. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__ADC_8h_a154950a81b5f589fde0139178ab1dcf3}{hal\+\_\+adc\+\_\+start\+\_\+sequence} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Disparar conversiones en una secuencia. \end{DoxyCompactList}\item 
+hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+en \hyperlink{HAL__ADC_8h_a2abe86b92546f8f4726dd65a7a9ddc0d}{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence, \hyperlink{HAL__ADC_8h_d8/dc0/structhal__adc__sequence__result__t}{hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t} $\ast$result\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Obtener resultado de la secuencia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de aplicacion del periferico A\+DC (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t@{hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t}}\label{structhal__adc__sequence__result__t}
+\Hypertarget{HAL__ADC_8h_structhal__adc__sequence__result__t}
+\subsubsection{struct hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HAL__ADC_8h_a14b46f8d352b49c5be28cad8aafff2ba}\label{HAL__ADC_8h_a14b46f8d352b49c5be28cad8aafff2ba}} 
+hal\_adc\_result\_channel\_en&
+channel&
+\\
+\hline
+
+\mbox{\Hypertarget{HAL__ADC_8h_a0971e3d432b7f1f283620cab047a7275}\label{HAL__ADC_8h_a0971e3d432b7f1f283620cab047a7275}} 
+uint16\_t&
+result&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Documentación de las enumeraciones}
+\mbox{\Hypertarget{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}\label{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en@{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}}
+\index{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en@{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}{hal\_adc\_clock\_source\_en}}
+{\footnotesize\ttfamily enum \hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}}
+
+Seleccion de fuente de clock para el periferico A\+DC \begin{DoxyEnumFields}{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO}}}\mbox{\Hypertarget{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51a75a03c616d0b74267642f2b860b19a4c}\label{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51a75a03c616d0b74267642f2b860b19a4c}} 
+H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO&Free running oscillator como fuente de clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}}}\mbox{\Hypertarget{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51ad8be01dc9a2af6e29ab24f823fc40560}\label{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51ad8be01dc9a2af6e29ab24f823fc40560}} 
+H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL&Phase locked loop oscillator como fuente de clock \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HAL__ADC_8h_ad44f4eb2585a9292ff4b66ceceb2f75f}\label{HAL__ADC_8h_ad44f4eb2585a9292ff4b66ceceb2f75f}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!hal\+\_\+adc\+\_\+init@{hal\+\_\+adc\+\_\+init}}
+\index{hal\+\_\+adc\+\_\+init@{hal\+\_\+adc\+\_\+init}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+init()}{hal\_adc\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sample\+\_\+freq,  }\item[{uint8\+\_\+t}]{div,  }\item[{\hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}}]{clock\+\_\+source,  }\item[{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en}]{mode,  }\item[{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en}]{low\+\_\+power }\end{DoxyParamCaption})}
+
+
+
+Inicializar el A\+DC. 
+
+Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
+
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sample\+\_\+freq} & Frecuencia de sampleo deseada \\
+\hline
+\mbox{\tt in}  & {\em div} & Divisor para la logica del A\+DC (solo importa para modo asincronico) \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock para el A\+DC (solo importa para modo asincronico) \\
+\hline
+\mbox{\tt in}  & {\em mode} & Seleccion de modo de operacion, sincronico o asincronico \\
+\hline
+\mbox{\tt in}  & {\em low\+\_\+power} & Seleccion de modo de bajo consumo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8h_adcef726eaa85af74ade96c14f9a48feb}\label{HAL__ADC_8h_adcef726eaa85af74ade96c14f9a48feb}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!hal\+\_\+adc\+\_\+config\+\_\+sequence@{hal\+\_\+adc\+\_\+config\+\_\+sequence}}
+\index{hal\+\_\+adc\+\_\+config\+\_\+sequence@{hal\+\_\+adc\+\_\+config\+\_\+sequence}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+config\+\_\+sequence()}{hal\_adc\_config\_sequence()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+config\+\_\+sequence (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{const \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t} $\ast$}]{config }\end{DoxyParamCaption})}
+
+
+
+Configurar una secuencia de conversion. 
+
+Esta funcion no habilita la secuencia, al menos que el parametro burst este activo
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Seleccion de secuencia a configurar \\
+\hline
+\mbox{\tt in}  & {\em config} & Configuracion deseada para la secuencia \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8h_a678f2df33d79c246b175d0dd36405430}\label{HAL__ADC_8h_a678f2df33d79c246b175d0dd36405430}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!hal\+\_\+adc\+\_\+enable\+\_\+sequence@{hal\+\_\+adc\+\_\+enable\+\_\+sequence}}
+\index{hal\+\_\+adc\+\_\+enable\+\_\+sequence@{hal\+\_\+adc\+\_\+enable\+\_\+sequence}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+enable\+\_\+sequence()}{hal\_adc\_enable\_sequence()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+enable\+\_\+sequence (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Habilitar una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a habilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8h_a154950a81b5f589fde0139178ab1dcf3}\label{HAL__ADC_8h_a154950a81b5f589fde0139178ab1dcf3}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!hal\+\_\+adc\+\_\+start\+\_\+sequence@{hal\+\_\+adc\+\_\+start\+\_\+sequence}}
+\index{hal\+\_\+adc\+\_\+start\+\_\+sequence@{hal\+\_\+adc\+\_\+start\+\_\+sequence}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+start\+\_\+sequence()}{hal\_adc\_start\_sequence()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+start\+\_\+sequence (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Disparar conversiones en una secuencia. 
+
+La configuracion de la secuencia, en particular el parametro single\+\_\+step, influye en si esta funcion dispara una secuencia entera o un paso de la misma.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a disparar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8h_a2abe86b92546f8f4726dd65a7a9ddc0d}\label{HAL__ADC_8h_a2abe86b92546f8f4726dd65a7a9ddc0d}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}!hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result@{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result}}
+\index{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result@{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result}!H\+A\+L\+\_\+\+A\+D\+C.\+h@{H\+A\+L\+\_\+\+A\+D\+C.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result()}{hal\_adc\_get\_sequence\_result()}}
+{\footnotesize\ttfamily hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+en hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{\hyperlink{HAL__ADC_8h_d8/dc0/structhal__adc__sequence__result__t}{hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t} $\ast$}]{result\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Obtener resultado de la secuencia. 
+
+El comportamiento de esta funcion depende de la configuracion de la secuencia, en particular de la configuracion {\bfseries M\+O\+DE}. En caso de estar configurada para interrumpir al final de cada conversion, la funcion unicamente guardara el resultado de la conversion en el primer lugar del parametro $<$e$>$result$<$/e$>$, caso contrario, guardara la cantidad de canales habilitados en la conversion en los distintos lugares del parametro $<$e$>$result$<$/e$>$.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia de la cual obtener el resultado \\
+\hline
+\mbox{\tt out}  & {\em result} & Lugares donde guardar los resultados de la secuencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la funcion 
+\end{DoxyReturn}

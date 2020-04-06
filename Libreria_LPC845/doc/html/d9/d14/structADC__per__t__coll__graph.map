@@ -1,0 +1,12 @@
+<map id="ADC_per_t" name="ADC_per_t">
+<area shape="rect" id="node2" href="$d0/d55/HRI__ADC_8h.html#dd/d52/structADC__FLAGS__reg__t" title="ADC_FLAGS_reg_t" alt="" coords="33,11,171,37"/>
+<area shape="rect" id="node3" href="$d0/d55/HRI__ADC_8h.html#d8/d88/structADC__TRM__reg__t" title="ADC_TRM_reg_t" alt="" coords="41,61,163,88"/>
+<area shape="rect" id="node4" href="$d0/d55/HRI__ADC_8h.html#d0/d12/structADC__INTEN__reg__t" title="ADC_INTEN_reg_t" alt="" coords="35,112,169,139"/>
+<area shape="rect" id="node5" href="$d0/d55/HRI__ADC_8h.html#d5/d88/structADC__CTRL__reg__t" title="Registro de control del ADC. " alt="" coords="37,163,167,189"/>
+<area shape="rect" id="node6" href="$d0/d55/HRI__ADC_8h.html#db/d75/structADC__SEQ__CTRL__reg__t" title="Registro de control de secuencia A y B del ADC. " alt="" coords="20,213,184,240"/>
+<area shape="rect" id="node7" href="$d0/d55/HRI__ADC_8h.html#d7/d4b/structADC__THR__HIGH__reg__t" title="ADC_THR_HIGH_reg_t" alt="" coords="21,264,183,291"/>
+<area shape="rect" id="node8" href="$d0/d55/HRI__ADC_8h.html#d2/dcb/structADC__CHAN__THRSEL__reg__t" title="ADC_CHAN_THRSEL_reg_t" alt="" coords="5,315,199,341"/>
+<area shape="rect" id="node9" href="$d0/d55/HRI__ADC_8h.html#d8/d04/structADC__DAT__reg__t" title="ADC_DAT_reg_t" alt="" coords="41,365,163,392"/>
+<area shape="rect" id="node10" href="$d0/d55/HRI__ADC_8h.html#dd/d0b/structADC__SEQ__GDAT__reg__t" title="ADC_SEQ_GDAT_reg_t" alt="" coords="19,416,185,443"/>
+<area shape="rect" id="node11" href="$d0/d55/HRI__ADC_8h.html#db/dda/structADC__THR__LOW__reg__t" title="ADC_THR_LOW_reg_t" alt="" coords="23,467,181,493"/>
+</map>

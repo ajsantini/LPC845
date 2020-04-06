@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Libreria LPC845: Referencia del Archivo source/infotronic/relays.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Libreria LPC845
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="../../dir_900fbaa61fa9ce7fa545184492570cb0.html">infotronic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo relays.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funciones para el manejo de los reles.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../df/de4/relays_8h_source.html">relays.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/d4d/HPL__GPIO_8h_source.html">HPL_GPIO.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para relays.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/dce/relays_8c__incl.png" border="0" usemap="#source_2infotronic_2relays_8c" alt=""/></div>
+<map name="source_2infotronic_2relays_8c" id="source_2infotronic_2relays_8c">
+<area shape="rect" id="node3" href="../../df/de4/relays_8h.html" title="Declaraciones para las funciones del manejo de reles. " alt="" coords="55,80,123,107"/>
+<area shape="rect" id="node4" href="../../d5/d4d/HPL__GPIO_8h.html" title="Declaraciones a nivel de abstraccion de periferico del GPIO (LPC845) " alt="" coords="148,80,247,107"/>
+<area shape="rect" id="node5" href="../../d6/d46/HRI__GPIO_8h.html" title="Definiciones a nivel de registros del modulo GPIO (LPC845) " alt="" coords="102,155,199,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ab719a5d86ad4c2ce024094b2f1bfa713"><td class="memItemLeft" align="right" valign="top"><a id="ab719a5d86ad4c2ce024094b2f1bfa713"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CANTIDAD_RELAYS</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:ab719a5d86ad4c2ce024094b2f1bfa713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ace38a6a87fd0b61ead944d25547e243a"><td class="memItemLeft" align="right" valign="top"><a id="ace38a6a87fd0b61ead944d25547e243a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d23/relays_8c.html#ace38a6a87fd0b61ead944d25547e243a">relays_init</a> (void)</td></tr>
+<tr class="memdesc:ace38a6a87fd0b61ead944d25547e243a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializacion de los reles. <br /></td></tr>
+<tr class="separator:ace38a6a87fd0b61ead944d25547e243a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67e0d1cb65b31050d361b6f18c91a2c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d23/relays_8c.html#a67e0d1cb65b31050d361b6f18c91a2c0">relays_activate</a> (uint8_t numero_rele)</td></tr>
+<tr class="memdesc:a67e0d1cb65b31050d361b6f18c91a2c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Energizar un rele.  <a href="#a67e0d1cb65b31050d361b6f18c91a2c0">Más...</a><br /></td></tr>
+<tr class="separator:a67e0d1cb65b31050d361b6f18c91a2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ac0b590fa5a5784a939d3351e4bd6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d23/relays_8c.html#af8ac0b590fa5a5784a939d3351e4bd6e">relays_deactivate</a> (uint8_t numero_rele)</td></tr>
+<tr class="memdesc:af8ac0b590fa5a5784a939d3351e4bd6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desenergizar un rele.  <a href="#af8ac0b590fa5a5784a939d3351e4bd6e">Más...</a><br /></td></tr>
+<tr class="separator:af8ac0b590fa5a5784a939d3351e4bd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a384e2e7af88b980784bdda984c9f834f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d23/relays_8c.html#a384e2e7af88b980784bdda984c9f834f">relays_toggle</a> (uint8_t numero_rele)</td></tr>
+<tr class="memdesc:a384e2e7af88b980784bdda984c9f834f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invertir estado de un rele.  <a href="#a384e2e7af88b980784bdda984c9f834f">Más...</a><br /></td></tr>
+<tr class="separator:a384e2e7af88b980784bdda984c9f834f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f6586b6c048e336f1aa5fa1290e331"><td class="memItemLeft" align="right" valign="top"><a id="a30f6586b6c048e336f1aa5fa1290e331"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d23/relays_8c.html#a30f6586b6c048e336f1aa5fa1290e331">relays_check</a> (void)</td></tr>
+<tr class="memdesc:a30f6586b6c048e336f1aa5fa1290e331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback para actualizar los reles periodicamente. <br /></td></tr>
+<tr class="separator:a30f6586b6c048e336f1aa5fa1290e331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a83eac002944ab2f1e77261511bab4af2"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>relays_port</b> [CANTIDAD_RELAYS]</td></tr>
+<tr class="separator:a83eac002944ab2f1e77261511bab4af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf80593bdea3fafc0dfa7b6af19e8969"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>relays_pin</b> [CANTIDAD_RELAYS]</td></tr>
+<tr class="separator:abf80593bdea3fafc0dfa7b6af19e8969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b5e84f6d88db0123681faf16448a56"><td class="memItemLeft" align="right" valign="top"><a id="a29b5e84f6d88db0123681faf16448a56"></a>
+static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>relays_state</b> = 0</td></tr>
+<tr class="separator:a29b5e84f6d88db0123681faf16448a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Funciones para el manejo de los reles. </p>
+<dl class="section author"><dt>Autor</dt><dd>Augusto Santini </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>12/2019 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a67e0d1cb65b31050d361b6f18c91a2c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e0d1cb65b31050d361b6f18c91a2c0">&#9670;&nbsp;</a></span>relays_activate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void relays_activate </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>numero_rele</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Energizar un rele. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">numero_rele</td><td>Rele a energizar (0 ~ 3) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af8ac0b590fa5a5784a939d3351e4bd6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ac0b590fa5a5784a939d3351e4bd6e">&#9670;&nbsp;</a></span>relays_deactivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void relays_deactivate </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>numero_rele</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Desenergizar un rele. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">numero_rele</td><td>Rele a desenergizar (0 ~ 3) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a384e2e7af88b980784bdda984c9f834f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a384e2e7af88b980784bdda984c9f834f">&#9670;&nbsp;</a></span>relays_toggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void relays_toggle </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>numero_rele</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invertir estado de un rele. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">numero_rele</td><td>Rele a invertir (0 ~ 3) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="a83eac002944ab2f1e77261511bab4af2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83eac002944ab2f1e77261511bab4af2">&#9670;&nbsp;</a></span>relays_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t relays_port[CANTIDAD_RELAYS]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">    1,</div><div class="line">    1,</div><div class="line">    1,</div><div class="line">    0</div><div class="line">}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="abf80593bdea3fafc0dfa7b6af19e8969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf80593bdea3fafc0dfa7b6af19e8969">&#9670;&nbsp;</a></span>relays_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t relays_pin[CANTIDAD_RELAYS]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">    0,</div><div class="line">    1,</div><div class="line">    2,</div><div class="line">    1</div><div class="line">}</div></div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

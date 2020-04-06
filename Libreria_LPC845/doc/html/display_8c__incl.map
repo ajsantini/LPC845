@@ -1,0 +1,5 @@
+<map id="source/infotronic/display.c" name="source/infotronic/display.c">
+<area shape="rect" id="node3" href="$display_8h.html" title="Declaraciones para las funciones del display 7 segmentos. " alt="" coords="55,80,130,107"/>
+<area shape="rect" id="node4" href="$HPL__GPIO_8h.html" title="Declaraciones a nivel de abstraccion de periferico del GPIO (LPC845) " alt="" coords="154,80,253,107"/>
+<area shape="rect" id="node5" href="$HRI__GPIO_8h.html" title="Definiciones a nivel de registros del modulo GPIO (LPC845) " alt="" coords="105,155,203,181"/>
+</map>

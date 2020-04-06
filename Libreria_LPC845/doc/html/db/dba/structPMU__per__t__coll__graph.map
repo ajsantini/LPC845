@@ -1,0 +1,5 @@
+<map id="PMU_per_t" name="PMU_per_t">
+<area shape="rect" id="node2" href="$d8/d47/HRI__PMU_8h.html#da/ddd/structPMU__GPREG__reg__t" title="PMU_GPREG_reg_t" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node3" href="$d8/d47/HRI__PMU_8h.html#d4/dcf/structPMU__PCON__reg__t" title="PMU_PCON_reg_t" alt="" coords="172,5,307,32"/>
+<area shape="rect" id="node4" href="$d8/d47/HRI__PMU_8h.html#d3/d91/structPMU__DPDCTRL__reg__t" title="PMU_DPDCTRL_reg_t" alt="" coords="331,5,489,32"/>
+</map>

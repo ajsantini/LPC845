@@ -1,0 +1,9 @@
+<map id="MRT_per_t" name="MRT_per_t">
+<area shape="rect" id="node2" href="$HRI__MRT_8h.html#structMRT__IRQ__FLAG__reg__t" title="MRT_IRQ_FLAG_reg_t" alt="" coords="5,95,164,121"/>
+<area shape="rect" id="node3" href="$HRI__MRT_8h.html#structMRT__IDLE__CH__reg__t" title="MRT_IDLE_CH_reg_t" alt="" coords="188,95,339,121"/>
+<area shape="rect" id="node4" href="$HRI__MRT_8h.html#structMRT__CHN__reg__t" title="MRT_CHN_reg_t" alt="" coords="363,95,487,121"/>
+<area shape="rect" id="node5" href="$HRI__MRT_8h.html#structMRT__TIMER__reg__t" title="MRT_TIMER_reg_t" alt="" coords="119,5,255,32"/>
+<area shape="rect" id="node6" href="$HRI__MRT_8h.html#structMRT__CTRL__reg__t" title="MRT_CTRL_reg_t" alt="" coords="280,5,409,32"/>
+<area shape="rect" id="node7" href="$HRI__MRT_8h.html#structMRT__INTVAL__reg__t" title="MRT_INTVAL_reg_t" alt="" coords="434,5,575,32"/>
+<area shape="rect" id="node8" href="$HRI__MRT_8h.html#structMRT__STAT__reg__t" title="MRT_STAT_reg_t" alt="" coords="599,5,727,32"/>
+</map>

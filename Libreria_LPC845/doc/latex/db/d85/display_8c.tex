@@ -1,0 +1,221 @@
+\hypertarget{display_8c}{}\section{Referencia del Archivo source/infotronic/display.c}
+\label{display_8c}\index{source/infotronic/display.\+c@{source/infotronic/display.\+c}}
+
+
+Funciones para el manejo de los displays.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$display.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+G\+P\+I\+O.\+h$>$}\newline
+Dependencia gráfica adjunta para display.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d2/d9c/display_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display_8c_a67acc734640cb2a163cc2927bea97cc2}\label{display_8c_a67acc734640cb2a163cc2927bea97cc2}} 
+\#define {\bfseries C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+D\+I\+S\+P\+L\+A\+YS}~2
+\item 
+\mbox{\Hypertarget{display_8c_a536b40a91c8820034afc7f57e2634d66}\label{display_8c_a536b40a91c8820034afc7f57e2634d66}} 
+\#define {\bfseries C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+D\+I\+G\+I\+T\+OS}~3
+\item 
+\mbox{\Hypertarget{display_8c_af34ea53959549eb69b380752ab69ca68}\label{display_8c_af34ea53959549eb69b380752ab69ca68}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+A\+\_\+\+P\+O\+RT}~0
+\item 
+\mbox{\Hypertarget{display_8c_a21d19786588fe75b0a27b3fe1e8f4acb}\label{display_8c_a21d19786588fe75b0a27b3fe1e8f4acb}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+A\+\_\+\+P\+IN}~20
+\item 
+\mbox{\Hypertarget{display_8c_a375e0b8b16c533b7918fa58e73567365}\label{display_8c_a375e0b8b16c533b7918fa58e73567365}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+B\+\_\+\+P\+O\+RT}~0
+\item 
+\mbox{\Hypertarget{display_8c_aa3fbeb117cf30803644d223ee8dad4e0}\label{display_8c_aa3fbeb117cf30803644d223ee8dad4e0}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+B\+\_\+\+P\+IN}~23
+\item 
+\mbox{\Hypertarget{display_8c_a62c4b234127c9df64877d8e9b38d4e58}\label{display_8c_a62c4b234127c9df64877d8e9b38d4e58}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+C\+\_\+\+P\+O\+RT}~0
+\item 
+\mbox{\Hypertarget{display_8c_a2262574a9e73a34ef30897c1e4cd5748}\label{display_8c_a2262574a9e73a34ef30897c1e4cd5748}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+C\+\_\+\+P\+IN}~22
+\item 
+\mbox{\Hypertarget{display_8c_ad748a862882ce0642b553129d5c0f75a}\label{display_8c_ad748a862882ce0642b553129d5c0f75a}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+D\+\_\+\+P\+O\+RT}~0
+\item 
+\mbox{\Hypertarget{display_8c_aa801ddddb20e5423bbbc2370a8f2645a}\label{display_8c_aa801ddddb20e5423bbbc2370a8f2645a}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+C\+D\+\_\+\+D\+\_\+\+P\+IN}~21
+\item 
+\mbox{\Hypertarget{display_8c_a12a5125aabd28ff561036660673cfb52}\label{display_8c_a12a5125aabd28ff561036660673cfb52}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+D\+P\+\_\+\+P\+O\+RT}~0
+\item 
+\mbox{\Hypertarget{display_8c_a18ea06b46ce4aa258cb1b9029f73f779}\label{display_8c_a18ea06b46ce4aa258cb1b9029f73f779}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+D\+P\+\_\+\+P\+IN}~12
+\item 
+\mbox{\Hypertarget{display_8c_a2bd3abdc321efeb788297a1c71334731}\label{display_8c_a2bd3abdc321efeb788297a1c71334731}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+S\+T\+\_\+\+P\+O\+RT}~0
+\item 
+\mbox{\Hypertarget{display_8c_ac2a5e1b6de135fbc3293fba775153bd3}\label{display_8c_ac2a5e1b6de135fbc3293fba775153bd3}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+R\+S\+T\+\_\+\+P\+IN}~18
+\item 
+\mbox{\Hypertarget{display_8c_a46f0b9915cbf33b4f6d2dfbb29c27d9e}\label{display_8c_a46f0b9915cbf33b4f6d2dfbb29c27d9e}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+K\+\_\+\+P\+O\+RT}~0
+\item 
+\mbox{\Hypertarget{display_8c_aed97496840e24536cdd430e175b3ca6a}\label{display_8c_aed97496840e24536cdd430e175b3ca6a}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+K\+\_\+\+P\+IN}~19
+\item 
+\mbox{\Hypertarget{display_8c_a7c0fa06a427cb4307257ff9f03251117}\label{display_8c_a7c0fa06a427cb4307257ff9f03251117}} 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+L\+A\+N\+K\+\_\+\+R\+E\+P\+E\+A\+TS}~5
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display_8c_a4b5e0501126719f4d114b37a70070f92}\label{display_8c_a4b5e0501126719f4d114b37a70070f92}} 
+static void \hyperlink{display_8c_a4b5e0501126719f4d114b37a70070f92}{display\+\_\+blank\+\_\+digit} (void)
+\begin{DoxyCompactList}\small\item\em Apagar los 7 segmentos del digito. \end{DoxyCompactList}\item 
+static void \hyperlink{display_8c_ad42d3736d6cee55f0e63f0f8ba27419f}{display\+\_\+decode\+\_\+number} (uint8\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Decodificar numero B\+CD en cada uno de lo pines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{display_8c_a407d5033a6f0198221c8a9081d7e807e}\label{display_8c_a407d5033a6f0198221c8a9081d7e807e}} 
+void \hyperlink{display_8c_a407d5033a6f0198221c8a9081d7e807e}{display\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializacion de los display. \end{DoxyCompactList}\item 
+void \hyperlink{display_8c_a8115993b5fa64551edb772962840c334}{display\+\_\+off} (uint8\+\_\+t display)
+\begin{DoxyCompactList}\small\item\em Apagar display. \end{DoxyCompactList}\item 
+void \hyperlink{display_8c_afcb17d2f3b6f8e14604fe31e82536bfd}{display\+\_\+on} (uint8\+\_\+t display)
+\begin{DoxyCompactList}\small\item\em Encender display. \end{DoxyCompactList}\item 
+void \hyperlink{display_8c_ac27fb2409df03b01a0ae10616133edc9}{display\+\_\+write} (uint8\+\_\+t display, uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Escribir display. \end{DoxyCompactList}\item 
+void \hyperlink{display_8c_aac96b3adba740c8d6a6c873def736fad}{display\+\_\+set\+\_\+dp} (uint8\+\_\+t display, uint8\+\_\+t digit)
+\begin{DoxyCompactList}\small\item\em Encender el display point de un digito de un display. \end{DoxyCompactList}\item 
+void \hyperlink{display_8c_a2652e5a8993aa735d6f063e9f70dec77}{display\+\_\+clear\+\_\+dp} (uint8\+\_\+t display, uint8\+\_\+t digit)
+\begin{DoxyCompactList}\small\item\em Apagar el display point de un digito de un display. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{display_8c_ac4214eed5f67e15daf64de9a7da8a964}\label{display_8c_ac4214eed5f67e15daf64de9a7da8a964}} 
+void \hyperlink{display_8c_ac4214eed5f67e15daf64de9a7da8a964}{display\+\_\+check} (void)
+\begin{DoxyCompactList}\small\item\em Callback para actualizar el display periodicamente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display_8c_a25251d1d7abaa0085f9e779645749f9e}\label{display_8c_a25251d1d7abaa0085f9e779645749f9e}} 
+static uint8\+\_\+t {\bfseries display\+\_\+number\+\_\+buffer} \mbox{[}C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+D\+I\+S\+P\+L\+A\+YS\mbox{]}\mbox{[}C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+D\+I\+G\+I\+T\+OS\mbox{]}
+\item 
+\mbox{\Hypertarget{display_8c_a5b663b09b66d1123e1bc624b64b4d944}\label{display_8c_a5b663b09b66d1123e1bc624b64b4d944}} 
+static uint8\+\_\+t {\bfseries display\+\_\+dp\+\_\+buffer} \mbox{[}C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+D\+I\+S\+P\+L\+A\+YS\mbox{]}\mbox{[}C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+D\+I\+G\+I\+T\+OS\mbox{]}
+\item 
+\mbox{\Hypertarget{display_8c_a9086672c1ce59ad348354b91e0e1b3f4}\label{display_8c_a9086672c1ce59ad348354b91e0e1b3f4}} 
+static uint8\+\_\+t {\bfseries display\+\_\+power\+\_\+state} \mbox{[}C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+D\+I\+S\+P\+L\+A\+YS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Funciones para el manejo de los displays. 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+12/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{display_8c_ad42d3736d6cee55f0e63f0f8ba27419f}\label{display_8c_ad42d3736d6cee55f0e63f0f8ba27419f}} 
+\index{display.\+c@{display.\+c}!display\+\_\+decode\+\_\+number@{display\+\_\+decode\+\_\+number}}
+\index{display\+\_\+decode\+\_\+number@{display\+\_\+decode\+\_\+number}!display.\+c@{display.\+c}}
+\subsubsection{\texorpdfstring{display\+\_\+decode\+\_\+number()}{display\_decode\_number()}}
+{\footnotesize\ttfamily static void display\+\_\+decode\+\_\+number (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Decodificar numero B\+CD en cada uno de lo pines. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em number} & Numero a decodifica \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8c_a8115993b5fa64551edb772962840c334}\label{display_8c_a8115993b5fa64551edb772962840c334}} 
+\index{display.\+c@{display.\+c}!display\+\_\+off@{display\+\_\+off}}
+\index{display\+\_\+off@{display\+\_\+off}!display.\+c@{display.\+c}}
+\subsubsection{\texorpdfstring{display\+\_\+off()}{display\_off()}}
+{\footnotesize\ttfamily void display\+\_\+off (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display }\end{DoxyParamCaption})}
+
+
+
+Apagar display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display a apagar (0 $\sim$ 1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8c_afcb17d2f3b6f8e14604fe31e82536bfd}\label{display_8c_afcb17d2f3b6f8e14604fe31e82536bfd}} 
+\index{display.\+c@{display.\+c}!display\+\_\+on@{display\+\_\+on}}
+\index{display\+\_\+on@{display\+\_\+on}!display.\+c@{display.\+c}}
+\subsubsection{\texorpdfstring{display\+\_\+on()}{display\_on()}}
+{\footnotesize\ttfamily void display\+\_\+on (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display }\end{DoxyParamCaption})}
+
+
+
+Encender display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display a encender (0 $\sim$ 1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8c_ac27fb2409df03b01a0ae10616133edc9}\label{display_8c_ac27fb2409df03b01a0ae10616133edc9}} 
+\index{display.\+c@{display.\+c}!display\+\_\+write@{display\+\_\+write}}
+\index{display\+\_\+write@{display\+\_\+write}!display.\+c@{display.\+c}}
+\subsubsection{\texorpdfstring{display\+\_\+write()}{display\_write()}}
+{\footnotesize\ttfamily void display\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display,  }\item[{uint32\+\_\+t}]{number }\end{DoxyParamCaption})}
+
+
+
+Escribir display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display sobre el cual escribir (0 $\sim$ 1) \\
+\hline
+\mbox{\tt in}  & {\em number} & Numero a escribir en el display (0 $\sim$ 999) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8c_aac96b3adba740c8d6a6c873def736fad}\label{display_8c_aac96b3adba740c8d6a6c873def736fad}} 
+\index{display.\+c@{display.\+c}!display\+\_\+set\+\_\+dp@{display\+\_\+set\+\_\+dp}}
+\index{display\+\_\+set\+\_\+dp@{display\+\_\+set\+\_\+dp}!display.\+c@{display.\+c}}
+\subsubsection{\texorpdfstring{display\+\_\+set\+\_\+dp()}{display\_set\_dp()}}
+{\footnotesize\ttfamily void display\+\_\+set\+\_\+dp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display,  }\item[{uint8\+\_\+t}]{digit }\end{DoxyParamCaption})}
+
+
+
+Encender el display point de un digito de un display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display sobre el cual escribir (0 $\sim$ 1) \\
+\hline
+\mbox{\tt in}  & {\em digit} & Digito del display a prender (0 $\sim$ 2) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8c_a2652e5a8993aa735d6f063e9f70dec77}\label{display_8c_a2652e5a8993aa735d6f063e9f70dec77}} 
+\index{display.\+c@{display.\+c}!display\+\_\+clear\+\_\+dp@{display\+\_\+clear\+\_\+dp}}
+\index{display\+\_\+clear\+\_\+dp@{display\+\_\+clear\+\_\+dp}!display.\+c@{display.\+c}}
+\subsubsection{\texorpdfstring{display\+\_\+clear\+\_\+dp()}{display\_clear\_dp()}}
+{\footnotesize\ttfamily void display\+\_\+clear\+\_\+dp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display,  }\item[{uint8\+\_\+t}]{digit }\end{DoxyParamCaption})}
+
+
+
+Apagar el display point de un digito de un display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display sobre el cual escribir (0 $\sim$ 1) \\
+\hline
+\mbox{\tt in}  & {\em digit} & Digito del display a prender (0 $\sim$ 2) \\
+\hline
+\end{DoxyParams}

@@ -9,7 +9,6 @@
 #ifndef HPL_IOCON_H_
 #define HPL_IOCON_H_
 
-#include <stdint.h>
 #include <HPL_SYSCON.h>
 #include <HRI_IOCON.h>
 

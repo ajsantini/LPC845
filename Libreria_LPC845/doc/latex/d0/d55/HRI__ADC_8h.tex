@@ -1,0 +1,818 @@
+\hypertarget{HRI__ADC_8h}{}\section{Referencia del Archivo includes/hri/\+H\+R\+I\+\_\+\+A\+DC.h}
+\label{HRI__ADC_8h}\index{includes/hri/\+H\+R\+I\+\_\+\+A\+D\+C.\+h@{includes/hri/\+H\+R\+I\+\_\+\+A\+D\+C.\+h}}
+
+
+Declaraciones a nivel de registros del A\+DC (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+R\+I\+\_\+\+A\+D\+C.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{da/d33/HRI__ADC_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d53/HRI__ADC_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{HRI__ADC_8h_d5/d88/structADC__CTRL__reg__t}{A\+D\+C\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Registro de control del A\+DC.  \hyperlink{HRI__ADC_8h_d5/d88/structADC__CTRL__reg__t}{Más...}\end{DoxyCompactList}\item 
+struct \hyperlink{HRI__ADC_8h_db/d75/structADC__SEQ__CTRL__reg__t}{A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Registro de control de secuencia A y B del A\+DC.  \hyperlink{HRI__ADC_8h_db/d75/structADC__SEQ__CTRL__reg__t}{Más...}\end{DoxyCompactList}\item 
+struct \hyperlink{HRI__ADC_8h_dd/d0b/structADC__SEQ__GDAT__reg__t}{A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+G\+D\+A\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_d8/d04/structADC__DAT__reg__t}{A\+D\+C\+\_\+\+D\+A\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_db/dda/structADC__THR__LOW__reg__t}{A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+L\+O\+W\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_d7/d4b/structADC__THR__HIGH__reg__t}{A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+H\+I\+G\+H\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_d2/dcb/structADC__CHAN__THRSEL__reg__t}{A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+T\+H\+R\+S\+E\+L\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_d0/d12/structADC__INTEN__reg__t}{A\+D\+C\+\_\+\+I\+N\+T\+E\+N\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_dd/d52/structADC__FLAGS__reg__t}{A\+D\+C\+\_\+\+F\+L\+A\+G\+S\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_d8/d88/structADC__TRM__reg__t}{A\+D\+C\+\_\+\+T\+R\+M\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__ADC_8h_df/dda/structADC__per__t}{A\+D\+C\+\_\+per\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HRI__ADC_8h_ad06cb9e5985bd216a376f26f22303cd6}\label{HRI__ADC_8h_ad06cb9e5985bd216a376f26f22303cd6}} 
+\#define \hyperlink{HRI__ADC_8h_ad06cb9e5985bd216a376f26f22303cd6}{A\+D\+C\+\_\+\+B\+A\+SE}~0x4001\+C000
+\begin{DoxyCompactList}\small\item\em Direccion base del A\+DC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de registros del A\+DC (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{A\+D\+C\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}}\label{structADC__CTRL__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__CTRL__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+Registro de control del A\+DC. \begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_aa11dafc1481a6f613e960f2a7a83db4c}\label{HRI__ADC_8h_aa11dafc1481a6f613e960f2a7a83db4c}} 
+uint32\_t&
+CLKDIV: 8&
+Divisor del clock. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a5e26c94dd1953ec73e4163f0b135ae24}\label{HRI__ADC_8h_a5e26c94dd1953ec73e4163f0b135ae24}} 
+uint32\_t&
+ASYNCMODE: 1&
+0 -\/$>$ Modo sincronico ; 1 -\/$>$ Modo asincronico \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a25005b5a2bb3bc40be61ed867476e954}\label{HRI__ADC_8h_a25005b5a2bb3bc40be61ed867476e954}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+Reservado. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ac7ad855f464226b05393c01215077633}\label{HRI__ADC_8h_ac7ad855f464226b05393c01215077633}} 
+uint32\_t&
+LPWRMODE: 1&
+Modo de bajo consumo. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a102f9e809bada5e43d0aea84f8a41874}\label{HRI__ADC_8h_a102f9e809bada5e43d0aea84f8a41874}} 
+uint32\_t&
+\_\_pad1\_\_: 19&
+Reservado. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_add69b74ced19a7667ec73b713dc9dfae}\label{HRI__ADC_8h_add69b74ced19a7667ec73b713dc9dfae}} 
+uint32\_t&
+CALMODE: 1&
+Modo calibracion. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ad5e2f85196dc5cef7a906d8db3b5fd08}\label{HRI__ADC_8h_ad5e2f85196dc5cef7a906d8db3b5fd08}} 
+uint32\_t&
+\_\_pad2\_\_: 1&
+Reservado. \\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}}\label{structADC__SEQ__CTRL__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__SEQ__CTRL__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+C\+T\+R\+L\+\_\+reg\+\_\+t}
+Registro de control de secuencia A y B del A\+DC. \begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_ab6b7040c8266731e8b3759ccb41b181d}\label{HRI__ADC_8h_ab6b7040c8266731e8b3759ccb41b181d}} 
+uint32\_t&
+CHANNELS: 12&
+Canales habilitados para la conversion en la secuencia. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a084459dd951ce06483ea9fb3cb1d8c9c}\label{HRI__ADC_8h_a084459dd951ce06483ea9fb3cb1d8c9c}} 
+uint32\_t&
+TRIGGER: 3&
+Que pin dispara la secuencia. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a721419bb352a88096d7e1e78b2a33546}\label{HRI__ADC_8h_a721419bb352a88096d7e1e78b2a33546}} 
+uint32\_t&
+\_\_pad0\_\_: 3&
+Reservado. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a650a87293bd0fae1cae6f3516d6c8b2a}\label{HRI__ADC_8h_a650a87293bd0fae1cae6f3516d6c8b2a}} 
+uint32\_t&
+TRIGPOL: 1&
+Polaridad del pin que dispara la secuencia. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a9cd98dfe9fef83393cc3444269a789b6}\label{HRI__ADC_8h_a9cd98dfe9fef83393cc3444269a789b6}} 
+uint32\_t&
+SYNCBYPASS: 1&
+Disparo asincronico/sincronico. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a576aaa829a04bc01cf40b1d1518d3b14}\label{HRI__ADC_8h_a576aaa829a04bc01cf40b1d1518d3b14}} 
+uint32\_t&
+\_\_pad1\_\_: 6&
+Reservado. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa88a104386674129a3e562cb0d90dd43}\label{HRI__ADC_8h_aa88a104386674129a3e562cb0d90dd43}} 
+uint32\_t&
+START: 1&
+Empezar secuencia mediante software. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a6b54386ca3acc9f6976d71116e0eb1ae}\label{HRI__ADC_8h_a6b54386ca3acc9f6976d71116e0eb1ae}} 
+uint32\_t&
+BURST: 1&
+Habilitacion de modo rafaga. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a7483a428267e32f221ca15513e399351}\label{HRI__ADC_8h_a7483a428267e32f221ca15513e399351}} 
+uint32\_t&
+SINGLESTEP: 1&
+Un start activa un paso o la secuencia entera. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ac32d66a04cd04d1fc9188eebd52dcbbb}\label{HRI__ADC_8h_ac32d66a04cd04d1fc9188eebd52dcbbb}} 
+uint32\_t&
+LOWPRIO: 1&
+Prioridad. Solo lo tiene la secuencia A. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a0d37f1cfd8da2630136984b1df1406c0}\label{HRI__ADC_8h_a0d37f1cfd8da2630136984b1df1406c0}} 
+uint32\_t&
+MODE: 1&
+Interrupcion por cada conversion o al final de la secuencia. \\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_af3cb32440527b1a981821556c861d3c6}\label{HRI__ADC_8h_af3cb32440527b1a981821556c861d3c6}} 
+uint32\_t&
+SEQ\_ENA: 1&
+Habilitacion de secuencia. \\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+G\+D\+A\+T\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+G\+D\+A\+T\+\_\+reg\+\_\+t}}\label{structADC__SEQ__GDAT__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__SEQ__GDAT__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+S\+E\+Q\+\_\+\+G\+D\+A\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a2f56e5280450eb38fa40ee724337c7a5}\label{HRI__ADC_8h_a2f56e5280450eb38fa40ee724337c7a5}} 
+uint32\_t&
+\_\_pad0\_\_: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a2c6c1bca893df8daa705d0f33a1a1d4a}\label{HRI__ADC_8h_a2c6c1bca893df8daa705d0f33a1a1d4a}} 
+uint32\_t&
+RESULT: 12&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ab8df862a572124b019a973aa04356e4f}\label{HRI__ADC_8h_ab8df862a572124b019a973aa04356e4f}} 
+uint32\_t&
+THCMPRANGE: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a3b48ee95e4be244fb36d467d0860a887}\label{HRI__ADC_8h_a3b48ee95e4be244fb36d467d0860a887}} 
+uint32\_t&
+THCMPCROSS: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a4fffa23c0b8fe680214ccf5f39525d76}\label{HRI__ADC_8h_a4fffa23c0b8fe680214ccf5f39525d76}} 
+uint32\_t&
+\_\_pad1\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a3ad04b3815d4d6361f6eae2188bc22c2}\label{HRI__ADC_8h_a3ad04b3815d4d6361f6eae2188bc22c2}} 
+uint32\_t&
+CHANNEL: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a38c1e51738a727e75d4779f1892228c4}\label{HRI__ADC_8h_a38c1e51738a727e75d4779f1892228c4}} 
+uint32\_t&
+OVERRUN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a7cf0dcfd5dc654a931b6f8005515b65d}\label{HRI__ADC_8h_a7cf0dcfd5dc654a931b6f8005515b65d}} 
+uint32\_t&
+DATAVALID: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+D\+A\+T\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+D\+A\+T\+\_\+reg\+\_\+t}}\label{structADC__DAT__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__DAT__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+D\+A\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a8f920caf1aa0db0cfbad8adfaaf0a2ea}\label{HRI__ADC_8h_a8f920caf1aa0db0cfbad8adfaaf0a2ea}} 
+uint32\_t&
+\_\_pad0\_\_: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a0adfc8b45e8a5f696d64762a7c5653f2}\label{HRI__ADC_8h_a0adfc8b45e8a5f696d64762a7c5653f2}} 
+uint32\_t&
+RESULT: 12&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_abaaaca8f45f89a9564fc142d8795deff}\label{HRI__ADC_8h_abaaaca8f45f89a9564fc142d8795deff}} 
+uint32\_t&
+THCMPRANGE: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a74cd3e307708950cb8d109ff623382bd}\label{HRI__ADC_8h_a74cd3e307708950cb8d109ff623382bd}} 
+uint32\_t&
+THCMPCROSS: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a4fde7c54e264ea9b75f92d8252d3e04f}\label{HRI__ADC_8h_a4fde7c54e264ea9b75f92d8252d3e04f}} 
+uint32\_t&
+\_\_pad1\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_adefcf47eff6ede66de28004b33106a9c}\label{HRI__ADC_8h_adefcf47eff6ede66de28004b33106a9c}} 
+uint32\_t&
+CHANNEL: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a77ab85598eb2b6fb7205aeebb9ab5724}\label{HRI__ADC_8h_a77ab85598eb2b6fb7205aeebb9ab5724}} 
+uint32\_t&
+OVERRUN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aab1522c4774195c5ad3a6ce50ba08c9a}\label{HRI__ADC_8h_aab1522c4774195c5ad3a6ce50ba08c9a}} 
+uint32\_t&
+DATAVALID: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+L\+O\+W\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+L\+O\+W\+\_\+reg\+\_\+t}}\label{structADC__THR__LOW__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__THR__LOW__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+L\+O\+W\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a568e8578c21ed17b0251f87333fb40f8}\label{HRI__ADC_8h_a568e8578c21ed17b0251f87333fb40f8}} 
+uint32\_t&
+\_\_pad0\_\_: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a8207b6021b9929e9fec13666cb72e344}\label{HRI__ADC_8h_a8207b6021b9929e9fec13666cb72e344}} 
+uint32\_t&
+THRLOW: 12&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a847d59ad91219f4fff46a1f41dd7e397}\label{HRI__ADC_8h_a847d59ad91219f4fff46a1f41dd7e397}} 
+uint32\_t&
+\_\_pad1\_\_: 16&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+H\+I\+G\+H\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+H\+I\+G\+H\+\_\+reg\+\_\+t}}\label{structADC__THR__HIGH__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__THR__HIGH__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+T\+H\+R\+\_\+\+H\+I\+G\+H\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_aa826bfd2bcf0702a8227272623399533}\label{HRI__ADC_8h_aa826bfd2bcf0702a8227272623399533}} 
+uint32\_t&
+\_\_pad0\_\_: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ab85de0f9b2144149bec70111098413a2}\label{HRI__ADC_8h_ab85de0f9b2144149bec70111098413a2}} 
+uint32\_t&
+THRHIGH: 12&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a600b63b1a046459bdbfb86d1e4a180b5}\label{HRI__ADC_8h_a600b63b1a046459bdbfb86d1e4a180b5}} 
+uint32\_t&
+\_\_pad1\_\_: 16&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+T\+H\+R\+S\+E\+L\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+T\+H\+R\+S\+E\+L\+\_\+reg\+\_\+t}}\label{structADC__CHAN__THRSEL__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__CHAN__THRSEL__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+T\+H\+R\+S\+E\+L\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a14a400128b8b185d4d50ab15c53662dd}\label{HRI__ADC_8h_a14a400128b8b185d4d50ab15c53662dd}} 
+uint32\_t&
+CH0\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_abe8eb3a1076fa59fb076ad308d512ca4}\label{HRI__ADC_8h_abe8eb3a1076fa59fb076ad308d512ca4}} 
+uint32\_t&
+CH1\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a1bef171d780cdded2c2fe1ef96dd201d}\label{HRI__ADC_8h_a1bef171d780cdded2c2fe1ef96dd201d}} 
+uint32\_t&
+CH2\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a4a43cc8354ea3c8a06f622fa69d8265f}\label{HRI__ADC_8h_a4a43cc8354ea3c8a06f622fa69d8265f}} 
+uint32\_t&
+CH3\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a10fe7e0c3f47a80708ff210b88646d82}\label{HRI__ADC_8h_a10fe7e0c3f47a80708ff210b88646d82}} 
+uint32\_t&
+CH4\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a1d2f13e1443255163934aeb454a122dc}\label{HRI__ADC_8h_a1d2f13e1443255163934aeb454a122dc}} 
+uint32\_t&
+CH5\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aaee6419a74514518133573573ba46724}\label{HRI__ADC_8h_aaee6419a74514518133573573ba46724}} 
+uint32\_t&
+CH6\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a367354074768315577f2d6b7ba773f63}\label{HRI__ADC_8h_a367354074768315577f2d6b7ba773f63}} 
+uint32\_t&
+CH7\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ae02e0c899ef1f2f76cf99b0d879df29d}\label{HRI__ADC_8h_ae02e0c899ef1f2f76cf99b0d879df29d}} 
+uint32\_t&
+CH8\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa4b26060a39c1806a41c7d648842d39c}\label{HRI__ADC_8h_aa4b26060a39c1806a41c7d648842d39c}} 
+uint32\_t&
+CH9\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a647ef31fb9517be44c61f15b70925122}\label{HRI__ADC_8h_a647ef31fb9517be44c61f15b70925122}} 
+uint32\_t&
+CH10\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a1e12df9df2514228f3bb3dd2b6043be9}\label{HRI__ADC_8h_a1e12df9df2514228f3bb3dd2b6043be9}} 
+uint32\_t&
+CH11\_THRSEL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_af8f53e5b8a6ab35a32804c415097e622}\label{HRI__ADC_8h_af8f53e5b8a6ab35a32804c415097e622}} 
+uint32\_t&
+\_\_pad0\_\_: 20&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+I\+N\+T\+E\+N\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+I\+N\+T\+E\+N\+\_\+reg\+\_\+t}}\label{structADC__INTEN__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__INTEN__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+I\+N\+T\+E\+N\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a0f319568c0d12c7e914111b58b53ac28}\label{HRI__ADC_8h_a0f319568c0d12c7e914111b58b53ac28}} 
+uint32\_t&
+SEQA\_INTEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_af146705edee27ea36a37e61f5fd7221e}\label{HRI__ADC_8h_af146705edee27ea36a37e61f5fd7221e}} 
+uint32\_t&
+SEQB\_INTEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a675e583fa52a9eac076cdd96da009797}\label{HRI__ADC_8h_a675e583fa52a9eac076cdd96da009797}} 
+uint32\_t&
+OVR\_INTEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a7be989eb8f7661e35013c858b2a6a8c5}\label{HRI__ADC_8h_a7be989eb8f7661e35013c858b2a6a8c5}} 
+uint32\_t&
+ADCMPINTEN0: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa02ae2c717ed2e78efeb51a3b541a877}\label{HRI__ADC_8h_aa02ae2c717ed2e78efeb51a3b541a877}} 
+uint32\_t&
+ADCMPINTEN1: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a8cbca9773ea0ff462cc3e84bdc28763c}\label{HRI__ADC_8h_a8cbca9773ea0ff462cc3e84bdc28763c}} 
+uint32\_t&
+ADCMPINTEN2: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a756b204f8193464e34bad4167d547bfb}\label{HRI__ADC_8h_a756b204f8193464e34bad4167d547bfb}} 
+uint32\_t&
+ADCMPINTEN3: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a4093896d892099eee00eab9f2965682a}\label{HRI__ADC_8h_a4093896d892099eee00eab9f2965682a}} 
+uint32\_t&
+ADCMPINTEN4: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa95ae03000f0b4f7fd80d672e6c62610}\label{HRI__ADC_8h_aa95ae03000f0b4f7fd80d672e6c62610}} 
+uint32\_t&
+ADCMPINTEN5: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_af48a4b3bc2a2e08b2f3db2d17d33a6cf}\label{HRI__ADC_8h_af48a4b3bc2a2e08b2f3db2d17d33a6cf}} 
+uint32\_t&
+ADCMPINTEN6: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a0158844decca53fa58f52038d150983a}\label{HRI__ADC_8h_a0158844decca53fa58f52038d150983a}} 
+uint32\_t&
+ADCMPINTEN7: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ad80e2bc403575c3f9b95dcc508a82afa}\label{HRI__ADC_8h_ad80e2bc403575c3f9b95dcc508a82afa}} 
+uint32\_t&
+ADCMPINTEN8: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa46db5b030d36563f2ab280d9b0ed005}\label{HRI__ADC_8h_aa46db5b030d36563f2ab280d9b0ed005}} 
+uint32\_t&
+ADCMPINTEN9: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_afc8946df8dd6b2279b31a513a63a99a6}\label{HRI__ADC_8h_afc8946df8dd6b2279b31a513a63a99a6}} 
+uint32\_t&
+ADCMPINTEN10: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a09833b8f75225408e5691a42026aad74}\label{HRI__ADC_8h_a09833b8f75225408e5691a42026aad74}} 
+uint32\_t&
+ADCMPINTEN11: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a51c88bc2e9b17f10d7f23cd4a0c0d88a}\label{HRI__ADC_8h_a51c88bc2e9b17f10d7f23cd4a0c0d88a}} 
+uint32\_t&
+\_\_pad0\_\_: 5&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+F\+L\+A\+G\+S\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+F\+L\+A\+G\+S\+\_\+reg\+\_\+t}}\label{structADC__FLAGS__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__FLAGS__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+F\+L\+A\+G\+S\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a9b45e490adf8365e6b8ef67aea714399}\label{HRI__ADC_8h_a9b45e490adf8365e6b8ef67aea714399}} 
+uint32\_t&
+THCMP0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a3175b65a1b5a0c3a3c993ad758ce5038}\label{HRI__ADC_8h_a3175b65a1b5a0c3a3c993ad758ce5038}} 
+uint32\_t&
+THCMP1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ae109b452c5fcddfa03452984d0ce551d}\label{HRI__ADC_8h_ae109b452c5fcddfa03452984d0ce551d}} 
+uint32\_t&
+THCMP2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a51dd152786b57755686cc661c09b912d}\label{HRI__ADC_8h_a51dd152786b57755686cc661c09b912d}} 
+uint32\_t&
+THCMP3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ac9ccc8b19bc6810805c1b1421e667bb7}\label{HRI__ADC_8h_ac9ccc8b19bc6810805c1b1421e667bb7}} 
+uint32\_t&
+THCMP4: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ac4f03da59cd2f84ed1087f6a51e69c28}\label{HRI__ADC_8h_ac4f03da59cd2f84ed1087f6a51e69c28}} 
+uint32\_t&
+THCMP5: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa81a2f731844f9b9f2f7c6ca7184eb68}\label{HRI__ADC_8h_aa81a2f731844f9b9f2f7c6ca7184eb68}} 
+uint32\_t&
+THCMP6: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a1ae4c32e3d2ec87e9b657ce605810d0d}\label{HRI__ADC_8h_a1ae4c32e3d2ec87e9b657ce605810d0d}} 
+uint32\_t&
+THCMP7: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a08682c0f9d24315f7b9d0337a8d851d8}\label{HRI__ADC_8h_a08682c0f9d24315f7b9d0337a8d851d8}} 
+uint32\_t&
+THCMP8: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a25fa082271a79c2699f7320dd5195c51}\label{HRI__ADC_8h_a25fa082271a79c2699f7320dd5195c51}} 
+uint32\_t&
+THCMP9: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a263af465d54c3747fc5a4a8d179383b6}\label{HRI__ADC_8h_a263af465d54c3747fc5a4a8d179383b6}} 
+uint32\_t&
+THCMP10: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a2015580f58623f9bcdda779a3b888c6c}\label{HRI__ADC_8h_a2015580f58623f9bcdda779a3b888c6c}} 
+uint32\_t&
+THCMP11: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a61f4da57e49e2aed3223ed9ba1ea0431}\label{HRI__ADC_8h_a61f4da57e49e2aed3223ed9ba1ea0431}} 
+uint32\_t&
+OVERRUN0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a7e66753ee60581d14e843048347dc367}\label{HRI__ADC_8h_a7e66753ee60581d14e843048347dc367}} 
+uint32\_t&
+OVERRUN1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a5ef570526692586970029d50f68cf35e}\label{HRI__ADC_8h_a5ef570526692586970029d50f68cf35e}} 
+uint32\_t&
+OVERRUN2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_abf42f71364b7126e33f4e398cd86dad6}\label{HRI__ADC_8h_abf42f71364b7126e33f4e398cd86dad6}} 
+uint32\_t&
+OVERRUN3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ab40a140cab67063b396499bd7ccade38}\label{HRI__ADC_8h_ab40a140cab67063b396499bd7ccade38}} 
+uint32\_t&
+OVERRUN4: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a19edb24a1ef578b3ad47567eeb0b2c03}\label{HRI__ADC_8h_a19edb24a1ef578b3ad47567eeb0b2c03}} 
+uint32\_t&
+OVERRUN5: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ad826f87c33e3e71150e365e5cae028a8}\label{HRI__ADC_8h_ad826f87c33e3e71150e365e5cae028a8}} 
+uint32\_t&
+OVERRUN6: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a2df008483849a740a2b487b81382e479}\label{HRI__ADC_8h_a2df008483849a740a2b487b81382e479}} 
+uint32\_t&
+OVERRUN7: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a4c1906e9626b8f40145c2adb5a0303e6}\label{HRI__ADC_8h_a4c1906e9626b8f40145c2adb5a0303e6}} 
+uint32\_t&
+OVERRUN8: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a003a8950e6e0c3c8deb199d9b0a4f11a}\label{HRI__ADC_8h_a003a8950e6e0c3c8deb199d9b0a4f11a}} 
+uint32\_t&
+OVERRUN9: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a3e1a5a63f82aa7de71e5ce46e4414627}\label{HRI__ADC_8h_a3e1a5a63f82aa7de71e5ce46e4414627}} 
+uint32\_t&
+OVERRUN10: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_af3dcc7c9d45ac5d2a92be557bf6583c1}\label{HRI__ADC_8h_af3dcc7c9d45ac5d2a92be557bf6583c1}} 
+uint32\_t&
+OVERRUN11: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_af17a96c46a77fb6aa782e5a32a177fe9}\label{HRI__ADC_8h_af17a96c46a77fb6aa782e5a32a177fe9}} 
+uint32\_t&
+\_\_pad0\_\_: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aff563b347f9a1c59aebea5e22907da65}\label{HRI__ADC_8h_aff563b347f9a1c59aebea5e22907da65}} 
+uint32\_t&
+SEQA\_INT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_afbc652b43658c3b890d5421000599985}\label{HRI__ADC_8h_afbc652b43658c3b890d5421000599985}} 
+uint32\_t&
+SEQB\_INT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa01dee407fe2f56ca826efff969247f9}\label{HRI__ADC_8h_aa01dee407fe2f56ca826efff969247f9}} 
+uint32\_t&
+THCMP\_INT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_af5127431d92048ed9abce6fabb11a2ce}\label{HRI__ADC_8h_af5127431d92048ed9abce6fabb11a2ce}} 
+uint32\_t&
+OVR\_INT: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+\+T\+R\+M\+\_\+reg\+\_\+t@{A\+D\+C\+\_\+\+T\+R\+M\+\_\+reg\+\_\+t}}\label{structADC__TRM__reg__t}
+\Hypertarget{HRI__ADC_8h_structADC__TRM__reg__t}
+\subsubsection{struct A\+D\+C\+\_\+\+T\+R\+M\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a3ecfb0fc01dd5f1be57ee02b0e72f1c3}\label{HRI__ADC_8h_a3ecfb0fc01dd5f1be57ee02b0e72f1c3}} 
+uint32\_t&
+\_\_pad0\_\_: 5&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a1d13ac328f43e5975b1f5c4314306b39}\label{HRI__ADC_8h_a1d13ac328f43e5975b1f5c4314306b39}} 
+uint32\_t&
+VRANGE: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aa4e1c8e5241932591ac4fb41641b0a1d}\label{HRI__ADC_8h_aa4e1c8e5241932591ac4fb41641b0a1d}} 
+uint32\_t&
+\_\_pad1\_\_: 26&
+\\
+\hline
+
+\end{DoxyFields}
+\index{A\+D\+C\+\_\+per\+\_\+t@{A\+D\+C\+\_\+per\+\_\+t}}\label{structADC__per__t}
+\Hypertarget{HRI__ADC_8h_structADC__per__t}
+\subsubsection{struct A\+D\+C\+\_\+per\+\_\+t}
+
+
+Diagrama de colaboración para A\+D\+C\+\_\+per\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d14/structADC__per__t__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__ADC_8h_a127be27ae8135ea3601c6672e0677198}\label{HRI__ADC_8h_a127be27ae8135ea3601c6672e0677198}} 
+\hyperlink{HRI__ADC_8h_d5/d88/structADC__CTRL__reg__t}{ADC\_CTRL\_reg\_t}&
+CTRL&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ae00d3851042af58f6b2efdc1f9c04def}\label{HRI__ADC_8h_ae00d3851042af58f6b2efdc1f9c04def}} 
+const uint32\_t&
+RESERVED\_1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_aab65d10bc8b53b57c468cb29a1641954}\label{HRI__ADC_8h_aab65d10bc8b53b57c468cb29a1641954}} 
+\hyperlink{HRI__ADC_8h_db/d75/structADC__SEQ__CTRL__reg__t}{ADC\_SEQ\_CTRL\_reg\_t}&
+SEQ\_CTRL\mbox{[}2\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_adbeb451086c76cc000f9922ea939ee4b}\label{HRI__ADC_8h_adbeb451086c76cc000f9922ea939ee4b}} 
+\hyperlink{HRI__ADC_8h_dd/d0b/structADC__SEQ__GDAT__reg__t}{ADC\_SEQ\_GDAT\_reg\_t}&
+SEQ\_GDAT\mbox{[}2\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a57a115474ec5838a5e65018d8d790ec9}\label{HRI__ADC_8h_a57a115474ec5838a5e65018d8d790ec9}} 
+const uint32\_t&
+RESERVED\_2\mbox{[}2\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a9c7e02c7b79098cd4d9cbb1ee7560519}\label{HRI__ADC_8h_a9c7e02c7b79098cd4d9cbb1ee7560519}} 
+const \hyperlink{HRI__ADC_8h_d8/d04/structADC__DAT__reg__t}{ADC\_DAT\_reg\_t}&
+DAT\mbox{[}12\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a122447603ba8fb72591662e6a8bdc3e9}\label{HRI__ADC_8h_a122447603ba8fb72591662e6a8bdc3e9}} 
+\hyperlink{HRI__ADC_8h_db/dda/structADC__THR__LOW__reg__t}{ADC\_THR\_LOW\_reg\_t}&
+THR\_LOW\mbox{[}2\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ae7142c9897939b210404fb8a351a7c5a}\label{HRI__ADC_8h_ae7142c9897939b210404fb8a351a7c5a}} 
+\hyperlink{HRI__ADC_8h_d7/d4b/structADC__THR__HIGH__reg__t}{ADC\_THR\_HIGH\_reg\_t}&
+THR\_HIGH\mbox{[}2\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a01b838ac35f2e109b72a5bfcba9faff6}\label{HRI__ADC_8h_a01b838ac35f2e109b72a5bfcba9faff6}} 
+\hyperlink{HRI__ADC_8h_d2/dcb/structADC__CHAN__THRSEL__reg__t}{ADC\_CHAN\_THRSEL\_reg\_t}&
+CHAN\_THRSEL&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a76f6ea29839c073cb62d7ea65d38c357}\label{HRI__ADC_8h_a76f6ea29839c073cb62d7ea65d38c357}} 
+\hyperlink{HRI__ADC_8h_d0/d12/structADC__INTEN__reg__t}{ADC\_INTEN\_reg\_t}&
+INTEN&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_a730e38f6c326544f321237af334451d0}\label{HRI__ADC_8h_a730e38f6c326544f321237af334451d0}} 
+\hyperlink{HRI__ADC_8h_dd/d52/structADC__FLAGS__reg__t}{ADC\_FLAGS\_reg\_t}&
+FLAGS&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__ADC_8h_ad6658de4de5c46838c1ee63306b42749}\label{HRI__ADC_8h_ad6658de4de5c46838c1ee63306b42749}} 
+\hyperlink{HRI__ADC_8h_d8/d88/structADC__TRM__reg__t}{ADC\_TRM\_reg\_t}&
+TRM&
+\\
+\hline
+
+\end{DoxyFields}

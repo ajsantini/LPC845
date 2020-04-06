@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Libreria LPC845: Fichero Fuente includes/hri/HRI_MRT.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Libreria LPC845
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="../../dir_1462a99526b4e9a7f1b05e8b7f062883.html">hri</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">HRI_MRT.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d80/HRI__MRT_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef HRI_MRT_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define HRI_MRT_H_</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define     MRT_BASE        0x40004000</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    uint32_t LVALUE : 31;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    uint32_t LOAD : 1;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#d7/d71/structMRT__INTVAL__reg__t">MRT_INTVAL_reg_t</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   22</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    uint32_t VALUE : 31;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    uint32_t : 1;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#db/d81/structMRT__TIMER__reg__t">MRT_TIMER_reg_t</a>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    uint32_t INTEN : 1;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    uint32_t MODE : 2;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    uint32_t : 29;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#d2/d1e/structMRT__CTRL__reg__t">MRT_CTRL_reg_t</a>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   35</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    uint32_t INTFLAG : 1;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    uint32_t RUN : 1;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    uint32_t : 30;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#d4/d12/structMRT__STAT__reg__t">MRT_STAT_reg_t</a>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   42</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    uint32_t : 4;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint32_t CHAN : 4;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    uint32_t : 24;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#d9/d9b/structMRT__IDLE__CH__reg__t">MRT_IDLE_CH_reg_t</a>;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    uint32_t CFLAG0 : 1;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    uint32_t CFLAG1 : 1;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    uint32_t CFLAG2 : 1;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uint32_t CFLAG3 : 1;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    uint32_t : 28;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#dc/dc5/structMRT__IRQ__FLAG__reg__t">MRT_IRQ_FLAG_reg_t</a>;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   58</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../dc/d80/HRI__MRT_8h.html#d7/d71/structMRT__INTVAL__reg__t">MRT_INTVAL_reg_t</a> INTVAL;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d80/HRI__MRT_8h.html#db/d81/structMRT__TIMER__reg__t">MRT_TIMER_reg_t</a> TIMER;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../dc/d80/HRI__MRT_8h.html#d2/d1e/structMRT__CTRL__reg__t">MRT_CTRL_reg_t</a> CTRL;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../dc/d80/HRI__MRT_8h.html#d4/d12/structMRT__STAT__reg__t">MRT_STAT_reg_t</a> STAT;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#da/d9f/structMRT__CHN__reg__t">MRT_CHN_reg_t</a>;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../dc/d80/HRI__MRT_8h.html">   66</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="../../dc/d80/HRI__MRT_8h.html#da/d9f/structMRT__CHN__reg__t">MRT_CHN_reg_t</a> CHN[4];</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> uint32_t RESERVED;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d80/HRI__MRT_8h.html#d9/d9b/structMRT__IDLE__CH__reg__t">MRT_IDLE_CH_reg_t</a> IDLE_CH;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../dc/d80/HRI__MRT_8h.html#dc/dc5/structMRT__IRQ__FLAG__reg__t">MRT_IRQ_FLAG_reg_t</a> IRQ_FLAG;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}<a class="code" href="../../dc/d80/HRI__MRT_8h.html#de/dfc/structMRT__per__t">MRT_per_t</a>;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HRI_MRT_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="HRI__MRT_8h_html_d4/d12/structMRT__STAT__reg__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#d4/d12/structMRT__STAT__reg__t">MRT_STAT_reg_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:35</div></div>
+<div class="ttc" id="HRI__MRT_8h_html_dc/dc5/structMRT__IRQ__FLAG__reg__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#dc/dc5/structMRT__IRQ__FLAG__reg__t">MRT_IRQ_FLAG_reg_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:49</div></div>
+<div class="ttc" id="HRI__MRT_8h_html_de/dfc/structMRT__per__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#de/dfc/structMRT__per__t">MRT_per_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:66</div></div>
+<div class="ttc" id="HRI__MRT_8h_html_d2/d1e/structMRT__CTRL__reg__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#d2/d1e/structMRT__CTRL__reg__t">MRT_CTRL_reg_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:28</div></div>
+<div class="ttc" id="HRI__MRT_8h_html_db/d81/structMRT__TIMER__reg__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#db/d81/structMRT__TIMER__reg__t">MRT_TIMER_reg_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:22</div></div>
+<div class="ttc" id="HRI__MRT_8h_html_d7/d71/structMRT__INTVAL__reg__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#d7/d71/structMRT__INTVAL__reg__t">MRT_INTVAL_reg_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:16</div></div>
+<div class="ttc" id="HRI__MRT_8h_html_da/d9f/structMRT__CHN__reg__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#da/d9f/structMRT__CHN__reg__t">MRT_CHN_reg_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:58</div></div>
+<div class="ttc" id="HRI__MRT_8h_html_d9/d9b/structMRT__IDLE__CH__reg__t"><div class="ttname"><a href="../../dc/d80/HRI__MRT_8h.html#d9/d9b/structMRT__IDLE__CH__reg__t">MRT_IDLE_CH_reg_t</a></div><div class="ttdef"><b>Definition:</b> HRI_MRT.h:42</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

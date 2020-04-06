@@ -1,0 +1,201 @@
+\hypertarget{HAL__UART_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+U\+A\+RT.h}
+\label{HAL__UART_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{includes/hal/\+H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}}
+
+
+Declaraciones a nivel de aplicacion del periferico U\+A\+RT (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+G\+P\+I\+O.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+U\+A\+R\+T.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{df/dde/HAL__UART_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/ddf/HAL__UART_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhal__uart__config__t}{hal\+\_\+uart\+\_\+config\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__UART_8h_a7eb9eb1e60b93c109e14ac618ab7901e}\label{HAL__UART_8h_a7eb9eb1e60b93c109e14ac618ab7901e}} 
+enum {\bfseries hal\+\_\+uart\+\_\+datalen\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+L\+E\+N\+\_\+7\+B\+IT} = 0, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+L\+E\+N\+\_\+8\+B\+IT}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+L\+E\+N\+\_\+9\+B\+IT}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__UART_8h_a220ffe3b05d04a08e12a6193549511d1}\label{HAL__UART_8h_a220ffe3b05d04a08e12a6193549511d1}} 
+enum {\bfseries hal\+\_\+uart\+\_\+parity\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+\_\+\+P\+A\+R\+I\+TY} = 0, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN} = 2, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__UART_8h_a55a5b3c508317c2fdbc41525d7c8bc97}\label{HAL__UART_8h_a55a5b3c508317c2fdbc41525d7c8bc97}} 
+enum {\bfseries hal\+\_\+uart\+\_\+stop\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+S\+T\+O\+P\+L\+E\+N\+\_\+1\+B\+IT} = 0, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+S\+T\+O\+P\+L\+E\+N\+\_\+2\+B\+IT}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__UART_8h_a43bd29e1a1f8591ef801d070f55afc93}\label{HAL__UART_8h_a43bd29e1a1f8591ef801d070f55afc93}} 
+enum {\bfseries hal\+\_\+uart\+\_\+oversampling\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X5} = 4, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X6}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X7}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X8}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X9}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X10}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X11}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X12}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X13}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X14}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X15}, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+O\+V\+E\+R\+S\+A\+M\+P\+L\+I\+N\+G\+\_\+\+X16}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__UART_8h_a901ade8c04909ed853a3e232aaecff10}\label{HAL__UART_8h_a901ade8c04909ed853a3e232aaecff10}} 
+enum {\bfseries hal\+\_\+uart\+\_\+tx\+\_\+result} \{ {\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+T\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+OK} = 0, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+T\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+DY}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__UART_8h_a165cd0258bebd3dbfaaeb878b3e4a611}\label{HAL__UART_8h_a165cd0258bebd3dbfaaeb878b3e4a611}} 
+enum {\bfseries hal\+\_\+uart\+\_\+rx\+\_\+result} \{ {\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+R\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+OK} = 0, 
+{\bfseries H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+R\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+DY}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{HAL__UART_8h_ae847e2762fdcf69766487fbea2eed69a}{hal\+\_\+uart\+\_\+init} (uint8\+\_\+t inst, const \hyperlink{structhal__uart__config__t}{hal\+\_\+uart\+\_\+config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Inicializar U\+A\+RT con los parametros deseados. \end{DoxyCompactList}\item 
+hal\+\_\+uart\+\_\+tx\+\_\+result \hyperlink{HAL__UART_8h_aac3ebe57d6954db26baedbafdc64fb26}{hal\+\_\+uart\+\_\+tx\+\_\+byte} (uint8\+\_\+t inst, uint32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Transmitir un dato mediante la U\+A\+RT. \end{DoxyCompactList}\item 
+hal\+\_\+uart\+\_\+rx\+\_\+result \hyperlink{HAL__UART_8h_aa9186f2bbb7ce6c298e4e6249341a99a}{hal\+\_\+uart\+\_\+rx\+\_\+byte} (uint8\+\_\+t inst, uint32\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Recibir un dato de la U\+A\+RT. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__UART_8h_a014876b7037b10d418c3b2006f894f1e}{hal\+\_\+uart\+\_\+register\+\_\+tx\+\_\+callback} (uint8\+\_\+t inst, void($\ast$new\+\_\+callback)(void))
+\begin{DoxyCompactList}\small\item\em Registrar el callback a ser llamado una vez finalizada la transmision de un dato por U\+A\+RT. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__UART_8h_a07491f4d61942f763b49526e81e2a35d}{hal\+\_\+uart\+\_\+register\+\_\+rx\+\_\+callback} (uint8\+\_\+t inst, void($\ast$new\+\_\+callback)(void))
+\begin{DoxyCompactList}\small\item\em Registrar el callback a ser llamado en la recepcion de un dato por U\+A\+RT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__UART_8h_a7a61d73fd6ad0a670c4225140fefd7bd}\label{HAL__UART_8h_a7a61d73fd6ad0a670c4225140fefd7bd}} 
+void \hyperlink{HAL__UART_8h_a7a61d73fd6ad0a670c4225140fefd7bd}{U\+A\+R\+T3\+\_\+irq} (void)
+\begin{DoxyCompactList}\small\item\em Interrupcion de U\+A\+R\+T3. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__UART_8h_a28aab3f4a90a2a9d61d88048637c0811}\label{HAL__UART_8h_a28aab3f4a90a2a9d61d88048637c0811}} 
+void \hyperlink{HAL__UART_8h_a28aab3f4a90a2a9d61d88048637c0811}{U\+A\+R\+T4\+\_\+irq} (void)
+\begin{DoxyCompactList}\small\item\em Interrupcion de U\+A\+R\+T4. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de aplicacion del periferico U\+A\+RT (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HAL__UART_8h_ae847e2762fdcf69766487fbea2eed69a}\label{HAL__UART_8h_ae847e2762fdcf69766487fbea2eed69a}} 
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}!hal\+\_\+uart\+\_\+init@{hal\+\_\+uart\+\_\+init}}
+\index{hal\+\_\+uart\+\_\+init@{hal\+\_\+uart\+\_\+init}!H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+uart\+\_\+init()}{hal\_uart\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+uart\+\_\+init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{const \hyperlink{structhal__uart__config__t}{hal\+\_\+uart\+\_\+config\+\_\+t} $\ast$}]{config }\end{DoxyParamCaption})}
+
+
+
+Inicializar U\+A\+RT con los parametros deseados. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Que instancia de U\+A\+RT inicializar \\
+\hline
+\mbox{\tt in}  & {\em config} & Puntero a configuracion de la U\+A\+RT \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__UART_8h_aac3ebe57d6954db26baedbafdc64fb26}\label{HAL__UART_8h_aac3ebe57d6954db26baedbafdc64fb26}} 
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}!hal\+\_\+uart\+\_\+tx\+\_\+byte@{hal\+\_\+uart\+\_\+tx\+\_\+byte}}
+\index{hal\+\_\+uart\+\_\+tx\+\_\+byte@{hal\+\_\+uart\+\_\+tx\+\_\+byte}!H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+uart\+\_\+tx\+\_\+byte()}{hal\_uart\_tx\_byte()}}
+{\footnotesize\ttfamily hal\+\_\+uart\+\_\+tx\+\_\+result hal\+\_\+uart\+\_\+tx\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint32\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Transmitir un dato mediante la U\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Que instancia de U\+A\+RT usar \\
+\hline
+\mbox{\tt in}  & {\em data} & Dato a transmitir. Puede ser de 7, 8 o 9 bits \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__UART_8h_aa9186f2bbb7ce6c298e4e6249341a99a}\label{HAL__UART_8h_aa9186f2bbb7ce6c298e4e6249341a99a}} 
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}!hal\+\_\+uart\+\_\+rx\+\_\+byte@{hal\+\_\+uart\+\_\+rx\+\_\+byte}}
+\index{hal\+\_\+uart\+\_\+rx\+\_\+byte@{hal\+\_\+uart\+\_\+rx\+\_\+byte}!H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+uart\+\_\+rx\+\_\+byte()}{hal\_uart\_rx\_byte()}}
+{\footnotesize\ttfamily hal\+\_\+uart\+\_\+rx\+\_\+result hal\+\_\+uart\+\_\+rx\+\_\+byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint32\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Recibir un dato de la U\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Que instancia de U\+A\+RT usar \\
+\hline
+\mbox{\tt in}  & {\em data} & Puntero a donde guardar el dato recibido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado de la recepcion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HAL__UART_8h_a014876b7037b10d418c3b2006f894f1e}\label{HAL__UART_8h_a014876b7037b10d418c3b2006f894f1e}} 
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}!hal\+\_\+uart\+\_\+register\+\_\+tx\+\_\+callback@{hal\+\_\+uart\+\_\+register\+\_\+tx\+\_\+callback}}
+\index{hal\+\_\+uart\+\_\+register\+\_\+tx\+\_\+callback@{hal\+\_\+uart\+\_\+register\+\_\+tx\+\_\+callback}!H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+uart\+\_\+register\+\_\+tx\+\_\+callback()}{hal\_uart\_register\_tx\_callback()}}
+{\footnotesize\ttfamily void hal\+\_\+uart\+\_\+register\+\_\+tx\+\_\+callback (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{void($\ast$)(void)}]{new\+\_\+callback }\end{DoxyParamCaption})}
+
+
+
+Registrar el callback a ser llamado una vez finalizada la transmision de un dato por U\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & A que instancia de U\+A\+RT registrar el callback \\
+\hline
+\mbox{\tt in}  & {\em new\+\_\+callback} & Puntero a funcion a llamar cada vez que se termina de enviar un dato por U\+A\+RT \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__UART_8h_a07491f4d61942f763b49526e81e2a35d}\label{HAL__UART_8h_a07491f4d61942f763b49526e81e2a35d}} 
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}!hal\+\_\+uart\+\_\+register\+\_\+rx\+\_\+callback@{hal\+\_\+uart\+\_\+register\+\_\+rx\+\_\+callback}}
+\index{hal\+\_\+uart\+\_\+register\+\_\+rx\+\_\+callback@{hal\+\_\+uart\+\_\+register\+\_\+rx\+\_\+callback}!H\+A\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+A\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+uart\+\_\+register\+\_\+rx\+\_\+callback()}{hal\_uart\_register\_rx\_callback()}}
+{\footnotesize\ttfamily void hal\+\_\+uart\+\_\+register\+\_\+rx\+\_\+callback (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{void($\ast$)(void)}]{new\+\_\+callback }\end{DoxyParamCaption})}
+
+
+
+Registrar el callback a ser llamado en la recepcion de un dato por U\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & A que instancia de U\+A\+RT registrar el callback \\
+\hline
+\mbox{\tt in}  & {\em new\+\_\+callback} & Puntero a funcion a llamar cada vez que se recibe un dato por U\+A\+RT \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,926 @@
+\hypertarget{HPL__SYSCON_8h}{}\section{Referencia del Archivo includes/hpl/\+H\+P\+L\+\_\+\+S\+Y\+S\+C\+ON.h}
+\label{HPL__SYSCON_8h}\index{includes/hpl/\+H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{includes/hpl/\+H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+
+
+Declaraciones a nivel de abstraccion de periferico del S\+Y\+S\+C\+ON (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$H\+R\+I\+\_\+\+S\+Y\+S\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+G\+P\+I\+O.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{d6/d7d/HPL__SYSCON_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d84/HPL__SYSCON_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a7a694b3c9ecc3cd13a0e9341e60c8e17}\label{HPL__SYSCON_8h_a7a694b3c9ecc3cd13a0e9341e60c8e17}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+bypass\+\_\+sel\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+D\+I\+S\+A\+B\+L\+ED} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+B\+Y\+P\+A\+S\+S\+\_\+\+E\+N\+A\+B\+L\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_ac372d5894dafb0ccd348a6dd708bdd79}\label{HPL__SYSCON_8h_ac372d5894dafb0ccd348a6dd708bdd79}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+freqrange\+\_\+sel\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+E\+Q\+R\+A\+N\+G\+E\+\_\+\+M\+I\+N\+U\+S\+\_\+20\+M\+HZ} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+E\+Q\+R\+A\+N\+G\+E\+\_\+\+P\+L\+U\+S\+\_\+20\+M\+HZ}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_abdafa5df63e4a2885b3dbdd8d56eabf1}\label{HPL__SYSCON_8h_abdafa5df63e4a2885b3dbdd8d56eabf1}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+watchdog\+\_\+clkana\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+0\+K\+HZ} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+600\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+1050\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+1400\+K\+HZ}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+1750\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+2100\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+2400\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+3000\+K\+HZ}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+3250\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+3500\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+3750\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+4000\+K\+HZ}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+4200\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+4400\+K\+HZ}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+C\+L\+K\+A\+N\+A\+\_\+4600\+K\+HZ}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a3dd8b9107f51aba2bfbfb20991df33c2}\label{HPL__SYSCON_8h_a3dd8b9107f51aba2bfbfb20991df33c2}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+pll\+\_\+source\+\_\+sel\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+E\+X\+T\+\_\+\+C\+LK}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+W\+A\+T\+C\+H\+D\+OG}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+\_\+\+D\+IV}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a309fc9d4d2661a6d55a21b8a25df4e45}\label{HPL__SYSCON_8h_a309fc9d4d2661a6d55a21b8a25df4e45}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+main\+\_\+clock\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+E\+X\+T\+\_\+\+C\+LK}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+W\+A\+T\+C\+H\+D\+OG}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+\_\+\+D\+IV}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+P\+LL}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a96be9e6cfdc3169ded398c42c1feb495}\label{HPL__SYSCON_8h_a96be9e6cfdc3169ded398c42c1feb495}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+capacitive\+\_\+clock\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+A\+P\+A\+C\+I\+T\+I\+V\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+A\+P\+A\+C\+I\+T\+I\+V\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+A\+P\+A\+C\+I\+T\+I\+V\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+A\+P\+A\+C\+I\+T\+I\+V\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+\_\+\+D\+IV}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+A\+P\+A\+C\+I\+T\+I\+V\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+O\+SC}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_ad25d1973ac386c4b5f0c74faff9331f2}\label{HPL__SYSCON_8h_ad25d1973ac386c4b5f0c74faff9331f2}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+adc\+\_\+clock\+\_\+sel\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a39f44c3ca43e77c52756da1c18ecd693}\label{HPL__SYSCON_8h_a39f44c3ca43e77c52756da1c18ecd693}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+sct\+\_\+clock\+\_\+sel\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+S\+C\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+S\+C\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+S\+C\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_aa5a662a8047708f6fa4a97ad8afd3581}\label{HPL__SYSCON_8h_aa5a662a8047708f6fa4a97ad8afd3581}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+ext\+\_\+clock\+\_\+source\+\_\+sel\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+X\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+C\+R\+Y\+S\+T\+AL} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+X\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+C\+L\+K\+\_\+\+IN}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a2096d496a1cf74044c97170c1bf77b07}\label{HPL__SYSCON_8h_a2096d496a1cf74044c97170c1bf77b07}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+R\+OM} = 1, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+R\+AM}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+L\+A\+SH} = 4, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C0}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+WM}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+CT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+W\+KT}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+RT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+C\+RC}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+W\+W\+DT}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+I\+O\+C\+ON}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+A\+C\+MP}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C1}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C3}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+A\+DC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+C\+T\+I\+M\+ER}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+TB}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O\+\_\+\+I\+NT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+D\+MA}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T3}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T4}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+C\+A\+PT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C1}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_ab112f30c86d0a96de715aec515ad9cc7}\label{HPL__SYSCON_8h_ab112f30c86d0a96de715aec515ad9cc7}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+reset\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+F\+L\+A\+SH} = 4, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+S\+WM}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+S\+CT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+W\+KT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+M\+RT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I0}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+C\+RC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T1}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+I\+O\+C\+ON} = 18, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+A\+C\+MP}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O1}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C3}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+A\+DC}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+C\+T\+I\+M\+ER}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C0} = 27, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+G\+P\+I\+O\+I\+NT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+D\+MA}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T3}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T4}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+C\+A\+PT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C1}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+F\+R\+G0} = 35, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+R\+E\+S\+E\+T\+\_\+\+S\+E\+L\+\_\+\+F\+R\+G1}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a5b7c97573f9e976e4bb5bddf20bb4688}\label{HPL__SYSCON_8h_a5b7c97573f9e976e4bb5bddf20bb4688}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+peripheral\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T0} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T3}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T4}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I2\+C0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I2\+C1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I2\+C2}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I2\+C3}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I1}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_ac5d228c67b914f93912d601b7735ec6e}\label{HPL__SYSCON_8h_ac5d228c67b914f93912d601b7735ec6e}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+peripheral\+\_\+clock\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+A\+IN}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+G0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+G1}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+\_\+\+D\+IV}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+N\+O\+NE} = 7
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a07f2dc9916dbd8835f2e5f81507e7f2b}\label{HPL__SYSCON_8h_a07f2dc9916dbd8835f2e5f81507e7f2b}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+frg\+\_\+clock\+\_\+sel\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+N\+O\+NE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a24590b198c0c50184d3bf9c65f91491f}\label{HPL__SYSCON_8h_a24590b198c0c50184d3bf9c65f91491f}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+clkout\+\_\+source\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+E\+X\+T\+\_\+\+C\+L\+O\+CK}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+O\+SC}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a5f3ab382e573cd575f2c22ff12bbe44d}\label{HPL__SYSCON_8h_a5f3ab382e573cd575f2c22ff12bbe44d}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+level\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+B\+O\+D\+\_\+\+L\+E\+V\+E\+L\+\_\+1} = 1, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+B\+O\+D\+\_\+\+L\+E\+V\+E\+L\+\_\+2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+B\+O\+D\+\_\+\+L\+E\+V\+E\+L\+\_\+3}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_ae4b4f7ada0fb530753613a5b4dcf1963}\label{HPL__SYSCON_8h_ae4b4f7ada0fb530753613a5b4dcf1963}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+enale\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+B\+O\+D\+\_\+\+D\+I\+S\+A\+B\+LE} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+B\+O\+D\+\_\+\+E\+N\+A\+B\+LE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a488b5285ddf55eca6045664dffb0be98}\label{HPL__SYSCON_8h_a488b5285ddf55eca6045664dffb0be98}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+nmi\+\_\+enable\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+N\+M\+I\+\_\+\+D\+I\+S\+A\+B\+LE} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+N\+M\+I\+\_\+\+E\+N\+A\+B\+LE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a749e07aa15b38515a27f40cc4ba37ade}\label{HPL__SYSCON_8h_a749e07aa15b38515a27f40cc4ba37ade}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T0} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T3}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T4}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T5}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T6}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+P\+I\+N\+T7}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I0} = 32, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+U\+S\+A\+R\+T0} = 35, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+U\+S\+A\+R\+T1}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+U\+S\+A\+R\+T2}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C1} = 39, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C0}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+C\+A\+P\+T\+O\+U\+CH} = 43, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+W\+W\+DT}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+B\+OD}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+W\+KT} = 47, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C2} = 53, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C3}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+U\+S\+A\+R\+T3} = 62, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+L\+\_\+\+U\+S\+A\+R\+T4}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a148798bf8134740c02689c944cd3e4c5}\label{HPL__SYSCON_8h_a148798bf8134740c02689c944cd3e4c5}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+en} \{ {\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+D\+E\+E\+P\+\_\+\+S\+L\+E\+E\+P\+\_\+\+P\+O\+W\+E\+R\+ED} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+D\+E\+E\+P\+\_\+\+S\+L\+E\+E\+P\+\_\+\+P\+O\+W\+E\+R\+E\+D\+\_\+\+D\+O\+WN}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a2c3bb00b1c2466c10670e2d0edb943fd}\label{HPL__SYSCON_8h_a2c3bb00b1c2466c10670e2d0edb943fd}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+wakeup\+\_\+power\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+O\+UT} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+F\+RO}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+F\+L\+A\+SH}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+B\+OD}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+A\+DC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+O\+SC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+W\+D\+T\+O\+SC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+P\+LL}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+V\+R\+E\+F2} = 10, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C0} = 13, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+A\+C\+MP}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_adf9bb5426d5ded6c35788be3f352a3a0}\label{HPL__SYSCON_8h_adf9bb5426d5ded6c35788be3f352a3a0}} 
+enum {\bfseries S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+O\+UT} = 0, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+F\+RO}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+F\+L\+A\+SH}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+B\+OD}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+A\+DC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+O\+SC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+W\+D\+T\+O\+SC}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+P\+LL}, 
+\newline
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C0} = 13, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+D\+A\+C1}, 
+{\bfseries S\+Y\+S\+C\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+S\+E\+L\+\_\+\+A\+C\+MP}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{HPL__SYSCON_8h_ac5bd45ac18d7f746682d74dba33e97d2}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+control} (uint8\+\_\+t m, uint8\+\_\+t p)
+\begin{DoxyCompactList}\small\item\em Configuracion del registro de control del P\+LL. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__SYSCON_8h_a234c6c0f9cc495a80ae7109c3a1294a3}{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+pll\+\_\+lock\+\_\+status} (void)
+\begin{DoxyCompactList}\small\item\em Obtener estado de lock del P\+LL. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a9ff09159397fa6c45abc0d018e4fa959}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+oscillator\+\_\+control} (S\+Y\+S\+C\+O\+N\+\_\+bypass\+\_\+sel\+\_\+en bypass, S\+Y\+S\+C\+O\+N\+\_\+freqrange\+\_\+sel\+\_\+en freqrange)
+\begin{DoxyCompactList}\small\item\em Configurar el registro de control del sistema del oscilador. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a9ffd914139431bbc38bdb71629519a68}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+watchdog\+\_\+oscillator\+\_\+control} (uint8\+\_\+t divsel, S\+Y\+S\+C\+O\+N\+\_\+watchdog\+\_\+clkana\+\_\+sel\+\_\+en clkana\+\_\+sel)
+\begin{DoxyCompactList}\small\item\em Configuracion del registro de control del oscilador del watchdog. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_af218a1ee5b4b6f4dcd0b94860fd90b06}\label{HPL__SYSCON_8h_af218a1ee5b4b6f4dcd0b94860fd90b06}} 
+static void \hyperlink{HPL__SYSCON_8h_af218a1ee5b4b6f4dcd0b94860fd90b06}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+fro\+\_\+direct} (void)
+\begin{DoxyCompactList}\small\item\em Configuracion del F\+RO para que sea el oscilador directo (sin division) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a524e697f3ecb01be19894546ae559df2}\label{HPL__SYSCON_8h_a524e697f3ecb01be19894546ae559df2}} 
+static void \hyperlink{HPL__SYSCON_8h_a524e697f3ecb01be19894546ae559df2}{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+fro\+\_\+direct} (void)
+\begin{DoxyCompactList}\small\item\em Configuracion del F\+RO para que sea el oscilador dividido (con division dependiente de F\+A\+IM) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_ab500c36fde4120fb11a8210e7919f120}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+clk\+\_\+source} (S\+Y\+S\+C\+O\+N\+\_\+pll\+\_\+source\+\_\+sel\+\_\+en pll\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Configuracion de la fuente de clock para el P\+LL. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_a943e6b6bdecc32eb5d8fb61028a56b2d}\label{HPL__SYSCON_8h_a943e6b6bdecc32eb5d8fb61028a56b2d}} 
+static void {\bfseries S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+system\+\_\+clock\+\_\+source} (S\+Y\+S\+C\+O\+N\+\_\+main\+\_\+clock\+\_\+sel\+\_\+en clock\+\_\+selection)
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_abd1095ea2fccb86d5bafde15aae401a9}\label{HPL__SYSCON_8h_abd1095ea2fccb86d5bafde15aae401a9}} 
+static void {\bfseries S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+system\+\_\+clock\+\_\+divider} (uint8\+\_\+t divider)
+\item 
+static void \hyperlink{HPL__SYSCON_8h_a9425dc011161a97cdbbc8358feb2e941}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+capacitive\+\_\+clock\+\_\+source} (S\+Y\+S\+C\+O\+N\+\_\+capacitive\+\_\+clock\+\_\+sel\+\_\+en source\+\_\+sel)
+\begin{DoxyCompactList}\small\item\em Seleccion de la fuente de clock para el periferico de control de touch capacitivo. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_aebaf2f63ad11af5eba8d7ab45a10849d}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+adc\+\_\+clock} (S\+Y\+S\+C\+O\+N\+\_\+adc\+\_\+clock\+\_\+sel\+\_\+en source\+\_\+sel, uint8\+\_\+t div)
+\begin{DoxyCompactList}\small\item\em Seleccion de clock y divisor para el periferico A\+DC. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a7daa7cf2982c9744ddd4a7d706111c64}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+sct\+\_\+clock} (S\+Y\+S\+C\+O\+N\+\_\+sct\+\_\+clock\+\_\+sel\+\_\+en source\+\_\+sel, uint8\+\_\+t div)
+\begin{DoxyCompactList}\small\item\em Seleccion de clock y divisor para el periferico S\+CT. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a55995754dc61405a40d1d85ab9be5600}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+ext\+\_\+clock\+\_\+source} (S\+Y\+S\+C\+O\+N\+\_\+ext\+\_\+clock\+\_\+source\+\_\+sel\+\_\+en source\+\_\+selection)
+\begin{DoxyCompactList}\small\item\em Seleccion de fuente para el clock externo. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_ac3ef9fd226520eda109c423202b9eeeb}{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock} (S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Habilitacion del clock de un periferico. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_aea7573afa59c57d3f8626784c27ec416}{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+clock} (S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Inhabilitacion del clock de un periferico. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_acc11d7d552f2571f061eb51609dac809}{S\+Y\+S\+C\+O\+N\+\_\+assert\+\_\+reset} (S\+Y\+S\+C\+O\+N\+\_\+reset\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Generar el reset en el periferico seleccionado. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_ae77a05389dc3b3e327729c0f71aca493}{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+reset} (S\+Y\+S\+C\+O\+N\+\_\+reset\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Liberar el reset en el periferico seleccionado. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a78d46e198e557ea4a96133de4549d066}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source} (S\+Y\+S\+C\+O\+N\+\_\+peripheral\+\_\+sel\+\_\+en peripheral, S\+Y\+S\+C\+O\+N\+\_\+peripheral\+\_\+clock\+\_\+sel\+\_\+en clock)
+\begin{DoxyCompactList}\small\item\em Seleccion de fuente de clock para los distintos perifericos. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_ad92a71657516033855051d53227b872e}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+frg\+\_\+config} (uint8\+\_\+t frg\+\_\+selection, S\+Y\+S\+C\+O\+N\+\_\+frg\+\_\+clock\+\_\+sel\+\_\+en clock\+\_\+source, uint8\+\_\+t mul, uint8\+\_\+t div)
+\begin{DoxyCompactList}\small\item\em Configuracion del F\+RG. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a2e302731536fc37dc157f3ec36f794fb}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+clkout\+\_\+config} (S\+Y\+S\+C\+O\+N\+\_\+clkout\+\_\+source\+\_\+sel\+\_\+en clock\+\_\+source, uint8\+\_\+t divider)
+\begin{DoxyCompactList}\small\item\em Seleccion de fuente para el C\+L\+O\+CK O\+UT. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__SYSCON_8h_a565fa79a9946ae48f79080cdbd3d1f31}{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+por\+\_\+pio\+\_\+status\+\_\+register} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer el contenido de P\+I\+O\+P\+O\+R\+C\+A\+Pn. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_aba5ca95ac1fdbf3e4ba041d141950fe1}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider} (uint8\+\_\+t inst, uint8\+\_\+t div)
+\begin{DoxyCompactList}\small\item\em Fijar el divisor para el filtro de glitches del I\+O\+C\+ON. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a9a5b82f0cf1060e6f4b2d6f10a7ffd81}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+bod\+\_\+control} (S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+level\+\_\+en reset\+\_\+level, S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+level\+\_\+en bod\+\_\+level, S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+enale\+\_\+en reset\+\_\+enable)
+\begin{DoxyCompactList}\small\item\em Configurar el registro de control del brown-\/out detector. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__SYSCON_8h_a399898e8432692a43f1f803decac9977}{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+systick\+\_\+calib} (void)
+\begin{DoxyCompactList}\small\item\em Obtener el valor de calibracion del S\+Y\+S\+T\+I\+CK. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__SYSCON_8h_a273b7bbbe85ed4c97d5a9aad6ef826d7}{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+irq\+\_\+latency} (void)
+\begin{DoxyCompactList}\small\item\em Obtener el valor de latencia de interrupciones del M\+CU. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_ab32b10ca799479ab0549d87b3f057e12}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+nmi\+\_\+source} (uint8\+\_\+t irq, S\+Y\+S\+C\+O\+N\+\_\+nmi\+\_\+enable\+\_\+en enable)
+\begin{DoxyCompactList}\small\item\em Fijar que numero de interrupcion actuara como N\+MI. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a5566e150aa43c9c93874093440d3c399}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pinint\+\_\+pin} (uint8\+\_\+t channel, G\+P\+I\+O\+\_\+portpin\+\_\+en portpin)
+\begin{DoxyCompactList}\small\item\em Configurar pin a utilizar como fuente de P\+I\+N\+I\+NT. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a14c8f59fc192e060e2e7ccfe8c1c42f9}{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+source} (S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Habilitar alguna de las interrupciones del periferico seleccionado como fuente de wakeup. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_afd1c96f74275ade3c29f88c504b2e34b}{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+wakeup\+\_\+source} (S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Inhabilitar alguna de las interrupciones del periferico seleccionado como fuente de wakeup. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a11a010b1cfe00b6a0a3e475558a40ede}{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+bod} (S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+en power)
+\begin{DoxyCompactList}\small\item\em Habilitar o inhabilitacion de la alimentacion del B\+OD en deep sleep. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_a8514a0f2a3305fa57f7a9657e11d199e}{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+wdtosc} (S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+en power)
+\begin{DoxyCompactList}\small\item\em Habilitar o inhabilitacion de la alimentacion del W\+D\+T\+O\+SC en deep sleep. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_abe29b3e4021644cdd0d425cffc75839b}{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+powered\+\_\+on\+\_\+wakeup} (S\+Y\+S\+C\+O\+N\+\_\+wakeup\+\_\+power\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Fijar que un periferico comience encendido al haber un wakeup. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_ac5bcbc4cc3d200a4389a954d963ce2ae}{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+powered\+\_\+on\+\_\+wakeup} (S\+Y\+S\+C\+O\+N\+\_\+wakeup\+\_\+power\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Fijar que un periferico comience apagado al haber un wakeup. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_ab9e29ad23dc43fd3a5e86cff2f80baa9}{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+up\+\_\+peripheral} (S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Encender el periferico seleccionado. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__SYSCON_8h_aa11fcd4678d03bcee5affe21b24df6f5}{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+down\+\_\+peripheral} (S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Apagar el periferico seleccionado. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__SYSCON_8h_a1fb5aeb21896a74862012595d94d1577}{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+device\+\_\+id} (void)
+\begin{DoxyCompactList}\small\item\em Obtener el Device ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__SYSCON_8h_aa0aa38501646e235226943df433572e5}\label{HPL__SYSCON_8h_aa0aa38501646e235226943df433572e5}} 
+volatile \hyperlink{HRI__SYSCON_8h_db/da7/structSYSCON__per__t}{S\+Y\+S\+C\+O\+N\+\_\+per\+\_\+t} $\ast$const \hyperlink{HPL__SYSCON_8h_aa0aa38501646e235226943df433572e5}{S\+Y\+S\+C\+ON}
+\begin{DoxyCompactList}\small\item\em Periferico S\+Y\+S\+C\+ON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de abstraccion de periferico del S\+Y\+S\+C\+ON (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ac5bd45ac18d7f746682d74dba33e97d2}\label{HPL__SYSCON_8h_ac5bd45ac18d7f746682d74dba33e97d2}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+control}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+control}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+control()}{SYSCON\_set\_pll\_control()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+control (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{m,  }\item[{uint8\+\_\+t}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion del registro de control del P\+LL. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em m} & Valor del divisor del feedback \\
+\hline
+\mbox{\tt in}  & {\em p} & Valor del post divisor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a234c6c0f9cc495a80ae7109c3a1294a3}\label{HPL__SYSCON_8h_a234c6c0f9cc495a80ae7109c3a1294a3}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+pll\+\_\+lock\+\_\+status@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+pll\+\_\+lock\+\_\+status}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+pll\+\_\+lock\+\_\+status@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+pll\+\_\+lock\+\_\+status}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+pll\+\_\+lock\+\_\+status()}{SYSCON\_get\_pll\_lock\_status()}}
+{\footnotesize\ttfamily static uint8\+\_\+t S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+pll\+\_\+lock\+\_\+status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado de lock del P\+LL. 
+
+\begin{DoxyReturn}{Devuelve}
+Valor del estado de lock del P\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a9ff09159397fa6c45abc0d018e4fa959}\label{HPL__SYSCON_8h_a9ff09159397fa6c45abc0d018e4fa959}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+oscillator\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+oscillator\+\_\+control}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+oscillator\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+oscillator\+\_\+control}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+oscillator\+\_\+control()}{SYSCON\_set\_oscillator\_control()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+oscillator\+\_\+control (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+bypass\+\_\+sel\+\_\+en}]{bypass,  }\item[{S\+Y\+S\+C\+O\+N\+\_\+freqrange\+\_\+sel\+\_\+en}]{freqrange }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar el registro de control del sistema del oscilador. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em bypass} & Seleccion de bypass \\
+\hline
+\mbox{\tt in}  & {\em freqrange} & Rango de frecuencia a utilizar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a9ffd914139431bbc38bdb71629519a68}\label{HPL__SYSCON_8h_a9ffd914139431bbc38bdb71629519a68}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+watchdog\+\_\+oscillator\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+watchdog\+\_\+oscillator\+\_\+control}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+watchdog\+\_\+oscillator\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+watchdog\+\_\+oscillator\+\_\+control}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+watchdog\+\_\+oscillator\+\_\+control()}{SYSCON\_set\_watchdog\_oscillator\_control()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+watchdog\+\_\+oscillator\+\_\+control (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{divsel,  }\item[{S\+Y\+S\+C\+O\+N\+\_\+watchdog\+\_\+clkana\+\_\+sel\+\_\+en}]{clkana\+\_\+sel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion del registro de control del oscilador del watchdog. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em divsel} & Seleccion de divsel \\
+\hline
+\mbox{\tt in}  & {\em clkana\+\_\+sel} & Seleccion de frecuencia base \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ab500c36fde4120fb11a8210e7919f120}\label{HPL__SYSCON_8h_ab500c36fde4120fb11a8210e7919f120}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+clk\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+clk\+\_\+source}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+clk\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+clk\+\_\+source}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+clk\+\_\+source()}{SYSCON\_set\_pll\_clk\_source()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pll\+\_\+clk\+\_\+source (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+pll\+\_\+source\+\_\+sel\+\_\+en}]{pll\+\_\+source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion de la fuente de clock para el P\+LL. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em pll\+\_\+source} & Fuente de entrada para el P\+LL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a9425dc011161a97cdbbc8358feb2e941}\label{HPL__SYSCON_8h_a9425dc011161a97cdbbc8358feb2e941}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+capacitive\+\_\+clock\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+capacitive\+\_\+clock\+\_\+source}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+capacitive\+\_\+clock\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+capacitive\+\_\+clock\+\_\+source}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+capacitive\+\_\+clock\+\_\+source()}{SYSCON\_set\_capacitive\_clock\_source()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+capacitive\+\_\+clock\+\_\+source (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+capacitive\+\_\+clock\+\_\+sel\+\_\+en}]{source\+\_\+sel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Seleccion de la fuente de clock para el periferico de control de touch capacitivo. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em source\+\_\+sel} & Seleccion de fuente de clock deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_aebaf2f63ad11af5eba8d7ab45a10849d}\label{HPL__SYSCON_8h_aebaf2f63ad11af5eba8d7ab45a10849d}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+adc\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+adc\+\_\+clock}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+adc\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+adc\+\_\+clock}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+adc\+\_\+clock()}{SYSCON\_set\_adc\_clock()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+adc\+\_\+clock (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+adc\+\_\+clock\+\_\+sel\+\_\+en}]{source\+\_\+sel,  }\item[{uint8\+\_\+t}]{div }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Seleccion de clock y divisor para el periferico A\+DC. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em clock\+\_\+sel} & Fuente de clock deseada para el periferico \\
+\hline
+\mbox{\tt in}  & {\em div} & Divisor deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a7daa7cf2982c9744ddd4a7d706111c64}\label{HPL__SYSCON_8h_a7daa7cf2982c9744ddd4a7d706111c64}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+sct\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+sct\+\_\+clock}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+sct\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+sct\+\_\+clock}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+sct\+\_\+clock()}{SYSCON\_set\_sct\_clock()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+sct\+\_\+clock (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+sct\+\_\+clock\+\_\+sel\+\_\+en}]{source\+\_\+sel,  }\item[{uint8\+\_\+t}]{div }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Seleccion de clock y divisor para el periferico S\+CT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em clock\+\_\+sel} & Fuente de clock deseada para el periferico \\
+\hline
+\mbox{\tt in}  & {\em div} & Divisor deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a55995754dc61405a40d1d85ab9be5600}\label{HPL__SYSCON_8h_a55995754dc61405a40d1d85ab9be5600}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+ext\+\_\+clock\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+ext\+\_\+clock\+\_\+source}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+ext\+\_\+clock\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+ext\+\_\+clock\+\_\+source}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+ext\+\_\+clock\+\_\+source()}{SYSCON\_set\_ext\_clock\_source()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+ext\+\_\+clock\+\_\+source (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+ext\+\_\+clock\+\_\+source\+\_\+sel\+\_\+en}]{source\+\_\+selection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Seleccion de fuente para el clock externo. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em source\+\_\+selection} & Seleccion deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ac3ef9fd226520eda109c423202b9eeeb}\label{HPL__SYSCON_8h_ac3ef9fd226520eda109c423202b9eeeb}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock()}{SYSCON\_enable\_clock()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitacion del clock de un periferico. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico en el cual habilitar el clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_aea7573afa59c57d3f8626784c27ec416}\label{HPL__SYSCON_8h_aea7573afa59c57d3f8626784c27ec416}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+clock}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+clock@{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+clock}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+clock()}{SYSCON\_disable\_clock()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+clock (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+clock\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitacion del clock de un periferico. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico en el cual habilitar el clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_acc11d7d552f2571f061eb51609dac809}\label{HPL__SYSCON_8h_acc11d7d552f2571f061eb51609dac809}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+assert\+\_\+reset@{S\+Y\+S\+C\+O\+N\+\_\+assert\+\_\+reset}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+assert\+\_\+reset@{S\+Y\+S\+C\+O\+N\+\_\+assert\+\_\+reset}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+assert\+\_\+reset()}{SYSCON\_assert\_reset()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+assert\+\_\+reset (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+reset\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generar el reset en el periferico seleccionado. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico a generar el reset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ae77a05389dc3b3e327729c0f71aca493}\label{HPL__SYSCON_8h_ae77a05389dc3b3e327729c0f71aca493}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+reset@{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+reset}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+reset@{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+reset}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+reset()}{SYSCON\_clear\_reset()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+reset (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+reset\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Liberar el reset en el periferico seleccionado. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico a liberar el reset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a78d46e198e557ea4a96133de4549d066}\label{HPL__SYSCON_8h_a78d46e198e557ea4a96133de4549d066}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source()}{SYSCON\_set\_peripheral\_clock\_source()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+peripheral\+\_\+sel\+\_\+en}]{peripheral,  }\item[{S\+Y\+S\+C\+O\+N\+\_\+peripheral\+\_\+clock\+\_\+sel\+\_\+en}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Seleccion de fuente de clock para los distintos perifericos. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico cuya fuente seleccionar \\
+\hline
+\mbox{\tt in}  & {\em clock} & Fuente de clock para el periferico seleccionada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ad92a71657516033855051d53227b872e}\label{HPL__SYSCON_8h_ad92a71657516033855051d53227b872e}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+frg\+\_\+config@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+frg\+\_\+config}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+frg\+\_\+config@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+frg\+\_\+config}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+frg\+\_\+config()}{SYSCON\_set\_frg\_config()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+frg\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{frg\+\_\+selection,  }\item[{S\+Y\+S\+C\+O\+N\+\_\+frg\+\_\+clock\+\_\+sel\+\_\+en}]{clock\+\_\+source,  }\item[{uint8\+\_\+t}]{mul,  }\item[{uint8\+\_\+t}]{div }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion del F\+RG. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em frg\+\_\+selection} & Cual de los F\+RG configurar, cero o uno \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock del F\+RG \\
+\hline
+\mbox{\tt in}  & {\em mul} & Multiplicador del F\+RG 0 $\sim$ 255 \\
+\hline
+\mbox{\tt in}  & {\em div} & Divisor del F\+RG 0$\sim$255 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a2e302731536fc37dc157f3ec36f794fb}\label{HPL__SYSCON_8h_a2e302731536fc37dc157f3ec36f794fb}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+clkout\+\_\+config@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+clkout\+\_\+config}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+clkout\+\_\+config@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+clkout\+\_\+config}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+clkout\+\_\+config()}{SYSCON\_set\_clkout\_config()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+clkout\+\_\+config (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+clkout\+\_\+source\+\_\+sel\+\_\+en}]{clock\+\_\+source,  }\item[{uint8\+\_\+t}]{divider }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Seleccion de fuente para el C\+L\+O\+CK O\+UT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente deseada \\
+\hline
+\mbox{\tt in}  & {\em divider} & Divisor del C\+L\+O\+CK O\+UT \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a565fa79a9946ae48f79080cdbd3d1f31}\label{HPL__SYSCON_8h_a565fa79a9946ae48f79080cdbd3d1f31}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+por\+\_\+pio\+\_\+status\+\_\+register@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+por\+\_\+pio\+\_\+status\+\_\+register}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+por\+\_\+pio\+\_\+status\+\_\+register@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+por\+\_\+pio\+\_\+status\+\_\+register}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+por\+\_\+pio\+\_\+status\+\_\+register()}{SYSCON\_get\_por\_pio\_status\_register()}}
+{\footnotesize\ttfamily static uint32\+\_\+t S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+por\+\_\+pio\+\_\+status\+\_\+register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer el contenido de P\+I\+O\+P\+O\+R\+C\+A\+Pn. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a leer (0 o 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor del registro leido 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__SYSCON_8h_aba5ca95ac1fdbf3e4ba041d141950fe1}\label{HPL__SYSCON_8h_aba5ca95ac1fdbf3e4ba041d141950fe1}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider()}{SYSCON\_set\_iocon\_glitch\_divider()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint8\+\_\+t}]{div }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar el divisor para el filtro de glitches del I\+O\+C\+ON. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a escribir \\
+\hline
+\mbox{\tt in}  & {\em div} & Divisor deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a9a5b82f0cf1060e6f4b2d6f10a7ffd81}\label{HPL__SYSCON_8h_a9a5b82f0cf1060e6f4b2d6f10a7ffd81}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+bod\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+bod\+\_\+control}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+bod\+\_\+control@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+bod\+\_\+control}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+bod\+\_\+control()}{SYSCON\_set\_bod\_control()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+bod\+\_\+control (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+level\+\_\+en}]{reset\+\_\+level,  }\item[{S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+level\+\_\+en}]{bod\+\_\+level,  }\item[{S\+Y\+S\+C\+O\+N\+\_\+bod\+\_\+enale\+\_\+en}]{reset\+\_\+enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar el registro de control del brown-\/out detector. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em reset\+\_\+level} & Nivel deseado para el reset \\
+\hline
+\mbox{\tt in}  & {\em bod\+\_\+level} & Nivel deseado para el B\+OD \\
+\hline
+\mbox{\tt in}  & {\em reset\+\_\+enable} & Habilitacion deseada para el reset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a399898e8432692a43f1f803decac9977}\label{HPL__SYSCON_8h_a399898e8432692a43f1f803decac9977}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+systick\+\_\+calib@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+systick\+\_\+calib}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+systick\+\_\+calib@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+systick\+\_\+calib}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+systick\+\_\+calib()}{SYSCON\_get\_systick\_calib()}}
+{\footnotesize\ttfamily static uint32\+\_\+t S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+systick\+\_\+calib (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener el valor de calibracion del S\+Y\+S\+T\+I\+CK. 
+
+\begin{DoxyReturn}{Devuelve}
+Valor de calibracion del S\+Y\+S\+T\+I\+CK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a273b7bbbe85ed4c97d5a9aad6ef826d7}\label{HPL__SYSCON_8h_a273b7bbbe85ed4c97d5a9aad6ef826d7}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+irq\+\_\+latency@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+irq\+\_\+latency}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+irq\+\_\+latency@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+irq\+\_\+latency}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+irq\+\_\+latency()}{SYSCON\_get\_irq\_latency()}}
+{\footnotesize\ttfamily static uint8\+\_\+t S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+irq\+\_\+latency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener el valor de latencia de interrupciones del M\+CU. 
+
+\begin{DoxyReturn}{Devuelve}
+Valor de latencia de interrupcion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ab32b10ca799479ab0549d87b3f057e12}\label{HPL__SYSCON_8h_ab32b10ca799479ab0549d87b3f057e12}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+nmi\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+nmi\+\_\+source}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+nmi\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+nmi\+\_\+source}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+nmi\+\_\+source()}{SYSCON\_set\_nmi\_source()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+nmi\+\_\+source (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{irq,  }\item[{S\+Y\+S\+C\+O\+N\+\_\+nmi\+\_\+enable\+\_\+en}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar que numero de interrupcion actuara como N\+MI. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em irq} & Numero de interrupcion deseado \\
+\hline
+\mbox{\tt in}  & {\em enable} & Habilitacion/inhabilitacion de la N\+MI \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a5566e150aa43c9c93874093440d3c399}\label{HPL__SYSCON_8h_a5566e150aa43c9c93874093440d3c399}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pinint\+\_\+pin@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pinint\+\_\+pin}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pinint\+\_\+pin@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pinint\+\_\+pin}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pinint\+\_\+pin()}{SYSCON\_set\_pinint\_pin()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+pinint\+\_\+pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{G\+P\+I\+O\+\_\+portpin\+\_\+en}]{portpin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar pin a utilizar como fuente de P\+I\+N\+I\+NT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal de P\+I\+N\+I\+NT a configurar \\
+\hline
+\mbox{\tt in}  & {\em portpin} & Puerto/pin a utilizar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a14c8f59fc192e060e2e7ccfe8c1c42f9}\label{HPL__SYSCON_8h_a14c8f59fc192e060e2e7ccfe8c1c42f9}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+source}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+source}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+source()}{SYSCON\_enable\_wakeup\_source()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+source (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar alguna de las interrupciones del periferico seleccionado como fuente de wakeup. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_afd1c96f74275ade3c29f88c504b2e34b}\label{HPL__SYSCON_8h_afd1c96f74275ade3c29f88c504b2e34b}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+wakeup\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+wakeup\+\_\+source}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+wakeup\+\_\+source@{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+wakeup\+\_\+source}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+wakeup\+\_\+source()}{SYSCON\_disable\_wakeup\_source()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+disable\+\_\+wakeup\+\_\+source (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+enable\+\_\+wakeup\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar alguna de las interrupciones del periferico seleccionado como fuente de wakeup. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a11a010b1cfe00b6a0a3e475558a40ede}\label{HPL__SYSCON_8h_a11a010b1cfe00b6a0a3e475558a40ede}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+bod@{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+bod}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+bod@{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+bod}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+bod()}{SYSCON\_deep\_sleep\_power\_bod()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+bod (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+en}]{power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar o inhabilitacion de la alimentacion del B\+OD en deep sleep. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em power} & Habilitacion o inhabilitacion de la alimentacion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a8514a0f2a3305fa57f7a9657e11d199e}\label{HPL__SYSCON_8h_a8514a0f2a3305fa57f7a9657e11d199e}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+wdtosc@{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+wdtosc}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+wdtosc@{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+wdtosc}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+wdtosc()}{SYSCON\_deep\_sleep\_power\_wdtosc()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+wdtosc (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+deep\+\_\+sleep\+\_\+power\+\_\+en}]{power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar o inhabilitacion de la alimentacion del W\+D\+T\+O\+SC en deep sleep. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em power} & Habilitacion o inhabilitacion de la alimentacion \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_abe29b3e4021644cdd0d425cffc75839b}\label{HPL__SYSCON_8h_abe29b3e4021644cdd0d425cffc75839b}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+powered\+\_\+on\+\_\+wakeup@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+powered\+\_\+on\+\_\+wakeup}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+powered\+\_\+on\+\_\+wakeup@{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+powered\+\_\+on\+\_\+wakeup}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+powered\+\_\+on\+\_\+wakeup()}{SYSCON\_set\_powered\_on\_wakeup()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+set\+\_\+powered\+\_\+on\+\_\+wakeup (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+wakeup\+\_\+power\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar que un periferico comience encendido al haber un wakeup. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico que comenzara encendido al haber un wakeup \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ac5bcbc4cc3d200a4389a954d963ce2ae}\label{HPL__SYSCON_8h_ac5bcbc4cc3d200a4389a954d963ce2ae}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+powered\+\_\+on\+\_\+wakeup@{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+powered\+\_\+on\+\_\+wakeup}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+powered\+\_\+on\+\_\+wakeup@{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+powered\+\_\+on\+\_\+wakeup}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+powered\+\_\+on\+\_\+wakeup()}{SYSCON\_clear\_powered\_on\_wakeup()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+clear\+\_\+powered\+\_\+on\+\_\+wakeup (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+wakeup\+\_\+power\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar que un periferico comience apagado al haber un wakeup. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico que comenzara apagado al haber un wakeup \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_ab9e29ad23dc43fd3a5e86cff2f80baa9}\label{HPL__SYSCON_8h_ab9e29ad23dc43fd3a5e86cff2f80baa9}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+up\+\_\+peripheral@{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+up\+\_\+peripheral}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+up\+\_\+peripheral@{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+up\+\_\+peripheral}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+up\+\_\+peripheral()}{SYSCON\_power\_up\_peripheral()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+up\+\_\+peripheral (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Encender el periferico seleccionado. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico a encender \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_aa11fcd4678d03bcee5affe21b24df6f5}\label{HPL__SYSCON_8h_aa11fcd4678d03bcee5affe21b24df6f5}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+down\+\_\+peripheral@{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+down\+\_\+peripheral}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+down\+\_\+peripheral@{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+down\+\_\+peripheral}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+down\+\_\+peripheral()}{SYSCON\_power\_down\_peripheral()}}
+{\footnotesize\ttfamily static void S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+down\+\_\+peripheral (\begin{DoxyParamCaption}\item[{S\+Y\+S\+C\+O\+N\+\_\+power\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Apagar el periferico seleccionado. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico a encender \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__SYSCON_8h_a1fb5aeb21896a74862012595d94d1577}\label{HPL__SYSCON_8h_a1fb5aeb21896a74862012595d94d1577}} 
+\index{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+device\+\_\+id@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+device\+\_\+id}}
+\index{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+device\+\_\+id@{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+device\+\_\+id}!H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+device\+\_\+id()}{SYSCON\_get\_device\_id()}}
+{\footnotesize\ttfamily static uint32\+\_\+t S\+Y\+S\+C\+O\+N\+\_\+get\+\_\+device\+\_\+id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener el Device ID. 
+
+\begin{DoxyReturn}{Devuelve}
+Device ID 
+\end{DoxyReturn}

@@ -1,0 +1,379 @@
+\hypertarget{infotronic_8h}{}\section{Referencia del Archivo includes/infotronic/infotronic.h}
+\label{infotronic_8h}\index{includes/infotronic/infotronic.\+h@{includes/infotronic/infotronic.\+h}}
+
+
+Declaraciones para la placa infotronic v2.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para infotronic.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{infotronic_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{infotronic_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{infotronic_8h_a01374f7279164d3a06fffccb096edd7c}\label{infotronic_8h_a01374f7279164d3a06fffccb096edd7c}} 
+\#define {\bfseries I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+N\+O\+\_\+\+K\+EY}~0x\+FF
+\item 
+\mbox{\Hypertarget{infotronic_8h_a6db949ad93e23e0d530c803c40f17f20}\label{infotronic_8h_a6db949ad93e23e0d530c803c40f17f20}} 
+\#define {\bfseries I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+M\+S\+EC}(x)~(x)
+\item 
+\mbox{\Hypertarget{infotronic_8h_a8cf3bb128f33f4a486af1e90dc898434}\label{infotronic_8h_a8cf3bb128f33f4a486af1e90dc898434}} 
+\#define {\bfseries I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+D\+EC}(x)~(x $\ast$ 100)
+\item 
+\mbox{\Hypertarget{infotronic_8h_a062f1f4abaad574626ae2ae9263e037a}\label{infotronic_8h_a062f1f4abaad574626ae2ae9263e037a}} 
+\#define {\bfseries I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+S\+EC}(x)~(I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+D\+EC(x) $\ast$ 10)
+\item 
+\mbox{\Hypertarget{infotronic_8h_a5879fa51dd03c631ac663352dc831663}\label{infotronic_8h_a5879fa51dd03c631ac663352dc831663}} 
+\#define {\bfseries I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+M\+IN}(x)~(I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+S\+EC(x) $\ast$ 60)
+\item 
+\mbox{\Hypertarget{infotronic_8h_a70dcb56bb1bd4f6c1fe1e4a51e7587b7}\label{infotronic_8h_a70dcb56bb1bd4f6c1fe1e4a51e7587b7}} 
+\#define {\bfseries I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+1}~0
+\item 
+\mbox{\Hypertarget{infotronic_8h_af821d9a9a87062fff2ee0962161ee13d}\label{infotronic_8h_af821d9a9a87062fff2ee0962161ee13d}} 
+\#define {\bfseries I\+N\+F\+O\+T\+R\+O\+N\+I\+C\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+2}~1
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{infotronic_8h_aa9e54bff2a69b8f763199c78a59e5d56}{infotronic\+\_\+init} (uint32\+\_\+t crystal\+\_\+freq)
+\begin{DoxyCompactList}\small\item\em Inicializacion de la placa infotronic v2. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_afbceaa310c4aba2b6fe3f8bcee738ff3}{infotronic\+\_\+blocking\+\_\+delay} (uint32\+\_\+t mseg\+\_\+to\+\_\+delay)
+\begin{DoxyCompactList}\small\item\em Delay bloqueante. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{infotronic_8h_af35c069b0302dd1b29b23ae87f765dab}{infotronic\+\_\+get\+\_\+key} (void)
+\begin{DoxyCompactList}\small\item\em Obtener tecla pulsada. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_af4352263880c041f5d207ed2e32a1f6d}{infotronic\+\_\+relay\+\_\+activate} (uint8\+\_\+t numero\+\_\+rele)
+\begin{DoxyCompactList}\small\item\em Energizar un rele. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a5bd44baf8091076e0d9da31fb3f17894}{infotronic\+\_\+relay\+\_\+deactivate} (uint8\+\_\+t numero\+\_\+rele)
+\begin{DoxyCompactList}\small\item\em Desenergizar un rele. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a986aec5ef77edb1264ca6bb552949dab}{infotronic\+\_\+relay\+\_\+toggle} (uint8\+\_\+t numero\+\_\+rele)
+\begin{DoxyCompactList}\small\item\em Invertir el estado de un rele. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a6e467ec7bae9b04cc9662a4d3bf8219c}{infotronic\+\_\+display\+\_\+off} (uint8\+\_\+t display)
+\begin{DoxyCompactList}\small\item\em Apagar display. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_aa394eb3fa28fc35dc1fcd0978cda3771}{infotronic\+\_\+display\+\_\+on} (uint8\+\_\+t display)
+\begin{DoxyCompactList}\small\item\em Encender display. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_ad6f129033eab441626667dd5fc0ab968}{infotronic\+\_\+display\+\_\+write} (uint8\+\_\+t display, uint32\+\_\+t number)
+\begin{DoxyCompactList}\small\item\em Escribir display. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_afdbe8c5573ac7e3a60d3262577ac31e1}{infotronic\+\_\+display\+\_\+set\+\_\+dp} (uint8\+\_\+t display, uint8\+\_\+t digit)
+\begin{DoxyCompactList}\small\item\em Encender el display point de un digito de un display. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a1e9ee7729b6d09f9bf3d9f6998525e07}{infotronic\+\_\+display\+\_\+clear\+\_\+dp} (uint8\+\_\+t display, uint8\+\_\+t digit)
+\begin{DoxyCompactList}\small\item\em Apagar el display point de un digito de un display. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{infotronic_8h_abca2370c353421741ede3e572561a2ae}{infotronic\+\_\+termometro\+\_\+read} (void)
+\begin{DoxyCompactList}\small\item\em Tomar la lectura actual del termometro. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a97e12fd9c787d203652373bae1f8abbb}{infotronic\+\_\+timer\+\_\+start} (uint8\+\_\+t event\+\_\+number, uint32\+\_\+t msecs, void($\ast$callback)(uint8\+\_\+t), uint8\+\_\+t repeat)
+\begin{DoxyCompactList}\small\item\em Iniciar un timer. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a595b5962834403433c703f4ced69236d}{infotronic\+\_\+timer\+\_\+pause} (uint8\+\_\+t event\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Pausar un timer. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a3925a3608bae93d71b43b70786acbc35}{infotronic\+\_\+timer\+\_\+resume} (uint8\+\_\+t event\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Despausar/resumir un timer. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_aa22ab341422abcbff8f6d14341f38817}{infotronic\+\_\+timer\+\_\+stop} (uint8\+\_\+t event\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Detener un timer. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a5dd61c69d71086ab84de56fb635ff3be}{infotronic\+\_\+timer\+\_\+loop} (void)
+\begin{DoxyCompactList}\small\item\em Funcion a ejecutar en el loop principal. \end{DoxyCompactList}\item 
+void \hyperlink{infotronic_8h_a494c286554cd48fe1ad82a952a43ff50}{infotronic\+\_\+\+L\+C\+D\+\_\+write} (char $\ast$message, uint8\+\_\+t renglon, uint8\+\_\+t start\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Escribir un mensaje en el display L\+CD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones para la placa infotronic v2. 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+12/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{infotronic_8h_aa9e54bff2a69b8f763199c78a59e5d56}\label{infotronic_8h_aa9e54bff2a69b8f763199c78a59e5d56}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+init@{infotronic\+\_\+init}}
+\index{infotronic\+\_\+init@{infotronic\+\_\+init}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+init()}{infotronic\_init()}}
+{\footnotesize\ttfamily void infotronic\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{crystal\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+Inicializacion de la placa infotronic v2. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em crystal\+\_\+freq} & Frecuencia del cristal utilizado en Hz. En caso de no utilizar cristal, pasar cero (0) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_afbceaa310c4aba2b6fe3f8bcee738ff3}\label{infotronic_8h_afbceaa310c4aba2b6fe3f8bcee738ff3}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+blocking\+\_\+delay@{infotronic\+\_\+blocking\+\_\+delay}}
+\index{infotronic\+\_\+blocking\+\_\+delay@{infotronic\+\_\+blocking\+\_\+delay}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+blocking\+\_\+delay()}{infotronic\_blocking\_delay()}}
+{\footnotesize\ttfamily void infotronic\+\_\+blocking\+\_\+delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{mseg\+\_\+to\+\_\+delay }\end{DoxyParamCaption})}
+
+
+
+Delay bloqueante. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em mseg\+\_\+to\+\_\+delay} & Tiempo en milsegundos para bloquear \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_af35c069b0302dd1b29b23ae87f765dab}\label{infotronic_8h_af35c069b0302dd1b29b23ae87f765dab}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+get\+\_\+key@{infotronic\+\_\+get\+\_\+key}}
+\index{infotronic\+\_\+get\+\_\+key@{infotronic\+\_\+get\+\_\+key}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+get\+\_\+key()}{infotronic\_get\_key()}}
+{\footnotesize\ttfamily uint8\+\_\+t infotronic\+\_\+get\+\_\+key (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Obtener tecla pulsada. 
+
+\begin{DoxyReturn}{Devuelve}
+Tecla pulsada (0 $\sim$ 5 o N\+O\+\_\+\+K\+EY), una vez leida, se limpia el buffer hasta que se presione la proxima tecla 
+\end{DoxyReturn}
+\mbox{\Hypertarget{infotronic_8h_af4352263880c041f5d207ed2e32a1f6d}\label{infotronic_8h_af4352263880c041f5d207ed2e32a1f6d}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+relay\+\_\+activate@{infotronic\+\_\+relay\+\_\+activate}}
+\index{infotronic\+\_\+relay\+\_\+activate@{infotronic\+\_\+relay\+\_\+activate}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+relay\+\_\+activate()}{infotronic\_relay\_activate()}}
+{\footnotesize\ttfamily void infotronic\+\_\+relay\+\_\+activate (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{numero\+\_\+rele }\end{DoxyParamCaption})}
+
+
+
+Energizar un rele. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em numero\+\_\+rele} & Numero de rele a energizar (0 $\sim$ 3) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_a5bd44baf8091076e0d9da31fb3f17894}\label{infotronic_8h_a5bd44baf8091076e0d9da31fb3f17894}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+relay\+\_\+deactivate@{infotronic\+\_\+relay\+\_\+deactivate}}
+\index{infotronic\+\_\+relay\+\_\+deactivate@{infotronic\+\_\+relay\+\_\+deactivate}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+relay\+\_\+deactivate()}{infotronic\_relay\_deactivate()}}
+{\footnotesize\ttfamily void infotronic\+\_\+relay\+\_\+deactivate (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{numero\+\_\+rele }\end{DoxyParamCaption})}
+
+
+
+Desenergizar un rele. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em numero\+\_\+rele} & Numero de rele a desenergizar (0 $\sim$ 3) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_a986aec5ef77edb1264ca6bb552949dab}\label{infotronic_8h_a986aec5ef77edb1264ca6bb552949dab}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+relay\+\_\+toggle@{infotronic\+\_\+relay\+\_\+toggle}}
+\index{infotronic\+\_\+relay\+\_\+toggle@{infotronic\+\_\+relay\+\_\+toggle}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+relay\+\_\+toggle()}{infotronic\_relay\_toggle()}}
+{\footnotesize\ttfamily void infotronic\+\_\+relay\+\_\+toggle (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{numero\+\_\+rele }\end{DoxyParamCaption})}
+
+
+
+Invertir el estado de un rele. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em numero\+\_\+rele} & Numero de rele a invertir (0 $\sim$ 3) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_a6e467ec7bae9b04cc9662a4d3bf8219c}\label{infotronic_8h_a6e467ec7bae9b04cc9662a4d3bf8219c}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+display\+\_\+off@{infotronic\+\_\+display\+\_\+off}}
+\index{infotronic\+\_\+display\+\_\+off@{infotronic\+\_\+display\+\_\+off}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+display\+\_\+off()}{infotronic\_display\_off()}}
+{\footnotesize\ttfamily void infotronic\+\_\+display\+\_\+off (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display }\end{DoxyParamCaption})}
+
+
+
+Apagar display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display a apagar (0 $\sim$ 1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_aa394eb3fa28fc35dc1fcd0978cda3771}\label{infotronic_8h_aa394eb3fa28fc35dc1fcd0978cda3771}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+display\+\_\+on@{infotronic\+\_\+display\+\_\+on}}
+\index{infotronic\+\_\+display\+\_\+on@{infotronic\+\_\+display\+\_\+on}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+display\+\_\+on()}{infotronic\_display\_on()}}
+{\footnotesize\ttfamily void infotronic\+\_\+display\+\_\+on (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display }\end{DoxyParamCaption})}
+
+
+
+Encender display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display a encender (0 $\sim$ 1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_ad6f129033eab441626667dd5fc0ab968}\label{infotronic_8h_ad6f129033eab441626667dd5fc0ab968}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+display\+\_\+write@{infotronic\+\_\+display\+\_\+write}}
+\index{infotronic\+\_\+display\+\_\+write@{infotronic\+\_\+display\+\_\+write}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+display\+\_\+write()}{infotronic\_display\_write()}}
+{\footnotesize\ttfamily void infotronic\+\_\+display\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display,  }\item[{uint32\+\_\+t}]{number }\end{DoxyParamCaption})}
+
+
+
+Escribir display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display sobre el cual escribir (0 $\sim$ 1) \\
+\hline
+\mbox{\tt in}  & {\em number} & Numero a escribir en el display (0 $\sim$ 999) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_afdbe8c5573ac7e3a60d3262577ac31e1}\label{infotronic_8h_afdbe8c5573ac7e3a60d3262577ac31e1}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+display\+\_\+set\+\_\+dp@{infotronic\+\_\+display\+\_\+set\+\_\+dp}}
+\index{infotronic\+\_\+display\+\_\+set\+\_\+dp@{infotronic\+\_\+display\+\_\+set\+\_\+dp}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+display\+\_\+set\+\_\+dp()}{infotronic\_display\_set\_dp()}}
+{\footnotesize\ttfamily void infotronic\+\_\+display\+\_\+set\+\_\+dp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display,  }\item[{uint8\+\_\+t}]{digit }\end{DoxyParamCaption})}
+
+
+
+Encender el display point de un digito de un display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display sobre el cual escribir (0 $\sim$ 1) \\
+\hline
+\mbox{\tt in}  & {\em digit} & Digito del display a prender (0 $\sim$ 2) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_a1e9ee7729b6d09f9bf3d9f6998525e07}\label{infotronic_8h_a1e9ee7729b6d09f9bf3d9f6998525e07}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+display\+\_\+clear\+\_\+dp@{infotronic\+\_\+display\+\_\+clear\+\_\+dp}}
+\index{infotronic\+\_\+display\+\_\+clear\+\_\+dp@{infotronic\+\_\+display\+\_\+clear\+\_\+dp}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+display\+\_\+clear\+\_\+dp()}{infotronic\_display\_clear\_dp()}}
+{\footnotesize\ttfamily void infotronic\+\_\+display\+\_\+clear\+\_\+dp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{display,  }\item[{uint8\+\_\+t}]{digit }\end{DoxyParamCaption})}
+
+
+
+Apagar el display point de un digito de un display. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em display} & Numero de display sobre el cual escribir (0 $\sim$ 1) \\
+\hline
+\mbox{\tt in}  & {\em digit} & Digito del display a prender (0 $\sim$ 2) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_abca2370c353421741ede3e572561a2ae}\label{infotronic_8h_abca2370c353421741ede3e572561a2ae}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+termometro\+\_\+read@{infotronic\+\_\+termometro\+\_\+read}}
+\index{infotronic\+\_\+termometro\+\_\+read@{infotronic\+\_\+termometro\+\_\+read}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+termometro\+\_\+read()}{infotronic\_termometro\_read()}}
+{\footnotesize\ttfamily uint32\+\_\+t infotronic\+\_\+termometro\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Tomar la lectura actual del termometro. 
+
+\begin{DoxyReturn}{Devuelve}
+Lectura actual del termometro en mili °C 
+\end{DoxyReturn}
+\mbox{\Hypertarget{infotronic_8h_a97e12fd9c787d203652373bae1f8abbb}\label{infotronic_8h_a97e12fd9c787d203652373bae1f8abbb}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+timer\+\_\+start@{infotronic\+\_\+timer\+\_\+start}}
+\index{infotronic\+\_\+timer\+\_\+start@{infotronic\+\_\+timer\+\_\+start}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+timer\+\_\+start()}{infotronic\_timer\_start()}}
+{\footnotesize\ttfamily void infotronic\+\_\+timer\+\_\+start (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{event\+\_\+number,  }\item[{uint32\+\_\+t}]{msecs,  }\item[{void($\ast$)(uint8\+\_\+t)}]{callback,  }\item[{uint8\+\_\+t}]{repeat }\end{DoxyParamCaption})}
+
+
+
+Iniciar un timer. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em event\+\_\+number} & Numero de evento asociado \\
+\hline
+\mbox{\tt in}  & {\em msecs} & Tiempo (en milisegundos) del timer a vencer \\
+\hline
+\mbox{\tt in}  & {\em callback} & Callback a ejecutar una vez vencido el timer. El parametro pasado es el numero de evento que genero el llamado \\
+\hline
+\mbox{\tt in}  & {\em repeat} & Si es 0 es un timer one-\/shot, caso contrario es repetitivo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_a595b5962834403433c703f4ced69236d}\label{infotronic_8h_a595b5962834403433c703f4ced69236d}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+timer\+\_\+pause@{infotronic\+\_\+timer\+\_\+pause}}
+\index{infotronic\+\_\+timer\+\_\+pause@{infotronic\+\_\+timer\+\_\+pause}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+timer\+\_\+pause()}{infotronic\_timer\_pause()}}
+{\footnotesize\ttfamily void infotronic\+\_\+timer\+\_\+pause (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{event\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Pausar un timer. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em event\+\_\+number} & Numero de evento asociado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_a3925a3608bae93d71b43b70786acbc35}\label{infotronic_8h_a3925a3608bae93d71b43b70786acbc35}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+timer\+\_\+resume@{infotronic\+\_\+timer\+\_\+resume}}
+\index{infotronic\+\_\+timer\+\_\+resume@{infotronic\+\_\+timer\+\_\+resume}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+timer\+\_\+resume()}{infotronic\_timer\_resume()}}
+{\footnotesize\ttfamily void infotronic\+\_\+timer\+\_\+resume (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{event\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Despausar/resumir un timer. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em event\+\_\+number} & Numero de evento asociado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_aa22ab341422abcbff8f6d14341f38817}\label{infotronic_8h_aa22ab341422abcbff8f6d14341f38817}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+timer\+\_\+stop@{infotronic\+\_\+timer\+\_\+stop}}
+\index{infotronic\+\_\+timer\+\_\+stop@{infotronic\+\_\+timer\+\_\+stop}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+timer\+\_\+stop()}{infotronic\_timer\_stop()}}
+{\footnotesize\ttfamily void infotronic\+\_\+timer\+\_\+stop (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{event\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Detener un timer. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em event\+\_\+number} & Numero de evento asociado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{infotronic_8h_a5dd61c69d71086ab84de56fb635ff3be}\label{infotronic_8h_a5dd61c69d71086ab84de56fb635ff3be}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+timer\+\_\+loop@{infotronic\+\_\+timer\+\_\+loop}}
+\index{infotronic\+\_\+timer\+\_\+loop@{infotronic\+\_\+timer\+\_\+loop}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+timer\+\_\+loop()}{infotronic\_timer\_loop()}}
+{\footnotesize\ttfamily void infotronic\+\_\+timer\+\_\+loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Funcion a ejecutar en el loop principal. 
+
+Esta funcion se encargara de llamar a los callbacks de los timers que hayan vencido \mbox{\Hypertarget{infotronic_8h_a494c286554cd48fe1ad82a952a43ff50}\label{infotronic_8h_a494c286554cd48fe1ad82a952a43ff50}} 
+\index{infotronic.\+h@{infotronic.\+h}!infotronic\+\_\+\+L\+C\+D\+\_\+write@{infotronic\+\_\+\+L\+C\+D\+\_\+write}}
+\index{infotronic\+\_\+\+L\+C\+D\+\_\+write@{infotronic\+\_\+\+L\+C\+D\+\_\+write}!infotronic.\+h@{infotronic.\+h}}
+\subsubsection{\texorpdfstring{infotronic\+\_\+\+L\+C\+D\+\_\+write()}{infotronic\_LCD\_write()}}
+{\footnotesize\ttfamily void infotronic\+\_\+\+L\+C\+D\+\_\+write (\begin{DoxyParamCaption}\item[{char $\ast$}]{message,  }\item[{uint8\+\_\+t}]{renglon,  }\item[{uint8\+\_\+t}]{start\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Escribir un mensaje en el display L\+CD. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em message} & Puntero al mensaje a escribir, terminando con el caracter nulo \\
+\hline
+\mbox{\tt in}  & {\em renglon} & Renglon en cual escribir el mensaje (L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+1 o L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+2) \\
+\hline
+\mbox{\tt in}  & {\em start\+\_\+position} & Posicion del renglon a partir de la cual comenzar a escribir el mensaje \\
+\hline
+\end{DoxyParams}

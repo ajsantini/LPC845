@@ -1,0 +1,17 @@
+<map id="includes/hpl/HPL_SYSCON.h" name="includes/hpl/HPL_SYSCON.h">
+<area shape="rect" id="node2" href="$d9/d7e/HPL__IOCON_8h.html" title="Declaraciones a nivel de abstraccion de periferico del IOCON (LPC845) " alt="" coords="288,80,470,107"/>
+<area shape="rect" id="node5" href="$d8/dcc/HAL__IOCON_8c.html" title="Funciones a nivel de aplicacion del periferico IOCON (LPC845) " alt="" coords="128,229,302,256"/>
+<area shape="rect" id="node7" href="$db/dc2/HAL__SYSCON_8c.html" title="Funciones a nivel de aplicacion para el SYSCON (LPC845) " alt="" coords="495,155,682,181"/>
+<area shape="rect" id="node8" href="$db/d6b/infotronic_8c.html" title="Funciones de la infotronic v2. " alt="" coords="26,155,212,181"/>
+<area shape="rect" id="node9" href="$df/d0e/HPL__SWM_8h.html" title="Definiciones a nivel de periferico del modulo SWM (LPC845) " alt="" coords="885,80,1057,107"/>
+<area shape="rect" id="node10" href="$d8/ddf/HAL__ADC_8c.html" title="Funciones a nivel de aplicacion del periferico ADC (LPC845) " alt="" coords="706,155,865,181"/>
+<area shape="rect" id="node11" href="$d3/d9f/HAL__PININT_8c.html" title="Funciones a nivel de aplicacion del periferico PININT (LPC845) " alt="" coords="1128,155,1302,181"/>
+<area shape="rect" id="node12" href="$db/d76/HAL__SPI_8c.html" title="Funciones a nivel de aplicacion del periferico SPI (LPC845) " alt="" coords="1327,155,1479,181"/>
+<area shape="rect" id="node13" href="$dc/d62/HAL__UART_8c.html" title="Funciones a nivel de aplicacion del periferico UART (LPC845) " alt="" coords="1504,155,1670,181"/>
+<area shape="rect" id="node15" href="$de/d61/HAL__GPIO_8c.html" title="Funciones a nivel de aplicacion del periferico GPIO (LPC845) " alt="" coords="1234,80,1396,107"/>
+<area shape="rect" id="node16" href="$dd/d73/HAL__WKT_8c.html" title="Funciones a nivel de aplicacion del periferico WKT (LPC845) " alt="" coords="1420,80,1580,107"/>
+<area shape="rect" id="node3" href="$d5/d8f/HAL__IOCON_8h.html" title="Declaraciones a nivel de aplicacion del periferico IOCON (LPC845) " alt="" coords="288,155,470,181"/>
+<area shape="rect" id="node4" href="$df/df8/HAL__CTIMER_8c.html" title="Funciones a nivel de aplicacion del periferico CTIMER (LPC845) " alt="" coords="778,229,961,256"/>
+<area shape="rect" id="node6" href="$df/d99/teclado_8c.html" title="Funciones del periferico teclado (2x3) " alt="" coords="326,229,501,256"/>
+<area shape="rect" id="node14" href="$d7/d47/HPL__SWM_8c.html" title="Funciones a nivel de abstraccion de periferico para el SWM (LPC845) " alt="" coords="890,155,1052,181"/>
+</map>

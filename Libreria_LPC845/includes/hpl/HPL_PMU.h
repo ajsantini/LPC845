@@ -9,7 +9,6 @@
 #ifndef HPL_PMU_H_
 #define HPL_PMU_H_
 
-#include <stdint.h>
 #include <HRI_PMU.h>
 
 extern volatile SCR_reg_t * const SCR; //!< Registro SCR

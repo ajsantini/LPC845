@@ -1,0 +1,7 @@
+<map id="SYSTICK_reg_t" name="SYSTICK_reg_t">
+<area shape="rect" id="node2" href="$HRI__SYSTICK_8h.html#structSYSTICK__CALIB__reg__t" title="SYSTICK_CALIB_reg_t" alt="" coords="23,5,186,32"/>
+<area shape="rect" id="node3" href="$HRI__SYSTICK_8h.html#structSYSTICK__RVR__reg__t" title="SYSTICK_RVR_reg_t" alt="" coords="29,56,181,83"/>
+<area shape="rect" id="node4" href="$HRI__SYSTICK_8h.html#structSYSTICK__CSR__reg__t" title="SYSTICK_CSR_reg_t" alt="" coords="29,107,181,133"/>
+<area shape="rect" id="node5" href="$HRI__SYSTICK_8h.html#structSYSTICK__RESERVED__reg__t" title="SYSTICK_RESERVED_reg_t" alt="" coords="5,157,204,184"/>
+<area shape="rect" id="node6" href="$HRI__SYSTICK_8h.html#structSYSTICK__CVR__reg__t" title="SYSTICK_CVR_reg_t" alt="" coords="29,208,181,235"/>
+</map>

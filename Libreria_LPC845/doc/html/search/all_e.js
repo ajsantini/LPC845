@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['teclado_2ec',['teclado.c',['../teclado_8c.html',1,'']]],
+  ['teclado_2eh',['teclado.h',['../teclado_8h.html',1,'']]],
+  ['teclado_5fcheck',['teclado_check',['../teclado_8h.html#a817c47255c97a24c902fe3de52d6b1a3',1,'teclado_check(void):&#160;teclado.c'],['../teclado_8c.html#a817c47255c97a24c902fe3de52d6b1a3',1,'teclado_check(void):&#160;teclado.c']]],
+  ['teclado_5finit',['teclado_init',['../teclado_8h.html#addcd2e9f498fc7d9a0f9f11cf3ddd7be',1,'teclado_init(uint32_t bounces):&#160;teclado.c'],['../teclado_8c.html#addcd2e9f498fc7d9a0f9f11cf3ddd7be',1,'teclado_init(uint32_t bounces):&#160;teclado.c']]],
+  ['temperature',['temperature',['../termometro_8c.html#a76db55b29a9bebd5a0e343e88d20825c',1,'temperature_counts_t']]],
+  ['temperature_5fcounts_5ft',['temperature_counts_t',['../termometro_8c.html#structtemperature__counts__t',1,'']]],
+  ['termometro_2ec',['termometro.c',['../termometro_8c.html',1,'']]],
+  ['termometro_2eh',['termometro.h',['../termometro_8h.html',1,'']]],
+  ['termometro_5fcheck',['termometro_check',['../termometro_8h.html#a3f8ab4c142e49c318d9182463764f5e8',1,'termometro_check(void):&#160;termometro.c'],['../termometro_8c.html#a3f8ab4c142e49c318d9182463764f5e8',1,'termometro_check(void):&#160;termometro.c']]],
+  ['termometro_5finit',['termometro_init',['../termometro_8h.html#a04f9e0c300fbb0c18d401f402a375ac4',1,'termometro_init(void):&#160;termometro.c'],['../termometro_8c.html#a04f9e0c300fbb0c18d401f402a375ac4',1,'termometro_init(void):&#160;termometro.c']]],
+  ['termometro_5fread',['termometro_read',['../termometro_8h.html#ae320bbabe78da7766a98afe2722379bf',1,'termometro_read(void):&#160;termometro.c'],['../termometro_8c.html#ae320bbabe78da7766a98afe2722379bf',1,'termometro_read(void):&#160;termometro.c']]],
+  ['timer_2ec',['timer.c',['../timer_8c.html',1,'']]],
+  ['timer_2eh',['timer.h',['../timer_8h.html',1,'']]],
+  ['timer_5fcheck',['timer_check',['../timer_8h.html#a60727b3dd3618599df4f447cf07614a8',1,'timer_check(void):&#160;timer.c'],['../timer_8c.html#a60727b3dd3618599df4f447cf07614a8',1,'timer_check(void):&#160;timer.c']]],
+  ['timer_5floop',['timer_loop',['../timer_8h.html#a63aec9ffc89d719500cb055335ffc3a2',1,'timer_loop(void):&#160;timer.c'],['../timer_8c.html#a63aec9ffc89d719500cb055335ffc3a2',1,'timer_loop(void):&#160;timer.c']]],
+  ['timer_5fpause',['timer_pause',['../timer_8h.html#a4bf254aa44da60f0e48bd3db88acc0ba',1,'timer_pause(uint8_t event_number):&#160;timer.c'],['../timer_8c.html#a4bf254aa44da60f0e48bd3db88acc0ba',1,'timer_pause(uint8_t event_number):&#160;timer.c']]],
+  ['timer_5fresume',['timer_resume',['../timer_8h.html#a07f9f37159d599c0ea39ffdcf6d3500d',1,'timer_resume(uint8_t event_number):&#160;timer.c'],['../timer_8c.html#a07f9f37159d599c0ea39ffdcf6d3500d',1,'timer_resume(uint8_t event_number):&#160;timer.c']]],
+  ['timer_5fstart',['timer_start',['../timer_8h.html#a6d1d10160c59ff60b07a6fb76689321f',1,'timer_start(uint8_t event_number, uint32_t msecs, void(*callback)(uint8_t), uint8_t repeat):&#160;timer.c'],['../timer_8c.html#a6d1d10160c59ff60b07a6fb76689321f',1,'timer_start(uint8_t event_number, uint32_t msecs, void(*callback)(uint8_t), uint8_t repeat):&#160;timer.c']]],
+  ['timer_5fstop',['timer_stop',['../timer_8h.html#aff93b9e9f92080026f8227a4962c7399',1,'timer_stop(uint8_t event_number):&#160;timer.c'],['../timer_8c.html#aff93b9e9f92080026f8227a4962c7399',1,'timer_stop(uint8_t event_number):&#160;timer.c']]],
+  ['timer_5ft',['timer_t',['../structtimer__t.html',1,'']]],
+  ['trigger',['TRIGGER',['../HRI__ADC_8h.html#a084459dd951ce06483ea9fb3cb1d8c9c',1,'ADC_SEQ_CTRL_reg_t::TRIGGER()'],['../structhal__adc__sequence__config__t.html#a6bcb45974cab7522fa8fddd79fa7f1e1',1,'hal_adc_sequence_config_t::trigger()']]],
+  ['trigger_5fpol',['trigger_pol',['../structhal__adc__sequence__config__t.html#a0e3bc5f0a78cf105554a67af8f34d383',1,'hal_adc_sequence_config_t']]],
+  ['trigpol',['TRIGPOL',['../HRI__ADC_8h.html#a650a87293bd0fae1cae6f3516d6c8b2a',1,'ADC_SEQ_CTRL_reg_t']]]
+];

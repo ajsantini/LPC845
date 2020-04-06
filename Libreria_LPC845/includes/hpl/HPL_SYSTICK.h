@@ -9,7 +9,6 @@
 #ifndef HPL_SYSTICK_H_
 #define HPL_SYSTICK_H_
 
-#include <stdint.h>
 #include <HRI_SYSTICK.h>
 
 extern volatile SYSTICK_reg_t * const SYSTICK; //!< Periferico SYSTICK

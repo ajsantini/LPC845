@@ -1,0 +1,98 @@
+\hypertarget{HAL__WKT_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+W\+KT.h}
+\label{HAL__WKT_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+W\+K\+T.\+h@{includes/hal/\+H\+A\+L\+\_\+\+W\+K\+T.\+h}}
+
+
+Declaraciones a nivel de aplicacion del periferico W\+KT (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+W\+K\+T.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{db/d05/HAL__WKT_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{df/df4/HAL__WKT_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__WKT_8h_afe3a7131eaa16754febfe27e0da02823}\label{HAL__WKT_8h_afe3a7131eaa16754febfe27e0da02823}} 
+enum {\bfseries hal\+\_\+wkt\+\_\+clock\+\_\+source\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+W\+K\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+R\+O\+\_\+\+D\+IV} = 0, 
+{\bfseries H\+A\+L\+\_\+\+W\+K\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+SC}, 
+{\bfseries H\+A\+L\+\_\+\+W\+K\+T\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+R\+N\+AL}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{HAL__WKT_8h_aeb732cadeaab8af681865670e8beab43}{hal\+\_\+wkt\+\_\+init} (hal\+\_\+wkt\+\_\+clock\+\_\+source\+\_\+en clock\+\_\+sel, uint32\+\_\+t ext\+\_\+clock\+\_\+value, void($\ast$callback)(void))
+\begin{DoxyCompactList}\small\item\em Inicializar el W\+KT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__WKT_8h_a985343b8388f0830ebc106d298520d49}\label{HAL__WKT_8h_a985343b8388f0830ebc106d298520d49}} 
+void {\bfseries hal\+\_\+wkt\+\_\+select\+\_\+clock\+\_\+source} (hal\+\_\+wkt\+\_\+clock\+\_\+source\+\_\+en clock\+\_\+sel, uint32\+\_\+t ext\+\_\+clock\+\_\+value)
+\item 
+void \hyperlink{HAL__WKT_8h_a83ba94b350eac43185f64f92e6a2ceab}{hal\+\_\+wkt\+\_\+register\+\_\+callback} (void($\ast$new\+\_\+callback)(void))
+\begin{DoxyCompactList}\small\item\em Registrar un callback para la interrupcion del W\+KT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__WKT_8h_ab12f0980a1cf6c8338ea5df990ec2d13}\label{HAL__WKT_8h_ab12f0980a1cf6c8338ea5df990ec2d13}} 
+void {\bfseries hal\+\_\+wkt\+\_\+start\+\_\+count} (uint32\+\_\+t time\+\_\+useg)
+\item 
+\mbox{\Hypertarget{HAL__WKT_8h_a1c617a5813b80a65229c86f810ae0c3b}\label{HAL__WKT_8h_a1c617a5813b80a65229c86f810ae0c3b}} 
+void {\bfseries hal\+\_\+wkt\+\_\+start\+\_\+count\+\_\+with\+\_\+value} (uint32\+\_\+t value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de aplicacion del periferico W\+KT (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HAL__WKT_8h_aeb732cadeaab8af681865670e8beab43}\label{HAL__WKT_8h_aeb732cadeaab8af681865670e8beab43}} 
+\index{H\+A\+L\+\_\+\+W\+K\+T.\+h@{H\+A\+L\+\_\+\+W\+K\+T.\+h}!hal\+\_\+wkt\+\_\+init@{hal\+\_\+wkt\+\_\+init}}
+\index{hal\+\_\+wkt\+\_\+init@{hal\+\_\+wkt\+\_\+init}!H\+A\+L\+\_\+\+W\+K\+T.\+h@{H\+A\+L\+\_\+\+W\+K\+T.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+wkt\+\_\+init()}{hal\_wkt\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+wkt\+\_\+init (\begin{DoxyParamCaption}\item[{hal\+\_\+wkt\+\_\+clock\+\_\+source\+\_\+en}]{clock\+\_\+sel,  }\item[{uint32\+\_\+t}]{ext\+\_\+clock\+\_\+value,  }\item[{void($\ast$)(void)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Inicializar el W\+KT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em clock\+\_\+sel} & Seleccion de clock deseada para el W\+KT \\
+\hline
+\mbox{\tt in}  & {\em ext\+\_\+clock\+\_\+value} & Valor de clock externo (si la seleccion es interna, no importa este parametro) \\
+\hline
+\mbox{\tt in}  & {\em callback} & Callback a ejecutar en la interrupcion del W\+KT \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__WKT_8h_a83ba94b350eac43185f64f92e6a2ceab}\label{HAL__WKT_8h_a83ba94b350eac43185f64f92e6a2ceab}} 
+\index{H\+A\+L\+\_\+\+W\+K\+T.\+h@{H\+A\+L\+\_\+\+W\+K\+T.\+h}!hal\+\_\+wkt\+\_\+register\+\_\+callback@{hal\+\_\+wkt\+\_\+register\+\_\+callback}}
+\index{hal\+\_\+wkt\+\_\+register\+\_\+callback@{hal\+\_\+wkt\+\_\+register\+\_\+callback}!H\+A\+L\+\_\+\+W\+K\+T.\+h@{H\+A\+L\+\_\+\+W\+K\+T.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+wkt\+\_\+register\+\_\+callback()}{hal\_wkt\_register\_callback()}}
+{\footnotesize\ttfamily void hal\+\_\+wkt\+\_\+register\+\_\+callback (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{new\+\_\+callback }\end{DoxyParamCaption})}
+
+
+
+Registrar un callback para la interrupcion del W\+KT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em new\+\_\+callback} & Nuevo callback para la interrupcion del W\+KT \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,143 @@
+\hypertarget{teclado_8c}{}\section{Referencia del Archivo source/infotronic/teclado.c}
+\label{teclado_8c}\index{source/infotronic/teclado.\+c@{source/infotronic/teclado.\+c}}
+
+
+Funciones del periferico teclado (2x3)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$teclado.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+G\+P\+I\+O.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+I\+O\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h$>$}\newline
+Dependencia gráfica adjunta para teclado.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{teclado_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{teclado_8c_a390a20ce24539df713460db46e166d3e}\label{teclado_8c_a390a20ce24539df713460db46e166d3e}} 
+\#define {\bfseries T\+E\+C\+L\+A\+D\+O\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+F\+I\+L\+AS}~2
+\item 
+\mbox{\Hypertarget{teclado_8c_a3fd8d452dcb098f3c33cad4a2a1e5a71}\label{teclado_8c_a3fd8d452dcb098f3c33cad4a2a1e5a71}} 
+\#define {\bfseries T\+E\+C\+L\+A\+D\+O\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+C\+O\+L\+U\+M\+N\+AS}~3
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \hyperlink{teclado_8c_a11151117c04d8985f1b86d1a4b57cdaa}{get\+\_\+current\+\_\+key} (void)
+\begin{DoxyCompactList}\small\item\em Funcion para obtener la tecla que actualmente esta siendo presionada. \end{DoxyCompactList}\item 
+void \hyperlink{teclado_8c_addcd2e9f498fc7d9a0f9f11cf3ddd7be}{teclado\+\_\+init} (uint32\+\_\+t bounces)
+\begin{DoxyCompactList}\small\item\em Inicializacion del teclado. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{teclado_8c_ab07db173f0662ff6795163fad01c5d8b}{get\+\_\+key} (void)
+\begin{DoxyCompactList}\small\item\em Obtener tecla pulsada. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{teclado_8c_a817c47255c97a24c902fe3de52d6b1a3}\label{teclado_8c_a817c47255c97a24c902fe3de52d6b1a3}} 
+void \hyperlink{teclado_8c_a817c47255c97a24c902fe3de52d6b1a3}{teclado\+\_\+check} (void)
+\begin{DoxyCompactList}\small\item\em Callback para revisar el teclado periodicamente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const hal\+\_\+gpio\+\_\+portpin\+\_\+en {\bfseries teclado\+\_\+filas\+\_\+portpin} \mbox{[}T\+E\+C\+L\+A\+D\+O\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+F\+I\+L\+AS\mbox{]}
+\item 
+static const hal\+\_\+gpio\+\_\+portpin\+\_\+en {\bfseries teclado\+\_\+columnas\+\_\+portpin} \mbox{[}T\+E\+C\+L\+A\+D\+O\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+C\+O\+L\+U\+M\+N\+AS\mbox{]}
+\item 
+\mbox{\Hypertarget{teclado_8c_a21ccb2b4c8745e29c2dc00a5f5be8dc6}\label{teclado_8c_a21ccb2b4c8745e29c2dc00a5f5be8dc6}} 
+static uint8\+\_\+t {\bfseries key\+\_\+buffer} = N\+O\+\_\+\+K\+EY
+\item 
+\mbox{\Hypertarget{teclado_8c_abdddf054f1509429d46c450e2518a2df}\label{teclado_8c_abdddf054f1509429d46c450e2518a2df}} 
+static uint32\+\_\+t {\bfseries max\+\_\+bounces}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Funciones del periferico teclado (2x3) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+12/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{teclado_8c_a11151117c04d8985f1b86d1a4b57cdaa}\label{teclado_8c_a11151117c04d8985f1b86d1a4b57cdaa}} 
+\index{teclado.\+c@{teclado.\+c}!get\+\_\+current\+\_\+key@{get\+\_\+current\+\_\+key}}
+\index{get\+\_\+current\+\_\+key@{get\+\_\+current\+\_\+key}!teclado.\+c@{teclado.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+key()}{get\_current\_key()}}
+{\footnotesize\ttfamily static uint8\+\_\+t get\+\_\+current\+\_\+key (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion para obtener la tecla que actualmente esta siendo presionada. 
+
+\begin{DoxyReturn}{Devuelve}
+Tecla actualmente presionada (0 $\sim$ 5 o N\+O\+\_\+\+K\+EY) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{teclado_8c_addcd2e9f498fc7d9a0f9f11cf3ddd7be}\label{teclado_8c_addcd2e9f498fc7d9a0f9f11cf3ddd7be}} 
+\index{teclado.\+c@{teclado.\+c}!teclado\+\_\+init@{teclado\+\_\+init}}
+\index{teclado\+\_\+init@{teclado\+\_\+init}!teclado.\+c@{teclado.\+c}}
+\subsubsection{\texorpdfstring{teclado\+\_\+init()}{teclado\_init()}}
+{\footnotesize\ttfamily void teclado\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{bounces }\end{DoxyParamCaption})}
+
+
+
+Inicializacion del teclado. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em bounces} & Tiempo en milisegundos para tomar una tecla como valida/invalida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{teclado_8c_ab07db173f0662ff6795163fad01c5d8b}\label{teclado_8c_ab07db173f0662ff6795163fad01c5d8b}} 
+\index{teclado.\+c@{teclado.\+c}!get\+\_\+key@{get\+\_\+key}}
+\index{get\+\_\+key@{get\+\_\+key}!teclado.\+c@{teclado.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+key()}{get\_key()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+key (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Obtener tecla pulsada. 
+
+\begin{DoxyReturn}{Devuelve}
+Tecla pulsada (0 $\sim$ 5 o N\+O\+\_\+\+K\+EY), una vez leida, se limpia el buffer hasta que se presione la proxima tecla 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de las variables}
+\mbox{\Hypertarget{teclado_8c_ac423e93a342f3f9ead92378ae5d52fe8}\label{teclado_8c_ac423e93a342f3f9ead92378ae5d52fe8}} 
+\index{teclado.\+c@{teclado.\+c}!teclado\+\_\+filas\+\_\+portpin@{teclado\+\_\+filas\+\_\+portpin}}
+\index{teclado\+\_\+filas\+\_\+portpin@{teclado\+\_\+filas\+\_\+portpin}!teclado.\+c@{teclado.\+c}}
+\subsubsection{\texorpdfstring{teclado\+\_\+filas\+\_\+portpin}{teclado\_filas\_portpin}}
+{\footnotesize\ttfamily const hal\+\_\+gpio\+\_\+portpin\+\_\+en teclado\+\_\+filas\+\_\+portpin\mbox{[}T\+E\+C\+L\+A\+D\+O\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+F\+I\+L\+AS\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+=
+\{
+    HAL\_GPIO\_PORTPIN\_0\_27,
+    HAL\_GPIO\_PORTPIN\_0\_29
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{teclado_8c_a7f1e5cb8491b529cdec813e0b8949cc1}\label{teclado_8c_a7f1e5cb8491b529cdec813e0b8949cc1}} 
+\index{teclado.\+c@{teclado.\+c}!teclado\+\_\+columnas\+\_\+portpin@{teclado\+\_\+columnas\+\_\+portpin}}
+\index{teclado\+\_\+columnas\+\_\+portpin@{teclado\+\_\+columnas\+\_\+portpin}!teclado.\+c@{teclado.\+c}}
+\subsubsection{\texorpdfstring{teclado\+\_\+columnas\+\_\+portpin}{teclado\_columnas\_portpin}}
+{\footnotesize\ttfamily const hal\+\_\+gpio\+\_\+portpin\+\_\+en teclado\+\_\+columnas\+\_\+portpin\mbox{[}T\+E\+C\+L\+A\+D\+O\+\_\+\+C\+A\+N\+T\+I\+D\+A\+D\+\_\+\+C\+O\+L\+U\+M\+N\+AS\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+=
+\{
+    HAL\_GPIO\_PORTPIN\_0\_8,
+    HAL\_GPIO\_PORTPIN\_0\_31,
+    HAL\_GPIO\_PORTPIN\_0\_30
+\}
+\end{DoxyCode}

@@ -1,0 +1,8 @@
+<map id="source/hpl/HPL_SWM.c" name="source/hpl/HPL_SWM.c">
+<area shape="rect" id="node2" href="$df/d0e/HPL__SWM_8h.html" title="Definiciones a nivel de periferico del modulo SWM (LPC845) " alt="" coords="91,80,190,107"/>
+<area shape="rect" id="node3" href="$dd/dc0/HRI__SWM_8h.html" title="Definiciones a nivel de registros del modulo SWM (LPC845) " alt="" coords="5,155,103,181"/>
+<area shape="rect" id="node5" href="$d4/dbb/HPL__SYSCON_8h.html" title="Declaraciones a nivel de abstraccion de periferico del SYSCON (LPC845) " alt="" coords="127,155,250,181"/>
+<area shape="rect" id="node6" href="$d1/d4c/HRI__SYSCON_8h.html" title="Definiciones a nivel de registros del modulo SYSCON (LPC845) " alt="" coords="92,304,213,331"/>
+<area shape="rect" id="node7" href="$d5/d4d/HPL__GPIO_8h.html" title="Declaraciones a nivel de abstraccion de periferico del GPIO (LPC845) " alt="" coords="225,229,323,256"/>
+<area shape="rect" id="node8" href="$d6/d46/HRI__GPIO_8h.html" title="Definiciones a nivel de registros del modulo GPIO (LPC845) " alt="" coords="237,304,335,331"/>
+</map>

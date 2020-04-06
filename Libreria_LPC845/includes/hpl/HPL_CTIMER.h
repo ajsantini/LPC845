@@ -9,7 +9,6 @@
 #ifndef HPL_CTIMER_H_
 #define HPL_CTIMER_H_
 
-#include <stdint.h>
 #include <HRI_CTIMER.h>
 
 extern volatile CTIMER_per_t * const CTIMER; //!< Periferico CTIMER

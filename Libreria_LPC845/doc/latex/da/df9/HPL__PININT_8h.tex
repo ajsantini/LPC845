@@ -1,0 +1,387 @@
+\hypertarget{HPL__PININT_8h}{}\section{Referencia del Archivo includes/hpl/\+H\+P\+L\+\_\+\+P\+I\+N\+I\+NT.h}
+\label{HPL__PININT_8h}\index{includes/hpl/\+H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{includes/hpl/\+H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+
+
+Declaraciones a nivel de abstraccion de periferico del P\+I\+N\+I\+NT (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$H\+R\+I\+\_\+\+P\+I\+N\+I\+N\+T.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{dc/d47/HPL__PININT_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{d2/df6/HPL__PININT_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__PININT_8h_afedddf6149b1ef6f34ed9c34cf7956a2}\label{HPL__PININT_8h_afedddf6149b1ef6f34ed9c34cf7956a2}} 
+enum {\bfseries P\+I\+N\+I\+N\+T\+\_\+interrupt\+\_\+mode\+\_\+en} \{ {\bfseries P\+I\+N\+I\+N\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+\+E\+D\+GE} = 0, 
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+I\+N\+T\+E\+R\+R\+U\+P\+T\+\_\+\+M\+O\+D\+E\+\_\+\+L\+E\+V\+EL}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__PININT_8h_a3c335d713fff3fd7481029d6966225fe}\label{HPL__PININT_8h_a3c335d713fff3fd7481029d6966225fe}} 
+enum {\bfseries P\+I\+N\+I\+N\+T\+\_\+match\+\_\+contribution\+\_\+en} \{ \newline
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+H\+I\+GH} = 0, 
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+S\+T\+I\+C\+K\+Y\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+S\+T\+I\+C\+K\+Y\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+S\+T\+I\+C\+K\+Y\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+O\+R\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE}, 
+\newline
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+H\+I\+G\+H\+\_\+\+L\+E\+V\+EL}, 
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+L\+O\+W\+\_\+\+L\+E\+V\+EL}, 
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+0}, 
+{\bfseries P\+I\+N\+I\+N\+T\+\_\+\+M\+A\+T\+C\+H\+\_\+\+C\+O\+N\+T\+R\+I\+B\+U\+T\+I\+O\+N\+\_\+\+E\+V\+E\+NT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{HPL__PININT_8h_ae34c3b1c0619c0f7213bff15423fd51f}{P\+I\+N\+I\+N\+T\+\_\+set\+\_\+interrupt\+\_\+mode} (uint8\+\_\+t channel, P\+I\+N\+I\+N\+T\+\_\+interrupt\+\_\+mode\+\_\+en mode)
+\begin{DoxyCompactList}\small\item\em Configurar sensibilidad a nivel/flanco. \end{DoxyCompactList}\item 
+static P\+I\+N\+I\+N\+T\+\_\+interrupt\+\_\+mode\+\_\+en \hyperlink{HPL__PININT_8h_aaad4342b1f8893a5905667a6edccc996}{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+interrupt\+\_\+mode} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Obtener configuracion de modo de un canal. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a88365ad65b107b71109708196d04630c}{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+rising\+\_\+edge} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Habilitar detecciones por flanco ascendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a45e8327b0094015a313a0972e772f288}{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+rising\+\_\+edge} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Inhabilitar detecciones por flanco ascendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a9916a55fa487d0421d655ddb88d7c2e7}{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+falling\+\_\+edge} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Habilitar detecciones por flanco descendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_ac047361d7b55f37667b9baa2ddcbc2bb}{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+falling\+\_\+edge} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Inhabilitar detecciones por flanco descendente. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a4c6b2f70c6eab17a4b568b676f9b76ae}{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+high\+\_\+level} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Habilitar detecciones por nivel alto. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_ac73003895b3499d9f992d29bb94d3c2a}{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+high\+\_\+level} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Inhabilitar detecciones por flanco ascendente. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__PININT_8h_aefe7fb5a435fb1443119d794ad89e40a}{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+rising\+\_\+edge\+\_\+active} (void)
+\begin{DoxyCompactList}\small\item\em Obtener interrupciones activas por flanco ascendente. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__PININT_8h_a893f958b5ba47d1ad53b858162449df6}{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+falling\+\_\+edge\+\_\+active} (void)
+\begin{DoxyCompactList}\small\item\em Obtener interrupciones activas por flanco descendente. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__PININT_8h_a82705d128a938c409cfc92798252c5d9}{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+level\+\_\+active} (void)
+\begin{DoxyCompactList}\small\item\em Obtener interrupciones activas por nivel. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_ac569d34a3e59a4b4436215a9eea81dc4}{P\+I\+N\+I\+N\+T\+\_\+clear\+\_\+edge\+\_\+level\+\_\+irq} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Limpiar flag de interrupcion por flanco. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a1c21251810ad00cbb1c7e74990891da1}{P\+I\+N\+I\+N\+T\+\_\+toggle\+\_\+active\+\_\+level} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Invertir nivel activo de itnerrupcion por nivel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__PININT_8h_afeb4897a5e8224d32cb9ca4c157ea4b6}\label{HPL__PININT_8h_afeb4897a5e8224d32cb9ca4c157ea4b6}} 
+static void \hyperlink{HPL__PININT_8h_afeb4897a5e8224d32cb9ca4c157ea4b6}{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+pattern\+\_\+match} (void)
+\begin{DoxyCompactList}\small\item\em Habilita el funcionamiento del pattern match engine (inhabilita P\+I\+N\+I\+NT) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__PININT_8h_aa982840cccebe4de0acc33067e964cbf}\label{HPL__PININT_8h_aa982840cccebe4de0acc33067e964cbf}} 
+static void \hyperlink{HPL__PININT_8h_aa982840cccebe4de0acc33067e964cbf}{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+pattern\+\_\+match} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilita el funcionamiento del pattern match engine (habilita P\+I\+N\+I\+NT) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__PININT_8h_ae16bcf342a686057e6d01242c2cb1c5d}\label{HPL__PININT_8h_ae16bcf342a686057e6d01242c2cb1c5d}} 
+static void \hyperlink{HPL__PININT_8h_ae16bcf342a686057e6d01242c2cb1c5d}{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+\+R\+X\+EV} (void)
+\begin{DoxyCompactList}\small\item\em Habilita la salida de R\+X\+EV. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__PININT_8h_ac698eb44fa9eba8405fa5a9c8416d8de}\label{HPL__PININT_8h_ac698eb44fa9eba8405fa5a9c8416d8de}} 
+static void \hyperlink{HPL__PININT_8h_ac698eb44fa9eba8405fa5a9c8416d8de}{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+\+R\+X\+EV} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilita la salida de R\+X\+EV. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__PININT_8h_ab9ac187bcef8fb438cd11ea516964857}{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+pattern\+\_\+match\+\_\+state} (void)
+\begin{DoxyCompactList}\small\item\em Obtener estado actual del pattern match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_ae3fbc54806d88ced3e2aa0309d1f39a4}{P\+I\+N\+I\+N\+T\+\_\+config\+\_\+pattern\+\_\+match\+\_\+source} (uint8\+\_\+t channel, uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Configuracion de las fuentes del pattern match. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a3817ddf0cabe27506a684f133a39c1e6}{P\+I\+N\+I\+T\+N\+\_\+enable\+\_\+slice\+\_\+as\+\_\+endpoint} (uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Habilitar slice como endpoint. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a332e6ff1bbb428f78f85381d80c26c82}{P\+I\+N\+I\+T\+N\+\_\+disable\+\_\+slice\+\_\+as\+\_\+endpoint} (uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Inhabilitar slice como endpoint. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__PININT_8h_a18adbbe7e860455b270984b9b95ee000}{P\+I\+N\+I\+T\+N\+\_\+config\+\_\+slice\+\_\+mode} (uint8\+\_\+t slice, P\+I\+N\+I\+N\+T\+\_\+match\+\_\+contribution\+\_\+en mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo del slice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__PININT_8h_a26d606920082b585bdd0bd0279fe6177}\label{HPL__PININT_8h_a26d606920082b585bdd0bd0279fe6177}} 
+volatile \hyperlink{HRI__PININT_8h_d6/d1e/structPININT__per__t}{P\+I\+N\+I\+N\+T\+\_\+per\+\_\+t} $\ast$const \hyperlink{HPL__PININT_8h_a26d606920082b585bdd0bd0279fe6177}{P\+I\+N\+I\+NT}
+\begin{DoxyCompactList}\small\item\em Periferico P\+I\+N\+I\+NT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de abstraccion de periferico del P\+I\+N\+I\+NT (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HPL__PININT_8h_ae34c3b1c0619c0f7213bff15423fd51f}\label{HPL__PININT_8h_ae34c3b1c0619c0f7213bff15423fd51f}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+set\+\_\+interrupt\+\_\+mode@{P\+I\+N\+I\+N\+T\+\_\+set\+\_\+interrupt\+\_\+mode}}
+\index{P\+I\+N\+I\+N\+T\+\_\+set\+\_\+interrupt\+\_\+mode@{P\+I\+N\+I\+N\+T\+\_\+set\+\_\+interrupt\+\_\+mode}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+set\+\_\+interrupt\+\_\+mode()}{PININT\_set\_interrupt\_mode()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+set\+\_\+interrupt\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{P\+I\+N\+I\+N\+T\+\_\+interrupt\+\_\+mode\+\_\+en}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar sensibilidad a nivel/flanco. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a configurar \\
+\hline
+\mbox{\tt in}  & {\em mode} & Modo deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_aaad4342b1f8893a5905667a6edccc996}\label{HPL__PININT_8h_aaad4342b1f8893a5905667a6edccc996}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+get\+\_\+interrupt\+\_\+mode@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+interrupt\+\_\+mode}}
+\index{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+interrupt\+\_\+mode@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+interrupt\+\_\+mode}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+interrupt\+\_\+mode()}{PININT\_get\_interrupt\_mode()}}
+{\footnotesize\ttfamily static P\+I\+N\+I\+N\+T\+\_\+interrupt\+\_\+mode\+\_\+en P\+I\+N\+I\+N\+T\+\_\+get\+\_\+interrupt\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener configuracion de modo de un canal. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Modo configurado para el canal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__PININT_8h_a88365ad65b107b71109708196d04630c}\label{HPL__PININT_8h_a88365ad65b107b71109708196d04630c}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+rising\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+rising\+\_\+edge}}
+\index{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+rising\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+rising\+\_\+edge}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+rising\+\_\+edge()}{PININT\_enable\_rising\_edge()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+rising\+\_\+edge (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar detecciones por flanco ascendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_a45e8327b0094015a313a0972e772f288}\label{HPL__PININT_8h_a45e8327b0094015a313a0972e772f288}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+rising\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+rising\+\_\+edge}}
+\index{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+rising\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+rising\+\_\+edge}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+rising\+\_\+edge()}{PININT\_disable\_rising\_edge()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+rising\+\_\+edge (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar detecciones por flanco ascendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_a9916a55fa487d0421d655ddb88d7c2e7}\label{HPL__PININT_8h_a9916a55fa487d0421d655ddb88d7c2e7}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+falling\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+falling\+\_\+edge}}
+\index{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+falling\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+falling\+\_\+edge}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+falling\+\_\+edge()}{PININT\_enable\_falling\_edge()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+falling\+\_\+edge (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar detecciones por flanco descendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_ac047361d7b55f37667b9baa2ddcbc2bb}\label{HPL__PININT_8h_ac047361d7b55f37667b9baa2ddcbc2bb}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+falling\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+falling\+\_\+edge}}
+\index{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+falling\+\_\+edge@{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+falling\+\_\+edge}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+falling\+\_\+edge()}{PININT\_disable\_falling\_edge()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+falling\+\_\+edge (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar detecciones por flanco descendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_a4c6b2f70c6eab17a4b568b676f9b76ae}\label{HPL__PININT_8h_a4c6b2f70c6eab17a4b568b676f9b76ae}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+high\+\_\+level@{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+high\+\_\+level}}
+\index{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+high\+\_\+level@{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+high\+\_\+level}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+high\+\_\+level()}{PININT\_enable\_high\_level()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+enable\+\_\+high\+\_\+level (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar detecciones por nivel alto. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_ac73003895b3499d9f992d29bb94d3c2a}\label{HPL__PININT_8h_ac73003895b3499d9f992d29bb94d3c2a}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+high\+\_\+level@{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+high\+\_\+level}}
+\index{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+high\+\_\+level@{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+high\+\_\+level}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+high\+\_\+level()}{PININT\_disable\_high\_level()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+disable\+\_\+high\+\_\+level (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar detecciones por flanco ascendente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_aefe7fb5a435fb1443119d794ad89e40a}\label{HPL__PININT_8h_aefe7fb5a435fb1443119d794ad89e40a}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+get\+\_\+rising\+\_\+edge\+\_\+active@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+rising\+\_\+edge\+\_\+active}}
+\index{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+rising\+\_\+edge\+\_\+active@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+rising\+\_\+edge\+\_\+active}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+rising\+\_\+edge\+\_\+active()}{PININT\_get\_rising\_edge\_active()}}
+{\footnotesize\ttfamily static uint8\+\_\+t P\+I\+N\+I\+N\+T\+\_\+get\+\_\+rising\+\_\+edge\+\_\+active (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener interrupciones activas por flanco ascendente. 
+
+\begin{DoxyReturn}{Devuelve}
+Mascara de bits con los canales activos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__PININT_8h_a893f958b5ba47d1ad53b858162449df6}\label{HPL__PININT_8h_a893f958b5ba47d1ad53b858162449df6}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+get\+\_\+falling\+\_\+edge\+\_\+active@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+falling\+\_\+edge\+\_\+active}}
+\index{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+falling\+\_\+edge\+\_\+active@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+falling\+\_\+edge\+\_\+active}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+falling\+\_\+edge\+\_\+active()}{PININT\_get\_falling\_edge\_active()}}
+{\footnotesize\ttfamily static uint8\+\_\+t P\+I\+N\+I\+N\+T\+\_\+get\+\_\+falling\+\_\+edge\+\_\+active (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener interrupciones activas por flanco descendente. 
+
+\begin{DoxyReturn}{Devuelve}
+Mascara de bits con los canales activos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__PININT_8h_a82705d128a938c409cfc92798252c5d9}\label{HPL__PININT_8h_a82705d128a938c409cfc92798252c5d9}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+get\+\_\+level\+\_\+active@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+level\+\_\+active}}
+\index{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+level\+\_\+active@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+level\+\_\+active}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+level\+\_\+active()}{PININT\_get\_level\_active()}}
+{\footnotesize\ttfamily static uint8\+\_\+t P\+I\+N\+I\+N\+T\+\_\+get\+\_\+level\+\_\+active (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener interrupciones activas por nivel. 
+
+\begin{DoxyReturn}{Devuelve}
+Mascara de bits con los canales activos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__PININT_8h_ac569d34a3e59a4b4436215a9eea81dc4}\label{HPL__PININT_8h_ac569d34a3e59a4b4436215a9eea81dc4}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+clear\+\_\+edge\+\_\+level\+\_\+irq@{P\+I\+N\+I\+N\+T\+\_\+clear\+\_\+edge\+\_\+level\+\_\+irq}}
+\index{P\+I\+N\+I\+N\+T\+\_\+clear\+\_\+edge\+\_\+level\+\_\+irq@{P\+I\+N\+I\+N\+T\+\_\+clear\+\_\+edge\+\_\+level\+\_\+irq}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+clear\+\_\+edge\+\_\+level\+\_\+irq()}{PININT\_clear\_edge\_level\_irq()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+clear\+\_\+edge\+\_\+level\+\_\+irq (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Limpiar flag de interrupcion por flanco. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal de interrupcion a limpiar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_a1c21251810ad00cbb1c7e74990891da1}\label{HPL__PININT_8h_a1c21251810ad00cbb1c7e74990891da1}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+toggle\+\_\+active\+\_\+level@{P\+I\+N\+I\+N\+T\+\_\+toggle\+\_\+active\+\_\+level}}
+\index{P\+I\+N\+I\+N\+T\+\_\+toggle\+\_\+active\+\_\+level@{P\+I\+N\+I\+N\+T\+\_\+toggle\+\_\+active\+\_\+level}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+toggle\+\_\+active\+\_\+level()}{PININT\_toggle\_active\_level()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+toggle\+\_\+active\+\_\+level (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Invertir nivel activo de itnerrupcion por nivel. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a invertir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_ab9ac187bcef8fb438cd11ea516964857}\label{HPL__PININT_8h_ab9ac187bcef8fb438cd11ea516964857}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+get\+\_\+pattern\+\_\+match\+\_\+state@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+pattern\+\_\+match\+\_\+state}}
+\index{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+pattern\+\_\+match\+\_\+state@{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+pattern\+\_\+match\+\_\+state}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+get\+\_\+pattern\+\_\+match\+\_\+state()}{PININT\_get\_pattern\_match\_state()}}
+{\footnotesize\ttfamily static uint8\+\_\+t P\+I\+N\+I\+N\+T\+\_\+get\+\_\+pattern\+\_\+match\+\_\+state (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado actual del pattern match. 
+
+\begin{DoxyReturn}{Devuelve}
+Mascara de bits indicando que miniterminos estan activos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__PININT_8h_ae3fbc54806d88ced3e2aa0309d1f39a4}\label{HPL__PININT_8h_ae3fbc54806d88ced3e2aa0309d1f39a4}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+N\+T\+\_\+config\+\_\+pattern\+\_\+match\+\_\+source@{P\+I\+N\+I\+N\+T\+\_\+config\+\_\+pattern\+\_\+match\+\_\+source}}
+\index{P\+I\+N\+I\+N\+T\+\_\+config\+\_\+pattern\+\_\+match\+\_\+source@{P\+I\+N\+I\+N\+T\+\_\+config\+\_\+pattern\+\_\+match\+\_\+source}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+N\+T\+\_\+config\+\_\+pattern\+\_\+match\+\_\+source()}{PININT\_config\_pattern\_match\_source()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+N\+T\+\_\+config\+\_\+pattern\+\_\+match\+\_\+source (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{uint8\+\_\+t}]{slice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configuracion de las fuentes del pattern match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Entrada a configurar \\
+\hline
+\mbox{\tt in}  & {\em slice} & Slice a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_a3817ddf0cabe27506a684f133a39c1e6}\label{HPL__PININT_8h_a3817ddf0cabe27506a684f133a39c1e6}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+T\+N\+\_\+enable\+\_\+slice\+\_\+as\+\_\+endpoint@{P\+I\+N\+I\+T\+N\+\_\+enable\+\_\+slice\+\_\+as\+\_\+endpoint}}
+\index{P\+I\+N\+I\+T\+N\+\_\+enable\+\_\+slice\+\_\+as\+\_\+endpoint@{P\+I\+N\+I\+T\+N\+\_\+enable\+\_\+slice\+\_\+as\+\_\+endpoint}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+T\+N\+\_\+enable\+\_\+slice\+\_\+as\+\_\+endpoint()}{PINITN\_enable\_slice\_as\_endpoint()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+T\+N\+\_\+enable\+\_\+slice\+\_\+as\+\_\+endpoint (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{slice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar slice como endpoint. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em slice} & Slice a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_a332e6ff1bbb428f78f85381d80c26c82}\label{HPL__PININT_8h_a332e6ff1bbb428f78f85381d80c26c82}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+T\+N\+\_\+disable\+\_\+slice\+\_\+as\+\_\+endpoint@{P\+I\+N\+I\+T\+N\+\_\+disable\+\_\+slice\+\_\+as\+\_\+endpoint}}
+\index{P\+I\+N\+I\+T\+N\+\_\+disable\+\_\+slice\+\_\+as\+\_\+endpoint@{P\+I\+N\+I\+T\+N\+\_\+disable\+\_\+slice\+\_\+as\+\_\+endpoint}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+T\+N\+\_\+disable\+\_\+slice\+\_\+as\+\_\+endpoint()}{PINITN\_disable\_slice\_as\_endpoint()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+T\+N\+\_\+disable\+\_\+slice\+\_\+as\+\_\+endpoint (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{slice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar slice como endpoint. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em slice} & Slice a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__PININT_8h_a18adbbe7e860455b270984b9b95ee000}\label{HPL__PININT_8h_a18adbbe7e860455b270984b9b95ee000}} 
+\index{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}!P\+I\+N\+I\+T\+N\+\_\+config\+\_\+slice\+\_\+mode@{P\+I\+N\+I\+T\+N\+\_\+config\+\_\+slice\+\_\+mode}}
+\index{P\+I\+N\+I\+T\+N\+\_\+config\+\_\+slice\+\_\+mode@{P\+I\+N\+I\+T\+N\+\_\+config\+\_\+slice\+\_\+mode}!H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h@{H\+P\+L\+\_\+\+P\+I\+N\+I\+N\+T.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+N\+I\+T\+N\+\_\+config\+\_\+slice\+\_\+mode()}{PINITN\_config\_slice\_mode()}}
+{\footnotesize\ttfamily static void P\+I\+N\+I\+T\+N\+\_\+config\+\_\+slice\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{slice,  }\item[{P\+I\+N\+I\+N\+T\+\_\+match\+\_\+contribution\+\_\+en}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo del slice. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em slice} & Slice a configurar \\
+\hline
+\end{DoxyParams}

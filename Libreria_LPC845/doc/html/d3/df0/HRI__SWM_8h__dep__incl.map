@@ -1,0 +1,10 @@
+<map id="includes/hri/HRI_SWM.h" name="includes/hri/HRI_SWM.h">
+<area shape="rect" id="node2" href="$df/d0e/HPL__SWM_8h.html" title="Definiciones a nivel de periferico del modulo SWM (LPC845) " alt="" coords="680,80,852,107"/>
+<area shape="rect" id="node9" href="$d7/d47/HPL__SWM_8c.html" title="Funciones a nivel de abstraccion de periferico para el SWM (LPC845) " alt="" coords="1173,155,1335,181"/>
+<area shape="rect" id="node3" href="$d8/ddf/HAL__ADC_8c.html" title="Funciones a nivel de aplicacion del periferico ADC (LPC845) " alt="" coords="5,155,164,181"/>
+<area shape="rect" id="node4" href="$df/df8/HAL__CTIMER_8c.html" title="Funciones a nivel de aplicacion del periferico CTIMER (LPC845) " alt="" coords="188,155,371,181"/>
+<area shape="rect" id="node5" href="$d3/d9f/HAL__PININT_8c.html" title="Funciones a nivel de aplicacion del periferico PININT (LPC845) " alt="" coords="395,155,569,181"/>
+<area shape="rect" id="node6" href="$db/d76/HAL__SPI_8c.html" title="Funciones a nivel de aplicacion del periferico SPI (LPC845) " alt="" coords="594,155,746,181"/>
+<area shape="rect" id="node7" href="$db/dc2/HAL__SYSCON_8c.html" title="Funciones a nivel de aplicacion para el SYSCON (LPC845) " alt="" coords="770,155,957,181"/>
+<area shape="rect" id="node8" href="$dc/d62/HAL__UART_8c.html" title="Funciones a nivel de aplicacion del periferico UART (LPC845) " alt="" coords="981,155,1148,181"/>
+</map>

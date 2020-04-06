@@ -1,0 +1,215 @@
+\hypertarget{HAL__ADC_8c}{}\section{Referencia del Archivo source/hal/\+H\+A\+L\+\_\+\+A\+DC.c}
+\label{HAL__ADC_8c}\index{source/hal/\+H\+A\+L\+\_\+\+A\+D\+C.\+c@{source/hal/\+H\+A\+L\+\_\+\+A\+D\+C.\+c}}
+
+
+Funciones a nivel de aplicacion del periferico A\+DC (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+A\+D\+C.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+A\+D\+C.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+S\+W\+M.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+N\+V\+I\+C.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+A\+D\+C.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d9c/HAL__ADC_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8c_a5e4675bc26815a79d6237b0c3375e989}\label{HAL__ADC_8c_a5e4675bc26815a79d6237b0c3375e989}} 
+\#define {\bfseries A\+D\+C\+\_\+\+M\+A\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+S\+Y\+NC}~((uint32\+\_\+t) 1.\+2e6)
+\item 
+\mbox{\Hypertarget{HAL__ADC_8c_a05fa9d50774853c4a02b10bf75cfdc0d}\label{HAL__ADC_8c_a05fa9d50774853c4a02b10bf75cfdc0d}} 
+\#define {\bfseries A\+D\+C\+\_\+\+M\+A\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+A\+S\+Y\+NC}~((uint32\+\_\+t) 0.\+6e6)
+\item 
+\mbox{\Hypertarget{HAL__ADC_8c_a3c0bcd148101f70851b8a940df91f61d}\label{HAL__ADC_8c_a3c0bcd148101f70851b8a940df91f61d}} 
+\#define {\bfseries A\+D\+C\+\_\+\+C\+Y\+C\+L\+E\+\_\+\+D\+E\+L\+AY}~(25)
+\item 
+\mbox{\Hypertarget{HAL__ADC_8c_af4b7cdc3f7fe5a24187cbfab481909f4}\label{HAL__ADC_8c_af4b7cdc3f7fe5a24187cbfab481909f4}} 
+\#define {\bfseries A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+M\+O\+U\+NT}~(12)
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}\label{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}} 
+static void \hyperlink{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}{dummy\+\_\+irq\+\_\+callback} (void)
+\begin{DoxyCompactList}\small\item\em Funcion dummy para usar como default para las interrupciones. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__ADC_8c_ad44f4eb2585a9292ff4b66ceceb2f75f}{hal\+\_\+adc\+\_\+init} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en mode, hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el A\+DC. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__ADC_8c_adcef726eaa85af74ade96c14f9a48feb}{hal\+\_\+adc\+\_\+config\+\_\+sequence} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence, const \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Configurar una secuencia de conversion. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__ADC_8c_a678f2df33d79c246b175d0dd36405430}{hal\+\_\+adc\+\_\+enable\+\_\+sequence} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Habilitar una secuencia. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__ADC_8c_a154950a81b5f589fde0139178ab1dcf3}{hal\+\_\+adc\+\_\+start\+\_\+sequence} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence)
+\begin{DoxyCompactList}\small\item\em Disparar conversiones en una secuencia. \end{DoxyCompactList}\item 
+hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+en \hyperlink{HAL__ADC_8c_a2abe86b92546f8f4726dd65a7a9ddc0d}{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result} (hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en sequence, \hyperlink{HAL__ADC_8h_d8/dc0/structhal__adc__sequence__result__t}{hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t} $\ast$result\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Obtener resultado de la secuencia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__ADC_8c_afaada093ceb1db62803ff20ed6cf96c4}\label{HAL__ADC_8c_afaada093ceb1db62803ff20ed6cf96c4}} 
+void \hyperlink{HAL__ADC_8c_afaada093ceb1db62803ff20ed6cf96c4}{A\+D\+C\+\_\+\+S\+E\+Q\+A\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em Funcion de interrupcion cuando termina la secuencia de conversion A del A\+DC. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__ADC_8c_a6e27192cd97c0481870f15ae7b1e07e4}\label{HAL__ADC_8c_a6e27192cd97c0481870f15ae7b1e07e4}} 
+void \hyperlink{HAL__ADC_8c_a6e27192cd97c0481870f15ae7b1e07e4}{A\+D\+C\+\_\+\+S\+E\+Q\+B\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em Funcion de interrupcion cuando termina la secuencia de conversion B del A\+DC. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__ADC_8c_ac113e5fc5416fc12f5e4f77730607ba5}\label{HAL__ADC_8c_ac113e5fc5416fc12f5e4f77730607ba5}} 
+void \hyperlink{HAL__ADC_8c_ac113e5fc5416fc12f5e4f77730607ba5}{A\+D\+C\+\_\+\+T\+H\+C\+M\+P\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em Funcion de interrupcion cuando se detecta alguna de las condiciones de threshold establecidas. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__ADC_8c_a1b4d24d8d02a483255ed258fbf6d8b6d}\label{HAL__ADC_8c_a1b4d24d8d02a483255ed258fbf6d8b6d}} 
+void \hyperlink{HAL__ADC_8c_a1b4d24d8d02a483255ed258fbf6d8b6d}{A\+D\+C\+\_\+\+O\+V\+R\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em Funcion de interrupcion cuando se detecta alguna de las condiciones de overrun. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static void($\ast$ \hyperlink{HAL__ADC_8c_aff405e70061a27e40481afaa9bc3d728}{adc\+\_\+seq\+\_\+completed\+\_\+callback} \mbox{[}2\mbox{]})(void)
+\begin{DoxyCompactList}\small\item\em Callback cuando terminan las secuencias de conversion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__ADC_8c_a40d857898efb6d0590040004e1e3dff8}\label{HAL__ADC_8c_a40d857898efb6d0590040004e1e3dff8}} 
+static void($\ast$ \hyperlink{HAL__ADC_8c_a40d857898efb6d0590040004e1e3dff8}{adc\+\_\+overrun\+\_\+callback} )(void) = \hyperlink{HAL__PININT_8c_ac5d944f7758eab802e2c7ef1b70666c9}{dummy\+\_\+irq\+\_\+callback}
+\begin{DoxyCompactList}\small\item\em Callback cuando ocurre un overrun. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__ADC_8c_a1120933eb57a48902ae9487435687a89}\label{HAL__ADC_8c_a1120933eb57a48902ae9487435687a89}} 
+static void($\ast$ \hyperlink{HAL__ADC_8c_a1120933eb57a48902ae9487435687a89}{adc\+\_\+compare\+\_\+callback} )(void) = \hyperlink{HAL__PININT_8c_ac5d944f7758eab802e2c7ef1b70666c9}{dummy\+\_\+irq\+\_\+callback}
+\begin{DoxyCompactList}\small\item\em Callbacks para las comparaciones de A\+DC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Funciones a nivel de aplicacion del periferico A\+DC (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HAL__ADC_8c_ad44f4eb2585a9292ff4b66ceceb2f75f}\label{HAL__ADC_8c_ad44f4eb2585a9292ff4b66ceceb2f75f}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}!hal\+\_\+adc\+\_\+init@{hal\+\_\+adc\+\_\+init}}
+\index{hal\+\_\+adc\+\_\+init@{hal\+\_\+adc\+\_\+init}!H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+init()}{hal\_adc\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sample\+\_\+freq,  }\item[{uint8\+\_\+t}]{div,  }\item[{\hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}}]{clock\+\_\+source,  }\item[{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en}]{mode,  }\item[{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en}]{low\+\_\+power }\end{DoxyParamCaption})}
+
+
+
+Inicializar el A\+DC. 
+
+Realiza la calibracion de hardware y fija la frecuencia de sampleo deseada.
+
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{HAL__ADC_8h_aee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sample\+\_\+freq} & Frecuencia de sampleo deseada \\
+\hline
+\mbox{\tt in}  & {\em div} & Divisor para la logica del A\+DC (solo importa para modo asincronico) \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock para el A\+DC (solo importa para modo asincronico) \\
+\hline
+\mbox{\tt in}  & {\em mode} & Seleccion de modo de operacion, sincronico o asincronico \\
+\hline
+\mbox{\tt in}  & {\em low\+\_\+power} & Seleccion de modo de bajo consumo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8c_adcef726eaa85af74ade96c14f9a48feb}\label{HAL__ADC_8c_adcef726eaa85af74ade96c14f9a48feb}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}!hal\+\_\+adc\+\_\+config\+\_\+sequence@{hal\+\_\+adc\+\_\+config\+\_\+sequence}}
+\index{hal\+\_\+adc\+\_\+config\+\_\+sequence@{hal\+\_\+adc\+\_\+config\+\_\+sequence}!H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+config\+\_\+sequence()}{hal\_adc\_config\_sequence()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+config\+\_\+sequence (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{const \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t} $\ast$}]{config }\end{DoxyParamCaption})}
+
+
+
+Configurar una secuencia de conversion. 
+
+Esta funcion no habilita la secuencia, al menos que el parametro burst este activo
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Seleccion de secuencia a configurar \\
+\hline
+\mbox{\tt in}  & {\em config} & Configuracion deseada para la secuencia \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8c_a678f2df33d79c246b175d0dd36405430}\label{HAL__ADC_8c_a678f2df33d79c246b175d0dd36405430}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}!hal\+\_\+adc\+\_\+enable\+\_\+sequence@{hal\+\_\+adc\+\_\+enable\+\_\+sequence}}
+\index{hal\+\_\+adc\+\_\+enable\+\_\+sequence@{hal\+\_\+adc\+\_\+enable\+\_\+sequence}!H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+enable\+\_\+sequence()}{hal\_adc\_enable\_sequence()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+enable\+\_\+sequence (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Habilitar una secuencia. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a habilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8c_a154950a81b5f589fde0139178ab1dcf3}\label{HAL__ADC_8c_a154950a81b5f589fde0139178ab1dcf3}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}!hal\+\_\+adc\+\_\+start\+\_\+sequence@{hal\+\_\+adc\+\_\+start\+\_\+sequence}}
+\index{hal\+\_\+adc\+\_\+start\+\_\+sequence@{hal\+\_\+adc\+\_\+start\+\_\+sequence}!H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+start\+\_\+sequence()}{hal\_adc\_start\_sequence()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+start\+\_\+sequence (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Disparar conversiones en una secuencia. 
+
+La configuracion de la secuencia, en particular el parametro single\+\_\+step, influye en si esta funcion dispara una secuencia entera o un paso de la misma.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia a disparar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__ADC_8c_a2abe86b92546f8f4726dd65a7a9ddc0d}\label{HAL__ADC_8c_a2abe86b92546f8f4726dd65a7a9ddc0d}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}!hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result@{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result}}
+\index{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result@{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result}!H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result()}{hal\_adc\_get\_sequence\_result()}}
+{\footnotesize\ttfamily hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+en hal\+\_\+adc\+\_\+get\+\_\+sequence\+\_\+result (\begin{DoxyParamCaption}\item[{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en}]{sequence,  }\item[{\hyperlink{HAL__ADC_8h_d8/dc0/structhal__adc__sequence__result__t}{hal\+\_\+adc\+\_\+sequence\+\_\+result\+\_\+t} $\ast$}]{result\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Obtener resultado de la secuencia. 
+
+El comportamiento de esta funcion depende de la configuracion de la secuencia, en particular de la configuracion {\bfseries M\+O\+DE}. En caso de estar configurada para interrumpir al final de cada conversion, la funcion unicamente guardara el resultado de la conversion en el primer lugar del parametro $<$e$>$result$<$/e$>$, caso contrario, guardara la cantidad de canales habilitados en la conversion en los distintos lugares del parametro $<$e$>$result$<$/e$>$.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sequence} & Secuencia de la cual obtener el resultado \\
+\hline
+\mbox{\tt out}  & {\em result} & Lugares donde guardar los resultados de la secuencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Resultado de la funcion 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de las variables}
+\mbox{\Hypertarget{HAL__ADC_8c_aff405e70061a27e40481afaa9bc3d728}\label{HAL__ADC_8c_aff405e70061a27e40481afaa9bc3d728}} 
+\index{H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}!adc\+\_\+seq\+\_\+completed\+\_\+callback@{adc\+\_\+seq\+\_\+completed\+\_\+callback}}
+\index{adc\+\_\+seq\+\_\+completed\+\_\+callback@{adc\+\_\+seq\+\_\+completed\+\_\+callback}!H\+A\+L\+\_\+\+A\+D\+C.\+c@{H\+A\+L\+\_\+\+A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{adc\+\_\+seq\+\_\+completed\+\_\+callback}{adc\_seq\_completed\_callback}}
+{\footnotesize\ttfamily void($\ast$ adc\+\_\+seq\+\_\+completed\+\_\+callback\mbox{[}2\mbox{]})(void)\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}{dummy\_irq\_callback},
+    \hyperlink{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}{dummy\_irq\_callback}
+\}
+\end{DoxyCode}
+
+
+Callback cuando terminan las secuencias de conversion. 
+

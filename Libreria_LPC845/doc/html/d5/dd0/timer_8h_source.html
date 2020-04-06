@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Libreria LPC845: Fichero Fuente includes/infotronic/timer.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Libreria LPC845
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="../../dir_035bb69b6919dedf8325aca13d7087a8.html">infotronic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">timer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/dd0/timer_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef TIMER_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define TIMER_H_</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define     MSEC(x)     (x)</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define     DEC(x)      (x * 100)</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define     SEC(x)      (DEC(x) * 10)</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define     MIN(x)      (SEC(x) * 60)</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/dd0/timer_8h.html#a6d1d10160c59ff60b07a6fb76689321f">timer_start</a>(uint8_t event_number, uint32_t msecs, <span class="keywordtype">void</span> (*callback)(uint8_t), uint8_t repeat);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/dd0/timer_8h.html#a4bf254aa44da60f0e48bd3db88acc0ba">timer_pause</a>(uint8_t event_number);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/dd0/timer_8h.html#a07f9f37159d599c0ea39ffdcf6d3500d">timer_resume</a>(uint8_t event_number);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/dd0/timer_8h.html#aff93b9e9f92080026f8227a4962c7399">timer_stop</a>(uint8_t event_number);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/dd0/timer_8h.html#a63aec9ffc89d719500cb055335ffc3a2">timer_loop</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d5/dd0/timer_8h.html#a60727b3dd3618599df4f447cf07614a8">timer_check</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* TIMER_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="timer_8h_html_a60727b3dd3618599df4f447cf07614a8"><div class="ttname"><a href="../../d5/dd0/timer_8h.html#a60727b3dd3618599df4f447cf07614a8">timer_check</a></div><div class="ttdeci">void timer_check(void)</div><div class="ttdoc">Callback para revisar la maquinaria de timers (a ejecutar cada 1mseg) </div><div class="ttdef"><b>Definition:</b> timer.c:108</div></div>
+<div class="ttc" id="timer_8h_html_a4bf254aa44da60f0e48bd3db88acc0ba"><div class="ttname"><a href="../../d5/dd0/timer_8h.html#a4bf254aa44da60f0e48bd3db88acc0ba">timer_pause</a></div><div class="ttdeci">void timer_pause(uint8_t event_number)</div><div class="ttdoc">Pausar un timer. </div><div class="ttdef"><b>Definition:</b> timer.c:59</div></div>
+<div class="ttc" id="timer_8h_html_aff93b9e9f92080026f8227a4962c7399"><div class="ttname"><a href="../../d5/dd0/timer_8h.html#aff93b9e9f92080026f8227a4962c7399">timer_stop</a></div><div class="ttdeci">void timer_stop(uint8_t event_number)</div><div class="ttdoc">Detener un timer. </div><div class="ttdef"><b>Definition:</b> timer.c:80</div></div>
+<div class="ttc" id="timer_8h_html_a63aec9ffc89d719500cb055335ffc3a2"><div class="ttname"><a href="../../d5/dd0/timer_8h.html#a63aec9ffc89d719500cb055335ffc3a2">timer_loop</a></div><div class="ttdeci">void timer_loop(void)</div><div class="ttdoc">Funcion a ejecutar en el loop principal. </div><div class="ttdef"><b>Definition:</b> timer.c:91</div></div>
+<div class="ttc" id="timer_8h_html_a6d1d10160c59ff60b07a6fb76689321f"><div class="ttname"><a href="../../d5/dd0/timer_8h.html#a6d1d10160c59ff60b07a6fb76689321f">timer_start</a></div><div class="ttdeci">void timer_start(uint8_t event_number, uint32_t msecs, void(*callback)(uint8_t), uint8_t repeat)</div><div class="ttdoc">Iniciar un timer. </div><div class="ttdef"><b>Definition:</b> timer.c:33</div></div>
+<div class="ttc" id="timer_8h_html_a07f9f37159d599c0ea39ffdcf6d3500d"><div class="ttname"><a href="../../d5/dd0/timer_8h.html#a07f9f37159d599c0ea39ffdcf6d3500d">timer_resume</a></div><div class="ttdeci">void timer_resume(uint8_t event_number)</div><div class="ttdoc">Despausar/resumir un timer. </div><div class="ttdef"><b>Definition:</b> timer.c:71</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -9,7 +9,6 @@
 #ifndef HPL_NVIC_H_
 #define HPL_NVIC_H_
 
-#include <stdint.h>
 #include <HRI_NVIC.h>
 
 extern volatile NVIC_per_t * const NVIC; //!< Periferico NVIC

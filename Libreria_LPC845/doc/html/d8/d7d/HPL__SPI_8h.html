@@ -1,0 +1,1718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Libreria LPC845: Referencia del Archivo includes/hpl/HPL_SPI.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Libreria LPC845
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="../../dir_35e3fa8563ad3fa685a4057e198c3117.html">hpl</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo HPL_SPI.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Declaraciones a nivel de abstraccion de periferico del SPI (LPC845)  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="../../db/d98/HRI__SPI_8h_source.html">HRI_SPI.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para HPL_SPI.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d00/HPL__SPI_8h__incl.png" border="0" usemap="#includes_2hpl_2HPL__SPI_8h" alt=""/></div>
+<map name="includes_2hpl_2HPL__SPI_8h" id="includes_2hpl_2HPL__SPI_8h">
+<area shape="rect" id="node2" href="../../db/d98/HRI__SPI_8h.html" title="Definiciones a nivel de registros del periferico SPI (LPC845) " alt="" coords="43,80,129,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d32/HPL__SPI_8h__dep__incl.png" border="0" usemap="#includes_2hpl_2HPL__SPI_8hdep" alt=""/></div>
+<map name="includes_2hpl_2HPL__SPI_8hdep" id="includes_2hpl_2HPL__SPI_8hdep">
+<area shape="rect" id="node2" href="../../db/d76/HAL__SPI_8c.html" title="Funciones a nivel de aplicacion del periferico SPI (LPC845) " alt="" coords="10,80,162,107"/>
+</map>
+</div>
+</div>
+<p><a href="../../d8/d7d/HPL__SPI_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a66672558a7fdeaca7b39014413f3336b"><td class="memItemLeft" align="right" valign="top"><a id="a66672558a7fdeaca7b39014413f3336b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SPI_status_flag_en</b> { <br />
+&#160;&#160;<b>SPI_STATUS_FLAG_RXRDY</b> = 0, 
+<b>SPI_STATUS_FLAG_TXRDY</b>, 
+<b>SPI_STATUS_FLAG_RXOV</b>, 
+<b>SPI_STATUS_FLAG_TXUR</b>, 
+<br />
+&#160;&#160;<b>SPI_STATUS_FLAG_SSA</b>, 
+<b>SPI_STATUS_FLAG_SSD</b>, 
+<b>SPI_STATUS_FLAG_STALLED</b>, 
+<b>SPI_STATUS_FLAG_ENDTRANSFER</b>, 
+<br />
+&#160;&#160;<b>SPI_STATUS_FLAG_MSTIDLE</b>
+<br />
+ }</td></tr>
+<tr class="separator:a66672558a7fdeaca7b39014413f3336b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f18c9818dad3ea393e5d22da90eccb"><td class="memItemLeft" align="right" valign="top"><a id="af1f18c9818dad3ea393e5d22da90eccb"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SPI_irq_sel_en</b> { <br />
+&#160;&#160;<b>SPI_IRQ_RXRDY</b> = 0, 
+<b>SPI_IRQ_TXRDY</b>, 
+<b>SPI_IRQ_RXOV</b>, 
+<b>SPI_IRQ_TXUR</b>, 
+<br />
+&#160;&#160;<b>SPI_IRQ_SSA</b>, 
+<b>SPI_IRQ_SSD</b>
+<br />
+ }</td></tr>
+<tr class="separator:af1f18c9818dad3ea393e5d22da90eccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e7128defe4b247e76fd82088c6539d"><td class="memItemLeft" align="right" valign="top"><a id="ae9e7128defe4b247e76fd82088c6539d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SPI_data_length_en</b> { <br />
+&#160;&#160;<b>SPI_DATA_LENGTH_1_BIT</b> = 0, 
+<b>SPI_DATA_LENGTH_2_BIT</b>, 
+<b>SPI_DATA_LENGTH_3_BIT</b>, 
+<b>SPI_DATA_LENGTH_4_BIT</b>, 
+<br />
+&#160;&#160;<b>SPI_DATA_LENGTH_5_BIT</b>, 
+<b>SPI_DATA_LENGTH_6_BIT</b>, 
+<b>SPI_DATA_LENGTH_7_BIT</b>, 
+<b>SPI_DATA_LENGTH_8_BIT</b>, 
+<br />
+&#160;&#160;<b>SPI_DATA_LENGTH_9_BIT</b>, 
+<b>SPI_DATA_LENGTH_10_BIT</b>, 
+<b>SPI_DATA_LENGTH_11_BIT</b>, 
+<b>SPI_DATA_LENGTH_12_BIT</b>, 
+<br />
+&#160;&#160;<b>SPI_DATA_LENGTH_13_BIT</b>, 
+<b>SPI_DATA_LENGTH_14_BIT</b>, 
+<b>SPI_DATA_LENGTH_15_BIT</b>, 
+<b>SPI_DATA_LENGTH_16_BIT</b>
+<br />
+ }</td></tr>
+<tr class="separator:ae9e7128defe4b247e76fd82088c6539d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a7f5a0bc037eb9b128ea506e7222bbd73"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a7f5a0bc037eb9b128ea506e7222bbd73">SPI_enable</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a7f5a0bc037eb9b128ea506e7222bbd73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilitar modulo.  <a href="#a7f5a0bc037eb9b128ea506e7222bbd73">Más...</a><br /></td></tr>
+<tr class="separator:a7f5a0bc037eb9b128ea506e7222bbd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1bba7aff2d296ddafe2c9b45fe4d87c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ab1bba7aff2d296ddafe2c9b45fe4d87c">SPI_disable</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:ab1bba7aff2d296ddafe2c9b45fe4d87c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inhabilitar modulo.  <a href="#ab1bba7aff2d296ddafe2c9b45fe4d87c">Más...</a><br /></td></tr>
+<tr class="separator:ab1bba7aff2d296ddafe2c9b45fe4d87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78e337a45a4c2e136f7120342076d28"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#af78e337a45a4c2e136f7120342076d28">SPI_set_master_mode</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:af78e337a45a4c2e136f7120342076d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar como modo master.  <a href="#af78e337a45a4c2e136f7120342076d28">Más...</a><br /></td></tr>
+<tr class="separator:af78e337a45a4c2e136f7120342076d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a643a96e2d7e2fdc6615cc15bd594f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a83a643a96e2d7e2fdc6615cc15bd594f">SPI_set_slave_mode</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a83a643a96e2d7e2fdc6615cc15bd594f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar como modo slave.  <a href="#a83a643a96e2d7e2fdc6615cc15bd594f">Más...</a><br /></td></tr>
+<tr class="separator:a83a643a96e2d7e2fdc6615cc15bd594f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35b37109680a1a90b58761fc50c60bcc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a35b37109680a1a90b58761fc50c60bcc">SPI_set_data_order_msb_first</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a35b37109680a1a90b58761fc50c60bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar orden de datos MSB primero.  <a href="#a35b37109680a1a90b58761fc50c60bcc">Más...</a><br /></td></tr>
+<tr class="separator:a35b37109680a1a90b58761fc50c60bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98dc4ab9ac329763002b24ad1f8430de"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a98dc4ab9ac329763002b24ad1f8430de">SPI_set_data_order_lsb_first</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a98dc4ab9ac329763002b24ad1f8430de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar orden de datos LSB primero.  <a href="#a98dc4ab9ac329763002b24ad1f8430de">Más...</a><br /></td></tr>
+<tr class="separator:a98dc4ab9ac329763002b24ad1f8430de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4df7d4b8e939e46377d8468b45aad1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a0f4df7d4b8e939e46377d8468b45aad1">SPI_set_cpha_change</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a0f4df7d4b8e939e46377d8468b45aad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar fase del clock (modo change)  <a href="#a0f4df7d4b8e939e46377d8468b45aad1">Más...</a><br /></td></tr>
+<tr class="separator:a0f4df7d4b8e939e46377d8468b45aad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa353bf9381d4d1039eb57e91df994b17"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#aa353bf9381d4d1039eb57e91df994b17">SPI_set_cpha_capture</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:aa353bf9381d4d1039eb57e91df994b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar fase del clock (modo capture)  <a href="#aa353bf9381d4d1039eb57e91df994b17">Más...</a><br /></td></tr>
+<tr class="separator:aa353bf9381d4d1039eb57e91df994b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fddd1f3564674ba202af7449edfbf74"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a4fddd1f3564674ba202af7449edfbf74">SPI_set_cpol_low</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a4fddd1f3564674ba202af7449edfbf74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar polaridad del clock (polaridad baja)  <a href="#a4fddd1f3564674ba202af7449edfbf74">Más...</a><br /></td></tr>
+<tr class="separator:a4fddd1f3564674ba202af7449edfbf74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111a8fc439e9c8a4fb4c3526022e43eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a111a8fc439e9c8a4fb4c3526022e43eb">SPI_set_cpol_high</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a111a8fc439e9c8a4fb4c3526022e43eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar polaridad del clock (polaridad alta)  <a href="#a111a8fc439e9c8a4fb4c3526022e43eb">Más...</a><br /></td></tr>
+<tr class="separator:a111a8fc439e9c8a4fb4c3526022e43eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace30151bd22a9af188f5c244c84173f9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ace30151bd22a9af188f5c244c84173f9">SPI_enable_loopback_mode</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:ace30151bd22a9af188f5c244c84173f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilitar modo loopback.  <a href="#ace30151bd22a9af188f5c244c84173f9">Más...</a><br /></td></tr>
+<tr class="separator:ace30151bd22a9af188f5c244c84173f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad831cb1a119f298131a5a2610482bf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a2ad831cb1a119f298131a5a2610482bf">SPI_disable_loopback_mode</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a2ad831cb1a119f298131a5a2610482bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inhabilitar modo loopback.  <a href="#a2ad831cb1a119f298131a5a2610482bf">Más...</a><br /></td></tr>
+<tr class="separator:a2ad831cb1a119f298131a5a2610482bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a842e279cf5a2c92b433e5a9ecf5b36a0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a842e279cf5a2c92b433e5a9ecf5b36a0">SPI_set_ssel_active_low</a> (uint8_t inst, uint8_t channel)</td></tr>
+<tr class="memdesc:a842e279cf5a2c92b433e5a9ecf5b36a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fijar polaridad de slave select como activa baja.  <a href="#a842e279cf5a2c92b433e5a9ecf5b36a0">Más...</a><br /></td></tr>
+<tr class="separator:a842e279cf5a2c92b433e5a9ecf5b36a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e66c2b2d4a01fc1a1840073a072d0c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a29e66c2b2d4a01fc1a1840073a072d0c">SPI_set_ssel_active_high</a> (uint8_t inst, uint8_t channel)</td></tr>
+<tr class="memdesc:a29e66c2b2d4a01fc1a1840073a072d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fijar polaridad de slave select como activa alta.  <a href="#a29e66c2b2d4a01fc1a1840073a072d0c">Más...</a><br /></td></tr>
+<tr class="separator:a29e66c2b2d4a01fc1a1840073a072d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff554a0ddf87eaf7eb41b6b56c1e31c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#acff554a0ddf87eaf7eb41b6b56c1e31c">SPI_set_pre_delay</a> (uint8_t inst, uint8_t delay)</td></tr>
+<tr class="memdesc:acff554a0ddf87eaf7eb41b6b56c1e31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar ciclos de clock entre la activacion de SSEL y la transmision de datos.  <a href="#acff554a0ddf87eaf7eb41b6b56c1e31c">Más...</a><br /></td></tr>
+<tr class="separator:acff554a0ddf87eaf7eb41b6b56c1e31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2bf6e750b14df36d98b9fb9d0a2871"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a1a2bf6e750b14df36d98b9fb9d0a2871">SPI_set_post_delay</a> (uint8_t inst, uint8_t delay)</td></tr>
+<tr class="memdesc:a1a2bf6e750b14df36d98b9fb9d0a2871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar ciclos de clock entre la finalizacion de transmision y desactivacion de SSEL.  <a href="#a1a2bf6e750b14df36d98b9fb9d0a2871">Más...</a><br /></td></tr>
+<tr class="separator:a1a2bf6e750b14df36d98b9fb9d0a2871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e94418d222765a9c93cc608f6e2b2e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a55e94418d222765a9c93cc608f6e2b2e">SPI_set_frame_delay</a> (uint8_t inst, uint8_t delay)</td></tr>
+<tr class="memdesc:a55e94418d222765a9c93cc608f6e2b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar ciclos de clock entre transmisiones sin desactivar SSEL.  <a href="#a55e94418d222765a9c93cc608f6e2b2e">Más...</a><br /></td></tr>
+<tr class="separator:a55e94418d222765a9c93cc608f6e2b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1a540ea9fa3a69d6d4c6532bbf4eae0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ac1a540ea9fa3a69d6d4c6532bbf4eae0">SPI_set_transfer_delay</a> (uint8_t inst, uint8_t delay)</td></tr>
+<tr class="memdesc:ac1a540ea9fa3a69d6d4c6532bbf4eae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar ciclos de clock entre desactivacion/activacion de SSEL.  <a href="#ac1a540ea9fa3a69d6d4c6532bbf4eae0">Más...</a><br /></td></tr>
+<tr class="separator:ac1a540ea9fa3a69d6d4c6532bbf4eae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc886924b3aba2a73125159622ef7f6"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a6fc886924b3aba2a73125159622ef7f6">SPI_get_status_flag</a> (uint8_t inst, SPI_status_flag_en flag)</td></tr>
+<tr class="memdesc:a6fc886924b3aba2a73125159622ef7f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leer un flag de status.  <a href="#a6fc886924b3aba2a73125159622ef7f6">Más...</a><br /></td></tr>
+<tr class="separator:a6fc886924b3aba2a73125159622ef7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e46cfd33feb6983d174ea06d77e4bd6"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a2e46cfd33feb6983d174ea06d77e4bd6">SPI_clear_status_flag</a> (uint8_t inst, SPI_status_flag_en flag)</td></tr>
+<tr class="memdesc:a2e46cfd33feb6983d174ea06d77e4bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpiar un flag de status.  <a href="#a2e46cfd33feb6983d174ea06d77e4bd6">Más...</a><br /></td></tr>
+<tr class="separator:a2e46cfd33feb6983d174ea06d77e4bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1549d69ab3371e0f858870e54c3979d"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ab1549d69ab3371e0f858870e54c3979d">SPI_enable_irq</a> (uint8_t inst, SPI_irq_sel_en irq)</td></tr>
+<tr class="memdesc:ab1549d69ab3371e0f858870e54c3979d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilitar interrupcion.  <a href="#ab1549d69ab3371e0f858870e54c3979d">Más...</a><br /></td></tr>
+<tr class="separator:ab1549d69ab3371e0f858870e54c3979d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b627aa7a6b4263b1ea33ef489ed3d2"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a81b627aa7a6b4263b1ea33ef489ed3d2">SPI_disable_irq</a> (uint8_t inst, SPI_irq_sel_en irq)</td></tr>
+<tr class="memdesc:a81b627aa7a6b4263b1ea33ef489ed3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inhabilitar interrupcion.  <a href="#a81b627aa7a6b4263b1ea33ef489ed3d2">Más...</a><br /></td></tr>
+<tr class="separator:a81b627aa7a6b4263b1ea33ef489ed3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae937b6836b4517b2b7f3612913412030"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ae937b6836b4517b2b7f3612913412030">SPI_read_rx_data</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:ae937b6836b4517b2b7f3612913412030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leer resultado de la recepcion.  <a href="#ae937b6836b4517b2b7f3612913412030">Más...</a><br /></td></tr>
+<tr class="separator:ae937b6836b4517b2b7f3612913412030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7969888a438cb40a69ae45e23858fca4"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a7969888a438cb40a69ae45e23858fca4">SPI_get_active_ssl</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a7969888a438cb40a69ae45e23858fca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener slave select activo.  <a href="#a7969888a438cb40a69ae45e23858fca4">Más...</a><br /></td></tr>
+<tr class="separator:a7969888a438cb40a69ae45e23858fca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6942ae0d12c3828764b842353e7462"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a8a6942ae0d12c3828764b842353e7462">SPI_get_sot_flag</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a8a6942ae0d12c3828764b842353e7462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener estado del flag de start of transfer.  <a href="#a8a6942ae0d12c3828764b842353e7462">Más...</a><br /></td></tr>
+<tr class="separator:a8a6942ae0d12c3828764b842353e7462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fcb038406b422dcc3c725c1c75d2cd9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a5fcb038406b422dcc3c725c1c75d2cd9">SPI_write_txdata</a> (uint8_t inst, uint16_t data)</td></tr>
+<tr class="memdesc:a5fcb038406b422dcc3c725c1c75d2cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribir registro de datos de transmision.  <a href="#a5fcb038406b422dcc3c725c1c75d2cd9">Más...</a><br /></td></tr>
+<tr class="separator:a5fcb038406b422dcc3c725c1c75d2cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c993be947e658cf703bac770be82c9d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a8c993be947e658cf703bac770be82c9d">SPI_select_slave</a> (uint8_t inst, uint8_t channel)</td></tr>
+<tr class="memdesc:a8c993be947e658cf703bac770be82c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilitar slave select para la proxima transmision.  <a href="#a8c993be947e658cf703bac770be82c9d">Más...</a><br /></td></tr>
+<tr class="separator:a8c993be947e658cf703bac770be82c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a589229cde66e898378aa1ff4232bba88"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a589229cde66e898378aa1ff4232bba88">SPI_set_end_of_transmission</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a589229cde66e898378aa1ff4232bba88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicar fin de transmision en la proxima transmision.  <a href="#a589229cde66e898378aa1ff4232bba88">Más...</a><br /></td></tr>
+<tr class="separator:a589229cde66e898378aa1ff4232bba88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4be5d6c6f7b2d0bef4bb779aeca4658"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ad4be5d6c6f7b2d0bef4bb779aeca4658">SPI_clear_end_of_transmission</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:ad4be5d6c6f7b2d0bef4bb779aeca4658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpiar fin de transmision en la proxima transmision.  <a href="#ad4be5d6c6f7b2d0bef4bb779aeca4658">Más...</a><br /></td></tr>
+<tr class="separator:ad4be5d6c6f7b2d0bef4bb779aeca4658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428630c9a5861df7bbf4f48a118ae85b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a428630c9a5861df7bbf4f48a118ae85b">SPI_set_end_of_frame</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a428630c9a5861df7bbf4f48a118ae85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicar fin de trama en la proxima transmision.  <a href="#a428630c9a5861df7bbf4f48a118ae85b">Más...</a><br /></td></tr>
+<tr class="separator:a428630c9a5861df7bbf4f48a118ae85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac9cf28068ff5efff5cd0d0f118d842"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a5ac9cf28068ff5efff5cd0d0f118d842">SPI_clear_end_of_frame</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a5ac9cf28068ff5efff5cd0d0f118d842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpiar fin de trama en la proxima transmision.  <a href="#a5ac9cf28068ff5efff5cd0d0f118d842">Más...</a><br /></td></tr>
+<tr class="separator:a5ac9cf28068ff5efff5cd0d0f118d842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d463bf945b98eb728350a82317edcc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ae7d463bf945b98eb728350a82317edcc">SPI_set_rx_ignore</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:ae7d463bf945b98eb728350a82317edcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignorar recepcion en la proxima transmision.  <a href="#ae7d463bf945b98eb728350a82317edcc">Más...</a><br /></td></tr>
+<tr class="separator:ae7d463bf945b98eb728350a82317edcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a760e2d2006757580d486d2c51462077e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a760e2d2006757580d486d2c51462077e">SPI_clear_rx_ignore</a> (uint8_t inst)</td></tr>
+<tr class="memdesc:a760e2d2006757580d486d2c51462077e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No ignorar recepcino en la proxima transmision.  <a href="#a760e2d2006757580d486d2c51462077e">Más...</a><br /></td></tr>
+<tr class="separator:a760e2d2006757580d486d2c51462077e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a943b0094c742d4c491ffce075d8dce59"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a943b0094c742d4c491ffce075d8dce59">SPI_set_data_length</a> (uint8_t inst, SPI_data_length_en data_length)</td></tr>
+<tr class="memdesc:a943b0094c742d4c491ffce075d8dce59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar largo de bits de palabra.  <a href="#a943b0094c742d4c491ffce075d8dce59">Más...</a><br /></td></tr>
+<tr class="separator:a943b0094c742d4c491ffce075d8dce59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0622d0a1000a43e328e6abf227bfa7e8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a0622d0a1000a43e328e6abf227bfa7e8">SPI_set_data_and_control</a> (uint8_t inst, <a class="el" href="../../db/d98/HRI__SPI_8h.html#dc/df1/structSPI__TXDATCTL__reg__t">SPI_TXDATCTL_reg_t</a> *data_and_control)</td></tr>
+<tr class="memdesc:a0622d0a1000a43e328e6abf227bfa7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribir data a transmitir y control al mismo tiempo (en una unica escritura)  <a href="#a0622d0a1000a43e328e6abf227bfa7e8">Más...</a><br /></td></tr>
+<tr class="separator:a0622d0a1000a43e328e6abf227bfa7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c444a7990eb7b158ea2bdeb4172e37f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a8c444a7990eb7b158ea2bdeb4172e37f">SPI_set_clock_div</a> (uint8_t inst, uint16_t div)</td></tr>
+<tr class="memdesc:a8c444a7990eb7b158ea2bdeb4172e37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar divisor de clock.  <a href="#a8c444a7990eb7b158ea2bdeb4172e37f">Más...</a><br /></td></tr>
+<tr class="separator:a8c444a7990eb7b158ea2bdeb4172e37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab580bc0f38853eb701ffd155d0aef866"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#ab580bc0f38853eb701ffd155d0aef866">SPI_get_irq_flag_status</a> (uint8_t inst, SPI_irq_sel_en irq)</td></tr>
+<tr class="memdesc:ab580bc0f38853eb701ffd155d0aef866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leer flag de interrupcion actual.  <a href="#ab580bc0f38853eb701ffd155d0aef866">Más...</a><br /></td></tr>
+<tr class="separator:ab580bc0f38853eb701ffd155d0aef866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a673a4443bf72e54d92cf52e25a1bad65"><td class="memItemLeft" align="right" valign="top"><a id="a673a4443bf72e54d92cf52e25a1bad65"></a>
+volatile <a class="el" href="../../db/d98/HRI__SPI_8h.html#d7/d39/structSPI__per__t">SPI_per_t</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7d/HPL__SPI_8h.html#a673a4443bf72e54d92cf52e25a1bad65">SPI</a> []</td></tr>
+<tr class="memdesc:a673a4443bf72e54d92cf52e25a1bad65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perifericos SPI. <br /></td></tr>
+<tr class="separator:a673a4443bf72e54d92cf52e25a1bad65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Declaraciones a nivel de abstraccion de periferico del SPI (LPC845) </p>
+<dl class="section author"><dt>Autor</dt><dd>Augusto Santini </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>3/2020 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a7f5a0bc037eb9b128ea506e7222bbd73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f5a0bc037eb9b128ea506e7222bbd73">&#9670;&nbsp;</a></span>SPI_enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_enable </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Habilitar modulo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a habilitar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab1bba7aff2d296ddafe2c9b45fe4d87c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1bba7aff2d296ddafe2c9b45fe4d87c">&#9670;&nbsp;</a></span>SPI_disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_disable </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inhabilitar modulo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a inhabilitar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af78e337a45a4c2e136f7120342076d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78e337a45a4c2e136f7120342076d28">&#9670;&nbsp;</a></span>SPI_set_master_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_master_mode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar como modo master. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a83a643a96e2d7e2fdc6615cc15bd594f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a643a96e2d7e2fdc6615cc15bd594f">&#9670;&nbsp;</a></span>SPI_set_slave_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_slave_mode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar como modo slave. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a35b37109680a1a90b58761fc50c60bcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35b37109680a1a90b58761fc50c60bcc">&#9670;&nbsp;</a></span>SPI_set_data_order_msb_first()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_data_order_msb_first </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar orden de datos MSB primero. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a98dc4ab9ac329763002b24ad1f8430de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98dc4ab9ac329763002b24ad1f8430de">&#9670;&nbsp;</a></span>SPI_set_data_order_lsb_first()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_data_order_lsb_first </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar orden de datos LSB primero. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0f4df7d4b8e939e46377d8468b45aad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4df7d4b8e939e46377d8468b45aad1">&#9670;&nbsp;</a></span>SPI_set_cpha_change()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_cpha_change </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar fase del clock (modo change) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa353bf9381d4d1039eb57e91df994b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa353bf9381d4d1039eb57e91df994b17">&#9670;&nbsp;</a></span>SPI_set_cpha_capture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_cpha_capture </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar fase del clock (modo capture) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4fddd1f3564674ba202af7449edfbf74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fddd1f3564674ba202af7449edfbf74">&#9670;&nbsp;</a></span>SPI_set_cpol_low()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_cpol_low </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar polaridad del clock (polaridad baja) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a111a8fc439e9c8a4fb4c3526022e43eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111a8fc439e9c8a4fb4c3526022e43eb">&#9670;&nbsp;</a></span>SPI_set_cpol_high()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_cpol_high </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar polaridad del clock (polaridad alta) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace30151bd22a9af188f5c244c84173f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace30151bd22a9af188f5c244c84173f9">&#9670;&nbsp;</a></span>SPI_enable_loopback_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_enable_loopback_mode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Habilitar modo loopback. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2ad831cb1a119f298131a5a2610482bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad831cb1a119f298131a5a2610482bf">&#9670;&nbsp;</a></span>SPI_disable_loopback_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_disable_loopback_mode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inhabilitar modo loopback. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a842e279cf5a2c92b433e5a9ecf5b36a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a842e279cf5a2c92b433e5a9ecf5b36a0">&#9670;&nbsp;</a></span>SPI_set_ssel_active_low()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_ssel_active_low </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fijar polaridad de slave select como activa baja. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Canal de SSEL a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a29e66c2b2d4a01fc1a1840073a072d0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e66c2b2d4a01fc1a1840073a072d0c">&#9670;&nbsp;</a></span>SPI_set_ssel_active_high()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_ssel_active_high </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fijar polaridad de slave select como activa alta. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Canal de SSEL a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acff554a0ddf87eaf7eb41b6b56c1e31c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff554a0ddf87eaf7eb41b6b56c1e31c">&#9670;&nbsp;</a></span>SPI_set_pre_delay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_pre_delay </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar ciclos de clock entre la activacion de SSEL y la transmision de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>Clocks de delay deseados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1a2bf6e750b14df36d98b9fb9d0a2871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2bf6e750b14df36d98b9fb9d0a2871">&#9670;&nbsp;</a></span>SPI_set_post_delay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_post_delay </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar ciclos de clock entre la finalizacion de transmision y desactivacion de SSEL. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>Clocks de delay deseados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55e94418d222765a9c93cc608f6e2b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e94418d222765a9c93cc608f6e2b2e">&#9670;&nbsp;</a></span>SPI_set_frame_delay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_frame_delay </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar ciclos de clock entre transmisiones sin desactivar SSEL. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>Clocks de delay deseados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac1a540ea9fa3a69d6d4c6532bbf4eae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1a540ea9fa3a69d6d4c6532bbf4eae0">&#9670;&nbsp;</a></span>SPI_set_transfer_delay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_transfer_delay </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar ciclos de clock entre desactivacion/activacion de SSEL. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>Clocks de delay deseados </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6fc886924b3aba2a73125159622ef7f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fc886924b3aba2a73125159622ef7f6">&#9670;&nbsp;</a></span>SPI_get_status_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t SPI_get_status_flag </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SPI_status_flag_en&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Leer un flag de status. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a consultar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>Flag a consultar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado del flag actual </dd></dl>
+
+</div>
+</div>
+<a id="a2e46cfd33feb6983d174ea06d77e4bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e46cfd33feb6983d174ea06d77e4bd6">&#9670;&nbsp;</a></span>SPI_clear_status_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t SPI_clear_status_flag </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SPI_status_flag_en&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Limpiar un flag de status. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a limpiar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>Flag a limpiar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab1549d69ab3371e0f858870e54c3979d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1549d69ab3371e0f858870e54c3979d">&#9670;&nbsp;</a></span>SPI_enable_irq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t SPI_enable_irq </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SPI_irq_sel_en&#160;</td>
+          <td class="paramname"><em>irq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Habilitar interrupcion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">irq</td><td>Interrupcion a habilitar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a81b627aa7a6b4263b1ea33ef489ed3d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b627aa7a6b4263b1ea33ef489ed3d2">&#9670;&nbsp;</a></span>SPI_disable_irq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t SPI_disable_irq </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SPI_irq_sel_en&#160;</td>
+          <td class="paramname"><em>irq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inhabilitar interrupcion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">irq</td><td>Interrupcion a inhabilitar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae937b6836b4517b2b7f3612913412030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae937b6836b4517b2b7f3612913412030">&#9670;&nbsp;</a></span>SPI_read_rx_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t SPI_read_rx_data </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Leer resultado de la recepcion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a consultar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7969888a438cb40a69ae45e23858fca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7969888a438cb40a69ae45e23858fca4">&#9670;&nbsp;</a></span>SPI_get_active_ssl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t SPI_get_active_ssl </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtener slave select activo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a consultar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8a6942ae0d12c3828764b842353e7462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6942ae0d12c3828764b842353e7462">&#9670;&nbsp;</a></span>SPI_get_sot_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t SPI_get_sot_flag </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtener estado del flag de start of transfer. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a consultar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5fcb038406b422dcc3c725c1c75d2cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fcb038406b422dcc3c725c1c75d2cd9">&#9670;&nbsp;</a></span>SPI_write_txdata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_write_txdata </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Escribir registro de datos de transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a escribir </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Dato a escribir </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8c993be947e658cf703bac770be82c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c993be947e658cf703bac770be82c9d">&#9670;&nbsp;</a></span>SPI_select_slave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_select_slave </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Habilitar slave select para la proxima transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Canal a utilizar en la proxima transmision </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a589229cde66e898378aa1ff4232bba88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a589229cde66e898378aa1ff4232bba88">&#9670;&nbsp;</a></span>SPI_set_end_of_transmission()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_end_of_transmission </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicar fin de transmision en la proxima transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad4be5d6c6f7b2d0bef4bb779aeca4658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4be5d6c6f7b2d0bef4bb779aeca4658">&#9670;&nbsp;</a></span>SPI_clear_end_of_transmission()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_clear_end_of_transmission </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Limpiar fin de transmision en la proxima transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a428630c9a5861df7bbf4f48a118ae85b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428630c9a5861df7bbf4f48a118ae85b">&#9670;&nbsp;</a></span>SPI_set_end_of_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_end_of_frame </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicar fin de trama en la proxima transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5ac9cf28068ff5efff5cd0d0f118d842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac9cf28068ff5efff5cd0d0f118d842">&#9670;&nbsp;</a></span>SPI_clear_end_of_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_clear_end_of_frame </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Limpiar fin de trama en la proxima transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae7d463bf945b98eb728350a82317edcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d463bf945b98eb728350a82317edcc">&#9670;&nbsp;</a></span>SPI_set_rx_ignore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_rx_ignore </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ignorar recepcion en la proxima transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a760e2d2006757580d486d2c51462077e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760e2d2006757580d486d2c51462077e">&#9670;&nbsp;</a></span>SPI_clear_rx_ignore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_clear_rx_ignore </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No ignorar recepcino en la proxima transmision. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a943b0094c742d4c491ffce075d8dce59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a943b0094c742d4c491ffce075d8dce59">&#9670;&nbsp;</a></span>SPI_set_data_length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_data_length </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SPI_data_length_en&#160;</td>
+          <td class="paramname"><em>data_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar largo de bits de palabra. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_length</td><td>Largo de palabra deseado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0622d0a1000a43e328e6abf227bfa7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0622d0a1000a43e328e6abf227bfa7e8">&#9670;&nbsp;</a></span>SPI_set_data_and_control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_data_and_control </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d98/HRI__SPI_8h.html#dc/df1/structSPI__TXDATCTL__reg__t">SPI_TXDATCTL_reg_t</a> *&#160;</td>
+          <td class="paramname"><em>data_and_control</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Escribir data a transmitir y control al mismo tiempo (en una unica escritura) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a utilizar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_and_control</td><td>Dato a transmitir y control </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8c444a7990eb7b158ea2bdeb4172e37f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c444a7990eb7b158ea2bdeb4172e37f">&#9670;&nbsp;</a></span>SPI_set_clock_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SPI_set_clock_div </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>div</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configurar divisor de clock. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a configurar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">div</td><td>Divisor deseado (el valor efectivo es este valor +1) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab580bc0f38853eb701ffd155d0aef866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab580bc0f38853eb701ffd155d0aef866">&#9670;&nbsp;</a></span>SPI_get_irq_flag_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t SPI_get_irq_flag_status </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SPI_irq_sel_en&#160;</td>
+          <td class="paramname"><em>irq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Leer flag de interrupcion actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Instancia a consultar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">irq</td><td>Flag de interrupcion a consultar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

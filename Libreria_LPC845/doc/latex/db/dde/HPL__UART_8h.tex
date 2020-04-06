@@ -1,0 +1,1729 @@
+\hypertarget{HPL__UART_8h}{}\section{Referencia del Archivo includes/hpl/\+H\+P\+L\+\_\+\+U\+A\+RT.h}
+\label{HPL__UART_8h}\index{includes/hpl/\+H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{includes/hpl/\+H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+
+
+Declaraciones a nivel de abstraccion de periferico del U\+A\+RT (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$H\+R\+I\+\_\+\+U\+A\+R\+T.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+P\+L\+\_\+\+U\+A\+R\+T.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{d7/d0a/HPL__UART_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{d7/df7/HPL__UART_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_a796c05fb38e1c73458deaff345ed3294}\label{HPL__UART_8h_a796c05fb38e1c73458deaff345ed3294}} 
+enum {\bfseries U\+A\+R\+T\+\_\+datalen\+\_\+en} \{ {\bfseries U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+L\+E\+N\+\_\+7\+B\+IT} = 0, 
+{\bfseries U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+L\+E\+N\+\_\+8\+B\+IT}, 
+{\bfseries U\+A\+R\+T\+\_\+\+D\+A\+T\+A\+L\+E\+N\+\_\+9\+B\+IT}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_af31911af6cc0f77ca0d0bc77f823f080}\label{HPL__UART_8h_af31911af6cc0f77ca0d0bc77f823f080}} 
+enum {\bfseries U\+A\+R\+T\+\_\+parity\+\_\+en} \{ {\bfseries U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+\_\+\+P\+A\+R\+I\+TY} = 0, 
+{\bfseries U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN} = 2, 
+{\bfseries U\+A\+R\+T\+\_\+\+P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_abf8b1e01f04bb13ce8decef53ae5d669}\label{HPL__UART_8h_abf8b1e01f04bb13ce8decef53ae5d669}} 
+enum {\bfseries U\+A\+R\+T\+\_\+stoplen\+\_\+en} \{ {\bfseries U\+A\+R\+T\+\_\+\+S\+T\+O\+P\+L\+E\+N\+\_\+1\+B\+IT} = 0, 
+{\bfseries U\+A\+R\+T\+\_\+\+S\+T\+O\+P\+L\+E\+N\+\_\+2\+B\+IT}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_a00ea95868d60656eb21690289c4fe44d}\label{HPL__UART_8h_a00ea95868d60656eb21690289c4fe44d}} 
+enum {\bfseries U\+A\+R\+T\+\_\+sync\+\_\+mode\+\_\+en} \{ {\bfseries U\+A\+R\+T\+\_\+\+S\+Y\+N\+C\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US} = 0, 
+{\bfseries U\+A\+R\+T\+\_\+\+S\+Y\+N\+C\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_ae1947884a2ac95c00385389f6519663a}\label{HPL__UART_8h_ae1947884a2ac95c00385389f6519663a}} 
+enum {\bfseries U\+A\+R\+T\+\_\+polarity\+\_\+en} \{ {\bfseries U\+A\+R\+T\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+E\+D\+GE} = 0, 
+{\bfseries U\+A\+R\+T\+\_\+\+P\+O\+L\+A\+R\+I\+T\+Y\+\_\+\+R\+I\+S\+I\+N\+G\+\_\+\+E\+D\+GE}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_a67f36818f500257e1ecff7ea64269ac0}\label{HPL__UART_8h_a67f36818f500257e1ecff7ea64269ac0}} 
+enum {\bfseries U\+A\+R\+T\+\_\+master\+\_\+mode\+\_\+en} \{ {\bfseries U\+A\+R\+T\+\_\+\+M\+A\+S\+T\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+S\+L\+A\+VE} = 0, 
+{\bfseries U\+A\+R\+T\+\_\+\+M\+A\+S\+T\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+S\+T\+ER}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_a47eb66b5f65368bec4815a519945ce9e}\label{HPL__UART_8h_a47eb66b5f65368bec4815a519945ce9e}} 
+enum {\bfseries U\+A\+R\+T\+\_\+output\+\_\+enable\+\_\+pol\+\_\+en} \{ {\bfseries U\+A\+R\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+L\+\_\+\+L\+OW} = 0, 
+{\bfseries U\+A\+R\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+P\+O\+L\+\_\+\+H\+I\+GH}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{HPL__UART_8h_a60ea94ef1f8c4a475a418097f6528e38}{U\+A\+R\+T\+\_\+enable} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitacion de una instancia de U\+A\+RT. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a72c244f57c47439a84c702a30292c93f}{U\+A\+R\+T\+\_\+disable} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitacion de una instancia de U\+A\+RT. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a2d7e997555b8337f4151b8235c254577}{U\+A\+R\+T\+\_\+config\+\_\+data\+\_\+length} (uint8\+\_\+t inst, U\+A\+R\+T\+\_\+datalen\+\_\+en datalen)
+\begin{DoxyCompactList}\small\item\em Configurar largo de palabra. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ac31adf47beb1a678de3be456e1785760}{U\+A\+R\+T\+\_\+config\+\_\+parity} (uint8\+\_\+t inst, U\+A\+R\+T\+\_\+parity\+\_\+en parity)
+\begin{DoxyCompactList}\small\item\em Configurar paridad. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a6fa54c7ccf56777a48cc59183ff565d5}{U\+A\+R\+T\+\_\+config\+\_\+stop\+\_\+bits} (uint8\+\_\+t inst, U\+A\+R\+T\+\_\+stoplen\+\_\+en stop\+\_\+bits)
+\begin{DoxyCompactList}\small\item\em Configurar bits de stop. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_adb843edc38133a61cb63a2a1e009bded}{U\+A\+R\+T\+\_\+enable\+\_\+\+C\+TS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar C\+TS. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_afa863bf06c40708f540ea49cb7f7b22d}{U\+A\+R\+T\+\_\+disable\+\_\+\+C\+TS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar C\+TS. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a1eda22d7fd9ed8dd6998b36df6feeddd}{U\+A\+R\+T\+\_\+config\+\_\+sync\+\_\+mode} (uint8\+\_\+t inst, U\+A\+R\+T\+\_\+sync\+\_\+mode\+\_\+en sync\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo asincronico/sincronico. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a276b09e2c0c47d528632d5d066c16f81}{U\+A\+R\+T\+\_\+config\+\_\+clock\+\_\+polarity} (uint8\+\_\+t inst, U\+A\+R\+T\+\_\+polarity\+\_\+en polarity)
+\begin{DoxyCompactList}\small\item\em Configurar polaridad de clock y sampleo (modo sincronico) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ab7298ad9cba89f80ace8f1efaf8638c0}{U\+A\+R\+T\+\_\+config\+\_\+master\+\_\+mode} (uint8\+\_\+t inst, U\+A\+R\+T\+\_\+master\+\_\+mode\+\_\+en master\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo master o slave (modo sincronico) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a074d4aed5edf289e806f1d88218a6c97}{U\+A\+R\+T\+\_\+enable\+\_\+loopback} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar modo loopback. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a55b6baffa18acf57f050f5122b4d3ec2}{U\+A\+R\+T\+\_\+disable\+\_\+loopback} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar modo loopback. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a548d1856efd63c3e493069a9e4701d47}{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+TA} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar turnarround para R\+S-\/485. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a637f0fb6faec69ccc182d942b05c30ad}{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+TA} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar turnarround para R\+S-\/485. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ae3dee14d1e520e43be355033de4cd0be}{U\+A\+R\+T\+\_\+enable\+\_\+auto\+\_\+address} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar auto address. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_acb34ed3229bac5bf72f6452c04aa9301}{U\+A\+R\+T\+\_\+disable\+\_\+auto\+\_\+address} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar auto address. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_afb72dd7691b2a459b0d7b04a56c00959}{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+S\+EL} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar output enable para R\+S-\/485. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a6e7e8fc43b14a824aa74330e3f7d5644}{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+S\+EL} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar output enable para R\+S-\/485. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a65e6f135a4b97e50b0cb1976e2cd7b99}{U\+A\+R\+T\+\_\+config\+\_\+\+O\+E\+P\+OL} (uint8\+\_\+t inst, U\+A\+R\+T\+\_\+output\+\_\+enable\+\_\+pol\+\_\+en polarity)
+\begin{DoxyCompactList}\small\item\em Configurar polaridad de output enable para R\+S-\/485. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ac564909bc62813cb8c5ce7047e47233c}{U\+A\+R\+T\+\_\+enable\+\_\+rx\+\_\+invert} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar inversion para recepcion. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ae2d3ae09cd93cb1aa7fa5be2075d81fc}{U\+A\+R\+T\+\_\+disable\+\_\+rx\+\_\+invert} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar inversion para recepcion. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a9dd6130897c185d6813b39770dab0cfc}{U\+A\+R\+T\+\_\+enable\+\_\+tx\+\_\+invert} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar inversion para transmision. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_adbf8a9a5a097982005d6a221c59bc03c}{U\+A\+R\+T\+\_\+disable\+\_\+tx\+\_\+invert} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar inversion para transmision. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ad5a36015d19bd584ae2c2587982678f1}{U\+A\+R\+T\+\_\+assert\+\_\+break} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Fijar condicion de break. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ae3f57ed487940cb7f2c74b4a34ab211d}{U\+A\+R\+T\+\_\+clear\+\_\+break} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Liberar condicion de break. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ac7a6e6eb689fae8623e6109680aca536}{U\+A\+R\+T\+\_\+enable\+\_\+address\+\_\+detect} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar address detect. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_aad773171f754d67d8d9350c6b4e694f1}{U\+A\+R\+T\+\_\+disable\+\_\+address\+\_\+detect} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar address detect. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ae15f63c660e1407beb29a5e64eedec3d}{U\+A\+R\+T\+\_\+enable\+\_\+tx} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar TX. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a94332836c25e47f1f6c66a071ea89eb3}{U\+A\+R\+T\+\_\+disable\+\_\+tx} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar TX. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a9f7bf416557ea8535f1b86be4c9a90ab}{U\+A\+R\+T\+\_\+enable\+\_\+continuous\+\_\+clock} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar clock continuo (modo sincronico) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a87535fbfe7b615fdd11abf97eaee25b0}{U\+A\+R\+T\+\_\+disable\+\_\+continuous\+\_\+clock} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar clock continuo (modo sincronico) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ad224663ac383705b17404c7534f4eb21}{U\+A\+R\+T\+\_\+enable\+\_\+autoclear\+\_\+continuous\+\_\+clock} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar parada de clock continuo en rx (modo sincronico) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a21eb263d3bb058110b51a328d32fa7f4}{U\+A\+R\+T\+\_\+disable\+\_\+autoclear\+\_\+continuous\+\_\+clock} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar parada de clock continuo en rx (modo sincronico) \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ab3a476bab8e409c5439561f8cfca18e2}{U\+A\+R\+T\+\_\+enable\+\_\+autobaud} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar auto baud. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_acea2f97a90e42be62c13acfb7856dbdb}{U\+A\+R\+T\+\_\+disable\+\_\+autobaud} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar auto baud. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a0a38c27e4a13dcda5b2eb622f1ed4d12}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag R\+X\+R\+DY. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a4f46deb412f7fae130b02c7acf7d162b}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+I\+D\+LE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag R\+X\+I\+D\+LE. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a5f09c10879826cb24491c3a56b6f1343}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag T\+X\+R\+DY. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_aacdaec4d94056b1cb9b8e3b7e84f23b1}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+I\+D\+LE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag T\+X\+I\+D\+LE. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a6d3ca2cdb52af41a26a3cf850c70a6f0}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+C\+TS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag C\+TS. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_ae193da68f5c6b217e32154d0b45e5890}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+C\+TS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag D\+E\+L\+T\+A\+C\+TS. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a9ec2b6662644f148bfbdf9df756d0f6b}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+D\+I\+S\+S\+T\+AT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag T\+X\+D\+I\+S\+S\+T\+AT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a9ad9e427fae4bdb2fe941dfc124b6e8a}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+O\+V\+E\+R\+R\+U\+N\+I\+NT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag O\+V\+E\+R\+R\+U\+N\+I\+NT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a697da0aadb5ce6302b62cf42c78e9255}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+B\+RK} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag R\+X\+B\+RK. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_acd172e5c2d232bea23b54fb83f2914a4}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag D\+E\+L\+T\+A\+R\+X\+B\+RK. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a35770371558656e90fc7d690a8c80d21}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+S\+T\+A\+RT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag S\+T\+A\+RT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a87c9594a7c91a613866c5e272a2ac7e8}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+F\+R\+A\+M\+E\+R\+R\+I\+NT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag F\+R\+A\+M\+E\+R\+R\+I\+NT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_acc85a693c44206da0ece7d84f61ac30e}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_aa6a04ee658410cf5e7b403d0d8b8d0e8}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+N\+O\+I\+S\+E\+I\+NT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag R\+X\+N\+O\+I\+S\+E\+I\+NT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a3cac097e3d45e71f1382b779dd7380b5}{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+A\+B\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener estado del flag A\+B\+E\+RR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_acaf2fb6f698b7a2aa0bb3089abf5c5b2}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en R\+X\+R\+DY. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a67e5daacc12049c9f8858ec496d56e7d}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en T\+X\+R\+DY. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a0a020f19367635f769367e2e03054fa9}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en T\+X\+I\+D\+LE. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a4eb7d60bfb13475fe2ddc736c5e8eb93}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en D\+E\+L\+T\+A\+C\+TS. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a3c32cbec74dd3b49e3b283a042bc3c57}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en T\+X\+D\+I\+S\+EN. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_acdfb93dfbd2fdd98b1a03880e3519990}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en O\+V\+E\+R\+R\+UN. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a228fbb5b2cd0c3b0836c4a9e101affde}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en D\+E\+L\+T\+A\+R\+X\+B\+RK. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ade5ba836ca877be89d8af0ad5684e499}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+S\+T\+A\+RT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en S\+T\+A\+RT. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a2d53f0e1923c10f35458ea8c32cfaa4e}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en F\+R\+A\+M\+E\+RR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a5603d503ae0ef7fa27b016e294401465}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en P\+A\+R\+I\+T\+Y\+E\+RR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a2377f7e2df1e973d9441acf50b015a31}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en R\+X\+N\+O\+I\+SE. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a99d0d03a351b4f05ee0e93b850f6b974}{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+A\+B\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Habilitar interrupcion en A\+B\+E\+RR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a2b358777e3b434033a3fe447b160c411}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en R\+X\+R\+DY. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_af136cef6f38e8af29d7d349b2ec72e71}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en T\+X\+R\+DY. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a17ba4a9aaff58a861ad375bceae71e03}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en T\+X\+I\+D\+LE. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ae2eb40bf7d569775009910027d2491fa}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en D\+E\+L\+T\+A\+C\+TS. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ac05f4d358072b91ff81a1f67513249a9}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en T\+X\+D\+I\+S\+EN. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a6314da1442f723439c826725416f27a4}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en O\+V\+E\+R\+R\+UN. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_aa4e50763aa7189b3b0473d36133c7db6}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en D\+E\+L\+T\+A\+R\+X\+B\+RK. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a01cc1afc55838004598dd2ef0fbc0d5c}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+S\+T\+A\+RT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en S\+T\+A\+RT. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a676103e9aed934b996a593a007e2a543}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en F\+R\+A\+M\+E\+RR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_abcb8a735673c194220f6b66c756b9846}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en P\+A\+R\+I\+T\+Y\+E\+RR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a4cb0d65fe92e6a6b9055033cdfc9b648}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en R\+X\+N\+O\+I\+SE. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_abe6ff5d5d7a4ad1206248149127289db}{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+A\+B\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Inhabilitar interrupcion en A\+B\+E\+RR. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__UART_8h_aca610990416a62cbc224695315a5b111}{U\+A\+R\+T\+\_\+get\+\_\+data} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Obtener ultimo dato recibido. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__UART_8h_aff70e482771caa020f5185a474fb02ad}{U\+A\+R\+T\+\_\+get\+\_\+data\+\_\+and\+\_\+status} (uint8\+\_\+t inst, uint8\+\_\+t $\ast$frame, uint8\+\_\+t $\ast$parity, uint8\+\_\+t $\ast$noise)
+\begin{DoxyCompactList}\small\item\em Obtener ultimo dato recibido con flags de errores. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a860beffc582ca97a3436cc4e71ed4cf1}{U\+A\+R\+T\+\_\+write\+\_\+data} (uint8\+\_\+t inst, uint32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Iniciar transmision de dato. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_a2f70265e004dc16b9e60bc1f4404ecb7}{U\+A\+R\+T\+\_\+set\+\_\+\+B\+R\+G\+V\+AL} (uint8\+\_\+t inst, uint32\+\_\+t brg)
+\begin{DoxyCompactList}\small\item\em Escribir el registro B\+RG. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_af20adfc399c7f3607c66a2cdc0f0f9cb}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion R\+X\+R\+DY. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a1133be5dcdeb1081b50b28ec9cb5ec40}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+R\+DY} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion T\+X\+R\+DY. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_af9f6f58eb87af4b7101607c822b87fc7}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+I\+D\+LE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion T\+X\+I\+D\+LE. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a373007b027ca96327a167a36585a5fdd}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+C\+TS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion D\+E\+L\+T\+A\+C\+TS. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a6bbe318c47b32f5861666ce22cadf799}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+D\+IS} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion T\+X\+D\+IS. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a6d1f0e29cc19dfd833463f99a9247cbf}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+O\+V\+E\+R\+R\+UN} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion O\+V\+E\+R\+R\+UN. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a3a9c6d5de186621cf5d77d61519e7145}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion D\+E\+L\+T\+A\+R\+X\+B\+RK. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_ac6e104a1262d6b0452403867213e7e31}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+S\+T\+A\+RT} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion S\+T\+A\+RT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_afa64fb61c9624838cd22f3383e871e2a}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+F\+R\+A\+M\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion F\+R\+A\+M\+E\+RR. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a32ed88657d025cf96dc84e143fcf077e}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion P\+A\+R\+I\+T\+Y\+E\+RR. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_af42499a6d4aa15755e974dd90f13824f}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+N\+O\+I\+SE} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion R\+X\+N\+O\+I\+SE. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__UART_8h_a6eac4ebec02e0b4c1c341ff977c42c12}{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+A\+B\+E\+RR} (uint8\+\_\+t inst)
+\begin{DoxyCompactList}\small\item\em Leer estado de interrupcion A\+B\+E\+RR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_aa74ab5994d8b5a31839e04e69f5e1cc5}{U\+A\+R\+T\+\_\+set\+\_\+\+O\+S\+R\+V\+AL} (uint8\+\_\+t inst, uint32\+\_\+t osr)
+\begin{DoxyCompactList}\small\item\em Escribir el registro O\+SR. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__UART_8h_ab24db414c0cba6540342e97f22eeb92f}{U\+A\+R\+T\+\_\+set\+\_\+address} (uint8\+\_\+t inst, uint32\+\_\+t addr)
+\begin{DoxyCompactList}\small\item\em Escribir el registro A\+D\+DR. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__UART_8h_addecdf0d8e3b43536541bb22fffb8dbe}\label{HPL__UART_8h_addecdf0d8e3b43536541bb22fffb8dbe}} 
+volatile \hyperlink{HRI__UART_8h_d0/d1a/structUART__per__t}{U\+A\+R\+T\+\_\+per\+\_\+t} $\ast$const \hyperlink{HPL__UART_8h_addecdf0d8e3b43536541bb22fffb8dbe}{U\+A\+RT} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Perifericos U\+S\+A\+RT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de abstraccion de periferico del U\+A\+RT (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HPL__UART_8h_a60ea94ef1f8c4a475a418097f6528e38}\label{HPL__UART_8h_a60ea94ef1f8c4a475a418097f6528e38}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable@{U\+A\+R\+T\+\_\+enable}}
+\index{U\+A\+R\+T\+\_\+enable@{U\+A\+R\+T\+\_\+enable}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable()}{UART\_enable()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitacion de una instancia de U\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a habilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a72c244f57c47439a84c702a30292c93f}\label{HPL__UART_8h_a72c244f57c47439a84c702a30292c93f}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable@{U\+A\+R\+T\+\_\+disable}}
+\index{U\+A\+R\+T\+\_\+disable@{U\+A\+R\+T\+\_\+disable}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable()}{UART\_disable()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitacion de una instancia de U\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a inhabilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a2d7e997555b8337f4151b8235c254577}\label{HPL__UART_8h_a2d7e997555b8337f4151b8235c254577}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+config\+\_\+data\+\_\+length@{U\+A\+R\+T\+\_\+config\+\_\+data\+\_\+length}}
+\index{U\+A\+R\+T\+\_\+config\+\_\+data\+\_\+length@{U\+A\+R\+T\+\_\+config\+\_\+data\+\_\+length}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+config\+\_\+data\+\_\+length()}{UART\_config\_data\_length()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+config\+\_\+data\+\_\+length (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{U\+A\+R\+T\+\_\+datalen\+\_\+en}]{datalen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar largo de palabra. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em datalen} & Seleccion de largo de palabra deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ac31adf47beb1a678de3be456e1785760}\label{HPL__UART_8h_ac31adf47beb1a678de3be456e1785760}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+config\+\_\+parity@{U\+A\+R\+T\+\_\+config\+\_\+parity}}
+\index{U\+A\+R\+T\+\_\+config\+\_\+parity@{U\+A\+R\+T\+\_\+config\+\_\+parity}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+config\+\_\+parity()}{UART\_config\_parity()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+config\+\_\+parity (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{U\+A\+R\+T\+\_\+parity\+\_\+en}]{parity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar paridad. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em parity} & Seleccion de paridad deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a6fa54c7ccf56777a48cc59183ff565d5}\label{HPL__UART_8h_a6fa54c7ccf56777a48cc59183ff565d5}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+config\+\_\+stop\+\_\+bits@{U\+A\+R\+T\+\_\+config\+\_\+stop\+\_\+bits}}
+\index{U\+A\+R\+T\+\_\+config\+\_\+stop\+\_\+bits@{U\+A\+R\+T\+\_\+config\+\_\+stop\+\_\+bits}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+config\+\_\+stop\+\_\+bits()}{UART\_config\_stop\_bits()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+config\+\_\+stop\+\_\+bits (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{U\+A\+R\+T\+\_\+stoplen\+\_\+en}]{stop\+\_\+bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar bits de stop. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em stop\+\_\+bits} & Seleccion de bits de stop deseados \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_adb843edc38133a61cb63a2a1e009bded}\label{HPL__UART_8h_adb843edc38133a61cb63a2a1e009bded}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+\+C\+TS@{U\+A\+R\+T\+\_\+enable\+\_\+\+C\+TS}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+\+C\+TS@{U\+A\+R\+T\+\_\+enable\+\_\+\+C\+TS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+\+C\+T\+S()}{UART\_enable\_CTS()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+\+C\+TS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar C\+TS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a habilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_afa863bf06c40708f540ea49cb7f7b22d}\label{HPL__UART_8h_afa863bf06c40708f540ea49cb7f7b22d}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+\+C\+TS@{U\+A\+R\+T\+\_\+disable\+\_\+\+C\+TS}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+\+C\+TS@{U\+A\+R\+T\+\_\+disable\+\_\+\+C\+TS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+\+C\+T\+S()}{UART\_disable\_CTS()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+\+C\+TS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar C\+TS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a inhabilitar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a1eda22d7fd9ed8dd6998b36df6feeddd}\label{HPL__UART_8h_a1eda22d7fd9ed8dd6998b36df6feeddd}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+config\+\_\+sync\+\_\+mode@{U\+A\+R\+T\+\_\+config\+\_\+sync\+\_\+mode}}
+\index{U\+A\+R\+T\+\_\+config\+\_\+sync\+\_\+mode@{U\+A\+R\+T\+\_\+config\+\_\+sync\+\_\+mode}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+config\+\_\+sync\+\_\+mode()}{UART\_config\_sync\_mode()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+config\+\_\+sync\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{U\+A\+R\+T\+\_\+sync\+\_\+mode\+\_\+en}]{sync\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo asincronico/sincronico. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em sync\+\_\+mode} & Modo desesado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a276b09e2c0c47d528632d5d066c16f81}\label{HPL__UART_8h_a276b09e2c0c47d528632d5d066c16f81}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+config\+\_\+clock\+\_\+polarity@{U\+A\+R\+T\+\_\+config\+\_\+clock\+\_\+polarity}}
+\index{U\+A\+R\+T\+\_\+config\+\_\+clock\+\_\+polarity@{U\+A\+R\+T\+\_\+config\+\_\+clock\+\_\+polarity}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+config\+\_\+clock\+\_\+polarity()}{UART\_config\_clock\_polarity()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+config\+\_\+clock\+\_\+polarity (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{U\+A\+R\+T\+\_\+polarity\+\_\+en}]{polarity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar polaridad de clock y sampleo (modo sincronico) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em polarity} & Polaridad y sampleo desesado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ab7298ad9cba89f80ace8f1efaf8638c0}\label{HPL__UART_8h_ab7298ad9cba89f80ace8f1efaf8638c0}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+config\+\_\+master\+\_\+mode@{U\+A\+R\+T\+\_\+config\+\_\+master\+\_\+mode}}
+\index{U\+A\+R\+T\+\_\+config\+\_\+master\+\_\+mode@{U\+A\+R\+T\+\_\+config\+\_\+master\+\_\+mode}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+config\+\_\+master\+\_\+mode()}{UART\_config\_master\_mode()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+config\+\_\+master\+\_\+mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{U\+A\+R\+T\+\_\+master\+\_\+mode\+\_\+en}]{master\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo master o slave (modo sincronico) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em master\+\_\+mode} & Modo deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a074d4aed5edf289e806f1d88218a6c97}\label{HPL__UART_8h_a074d4aed5edf289e806f1d88218a6c97}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+loopback@{U\+A\+R\+T\+\_\+enable\+\_\+loopback}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+loopback@{U\+A\+R\+T\+\_\+enable\+\_\+loopback}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+loopback()}{UART\_enable\_loopback()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+loopback (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar modo loopback. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a55b6baffa18acf57f050f5122b4d3ec2}\label{HPL__UART_8h_a55b6baffa18acf57f050f5122b4d3ec2}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+loopback@{U\+A\+R\+T\+\_\+disable\+\_\+loopback}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+loopback@{U\+A\+R\+T\+\_\+disable\+\_\+loopback}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+loopback()}{UART\_disable\_loopback()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+loopback (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar modo loopback. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a548d1856efd63c3e493069a9e4701d47}\label{HPL__UART_8h_a548d1856efd63c3e493069a9e4701d47}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+TA@{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+TA}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+TA@{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+TA}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+T\+A()}{UART\_enable\_OETA()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+TA (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar turnarround para R\+S-\/485. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a637f0fb6faec69ccc182d942b05c30ad}\label{HPL__UART_8h_a637f0fb6faec69ccc182d942b05c30ad}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+TA@{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+TA}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+TA@{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+TA}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+T\+A()}{UART\_disable\_OETA()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+TA (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar turnarround para R\+S-\/485. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ae3dee14d1e520e43be355033de4cd0be}\label{HPL__UART_8h_ae3dee14d1e520e43be355033de4cd0be}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+auto\+\_\+address@{U\+A\+R\+T\+\_\+enable\+\_\+auto\+\_\+address}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+auto\+\_\+address@{U\+A\+R\+T\+\_\+enable\+\_\+auto\+\_\+address}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+auto\+\_\+address()}{UART\_enable\_auto\_address()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+auto\+\_\+address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar auto address. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_acb34ed3229bac5bf72f6452c04aa9301}\label{HPL__UART_8h_acb34ed3229bac5bf72f6452c04aa9301}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+auto\+\_\+address@{U\+A\+R\+T\+\_\+disable\+\_\+auto\+\_\+address}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+auto\+\_\+address@{U\+A\+R\+T\+\_\+disable\+\_\+auto\+\_\+address}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+auto\+\_\+address()}{UART\_disable\_auto\_address()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+auto\+\_\+address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar auto address. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_afb72dd7691b2a459b0d7b04a56c00959}\label{HPL__UART_8h_afb72dd7691b2a459b0d7b04a56c00959}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+S\+EL@{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+S\+EL}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+S\+EL@{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+S\+EL}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+S\+E\+L()}{UART\_enable\_OESEL()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+\+O\+E\+S\+EL (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar output enable para R\+S-\/485. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a6e7e8fc43b14a824aa74330e3f7d5644}\label{HPL__UART_8h_a6e7e8fc43b14a824aa74330e3f7d5644}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+S\+EL@{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+S\+EL}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+S\+EL@{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+S\+EL}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+S\+E\+L()}{UART\_disable\_OESEL()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+\+O\+E\+S\+EL (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar output enable para R\+S-\/485. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a65e6f135a4b97e50b0cb1976e2cd7b99}\label{HPL__UART_8h_a65e6f135a4b97e50b0cb1976e2cd7b99}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+config\+\_\+\+O\+E\+P\+OL@{U\+A\+R\+T\+\_\+config\+\_\+\+O\+E\+P\+OL}}
+\index{U\+A\+R\+T\+\_\+config\+\_\+\+O\+E\+P\+OL@{U\+A\+R\+T\+\_\+config\+\_\+\+O\+E\+P\+OL}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+config\+\_\+\+O\+E\+P\+O\+L()}{UART\_config\_OEPOL()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+config\+\_\+\+O\+E\+P\+OL (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{U\+A\+R\+T\+\_\+output\+\_\+enable\+\_\+pol\+\_\+en}]{polarity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar polaridad de output enable para R\+S-\/485. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ac564909bc62813cb8c5ce7047e47233c}\label{HPL__UART_8h_ac564909bc62813cb8c5ce7047e47233c}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+rx\+\_\+invert@{U\+A\+R\+T\+\_\+enable\+\_\+rx\+\_\+invert}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+rx\+\_\+invert@{U\+A\+R\+T\+\_\+enable\+\_\+rx\+\_\+invert}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+rx\+\_\+invert()}{UART\_enable\_rx\_invert()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+rx\+\_\+invert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar inversion para recepcion. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ae2d3ae09cd93cb1aa7fa5be2075d81fc}\label{HPL__UART_8h_ae2d3ae09cd93cb1aa7fa5be2075d81fc}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+rx\+\_\+invert@{U\+A\+R\+T\+\_\+disable\+\_\+rx\+\_\+invert}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+rx\+\_\+invert@{U\+A\+R\+T\+\_\+disable\+\_\+rx\+\_\+invert}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+rx\+\_\+invert()}{UART\_disable\_rx\_invert()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+rx\+\_\+invert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar inversion para recepcion. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a9dd6130897c185d6813b39770dab0cfc}\label{HPL__UART_8h_a9dd6130897c185d6813b39770dab0cfc}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+tx\+\_\+invert@{U\+A\+R\+T\+\_\+enable\+\_\+tx\+\_\+invert}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+tx\+\_\+invert@{U\+A\+R\+T\+\_\+enable\+\_\+tx\+\_\+invert}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+tx\+\_\+invert()}{UART\_enable\_tx\_invert()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+tx\+\_\+invert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar inversion para transmision. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_adbf8a9a5a097982005d6a221c59bc03c}\label{HPL__UART_8h_adbf8a9a5a097982005d6a221c59bc03c}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+tx\+\_\+invert@{U\+A\+R\+T\+\_\+disable\+\_\+tx\+\_\+invert}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+tx\+\_\+invert@{U\+A\+R\+T\+\_\+disable\+\_\+tx\+\_\+invert}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+tx\+\_\+invert()}{UART\_disable\_tx\_invert()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+tx\+\_\+invert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar inversion para transmision. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ad5a36015d19bd584ae2c2587982678f1}\label{HPL__UART_8h_ad5a36015d19bd584ae2c2587982678f1}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+assert\+\_\+break@{U\+A\+R\+T\+\_\+assert\+\_\+break}}
+\index{U\+A\+R\+T\+\_\+assert\+\_\+break@{U\+A\+R\+T\+\_\+assert\+\_\+break}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+assert\+\_\+break()}{UART\_assert\_break()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+assert\+\_\+break (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar condicion de break. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ae3f57ed487940cb7f2c74b4a34ab211d}\label{HPL__UART_8h_ae3f57ed487940cb7f2c74b4a34ab211d}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+clear\+\_\+break@{U\+A\+R\+T\+\_\+clear\+\_\+break}}
+\index{U\+A\+R\+T\+\_\+clear\+\_\+break@{U\+A\+R\+T\+\_\+clear\+\_\+break}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+clear\+\_\+break()}{UART\_clear\_break()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+clear\+\_\+break (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Liberar condicion de break. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ac7a6e6eb689fae8623e6109680aca536}\label{HPL__UART_8h_ac7a6e6eb689fae8623e6109680aca536}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+address\+\_\+detect@{U\+A\+R\+T\+\_\+enable\+\_\+address\+\_\+detect}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+address\+\_\+detect@{U\+A\+R\+T\+\_\+enable\+\_\+address\+\_\+detect}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+address\+\_\+detect()}{UART\_enable\_address\_detect()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+address\+\_\+detect (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar address detect. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_aad773171f754d67d8d9350c6b4e694f1}\label{HPL__UART_8h_aad773171f754d67d8d9350c6b4e694f1}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+address\+\_\+detect@{U\+A\+R\+T\+\_\+disable\+\_\+address\+\_\+detect}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+address\+\_\+detect@{U\+A\+R\+T\+\_\+disable\+\_\+address\+\_\+detect}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+address\+\_\+detect()}{UART\_disable\_address\_detect()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+address\+\_\+detect (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar address detect. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ae15f63c660e1407beb29a5e64eedec3d}\label{HPL__UART_8h_ae15f63c660e1407beb29a5e64eedec3d}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+tx@{U\+A\+R\+T\+\_\+enable\+\_\+tx}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+tx@{U\+A\+R\+T\+\_\+enable\+\_\+tx}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+tx()}{UART\_enable\_tx()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+tx (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar TX. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a94332836c25e47f1f6c66a071ea89eb3}\label{HPL__UART_8h_a94332836c25e47f1f6c66a071ea89eb3}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+tx@{U\+A\+R\+T\+\_\+disable\+\_\+tx}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+tx@{U\+A\+R\+T\+\_\+disable\+\_\+tx}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+tx()}{UART\_disable\_tx()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+tx (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar TX. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a9f7bf416557ea8535f1b86be4c9a90ab}\label{HPL__UART_8h_a9f7bf416557ea8535f1b86be4c9a90ab}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+enable\+\_\+continuous\+\_\+clock}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+enable\+\_\+continuous\+\_\+clock}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+continuous\+\_\+clock()}{UART\_enable\_continuous\_clock()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+continuous\+\_\+clock (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar clock continuo (modo sincronico) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a87535fbfe7b615fdd11abf97eaee25b0}\label{HPL__UART_8h_a87535fbfe7b615fdd11abf97eaee25b0}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+disable\+\_\+continuous\+\_\+clock}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+disable\+\_\+continuous\+\_\+clock}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+continuous\+\_\+clock()}{UART\_disable\_continuous\_clock()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+continuous\+\_\+clock (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar clock continuo (modo sincronico) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ad224663ac383705b17404c7534f4eb21}\label{HPL__UART_8h_ad224663ac383705b17404c7534f4eb21}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+autoclear\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+enable\+\_\+autoclear\+\_\+continuous\+\_\+clock}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+autoclear\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+enable\+\_\+autoclear\+\_\+continuous\+\_\+clock}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+autoclear\+\_\+continuous\+\_\+clock()}{UART\_enable\_autoclear\_continuous\_clock()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+autoclear\+\_\+continuous\+\_\+clock (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar parada de clock continuo en rx (modo sincronico) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a21eb263d3bb058110b51a328d32fa7f4}\label{HPL__UART_8h_a21eb263d3bb058110b51a328d32fa7f4}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+autoclear\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+disable\+\_\+autoclear\+\_\+continuous\+\_\+clock}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+autoclear\+\_\+continuous\+\_\+clock@{U\+A\+R\+T\+\_\+disable\+\_\+autoclear\+\_\+continuous\+\_\+clock}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+autoclear\+\_\+continuous\+\_\+clock()}{UART\_disable\_autoclear\_continuous\_clock()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+autoclear\+\_\+continuous\+\_\+clock (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar parada de clock continuo en rx (modo sincronico) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ab3a476bab8e409c5439561f8cfca18e2}\label{HPL__UART_8h_ab3a476bab8e409c5439561f8cfca18e2}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+autobaud@{U\+A\+R\+T\+\_\+enable\+\_\+autobaud}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+autobaud@{U\+A\+R\+T\+\_\+enable\+\_\+autobaud}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+autobaud()}{UART\_enable\_autobaud()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+autobaud (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar auto baud. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_acea2f97a90e42be62c13acfb7856dbdb}\label{HPL__UART_8h_acea2f97a90e42be62c13acfb7856dbdb}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+autobaud@{U\+A\+R\+T\+\_\+disable\+\_\+autobaud}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+autobaud@{U\+A\+R\+T\+\_\+disable\+\_\+autobaud}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+autobaud()}{UART\_disable\_autobaud()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+autobaud (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar auto baud. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a0a38c27e4a13dcda5b2eb622f1ed4d12}\label{HPL__UART_8h_a0a38c27e4a13dcda5b2eb622f1ed4d12}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+R\+D\+Y()}{UART\_get\_flag\_RXRDY()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag R\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a4f46deb412f7fae130b02c7acf7d162b}\label{HPL__UART_8h_a4f46deb412f7fae130b02c7acf7d162b}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+I\+D\+LE}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+I\+D\+LE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+I\+D\+L\+E()}{UART\_get\_flag\_RXIDLE()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+I\+D\+LE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag R\+X\+I\+D\+LE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a5f09c10879826cb24491c3a56b6f1343}\label{HPL__UART_8h_a5f09c10879826cb24491c3a56b6f1343}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+R\+D\+Y()}{UART\_get\_flag\_TXRDY()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag T\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_aacdaec4d94056b1cb9b8e3b7e84f23b1}\label{HPL__UART_8h_aacdaec4d94056b1cb9b8e3b7e84f23b1}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+I\+D\+LE}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+I\+D\+LE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+I\+D\+L\+E()}{UART\_get\_flag\_TXIDLE()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+I\+D\+LE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag T\+X\+I\+D\+LE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a6d3ca2cdb52af41a26a3cf850c70a6f0}\label{HPL__UART_8h_a6d3ca2cdb52af41a26a3cf850c70a6f0}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+C\+TS@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+C\+TS}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+C\+TS@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+C\+TS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+C\+T\+S()}{UART\_get\_flag\_CTS()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+C\+TS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag C\+TS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_ae193da68f5c6b217e32154d0b45e5890}\label{HPL__UART_8h_ae193da68f5c6b217e32154d0b45e5890}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+C\+TS}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+C\+TS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+C\+T\+S()}{UART\_get\_flag\_DELTACTS()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+C\+TS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag D\+E\+L\+T\+A\+C\+TS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a9ec2b6662644f148bfbdf9df756d0f6b}\label{HPL__UART_8h_a9ec2b6662644f148bfbdf9df756d0f6b}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+D\+I\+S\+S\+T\+AT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+D\+I\+S\+S\+T\+AT}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+D\+I\+S\+S\+T\+AT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+D\+I\+S\+S\+T\+AT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+D\+I\+S\+S\+T\+A\+T()}{UART\_get\_flag\_TXDISSTAT()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+T\+X\+D\+I\+S\+S\+T\+AT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag T\+X\+D\+I\+S\+S\+T\+AT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a9ad9e427fae4bdb2fe941dfc124b6e8a}\label{HPL__UART_8h_a9ad9e427fae4bdb2fe941dfc124b6e8a}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+O\+V\+E\+R\+R\+U\+N\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+O\+V\+E\+R\+R\+U\+N\+I\+NT}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+O\+V\+E\+R\+R\+U\+N\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+O\+V\+E\+R\+R\+U\+N\+I\+NT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+O\+V\+E\+R\+R\+U\+N\+I\+N\+T()}{UART\_get\_flag\_OVERRUNINT()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+O\+V\+E\+R\+R\+U\+N\+I\+NT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag O\+V\+E\+R\+R\+U\+N\+I\+NT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a697da0aadb5ce6302b62cf42c78e9255}\label{HPL__UART_8h_a697da0aadb5ce6302b62cf42c78e9255}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+B\+RK}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+B\+RK}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+B\+R\+K()}{UART\_get\_flag\_RXBRK()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+B\+RK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag R\+X\+B\+RK. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_acd172e5c2d232bea23b54fb83f2914a4}\label{HPL__UART_8h_acd172e5c2d232bea23b54fb83f2914a4}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+R\+K()}{UART\_get\_flag\_DELTARXBRK()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag D\+E\+L\+T\+A\+R\+X\+B\+RK. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a35770371558656e90fc7d690a8c80d21}\label{HPL__UART_8h_a35770371558656e90fc7d690a8c80d21}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+S\+T\+A\+RT}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+S\+T\+A\+RT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+S\+T\+A\+R\+T()}{UART\_get\_flag\_START()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+S\+T\+A\+RT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag S\+T\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a87c9594a7c91a613866c5e272a2ac7e8}\label{HPL__UART_8h_a87c9594a7c91a613866c5e272a2ac7e8}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+F\+R\+A\+M\+E\+R\+R\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+F\+R\+A\+M\+E\+R\+R\+I\+NT}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+F\+R\+A\+M\+E\+R\+R\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+F\+R\+A\+M\+E\+R\+R\+I\+NT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+F\+R\+A\+M\+E\+R\+R\+I\+N\+T()}{UART\_get\_flag\_FRAMERRINT()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+F\+R\+A\+M\+E\+R\+R\+I\+NT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag F\+R\+A\+M\+E\+R\+R\+I\+NT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_acc85a693c44206da0ece7d84f61ac30e}\label{HPL__UART_8h_acc85a693c44206da0ece7d84f61ac30e}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+N\+T()}{UART\_get\_flag\_PARITYERRINT()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag P\+A\+R\+I\+T\+Y\+E\+R\+R\+I\+NT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_aa6a04ee658410cf5e7b403d0d8b8d0e8}\label{HPL__UART_8h_aa6a04ee658410cf5e7b403d0d8b8d0e8}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+N\+O\+I\+S\+E\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+N\+O\+I\+S\+E\+I\+NT}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+N\+O\+I\+S\+E\+I\+NT@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+N\+O\+I\+S\+E\+I\+NT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+N\+O\+I\+S\+E\+I\+N\+T()}{UART\_get\_flag\_RXNOISEINT()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+R\+X\+N\+O\+I\+S\+E\+I\+NT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag R\+X\+N\+O\+I\+S\+E\+I\+NT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a3cac097e3d45e71f1382b779dd7380b5}\label{HPL__UART_8h_a3cac097e3d45e71f1382b779dd7380b5}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+A\+B\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+A\+B\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+A\+B\+E\+R\+R()}{UART\_get\_flag\_ABERR()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+flag\+\_\+\+A\+B\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener estado del flag A\+B\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado del flag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_acaf2fb6f698b7a2aa0bb3089abf5c5b2}\label{HPL__UART_8h_acaf2fb6f698b7a2aa0bb3089abf5c5b2}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+R\+D\+Y()}{UART\_enable\_irq\_RXRDY()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en R\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a67e5daacc12049c9f8858ec496d56e7d}\label{HPL__UART_8h_a67e5daacc12049c9f8858ec496d56e7d}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+R\+D\+Y()}{UART\_enable\_irq\_TXRDY()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en T\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a0a020f19367635f769367e2e03054fa9}\label{HPL__UART_8h_a0a020f19367635f769367e2e03054fa9}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+I\+D\+L\+E()}{UART\_enable\_irq\_TXIDLE()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en T\+X\+I\+D\+LE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a4eb7d60bfb13475fe2ddc736c5e8eb93}\label{HPL__UART_8h_a4eb7d60bfb13475fe2ddc736c5e8eb93}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+T\+S()}{UART\_enable\_irq\_DELTACTS()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en D\+E\+L\+T\+A\+C\+TS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a3c32cbec74dd3b49e3b283a042bc3c57}\label{HPL__UART_8h_a3c32cbec74dd3b49e3b283a042bc3c57}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+E\+N()}{UART\_enable\_irq\_TXDISEN()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en T\+X\+D\+I\+S\+EN. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_acdfb93dfbd2fdd98b1a03880e3519990}\label{HPL__UART_8h_acdfb93dfbd2fdd98b1a03880e3519990}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+U\+N()}{UART\_enable\_irq\_OVERRUN()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en O\+V\+E\+R\+R\+UN. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a228fbb5b2cd0c3b0836c4a9e101affde}\label{HPL__UART_8h_a228fbb5b2cd0c3b0836c4a9e101affde}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+R\+K()}{UART\_enable\_irq\_DELTARXBRK()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en D\+E\+L\+T\+A\+R\+X\+B\+RK. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ade5ba836ca877be89d8af0ad5684e499}\label{HPL__UART_8h_ade5ba836ca877be89d8af0ad5684e499}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+S\+T\+A\+RT}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+S\+T\+A\+RT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+S\+T\+A\+R\+T()}{UART\_enable\_irq\_START()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+S\+T\+A\+RT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en S\+T\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a2d53f0e1923c10f35458ea8c32cfaa4e}\label{HPL__UART_8h_a2d53f0e1923c10f35458ea8c32cfaa4e}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+R\+R()}{UART\_enable\_irq\_FRAMERR()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en F\+R\+A\+M\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a5603d503ae0ef7fa27b016e294401465}\label{HPL__UART_8h_a5603d503ae0ef7fa27b016e294401465}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R()}{UART\_enable\_irq\_PARITYERR()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en P\+A\+R\+I\+T\+Y\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a2377f7e2df1e973d9441acf50b015a31}\label{HPL__UART_8h_a2377f7e2df1e973d9441acf50b015a31}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+S\+E()}{UART\_enable\_irq\_RXNOISE()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en R\+X\+N\+O\+I\+SE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a99d0d03a351b4f05ee0e93b850f6b974}\label{HPL__UART_8h_a99d0d03a351b4f05ee0e93b850f6b974}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+A\+B\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+A\+B\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+A\+B\+E\+R\+R()}{UART\_enable\_irq\_ABERR()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+enable\+\_\+irq\+\_\+\+A\+B\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Habilitar interrupcion en A\+B\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a2b358777e3b434033a3fe447b160c411}\label{HPL__UART_8h_a2b358777e3b434033a3fe447b160c411}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+R\+D\+Y()}{UART\_disable\_irq\_RXRDY()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en R\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_af136cef6f38e8af29d7d349b2ec72e71}\label{HPL__UART_8h_af136cef6f38e8af29d7d349b2ec72e71}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+R\+D\+Y()}{UART\_disable\_irq\_TXRDY()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en T\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a17ba4a9aaff58a861ad375bceae71e03}\label{HPL__UART_8h_a17ba4a9aaff58a861ad375bceae71e03}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+I\+D\+L\+E()}{UART\_disable\_irq\_TXIDLE()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+I\+D\+LE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en T\+X\+I\+D\+LE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ae2eb40bf7d569775009910027d2491fa}\label{HPL__UART_8h_ae2eb40bf7d569775009910027d2491fa}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+T\+S()}{UART\_disable\_irq\_DELTACTS()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+C\+TS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en D\+E\+L\+T\+A\+C\+TS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ac05f4d358072b91ff81a1f67513249a9}\label{HPL__UART_8h_ac05f4d358072b91ff81a1f67513249a9}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+E\+N()}{UART\_disable\_irq\_TXDISEN()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+T\+X\+D\+I\+S\+EN (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en T\+X\+D\+I\+S\+EN. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a6314da1442f723439c826725416f27a4}\label{HPL__UART_8h_a6314da1442f723439c826725416f27a4}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+U\+N()}{UART\_disable\_irq\_OVERRUN()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+O\+V\+E\+R\+R\+UN (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en O\+V\+E\+R\+R\+UN. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_aa4e50763aa7189b3b0473d36133c7db6}\label{HPL__UART_8h_aa4e50763aa7189b3b0473d36133c7db6}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+R\+K()}{UART\_disable\_irq\_DELTARXBRK()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en D\+E\+L\+T\+A\+R\+X\+B\+RK. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a01cc1afc55838004598dd2ef0fbc0d5c}\label{HPL__UART_8h_a01cc1afc55838004598dd2ef0fbc0d5c}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+S\+T\+A\+RT}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+S\+T\+A\+RT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+S\+T\+A\+R\+T()}{UART\_disable\_irq\_START()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+S\+T\+A\+RT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en S\+T\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a676103e9aed934b996a593a007e2a543}\label{HPL__UART_8h_a676103e9aed934b996a593a007e2a543}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+R\+R()}{UART\_disable\_irq\_FRAMERR()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+F\+R\+A\+M\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en F\+R\+A\+M\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_abcb8a735673c194220f6b66c756b9846}\label{HPL__UART_8h_abcb8a735673c194220f6b66c756b9846}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R()}{UART\_disable\_irq\_PARITYERR()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en P\+A\+R\+I\+T\+Y\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a4cb0d65fe92e6a6b9055033cdfc9b648}\label{HPL__UART_8h_a4cb0d65fe92e6a6b9055033cdfc9b648}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+S\+E()}{UART\_disable\_irq\_RXNOISE()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+R\+X\+N\+O\+I\+SE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en R\+X\+N\+O\+I\+SE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_abe6ff5d5d7a4ad1206248149127289db}\label{HPL__UART_8h_abe6ff5d5d7a4ad1206248149127289db}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+A\+B\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+A\+B\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+A\+B\+E\+R\+R()}{UART\_disable\_irq\_ABERR()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+disable\+\_\+irq\+\_\+\+A\+B\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Inhabilitar interrupcion en A\+B\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_aca610990416a62cbc224695315a5b111}\label{HPL__UART_8h_aca610990416a62cbc224695315a5b111}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+data@{U\+A\+R\+T\+\_\+get\+\_\+data}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+data@{U\+A\+R\+T\+\_\+get\+\_\+data}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+data()}{UART\_get\_data()}}
+{\footnotesize\ttfamily static uint32\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener ultimo dato recibido. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Ultimo dato recibido 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_aff70e482771caa020f5185a474fb02ad}\label{HPL__UART_8h_aff70e482771caa020f5185a474fb02ad}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+data\+\_\+and\+\_\+status@{U\+A\+R\+T\+\_\+get\+\_\+data\+\_\+and\+\_\+status}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+data\+\_\+and\+\_\+status@{U\+A\+R\+T\+\_\+get\+\_\+data\+\_\+and\+\_\+status}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+data\+\_\+and\+\_\+status()}{UART\_get\_data\_and\_status()}}
+{\footnotesize\ttfamily static uint32\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+data\+\_\+and\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint8\+\_\+t $\ast$}]{frame,  }\item[{uint8\+\_\+t $\ast$}]{parity,  }\item[{uint8\+\_\+t $\ast$}]{noise }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener ultimo dato recibido con flags de errores. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\mbox{\tt out}  & {\em frame} & Flag correspondiente a frame error \\
+\hline
+\mbox{\tt out}  & {\em parity} & Flag correspondiente a parity error \\
+\hline
+\mbox{\tt out}  & {\em noise} & Flag correspondiente a noise error \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Ultimo dato recibido 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__UART_8h_a860beffc582ca97a3436cc4e71ed4cf1}\label{HPL__UART_8h_a860beffc582ca97a3436cc4e71ed4cf1}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+write\+\_\+data@{U\+A\+R\+T\+\_\+write\+\_\+data}}
+\index{U\+A\+R\+T\+\_\+write\+\_\+data@{U\+A\+R\+T\+\_\+write\+\_\+data}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+write\+\_\+data()}{UART\_write\_data()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+write\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint32\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Iniciar transmision de dato. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a utilizar \\
+\hline
+\mbox{\tt in}  & {\em data} & Dato a transmitir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a2f70265e004dc16b9e60bc1f4404ecb7}\label{HPL__UART_8h_a2f70265e004dc16b9e60bc1f4404ecb7}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+set\+\_\+\+B\+R\+G\+V\+AL@{U\+A\+R\+T\+\_\+set\+\_\+\+B\+R\+G\+V\+AL}}
+\index{U\+A\+R\+T\+\_\+set\+\_\+\+B\+R\+G\+V\+AL@{U\+A\+R\+T\+\_\+set\+\_\+\+B\+R\+G\+V\+AL}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+set\+\_\+\+B\+R\+G\+V\+A\+L()}{UART\_set\_BRGVAL()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+set\+\_\+\+B\+R\+G\+V\+AL (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint32\+\_\+t}]{brg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Escribir el registro B\+RG. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em brg} & Valor a escribir en el registro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_af20adfc399c7f3607c66a2cdc0f0f9cb}\label{HPL__UART_8h_af20adfc399c7f3607c66a2cdc0f0f9cb}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+R\+D\+Y()}{UART\_get\_irq\_status\_RXRDY()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion R\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a1133be5dcdeb1081b50b28ec9cb5ec40}\label{HPL__UART_8h_a1133be5dcdeb1081b50b28ec9cb5ec40}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+R\+DY}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+R\+DY@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+R\+DY}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+R\+D\+Y()}{UART\_get\_irq\_status\_TXRDY()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+R\+DY (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion T\+X\+R\+DY. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_af9f6f58eb87af4b7101607c822b87fc7}\label{HPL__UART_8h_af9f6f58eb87af4b7101607c822b87fc7}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+I\+D\+LE}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+I\+D\+LE@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+I\+D\+LE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+I\+D\+L\+E()}{UART\_get\_irq\_status\_TXIDLE()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+I\+D\+LE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion T\+X\+I\+D\+LE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a373007b027ca96327a167a36585a5fdd}\label{HPL__UART_8h_a373007b027ca96327a167a36585a5fdd}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+C\+TS}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+C\+TS@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+C\+TS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+C\+T\+S()}{UART\_get\_irq\_status\_DELTACTS()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+C\+TS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion D\+E\+L\+T\+A\+C\+TS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a6bbe318c47b32f5861666ce22cadf799}\label{HPL__UART_8h_a6bbe318c47b32f5861666ce22cadf799}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+D\+IS@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+D\+IS}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+D\+IS@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+D\+IS}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+D\+I\+S()}{UART\_get\_irq\_status\_TXDIS()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+T\+X\+D\+IS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion T\+X\+D\+IS. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a6d1f0e29cc19dfd833463f99a9247cbf}\label{HPL__UART_8h_a6d1f0e29cc19dfd833463f99a9247cbf}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+O\+V\+E\+R\+R\+UN@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+O\+V\+E\+R\+R\+UN}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+O\+V\+E\+R\+R\+UN@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+O\+V\+E\+R\+R\+UN}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+O\+V\+E\+R\+R\+U\+N()}{UART\_get\_irq\_status\_OVERRUN()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+O\+V\+E\+R\+R\+UN (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion O\+V\+E\+R\+R\+UN. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a3a9c6d5de186621cf5d77d61519e7145}\label{HPL__UART_8h_a3a9c6d5de186621cf5d77d61519e7145}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+R\+K()}{UART\_get\_irq\_status\_DELTARXBRK()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+D\+E\+L\+T\+A\+R\+X\+B\+RK (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion D\+E\+L\+T\+A\+R\+X\+B\+RK. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ac6e104a1262d6b0452403867213e7e31}\label{HPL__UART_8h_ac6e104a1262d6b0452403867213e7e31}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+S\+T\+A\+RT}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+S\+T\+A\+RT@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+S\+T\+A\+RT}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+S\+T\+A\+R\+T()}{UART\_get\_irq\_status\_START()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+S\+T\+A\+RT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion S\+T\+A\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_afa64fb61c9624838cd22f3383e871e2a}\label{HPL__UART_8h_afa64fb61c9624838cd22f3383e871e2a}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+F\+R\+A\+M\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+F\+R\+A\+M\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+F\+R\+A\+M\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+F\+R\+A\+M\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+F\+R\+A\+M\+E\+R\+R()}{UART\_get\_irq\_status\_FRAMERR()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+F\+R\+A\+M\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion F\+R\+A\+M\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a32ed88657d025cf96dc84e143fcf077e}\label{HPL__UART_8h_a32ed88657d025cf96dc84e143fcf077e}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+R\+R()}{UART\_get\_irq\_status\_PARITYERR()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+P\+A\+R\+I\+T\+Y\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion P\+A\+R\+I\+T\+Y\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_af42499a6d4aa15755e974dd90f13824f}\label{HPL__UART_8h_af42499a6d4aa15755e974dd90f13824f}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+N\+O\+I\+SE@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+N\+O\+I\+SE}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+N\+O\+I\+SE@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+N\+O\+I\+SE}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+N\+O\+I\+S\+E()}{UART\_get\_irq\_status\_RXNOISE()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+R\+X\+N\+O\+I\+SE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion R\+X\+N\+O\+I\+SE. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_a6eac4ebec02e0b4c1c341ff977c42c12}\label{HPL__UART_8h_a6eac4ebec02e0b4c1c341ff977c42c12}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+A\+B\+E\+RR}}
+\index{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+A\+B\+E\+RR@{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+A\+B\+E\+RR}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+A\+B\+E\+R\+R()}{UART\_get\_irq\_status\_ABERR()}}
+{\footnotesize\ttfamily static uint8\+\_\+t U\+A\+R\+T\+\_\+get\+\_\+irq\+\_\+status\+\_\+\+A\+B\+E\+RR (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Leer estado de interrupcion A\+B\+E\+RR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_aa74ab5994d8b5a31839e04e69f5e1cc5}\label{HPL__UART_8h_aa74ab5994d8b5a31839e04e69f5e1cc5}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+set\+\_\+\+O\+S\+R\+V\+AL@{U\+A\+R\+T\+\_\+set\+\_\+\+O\+S\+R\+V\+AL}}
+\index{U\+A\+R\+T\+\_\+set\+\_\+\+O\+S\+R\+V\+AL@{U\+A\+R\+T\+\_\+set\+\_\+\+O\+S\+R\+V\+AL}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+set\+\_\+\+O\+S\+R\+V\+A\+L()}{UART\_set\_OSRVAL()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+set\+\_\+\+O\+S\+R\+V\+AL (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint32\+\_\+t}]{osr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Escribir el registro O\+SR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em osr} & Valor a escribir en el registro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__UART_8h_ab24db414c0cba6540342e97f22eeb92f}\label{HPL__UART_8h_ab24db414c0cba6540342e97f22eeb92f}} 
+\index{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}!U\+A\+R\+T\+\_\+set\+\_\+address@{U\+A\+R\+T\+\_\+set\+\_\+address}}
+\index{U\+A\+R\+T\+\_\+set\+\_\+address@{U\+A\+R\+T\+\_\+set\+\_\+address}!H\+P\+L\+\_\+\+U\+A\+R\+T.\+h@{H\+P\+L\+\_\+\+U\+A\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{U\+A\+R\+T\+\_\+set\+\_\+address()}{UART\_set\_address()}}
+{\footnotesize\ttfamily static void U\+A\+R\+T\+\_\+set\+\_\+address (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{uint32\+\_\+t}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Escribir el registro A\+D\+DR. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\hline
+\mbox{\tt in}  & {\em brg} & Valor a escribir en el registro \\
+\hline
+\end{DoxyParams}

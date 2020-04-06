@@ -1,0 +1,230 @@
+\hypertarget{HAL__GPIO_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+G\+P\+IO.h}
+\label{HAL__GPIO_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{includes/hal/\+H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}}
+
+
+Declaraciones a nivel de aplicacion del periferico G\+P\+IO (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+G\+P\+I\+O.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{HAL__GPIO_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HAL__GPIO_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__GPIO_8h_ae0a26fe45351d3fab4b1bc5d59a6ea58}\label{HAL__GPIO_8h_ae0a26fe45351d3fab4b1bc5d59a6ea58}} 
+\#define {\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+\+T\+O\+\_\+\+P\+O\+RT}(x)~(x / 32)
+\item 
+\mbox{\Hypertarget{HAL__GPIO_8h_a204f5d369f98d6f5fd068efb03ce09b8}\label{HAL__GPIO_8h_a204f5d369f98d6f5fd068efb03ce09b8}} 
+\#define {\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+\+T\+O\+\_\+\+P\+IN}(x)~(x \% 32)
+\end{DoxyCompactItemize}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__GPIO_8h_a67db951437d45b48c1504058e8a48302}\label{HAL__GPIO_8h_a67db951437d45b48c1504058e8a48302}} 
+enum {\bfseries hal\+\_\+gpio\+\_\+port\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+\_\+0} = 0, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+\_\+1}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__GPIO_8h_a5fd48fa8390fc0ec15d4d7f7c2bbc51b}\label{HAL__GPIO_8h_a5fd48fa8390fc0ec15d4d7f7c2bbc51b}} 
+enum {\bfseries hal\+\_\+gpio\+\_\+portpin\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+0} = 0, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+1}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+2}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+3}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+4}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+5}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+6}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+7}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+8}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+9}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+10}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+11}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+12}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+13}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+14}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+15}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+16}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+17}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+18}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+19}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+20}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+21}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+22}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+23}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+24}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+25}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+26}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+27}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+28}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+29}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+30}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+0\+\_\+31}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+0}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+1}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+2}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+3}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+4}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+5}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+6}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+7}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+8}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+1\+\_\+9}, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+P\+I\+N\+\_\+\+N\+O\+T\+\_\+\+U\+S\+ED}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__GPIO_8h_acdde9afffdc2043850035540298a5473}\label{HAL__GPIO_8h_acdde9afffdc2043850035540298a5473}} 
+enum {\bfseries hal\+\_\+gpio\+\_\+dir\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+D\+I\+R\+\_\+\+I\+N\+P\+UT} = 0, 
+{\bfseries H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+D\+I\+R\+\_\+\+O\+U\+T\+P\+UT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{HAL__GPIO_8h_a315deab93915cc375acef1e81046f2bc}{hal\+\_\+gpio\+\_\+init} (hal\+\_\+gpio\+\_\+port\+\_\+en port)
+\begin{DoxyCompactList}\small\item\em Inicializar un puerto. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__GPIO_8h_a88843594aedf65f8f0c97eade8853124}{hal\+\_\+gpio\+\_\+set\+\_\+dir} (hal\+\_\+gpio\+\_\+portpin\+\_\+en portpin, hal\+\_\+gpio\+\_\+dir\+\_\+en dir, uint8\+\_\+t initial\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Fijar direccion de una G\+P\+IO. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__GPIO_8h_abb1f2e1042b1fe64677f95a439076527}{hal\+\_\+gpio\+\_\+set\+\_\+pin} (hal\+\_\+gpio\+\_\+portpin\+\_\+en portpin)
+\begin{DoxyCompactList}\small\item\em Fijar estado activo de una G\+P\+IO. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__GPIO_8h_acdea7b3a5bae213e58bce78fb5356eb2}{hal\+\_\+gpio\+\_\+clear\+\_\+pin} (hal\+\_\+gpio\+\_\+portpin\+\_\+en portpin)
+\begin{DoxyCompactList}\small\item\em Fijar estado inactivo de una G\+P\+IO. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__GPIO_8h_a3c6ea73afbcc76405ef5c6ac22bc57ac}{hal\+\_\+gpio\+\_\+toggle\+\_\+pin} (hal\+\_\+gpio\+\_\+portpin\+\_\+en portpin)
+\begin{DoxyCompactList}\small\item\em Invertir estado de una G\+P\+IO. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{HAL__GPIO_8h_a84780bdc959ae4cc21cdc2fd063a1ed6}{hal\+\_\+gpio\+\_\+read\+\_\+pin} (hal\+\_\+gpio\+\_\+portpin\+\_\+en portpin)
+\begin{DoxyCompactList}\small\item\em Leer el estado de una G\+P\+IO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de aplicacion del periferico G\+P\+IO (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HAL__GPIO_8h_a315deab93915cc375acef1e81046f2bc}\label{HAL__GPIO_8h_a315deab93915cc375acef1e81046f2bc}} 
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}!hal\+\_\+gpio\+\_\+init@{hal\+\_\+gpio\+\_\+init}}
+\index{hal\+\_\+gpio\+\_\+init@{hal\+\_\+gpio\+\_\+init}!H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+gpio\+\_\+init()}{hal\_gpio\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+gpio\+\_\+init (\begin{DoxyParamCaption}\item[{hal\+\_\+gpio\+\_\+port\+\_\+en}]{port }\end{DoxyParamCaption})}
+
+
+
+Inicializar un puerto. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Puerto a inicializar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__GPIO_8h_a88843594aedf65f8f0c97eade8853124}\label{HAL__GPIO_8h_a88843594aedf65f8f0c97eade8853124}} 
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}!hal\+\_\+gpio\+\_\+set\+\_\+dir@{hal\+\_\+gpio\+\_\+set\+\_\+dir}}
+\index{hal\+\_\+gpio\+\_\+set\+\_\+dir@{hal\+\_\+gpio\+\_\+set\+\_\+dir}!H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+gpio\+\_\+set\+\_\+dir()}{hal\_gpio\_set\_dir()}}
+{\footnotesize\ttfamily void hal\+\_\+gpio\+\_\+set\+\_\+dir (\begin{DoxyParamCaption}\item[{hal\+\_\+gpio\+\_\+portpin\+\_\+en}]{portpin,  }\item[{hal\+\_\+gpio\+\_\+dir\+\_\+en}]{dir,  }\item[{uint8\+\_\+t}]{initial\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Fijar direccion de una G\+P\+IO. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em portpin} & Numero de puerto/pin a configurar \\
+\hline
+\mbox{\tt in}  & {\em dir} & Direccion deseada \\
+\hline
+\mbox{\tt in}  & {\em initial\+\_\+state} & Estado inicial (aplica para salidas nada mas) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__GPIO_8h_abb1f2e1042b1fe64677f95a439076527}\label{HAL__GPIO_8h_abb1f2e1042b1fe64677f95a439076527}} 
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}!hal\+\_\+gpio\+\_\+set\+\_\+pin@{hal\+\_\+gpio\+\_\+set\+\_\+pin}}
+\index{hal\+\_\+gpio\+\_\+set\+\_\+pin@{hal\+\_\+gpio\+\_\+set\+\_\+pin}!H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+gpio\+\_\+set\+\_\+pin()}{hal\_gpio\_set\_pin()}}
+{\footnotesize\ttfamily void hal\+\_\+gpio\+\_\+set\+\_\+pin (\begin{DoxyParamCaption}\item[{hal\+\_\+gpio\+\_\+portpin\+\_\+en}]{portpin }\end{DoxyParamCaption})}
+
+
+
+Fijar estado activo de una G\+P\+IO. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em portpin} & Numero de puerto/pin a accionar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__GPIO_8h_acdea7b3a5bae213e58bce78fb5356eb2}\label{HAL__GPIO_8h_acdea7b3a5bae213e58bce78fb5356eb2}} 
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}!hal\+\_\+gpio\+\_\+clear\+\_\+pin@{hal\+\_\+gpio\+\_\+clear\+\_\+pin}}
+\index{hal\+\_\+gpio\+\_\+clear\+\_\+pin@{hal\+\_\+gpio\+\_\+clear\+\_\+pin}!H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+gpio\+\_\+clear\+\_\+pin()}{hal\_gpio\_clear\_pin()}}
+{\footnotesize\ttfamily void hal\+\_\+gpio\+\_\+clear\+\_\+pin (\begin{DoxyParamCaption}\item[{hal\+\_\+gpio\+\_\+portpin\+\_\+en}]{portpin }\end{DoxyParamCaption})}
+
+
+
+Fijar estado inactivo de una G\+P\+IO. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em portpin} & Numero de puerto/pin a accionar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__GPIO_8h_a3c6ea73afbcc76405ef5c6ac22bc57ac}\label{HAL__GPIO_8h_a3c6ea73afbcc76405ef5c6ac22bc57ac}} 
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}!hal\+\_\+gpio\+\_\+toggle\+\_\+pin@{hal\+\_\+gpio\+\_\+toggle\+\_\+pin}}
+\index{hal\+\_\+gpio\+\_\+toggle\+\_\+pin@{hal\+\_\+gpio\+\_\+toggle\+\_\+pin}!H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+gpio\+\_\+toggle\+\_\+pin()}{hal\_gpio\_toggle\_pin()}}
+{\footnotesize\ttfamily void hal\+\_\+gpio\+\_\+toggle\+\_\+pin (\begin{DoxyParamCaption}\item[{hal\+\_\+gpio\+\_\+portpin\+\_\+en}]{portpin }\end{DoxyParamCaption})}
+
+
+
+Invertir estado de una G\+P\+IO. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em portpin} & Numero de puerto/pin a accionar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__GPIO_8h_a84780bdc959ae4cc21cdc2fd063a1ed6}\label{HAL__GPIO_8h_a84780bdc959ae4cc21cdc2fd063a1ed6}} 
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}!hal\+\_\+gpio\+\_\+read\+\_\+pin@{hal\+\_\+gpio\+\_\+read\+\_\+pin}}
+\index{hal\+\_\+gpio\+\_\+read\+\_\+pin@{hal\+\_\+gpio\+\_\+read\+\_\+pin}!H\+A\+L\+\_\+\+G\+P\+I\+O.\+h@{H\+A\+L\+\_\+\+G\+P\+I\+O.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+gpio\+\_\+read\+\_\+pin()}{hal\_gpio\_read\_pin()}}
+{\footnotesize\ttfamily uint8\+\_\+t hal\+\_\+gpio\+\_\+read\+\_\+pin (\begin{DoxyParamCaption}\item[{hal\+\_\+gpio\+\_\+portpin\+\_\+en}]{portpin }\end{DoxyParamCaption})}
+
+
+
+Leer el estado de una G\+P\+IO. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em portpin} & Numero de puerto/pin a accionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado actual de la G\+P\+IO 
+\end{DoxyReturn}

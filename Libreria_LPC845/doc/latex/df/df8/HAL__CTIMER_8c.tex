@@ -1,0 +1,225 @@
+\hypertarget{HAL__CTIMER_8c}{}\section{Referencia del Archivo source/hal/\+H\+A\+L\+\_\+\+C\+T\+I\+M\+ER.c}
+\label{HAL__CTIMER_8c}\index{source/hal/\+H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{source/hal/\+H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+
+
+Funciones a nivel de aplicacion del periferico C\+T\+I\+M\+ER (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+A\+L\+\_\+\+I\+O\+C\+O\+N.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+N\+V\+I\+C.\+h$>$}\newline
+{\ttfamily \#include $<$H\+P\+L\+\_\+\+S\+W\+M.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d96/HAL__CTIMER_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_a8a6f8044405f214fa170bae1806c947c}\label{HAL__CTIMER_8c_a8a6f8044405f214fa170bae1806c947c}} 
+\#define {\bfseries M\+A\+T\+C\+H\+\_\+\+A\+M\+O\+U\+NT}~4
+\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_ac616ea08a4d8a4d1990a2b492f81e06b}\label{HAL__CTIMER_8c_ac616ea08a4d8a4d1990a2b492f81e06b}} 
+\#define {\bfseries C\+A\+P\+T\+U\+R\+E\+\_\+\+A\+M\+O\+U\+NT}~4
+\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_a312588cf680d50931666643dea45bb13}\label{HAL__CTIMER_8c_a312588cf680d50931666643dea45bb13}} 
+\#define {\bfseries P\+W\+M\+\_\+\+C\+H\+A\+N\+N\+E\+LS}~3
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}\label{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}} 
+static void \hyperlink{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}{dummy\+\_\+irq} (void)
+\begin{DoxyCompactList}\small\item\em Funcion dummy para inicializar los callbacks de interrupcion. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HAL__CTIMER_8c_ab46621e3a4cf328c22a936fe5539eba3}{hal\+\_\+ctimer\+\_\+calc\+\_\+match\+\_\+value} (uint32\+\_\+t match\+\_\+value\+\_\+useg)
+\begin{DoxyCompactList}\small\item\em Calcular el valor que debe ir en el registro de match a partir de un valor de useg deseado. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__CTIMER_8c_a4689eed2a9e77b21de79cc9c9769e269}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init} (uint32\+\_\+t clock\+\_\+div)
+\begin{DoxyCompactList}\small\item\em Inicializacion del periferico en modo timer. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__CTIMER_8c_a2a68e905c8f05c550bf06e34f4a1484e}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match} (hal\+\_\+ctimer\+\_\+match\+\_\+sel\+\_\+en match\+\_\+sel, const \hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t} $\ast$match\+\_\+config)
+\begin{DoxyCompactList}\small\item\em Configurar un canal de match. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_a803fbca6afb0855021986d204ffa4b9f}\label{HAL__CTIMER_8c_a803fbca6afb0855021986d204ffa4b9f}} 
+void \hyperlink{HAL__CTIMER_8c_a803fbca6afb0855021986d204ffa4b9f}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+run} (void)
+\begin{DoxyCompactList}\small\item\em Habilitar el conteo del ctimer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_ad855b264d39d920aee8be3c9a0a37db6}\label{HAL__CTIMER_8c_ad855b264d39d920aee8be3c9a0a37db6}} 
+void \hyperlink{HAL__CTIMER_8c_ad855b264d39d920aee8be3c9a0a37db6}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+stop} (void)
+\begin{DoxyCompactList}\small\item\em Inhabilitar el conteo del ctimer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_adc1257569aeffe26a73a3f1af6417d12}\label{HAL__CTIMER_8c_adc1257569aeffe26a73a3f1af6417d12}} 
+void \hyperlink{HAL__CTIMER_8c_adc1257569aeffe26a73a3f1af6417d12}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+reset} (void)
+\begin{DoxyCompactList}\small\item\em Reiniciar el conteo del ctimer. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__CTIMER_8c_a1629367b79d8b3e0fb2769e0b2b96e9c}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init} (const \hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Inicializar el C\+T\+I\+M\+ER en modo P\+WM. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__CTIMER_8c_a722302303f22f47995cc6d48bfa1533f}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period} (uint32\+\_\+t period\+\_\+useg)
+\begin{DoxyCompactList}\small\item\em Actualizar el periodo en modo P\+WM. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__CTIMER_8c_a767f590f1745869d37f7d94a7873280b}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel} (hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+sel\+\_\+en channel\+\_\+sel, const \hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t} $\ast$channel\+\_\+config)
+\begin{DoxyCompactList}\small\item\em Actualizar configuracion de algun canal de P\+WM. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HAL__CTIMER_8c_a029ce7d1c3ffc8f1d357a6915fb7efc9}\label{HAL__CTIMER_8c_a029ce7d1c3ffc8f1d357a6915fb7efc9}} 
+void \hyperlink{HAL__CTIMER_8c_a029ce7d1c3ffc8f1d357a6915fb7efc9}{C\+T\+I\+M\+E\+R0\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em Interrupcion de C\+T\+I\+M\+ER. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \hyperlink{HAL__CTIMER_8c_a158e7996f68b003e608371050fe1f3ce}{match\+\_\+callbacks} \mbox{[}M\+A\+T\+C\+H\+\_\+\+A\+M\+O\+U\+NT\mbox{]})(void)
+\begin{DoxyCompactList}\small\item\em Callbacks para interrupciones de match. \end{DoxyCompactList}\item 
+void($\ast$ \hyperlink{HAL__CTIMER_8c_a4a8c3010c0359d5ea94a0349b3a9fc1b}{capture\+\_\+callbacks} \mbox{[}C\+A\+P\+T\+U\+R\+E\+\_\+\+A\+M\+O\+U\+NT\mbox{]})(void)
+\begin{DoxyCompactList}\small\item\em Callbacks para interrupciones de capture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Funciones a nivel de aplicacion del periferico C\+T\+I\+M\+ER (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HAL__CTIMER_8c_ab46621e3a4cf328c22a936fe5539eba3}\label{HAL__CTIMER_8c_ab46621e3a4cf328c22a936fe5539eba3}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!hal\+\_\+ctimer\+\_\+calc\+\_\+match\+\_\+value@{hal\+\_\+ctimer\+\_\+calc\+\_\+match\+\_\+value}}
+\index{hal\+\_\+ctimer\+\_\+calc\+\_\+match\+\_\+value@{hal\+\_\+ctimer\+\_\+calc\+\_\+match\+\_\+value}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+calc\+\_\+match\+\_\+value()}{hal\_ctimer\_calc\_match\_value()}}
+{\footnotesize\ttfamily static uint32\+\_\+t hal\+\_\+ctimer\+\_\+calc\+\_\+match\+\_\+value (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{match\+\_\+value\+\_\+useg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calcular el valor que debe ir en el registro de match a partir de un valor de useg deseado. 
+
+\begin{DoxyReturn}{Devuelve}
+Valor que debe ir en el registro de match 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HAL__CTIMER_8c_a4689eed2a9e77b21de79cc9c9769e269}\label{HAL__CTIMER_8c_a4689eed2a9e77b21de79cc9c9769e269}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init}}
+\index{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init()}{hal\_ctimer\_timer\_mode\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{clock\+\_\+div }\end{DoxyParamCaption})}
+
+
+
+Inicializacion del periferico en modo timer. 
+
+Esta funcion no pone a correr el contador.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em clock\+\_\+div} & Divisor del clock principal deseado (el valor efectivo es este valor + 1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__CTIMER_8c_a2a68e905c8f05c550bf06e34f4a1484e}\label{HAL__CTIMER_8c_a2a68e905c8f05c550bf06e34f4a1484e}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match}}
+\index{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match()}{hal\_ctimer\_timer\_mode\_config\_match()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match (\begin{DoxyParamCaption}\item[{hal\+\_\+ctimer\+\_\+match\+\_\+sel\+\_\+en}]{match\+\_\+sel,  }\item[{const \hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t} $\ast$}]{match\+\_\+config }\end{DoxyParamCaption})}
+
+
+
+Configurar un canal de match. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em match\+\_\+sel} & Match a configurar \\
+\hline
+\mbox{\tt in}  & {\em match\+\_\+config} & Configuracion deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__CTIMER_8c_a1629367b79d8b3e0fb2769e0b2b96e9c}\label{HAL__CTIMER_8c_a1629367b79d8b3e0fb2769e0b2b96e9c}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init}}
+\index{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init()}{hal\_ctimer\_pwm\_mode\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{const \hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t} $\ast$}]{config }\end{DoxyParamCaption})}
+
+
+
+Inicializar el C\+T\+I\+M\+ER en modo P\+WM. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em config} & Configuracion deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__CTIMER_8c_a722302303f22f47995cc6d48bfa1533f}\label{HAL__CTIMER_8c_a722302303f22f47995cc6d48bfa1533f}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period}}
+\index{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period()}{hal\_ctimer\_pwm\_mode\_set\_period()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{period\+\_\+useg }\end{DoxyParamCaption})}
+
+
+
+Actualizar el periodo en modo P\+WM. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em period\+\_\+useg} & Nuevo periodo deseado en microsegundos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__CTIMER_8c_a767f590f1745869d37f7d94a7873280b}\label{HAL__CTIMER_8c_a767f590f1745869d37f7d94a7873280b}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel}}
+\index{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel()}{hal\_ctimer\_pwm\_mode\_config\_channel()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel (\begin{DoxyParamCaption}\item[{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+sel\+\_\+en}]{channel\+\_\+sel,  }\item[{const \hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t} $\ast$}]{channel\+\_\+config }\end{DoxyParamCaption})}
+
+
+
+Actualizar configuracion de algun canal de P\+WM. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel\+\_\+sel} & Seleccion de canal a configurar \\
+\hline
+\mbox{\tt in}  & {\em channel\+\_\+config} & Configuracion del canal de P\+WM \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las variables}
+\mbox{\Hypertarget{HAL__CTIMER_8c_a158e7996f68b003e608371050fe1f3ce}\label{HAL__CTIMER_8c_a158e7996f68b003e608371050fe1f3ce}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!match\+\_\+callbacks@{match\+\_\+callbacks}}
+\index{match\+\_\+callbacks@{match\+\_\+callbacks}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{match\+\_\+callbacks}{match\_callbacks}}
+{\footnotesize\ttfamily void($\ast$ match\+\_\+callbacks\mbox{[}M\+A\+T\+C\+H\+\_\+\+A\+M\+O\+U\+NT\mbox{]})(void)}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}{dummy\_irq},
+    \hyperlink{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}{dummy\_irq},
+    \hyperlink{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}{dummy\_irq},
+    dummy\_irq
+\}
+\end{DoxyCode}
+
+
+Callbacks para interrupciones de match. 
+
+\mbox{\Hypertarget{HAL__CTIMER_8c_a4a8c3010c0359d5ea94a0349b3a9fc1b}\label{HAL__CTIMER_8c_a4a8c3010c0359d5ea94a0349b3a9fc1b}} 
+\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}!capture\+\_\+callbacks@{capture\+\_\+callbacks}}
+\index{capture\+\_\+callbacks@{capture\+\_\+callbacks}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+c}}
+\subsubsection{\texorpdfstring{capture\+\_\+callbacks}{capture\_callbacks}}
+{\footnotesize\ttfamily void($\ast$ capture\+\_\+callbacks\mbox{[}C\+A\+P\+T\+U\+R\+E\+\_\+\+A\+M\+O\+U\+NT\mbox{]})(void)}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}
+=
+\{
+    \hyperlink{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}{dummy\_irq},
+    \hyperlink{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}{dummy\_irq},
+    \hyperlink{HAL__CTIMER_8c_aa0ae96a3a401683b77a8a5b816e27ac4}{dummy\_irq},
+    dummy\_irq
+\}
+\end{DoxyCode}
+
+
+Callbacks para interrupciones de capture. 
+

@@ -1,0 +1,70 @@
+\hypertarget{LCD_8h}{}\section{Referencia del Archivo includes/infotronic/\+L\+CD.h}
+\label{LCD_8h}\index{includes/infotronic/\+L\+C\+D.\+h@{includes/infotronic/\+L\+C\+D.\+h}}
+
+
+Declaraciones para el display L\+CD (2x16)  
+
+
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LCD_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{LCD_8h_ae50297f26d8a631be53ccb2ab90c59de}\label{LCD_8h_ae50297f26d8a631be53ccb2ab90c59de}} 
+\#define {\bfseries L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+1}~0
+\item 
+\mbox{\Hypertarget{LCD_8h_a03e49be745a9760e35e1935bb16e1bab}\label{LCD_8h_a03e49be745a9760e35e1935bb16e1bab}} 
+\#define {\bfseries L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+2}~1
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{LCD_8h_a301a0b73016a44e015dbd374c08243d4}\label{LCD_8h_a301a0b73016a44e015dbd374c08243d4}} 
+void \hyperlink{LCD_8h_a301a0b73016a44e015dbd374c08243d4}{L\+C\+D\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializacion del display L\+CD (2x16) \end{DoxyCompactList}\item 
+void \hyperlink{LCD_8h_ab51fa1fb6b467f1960e41f522c447b3e}{L\+C\+D\+\_\+write} (char $\ast$message, uint8\+\_\+t renglon, uint8\+\_\+t start\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Escribir un mensaje en el display L\+CD. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LCD_8h_af1489e992bb7800c12ff940e0ef7c0d0}\label{LCD_8h_af1489e992bb7800c12ff940e0ef7c0d0}} 
+void \hyperlink{LCD_8h_af1489e992bb7800c12ff940e0ef7c0d0}{L\+C\+D\+\_\+check} (void)
+\begin{DoxyCompactList}\small\item\em Callback para actualizar el L\+CD periodicamente (a ser llamada cada 1mseg) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones para el display L\+CD (2x16) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+12/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{LCD_8h_ab51fa1fb6b467f1960e41f522c447b3e}\label{LCD_8h_ab51fa1fb6b467f1960e41f522c447b3e}} 
+\index{L\+C\+D.\+h@{L\+C\+D.\+h}!L\+C\+D\+\_\+write@{L\+C\+D\+\_\+write}}
+\index{L\+C\+D\+\_\+write@{L\+C\+D\+\_\+write}!L\+C\+D.\+h@{L\+C\+D.\+h}}
+\subsubsection{\texorpdfstring{L\+C\+D\+\_\+write()}{LCD\_write()}}
+{\footnotesize\ttfamily void L\+C\+D\+\_\+write (\begin{DoxyParamCaption}\item[{char $\ast$}]{message,  }\item[{uint8\+\_\+t}]{renglon,  }\item[{uint8\+\_\+t}]{start\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Escribir un mensaje en el display L\+CD. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em message} & Puntero al mensaje a escribir, terminando con el caracter nulo \\
+\hline
+\mbox{\tt in}  & {\em renglon} & Renglon en cual escribir el mensaje (L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+1 o L\+C\+D\+\_\+\+R\+E\+N\+G\+L\+O\+N\+\_\+2) \\
+\hline
+\mbox{\tt in}  & {\em start\+\_\+position} & Posicion del renglon a partir de la cual comenzar a escribir el mensaje \\
+\hline
+\end{DoxyParams}

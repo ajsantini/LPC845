@@ -1,0 +1,702 @@
+\hypertarget{HRI__SPI_8h}{}\section{Referencia del Archivo includes/hri/\+H\+R\+I\+\_\+\+S\+PI.h}
+\label{HRI__SPI_8h}\index{includes/hri/\+H\+R\+I\+\_\+\+S\+P\+I.\+h@{includes/hri/\+H\+R\+I\+\_\+\+S\+P\+I.\+h}}
+
+
+Definiciones a nivel de registros del periferico S\+PI (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+R\+I\+\_\+\+S\+P\+I.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{HRI__SPI_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{HRI__SPI_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__CFG__reg__t}{S\+P\+I\+\_\+\+C\+F\+G\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__DLY__reg__t}{S\+P\+I\+\_\+\+D\+L\+Y\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__STAT__reg__t}{S\+P\+I\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__INTENSET__reg__t}{S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+S\+E\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__INTENCLR__reg__t}{S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+C\+L\+R\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__RXDAT__reg__t}{S\+P\+I\+\_\+\+R\+X\+D\+A\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__TXDATCTL__reg__t}{S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+C\+T\+L\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__TXDAT__reg__t}{S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__TXCTL__reg__t}{S\+P\+I\+\_\+\+T\+X\+C\+T\+L\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__DIV__reg__t}{S\+P\+I\+\_\+\+D\+I\+V\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__INTSTAT__reg__t}{S\+P\+I\+\_\+\+I\+N\+T\+S\+T\+A\+T\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__SPI_8h_structSPI__per__t}{S\+P\+I\+\_\+per\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HRI__SPI_8h_adeaa49ab944c7dcae2a868b0450232c8}\label{HRI__SPI_8h_adeaa49ab944c7dcae2a868b0450232c8}} 
+\#define {\bfseries S\+P\+I0\+\_\+\+B\+A\+SE}~0x40058000
+\item 
+\mbox{\Hypertarget{HRI__SPI_8h_a50cd8b47929f18b05efbd0f41253bf8d}\label{HRI__SPI_8h_a50cd8b47929f18b05efbd0f41253bf8d}} 
+\#define {\bfseries S\+P\+I1\+\_\+\+B\+A\+SE}~0x4005\+C000
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Definiciones a nivel de registros del periferico S\+PI (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+3/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{S\+P\+I\+\_\+\+C\+F\+G\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+C\+F\+G\+\_\+reg\+\_\+t}}\label{structSPI__CFG__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__CFG__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+C\+F\+G\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_ab59c16b88584ce4bbb98edc4c476012c}\label{HRI__SPI_8h_ab59c16b88584ce4bbb98edc4c476012c}} 
+uint32\_t&
+ENABLE: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a77c324247bbd82068822cde2951a52c4}\label{HRI__SPI_8h_a77c324247bbd82068822cde2951a52c4}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ac404483936acb4d67158a350bd266f17}\label{HRI__SPI_8h_ac404483936acb4d67158a350bd266f17}} 
+uint32\_t&
+MASTER: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a19dc6a5e5fd886a7691789eb0c4f3de9}\label{HRI__SPI_8h_a19dc6a5e5fd886a7691789eb0c4f3de9}} 
+uint32\_t&
+LSBF: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a2f76104343e8910fe8f15e5cfb397f02}\label{HRI__SPI_8h_a2f76104343e8910fe8f15e5cfb397f02}} 
+uint32\_t&
+CPHA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a1755d842d52f2c5088f137a2f27c87c4}\label{HRI__SPI_8h_a1755d842d52f2c5088f137a2f27c87c4}} 
+uint32\_t&
+CPOL: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a3bb2394d4f796e2510dd5535732b3164}\label{HRI__SPI_8h_a3bb2394d4f796e2510dd5535732b3164}} 
+uint32\_t&
+\_\_pad1\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a45721762914144af985b2672431d23f4}\label{HRI__SPI_8h_a45721762914144af985b2672431d23f4}} 
+uint32\_t&
+LOOP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a4761e8254254fd9d7a138dd07e7d0f4d}\label{HRI__SPI_8h_a4761e8254254fd9d7a138dd07e7d0f4d}} 
+uint32\_t&
+SPOL0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a303ec5e5cb07f81159bedf9b9b4f9029}\label{HRI__SPI_8h_a303ec5e5cb07f81159bedf9b9b4f9029}} 
+uint32\_t&
+SPOL1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_abc2ddf9e0b1233fe6a2ba746191b0c2f}\label{HRI__SPI_8h_abc2ddf9e0b1233fe6a2ba746191b0c2f}} 
+uint32\_t&
+SPOL2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a6fb0e7192e0d4bcccfcffade76f50a13}\label{HRI__SPI_8h_a6fb0e7192e0d4bcccfcffade76f50a13}} 
+uint32\_t&
+SPOL3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ad3d9526e932a4ca18a3d3a82dd6e11f2}\label{HRI__SPI_8h_ad3d9526e932a4ca18a3d3a82dd6e11f2}} 
+uint32\_t&
+\_\_pad2\_\_: 20&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+D\+L\+Y\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+D\+L\+Y\+\_\+reg\+\_\+t}}\label{structSPI__DLY__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__DLY__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+D\+L\+Y\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a7931467ff6a5f4007f186eeba666d12d}\label{HRI__SPI_8h_a7931467ff6a5f4007f186eeba666d12d}} 
+uint32\_t&
+PRE\_DELAY: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a1e31434be790704deade719efabb3f99}\label{HRI__SPI_8h_a1e31434be790704deade719efabb3f99}} 
+uint32\_t&
+POST\_DELAY: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a164a00957459ecb38df1fb58ac4a144a}\label{HRI__SPI_8h_a164a00957459ecb38df1fb58ac4a144a}} 
+uint32\_t&
+FRAME\_DELAY: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ad684d68c47c020905338836d295a428a}\label{HRI__SPI_8h_ad684d68c47c020905338836d295a428a}} 
+uint32\_t&
+TRANSFER\_DELAY: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a6d01f4a08f0bd5ef9c09801a02f8a453}\label{HRI__SPI_8h_a6d01f4a08f0bd5ef9c09801a02f8a453}} 
+uint32\_t&
+\_\_pad0\_\_: 16&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t}}\label{structSPI__STAT__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__STAT__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+S\+T\+A\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a9c0970d441860377eeba1f3590d611c5}\label{HRI__SPI_8h_a9c0970d441860377eeba1f3590d611c5}} 
+const uint32\_t&
+RXRDY: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a5430cfaf960db98b3d450555c71c3316}\label{HRI__SPI_8h_a5430cfaf960db98b3d450555c71c3316}} 
+const uint32\_t&
+TXRDY: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a8538bb89ccad97f88d86a52168d9e288}\label{HRI__SPI_8h_a8538bb89ccad97f88d86a52168d9e288}} 
+uint32\_t&
+RXOV: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a439be85f96d1a9d306f3c126d0204af2}\label{HRI__SPI_8h_a439be85f96d1a9d306f3c126d0204af2}} 
+uint32\_t&
+TXUR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a5d4cb28d1a7f5b371d86fd3bed893087}\label{HRI__SPI_8h_a5d4cb28d1a7f5b371d86fd3bed893087}} 
+uint32\_t&
+SSA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a626b6bea08370705d4bbd5642e462e94}\label{HRI__SPI_8h_a626b6bea08370705d4bbd5642e462e94}} 
+uint32\_t&
+SSD: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a1638fa0af68707a3afe566d495771185}\label{HRI__SPI_8h_a1638fa0af68707a3afe566d495771185}} 
+const uint32\_t&
+STALLED: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_aa1188577ac8a5ef3d38c7776c03709a6}\label{HRI__SPI_8h_aa1188577ac8a5ef3d38c7776c03709a6}} 
+uint32\_t&
+ENDTRANSFER: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a0f7ba9262b94b39520d1078f4089d528}\label{HRI__SPI_8h_a0f7ba9262b94b39520d1078f4089d528}} 
+const uint32\_t&
+MSTIDLE: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a832976a41545260ed03a6daab16b2337}\label{HRI__SPI_8h_a832976a41545260ed03a6daab16b2337}} 
+uint32\_t&
+\_\_pad0\_\_: 21&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+S\+E\+T\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+S\+E\+T\+\_\+reg\+\_\+t}}\label{structSPI__INTENSET__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__INTENSET__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+S\+E\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a9118586d3629e5f9cff9c7af3ba26bb0}\label{HRI__SPI_8h_a9118586d3629e5f9cff9c7af3ba26bb0}} 
+uint32\_t&
+RXRDYEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a1dc2bcf2358124cfc7c56b44b387de22}\label{HRI__SPI_8h_a1dc2bcf2358124cfc7c56b44b387de22}} 
+uint32\_t&
+TXRDYEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ae3f0c3f88e646105587475aa06b003c6}\label{HRI__SPI_8h_ae3f0c3f88e646105587475aa06b003c6}} 
+uint32\_t&
+RXOVEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a77fea68f687bbb57c72ea8d182f50f34}\label{HRI__SPI_8h_a77fea68f687bbb57c72ea8d182f50f34}} 
+uint32\_t&
+TXUREN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a10eabc0ef37a001b2acd93c81aab7aa8}\label{HRI__SPI_8h_a10eabc0ef37a001b2acd93c81aab7aa8}} 
+uint32\_t&
+SSAEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_aaf5494d7e15912ade63e1ff2cb4217a2}\label{HRI__SPI_8h_aaf5494d7e15912ade63e1ff2cb4217a2}} 
+uint32\_t&
+SSDEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a718c1f8035b1cd48a56cc32201dd63f2}\label{HRI__SPI_8h_a718c1f8035b1cd48a56cc32201dd63f2}} 
+uint32\_t&
+\_\_pad0\_\_: 26&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+C\+L\+R\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+C\+L\+R\+\_\+reg\+\_\+t}}\label{structSPI__INTENCLR__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__INTENCLR__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+I\+N\+T\+E\+N\+C\+L\+R\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a59ad26e5ea89db4b18859b33de7243f1}\label{HRI__SPI_8h_a59ad26e5ea89db4b18859b33de7243f1}} 
+uint32\_t&
+RXRDYEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a2f2b523f2b5099e32f3984a71aec6cc6}\label{HRI__SPI_8h_a2f2b523f2b5099e32f3984a71aec6cc6}} 
+uint32\_t&
+TXRDYEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a405c45e0b5b30860c392dde785883bcf}\label{HRI__SPI_8h_a405c45e0b5b30860c392dde785883bcf}} 
+uint32\_t&
+RXOVEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_aa9194a71b366d2e2a1d8e92f549a2e86}\label{HRI__SPI_8h_aa9194a71b366d2e2a1d8e92f549a2e86}} 
+uint32\_t&
+TXUREN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a427f927e3b4a7e55b0c265d727b8fb84}\label{HRI__SPI_8h_a427f927e3b4a7e55b0c265d727b8fb84}} 
+uint32\_t&
+SSAEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a17a922364c37692fe62af27d4fd27561}\label{HRI__SPI_8h_a17a922364c37692fe62af27d4fd27561}} 
+uint32\_t&
+SSDEN: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_af013b0b69635b6eed2c606febddf0ae1}\label{HRI__SPI_8h_af013b0b69635b6eed2c606febddf0ae1}} 
+uint32\_t&
+\_\_pad0\_\_: 26&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+R\+X\+D\+A\+T\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+R\+X\+D\+A\+T\+\_\+reg\+\_\+t}}\label{structSPI__RXDAT__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__RXDAT__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+R\+X\+D\+A\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a9d13fcb03b39f1acf839934478c0e8a6}\label{HRI__SPI_8h_a9d13fcb03b39f1acf839934478c0e8a6}} 
+uint32\_t&
+RXDAT: 16&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_adfb269925a90c3a6bb675be9cd6b8b84}\label{HRI__SPI_8h_adfb269925a90c3a6bb675be9cd6b8b84}} 
+uint32\_t&
+RXSSEL0\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ad720896638cf7dac1a9c9735e4572f8a}\label{HRI__SPI_8h_ad720896638cf7dac1a9c9735e4572f8a}} 
+uint32\_t&
+RXSSEL1\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a4bc52c6590e2fdaf76a2b150defce1c7}\label{HRI__SPI_8h_a4bc52c6590e2fdaf76a2b150defce1c7}} 
+uint32\_t&
+RXSSEL2\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ac2966418205012a028cd8f2350c13b88}\label{HRI__SPI_8h_ac2966418205012a028cd8f2350c13b88}} 
+uint32\_t&
+RXSSEL3\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ab7e54b4ccdafc7e248e75c4550d4b788}\label{HRI__SPI_8h_ab7e54b4ccdafc7e248e75c4550d4b788}} 
+uint32\_t&
+SOT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a4069acb29e668b7b4605aa4aa055a2bf}\label{HRI__SPI_8h_a4069acb29e668b7b4605aa4aa055a2bf}} 
+uint32\_t&
+\_\_pad0\_\_: 11&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+C\+T\+L\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+C\+T\+L\+\_\+reg\+\_\+t}}\label{structSPI__TXDATCTL__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__TXDATCTL__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+C\+T\+L\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a6133fb337fc1df2ca300f3d69c7380b3}\label{HRI__SPI_8h_a6133fb337fc1df2ca300f3d69c7380b3}} 
+uint32\_t&
+TXDAT: 16&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a64900942b23f7a29f36931d635494fa0}\label{HRI__SPI_8h_a64900942b23f7a29f36931d635494fa0}} 
+uint32\_t&
+TXSSEL0\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_af7ea4e4a83e7c479690823d3372d1144}\label{HRI__SPI_8h_af7ea4e4a83e7c479690823d3372d1144}} 
+uint32\_t&
+TXSSEL1\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a486077163e446369ce62137723a3634a}\label{HRI__SPI_8h_a486077163e446369ce62137723a3634a}} 
+uint32\_t&
+TXSSEL2\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a48983aa0dbc77ed0a4c4cdd1c852a1bb}\label{HRI__SPI_8h_a48983aa0dbc77ed0a4c4cdd1c852a1bb}} 
+uint32\_t&
+TXSSEL3\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a510d1d932b3167c18c1f87431629a571}\label{HRI__SPI_8h_a510d1d932b3167c18c1f87431629a571}} 
+uint32\_t&
+EOT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a003a0650d9a5d114350b3af66e87d068}\label{HRI__SPI_8h_a003a0650d9a5d114350b3af66e87d068}} 
+uint32\_t&
+EOf: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_adbb9c256ea9a8c97b3f43b24a969f2de}\label{HRI__SPI_8h_adbb9c256ea9a8c97b3f43b24a969f2de}} 
+uint32\_t&
+RXIGNORE: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ab8fca49544417e34891605cd74e09c98}\label{HRI__SPI_8h_ab8fca49544417e34891605cd74e09c98}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ab087b191552edccbdce668bb8d1514e7}\label{HRI__SPI_8h_ab087b191552edccbdce668bb8d1514e7}} 
+uint32\_t&
+LEN: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a237318c3df956ce619599a90d988dc4c}\label{HRI__SPI_8h_a237318c3df956ce619599a90d988dc4c}} 
+uint32\_t&
+\_\_pad1\_\_: 4&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+\_\+reg\+\_\+t}}\label{structSPI__TXDAT__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__TXDAT__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+T\+X\+D\+A\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a3eeef679ada8bee5fbd27bd8d30b391c}\label{HRI__SPI_8h_a3eeef679ada8bee5fbd27bd8d30b391c}} 
+uint32\_t&
+DATA: 16&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ad861894f758d499d10b1531619829e1e}\label{HRI__SPI_8h_ad861894f758d499d10b1531619829e1e}} 
+uint32\_t&
+\_\_pad0\_\_: 16&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+T\+X\+C\+T\+L\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+T\+X\+C\+T\+L\+\_\+reg\+\_\+t}}\label{structSPI__TXCTL__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__TXCTL__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+T\+X\+C\+T\+L\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_ad190d7c86ed938645dc3671ccd139c03}\label{HRI__SPI_8h_ad190d7c86ed938645dc3671ccd139c03}} 
+uint32\_t&
+\_\_pad0\_\_: 16&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a83943fff34e30530211a248a08cd630e}\label{HRI__SPI_8h_a83943fff34e30530211a248a08cd630e}} 
+uint32\_t&
+TXSSEL0\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a5b168106945c1c2807b8c783e6c6e07a}\label{HRI__SPI_8h_a5b168106945c1c2807b8c783e6c6e07a}} 
+uint32\_t&
+TXSSEL1\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a15f6250edbe0312467f22115b4129bbd}\label{HRI__SPI_8h_a15f6250edbe0312467f22115b4129bbd}} 
+uint32\_t&
+TXSSEL2\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a82e3f3d4e16c807f099d8d6057ea70bb}\label{HRI__SPI_8h_a82e3f3d4e16c807f099d8d6057ea70bb}} 
+uint32\_t&
+TXSSEL3\_N: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a211b818bb8ced11e4c45a606a8daa1fa}\label{HRI__SPI_8h_a211b818bb8ced11e4c45a606a8daa1fa}} 
+uint32\_t&
+EOT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a652d334380fd55cd2232f62fe8c931f0}\label{HRI__SPI_8h_a652d334380fd55cd2232f62fe8c931f0}} 
+uint32\_t&
+EOf: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_aef61a9cd2c22c45dd737db6f7874aa5e}\label{HRI__SPI_8h_aef61a9cd2c22c45dd737db6f7874aa5e}} 
+uint32\_t&
+RXIGNORE: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a47663ce3a5a7ec85adb03d788291e5f2}\label{HRI__SPI_8h_a47663ce3a5a7ec85adb03d788291e5f2}} 
+uint32\_t&
+\_\_pad1\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a0333d112dc5e0dafb1eddd25eb534214}\label{HRI__SPI_8h_a0333d112dc5e0dafb1eddd25eb534214}} 
+uint32\_t&
+LEN: 4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a2f48078a6842cfff5ccc1d260a41e7d3}\label{HRI__SPI_8h_a2f48078a6842cfff5ccc1d260a41e7d3}} 
+uint32\_t&
+\_\_pad2\_\_: 4&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+D\+I\+V\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+D\+I\+V\+\_\+reg\+\_\+t}}\label{structSPI__DIV__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__DIV__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+D\+I\+V\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a52afd54493062ca1e06d35d0c5a969ca}\label{HRI__SPI_8h_a52afd54493062ca1e06d35d0c5a969ca}} 
+uint32\_t&
+DIVVAL: 16&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a3508a4ad0ac2b115c6d75f9431c99006}\label{HRI__SPI_8h_a3508a4ad0ac2b115c6d75f9431c99006}} 
+uint32\_t&
+\_\_pad0\_\_: 16&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+\+I\+N\+T\+S\+T\+A\+T\+\_\+reg\+\_\+t@{S\+P\+I\+\_\+\+I\+N\+T\+S\+T\+A\+T\+\_\+reg\+\_\+t}}\label{structSPI__INTSTAT__reg__t}
+\Hypertarget{HRI__SPI_8h_structSPI__INTSTAT__reg__t}
+\subsubsection{struct S\+P\+I\+\_\+\+I\+N\+T\+S\+T\+A\+T\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_a6fb9d068b288062d578ec011d0b7bc4c}\label{HRI__SPI_8h_a6fb9d068b288062d578ec011d0b7bc4c}} 
+uint32\_t&
+RXRDY: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a7107f455b4225704dec81f7978153558}\label{HRI__SPI_8h_a7107f455b4225704dec81f7978153558}} 
+uint32\_t&
+TXRDY: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a18d6fecb653eee72a0402b356d7086af}\label{HRI__SPI_8h_a18d6fecb653eee72a0402b356d7086af}} 
+uint32\_t&
+RXOV: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ac856cbbcacfcfa193f069609bb214732}\label{HRI__SPI_8h_ac856cbbcacfcfa193f069609bb214732}} 
+uint32\_t&
+TXUR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a964d7966115012fe49dd79f765a3d639}\label{HRI__SPI_8h_a964d7966115012fe49dd79f765a3d639}} 
+uint32\_t&
+SSA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a7a7c396f1633370699fa7051044ce93c}\label{HRI__SPI_8h_a7a7c396f1633370699fa7051044ce93c}} 
+uint32\_t&
+SSD: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_af481bd16132dd33bc1b2d4a0b04e635b}\label{HRI__SPI_8h_af481bd16132dd33bc1b2d4a0b04e635b}} 
+uint32\_t&
+\_\_pad0\_\_: 26&
+\\
+\hline
+
+\end{DoxyFields}
+\index{S\+P\+I\+\_\+per\+\_\+t@{S\+P\+I\+\_\+per\+\_\+t}}\label{structSPI__per__t}
+\Hypertarget{HRI__SPI_8h_structSPI__per__t}
+\subsubsection{struct S\+P\+I\+\_\+per\+\_\+t}
+
+
+Diagrama de colaboración para S\+P\+I\+\_\+per\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{structSPI__per__t__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__SPI_8h_acd5db6bd59c8b41a2e8279b5ce34e7f8}\label{HRI__SPI_8h_acd5db6bd59c8b41a2e8279b5ce34e7f8}} 
+\hyperlink{HRI__SPI_8h_structSPI__CFG__reg__t}{SPI\_CFG\_reg\_t}&
+CFG&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a9fda9ab5b6b98a0cbe5a36515e8ba948}\label{HRI__SPI_8h_a9fda9ab5b6b98a0cbe5a36515e8ba948}} 
+\hyperlink{HRI__SPI_8h_structSPI__DLY__reg__t}{SPI\_DLY\_reg\_t}&
+DLY&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_aba6d0e74b9dfd8d5751c1f0677361ce9}\label{HRI__SPI_8h_aba6d0e74b9dfd8d5751c1f0677361ce9}} 
+\hyperlink{HRI__SPI_8h_structSPI__STAT__reg__t}{SPI\_STAT\_reg\_t}&
+STAT&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a4ae2eb72ed4d90c63d44ae1e09767456}\label{HRI__SPI_8h_a4ae2eb72ed4d90c63d44ae1e09767456}} 
+\hyperlink{HRI__SPI_8h_structSPI__INTENSET__reg__t}{SPI\_INTENSET\_reg\_t}&
+INTENSET&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a2c8b03dfe740b10f7dae55a025928d32}\label{HRI__SPI_8h_a2c8b03dfe740b10f7dae55a025928d32}} 
+\hyperlink{HRI__SPI_8h_structSPI__INTENCLR__reg__t}{SPI\_INTENCLR\_reg\_t}&
+INTENCLR&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_addf15f590771b75fcda2b0f443bb7b15}\label{HRI__SPI_8h_addf15f590771b75fcda2b0f443bb7b15}} 
+const \hyperlink{HRI__SPI_8h_structSPI__RXDAT__reg__t}{SPI\_RXDAT\_reg\_t}&
+RXDAT&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_af55382f6440fdbf6919e7e7b4b4f9873}\label{HRI__SPI_8h_af55382f6440fdbf6919e7e7b4b4f9873}} 
+\hyperlink{HRI__SPI_8h_structSPI__TXDATCTL__reg__t}{SPI\_TXDATCTL\_reg\_t}&
+TXDATCTL&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a3503e611ac3c87cb96f9489f95081f13}\label{HRI__SPI_8h_a3503e611ac3c87cb96f9489f95081f13}} 
+\hyperlink{HRI__SPI_8h_structSPI__TXDAT__reg__t}{SPI\_TXDAT\_reg\_t}&
+TXDAT&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a6a64ab2bafc6a4658fa1e334a72c3c92}\label{HRI__SPI_8h_a6a64ab2bafc6a4658fa1e334a72c3c92}} 
+\hyperlink{HRI__SPI_8h_structSPI__TXCTL__reg__t}{SPI\_TXCTL\_reg\_t}&
+TXCTL&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_ab7d136b463b8f382e9578b5968cef869}\label{HRI__SPI_8h_ab7d136b463b8f382e9578b5968cef869}} 
+\hyperlink{HRI__SPI_8h_structSPI__DIV__reg__t}{SPI\_DIV\_reg\_t}&
+DIV&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__SPI_8h_a4e09ee2fc0b7be5562545c53a5f3aaa8}\label{HRI__SPI_8h_a4e09ee2fc0b7be5562545c53a5f3aaa8}} 
+const \hyperlink{HRI__SPI_8h_structSPI__INTSTAT__reg__t}{SPI\_INTSTAT\_reg\_t}&
+INTSTAT&
+\\
+\hline
+
+\end{DoxyFields}

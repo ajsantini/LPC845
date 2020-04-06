@@ -1,0 +1,192 @@
+\hypertarget{HPL__MRT_8h}{}\section{Referencia del Archivo includes/hpl/\+H\+P\+L\+\_\+\+M\+RT.h}
+\label{HPL__MRT_8h}\index{includes/hpl/\+H\+P\+L\+\_\+\+M\+R\+T.\+h@{includes/hpl/\+H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+
+
+Declaraciones a nivel de abstraccion de periferico del M\+RT (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$H\+R\+I\+\_\+\+M\+R\+T.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+P\+L\+\_\+\+M\+R\+T.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{HPL__MRT_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__MRT_8h_a1833cab768b3dc0a6b3cc1cc90df559e}\label{HPL__MRT_8h_a1833cab768b3dc0a6b3cc1cc90df559e}} 
+enum {\bfseries M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en} \{ {\bfseries M\+R\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0} = 0, 
+{\bfseries M\+R\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1}, 
+{\bfseries M\+R\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2}, 
+{\bfseries M\+R\+T\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3}
+ \}
+\item 
+\mbox{\Hypertarget{HPL__MRT_8h_ad20a3a0ffe751bd956a15412cc13fd8a}\label{HPL__MRT_8h_ad20a3a0ffe751bd956a15412cc13fd8a}} 
+enum {\bfseries M\+R\+T\+\_\+mode\+\_\+en} \{ {\bfseries M\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+R\+E\+P\+E\+AT} = 0, 
+{\bfseries M\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+O\+N\+E\+\_\+\+S\+H\+OT}, 
+{\bfseries M\+R\+T\+\_\+\+M\+O\+D\+E\+\_\+\+O\+N\+E\+\_\+\+S\+H\+O\+T\+\_\+\+B\+U\+S\+\_\+\+S\+T\+A\+LL}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{HPL__MRT_8h_a63c0887416689930fa0b2440a0d36afa}{M\+R\+T\+\_\+set\+\_\+interval} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel, uint32\+\_\+t interval)
+\begin{DoxyCompactList}\small\item\em Fijar intervalo de un canal del M\+RT sin detener el conteo actual. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__MRT_8h_a1368fc13d7cd7f4167738281380d56ac}{M\+R\+T\+\_\+set\+\_\+interval\+\_\+and\+\_\+stop\+\_\+timer} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel, uint32\+\_\+t interval)
+\begin{DoxyCompactList}\small\item\em Fijar intervalo de un canal del M\+RT deteniendo el conteo actual inmediatamente. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \hyperlink{HPL__MRT_8h_a08b75e369a8bc8a498ec27b8903ffa89}{M\+R\+T\+\_\+get\+\_\+current\+\_\+value} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel)
+\begin{DoxyCompactList}\small\item\em Obtener el valor de la cuenta actual de un canal del M\+RT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{HPL__MRT_8h_a494c25fbef4c05cd994f5d9c184f50c0}\label{HPL__MRT_8h_a494c25fbef4c05cd994f5d9c184f50c0}} 
+static void {\bfseries M\+R\+T\+\_\+enable\+\_\+irq} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel)
+\item 
+\mbox{\Hypertarget{HPL__MRT_8h_ae6932dc74f2e4ddabfaeac00bdf2d41a}\label{HPL__MRT_8h_ae6932dc74f2e4ddabfaeac00bdf2d41a}} 
+static void {\bfseries M\+R\+T\+\_\+disable\+\_\+irq} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel)
+\item 
+static void \hyperlink{HPL__MRT_8h_a41688adbcd5743919a123f2c6de108cd}{M\+R\+T\+\_\+config\+\_\+mode} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel, M\+R\+T\+\_\+mode\+\_\+en mode)
+\begin{DoxyCompactList}\small\item\em Configurar modo de funcionamiento de un canal del M\+RT. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__MRT_8h_ade5ba4007e452503ef2c39c22b28613b}{M\+R\+T\+\_\+get\+\_\+idle\+\_\+channel} (void)
+\begin{DoxyCompactList}\small\item\em Obtener el canal que este en estado I\+D\+LE. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \hyperlink{HPL__MRT_8h_afcbf27c3ca99f0b0f8094ba6dea4d5d9}{M\+R\+T\+\_\+get\+\_\+irq\+\_\+flag} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel)
+\begin{DoxyCompactList}\small\item\em Obtener flag de interrupcion de un canal. \end{DoxyCompactList}\item 
+static void \hyperlink{HPL__MRT_8h_a0c850363425d78f9d5d7521ab70d0c4f}{M\+R\+T\+\_\+clear\+\_\+irq\+\_\+flag} (M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en channel)
+\begin{DoxyCompactList}\small\item\em Limpiar flag de interrupcion de un canal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HPL__MRT_8h_aa02bb3fa0854b46bd753e434ef216e83}\label{HPL__MRT_8h_aa02bb3fa0854b46bd753e434ef216e83}} 
+volatile \hyperlink{HRI__MRT_8h_structMRT__per__t}{M\+R\+T\+\_\+per\+\_\+t} $\ast$const \hyperlink{HPL__MRT_8h_aa02bb3fa0854b46bd753e434ef216e83}{M\+RT}
+\begin{DoxyCompactList}\small\item\em Periferico M\+RT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de abstraccion de periferico del M\+RT (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+4/2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HPL__MRT_8h_a63c0887416689930fa0b2440a0d36afa}\label{HPL__MRT_8h_a63c0887416689930fa0b2440a0d36afa}} 
+\index{H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}!M\+R\+T\+\_\+set\+\_\+interval@{M\+R\+T\+\_\+set\+\_\+interval}}
+\index{M\+R\+T\+\_\+set\+\_\+interval@{M\+R\+T\+\_\+set\+\_\+interval}!H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{M\+R\+T\+\_\+set\+\_\+interval()}{MRT\_set\_interval()}}
+{\footnotesize\ttfamily static void M\+R\+T\+\_\+set\+\_\+interval (\begin{DoxyParamCaption}\item[{M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en}]{channel,  }\item[{uint32\+\_\+t}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar intervalo de un canal del M\+RT sin detener el conteo actual. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a configurar \\
+\hline
+\mbox{\tt in}  & {\em interval} & Intervalo a cargar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__MRT_8h_a1368fc13d7cd7f4167738281380d56ac}\label{HPL__MRT_8h_a1368fc13d7cd7f4167738281380d56ac}} 
+\index{H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}!M\+R\+T\+\_\+set\+\_\+interval\+\_\+and\+\_\+stop\+\_\+timer@{M\+R\+T\+\_\+set\+\_\+interval\+\_\+and\+\_\+stop\+\_\+timer}}
+\index{M\+R\+T\+\_\+set\+\_\+interval\+\_\+and\+\_\+stop\+\_\+timer@{M\+R\+T\+\_\+set\+\_\+interval\+\_\+and\+\_\+stop\+\_\+timer}!H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{M\+R\+T\+\_\+set\+\_\+interval\+\_\+and\+\_\+stop\+\_\+timer()}{MRT\_set\_interval\_and\_stop\_timer()}}
+{\footnotesize\ttfamily static void M\+R\+T\+\_\+set\+\_\+interval\+\_\+and\+\_\+stop\+\_\+timer (\begin{DoxyParamCaption}\item[{M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en}]{channel,  }\item[{uint32\+\_\+t}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fijar intervalo de un canal del M\+RT deteniendo el conteo actual inmediatamente. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a configurar \\
+\hline
+\mbox{\tt in}  & {\em interval} & Intervalo a cargar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__MRT_8h_a08b75e369a8bc8a498ec27b8903ffa89}\label{HPL__MRT_8h_a08b75e369a8bc8a498ec27b8903ffa89}} 
+\index{H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}!M\+R\+T\+\_\+get\+\_\+current\+\_\+value@{M\+R\+T\+\_\+get\+\_\+current\+\_\+value}}
+\index{M\+R\+T\+\_\+get\+\_\+current\+\_\+value@{M\+R\+T\+\_\+get\+\_\+current\+\_\+value}!H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{M\+R\+T\+\_\+get\+\_\+current\+\_\+value()}{MRT\_get\_current\_value()}}
+{\footnotesize\ttfamily static uint32\+\_\+t M\+R\+T\+\_\+get\+\_\+current\+\_\+value (\begin{DoxyParamCaption}\item[{M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener el valor de la cuenta actual de un canal del M\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Cuenta actual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__MRT_8h_a41688adbcd5743919a123f2c6de108cd}\label{HPL__MRT_8h_a41688adbcd5743919a123f2c6de108cd}} 
+\index{H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}!M\+R\+T\+\_\+config\+\_\+mode@{M\+R\+T\+\_\+config\+\_\+mode}}
+\index{M\+R\+T\+\_\+config\+\_\+mode@{M\+R\+T\+\_\+config\+\_\+mode}!H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{M\+R\+T\+\_\+config\+\_\+mode()}{MRT\_config\_mode()}}
+{\footnotesize\ttfamily static void M\+R\+T\+\_\+config\+\_\+mode (\begin{DoxyParamCaption}\item[{M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en}]{channel,  }\item[{M\+R\+T\+\_\+mode\+\_\+en}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Configurar modo de funcionamiento de un canal del M\+RT. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a configurar \\
+\hline
+\mbox{\tt in}  & {\em mode} & Modo deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HPL__MRT_8h_ade5ba4007e452503ef2c39c22b28613b}\label{HPL__MRT_8h_ade5ba4007e452503ef2c39c22b28613b}} 
+\index{H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}!M\+R\+T\+\_\+get\+\_\+idle\+\_\+channel@{M\+R\+T\+\_\+get\+\_\+idle\+\_\+channel}}
+\index{M\+R\+T\+\_\+get\+\_\+idle\+\_\+channel@{M\+R\+T\+\_\+get\+\_\+idle\+\_\+channel}!H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{M\+R\+T\+\_\+get\+\_\+idle\+\_\+channel()}{MRT\_get\_idle\_channel()}}
+{\footnotesize\ttfamily static uint8\+\_\+t M\+R\+T\+\_\+get\+\_\+idle\+\_\+channel (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener el canal que este en estado I\+D\+LE. 
+
+\begin{DoxyReturn}{Devuelve}
+Menor canal de los que esten en estado I\+D\+LE 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__MRT_8h_afcbf27c3ca99f0b0f8094ba6dea4d5d9}\label{HPL__MRT_8h_afcbf27c3ca99f0b0f8094ba6dea4d5d9}} 
+\index{H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}!M\+R\+T\+\_\+get\+\_\+irq\+\_\+flag@{M\+R\+T\+\_\+get\+\_\+irq\+\_\+flag}}
+\index{M\+R\+T\+\_\+get\+\_\+irq\+\_\+flag@{M\+R\+T\+\_\+get\+\_\+irq\+\_\+flag}!H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{M\+R\+T\+\_\+get\+\_\+irq\+\_\+flag()}{MRT\_get\_irq\_flag()}}
+{\footnotesize\ttfamily static uint8\+\_\+t M\+R\+T\+\_\+get\+\_\+irq\+\_\+flag (\begin{DoxyParamCaption}\item[{M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtener flag de interrupcion de un canal. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Flag actual de interrupcion del canal consultado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HPL__MRT_8h_a0c850363425d78f9d5d7521ab70d0c4f}\label{HPL__MRT_8h_a0c850363425d78f9d5d7521ab70d0c4f}} 
+\index{H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}!M\+R\+T\+\_\+clear\+\_\+irq\+\_\+flag@{M\+R\+T\+\_\+clear\+\_\+irq\+\_\+flag}}
+\index{M\+R\+T\+\_\+clear\+\_\+irq\+\_\+flag@{M\+R\+T\+\_\+clear\+\_\+irq\+\_\+flag}!H\+P\+L\+\_\+\+M\+R\+T.\+h@{H\+P\+L\+\_\+\+M\+R\+T.\+h}}
+\subsubsection{\texorpdfstring{M\+R\+T\+\_\+clear\+\_\+irq\+\_\+flag()}{MRT\_clear\_irq\_flag()}}
+{\footnotesize\ttfamily static void M\+R\+T\+\_\+clear\+\_\+irq\+\_\+flag (\begin{DoxyParamCaption}\item[{M\+R\+T\+\_\+channel\+\_\+sel\+\_\+en}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Limpiar flag de interrupcion de un canal. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em channel} & Canal a consultar \\
+\hline
+\end{DoxyParams}

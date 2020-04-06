@@ -1,0 +1,1607 @@
+\hypertarget{HRI__NVIC_8h}{}\section{Referencia del Archivo includes/hri/\+H\+R\+I\+\_\+\+N\+V\+IC.h}
+\label{HRI__NVIC_8h}\index{includes/hri/\+H\+R\+I\+\_\+\+N\+V\+I\+C.\+h@{includes/hri/\+H\+R\+I\+\_\+\+N\+V\+I\+C.\+h}}
+
+
+Definiciones a nivel de registros del modulo N\+V\+IC (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+R\+I\+\_\+\+N\+V\+I\+C.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{d2/dbb/HRI__NVIC_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d80/HRI__NVIC_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d8/dad/structNVIC__ISER0__reg__t}{N\+V\+I\+C\+\_\+\+I\+S\+E\+R0\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d6/d2a/structNVIC__ICER0__reg__t}{N\+V\+I\+C\+\_\+\+I\+C\+E\+R0\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d7/d55/structNVIC__ISPR0__reg__t}{N\+V\+I\+C\+\_\+\+I\+S\+P\+R0\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_da/dc8/structNVIC__ICPR0__reg__t}{N\+V\+I\+C\+\_\+\+I\+C\+P\+R0\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_db/d78/structNVIC__IABR0__reg__t}{N\+V\+I\+C\+\_\+\+I\+A\+B\+R0\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d4/da4/structNVIC__IPR0__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R0\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_dd/dbd/structNVIC__IPR1__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R1\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d9/d19/structNVIC__IPR2__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R2\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d6/d2c/structNVIC__IPR3__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R3\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d4/d69/structNVIC__IPR4__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R4\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_d2/da8/structNVIC__IPR5__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R5\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_dc/d98/structNVIC__IPR6__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R6\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_de/d00/structNVIC__IPR7__reg__t}{N\+V\+I\+C\+\_\+\+I\+P\+R7\+\_\+reg\+\_\+t}
+\item 
+struct \hyperlink{HRI__NVIC_8h_de/df9/structNVIC__per__t}{N\+V\+I\+C\+\_\+per\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HRI__NVIC_8h_aa0288691785a5f868238e0468b39523d}\label{HRI__NVIC_8h_aa0288691785a5f868238e0468b39523d}} 
+\#define {\bfseries N\+V\+I\+C\+\_\+\+B\+A\+SE}~0x\+E000\+E000
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Definiciones a nivel de registros del modulo N\+V\+IC (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las estructuras de datos}
+\index{N\+V\+I\+C\+\_\+\+I\+S\+E\+R0\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+S\+E\+R0\+\_\+reg\+\_\+t}}\label{structNVIC__ISER0__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__ISER0__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+S\+E\+R0\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_aad722be1635c4f72cdb089ad95c2cd99}\label{HRI__NVIC_8h_aad722be1635c4f72cdb089ad95c2cd99}} 
+uint32\_t&
+ISE\_SPI0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a08bd8824ef327e7e534ce8dccd2ca1ba}\label{HRI__NVIC_8h_a08bd8824ef327e7e534ce8dccd2ca1ba}} 
+uint32\_t&
+ISE\_SPI1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_acbf6388fc969285ff9b79f54a16291a0}\label{HRI__NVIC_8h_acbf6388fc969285ff9b79f54a16291a0}} 
+uint32\_t&
+ISE\_DAC0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a471d33a57a3507132a6fa9379aadd69f}\label{HRI__NVIC_8h_a471d33a57a3507132a6fa9379aadd69f}} 
+uint32\_t&
+ISE\_UART0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a48eb0d55035a37abb72c58b72a9b2cee}\label{HRI__NVIC_8h_a48eb0d55035a37abb72c58b72a9b2cee}} 
+uint32\_t&
+ISE\_UART1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a0e1b5cd1ca54891d97a0e655068e5800}\label{HRI__NVIC_8h_a0e1b5cd1ca54891d97a0e655068e5800}} 
+uint32\_t&
+ISE\_UART2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ab73ffae8b050bb0c85ff6ed21e60ec1f}\label{HRI__NVIC_8h_ab73ffae8b050bb0c85ff6ed21e60ec1f}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7d84c7c3a1c32d8cdd98f1e38aac171c}\label{HRI__NVIC_8h_a7d84c7c3a1c32d8cdd98f1e38aac171c}} 
+uint32\_t&
+ISE\_I2C1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a16b1f230c54b6909a83a7bca923ebe68}\label{HRI__NVIC_8h_a16b1f230c54b6909a83a7bca923ebe68}} 
+uint32\_t&
+ISE\_I2C0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ae1f0b1bc6c0f52832616d4227eca1910}\label{HRI__NVIC_8h_ae1f0b1bc6c0f52832616d4227eca1910}} 
+uint32\_t&
+ISE\_SCT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7e700bf6a2b18796fad56a6c3f7ba321}\label{HRI__NVIC_8h_a7e700bf6a2b18796fad56a6c3f7ba321}} 
+uint32\_t&
+ISE\_MRT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_addc45635fbe7ede4a780d136e652933f}\label{HRI__NVIC_8h_addc45635fbe7ede4a780d136e652933f}} 
+uint32\_t&
+ISE\_CMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8ffba868aa170e9b1ba28ca7ae4401f0}\label{HRI__NVIC_8h_a8ffba868aa170e9b1ba28ca7ae4401f0}} 
+uint32\_t&
+ISE\_WDT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a0bf9c329ca9e242ab5a5da1b71f95055}\label{HRI__NVIC_8h_a0bf9c329ca9e242ab5a5da1b71f95055}} 
+uint32\_t&
+ISE\_BOD: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_abc4ce937364a83d49d5e8e0324f6f91a}\label{HRI__NVIC_8h_abc4ce937364a83d49d5e8e0324f6f91a}} 
+uint32\_t&
+ISE\_FLASH: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_afb7ec377e1ce542ecf9481b1cefb0eac}\label{HRI__NVIC_8h_afb7ec377e1ce542ecf9481b1cefb0eac}} 
+uint32\_t&
+ISE\_WKT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7bc179c33ffa20f22750eb598f726eb8}\label{HRI__NVIC_8h_a7bc179c33ffa20f22750eb598f726eb8}} 
+uint32\_t&
+ISE\_ADC\_SEQA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac69b42a5d6b78bccde186da4fbe2d70d}\label{HRI__NVIC_8h_ac69b42a5d6b78bccde186da4fbe2d70d}} 
+uint32\_t&
+ISE\_ADC\_SEQB: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a1e59e308e0ff477465e9250e5dad5e90}\label{HRI__NVIC_8h_a1e59e308e0ff477465e9250e5dad5e90}} 
+uint32\_t&
+ISE\_ADC\_THCMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a3b9032dac423bb3aaf8c8829266bc662}\label{HRI__NVIC_8h_a3b9032dac423bb3aaf8c8829266bc662}} 
+uint32\_t&
+ISE\_ADC\_OVR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aa2a9da976449f5827bb30c9b660646c6}\label{HRI__NVIC_8h_aa2a9da976449f5827bb30c9b660646c6}} 
+uint32\_t&
+ISE\_SDMA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7de115bbb721317a1ed198f2841ad4ca}\label{HRI__NVIC_8h_a7de115bbb721317a1ed198f2841ad4ca}} 
+uint32\_t&
+ISE\_I2C2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9bc7c81af9cd1172586bd8a2bf87c1dc}\label{HRI__NVIC_8h_a9bc7c81af9cd1172586bd8a2bf87c1dc}} 
+uint32\_t&
+ISE\_I2C3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aab1bbe86cdd4ddb96a0cbfff68843042}\label{HRI__NVIC_8h_aab1bbe86cdd4ddb96a0cbfff68843042}} 
+uint32\_t&
+ISE\_CT32B0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a98f05ad815b55915ea296d04759d700b}\label{HRI__NVIC_8h_a98f05ad815b55915ea296d04759d700b}} 
+uint32\_t&
+ISE\_PININT0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2ee418d9ef7d0749651dc72fd11bd88c}\label{HRI__NVIC_8h_a2ee418d9ef7d0749651dc72fd11bd88c}} 
+uint32\_t&
+ISE\_PININT1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a672bcca1bc2de80e95388e1641d9bab9}\label{HRI__NVIC_8h_a672bcca1bc2de80e95388e1641d9bab9}} 
+uint32\_t&
+ISE\_PININT2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac553a239d13b328998c91a81a321b5c9}\label{HRI__NVIC_8h_ac553a239d13b328998c91a81a321b5c9}} 
+uint32\_t&
+ISE\_PININT3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a788f242172aff91a900e8bb03150d901}\label{HRI__NVIC_8h_a788f242172aff91a900e8bb03150d901}} 
+uint32\_t&
+ISE\_PININT4: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7a27f602c9c08aba35ec4b0f93f53063}\label{HRI__NVIC_8h_a7a27f602c9c08aba35ec4b0f93f53063}} 
+uint32\_t&
+ISE\_PININT5: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8222aa42088fa0353687538c3519dbc3}\label{HRI__NVIC_8h_a8222aa42088fa0353687538c3519dbc3}} 
+uint32\_t&
+ISE\_PININT6: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af06b378eb48ec9a53cd821e59a0f5a34}\label{HRI__NVIC_8h_af06b378eb48ec9a53cd821e59a0f5a34}} 
+uint32\_t&
+ISE\_PININT7: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+C\+E\+R0\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+C\+E\+R0\+\_\+reg\+\_\+t}}\label{structNVIC__ICER0__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__ICER0__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+C\+E\+R0\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a46bbd7b7cbeadc4583f9fcb70ab14b1b}\label{HRI__NVIC_8h_a46bbd7b7cbeadc4583f9fcb70ab14b1b}} 
+uint32\_t&
+ICE\_SPI0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ad9294bb33c782508849fe8cd01311901}\label{HRI__NVIC_8h_ad9294bb33c782508849fe8cd01311901}} 
+uint32\_t&
+ICE\_SPI1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a12c3cec8958d1edcf8a9f3b263a0f2d7}\label{HRI__NVIC_8h_a12c3cec8958d1edcf8a9f3b263a0f2d7}} 
+uint32\_t&
+ICE\_DAC0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a20ce170a232e5dfb77c4580d6d64fb17}\label{HRI__NVIC_8h_a20ce170a232e5dfb77c4580d6d64fb17}} 
+uint32\_t&
+ICE\_UART0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a4f4e83ddb344e66870fa38682902ca74}\label{HRI__NVIC_8h_a4f4e83ddb344e66870fa38682902ca74}} 
+uint32\_t&
+ICE\_UART1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac2683dfa8d4e46ac78c00d192473dc1f}\label{HRI__NVIC_8h_ac2683dfa8d4e46ac78c00d192473dc1f}} 
+uint32\_t&
+ICE\_UART2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9b6664a04ebb4247130dd3e4107289d5}\label{HRI__NVIC_8h_a9b6664a04ebb4247130dd3e4107289d5}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a4e9b40f66123a43cac32a8cda0137104}\label{HRI__NVIC_8h_a4e9b40f66123a43cac32a8cda0137104}} 
+uint32\_t&
+ICE\_I2C1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8e1ae849de211fc824c15ac70629091b}\label{HRI__NVIC_8h_a8e1ae849de211fc824c15ac70629091b}} 
+uint32\_t&
+ICE\_I2C0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aeba734fec8a1625aaea0167f5d7bc066}\label{HRI__NVIC_8h_aeba734fec8a1625aaea0167f5d7bc066}} 
+uint32\_t&
+ICE\_SCT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a1fff6d2ae8c5d0c240e65cc5d00e9341}\label{HRI__NVIC_8h_a1fff6d2ae8c5d0c240e65cc5d00e9341}} 
+uint32\_t&
+ICE\_MRT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a293c49ecff3a75463c096447dd88ae22}\label{HRI__NVIC_8h_a293c49ecff3a75463c096447dd88ae22}} 
+uint32\_t&
+ICE\_CMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af850924406c6b4d2d1e0efd871f4da9d}\label{HRI__NVIC_8h_af850924406c6b4d2d1e0efd871f4da9d}} 
+uint32\_t&
+ICE\_WDT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9c04190c358b8c669aaa6c45599381a7}\label{HRI__NVIC_8h_a9c04190c358b8c669aaa6c45599381a7}} 
+uint32\_t&
+ICE\_BOD: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8f9b67e455ffe79b1d647d0a0957ae8b}\label{HRI__NVIC_8h_a8f9b67e455ffe79b1d647d0a0957ae8b}} 
+uint32\_t&
+ICE\_FLASH: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac83ca77375ed5bb21a4a816cd0513d9b}\label{HRI__NVIC_8h_ac83ca77375ed5bb21a4a816cd0513d9b}} 
+uint32\_t&
+ICE\_WKT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ab5476ff8d82e53d27fcfbb6c5e985a9b}\label{HRI__NVIC_8h_ab5476ff8d82e53d27fcfbb6c5e985a9b}} 
+uint32\_t&
+ICE\_ADC\_SEQA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ada1a94462f0379d5ee2217fd1972978e}\label{HRI__NVIC_8h_ada1a94462f0379d5ee2217fd1972978e}} 
+uint32\_t&
+ICE\_ADC\_SEQB: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a92d5144396d0d293d685f4c1fac4225e}\label{HRI__NVIC_8h_a92d5144396d0d293d685f4c1fac4225e}} 
+uint32\_t&
+ICE\_ADC\_THCMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac22638a1a2aaa7fb4684ee96c7d52f4e}\label{HRI__NVIC_8h_ac22638a1a2aaa7fb4684ee96c7d52f4e}} 
+uint32\_t&
+ICE\_ADC\_OVR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a35e27c464a26270412b1cde025e2b963}\label{HRI__NVIC_8h_a35e27c464a26270412b1cde025e2b963}} 
+uint32\_t&
+ICE\_SDMA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aaff304e1451b6b208e794c28a2aff2c9}\label{HRI__NVIC_8h_aaff304e1451b6b208e794c28a2aff2c9}} 
+uint32\_t&
+ICE\_I2C2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2d40c1c00a30f65631c327f94da1cc05}\label{HRI__NVIC_8h_a2d40c1c00a30f65631c327f94da1cc05}} 
+uint32\_t&
+ICE\_I2C3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a14d152d450ea1d7d98dcbda17f2b804f}\label{HRI__NVIC_8h_a14d152d450ea1d7d98dcbda17f2b804f}} 
+uint32\_t&
+ICE\_CT32b0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a6d1c02360733becb88c9a4da7176c9b0}\label{HRI__NVIC_8h_a6d1c02360733becb88c9a4da7176c9b0}} 
+uint32\_t&
+ICE\_PININT0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a21d50fb0c1a8b7347f74db7672838978}\label{HRI__NVIC_8h_a21d50fb0c1a8b7347f74db7672838978}} 
+uint32\_t&
+ICE\_PININT1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a4b258c46b3602ed1f3790ee1eb1b76fe}\label{HRI__NVIC_8h_a4b258c46b3602ed1f3790ee1eb1b76fe}} 
+uint32\_t&
+ICE\_PININT2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7d28e6ff1b116dcf31cd29fb1e2b9b8d}\label{HRI__NVIC_8h_a7d28e6ff1b116dcf31cd29fb1e2b9b8d}} 
+uint32\_t&
+ICE\_PININT3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9635d487d93b95f9951c915789a888b1}\label{HRI__NVIC_8h_a9635d487d93b95f9951c915789a888b1}} 
+uint32\_t&
+ICE\_PININT4: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a3692c75e72892d42fc9628e5726f0679}\label{HRI__NVIC_8h_a3692c75e72892d42fc9628e5726f0679}} 
+uint32\_t&
+ICE\_PININT5: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ace4befb79d3f0acfefc34295dfea71a7}\label{HRI__NVIC_8h_ace4befb79d3f0acfefc34295dfea71a7}} 
+uint32\_t&
+ICE\_PININT6: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a454b53fe7068c6079c3b2eac05b67625}\label{HRI__NVIC_8h_a454b53fe7068c6079c3b2eac05b67625}} 
+uint32\_t&
+ICE\_PININT7: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+S\+P\+R0\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+S\+P\+R0\+\_\+reg\+\_\+t}}\label{structNVIC__ISPR0__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__ISPR0__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+S\+P\+R0\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a27e7da08d4bde517ed6e9692c8a8cf3d}\label{HRI__NVIC_8h_a27e7da08d4bde517ed6e9692c8a8cf3d}} 
+uint32\_t&
+ISP\_SPI0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_abc6c3c5becb00bd9e70cb985868250b3}\label{HRI__NVIC_8h_abc6c3c5becb00bd9e70cb985868250b3}} 
+uint32\_t&
+ISP\_SPI1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a4df1773f88bf59af7c4957f058bc627b}\label{HRI__NVIC_8h_a4df1773f88bf59af7c4957f058bc627b}} 
+uint32\_t&
+ISP\_DAC0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a579e7ce29b23b87d1d9d552a12107a9e}\label{HRI__NVIC_8h_a579e7ce29b23b87d1d9d552a12107a9e}} 
+uint32\_t&
+ISP\_UART0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aa3e40d88109b5e39f87c574443c2866a}\label{HRI__NVIC_8h_aa3e40d88109b5e39f87c574443c2866a}} 
+uint32\_t&
+ISP\_UART1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac53d4f7f2dbb1790356037ad7abd401d}\label{HRI__NVIC_8h_ac53d4f7f2dbb1790356037ad7abd401d}} 
+uint32\_t&
+ISP\_UART2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a66da29c6f6e8bac924c379602a46c5c6}\label{HRI__NVIC_8h_a66da29c6f6e8bac924c379602a46c5c6}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a35845951858b62c4b5a722adfa316f5c}\label{HRI__NVIC_8h_a35845951858b62c4b5a722adfa316f5c}} 
+uint32\_t&
+ISP\_I2C1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a5d6c8f28a63a0b25a24d6ab97bfa6156}\label{HRI__NVIC_8h_a5d6c8f28a63a0b25a24d6ab97bfa6156}} 
+uint32\_t&
+ISP\_I2C0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ab9c1a1ee2f6b02eb0097a45965e64e00}\label{HRI__NVIC_8h_ab9c1a1ee2f6b02eb0097a45965e64e00}} 
+uint32\_t&
+ISP\_SCT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a5410e35be9cd274692ae2a3671688789}\label{HRI__NVIC_8h_a5410e35be9cd274692ae2a3671688789}} 
+uint32\_t&
+ISP\_MRT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a1f516790454c466e2b99fe8531c78aea}\label{HRI__NVIC_8h_a1f516790454c466e2b99fe8531c78aea}} 
+uint32\_t&
+ISP\_CMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9af08881d7ac2ee7ddaeb33a66b33e92}\label{HRI__NVIC_8h_a9af08881d7ac2ee7ddaeb33a66b33e92}} 
+uint32\_t&
+ISP\_WDT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a01e21e9dd5d2e8947bf5db0d7ce9f9c5}\label{HRI__NVIC_8h_a01e21e9dd5d2e8947bf5db0d7ce9f9c5}} 
+uint32\_t&
+ISP\_BOD: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2302efd7f59526d71473387353edf3f0}\label{HRI__NVIC_8h_a2302efd7f59526d71473387353edf3f0}} 
+uint32\_t&
+ISP\_FLASH: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9ee91016949aa05c1a9d789773bc04b4}\label{HRI__NVIC_8h_a9ee91016949aa05c1a9d789773bc04b4}} 
+uint32\_t&
+ISP\_WKT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a878487a8d979db582d69b4feb5d9863f}\label{HRI__NVIC_8h_a878487a8d979db582d69b4feb5d9863f}} 
+uint32\_t&
+ISP\_ADC\_SEQA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a47dfbc246fb02c12adb9df766a7eb399}\label{HRI__NVIC_8h_a47dfbc246fb02c12adb9df766a7eb399}} 
+uint32\_t&
+ISP\_ADC\_SEQB: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a44c55ea81b138bd500c7f56343f5e039}\label{HRI__NVIC_8h_a44c55ea81b138bd500c7f56343f5e039}} 
+uint32\_t&
+ISP\_ADC\_THCMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a81d31389652ab6683fb8e771f4461bf5}\label{HRI__NVIC_8h_a81d31389652ab6683fb8e771f4461bf5}} 
+uint32\_t&
+ISP\_ADC\_OVR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aeb8cdc0a2be9dfead3c671b742d0749b}\label{HRI__NVIC_8h_aeb8cdc0a2be9dfead3c671b742d0749b}} 
+uint32\_t&
+ISP\_SDMA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a0eb467c6bc021dcd67a1e904c406218b}\label{HRI__NVIC_8h_a0eb467c6bc021dcd67a1e904c406218b}} 
+uint32\_t&
+ISP\_I2C2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ab31e909e27667080053678820428e8fb}\label{HRI__NVIC_8h_ab31e909e27667080053678820428e8fb}} 
+uint32\_t&
+ISP\_I2C3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a872e08679a7c89fd5d116de386631010}\label{HRI__NVIC_8h_a872e08679a7c89fd5d116de386631010}} 
+uint32\_t&
+ISP\_CT32b0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_abfbec761f8d54b8e3382d627e5cbdba8}\label{HRI__NVIC_8h_abfbec761f8d54b8e3382d627e5cbdba8}} 
+uint32\_t&
+ISP\_PININT0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a0b134b2d22b4ce9164129b9077662af1}\label{HRI__NVIC_8h_a0b134b2d22b4ce9164129b9077662af1}} 
+uint32\_t&
+ISP\_PININT1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aa3673ca28c391dcbae2335ba9f996961}\label{HRI__NVIC_8h_aa3673ca28c391dcbae2335ba9f996961}} 
+uint32\_t&
+ISP\_PININT2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2e09b6191bbf82559abb73ad113fe373}\label{HRI__NVIC_8h_a2e09b6191bbf82559abb73ad113fe373}} 
+uint32\_t&
+ISP\_PININT3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a98edb8297d01e2f75c137e5e94706943}\label{HRI__NVIC_8h_a98edb8297d01e2f75c137e5e94706943}} 
+uint32\_t&
+ISP\_PININT4: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac3dd88e0821b8f85e7a50c7b4b841b2b}\label{HRI__NVIC_8h_ac3dd88e0821b8f85e7a50c7b4b841b2b}} 
+uint32\_t&
+ISP\_PININT5: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a74c88eecbfe337016c2c75fe462a4c5a}\label{HRI__NVIC_8h_a74c88eecbfe337016c2c75fe462a4c5a}} 
+uint32\_t&
+ISP\_PININT6: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a24dbdeed1cef2f0d7b46eb3ab41e6801}\label{HRI__NVIC_8h_a24dbdeed1cef2f0d7b46eb3ab41e6801}} 
+uint32\_t&
+ISP\_PININT7: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+C\+P\+R0\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+C\+P\+R0\+\_\+reg\+\_\+t}}\label{structNVIC__ICPR0__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__ICPR0__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+C\+P\+R0\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a2a676106eac85a61b55690bb15941ae6}\label{HRI__NVIC_8h_a2a676106eac85a61b55690bb15941ae6}} 
+uint32\_t&
+ICP\_SPI0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a592b8292fd4ceca6ffba034b646e3963}\label{HRI__NVIC_8h_a592b8292fd4ceca6ffba034b646e3963}} 
+uint32\_t&
+ICP\_SPI1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a515336e9d8e25a1f9855defe794080b5}\label{HRI__NVIC_8h_a515336e9d8e25a1f9855defe794080b5}} 
+uint32\_t&
+ICP\_DAC0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ae94355bd36f96046f040b0844bc5a6e3}\label{HRI__NVIC_8h_ae94355bd36f96046f040b0844bc5a6e3}} 
+uint32\_t&
+ICP\_UART0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a94d1c184410734ecd07e591ff7822239}\label{HRI__NVIC_8h_a94d1c184410734ecd07e591ff7822239}} 
+uint32\_t&
+ICP\_UART1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2668ad36a021a7283661b3981102359e}\label{HRI__NVIC_8h_a2668ad36a021a7283661b3981102359e}} 
+uint32\_t&
+ICP\_UART2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a1d289b1fdb0788521870371f975cb81f}\label{HRI__NVIC_8h_a1d289b1fdb0788521870371f975cb81f}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac998334df6d9929586339d87b5e86975}\label{HRI__NVIC_8h_ac998334df6d9929586339d87b5e86975}} 
+uint32\_t&
+ICP\_I2C1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a1160354efe3bedec7d0a1eb586a40b7c}\label{HRI__NVIC_8h_a1160354efe3bedec7d0a1eb586a40b7c}} 
+uint32\_t&
+ICP\_I2C0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a0b3e7ef93b9876b533b6637ea0576385}\label{HRI__NVIC_8h_a0b3e7ef93b9876b533b6637ea0576385}} 
+uint32\_t&
+ICP\_SCT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a5678c100f5a2428b79f72950df1105a4}\label{HRI__NVIC_8h_a5678c100f5a2428b79f72950df1105a4}} 
+uint32\_t&
+ICP\_MRT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7c4cb2a91ced6c642b61db6f58d69222}\label{HRI__NVIC_8h_a7c4cb2a91ced6c642b61db6f58d69222}} 
+uint32\_t&
+ICP\_CMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af14aeb1cf5ccb09d79363ae46edca8a9}\label{HRI__NVIC_8h_af14aeb1cf5ccb09d79363ae46edca8a9}} 
+uint32\_t&
+ICP\_WDT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a6a1a31b5c792805f129e4a20e9b4d798}\label{HRI__NVIC_8h_a6a1a31b5c792805f129e4a20e9b4d798}} 
+uint32\_t&
+ICP\_BOD: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aeebcac1e98eaa37618f115d0b23b4b13}\label{HRI__NVIC_8h_aeebcac1e98eaa37618f115d0b23b4b13}} 
+uint32\_t&
+ICP\_FLASH: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a73c7133933d5f81875071864113a64c3}\label{HRI__NVIC_8h_a73c7133933d5f81875071864113a64c3}} 
+uint32\_t&
+ICP\_WKT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a5328496a8a597d9598d35d8b1323619b}\label{HRI__NVIC_8h_a5328496a8a597d9598d35d8b1323619b}} 
+uint32\_t&
+ICP\_ADC\_SEQA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a0e139423e6b90ecd8746a4f515d713e7}\label{HRI__NVIC_8h_a0e139423e6b90ecd8746a4f515d713e7}} 
+uint32\_t&
+ICP\_ADC\_SEQB: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ae438bdc1aa4db8caf50059b0694cc4da}\label{HRI__NVIC_8h_ae438bdc1aa4db8caf50059b0694cc4da}} 
+uint32\_t&
+ICP\_ADC\_THCMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af6765850b5f011e6fb9576df8ea677d2}\label{HRI__NVIC_8h_af6765850b5f011e6fb9576df8ea677d2}} 
+uint32\_t&
+ICP\_ADC\_OVR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_abc5b87b91ca7ddd753f3c09a4befeef2}\label{HRI__NVIC_8h_abc5b87b91ca7ddd753f3c09a4befeef2}} 
+uint32\_t&
+ICP\_SDMA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a3ede46d42415d09fb84b85b83a82ab09}\label{HRI__NVIC_8h_a3ede46d42415d09fb84b85b83a82ab09}} 
+uint32\_t&
+ICP\_I2C2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ade902d6df11c7068735fa66b2ca3fdf3}\label{HRI__NVIC_8h_ade902d6df11c7068735fa66b2ca3fdf3}} 
+uint32\_t&
+ICP\_I2C3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a4e52b57869d991c95349deeeb3d1d83f}\label{HRI__NVIC_8h_a4e52b57869d991c95349deeeb3d1d83f}} 
+uint32\_t&
+ICP\_CT32b0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a582b77927a4b22a915975f3fdef8c893}\label{HRI__NVIC_8h_a582b77927a4b22a915975f3fdef8c893}} 
+uint32\_t&
+ICP\_PININT0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aad360d5fd5cf8dc9e74f2a64872ecbde}\label{HRI__NVIC_8h_aad360d5fd5cf8dc9e74f2a64872ecbde}} 
+uint32\_t&
+ICP\_PININT1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2083bc9e2517790be8e8832ad18c54a8}\label{HRI__NVIC_8h_a2083bc9e2517790be8e8832ad18c54a8}} 
+uint32\_t&
+ICP\_PININT2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a25e85bca4c0382db1817116fc4fbc413}\label{HRI__NVIC_8h_a25e85bca4c0382db1817116fc4fbc413}} 
+uint32\_t&
+ICP\_PININT3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a95592f2080bfd2e71dababc69cbd95af}\label{HRI__NVIC_8h_a95592f2080bfd2e71dababc69cbd95af}} 
+uint32\_t&
+ICP\_PININT4: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a18ce63d179f24213e3dfba0ad05608e2}\label{HRI__NVIC_8h_a18ce63d179f24213e3dfba0ad05608e2}} 
+uint32\_t&
+ICP\_PININT5: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af9d016c09f80e12e5fce956af15cc65d}\label{HRI__NVIC_8h_af9d016c09f80e12e5fce956af15cc65d}} 
+uint32\_t&
+ICP\_PININT6: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af277a05aa8105106a1e949e089c498f8}\label{HRI__NVIC_8h_af277a05aa8105106a1e949e089c498f8}} 
+uint32\_t&
+ICP\_PININT7: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+A\+B\+R0\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+A\+B\+R0\+\_\+reg\+\_\+t}}\label{structNVIC__IABR0__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IABR0__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+A\+B\+R0\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a90be96a68ce6f45f27e0f182d760f693}\label{HRI__NVIC_8h_a90be96a68ce6f45f27e0f182d760f693}} 
+uint32\_t&
+IAB\_SPI0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ad76b4dea32ae5a6136685fee8a988bc9}\label{HRI__NVIC_8h_ad76b4dea32ae5a6136685fee8a988bc9}} 
+uint32\_t&
+IAB\_SPI1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2676895c67d8ca7adebee3900bd0d8c7}\label{HRI__NVIC_8h_a2676895c67d8ca7adebee3900bd0d8c7}} 
+uint32\_t&
+IAB\_DAC0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_afc13843b86078cac90cc27cdc6cf0645}\label{HRI__NVIC_8h_afc13843b86078cac90cc27cdc6cf0645}} 
+uint32\_t&
+IAB\_UART0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a48cf934972114953df448af2a0ae17e7}\label{HRI__NVIC_8h_a48cf934972114953df448af2a0ae17e7}} 
+uint32\_t&
+IAB\_UART1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a203f0ea8cd198502c7631984d060752f}\label{HRI__NVIC_8h_a203f0ea8cd198502c7631984d060752f}} 
+uint32\_t&
+IAB\_UART2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a247583a594ffa59925685c6a89427048}\label{HRI__NVIC_8h_a247583a594ffa59925685c6a89427048}} 
+uint32\_t&
+\_\_pad0\_\_: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aead3236e8d23279b199d049b78f67a40}\label{HRI__NVIC_8h_aead3236e8d23279b199d049b78f67a40}} 
+uint32\_t&
+IAB\_I2C1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aabd295b1256fa3a5bb8766491c918b95}\label{HRI__NVIC_8h_aabd295b1256fa3a5bb8766491c918b95}} 
+uint32\_t&
+IAB\_I2C0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a76217c284d4cce8c65b4763498eb7c64}\label{HRI__NVIC_8h_a76217c284d4cce8c65b4763498eb7c64}} 
+uint32\_t&
+IAB\_SCT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a927ed02df2ebf9c9badb105249c5fa4e}\label{HRI__NVIC_8h_a927ed02df2ebf9c9badb105249c5fa4e}} 
+uint32\_t&
+IAB\_MRT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a5bbd259ee272778b30a76b8a2a113673}\label{HRI__NVIC_8h_a5bbd259ee272778b30a76b8a2a113673}} 
+uint32\_t&
+IAB\_CMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a75b27bb798895d0b7f43022f7adc1099}\label{HRI__NVIC_8h_a75b27bb798895d0b7f43022f7adc1099}} 
+uint32\_t&
+IAB\_WDT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a90956bbcb65e26952b78304015a906bf}\label{HRI__NVIC_8h_a90956bbcb65e26952b78304015a906bf}} 
+uint32\_t&
+IAB\_BOD: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a5307ac50c67bfd57eefa84b95e805103}\label{HRI__NVIC_8h_a5307ac50c67bfd57eefa84b95e805103}} 
+uint32\_t&
+IAB\_FLASH: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a56b3861350dd2858f02da0fcd61f994a}\label{HRI__NVIC_8h_a56b3861350dd2858f02da0fcd61f994a}} 
+uint32\_t&
+IAB\_WKT: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ae7e544c3ecd9becee9f052330a8343f5}\label{HRI__NVIC_8h_ae7e544c3ecd9becee9f052330a8343f5}} 
+uint32\_t&
+IAB\_ADC\_SEQA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8ba9f6ef92b7e8111e7fe387294377cc}\label{HRI__NVIC_8h_a8ba9f6ef92b7e8111e7fe387294377cc}} 
+uint32\_t&
+IAB\_ADC\_SEQB: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ad62745d3b6438938d50bb1fc9530e0fe}\label{HRI__NVIC_8h_ad62745d3b6438938d50bb1fc9530e0fe}} 
+uint32\_t&
+IAB\_ADC\_THCMP: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2e63f576ef3757a7d35518aff401dc72}\label{HRI__NVIC_8h_a2e63f576ef3757a7d35518aff401dc72}} 
+uint32\_t&
+IAB\_ADC\_OVR: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2d8641f5e893b02e22ddadd3b7a9c396}\label{HRI__NVIC_8h_a2d8641f5e893b02e22ddadd3b7a9c396}} 
+uint32\_t&
+IAB\_SDMA: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a60475d860d0a52ed8f3e63bf2d1624b3}\label{HRI__NVIC_8h_a60475d860d0a52ed8f3e63bf2d1624b3}} 
+uint32\_t&
+IAB\_I2C2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9648e29c4756e7a72f87859b2073254a}\label{HRI__NVIC_8h_a9648e29c4756e7a72f87859b2073254a}} 
+uint32\_t&
+IAB\_I2C3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a3ed742fac7f37a926f15e4da7dbf3c1c}\label{HRI__NVIC_8h_a3ed742fac7f37a926f15e4da7dbf3c1c}} 
+uint32\_t&
+IAB\_CT32b0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_abe23ea4815c6dbbac28a1bcea0d8c00c}\label{HRI__NVIC_8h_abe23ea4815c6dbbac28a1bcea0d8c00c}} 
+uint32\_t&
+IAB\_PININT0: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7527aa4077c2890a94f594ca5fcfddb0}\label{HRI__NVIC_8h_a7527aa4077c2890a94f594ca5fcfddb0}} 
+uint32\_t&
+IAB\_PININT1: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a4c6acc08ffdb263ab58bd88c808931dd}\label{HRI__NVIC_8h_a4c6acc08ffdb263ab58bd88c808931dd}} 
+uint32\_t&
+IAB\_PININT2: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a9a6c87424df83377b0c73cd011571779}\label{HRI__NVIC_8h_a9a6c87424df83377b0c73cd011571779}} 
+uint32\_t&
+IAB\_PININT3: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a851d1b14e41ff5da0594fde060ad0cc8}\label{HRI__NVIC_8h_a851d1b14e41ff5da0594fde060ad0cc8}} 
+uint32\_t&
+IAB\_PININT4: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a1c17f883dc5bc4b1c74e7eb0df88fd70}\label{HRI__NVIC_8h_a1c17f883dc5bc4b1c74e7eb0df88fd70}} 
+uint32\_t&
+IAB\_PININT5: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a87ec95cfe5fd60773f9c6de7aac093f4}\label{HRI__NVIC_8h_a87ec95cfe5fd60773f9c6de7aac093f4}} 
+uint32\_t&
+IAB\_PININT6: 1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_afb29d76b93d5818b041e27b75a014513}\label{HRI__NVIC_8h_afb29d76b93d5818b041e27b75a014513}} 
+uint32\_t&
+IAB\_PININT7: 1&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R0\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R0\+\_\+reg\+\_\+t}}\label{structNVIC__IPR0__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR0__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R0\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a7a01a2c19e759c0fd5172dc668a4d2c9}\label{HRI__NVIC_8h_a7a01a2c19e759c0fd5172dc668a4d2c9}} 
+uint32\_t&
+\_\_pad0\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2efb7f2f4b28db1135c4a48f5176d7ee}\label{HRI__NVIC_8h_a2efb7f2f4b28db1135c4a48f5176d7ee}} 
+uint32\_t&
+IP\_SPI0: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ae1ad45e3ef95349d7f96b23a1d5e606c}\label{HRI__NVIC_8h_ae1ad45e3ef95349d7f96b23a1d5e606c}} 
+uint32\_t&
+\_\_pad1\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af52664acd3a4e39787013177cd0f9e9d}\label{HRI__NVIC_8h_af52664acd3a4e39787013177cd0f9e9d}} 
+uint32\_t&
+IP\_SPI1: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac95d803345e73ae23f082e975026698b}\label{HRI__NVIC_8h_ac95d803345e73ae23f082e975026698b}} 
+uint32\_t&
+\_\_pad2\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a099f62e8d180d4959f0e5c6540d4d163}\label{HRI__NVIC_8h_a099f62e8d180d4959f0e5c6540d4d163}} 
+uint32\_t&
+IP\_DAC0: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aeb8a8add84fcd4fafd45ba1894422968}\label{HRI__NVIC_8h_aeb8a8add84fcd4fafd45ba1894422968}} 
+uint32\_t&
+\_\_pad3\_\_: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a65c9089237d0e763188a3640cc44ccd0}\label{HRI__NVIC_8h_a65c9089237d0e763188a3640cc44ccd0}} 
+uint32\_t&
+IP\_UART0: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R1\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R1\+\_\+reg\+\_\+t}}\label{structNVIC__IPR1__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR1__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R1\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_af9be23570056ae32ac5413cd77631446}\label{HRI__NVIC_8h_af9be23570056ae32ac5413cd77631446}} 
+uint32\_t&
+RESERVED\_1: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ada9bc671279aca2d8e7c2234a2bfd806}\label{HRI__NVIC_8h_ada9bc671279aca2d8e7c2234a2bfd806}} 
+uint32\_t&
+IP\_UART1: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a115cde7ad08e605fb6729ccfc86810bf}\label{HRI__NVIC_8h_a115cde7ad08e605fb6729ccfc86810bf}} 
+uint32\_t&
+RESERVED\_2: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2b935c614e59f4dc281ffa553fd75ea7}\label{HRI__NVIC_8h_a2b935c614e59f4dc281ffa553fd75ea7}} 
+uint32\_t&
+IP\_UART2: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_afb86e588b630fc9a90df3aa67ebf90d4}\label{HRI__NVIC_8h_afb86e588b630fc9a90df3aa67ebf90d4}} 
+uint32\_t&
+RESERVED\_3: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8c345fd554458fd6f9864db5476b9b8e}\label{HRI__NVIC_8h_a8c345fd554458fd6f9864db5476b9b8e}} 
+uint32\_t&
+RESERVED\_4: 8&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af8949d872dbf7484f70e0a58b128e7dd}\label{HRI__NVIC_8h_af8949d872dbf7484f70e0a58b128e7dd}} 
+uint32\_t&
+IP\_I2C1: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R2\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R2\+\_\+reg\+\_\+t}}\label{structNVIC__IPR2__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR2__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R2\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_adf815ffa9c2d1af33aae111719125515}\label{HRI__NVIC_8h_adf815ffa9c2d1af33aae111719125515}} 
+uint32\_t&
+RESERVED\_1: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aa53d9e03ae6c48781c70ce5f201aee58}\label{HRI__NVIC_8h_aa53d9e03ae6c48781c70ce5f201aee58}} 
+uint32\_t&
+IP\_I2C0: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af88dff9966aa18dc99f31c6e5d37aef8}\label{HRI__NVIC_8h_af88dff9966aa18dc99f31c6e5d37aef8}} 
+uint32\_t&
+RESERVED\_2: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a50509dedea3b425916a0e2975eca587e}\label{HRI__NVIC_8h_a50509dedea3b425916a0e2975eca587e}} 
+uint32\_t&
+IP\_SCT: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_adf5393760b5600137bd04db7bb51e366}\label{HRI__NVIC_8h_adf5393760b5600137bd04db7bb51e366}} 
+uint32\_t&
+RESERVED\_3: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ab1ac4df98d81d8f9f2775ab50e27d8fe}\label{HRI__NVIC_8h_ab1ac4df98d81d8f9f2775ab50e27d8fe}} 
+uint32\_t&
+IP\_MRT: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a28f022df3ed3343a7c55e909faedf375}\label{HRI__NVIC_8h_a28f022df3ed3343a7c55e909faedf375}} 
+uint32\_t&
+RESERVED\_4: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ad5d1f14d24a41ef7e2dc5b125d58f719}\label{HRI__NVIC_8h_ad5d1f14d24a41ef7e2dc5b125d58f719}} 
+uint32\_t&
+IP\_CMP: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R3\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R3\+\_\+reg\+\_\+t}}\label{structNVIC__IPR3__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR3__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R3\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_ace529cadecc988da97190114c75b76b1}\label{HRI__NVIC_8h_ace529cadecc988da97190114c75b76b1}} 
+uint32\_t&
+RESERVED\_1: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a14e92e9f3813280bc1b8a19bb17060e2}\label{HRI__NVIC_8h_a14e92e9f3813280bc1b8a19bb17060e2}} 
+uint32\_t&
+IP\_WDT: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ad93d005ca8f17d5a9628223ad2f56503}\label{HRI__NVIC_8h_ad93d005ca8f17d5a9628223ad2f56503}} 
+uint32\_t&
+RESERVED\_2: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a4de5a1611f293f2fe6d4d9d3868230d9}\label{HRI__NVIC_8h_a4de5a1611f293f2fe6d4d9d3868230d9}} 
+uint32\_t&
+IP\_BOD: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a480bcb403347349e8cdc43afac306967}\label{HRI__NVIC_8h_a480bcb403347349e8cdc43afac306967}} 
+uint32\_t&
+RESERVED\_3: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a816ae83d8a18deacee76659d4e79f236}\label{HRI__NVIC_8h_a816ae83d8a18deacee76659d4e79f236}} 
+uint32\_t&
+IP\_FLASH: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a6e12fbb7121536671dcb41465858f32d}\label{HRI__NVIC_8h_a6e12fbb7121536671dcb41465858f32d}} 
+uint32\_t&
+RESERVED\_4: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a51e9f3e887300c3ca3a78f8ab88543c7}\label{HRI__NVIC_8h_a51e9f3e887300c3ca3a78f8ab88543c7}} 
+uint32\_t&
+IP\_WKT: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R4\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R4\+\_\+reg\+\_\+t}}\label{structNVIC__IPR4__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR4__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R4\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_aedfc0756fc9633c83e47a8ad7c90bebd}\label{HRI__NVIC_8h_aedfc0756fc9633c83e47a8ad7c90bebd}} 
+uint32\_t&
+RESERVED\_1: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ae588e1e73a31bfd625eb71f4260da221}\label{HRI__NVIC_8h_ae588e1e73a31bfd625eb71f4260da221}} 
+uint32\_t&
+IP\_ADC\_SEQA: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac837d7949a06754078c2c250cdbc78ec}\label{HRI__NVIC_8h_ac837d7949a06754078c2c250cdbc78ec}} 
+uint32\_t&
+RESERVED\_2: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7301c33f3f1e332754760827d0ce5da9}\label{HRI__NVIC_8h_a7301c33f3f1e332754760827d0ce5da9}} 
+uint32\_t&
+IP\_ADC\_SEQB: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a6133ccb1dceab7d9b024151254f0ae61}\label{HRI__NVIC_8h_a6133ccb1dceab7d9b024151254f0ae61}} 
+uint32\_t&
+RESERVED\_3: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a49a62ee7ddd3aa8365253dd8a31f590c}\label{HRI__NVIC_8h_a49a62ee7ddd3aa8365253dd8a31f590c}} 
+uint32\_t&
+IP\_ADC\_THCMP: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a891663f6561443bbce9bdab1997401fa}\label{HRI__NVIC_8h_a891663f6561443bbce9bdab1997401fa}} 
+uint32\_t&
+RESERVED\_4: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a72d3bf770f5e22495f0bdfe38f6cc49b}\label{HRI__NVIC_8h_a72d3bf770f5e22495f0bdfe38f6cc49b}} 
+uint32\_t&
+ID\_ADC\_OVR: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R5\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R5\+\_\+reg\+\_\+t}}\label{structNVIC__IPR5__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR5__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R5\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a5806a3dac3153dd2cae8d7fe9d2d029b}\label{HRI__NVIC_8h_a5806a3dac3153dd2cae8d7fe9d2d029b}} 
+uint32\_t&
+RESERVED\_1: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a65d3da63695aaedf51d2fa6abb8f6cb7}\label{HRI__NVIC_8h_a65d3da63695aaedf51d2fa6abb8f6cb7}} 
+uint32\_t&
+IP\_DMA: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a6d72469908ca70e2105073ed5a0fbfbe}\label{HRI__NVIC_8h_a6d72469908ca70e2105073ed5a0fbfbe}} 
+uint32\_t&
+RESERVED\_2: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac669d056211715eb4391f4c778463a4b}\label{HRI__NVIC_8h_ac669d056211715eb4391f4c778463a4b}} 
+uint32\_t&
+IP\_I2C2: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a449cc99265b65de88ca6fd6ddbea4dba}\label{HRI__NVIC_8h_a449cc99265b65de88ca6fd6ddbea4dba}} 
+uint32\_t&
+RESERVED\_3: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a6ee46075596352eaa48c1ace90e8a99f}\label{HRI__NVIC_8h_a6ee46075596352eaa48c1ace90e8a99f}} 
+uint32\_t&
+IP\_I2C3: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a5f6bd6c0e490b45458f162cde9d97b4b}\label{HRI__NVIC_8h_a5f6bd6c0e490b45458f162cde9d97b4b}} 
+uint32\_t&
+RESERVED\_4: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a03ab384452dfff075a847ec9516467d6}\label{HRI__NVIC_8h_a03ab384452dfff075a847ec9516467d6}} 
+uint32\_t&
+IP\_CT32B0: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R6\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R6\+\_\+reg\+\_\+t}}\label{structNVIC__IPR6__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR6__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R6\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a68a813025be291587cb3c6a1590c3076}\label{HRI__NVIC_8h_a68a813025be291587cb3c6a1590c3076}} 
+uint32\_t&
+RESERVED\_1: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_abc6e502b7d61e6206d86249facf86d66}\label{HRI__NVIC_8h_abc6e502b7d61e6206d86249facf86d66}} 
+uint32\_t&
+IP\_PININT0: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a01cca6eef615b54643725d1dd03775e3}\label{HRI__NVIC_8h_a01cca6eef615b54643725d1dd03775e3}} 
+uint32\_t&
+RESERVED\_2: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_afdb87f286613382db2b561664a77fde4}\label{HRI__NVIC_8h_afdb87f286613382db2b561664a77fde4}} 
+uint32\_t&
+IP\_PININT1: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8ba2e44accf51389814ec41e0c167418}\label{HRI__NVIC_8h_a8ba2e44accf51389814ec41e0c167418}} 
+uint32\_t&
+RESERVED\_3: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_abfa8211d062858ea744dada3c6c0d0dc}\label{HRI__NVIC_8h_abfa8211d062858ea744dada3c6c0d0dc}} 
+uint32\_t&
+IP\_PININT2: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a2ac0d5006aa5c42cbd7518b2b0c0050e}\label{HRI__NVIC_8h_a2ac0d5006aa5c42cbd7518b2b0c0050e}} 
+uint32\_t&
+RESERVED\_4: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7543dabc09e2a679d0bb48a3908d51f4}\label{HRI__NVIC_8h_a7543dabc09e2a679d0bb48a3908d51f4}} 
+uint32\_t&
+IP\_PININT3: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+\+I\+P\+R7\+\_\+reg\+\_\+t@{N\+V\+I\+C\+\_\+\+I\+P\+R7\+\_\+reg\+\_\+t}}\label{structNVIC__IPR7__reg__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__IPR7__reg__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+\+I\+P\+R7\+\_\+reg\+\_\+t}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a8407791b911c5e62a98fab85b77469fb}\label{HRI__NVIC_8h_a8407791b911c5e62a98fab85b77469fb}} 
+uint32\_t&
+RESERVED\_1: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a49126b232c51dc1d45f71589f5d55a67}\label{HRI__NVIC_8h_a49126b232c51dc1d45f71589f5d55a67}} 
+uint32\_t&
+IP\_PININT4: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7c47c84fc67fc2639d56e634711d7787}\label{HRI__NVIC_8h_a7c47c84fc67fc2639d56e634711d7787}} 
+uint32\_t&
+RESERVED\_2: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a870b17805f65cc2fb01af36d9025e0a1}\label{HRI__NVIC_8h_a870b17805f65cc2fb01af36d9025e0a1}} 
+uint32\_t&
+IP\_PININT5: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7b6bc2c22f576c8a4f1d6f6a49b01c1e}\label{HRI__NVIC_8h_a7b6bc2c22f576c8a4f1d6f6a49b01c1e}} 
+uint32\_t&
+RESERVED\_3: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ab519cf256fe56cd6e69f4e336242a198}\label{HRI__NVIC_8h_ab519cf256fe56cd6e69f4e336242a198}} 
+uint32\_t&
+IP\_PININT6: 2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a1703a4c6fad5046ef3e1972b6005abc2}\label{HRI__NVIC_8h_a1703a4c6fad5046ef3e1972b6005abc2}} 
+uint32\_t&
+RESERVED\_4: 6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a72bad602c8457468b85e9126bd6d2709}\label{HRI__NVIC_8h_a72bad602c8457468b85e9126bd6d2709}} 
+uint32\_t&
+IP\_PININT7: 2&
+\\
+\hline
+
+\end{DoxyFields}
+\index{N\+V\+I\+C\+\_\+per\+\_\+t@{N\+V\+I\+C\+\_\+per\+\_\+t}}\label{structNVIC__per__t}
+\Hypertarget{HRI__NVIC_8h_structNVIC__per__t}
+\subsubsection{struct N\+V\+I\+C\+\_\+per\+\_\+t}
+
+
+Diagrama de colaboración para N\+V\+I\+C\+\_\+per\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dd/d80/structNVIC__per__t__coll__graph}
+\end{center}
+\end{figure}
+\begin{DoxyFields}{Campos de datos}
+\mbox{\Hypertarget{HRI__NVIC_8h_a6b8a40ee11341c6a8946ac7420c0cd25}\label{HRI__NVIC_8h_a6b8a40ee11341c6a8946ac7420c0cd25}} 
+const uint8\_t&
+RESERVED\_1\mbox{[}0x100\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac01d42aa64ff732a68fd70224baa8be8}\label{HRI__NVIC_8h_ac01d42aa64ff732a68fd70224baa8be8}} 
+\hyperlink{HRI__NVIC_8h_d8/dad/structNVIC__ISER0__reg__t}{NVIC\_ISER0\_reg\_t}&
+ISER0&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ad1ddbb7c3d55594a8a2ce6c5efb2ee76}\label{HRI__NVIC_8h_ad1ddbb7c3d55594a8a2ce6c5efb2ee76}} 
+const uint8\_t&
+RESERVED\_2\mbox{[}0x7C\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af669ab006c2610c1aea368d9df60728c}\label{HRI__NVIC_8h_af669ab006c2610c1aea368d9df60728c}} 
+\hyperlink{HRI__NVIC_8h_d6/d2a/structNVIC__ICER0__reg__t}{NVIC\_ICER0\_reg\_t}&
+ICER0&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ae213576c0f1da4956f12826c43883357}\label{HRI__NVIC_8h_ae213576c0f1da4956f12826c43883357}} 
+const uint8\_t&
+RESERVED\_3\mbox{[}0x7C\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a34f3f28b97e675869a4fd86c1f0b6505}\label{HRI__NVIC_8h_a34f3f28b97e675869a4fd86c1f0b6505}} 
+\hyperlink{HRI__NVIC_8h_d7/d55/structNVIC__ISPR0__reg__t}{NVIC\_ISPR0\_reg\_t}&
+ISPR0&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a13134e80848a0229989656728492a81e}\label{HRI__NVIC_8h_a13134e80848a0229989656728492a81e}} 
+const uint8\_t&
+RESERVED\_4\mbox{[}0x7C\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af401470af6529d8b95da4a46249690e7}\label{HRI__NVIC_8h_af401470af6529d8b95da4a46249690e7}} 
+\hyperlink{HRI__NVIC_8h_da/dc8/structNVIC__ICPR0__reg__t}{NVIC\_ICPR0\_reg\_t}&
+ICPR0&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aec5b9d4686337bee95a4c977731ab350}\label{HRI__NVIC_8h_aec5b9d4686337bee95a4c977731ab350}} 
+const uint8\_t&
+RESERVED\_5\mbox{[}0x7C\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a804bbbd56852e7514ff22dd60fe7f444}\label{HRI__NVIC_8h_a804bbbd56852e7514ff22dd60fe7f444}} 
+const \hyperlink{HRI__NVIC_8h_db/d78/structNVIC__IABR0__reg__t}{NVIC\_IABR0\_reg\_t}&
+IABR0&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a0c9f4955aed7730f31d57775774d165b}\label{HRI__NVIC_8h_a0c9f4955aed7730f31d57775774d165b}} 
+const uint8\_t&
+RESERVED\_6\mbox{[}0xFC\mbox{]}&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a8f066c0884ce4be2bffec91f2fb6a59b}\label{HRI__NVIC_8h_a8f066c0884ce4be2bffec91f2fb6a59b}} 
+\hyperlink{HRI__NVIC_8h_d4/da4/structNVIC__IPR0__reg__t}{NVIC\_IPR0\_reg\_t}&
+IPR0&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a7ed9e429b1f67c796cae991e34972bd9}\label{HRI__NVIC_8h_a7ed9e429b1f67c796cae991e34972bd9}} 
+\hyperlink{HRI__NVIC_8h_dd/dbd/structNVIC__IPR1__reg__t}{NVIC\_IPR1\_reg\_t}&
+IPR1&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_af222594b755abeb1ece08e24a80542a8}\label{HRI__NVIC_8h_af222594b755abeb1ece08e24a80542a8}} 
+\hyperlink{HRI__NVIC_8h_d9/d19/structNVIC__IPR2__reg__t}{NVIC\_IPR2\_reg\_t}&
+IPR2&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a67432bbb1c94dcf592772876d00ce890}\label{HRI__NVIC_8h_a67432bbb1c94dcf592772876d00ce890}} 
+\hyperlink{HRI__NVIC_8h_d6/d2c/structNVIC__IPR3__reg__t}{NVIC\_IPR3\_reg\_t}&
+IPR3&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a023f70a48010dc3d64437212c9d8c6f9}\label{HRI__NVIC_8h_a023f70a48010dc3d64437212c9d8c6f9}} 
+\hyperlink{HRI__NVIC_8h_d4/d69/structNVIC__IPR4__reg__t}{NVIC\_IPR4\_reg\_t}&
+IPR4&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_aec1a7f05b20aa92fca14611ceb3d1960}\label{HRI__NVIC_8h_aec1a7f05b20aa92fca14611ceb3d1960}} 
+\hyperlink{HRI__NVIC_8h_d2/da8/structNVIC__IPR5__reg__t}{NVIC\_IPR5\_reg\_t}&
+IPR5&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_a64029138a17430863ba436d06d899b0b}\label{HRI__NVIC_8h_a64029138a17430863ba436d06d899b0b}} 
+\hyperlink{HRI__NVIC_8h_dc/d98/structNVIC__IPR6__reg__t}{NVIC\_IPR6\_reg\_t}&
+IPR6&
+\\
+\hline
+
+\mbox{\Hypertarget{HRI__NVIC_8h_ac11cbcf8fdde1e62fbf20195e6ee36d4}\label{HRI__NVIC_8h_ac11cbcf8fdde1e62fbf20195e6ee36d4}} 
+\hyperlink{HRI__NVIC_8h_de/d00/structNVIC__IPR7__reg__t}{NVIC\_IPR7\_reg\_t}&
+IPR7&
+\\
+\hline
+
+\end{DoxyFields}

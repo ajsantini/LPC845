@@ -9,7 +9,6 @@
 #ifndef HPL_ADC_H_
 #define HPL_ADC_H_
 
-#include <stdint.h>
 #include <HRI_ADC.h>
 
 extern volatile ADC_per_t * const ADC; //!< Periferico ADC

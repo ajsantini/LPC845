@@ -9,7 +9,6 @@
 #ifndef HPL_SYSCON_H_
 #define HPL_SYSCON_H_
 
-#include <stdint.h>
 #include <HRI_SYSCON.h>
 #include <HPL_GPIO.h>
 

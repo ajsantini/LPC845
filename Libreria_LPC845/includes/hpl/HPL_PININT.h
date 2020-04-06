@@ -9,7 +9,6 @@
 #ifndef HPL_PININT_H_
 #define HPL_PININT_H_
 
-#include <stdint.h>
 #include <HRI_PININT.h>
 
 extern volatile PININT_per_t * const PININT; //!< Periferico PININT

@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Libreria LPC845: Referencia del Archivo source/hal/HAL_UART.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Libreria LPC845
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_e31421c8d11a714f997d94dfd878485b.html">hal</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo HAL_UART.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funciones a nivel de aplicacion del periferico UART (LPC845)  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="HAL__UART_8h_source.html">HAL_UART.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="HAL__SYSCON_8h_source.html">HAL_SYSCON.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="HPL__UART_8h_source.html">HPL_UART.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="HPL__NVIC_8h_source.html">HPL_NVIC.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="HPL__SWM_8h_source.html">HPL_SWM.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="HPL__SYSCON_8h_source.html">HPL_SYSCON.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para HAL_UART.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="HAL__UART_8c__incl.png" border="0" usemap="#source_2hal_2HAL__UART_8c" alt=""/></div>
+<map name="source_2hal_2HAL__UART_8c" id="source_2hal_2HAL__UART_8c">
+<area shape="rect" id="node3" href="HAL__UART_8h.html" title="Declaraciones a nivel de aplicacion del periferico UART (LPC845) " alt="" coords="49,229,151,256"/>
+<area shape="rect" id="node5" href="HAL__SYSCON_8h.html" title="Declaraciones a nivel de aplicacion del periferico SYSCON (LPC845) " alt="" coords="147,304,269,331"/>
+<area shape="rect" id="node7" href="HPL__UART_8h.html" title="Declaraciones a nivel de abstraccion de periferico del UART (LPC845) " alt="" coords="253,155,355,181"/>
+<area shape="rect" id="node9" href="HPL__NVIC_8h.html" title="Declaraciones a nivel de abstraccion de periferico del NVIC (LPC845) " alt="" coords="320,80,419,107"/>
+<area shape="rect" id="node11" href="HPL__SWM_8h.html" title="Definiciones a nivel de periferico del modulo SWM (LPC845) " alt="" coords="443,80,541,107"/>
+<area shape="rect" id="node13" href="HPL__SYSCON_8h.html" title="Declaraciones a nivel de abstraccion de periferico del SYSCON (LPC845) " alt="" coords="553,155,676,181"/>
+<area shape="rect" id="node6" href="HAL__GPIO_8h.html" title="Declaraciones a nivel de aplicacion del periferico GPIO (LPC845) " alt="" coords="24,304,123,331"/>
+<area shape="rect" id="node8" href="HRI__UART_8h.html" title="Definiciones a nivel de registros del modulo UART (LPC845) " alt="" coords="255,229,356,256"/>
+<area shape="rect" id="node10" href="HRI__NVIC_8h.html" title="Definiciones a nivel de registros del modulo NVIC (LPC845) " alt="" coords="345,304,442,331"/>
+<area shape="rect" id="node12" href="HRI__SWM_8h.html" title="Definiciones a nivel de registros del modulo SWM (LPC845) " alt="" coords="431,155,529,181"/>
+<area shape="rect" id="node14" href="HRI__SYSCON_8h.html" title="Definiciones a nivel de registros del modulo SYSCON (LPC845) " alt="" coords="518,229,639,256"/>
+<area shape="rect" id="node15" href="HPL__GPIO_8h.html" title="Declaraciones a nivel de abstraccion de periferico del GPIO (LPC845) " alt="" coords="664,229,763,256"/>
+<area shape="rect" id="node16" href="HRI__GPIO_8h.html" title="Definiciones a nivel de registros del modulo GPIO (LPC845) " alt="" coords="641,304,738,331"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a4c176ca9e4d27c7cc44b77455671748f"><td class="memItemLeft" align="right" valign="top"><a id="a4c176ca9e4d27c7cc44b77455671748f"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a> (void)</td></tr>
+<tr class="memdesc:a4c176ca9e4d27c7cc44b77455671748f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Llamado a funcion dummy para irq iniciales. <br /></td></tr>
+<tr class="separator:a4c176ca9e4d27c7cc44b77455671748f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184b4a206884a6fc6c0a1625bfe33609"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a184b4a206884a6fc6c0a1625bfe33609">hal_uart_calculate_brgval</a> (uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling)</td></tr>
+<tr class="memdesc:a184b4a206884a6fc6c0a1625bfe33609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculo del valor para el registro de Baudrate.  <a href="#a184b4a206884a6fc6c0a1625bfe33609">Más...</a><br /></td></tr>
+<tr class="separator:a184b4a206884a6fc6c0a1625bfe33609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e44b644d6177de4abf97c8e900d517"><td class="memItemLeft" align="right" valign="top"><a id="af8e44b644d6177de4abf97c8e900d517"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>hal_uart_handle_irq</b> (uint8_t inst)</td></tr>
+<tr class="separator:af8e44b644d6177de4abf97c8e900d517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae847e2762fdcf69766487fbea2eed69a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#ae847e2762fdcf69766487fbea2eed69a">hal_uart_init</a> (uint8_t inst, const <a class="el" href="structhal__uart__config__t.html">hal_uart_config_t</a> *config)</td></tr>
+<tr class="memdesc:ae847e2762fdcf69766487fbea2eed69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializar UART con los parametros deseados.  <a href="#ae847e2762fdcf69766487fbea2eed69a">Más...</a><br /></td></tr>
+<tr class="separator:ae847e2762fdcf69766487fbea2eed69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3ebe57d6954db26baedbafdc64fb26"><td class="memItemLeft" align="right" valign="top">hal_uart_tx_result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#aac3ebe57d6954db26baedbafdc64fb26">hal_uart_tx_byte</a> (uint8_t inst, uint32_t data)</td></tr>
+<tr class="memdesc:aac3ebe57d6954db26baedbafdc64fb26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmitir un dato mediante la UART.  <a href="#aac3ebe57d6954db26baedbafdc64fb26">Más...</a><br /></td></tr>
+<tr class="separator:aac3ebe57d6954db26baedbafdc64fb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9186f2bbb7ce6c298e4e6249341a99a"><td class="memItemLeft" align="right" valign="top">hal_uart_rx_result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#aa9186f2bbb7ce6c298e4e6249341a99a">hal_uart_rx_byte</a> (uint8_t inst, uint32_t *data)</td></tr>
+<tr class="memdesc:aa9186f2bbb7ce6c298e4e6249341a99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recibir un dato de la UART.  <a href="#aa9186f2bbb7ce6c298e4e6249341a99a">Más...</a><br /></td></tr>
+<tr class="separator:aa9186f2bbb7ce6c298e4e6249341a99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07491f4d61942f763b49526e81e2a35d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a07491f4d61942f763b49526e81e2a35d">hal_uart_register_rx_callback</a> (uint8_t inst, void(*new_callback)(void))</td></tr>
+<tr class="memdesc:a07491f4d61942f763b49526e81e2a35d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registrar el callback a ser llamado en la recepcion de un dato por UART.  <a href="#a07491f4d61942f763b49526e81e2a35d">Más...</a><br /></td></tr>
+<tr class="separator:a07491f4d61942f763b49526e81e2a35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014876b7037b10d418c3b2006f894f1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a014876b7037b10d418c3b2006f894f1e">hal_uart_register_tx_callback</a> (uint8_t inst, void(*new_callback)(void))</td></tr>
+<tr class="memdesc:a014876b7037b10d418c3b2006f894f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registrar el callback a ser llamado una vez finalizada la transmision de un dato por UART.  <a href="#a014876b7037b10d418c3b2006f894f1e">Más...</a><br /></td></tr>
+<tr class="separator:a014876b7037b10d418c3b2006f894f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c0544b06d54b198d8c50f507e399a91"><td class="memItemLeft" align="right" valign="top"><a id="a1c0544b06d54b198d8c50f507e399a91"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a1c0544b06d54b198d8c50f507e399a91">UART0_IRQHandler</a> (void)</td></tr>
+<tr class="memdesc:a1c0544b06d54b198d8c50f507e399a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupcion de UART0. <br /></td></tr>
+<tr class="separator:a1c0544b06d54b198d8c50f507e399a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81be101f2729b7893235f704f583533e"><td class="memItemLeft" align="right" valign="top"><a id="a81be101f2729b7893235f704f583533e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a81be101f2729b7893235f704f583533e">UART1_IRQHandler</a> (void)</td></tr>
+<tr class="memdesc:a81be101f2729b7893235f704f583533e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupcion de UART1. <br /></td></tr>
+<tr class="separator:a81be101f2729b7893235f704f583533e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac20eca44aeea90e6f603831193cc9b28"><td class="memItemLeft" align="right" valign="top"><a id="ac20eca44aeea90e6f603831193cc9b28"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#ac20eca44aeea90e6f603831193cc9b28">UART2_IRQHandler</a> (void)</td></tr>
+<tr class="memdesc:ac20eca44aeea90e6f603831193cc9b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupcion de UART2. <br /></td></tr>
+<tr class="separator:ac20eca44aeea90e6f603831193cc9b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a61d73fd6ad0a670c4225140fefd7bd"><td class="memItemLeft" align="right" valign="top"><a id="a7a61d73fd6ad0a670c4225140fefd7bd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a7a61d73fd6ad0a670c4225140fefd7bd">UART3_irq</a> (void)</td></tr>
+<tr class="memdesc:a7a61d73fd6ad0a670c4225140fefd7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupcion de UART3. <br /></td></tr>
+<tr class="separator:a7a61d73fd6ad0a670c4225140fefd7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28aab3f4a90a2a9d61d88048637c0811"><td class="memItemLeft" align="right" valign="top"><a id="a28aab3f4a90a2a9d61d88048637c0811"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a28aab3f4a90a2a9d61d88048637c0811">UART4_irq</a> (void)</td></tr>
+<tr class="memdesc:a28aab3f4a90a2a9d61d88048637c0811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupcion de UART4. <br /></td></tr>
+<tr class="separator:a28aab3f4a90a2a9d61d88048637c0811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a78043b9798a9ce34ebb63cb95a328ad8"><td class="memItemLeft" align="right" valign="top">static void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a78043b9798a9ce34ebb63cb95a328ad8">uart_rx_callback</a> [])(void)</td></tr>
+<tr class="memdesc:a78043b9798a9ce34ebb63cb95a328ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callbacks registrados a la recepcion de un dato por UART.  <a href="#a78043b9798a9ce34ebb63cb95a328ad8">Más...</a><br /></td></tr>
+<tr class="separator:a78043b9798a9ce34ebb63cb95a328ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d902f8a83b04975aee9e00c7c5003c"><td class="memItemLeft" align="right" valign="top">static void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HAL__UART_8c.html#a18d902f8a83b04975aee9e00c7c5003c">uart_tx_callback</a> [])(void)</td></tr>
+<tr class="memdesc:a18d902f8a83b04975aee9e00c7c5003c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callbacks registrados a la finalizacion de transmision de un dato por UART.  <a href="#a18d902f8a83b04975aee9e00c7c5003c">Más...</a><br /></td></tr>
+<tr class="separator:a18d902f8a83b04975aee9e00c7c5003c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Funciones a nivel de aplicacion del periferico UART (LPC845) </p>
+<dl class="section author"><dt>Autor</dt><dd>Augusto Santini </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>3/2020 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a184b4a206884a6fc6c0a1625bfe33609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184b4a206884a6fc6c0a1625bfe33609">&#9670;&nbsp;</a></span>hal_uart_calculate_brgval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t hal_uart_calculate_brgval </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>uart_clock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>baudrate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>oversampling</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculo del valor para el registro de Baudrate. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart_clock</td><td>Clock asociado con la UART. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">baudrate</td><td>Baudrate deseado a calcular. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">oversampling</td><td>Oversampling deseado para la UART. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Valor a poner en el registro BRG. </dd></dl>
+
+</div>
+</div>
+<a id="ae847e2762fdcf69766487fbea2eed69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae847e2762fdcf69766487fbea2eed69a">&#9670;&nbsp;</a></span>hal_uart_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_uart_init </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structhal__uart__config__t.html">hal_uart_config_t</a> *&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializar UART con los parametros deseados. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Que instancia de UART inicializar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Puntero a configuracion de la UART </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aac3ebe57d6954db26baedbafdc64fb26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac3ebe57d6954db26baedbafdc64fb26">&#9670;&nbsp;</a></span>hal_uart_tx_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hal_uart_tx_result hal_uart_tx_byte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmitir un dato mediante la UART. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Que instancia de UART usar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Dato a transmitir. Puede ser de 7, 8 o 9 bits </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9186f2bbb7ce6c298e4e6249341a99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9186f2bbb7ce6c298e4e6249341a99a">&#9670;&nbsp;</a></span>hal_uart_rx_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hal_uart_rx_result hal_uart_rx_byte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recibir un dato de la UART. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>Que instancia de UART usar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Puntero a donde guardar el dato recibido </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado de la recepcion </dd></dl>
+
+</div>
+</div>
+<a id="a07491f4d61942f763b49526e81e2a35d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07491f4d61942f763b49526e81e2a35d">&#9670;&nbsp;</a></span>hal_uart_register_rx_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_uart_register_rx_callback </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>new_callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registrar el callback a ser llamado en la recepcion de un dato por UART. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>A que instancia de UART registrar el callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">new_callback</td><td>Puntero a funcion a llamar cada vez que se recibe un dato por UART </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a014876b7037b10d418c3b2006f894f1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a014876b7037b10d418c3b2006f894f1e">&#9670;&nbsp;</a></span>hal_uart_register_tx_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_uart_register_tx_callback </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void)&#160;</td>
+          <td class="paramname"><em>new_callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registrar el callback a ser llamado una vez finalizada la transmision de un dato por UART. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inst</td><td>A que instancia de UART registrar el callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">new_callback</td><td>Puntero a funcion a llamar cada vez que se termina de enviar un dato por UART </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="a78043b9798a9ce34ebb63cb95a328ad8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78043b9798a9ce34ebb63cb95a328ad8">&#9670;&nbsp;</a></span>uart_rx_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* uart_rx_callback[])(void)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        dummy_callback</div><div class="line">}</div><div class="ttc" id="HAL__UART_8c_html_a4c176ca9e4d27c7cc44b77455671748f"><div class="ttname"><a href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a></div><div class="ttdeci">static void dummy_callback(void)</div><div class="ttdoc">Llamado a funcion dummy para irq iniciales. </div><div class="ttdef"><b>Definition:</b> HAL_UART.c:251</div></div>
+</div><!-- fragment -->
+<p>Callbacks registrados a la recepcion de un dato por UART. </p>
+
+</div>
+</div>
+<a id="a18d902f8a83b04975aee9e00c7c5003c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d902f8a83b04975aee9e00c7c5003c">&#9670;&nbsp;</a></span>uart_tx_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* uart_tx_callback[])(void)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        <a class="code" href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a>,</div><div class="line">        dummy_callback</div><div class="line">}</div><div class="ttc" id="HAL__UART_8c_html_a4c176ca9e4d27c7cc44b77455671748f"><div class="ttname"><a href="HAL__UART_8c.html#a4c176ca9e4d27c7cc44b77455671748f">dummy_callback</a></div><div class="ttdeci">static void dummy_callback(void)</div><div class="ttdoc">Llamado a funcion dummy para irq iniciales. </div><div class="ttdef"><b>Definition:</b> HAL_UART.c:251</div></div>
+</div><!-- fragment -->
+<p>Callbacks registrados a la finalizacion de transmision de un dato por UART. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
