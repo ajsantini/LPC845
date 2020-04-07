@@ -72,13 +72,6 @@ typedef enum
 	HAL_ADC_CLOCK_SYS_PLL /**< Phase locked loop oscillator como fuente de clock */
 }hal_adc_clock_source_en;
 
-/** Selección de modo de operación para el \e ADC */
-typedef enum
-{
-	HAL_ADC_OPERATION_MODE_SYNCHRONOUS = 0, /**< Modo de operación sincrónico */
-	HAL_ADC_OPERATION_MODE_ASYNCHRONOUS /**< Modo de operación asincrónico */
-}hal_adc_operation_mode_en;
-
 /** Selección de modo bajo consumo */
 typedef enum
 {
@@ -184,7 +177,22 @@ typedef struct
 }hal_adc_sequence_result_t;
 
 /**
- * @brief Inicializar el \e ADC
+ * @brief Inicializar el \e ADC en modo \b asincrónico
+ *
+ * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
+ * Nota: Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC
+ *
+ * @see hal_adc_clock_source_en
+ * @see hal_adc_low_power_mode_en
+ * @param[in] sample_freq Frecuencia de sampleo deseada
+ * @param[in] div Divisor para la lógica del \e ADC
+ * @param[in] clock_source Fuente de clock para el \e ADC
+ * @param[in] low_power Selección de modo de bajo consumo
+ */
+void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_low_power_mode_en low_power);
+
+/**
+ * @brief Inicializar el \e ADC en modo \b sincrónico
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
@@ -192,12 +200,14 @@ typedef struct
  * @see hal_adc_operation_mode_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] div Divisor para la lógica del \e ADC (solo importa para modo asincrónico)
- * @param[in] clock_source Fuente de clock para el \e ADC (solo importa para modo asincrónico)
- * @param[in] mode Selección de modo de operación, sincrónico o asincrónico
  * @param[in] low_power Selección de modo de bajo consumo
  */
-void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power);
+void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power);
+
+/**
+ * @brief De-inicialización del \e ADC
+ */
+void hal_adc_deinit(void);
 
 /**
  * @brief Configurar una secuencia de conversión

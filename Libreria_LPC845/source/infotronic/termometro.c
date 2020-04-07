@@ -95,7 +95,7 @@ void termometro_init(void)
 	adc_config.single_step = 0;
 	adc_config.trigger = HAL_ADC_TRIGGER_SEL_NONE;
 
-	hal_adc_init(ADC_SAMPLING_FREQUENCY, 0, HAL_ADC_CLOCK_SOURCE_FRO, HAL_ADC_OPERATION_MODE_ASYNCHRONOUS, HAL_ADC_LOW_POWER_MODE_DISABLED);
+	hal_adc_init_async_mode(ADC_SAMPLING_FREQUENCY, 0, HAL_ADC_CLOCK_SOURCE_FRO, HAL_ADC_LOW_POWER_MODE_DISABLED);
 
 	hal_adc_config_sequence(ADC_TERMOMETRO_SEQUENCE, &adc_config);
 }

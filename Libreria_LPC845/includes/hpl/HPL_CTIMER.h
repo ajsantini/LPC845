@@ -264,7 +264,7 @@ static inline uint32_t CTIMER_read_counter(void)
  */
 static inline void CTIMER_write_prescaler(uint32_t value)
 {
-	CTIMER->PC.PCVAL = value;
+	CTIMER->PR.PRVAL = value;
 }
 
 /**
@@ -273,7 +273,7 @@ static inline void CTIMER_write_prescaler(uint32_t value)
  */
 static inline uint32_t CTIMER_read_prescaler(void)
 {
-	return CTIMER->PC.PCVAL;
+	return CTIMER->PR.PRVAL;
 }
 
 /**

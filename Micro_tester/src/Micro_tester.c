@@ -254,7 +254,7 @@ int main(void)
 	hal_gpio_set_dir(CTIMER_PORT_PIN, HAL_GPIO_DIR_OUTPUT, 1);
 	hal_gpio_set_dir(WKT_OUT_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
 
-	hal_adc_init(ADC_FREQUENCY, 0, HAL_ADC_CLOCK_SOURCE_FRO, HAL_ADC_OPERATION_MODE_ASYNCHRONOUS, HAL_ADC_LOW_POWER_MODE_DISABLED);
+	hal_adc_init_async_mode(ADC_FREQUENCY, 0, HAL_ADC_CLOCK_SOURCE_FRO, HAL_ADC_LOW_POWER_MODE_DISABLED);
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
 
 	hal_uart_init(UART_NUMBER, &uart_config);

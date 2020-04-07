@@ -35,23 +35,26 @@ static void (*adc_overrun_callback)(void) = dummy_irq_callback; //!< Callback cu
 static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
 
 /**
- * @brief Inicializar el \e ADC
+ * @brief Inicializar el \e ADC en modo \b asincrónico
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
+ * Nota: Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC
  *
  * @see hal_adc_clock_source_en
- * @see hal_adc_operation_mode_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] div Divisor para la lógica del \e ADC (solo importa para modo asincrónico)
- * @param[in] clock_source Fuente de clock para el \e ADC (solo importa para modo asincrónico)
- * @param[in] mode Selección de modo de operación, sincrónico o asincrónico
+ * @param[in] div Divisor para la lógica del \e ADC
+ * @param[in] clock_source Fuente de clock para el \e ADC
  * @param[in] low_power Selección de modo de bajo consumo
  */
-void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_operation_mode_en mode, hal_adc_low_power_mode_en low_power)
+void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_low_power_mode_en low_power)
 {
+	uint32_t aux;
+
 	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_ADC);
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_ADC);
+
+	SYSCON_assert_reset(SYSCON_RESET_SEL_ADC);
 	SYSCON_clear_reset(SYSCON_RESET_SEL_ADC);
 
 	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
@@ -59,60 +62,90 @@ void hal_adc_init(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clo
 
 	ADC_hardware_calib(hal_syscon_get_fro_clock() / 500e3);
 
-	if(mode == HAL_ADC_OPERATION_MODE_ASYNCHRONOUS)
+	if(sample_freq > ADC_MAX_FREQ_ASYNC)
 	{
-		uint32_t aux;
+		sample_freq = ADC_MAX_FREQ_ASYNC;
+	}
 
-		if(sample_freq > ADC_MAX_FREQ_ASYNC)
-		{
-			sample_freq = ADC_MAX_FREQ_ASYNC;
-		}
+	sample_freq *= ADC_CYCLE_DELAY;
 
-		sample_freq *= ADC_CYCLE_DELAY;
-
-		// El calculo de la frecuencia de sampleo se hace con una frecuencia
-		// que depende de la seleccion de clock en el SYSCON
-		if(clock_source == HAL_ADC_CLOCK_SOURCE_FRO)
-		{
-			aux = hal_syscon_get_fro_clock() / sample_freq;
-		}
-		else
-		{
-			aux = hal_syscon_get_pll_clock() / sample_freq;
-		}
-
-		if(aux > 0)
-		{
-			aux--;
-		}
-
-		SYSCON_set_adc_clock(clock_source, (uint8_t) aux);
-
-		ADC_control_config(div, mode, low_power);
+	// El calculo de la frecuencia de sampleo se hace con una frecuencia
+	// que depende de la seleccion de clock en el SYSCON
+	if(clock_source == HAL_ADC_CLOCK_SOURCE_FRO)
+	{
+		aux = hal_syscon_get_fro_clock() / sample_freq;
 	}
 	else
 	{
-		uint32_t aux;
-
-		// El calculo de la frecuencia de sampleo se hace con la frecuencia
-		// del main clock
-
-		if(sample_freq > ADC_MAX_FREQ_SYNC)
-		{
-			sample_freq = ADC_MAX_FREQ_SYNC;
-		}
-
-		sample_freq *= ADC_CYCLE_DELAY;
-
-		aux = hal_syscon_get_system_clock() / sample_freq;
-
-		if(aux > 0)
-		{
-			aux--;
-		}
-
-		ADC_control_config((uint8_t) aux, mode, low_power);
+		aux = hal_syscon_get_pll_clock() / sample_freq;
 	}
+
+	SYSCON_set_adc_clock(clock_source, (uint8_t) aux);
+
+	ADC_control_config(div, ADC_OPERATION_MODE_ASYNCHRONOUS, low_power);
+}
+
+/**
+ * @brief Inicializar el \e ADC en modo \b sincrónico
+ *
+ * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
+ *
+ * @see hal_adc_clock_source_en
+ * @see hal_adc_operation_mode_en
+ * @see hal_adc_low_power_mode_en
+ * @param[in] sample_freq Frecuencia de sampleo deseada
+ * @param[in] low_power Selección de modo de bajo consumo
+ */
+void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power)
+{
+	uint32_t aux;
+
+	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_ADC);
+	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_ADC);
+
+	SYSCON_assert_reset(SYSCON_RESET_SEL_ADC);
+	SYSCON_clear_reset(SYSCON_RESET_SEL_ADC);
+
+	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
+	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
+
+	ADC_hardware_calib(hal_syscon_get_fro_clock() / 500e3);
+
+	// El calculo de la frecuencia de sampleo se hace con la frecuencia
+	// del main clock
+
+	if(sample_freq > ADC_MAX_FREQ_SYNC)
+	{
+		sample_freq = ADC_MAX_FREQ_SYNC;
+	}
+
+	sample_freq *= ADC_CYCLE_DELAY;
+
+	aux = hal_syscon_get_system_clock() / sample_freq;
+
+	if(aux > 0)
+	{
+		aux--;
+	}
+
+	ADC_control_config((uint8_t) aux, ADC_OPERATION_MODE_SYNCHRONOUS, low_power);
+}
+
+/**
+ * @brief De-inicialización del \e ADC
+ */
+void hal_adc_deinit(void)
+{
+	SYSCON_assert_reset(SYSCON_RESET_SEL_ADC);
+
+	SYSCON_disable_clock(SYSCON_ENABLE_CLOCK_SEL_ADC);
+
+	SYSCON_power_down_peripheral(SYSCON_POWER_SEL_ADC);
+
+	NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_OVR);
+	NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_SEQA);
+	NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_SEQB);
+	NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_THCMP);
 }
 
 /**
