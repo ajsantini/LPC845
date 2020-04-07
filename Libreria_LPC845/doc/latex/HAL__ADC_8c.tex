@@ -40,8 +40,12 @@ Dependencia gráfica adjunta para H\+A\+L\+\_\+\+A\+D\+C.\+c\+:\nopagebreak
 \mbox{\Hypertarget{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}\label{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}} 
 static void \hyperlink{HAL__ADC_8c_ac5d944f7758eab802e2c7ef1b70666c9}{dummy\+\_\+irq\+\_\+callback} (void)
 \begin{DoxyCompactList}\small\item\em Funcion dummy para usar como default para las interrupciones. \end{DoxyCompactList}\item 
-void \hyperlink{group__ADC_gad44f4eb2585a9292ff4b66ceceb2f75f}{hal\+\_\+adc\+\_\+init} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, \hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en} mode, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
-\begin{DoxyCompactList}\small\item\em Inicializar el A\+DC. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_ga4a31179837133973ad68fa993a4e3cd0}{hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el {\itshape A\+DC} en modo {\bfseries asincrónico}. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_ga952626700075b275e7766c0095e4ec36}{hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode} (uint32\+\_\+t sample\+\_\+freq, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el {\itshape A\+DC} en modo {\bfseries sincrónico}. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_gab7f00d9f916d45943647ae254ac92d24}{hal\+\_\+adc\+\_\+deinit} (void)
+\begin{DoxyCompactList}\small\item\em De-\/inicialización del {\itshape A\+DC}. \end{DoxyCompactList}\item 
 void \hyperlink{group__ADC_gadcef726eaa85af74ade96c14f9a48feb}{hal\+\_\+adc\+\_\+config\+\_\+sequence} (\hyperlink{group__ADC_ga9297d7b14d7018a94bce94f0103d8559}{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en} sequence, const \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t} $\ast$config)
 \begin{DoxyCompactList}\small\item\em Configurar una secuencia de conversión. \end{DoxyCompactList}\item 
 void \hyperlink{group__ADC_ga678f2df33d79c246b175d0dd36405430}{hal\+\_\+adc\+\_\+enable\+\_\+sequence} (\hyperlink{group__ADC_ga9297d7b14d7018a94bce94f0103d8559}{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en} sequence)

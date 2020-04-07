@@ -229,7 +229,7 @@ static inline void ADC_sequence_clear_singlestep(ADC_sequence_sel_en sequence)
  */
 static inline void ADC_sequence_A_make_low_priority(void)
 {
-	ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].LOWPRIO = 0;
+	ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].LOWPRIO = 1;
 }
 
 /**
@@ -237,7 +237,7 @@ static inline void ADC_sequence_A_make_low_priority(void)
  */
 static inline void ADC_sequence_A_make_high_priority(void)
 {
-	ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].LOWPRIO = 1;
+	ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].LOWPRIO = 0;
 }
 
 /**

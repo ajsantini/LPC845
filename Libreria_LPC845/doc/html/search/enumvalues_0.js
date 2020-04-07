@@ -6,8 +6,6 @@ var searchData=
   ['hal_5fadc_5finterrupt_5fmode_5feos',['HAL_ADC_INTERRUPT_MODE_EOS',['../group__ADC.html#ggaf4981172881d597ede49249ba04fcafeae73eff6d5c4ef7297d31a28e4a76e149',1,'HAL_ADC.h']]],
   ['hal_5fadc_5flow_5fpower_5fmode_5fdisabled',['HAL_ADC_LOW_POWER_MODE_DISABLED',['../group__ADC.html#ggaf1570443ca3570a7ae83b90307bbeccaaf92172fb70ce285c23631cb025b3cd52',1,'HAL_ADC.h']]],
   ['hal_5fadc_5flow_5fpower_5fmode_5fenabled',['HAL_ADC_LOW_POWER_MODE_ENABLED',['../group__ADC.html#ggaf1570443ca3570a7ae83b90307bbeccaaf3c25521b4c61b46bfe7771db9370769',1,'HAL_ADC.h']]],
-  ['hal_5fadc_5foperation_5fmode_5fasynchronous',['HAL_ADC_OPERATION_MODE_ASYNCHRONOUS',['../group__ADC.html#gga21b6c00c4fe5d9ba0d36440222e5d210a11b6528b4acdeb7b7f11bbff4e0491a1',1,'HAL_ADC.h']]],
-  ['hal_5fadc_5foperation_5fmode_5fsynchronous',['HAL_ADC_OPERATION_MODE_SYNCHRONOUS',['../group__ADC.html#gga21b6c00c4fe5d9ba0d36440222e5d210a96e8c1882e02aa44af86a86c96c8f98d',1,'HAL_ADC.h']]],
   ['hal_5fadc_5fresult_5fchannel_5f0',['HAL_ADC_RESULT_CHANNEL_0',['../group__ADC.html#gga99371f47be5b6b4b61c32a1ea86f2b6cae2362f053cdc16412bb073d9b8596c44',1,'HAL_ADC.h']]],
   ['hal_5fadc_5fresult_5fchannel_5f1',['HAL_ADC_RESULT_CHANNEL_1',['../group__ADC.html#gga99371f47be5b6b4b61c32a1ea86f2b6cad9342d3898065098fe27e4dcc8a3eb42',1,'HAL_ADC.h']]],
   ['hal_5fadc_5fresult_5fchannel_5f10',['HAL_ADC_RESULT_CHANNEL_10',['../group__ADC.html#gga99371f47be5b6b4b61c32a1ea86f2b6cab81b8df7af28471ac9a6487e88dc0aa8',1,'HAL_ADC.h']]],

@@ -57,6 +57,18 @@
  * Cada conversión realizada toma un tiempo que dependerá del clock configurado en el periférico. Podemos
  * obtener este tiempo de conversión mediante la ecuación: \f$ t_{conv_{ADC}} = \frac{1}{25 * f_{ADC}} \f$
  *
+ * El multiplicador $25$ en el denominador, es debido a la naturaleza del periférico de <e>aproximaciones
+ * sucesivas</e>. Esto implica que desde que se genera un inicio de conversión hasta que la misma finaliza,
+ * deben transcurrir 25 ciclos de clock del \e ADC.
+ *
+ * Ejemplo: Configurando el \e ADC con una \f$f_{ADC} = 25MHz\f$ obtenemos el tiempo tomado por cada
+ * conversión:
+ *
+ * \f{eqnarray*}{
+ *     t_{conv_{ADC}} = \frac{1}{25 * 1MHz} \\
+ *     t_{conv_{ADC}} = 1 \mu s
+ * \f}
+ *
  * @{
  */
 

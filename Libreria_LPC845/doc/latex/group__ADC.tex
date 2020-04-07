@@ -23,11 +23,21 @@ El {\itshape A\+DC} de este microcontrolador permite el inicio de secuencia de c
 \begin{DoxyEnumerate}
 \item Iniciadas por software\+: Las secuencias de conversión son iniciadas mediante código.
 \item Iniciadas por hardware\+: Las secuencias de conversión son iniciadas dependiendo de otras señales, sean las mismas internas o externas al microcontrolador.
-\end{DoxyEnumerate}\subsubsection*{Calibración de hardwre}
+\end{DoxyEnumerate}\subsubsection*{Calibración de hardware}
 
 Este periférico contiene un bloque de autocalibración, el cual debe ser utilizado luego de cada reinicio del microcontrolador o cada vez que se sale de modo de bajo consumo, para obtener la resolución y presición especificada por el fabricante.
 
-La librería implementa la calibración por hardware en la función \hyperlink{group__ADC_gad44f4eb2585a9292ff4b66ceceb2f75f}{hal\+\_\+adc\+\_\+init} \subsection*{Estructuras de datos}
+La librería implementa la calibración por hardware en la función hal\+\_\+adc\+\_\+init
+
+\subsubsection*{Velocidad de conversión}
+
+Cada conversión realizada toma un tiempo que dependerá del clock configurado en el periférico. Podemos obtener este tiempo de conversión mediante la ecuación\+: $ t_{conv_{ADC}} = \frac{1}{25 * f_{ADC}} $
+
+El multiplicador \$25\$ en el denominador, es debido a la naturaleza del periférico de $<$e$>$aproximaciones sucesivas$<$/e$>$. Esto implica que desde que se genera un inicio de conversión hasta que la misma finaliza, deben transcurrir 25 ciclos de clock del {\itshape A\+DC}.
+
+Ejemplo\+: Configurando el {\itshape A\+DC} con una $f_{ADC} = 25MHz$ obtenemos el tiempo tomado por cada conversión\+:
+
+\begin{eqnarray*} t_{conv_{ADC}} = \frac{1}{25 * 1MHz} \\ t_{conv_{ADC}} = 1 \mu s \end{eqnarray*} \subsection*{Estructuras de datos}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t}
@@ -39,10 +49,6 @@ struct \hyperlink{group__ADC_structhal__adc__sequence__result__t}{hal\+\_\+adc\+
 \item 
 enum \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} \{ \hyperlink{group__ADC_ggaee7bd99d368af2a425a9954a9e811a51a75a03c616d0b74267642f2b860b19a4c}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO} = 0, 
 \hyperlink{group__ADC_ggaee7bd99d368af2a425a9954a9e811a51ad8be01dc9a2af6e29ab24f823fc40560}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}
- \}
-\item 
-enum \hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en} \{ \hyperlink{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a96e8c1882e02aa44af86a86c96c8f98d}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US} = 0, 
-\hyperlink{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a11b6528b4acdeb7b7f11bbff4e0491a1}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}
  \}
 \item 
 enum \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} \{ \hyperlink{group__ADC_ggaf1570443ca3570a7ae83b90307bbeccaaf92172fb70ce285c23631cb025b3cd52}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+D\+I\+S\+A\+B\+L\+ED} = 0, 
@@ -105,8 +111,13 @@ enum \hyperlink{group__ADC_ga7761986f9c56b809bce1299c6c32eddd}{hal\+\_\+adc\+\_\
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{group__ADC_gad44f4eb2585a9292ff4b66ceceb2f75f}{hal\+\_\+adc\+\_\+init} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, \hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en} mode, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
-\begin{DoxyCompactList}\small\item\em Inicializar el A\+DC. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_ga4a31179837133973ad68fa993a4e3cd0}{hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el {\itshape A\+DC} en modo {\bfseries asincrónico}. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_ga952626700075b275e7766c0095e4ec36}{hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode} (uint32\+\_\+t sample\+\_\+freq, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el {\itshape A\+DC} en modo {\bfseries sincrónico}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__ADC_gab7f00d9f916d45943647ae254ac92d24}\label{group__ADC_gab7f00d9f916d45943647ae254ac92d24}} 
+void \hyperlink{group__ADC_gab7f00d9f916d45943647ae254ac92d24}{hal\+\_\+adc\+\_\+deinit} (void)
+\begin{DoxyCompactList}\small\item\em De-\/inicialización del {\itshape A\+DC}. \end{DoxyCompactList}\item 
 void \hyperlink{group__ADC_gadcef726eaa85af74ade96c14f9a48feb}{hal\+\_\+adc\+\_\+config\+\_\+sequence} (\hyperlink{group__ADC_ga9297d7b14d7018a94bce94f0103d8559}{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en} sequence, const \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t} $\ast$config)
 \begin{DoxyCompactList}\small\item\em Configurar una secuencia de conversión. \end{DoxyCompactList}\item 
 void \hyperlink{group__ADC_ga678f2df33d79c246b175d0dd36405430}{hal\+\_\+adc\+\_\+enable\+\_\+sequence} (\hyperlink{group__ADC_ga9297d7b14d7018a94bce94f0103d8559}{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en} sequence)
@@ -151,22 +162,6 @@ H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+RO
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}!A\+DC@{A\+DC}}\index{A\+DC@{A\+DC}!H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}}}\mbox{\Hypertarget{group__ADC_ggaee7bd99d368af2a425a9954a9e811a51ad8be01dc9a2af6e29ab24f823fc40560}\label{group__ADC_ggaee7bd99d368af2a425a9954a9e811a51ad8be01dc9a2af6e29ab24f823fc40560}} 
 H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL&Phase locked loop oscillator como fuente de clock \\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\Hypertarget{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}\label{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}} 
-\index{A\+DC@{A\+DC}!hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en@{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en}}
-\index{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en@{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en}!A\+DC@{A\+DC}}
-\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en}{hal\_adc\_operation\_mode\_en}}
-{\footnotesize\ttfamily enum \hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en}}
-
-Selección de modo de operación para el {\itshape A\+DC} \begin{DoxyEnumFields}{Valores de enumeraciones}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}!A\+DC@{A\+DC}}\index{A\+DC@{A\+DC}!H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}}}\mbox{\Hypertarget{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a96e8c1882e02aa44af86a86c96c8f98d}\label{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a96e8c1882e02aa44af86a86c96c8f98d}} 
-H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US&Modo de operación sincrónico \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}!A\+DC@{A\+DC}}\index{A\+DC@{A\+DC}!H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US@{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}}}\mbox{\Hypertarget{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a11b6528b4acdeb7b7f11bbff4e0491a1}\label{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a11b6528b4acdeb7b7f11bbff4e0491a1}} 
-H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US&Modo de operación asincrónico \\
 \hline
 
 \end{DoxyEnumFields}
@@ -373,22 +368,20 @@ H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+R\+E\+S\+U\+L\+T\+\_
 
 
 \subsection{Documentación de las funciones}
-\mbox{\Hypertarget{group__ADC_gad44f4eb2585a9292ff4b66ceceb2f75f}\label{group__ADC_gad44f4eb2585a9292ff4b66ceceb2f75f}} 
-\index{A\+DC@{A\+DC}!hal\+\_\+adc\+\_\+init@{hal\+\_\+adc\+\_\+init}}
-\index{hal\+\_\+adc\+\_\+init@{hal\+\_\+adc\+\_\+init}!A\+DC@{A\+DC}}
-\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+init()}{hal\_adc\_init()}}
-{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sample\+\_\+freq,  }\item[{uint8\+\_\+t}]{div,  }\item[{\hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}}]{clock\+\_\+source,  }\item[{\hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en}}]{mode,  }\item[{\hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en}}]{low\+\_\+power }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{group__ADC_ga4a31179837133973ad68fa993a4e3cd0}\label{group__ADC_ga4a31179837133973ad68fa993a4e3cd0}} 
+\index{A\+DC@{A\+DC}!hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode@{hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode}}
+\index{hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode@{hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode}!A\+DC@{A\+DC}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode()}{hal\_adc\_init\_async\_mode()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sample\+\_\+freq,  }\item[{uint8\+\_\+t}]{div,  }\item[{\hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en}}]{clock\+\_\+source,  }\item[{\hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en}}]{low\+\_\+power }\end{DoxyParamCaption})}
 
 
 
-Inicializar el A\+DC. 
+Inicializar el {\itshape A\+DC} en modo {\bfseries asincrónico}. 
 
-Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
+Realiza la calibración de hardware y fija la frecuencia de muestreo deseada. Nota\+: Solamente se debe realizar el llamado a una de las dos funciones de inicialización del {\itshape A\+DC} 
 
 \begin{DoxySeeAlso}{Ver también}
 \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} 
-
-\hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en} 
 
 \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} 
 \end{DoxySeeAlso}
@@ -396,11 +389,35 @@ Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
 \begin{DoxyParams}[1]{Parámetros}
 \mbox{\tt in}  & {\em sample\+\_\+freq} & Frecuencia de sampleo deseada \\
 \hline
-\mbox{\tt in}  & {\em div} & Divisor para la lógica del {\itshape A\+DC} (solo importa para modo asincrónico) \\
+\mbox{\tt in}  & {\em div} & Divisor para la lógica del {\itshape A\+DC} \\
 \hline
-\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock para el {\itshape A\+DC} (solo importa para modo asincrónico) \\
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock para el {\itshape A\+DC} \\
 \hline
-\mbox{\tt in}  & {\em mode} & Selección de modo de operación, sincrónico o asincrónico \\
+\mbox{\tt in}  & {\em low\+\_\+power} & Selección de modo de bajo consumo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__ADC_ga952626700075b275e7766c0095e4ec36}\label{group__ADC_ga952626700075b275e7766c0095e4ec36}} 
+\index{A\+DC@{A\+DC}!hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode@{hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode}}
+\index{hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode@{hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode}!A\+DC@{A\+DC}}
+\subsubsection{\texorpdfstring{hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode()}{hal\_adc\_init\_sync\_mode()}}
+{\footnotesize\ttfamily void hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sample\+\_\+freq,  }\item[{\hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en}}]{low\+\_\+power }\end{DoxyParamCaption})}
+
+
+
+Inicializar el {\itshape A\+DC} en modo {\bfseries sincrónico}. 
+
+Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
+
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} 
+
+hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en 
+
+\hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sample\+\_\+freq} & Frecuencia de sampleo deseada \\
 \hline
 \mbox{\tt in}  & {\em low\+\_\+power} & Selección de modo de bajo consumo \\
 \hline

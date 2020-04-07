@@ -34,10 +34,6 @@ enum \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\
 \hyperlink{group__ADC_ggaee7bd99d368af2a425a9954a9e811a51ad8be01dc9a2af6e29ab24f823fc40560}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}
  \}
 \item 
-enum \hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en} \{ \hyperlink{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a96e8c1882e02aa44af86a86c96c8f98d}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US} = 0, 
-\hyperlink{group__ADC_gga21b6c00c4fe5d9ba0d36440222e5d210a11b6528b4acdeb7b7f11bbff4e0491a1}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+A\+S\+Y\+N\+C\+H\+R\+O\+N\+O\+US}
- \}
-\item 
 enum \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} \{ \hyperlink{group__ADC_ggaf1570443ca3570a7ae83b90307bbeccaaf92172fb70ce285c23631cb025b3cd52}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+D\+I\+S\+A\+B\+L\+ED} = 0, 
 \hyperlink{group__ADC_ggaf1570443ca3570a7ae83b90307bbeccaaf3c25521b4c61b46bfe7771db9370769}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+E\+N\+A\+B\+L\+ED}
  \}
@@ -98,8 +94,12 @@ enum \hyperlink{group__ADC_ga7761986f9c56b809bce1299c6c32eddd}{hal\+\_\+adc\+\_\
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{group__ADC_gad44f4eb2585a9292ff4b66ceceb2f75f}{hal\+\_\+adc\+\_\+init} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, \hyperlink{group__ADC_ga21b6c00c4fe5d9ba0d36440222e5d210}{hal\+\_\+adc\+\_\+operation\+\_\+mode\+\_\+en} mode, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
-\begin{DoxyCompactList}\small\item\em Inicializar el A\+DC. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_ga4a31179837133973ad68fa993a4e3cd0}{hal\+\_\+adc\+\_\+init\+\_\+async\+\_\+mode} (uint32\+\_\+t sample\+\_\+freq, uint8\+\_\+t div, \hyperlink{group__ADC_gaee7bd99d368af2a425a9954a9e811a51}{hal\+\_\+adc\+\_\+clock\+\_\+source\+\_\+en} clock\+\_\+source, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el {\itshape A\+DC} en modo {\bfseries asincrónico}. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_ga952626700075b275e7766c0095e4ec36}{hal\+\_\+adc\+\_\+init\+\_\+sync\+\_\+mode} (uint32\+\_\+t sample\+\_\+freq, \hyperlink{group__ADC_gaf1570443ca3570a7ae83b90307bbecca}{hal\+\_\+adc\+\_\+low\+\_\+power\+\_\+mode\+\_\+en} low\+\_\+power)
+\begin{DoxyCompactList}\small\item\em Inicializar el {\itshape A\+DC} en modo {\bfseries sincrónico}. \end{DoxyCompactList}\item 
+void \hyperlink{group__ADC_gab7f00d9f916d45943647ae254ac92d24}{hal\+\_\+adc\+\_\+deinit} (void)
+\begin{DoxyCompactList}\small\item\em De-\/inicialización del {\itshape A\+DC}. \end{DoxyCompactList}\item 
 void \hyperlink{group__ADC_gadcef726eaa85af74ade96c14f9a48feb}{hal\+\_\+adc\+\_\+config\+\_\+sequence} (\hyperlink{group__ADC_ga9297d7b14d7018a94bce94f0103d8559}{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en} sequence, const \hyperlink{structhal__adc__sequence__config__t}{hal\+\_\+adc\+\_\+sequence\+\_\+config\+\_\+t} $\ast$config)
 \begin{DoxyCompactList}\small\item\em Configurar una secuencia de conversión. \end{DoxyCompactList}\item 
 void \hyperlink{group__ADC_ga678f2df33d79c246b175d0dd36405430}{hal\+\_\+adc\+\_\+enable\+\_\+sequence} (\hyperlink{group__ADC_ga9297d7b14d7018a94bce94f0103d8559}{hal\+\_\+adc\+\_\+sequence\+\_\+sel\+\_\+en} sequence)
