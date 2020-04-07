@@ -227,15 +227,15 @@ static inline void ADC_sequence_clear_singlestep(ADC_sequence_sel_en sequence)
 /**
  * @brief Fijar baja prioridad para la secuencia A
  */
-static inline void ADC_sequence_A_lowpriority_set(void)
+static inline void ADC_sequence_A_make_low_priority(void)
 {
 	ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].LOWPRIO = 0;
 }
 
 /**
- * @brief Fijar baja prioridad para la secuencia A
+ * @brief Fijar alta prioridad para la secuencia A
  */
-static inline void ADC_sequence_A_lowpriority_clear(void)
+static inline void ADC_sequence_A_make_high_priority(void)
 {
 	ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].LOWPRIO = 1;
 }

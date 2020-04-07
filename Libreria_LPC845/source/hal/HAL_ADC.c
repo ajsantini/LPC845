@@ -195,11 +195,11 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 	{
 		if(config->low_priority)
 		{
-			ADC_sequence_A_lowpriority_set();
+			ADC_sequence_A_make_low_priority();
 		}
 		else
 		{
-			ADC_sequence_A_lowpriority_clear();
+			ADC_sequence_A_make_high_priority();
 		}
 	}
 
