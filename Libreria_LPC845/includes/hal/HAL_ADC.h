@@ -57,9 +57,9 @@
  * Cada conversión realizada toma un tiempo que dependerá del clock configurado en el periférico. Podemos
  * obtener este tiempo de conversión mediante la ecuación: \f$ t_{conv_{ADC}} = \frac{1}{25 * f_{ADC}} \f$
  *
- * El multiplicador $25$ en el denominador, es debido a la naturaleza del periférico de <e>aproximaciones
+ * El multiplicador \f$ 25 \f$ en el denominador, es debido a la naturaleza del periférico de <e>aproximaciones
  * sucesivas</e>. Esto implica que desde que se genera un inicio de conversión hasta que la misma finaliza,
- * deben transcurrir 25 ciclos de clock del \e ADC.
+ * deben transcurrir \f$ 25 \f$ ciclos de clock del \e ADC.
  *
  * Ejemplo: Configurando el \e ADC con una \f$f_{ADC} = 25MHz\f$ obtenemos el tiempo tomado por cada
  * conversión:
@@ -71,8 +71,10 @@
  *
  * Esto implica que entre un inicio de conversión y la finalización de la misma, pasará \f$1 \mu s\f$. Nótese que
  * este tiempo corresponde a una conversión para un único canal. En caso de estar convirtiendo varios canales, se
- * deberá multiplicar \f$t_{conv_{ADC}}\f$ por la cantidad de canales activos en la secuencia de conversión, para
+ * deberá multiplicar \f$ t_{conv_{ADC}} \f$ por la cantidad de canales activos en la secuencia de conversión, para
  * obtener el tiempo total desde un inicio de secuencia de conversión y la finalización de todos los canales.
+ *
+ *
  *
  * @{
  */
@@ -274,8 +276,8 @@ void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence);
  */
 hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result[]);
 
+#endif /* HAL_ADC_H_ */
+
 /**
  * @}
  */
-
-#endif /* HAL_ADC_H_ */

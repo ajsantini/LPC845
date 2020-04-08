@@ -1,0 +1,3 @@
+sensores_tope.c:38:6:sensores_tope_init_pins	32	static
+sensores_tope.c:73:9:sensores_tope_get_state	16	static
+sensores_tope.c:81:6:sensores_tope_check	16	static

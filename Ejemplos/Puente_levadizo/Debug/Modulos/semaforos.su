@@ -1,0 +1,2 @@
+semaforos.c:36:6:semaforos_init	24	static
+semaforos.c:56:6:semaforos_set	16	static
