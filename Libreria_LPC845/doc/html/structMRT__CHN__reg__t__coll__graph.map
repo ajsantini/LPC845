@@ -1,6 +1,0 @@
-<map id="MRT_CHN_reg_t" name="MRT_CHN_reg_t">
-<area shape="rect" id="node2" href="$HRI__MRT_8h.html#structMRT__TIMER__reg__t" title="MRT_TIMER_reg_t" alt="" coords="5,5,141,32"/>
-<area shape="rect" id="node3" href="$HRI__MRT_8h.html#structMRT__CTRL__reg__t" title="MRT_CTRL_reg_t" alt="" coords="166,5,295,32"/>
-<area shape="rect" id="node4" href="$HRI__MRT_8h.html#structMRT__INTVAL__reg__t" title="MRT_INTVAL_reg_t" alt="" coords="320,5,461,32"/>
-<area shape="rect" id="node5" href="$HRI__MRT_8h.html#structMRT__STAT__reg__t" title="MRT_STAT_reg_t" alt="" coords="485,5,613,32"/>
-</map>

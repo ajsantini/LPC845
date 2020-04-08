@@ -1,5 +1,0 @@
-<map id="source/infotronic/LCD.c" name="source/infotronic/LCD.c">
-<area shape="rect" id="node3" href="$LCD_8h.html" title="Declaraciones para el display LCD (2x16) " alt="" coords="23,80,83,107"/>
-<area shape="rect" id="node4" href="$infotronic_8h.html" title="Declaraciones para la placa infotronic v2. " alt="" coords="107,80,194,107"/>
-<area shape="rect" id="node5" href="$HAL__GPIO_8h.html" title="Declaraciones a nivel de aplicacion del periferico GPIO (LPC845) " alt="" coords="219,80,317,107"/>
-</map>

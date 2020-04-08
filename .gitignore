@@ -1,4 +1,30 @@
-/.metadata/
-*.o
-*.d
-*.su
+!/.gitignore
+
+# ROOT dir only
+# Blacklist all hidden folders or files
+/.*
+/FreeRTOS_TAD_logs
+
+# Project roots only
+# Blacklist hidden files and folders
+# but not MCUXpresso project files.
+/*/.*
+!/*/.cproject
+!/*/.project
+
+# Project roots only
+/*/*.launch
+/*/*.xml
+!/*/doxygen_layout.xml
+
+# Project 'Debug' folders only
+# Blacklist everything but .a
+/*/Debug/*
+!/*/Debug/*.a
+
+# Lib documentation folder only
+/Libreria_LPC845/doc/html/*
+!/Libreria_LPC845/doc/html/index.html
+
+/Libreria_LPC845/doc/latex/*
+!/Libreria_LPC845/doc/latex/refman.pdf

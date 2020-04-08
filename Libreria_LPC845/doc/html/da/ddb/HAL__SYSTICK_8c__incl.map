@@ -1,6 +1,0 @@
-<map id="source/hal/HAL_SYSTICK.c" name="source/hal/HAL_SYSTICK.c">
-<area shape="rect" id="node2" href="$d1/dea/HAL__SYSTICK_8h.html" title="Declaraciones a nivel de aplicacion del periferico SYSICK (LPC845) " alt="" coords="5,155,129,181"/>
-<area shape="rect" id="node4" href="$d1/d01/HAL__SYSCON_8h.html" title="Declaraciones a nivel de aplicacion del periferico SYSCON (LPC845) " alt="" coords="105,80,227,107"/>
-<area shape="rect" id="node5" href="$d9/d27/HPL__SYSTICK_8h.html" title="Declaraciones a nivel de abstraccion de periferico del SYSTICK (LPC845) " alt="" coords="252,80,376,107"/>
-<area shape="rect" id="node6" href="$db/d92/HRI__SYSTICK_8h.html" title="Definiciones a nivel de registros del modulo SYSTICK (LPC845) " alt="" coords="229,155,351,181"/>
-</map>

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Libreria_LPC845/includes/hpl/HPL_SWM.h&apos;" deleteContents="false" description="Delete resource &apos;Libreria_LPC845/includes/hpl/HPL_SWM.h&apos;" element1="/Libreria_LPC845/includes/hpl/HPL_SWM.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1561731055384"/>&#x0A;<refactoring comment="Delete resource &apos;Libreria_LPC845/source/hpl/HPL_SWM.c&apos;" deleteContents="false" description="Delete resource &apos;Libreria_LPC845/source/hpl/HPL_SWM.c&apos;" element1="/Libreria_LPC845/source/hpl/HPL_SWM.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1561731061218"/>
-</session>

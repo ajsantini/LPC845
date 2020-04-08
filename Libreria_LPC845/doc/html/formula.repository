@@ -1,6 +1,0 @@
-\form#0:$ADC_{res} = \frac{V_{ref_{p}}}{2^N}$
-\form#1:$ ADC_{res} = \frac{V_{ref_{p}}}{2^N} $
-\form#2:$ ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}} $
-\form#3:$ t_{conv_{ADC}} = \frac{1}{25 * f_{ADC}} $
-\form#4:$f_{ADC} = 25MHz$
-\form#5:\begin{eqnarray*} t_{conv_{ADC}} = \frac{1}{25 * 1MHz} \\ t_{conv_{ADC}} = 1 \mu s \end{eqnarray*}

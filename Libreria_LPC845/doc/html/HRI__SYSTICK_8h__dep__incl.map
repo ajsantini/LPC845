@@ -1,5 +1,0 @@
-<map id="includes/hri/HRI_SYSTICK.h" name="includes/hri/HRI_SYSTICK.h">
-<area shape="rect" id="node2" href="$HPL__SYSTICK_8h.html" title="Declaraciones a nivel de abstraccion de periferico del SYSTICK (LPC845) " alt="" coords="5,80,203,107"/>
-<area shape="rect" id="node4" href="$HPL__SYSTICK_8c.html" title="Funciones a nivel de abstraccion de periferico para el SYSTICK (LPC845) " alt="" coords="227,80,415,107"/>
-<area shape="rect" id="node3" href="$HAL__SYSTICK_8c.html" title="Funciones a nivel de aplicacion para el SYSTICK (LPC845) " alt="" coords="10,155,198,181"/>
-</map>

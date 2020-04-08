@@ -1,7 +1,0 @@
-<map id="includes/hpl/HPL_IOCON.h" name="includes/hpl/HPL_IOCON.h">
-<area shape="rect" id="node2" href="$HPL__SYSCON_8h.html" title="Declaraciones a nivel de abstraccion de periferico del SYSCON (LPC845) " alt="" coords="97,80,219,107"/>
-<area shape="rect" id="node7" href="$HRI__IOCON_8h_source.html" title="HRI_IOCON.h" alt="" coords="232,155,340,181"/>
-<area shape="rect" id="node3" href="$HRI__SYSCON_8h.html" title="Definiciones a nivel de registros del modulo SYSCON (LPC845) " alt="" coords="5,229,127,256"/>
-<area shape="rect" id="node5" href="$HPL__GPIO_8h.html" title="Declaraciones a nivel de abstraccion de periferico del GPIO (LPC845) " alt="" coords="109,155,207,181"/>
-<area shape="rect" id="node6" href="$HRI__GPIO_8h.html" title="Definiciones a nivel de registros del modulo GPIO (LPC845) " alt="" coords="151,229,248,256"/>
-</map>

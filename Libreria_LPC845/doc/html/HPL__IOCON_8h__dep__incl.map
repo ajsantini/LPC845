@@ -1,8 +1,0 @@
-<map id="includes/hpl/HPL_IOCON.h" name="includes/hpl/HPL_IOCON.h">
-<area shape="rect" id="node2" href="$HAL__IOCON_8h.html" title="Declaraciones a nivel de aplicacion del periferico IOCON (LPC845) " alt="" coords="243,80,425,107"/>
-<area shape="rect" id="node4" href="$HAL__IOCON_8c.html" title="Funciones a nivel de aplicacion del periferico IOCON (LPC845) " alt="" coords="411,155,585,181"/>
-<area shape="rect" id="node6" href="$HAL__SYSCON_8c.html" title="Funciones a nivel de aplicacion para el SYSCON (LPC845) " alt="" coords="518,80,705,107"/>
-<area shape="rect" id="node7" href="$infotronic_8c.html" title="Funciones de la infotronic v2. " alt="" coords="729,80,915,107"/>
-<area shape="rect" id="node3" href="$HAL__CTIMER_8c.html" title="Funciones a nivel de aplicacion del periferico CTIMER (LPC845) " alt="" coords="5,155,188,181"/>
-<area shape="rect" id="node5" href="$teclado_8c.html" title="Funciones del periferico teclado (2x3) " alt="" coords="212,155,387,181"/>
-</map>
