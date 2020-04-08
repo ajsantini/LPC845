@@ -8,19 +8,19 @@
 # Project roots only
 # Blacklist hidden files and folders
 # but not MCUXpresso project files.
-/*/.*
-!/*/.cproject
-!/*/.project
+/Ejemplos/*/.*
+!/Ejemplos/*/.cproject
+!/Ejemplos/*/.project
 
 # Project roots only
-/*/*.launch
-/*/*.xml
-!/*/doxygen_layout.xml
+/Ejemplos/*/*.launch
+/Ejemplos/*/*.xml
+!/Ejemplos/*/doxygen_layout.xml
 
 # Project 'Debug' folders only
 # Blacklist everything but .a
-/*/Debug/*
-!/*/Debug/*.a
+/Ejemplos/*/Debug/*
+!/Ejemplos/*/Debug/*.a
 
 # Lib documentation folder only
 /Libreria_LPC845/doc/html/*

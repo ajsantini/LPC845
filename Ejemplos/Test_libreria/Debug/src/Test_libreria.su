@@ -1,3 +1,0 @@
-Test_libreria.c:21:5:main	40	static
-Test_libreria.c:51:13:timer_5dec_callback	24	static
-Test_libreria.c:58:13:timer_1seg_callback	24	static
