@@ -45,6 +45,7 @@
 								<option id="com.crt.advproject.gcc.fpu.125254400" name="Floating point" superClass="com.crt.advproject.gcc.fpu" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1283290955" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Libreria_LPC845/includes/hpl}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Libreria_LPC845/includes/hri}&quot;"/>
 								</option>
 								<inputType id="com.crt.advproject.compiler.input.1086560968" superClass="com.crt.advproject.compiler.input"/>
 							</tool>

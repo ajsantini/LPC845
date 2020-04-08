@@ -69,6 +69,11 @@
  *     t_{conv_{ADC}} = 1 \mu s
  * \f}
  *
+ * Esto implica que entre un inicio de conversión y la finalización de la misma, pasará \f$1 \mu s\f$. Nótese que
+ * este tiempo corresponde a una conversión para un único canal. En caso de estar convirtiendo varios canales, se
+ * deberá multiplicar \f$t_{conv_{ADC}}\f$ por la cantidad de canales activos en la secuencia de conversión, para
+ * obtener el tiempo total desde un inicio de secuencia de conversión y la finalización de todos los canales.
+ *
  * @{
  */
 
