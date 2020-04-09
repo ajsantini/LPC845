@@ -29,8 +29,6 @@
 /Libreria_LPC845/doc/latex/*
 !/Libreria_LPC845/doc/latex/refman.pdf
 
-/Libreria_LPC845/doc/html/*
-!/Libreria_LPC845/doc/html/index.html
+/Libreria_LPC845/doc/**
 
-/Libreria_LPC845/user_doc/latex/*
-!/Libreria_LPC845/user_doc/latex/refman.pdf
+/Libreria_LPC845/user_doc/**
