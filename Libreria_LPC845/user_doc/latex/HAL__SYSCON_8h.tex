@@ -1,0 +1,318 @@
+\hypertarget{HAL__SYSCON_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+S\+Y\+S\+C\+ON.h}
+\label{HAL__SYSCON_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{includes/hal/\+H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+
+
+Declaraciones a nivel de aplicacion del periferico S\+Y\+S\+C\+ON (L\+P\+C845)  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{HAL__SYSCON_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{HAL__SYSCON_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{HAL__SYSCON_8h_aa23b6654979f5c5d0c6caec99cc336b4}\label{HAL__SYSCON_8h_aa23b6654979f5c5d0c6caec99cc336b4}} 
+enum {\bfseries hal\+\_\+syscon\+\_\+clkout\+\_\+source\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+E\+X\+T\+\_\+\+C\+L\+O\+CK}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+C\+L\+K\+O\+U\+T\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+W\+A\+T\+C\+H\+D\+O\+G\+\_\+\+O\+SC}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__SYSCON_8h_ac3c6c02a963d446ae8e9b7c0a71ccdcb}\label{HAL__SYSCON_8h_ac3c6c02a963d446ae8e9b7c0a71ccdcb}} 
+enum {\bfseries hal\+\_\+syscon\+\_\+frg\+\_\+clock\+\_\+sel\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+A\+I\+N\+\_\+\+C\+L\+O\+CK}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+S\+Y\+S\+\_\+\+P\+LL}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+F\+R\+G\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+N\+O\+NE}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__SYSCON_8h_a8f85b75727e34f8c9f8d3c46b44a0ae0}\label{HAL__SYSCON_8h_a8f85b75727e34f8c9f8d3c46b44a0ae0}} 
+enum {\bfseries hal\+\_\+syscon\+\_\+peripheral\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T0} = 0, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T1}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T2}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T3}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+U\+A\+R\+T4}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C0}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C1}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C2}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+I\+I\+C3}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I0}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+S\+E\+L\+\_\+\+S\+P\+I1}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__SYSCON_8h_a8d1873ed52eb0449a0c12acadcecd47b}\label{HAL__SYSCON_8h_a8d1873ed52eb0449a0c12acadcecd47b}} 
+enum {\bfseries hal\+\_\+syscon\+\_\+peripheral\+\_\+clock\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+M\+A\+IN}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+G0}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+G1}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+\_\+\+D\+IV}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+S\+E\+L\+\_\+\+N\+O\+NE} = 7
+ \}
+\item 
+\mbox{\Hypertarget{HAL__SYSCON_8h_ae6e947aa2e205fb9998ee49ed34314d4}\label{HAL__SYSCON_8h_ae6e947aa2e205fb9998ee49ed34314d4}} 
+enum {\bfseries hal\+\_\+syscon\+\_\+iocon\+\_\+glitch\+\_\+sel\+\_\+en} \{ \newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+0} = 0, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+1}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+2}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+3}, 
+\newline
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+4}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+5}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+6}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+I\+O\+C\+O\+N\+\_\+\+G\+L\+I\+T\+C\+H\+\_\+\+S\+E\+L\+\_\+7}
+ \}
+\item 
+\mbox{\Hypertarget{HAL__SYSCON_8h_af54a8bad7d8d25e0778c0f74ff90a9b2}\label{HAL__SYSCON_8h_af54a8bad7d8d25e0778c0f74ff90a9b2}} 
+enum {\bfseries hal\+\_\+syscon\+\_\+pll\+\_\+source\+\_\+sel\+\_\+en} \{ {\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+F\+RO} = 0, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+E\+X\+T\+\_\+\+C\+LK}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+W\+A\+T\+C\+H\+D\+OG}, 
+{\bfseries H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N\+\_\+\+P\+L\+L\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+S\+E\+L\+\_\+\+F\+R\+O\+\_\+\+D\+IV}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{HAL__SYSCON_8h_a31c48c74f760fbad8518a0a6c89731eb}{hal\+\_\+syscon\+\_\+get\+\_\+system\+\_\+clock} (void)
+\begin{DoxyCompactList}\small\item\em Obtener la frecuencia actual del main clock. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{HAL__SYSCON_8h_a7768b17907648deb424cb4254ad35d10}{hal\+\_\+syscon\+\_\+get\+\_\+fro\+\_\+clock} (void)
+\begin{DoxyCompactList}\small\item\em Obtener la frecuencia actual del F\+RO. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__SYSCON_8h_accafad7cb2378e99a09afd26de8d432e}{hal\+\_\+syscon\+\_\+config\+\_\+external\+\_\+crystal} (uint32\+\_\+t crystal\+\_\+freq, uint8\+\_\+t use\+\_\+as\+\_\+main)
+\begin{DoxyCompactList}\small\item\em Configurar el ext clock a partir de un cristal externo. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__SYSCON_8h_ab6b37d2df55c51dbb27c2c02bb087587}{hal\+\_\+syscon\+\_\+config\+\_\+fro\+\_\+direct} (uint8\+\_\+t direct, uint8\+\_\+t use\+\_\+as\+\_\+main)
+\begin{DoxyCompactList}\small\item\em Configurar el clock F\+RO. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__SYSCON_8h_a1c2a74ef250399dba55e1f17b43abe38}{hal\+\_\+syscon\+\_\+config\+\_\+clkout} (uint8\+\_\+t port, uint8\+\_\+t pin, hal\+\_\+syscon\+\_\+clkout\+\_\+source\+\_\+sel\+\_\+en clock\+\_\+source, uint8\+\_\+t divider)
+\begin{DoxyCompactList}\small\item\em Configurar el pin de clock out (salida de clock hacia afuera) \end{DoxyCompactList}\item 
+void \hyperlink{HAL__SYSCON_8h_a5cd176b5be324489a45a8626ec89ce99}{hal\+\_\+syscon\+\_\+config\+\_\+frg} (uint8\+\_\+t inst, hal\+\_\+syscon\+\_\+frg\+\_\+clock\+\_\+sel\+\_\+en clock\+\_\+source, uint32\+\_\+t mul)
+\begin{DoxyCompactList}\small\item\em Configurar el divisor fraccional. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__SYSCON_8h_aeec2e4ffb8eca74db67bd0ce4c7a06c6}{hal\+\_\+syscon\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source} (hal\+\_\+syscon\+\_\+peripheral\+\_\+sel\+\_\+en peripheral, hal\+\_\+syscon\+\_\+peripheral\+\_\+clock\+\_\+sel\+\_\+en clock\+\_\+source)
+\begin{DoxyCompactList}\small\item\em Fijar la fuente de clock de un periferico. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{HAL__SYSCON_8h_ac37805288fe2b5489e7f1d1c5765e298}{hal\+\_\+syscon\+\_\+get\+\_\+peripheral\+\_\+clock} (hal\+\_\+syscon\+\_\+peripheral\+\_\+sel\+\_\+en peripheral)
+\begin{DoxyCompactList}\small\item\em Obtener la frecuencia de clock en Hz configurada para cierto periferico. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__SYSCON_8h_ac2eb2b4b2c904d02fac721092422edeb}{hal\+\_\+syscon\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider} (hal\+\_\+syscon\+\_\+iocon\+\_\+glitch\+\_\+sel\+\_\+en sel, uint32\+\_\+t div)
+\begin{DoxyCompactList}\small\item\em Configurar divisor para el clock de glitches del I\+O\+C\+ON. \end{DoxyCompactList}\item 
+void \hyperlink{HAL__SYSCON_8h_aa29b349b8b958efeed0831ed31eadf94}{hal\+\_\+syscon\+\_\+config\+\_\+pll} (hal\+\_\+syscon\+\_\+pll\+\_\+source\+\_\+sel\+\_\+en clock\+\_\+source, uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Configurar el P\+LL. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{HAL__SYSCON_8h_aadbb4d022ecc8916c0346b8f537e19d0}{hal\+\_\+syscon\+\_\+get\+\_\+pll\+\_\+clock} (void)
+\begin{DoxyCompactList}\small\item\em Obtener frecuencia actual configurada del P\+LL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Declaraciones a nivel de aplicacion del periferico S\+Y\+S\+C\+ON (L\+P\+C845) 
+
+\begin{DoxyAuthor}{Autor}
+Augusto Santini 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+6/2019 
+\end{DoxyDate}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{HAL__SYSCON_8h_a31c48c74f760fbad8518a0a6c89731eb}\label{HAL__SYSCON_8h_a31c48c74f760fbad8518a0a6c89731eb}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+get\+\_\+system\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+system\+\_\+clock}}
+\index{hal\+\_\+syscon\+\_\+get\+\_\+system\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+system\+\_\+clock}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+get\+\_\+system\+\_\+clock()}{hal\_syscon\_get\_system\_clock()}}
+{\footnotesize\ttfamily uint32\+\_\+t hal\+\_\+syscon\+\_\+get\+\_\+system\+\_\+clock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Obtener la frecuencia actual del main clock. 
+
+\begin{DoxyReturn}{Devuelve}
+Frecuencia del main clock en Hz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HAL__SYSCON_8h_a7768b17907648deb424cb4254ad35d10}\label{HAL__SYSCON_8h_a7768b17907648deb424cb4254ad35d10}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+get\+\_\+fro\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+fro\+\_\+clock}}
+\index{hal\+\_\+syscon\+\_\+get\+\_\+fro\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+fro\+\_\+clock}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+get\+\_\+fro\+\_\+clock()}{hal\_syscon\_get\_fro\_clock()}}
+{\footnotesize\ttfamily uint32\+\_\+t hal\+\_\+syscon\+\_\+get\+\_\+fro\+\_\+clock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Obtener la frecuencia actual del F\+RO. 
+
+\begin{DoxyReturn}{Devuelve}
+Frecuencia del F\+RO en Hz 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HAL__SYSCON_8h_accafad7cb2378e99a09afd26de8d432e}\label{HAL__SYSCON_8h_accafad7cb2378e99a09afd26de8d432e}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+config\+\_\+external\+\_\+crystal@{hal\+\_\+syscon\+\_\+config\+\_\+external\+\_\+crystal}}
+\index{hal\+\_\+syscon\+\_\+config\+\_\+external\+\_\+crystal@{hal\+\_\+syscon\+\_\+config\+\_\+external\+\_\+crystal}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+config\+\_\+external\+\_\+crystal()}{hal\_syscon\_config\_external\_crystal()}}
+{\footnotesize\ttfamily void hal\+\_\+syscon\+\_\+config\+\_\+external\+\_\+crystal (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{crystal\+\_\+freq,  }\item[{uint8\+\_\+t}]{use\+\_\+as\+\_\+main }\end{DoxyParamCaption})}
+
+
+
+Configurar el ext clock a partir de un cristal externo. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em crystal\+\_\+freq} & Frecuencia del cristal externo utilizado \\
+\hline
+\mbox{\tt in}  & {\em use\+\_\+as\+\_\+main} & Si es distinto de cero, se utilizara el oscilador a cristal como main clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__SYSCON_8h_ab6b37d2df55c51dbb27c2c02bb087587}\label{HAL__SYSCON_8h_ab6b37d2df55c51dbb27c2c02bb087587}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+config\+\_\+fro\+\_\+direct@{hal\+\_\+syscon\+\_\+config\+\_\+fro\+\_\+direct}}
+\index{hal\+\_\+syscon\+\_\+config\+\_\+fro\+\_\+direct@{hal\+\_\+syscon\+\_\+config\+\_\+fro\+\_\+direct}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+config\+\_\+fro\+\_\+direct()}{hal\_syscon\_config\_fro\_direct()}}
+{\footnotesize\ttfamily void hal\+\_\+syscon\+\_\+config\+\_\+fro\+\_\+direct (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{direct,  }\item[{uint8\+\_\+t}]{use\+\_\+as\+\_\+main }\end{DoxyParamCaption})}
+
+
+
+Configurar el clock F\+RO. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em direct} & Si es distinto de cero se omite el divisor del F\+RO \\
+\hline
+\mbox{\tt in}  & {\em use\+\_\+as\+\_\+main} & Si es distinto de cero, se utilizara el F\+RO como main clock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__SYSCON_8h_a1c2a74ef250399dba55e1f17b43abe38}\label{HAL__SYSCON_8h_a1c2a74ef250399dba55e1f17b43abe38}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+config\+\_\+clkout@{hal\+\_\+syscon\+\_\+config\+\_\+clkout}}
+\index{hal\+\_\+syscon\+\_\+config\+\_\+clkout@{hal\+\_\+syscon\+\_\+config\+\_\+clkout}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+config\+\_\+clkout()}{hal\_syscon\_config\_clkout()}}
+{\footnotesize\ttfamily void hal\+\_\+syscon\+\_\+config\+\_\+clkout (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{pin,  }\item[{hal\+\_\+syscon\+\_\+clkout\+\_\+source\+\_\+sel\+\_\+en}]{clock\+\_\+source,  }\item[{uint8\+\_\+t}]{divider }\end{DoxyParamCaption})}
+
+
+
+Configurar el pin de clock out (salida de clock hacia afuera) 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em port} & Numero de puerto por donde sacar el clock out \\
+\hline
+\mbox{\tt in}  & {\em pin} & Numero de pin por donde sacar el clock out \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente deseada para la salida clock out \\
+\hline
+\mbox{\tt in}  & {\em divider} & Divisor deseado para la salida clock out \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__SYSCON_8h_a5cd176b5be324489a45a8626ec89ce99}\label{HAL__SYSCON_8h_a5cd176b5be324489a45a8626ec89ce99}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+config\+\_\+frg@{hal\+\_\+syscon\+\_\+config\+\_\+frg}}
+\index{hal\+\_\+syscon\+\_\+config\+\_\+frg@{hal\+\_\+syscon\+\_\+config\+\_\+frg}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+config\+\_\+frg()}{hal\_syscon\_config\_frg()}}
+{\footnotesize\ttfamily void hal\+\_\+syscon\+\_\+config\+\_\+frg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{inst,  }\item[{hal\+\_\+syscon\+\_\+frg\+\_\+clock\+\_\+sel\+\_\+en}]{clock\+\_\+source,  }\item[{uint32\+\_\+t}]{mul }\end{DoxyParamCaption})}
+
+
+
+Configurar el divisor fraccional. 
+
+El divisor siempre se debe fijar en 256 para estos M\+CU.
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em inst} & Instancia de F\+RG a configurar \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock de entrada para el F\+RG \\
+\hline
+\mbox{\tt in}  & {\em mul} & Multiplicador deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__SYSCON_8h_aeec2e4ffb8eca74db67bd0ce4c7a06c6}\label{HAL__SYSCON_8h_aeec2e4ffb8eca74db67bd0ce4c7a06c6}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source@{hal\+\_\+syscon\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source}}
+\index{hal\+\_\+syscon\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source@{hal\+\_\+syscon\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source()}{hal\_syscon\_set\_peripheral\_clock\_source()}}
+{\footnotesize\ttfamily void hal\+\_\+syscon\+\_\+set\+\_\+peripheral\+\_\+clock\+\_\+source (\begin{DoxyParamCaption}\item[{hal\+\_\+syscon\+\_\+peripheral\+\_\+sel\+\_\+en}]{peripheral,  }\item[{hal\+\_\+syscon\+\_\+peripheral\+\_\+clock\+\_\+sel\+\_\+en}]{clock\+\_\+source }\end{DoxyParamCaption})}
+
+
+
+Fijar la fuente de clock de un periferico. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico deseado \\
+\hline
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock deseada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__SYSCON_8h_ac37805288fe2b5489e7f1d1c5765e298}\label{HAL__SYSCON_8h_ac37805288fe2b5489e7f1d1c5765e298}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+get\+\_\+peripheral\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+peripheral\+\_\+clock}}
+\index{hal\+\_\+syscon\+\_\+get\+\_\+peripheral\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+peripheral\+\_\+clock}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+get\+\_\+peripheral\+\_\+clock()}{hal\_syscon\_get\_peripheral\_clock()}}
+{\footnotesize\ttfamily uint32\+\_\+t hal\+\_\+syscon\+\_\+get\+\_\+peripheral\+\_\+clock (\begin{DoxyParamCaption}\item[{hal\+\_\+syscon\+\_\+peripheral\+\_\+sel\+\_\+en}]{peripheral }\end{DoxyParamCaption})}
+
+
+
+Obtener la frecuencia de clock en Hz configurada para cierto periferico. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em peripheral} & Periferico deseado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Frecuencia en Hz del clock del periferico 
+\end{DoxyReturn}
+\mbox{\Hypertarget{HAL__SYSCON_8h_ac2eb2b4b2c904d02fac721092422edeb}\label{HAL__SYSCON_8h_ac2eb2b4b2c904d02fac721092422edeb}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider@{hal\+\_\+syscon\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider}}
+\index{hal\+\_\+syscon\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider@{hal\+\_\+syscon\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider()}{hal\_syscon\_set\_iocon\_glitch\_divider()}}
+{\footnotesize\ttfamily void hal\+\_\+syscon\+\_\+set\+\_\+iocon\+\_\+glitch\+\_\+divider (\begin{DoxyParamCaption}\item[{hal\+\_\+syscon\+\_\+iocon\+\_\+glitch\+\_\+sel\+\_\+en}]{sel,  }\item[{uint32\+\_\+t}]{div }\end{DoxyParamCaption})}
+
+
+
+Configurar divisor para el clock de glitches del I\+O\+C\+ON. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em sel} & Seleccion de divisor \\
+\hline
+\mbox{\tt in}  & {\em div} & Valor de division deseado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__SYSCON_8h_aa29b349b8b958efeed0831ed31eadf94}\label{HAL__SYSCON_8h_aa29b349b8b958efeed0831ed31eadf94}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+config\+\_\+pll@{hal\+\_\+syscon\+\_\+config\+\_\+pll}}
+\index{hal\+\_\+syscon\+\_\+config\+\_\+pll@{hal\+\_\+syscon\+\_\+config\+\_\+pll}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+config\+\_\+pll()}{hal\_syscon\_config\_pll()}}
+{\footnotesize\ttfamily void hal\+\_\+syscon\+\_\+config\+\_\+pll (\begin{DoxyParamCaption}\item[{hal\+\_\+syscon\+\_\+pll\+\_\+source\+\_\+sel\+\_\+en}]{clock\+\_\+source,  }\item[{uint32\+\_\+t}]{freq }\end{DoxyParamCaption})}
+
+
+
+Configurar el P\+LL. 
+
+
+\begin{DoxyParams}[1]{Parámetros}
+\mbox{\tt in}  & {\em clock\+\_\+source} & Fuente de clock de referencia para el P\+LL \\
+\hline
+\mbox{\tt in}  & {\em freq} & Frecuencia deseada de salida del P\+LL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{HAL__SYSCON_8h_aadbb4d022ecc8916c0346b8f537e19d0}\label{HAL__SYSCON_8h_aadbb4d022ecc8916c0346b8f537e19d0}} 
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}!hal\+\_\+syscon\+\_\+get\+\_\+pll\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+pll\+\_\+clock}}
+\index{hal\+\_\+syscon\+\_\+get\+\_\+pll\+\_\+clock@{hal\+\_\+syscon\+\_\+get\+\_\+pll\+\_\+clock}!H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h}}
+\subsubsection{\texorpdfstring{hal\+\_\+syscon\+\_\+get\+\_\+pll\+\_\+clock()}{hal\_syscon\_get\_pll\_clock()}}
+{\footnotesize\ttfamily uint32\+\_\+t hal\+\_\+syscon\+\_\+get\+\_\+pll\+\_\+clock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Obtener frecuencia actual configurada del P\+LL. 
+
+\begin{DoxyReturn}{Devuelve}
+Frecuencia actual del P\+LL en Hz 
+\end{DoxyReturn}
