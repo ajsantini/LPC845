@@ -1,6 +1,0 @@
-<map id="includes/hal/HAL_IOCON.h" name="includes/hal/HAL_IOCON.h">
-<area shape="rect" id="node1" title="Declaraciones a nivel de aplicacion del periferico IOCON (LPC845)" alt="" coords="33,5,216,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node3" href="$HAL__GPIO_8h.html" title="Declaraciones a nivel de aplicacion del periferico GPIO (LPC845)" alt="" coords="141,80,239,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="157,155,223,181"/>
-</map>
