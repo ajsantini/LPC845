@@ -182,6 +182,34 @@ void hal_ctimer_timer_mode_change_match_value(hal_ctimer_match_sel_en match, uin
 }
 
 /**
+ * @brief Leer estado de match externo
+ * @param[in] match Numero de match externo a consultar
+ * @return Estado del match actual
+ */
+uint8_t hal_ctimer_read_match_output(hal_ctimer_match_sel_en match)
+{
+	return CTIMER_read_match_output(match);
+}
+
+/**
+ * @brief Pone la señal de salida EM# (External Match #) en 1.
+ * @param[in] match Numero de match externo a configurar
+ */
+void hal_ctimer_set_match_output(hal_ctimer_match_sel_en match)
+{
+	CTIMER_set_match_output(match);
+}
+
+/**
+ * @brief Pone la señal de salida EM# (External Match #) en 0.
+ * @param[in] match Numero de match externo a configurar
+ */
+void hal_ctimer_clear_match_output(hal_ctimer_match_sel_en match)
+{
+	CTIMER_clear_match_output(match);
+}
+
+/**
  * @brief Inicializar el CTIMER en modo PWM
  * @param[in] config Configuracion deseada
  */
