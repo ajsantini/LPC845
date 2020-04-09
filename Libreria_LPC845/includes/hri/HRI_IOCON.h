@@ -1,5 +1,5 @@
 /**
- * @file HRI_GPIO.h
+ * @file HRI_IOCON.h
  * @brief Definiciones a nivel de registros del modulo IOCON (LPC845)
  * @author Augusto Santini
  * @date 6/2019

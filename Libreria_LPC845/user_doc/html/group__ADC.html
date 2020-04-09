@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Libreria LPC845: ADC</title>
+<title>Librería LPC845: Conversor analógico a digital (ADC)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Libreria LPC845
+   <div id="projectname">Librería LPC845
    </div>
   </td>
  </tr>
@@ -29,18 +29,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.13 -->
+<!-- Generado por Doxygen 1.8.17 -->
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
   initMenu('',true,false,'search.php','Buscar');
   $(document).ready(function() { init_search(); });
 });
-</script>
+/* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <!-- window showing the filter options -->
@@ -60,10 +63,11 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Estructuras de datos</a> &#124;
+<a href="#typedef-members">typedefs</a> &#124;
 <a href="#enum-members">Enumeraciones</a> &#124;
 <a href="#func-members">Funciones</a>  </div>
   <div class="headertitle">
-<div class="title">ADC</div>  </div>
+<div class="title">Conversor analógico a digital (ADC)</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
@@ -94,10 +98,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Estructuras de datos</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhal__adc__sequence__config__t.html">hal_adc_sequence_config_t</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structhal__adc__sequence__config__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#structhal__adc__sequence__config__t">hal_adc_sequence_config_t</a></td></tr>
+<tr class="separator:structhal__adc__sequence__config__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structhal__adc__sequence__result__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#structhal__adc__sequence__result__t">hal_adc_sequence_result_t</a></td></tr>
 <tr class="separator:structhal__adc__sequence__result__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:ga4be1ca81aa95183d8fab42124d22cb87"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#ga4be1ca81aa95183d8fab42124d22cb87">adc_sequence_interrupt_t</a>) (void)</td></tr>
+<tr class="separator:ga4be1ca81aa95183d8fab42124d22cb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumeraciones</h2></td></tr>
@@ -168,29 +177,112 @@ Enumeraciones</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:ga4a31179837133973ad68fa993a4e3cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#ga4a31179837133973ad68fa993a4e3cd0">hal_adc_init_async_mode</a> (uint32_t sample_freq, uint8_t div, <a class="el" href="group__ADC.html#gaee7bd99d368af2a425a9954a9e811a51">hal_adc_clock_source_en</a> clock_source, <a class="el" href="group__ADC.html#gaf1570443ca3570a7ae83b90307bbecca">hal_adc_low_power_mode_en</a> low_power)</td></tr>
-<tr class="memdesc:ga4a31179837133973ad68fa993a4e3cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializar el <em>ADC</em> en modo <b>asincrónico</b>.  <a href="#ga4a31179837133973ad68fa993a4e3cd0">Más...</a><br /></td></tr>
+<tr class="memdesc:ga4a31179837133973ad68fa993a4e3cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializar el <em>ADC</em> en modo <b>asincrónico</b>.  <a href="group__ADC.html#ga4a31179837133973ad68fa993a4e3cd0">Más...</a><br /></td></tr>
 <tr class="separator:ga4a31179837133973ad68fa993a4e3cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga952626700075b275e7766c0095e4ec36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#ga952626700075b275e7766c0095e4ec36">hal_adc_init_sync_mode</a> (uint32_t sample_freq, <a class="el" href="group__ADC.html#gaf1570443ca3570a7ae83b90307bbecca">hal_adc_low_power_mode_en</a> low_power)</td></tr>
-<tr class="memdesc:ga952626700075b275e7766c0095e4ec36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializar el <em>ADC</em> en modo <b>sincrónico</b>.  <a href="#ga952626700075b275e7766c0095e4ec36">Más...</a><br /></td></tr>
+<tr class="memdesc:ga952626700075b275e7766c0095e4ec36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializar el <em>ADC</em> en modo <b>sincrónico</b>.  <a href="group__ADC.html#ga952626700075b275e7766c0095e4ec36">Más...</a><br /></td></tr>
 <tr class="separator:ga952626700075b275e7766c0095e4ec36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab7f00d9f916d45943647ae254ac92d24"><td class="memItemLeft" align="right" valign="top"><a id="gab7f00d9f916d45943647ae254ac92d24"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#gab7f00d9f916d45943647ae254ac92d24">hal_adc_deinit</a> (void)</td></tr>
 <tr class="memdesc:gab7f00d9f916d45943647ae254ac92d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">De-inicialización del <em>ADC</em>. <br /></td></tr>
 <tr class="separator:gab7f00d9f916d45943647ae254ac92d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadcef726eaa85af74ade96c14f9a48feb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#gadcef726eaa85af74ade96c14f9a48feb">hal_adc_config_sequence</a> (<a class="el" href="group__ADC.html#ga9297d7b14d7018a94bce94f0103d8559">hal_adc_sequence_sel_en</a> sequence, const <a class="el" href="structhal__adc__sequence__config__t.html">hal_adc_sequence_config_t</a> *config)</td></tr>
-<tr class="memdesc:gadcef726eaa85af74ade96c14f9a48feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar una secuencia de conversión.  <a href="#gadcef726eaa85af74ade96c14f9a48feb">Más...</a><br /></td></tr>
+<tr class="memitem:gadcef726eaa85af74ade96c14f9a48feb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#gadcef726eaa85af74ade96c14f9a48feb">hal_adc_config_sequence</a> (<a class="el" href="group__ADC.html#ga9297d7b14d7018a94bce94f0103d8559">hal_adc_sequence_sel_en</a> sequence, const <a class="el" href="group__ADC.html#structhal__adc__sequence__config__t">hal_adc_sequence_config_t</a> *config)</td></tr>
+<tr class="memdesc:gadcef726eaa85af74ade96c14f9a48feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configurar una secuencia de conversión.  <a href="group__ADC.html#gadcef726eaa85af74ade96c14f9a48feb">Más...</a><br /></td></tr>
 <tr class="separator:gadcef726eaa85af74ade96c14f9a48feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga678f2df33d79c246b175d0dd36405430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#ga678f2df33d79c246b175d0dd36405430">hal_adc_enable_sequence</a> (<a class="el" href="group__ADC.html#ga9297d7b14d7018a94bce94f0103d8559">hal_adc_sequence_sel_en</a> sequence)</td></tr>
-<tr class="memdesc:ga678f2df33d79c246b175d0dd36405430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilitar una secuencia.  <a href="#ga678f2df33d79c246b175d0dd36405430">Más...</a><br /></td></tr>
+<tr class="memdesc:ga678f2df33d79c246b175d0dd36405430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilitar una secuencia.  <a href="group__ADC.html#ga678f2df33d79c246b175d0dd36405430">Más...</a><br /></td></tr>
 <tr class="separator:ga678f2df33d79c246b175d0dd36405430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga154950a81b5f589fde0139178ab1dcf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#ga154950a81b5f589fde0139178ab1dcf3">hal_adc_start_sequence</a> (<a class="el" href="group__ADC.html#ga9297d7b14d7018a94bce94f0103d8559">hal_adc_sequence_sel_en</a> sequence)</td></tr>
-<tr class="memdesc:ga154950a81b5f589fde0139178ab1dcf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disparar conversiones en una secuencia.  <a href="#ga154950a81b5f589fde0139178ab1dcf3">Más...</a><br /></td></tr>
+<tr class="memdesc:ga154950a81b5f589fde0139178ab1dcf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disparar conversiones en una secuencia.  <a href="group__ADC.html#ga154950a81b5f589fde0139178ab1dcf3">Más...</a><br /></td></tr>
 <tr class="separator:ga154950a81b5f589fde0139178ab1dcf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf58fbae95e4083bddf74495df7709674"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ADC.html#ga7761986f9c56b809bce1299c6c32eddd">hal_adc_sequence_result_en</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ADC.html#gaf58fbae95e4083bddf74495df7709674">hal_adc_get_sequence_result</a> (<a class="el" href="group__ADC.html#ga9297d7b14d7018a94bce94f0103d8559">hal_adc_sequence_sel_en</a> sequence, <a class="el" href="group__ADC.html#structhal__adc__sequence__result__t">hal_adc_sequence_result_t</a> *result)</td></tr>
-<tr class="memdesc:gaf58fbae95e4083bddf74495df7709674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener resultado de la secuencia.  <a href="#gaf58fbae95e4083bddf74495df7709674">Más...</a><br /></td></tr>
+<tr class="memdesc:gaf58fbae95e4083bddf74495df7709674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener resultado de la secuencia.  <a href="group__ADC.html#gaf58fbae95e4083bddf74495df7709674">Más...</a><br /></td></tr>
 <tr class="separator:gaf58fbae95e4083bddf74495df7709674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Documentación de las estructuras de datos</h2>
+<a name="structhal__adc__sequence__config__t" id="structhal__adc__sequence__config__t"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structhal__adc__sequence__config__t">&#9670;&nbsp;</a></span>hal_adc_sequence_config_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct hal_adc_sequence_config_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Configuración de secuencia de <em>ADC</em> </p>
+<dl class="section examples"><dt>Ejemplos</dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#_a1">Ejemplo_ADC.c</a>.</dd>
+</dl>
+</div><table class="fieldtable">
+<tr><th colspan="3">Campos de datos</th></tr>
+<tr><td class="fieldtype">
+<a id="acebe3f0fdc69a72787ddd6b19870641b"></a>uint16_t</td>
+<td class="fieldname">
+channels</td>
+<td class="fielddoc">
+<p>Canales habilitados. Cada uno de los bits representa el canal </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a6bcb45974cab7522fa8fddd79fa7f1e1"></a><a class="el" href="group__ADC.html#ga67fe859b54301579f1b1daef874514ca">hal_adc_trigger_sel_en</a></td>
+<td class="fieldname">
+trigger</td>
+<td class="fielddoc">
+<p>Configuración de fuente de trigger para la secuencia </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a0e3bc5f0a78cf105554a67af8f34d383"></a><a class="el" href="group__ADC.html#ga4c5aa9e0991c432640845d2aedb971b2">hal_adc_trigger_pol_sel_en</a></td>
+<td class="fieldname">
+trigger_pol</td>
+<td class="fielddoc">
+<p>Configuración de flanco del trigger para la secuencia </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a97da414f66a2d3643c7a9cf9ff6f64d2"></a><a class="el" href="group__ADC.html#ga8aa0efd767a9edc5a80b80c4061e0904">hal_adc_sync_sel_en</a></td>
+<td class="fieldname">
+sync_bypass</td>
+<td class="fielddoc">
+<p>Configuración de sincronismo de la secuencia </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="adea8d61d74a67ea1d2da046c57f30590"></a><a class="el" href="group__ADC.html#gaf4981172881d597ede49249ba04fcafe">hal_adc_interrupt_mode_en</a></td>
+<td class="fieldname">
+mode</td>
+<td class="fielddoc">
+<p>Configuración de modo de interrupcion </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="afe2931739ce28ec41475885a46fdc910"></a>uint8_t</td>
+<td class="fieldname">
+burst</td>
+<td class="fielddoc">
+<p>Configuración de modo BURST. En caso de ser 0 esta inhabilitado, cualquier otro valor lo habilita </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac70813667637a3ee24db9f7f2606d87b"></a>uint8_t</td>
+<td class="fieldname">
+single_step</td>
+<td class="fielddoc">
+<p>Configuración de funcionamiento del trigger. En caso de ser 0, un trigger dispara la conversión de toda la secuencia configurada, en caso de ser cualquier otro valor, un trigger dispara la conversión del siguiente canal habilitado en la secuencia </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a1dc8fcb4920ed109389a6391e8c1c9ef"></a>uint8_t</td>
+<td class="fieldname">
+low_priority</td>
+<td class="fielddoc">
+<p>Fijar baja prioridad de la secuencia. Unicamente aplica para la secuencia <em>A</em>. En caso de ser 0, la secuencia <em>A</em> tiene prioridad por sobre el <em>B</em>, cualquier otro valor, implica que la secuencia B tiene prioridad por sobre la <em>A</em> </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac041ae3020b91a4bdd3ec879d1b1872d"></a>adc_callback_t</td>
+<td class="fieldname">
+callback</td>
+<td class="fielddoc">
+<p>Callback a ejecutar en interrupción de secuencia. La misma se generará al final de la conversión de cada canal, o de toda la secuencia, dependiendo de la configuración global del <em>ADC</em> </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a name="structhal__adc__sequence__result__t" id="structhal__adc__sequence__result__t"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structhal__adc__sequence__result__t">&#9670;&nbsp;</a></span>hal_adc_sequence_result_t</h2>
 
@@ -203,8 +295,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
       </table>
 </div><div class="memdoc">
 <div class="textblock"><p>Dato que representa el resultado de una conversión (sea de secuencia completa o de canal) </p>
-<dl><dt><b>Ejemplos: </b></dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#_a0">Ejemplo_ADC.c</a>.</dd>
-</dl></div><table class="fieldtable">
+<dl class="section examples"><dt>Ejemplos</dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#_a0">Ejemplo_ADC.c</a>.</dd>
+</dl>
+</div><table class="fieldtable">
 <tr><th colspan="3">Campos de datos</th></tr>
 <tr><td class="fieldtype">
 <a id="a14b46f8d352b49c5be28cad8aafff2ba"></a><a class="el" href="group__ADC.html#ga99371f47be5b6b4b61c32a1ea86f2b6c">hal_adc_result_channel_en</a></td>
@@ -221,6 +314,22 @@ result</td>
 <p>Valor de la conversión </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los 'typedefs'</h2>
+<a id="ga4be1ca81aa95183d8fab42124d22cb87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4be1ca81aa95183d8fab42124d22cb87">&#9670;&nbsp;</a></span>adc_sequence_interrupt_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* adc_sequence_interrupt_t) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tipo de dato para callback de interrupcion de sequencia </p>
 
 </div>
 </div>
@@ -536,8 +645,6 @@ result</td>
 <p>Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.</p>
 <dl class="section see"><dt>Ver también</dt><dd><a class="el" href="group__ADC.html#gaee7bd99d368af2a425a9954a9e811a51">hal_adc_clock_source_en</a> </dd>
 <dd>
-hal_adc_operation_mode_en </dd>
-<dd>
 <a class="el" href="group__ADC.html#gaf1570443ca3570a7ae83b90307bbecca">hal_adc_low_power_mode_en</a> </dd></dl>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
@@ -546,8 +653,9 @@ hal_adc_operation_mode_en </dd>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Ejemplos: </b></dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a7">Ejemplo_ADC.c</a>.</dd>
+<dl class="section examples"><dt>Ejemplos</dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a7">Ejemplo_ADC.c</a>.</dd>
 </dl>
+
 </div>
 </div>
 <a id="gadcef726eaa85af74ade96c14f9a48feb"></a>
@@ -565,7 +673,7 @@ hal_adc_operation_mode_en </dd>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structhal__adc__sequence__config__t.html">hal_adc_sequence_config_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__ADC.html#structhal__adc__sequence__config__t">hal_adc_sequence_config_t</a> *&#160;</td>
           <td class="paramname"><em>config</em>&#160;</td>
         </tr>
         <tr>
@@ -580,7 +688,7 @@ hal_adc_operation_mode_en </dd>
 <p>Esta función no habilita la secuencia, al menos que el parametro <b>burst</b> este activo</p>
 <dl class="section see"><dt>Ver también</dt><dd><a class="el" href="group__ADC.html#ga9297d7b14d7018a94bce94f0103d8559">hal_adc_sequence_sel_en</a> </dd>
 <dd>
-<a class="el" href="structhal__adc__sequence__config__t.html">hal_adc_sequence_config_t</a> </dd></dl>
+<a class="el" href="group__ADC.html#structhal__adc__sequence__config__t">hal_adc_sequence_config_t</a> </dd></dl>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sequence</td><td>Seleccion de secuencia a configurar </td></tr>
@@ -588,8 +696,9 @@ hal_adc_operation_mode_en </dd>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Ejemplos: </b></dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a9">Ejemplo_ADC.c</a>.</dd>
+<dl class="section examples"><dt>Ejemplos</dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a9">Ejemplo_ADC.c</a>.</dd>
 </dl>
+
 </div>
 </div>
 <a id="ga678f2df33d79c246b175d0dd36405430"></a>
@@ -644,8 +753,9 @@ hal_adc_operation_mode_en </dd>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Ejemplos: </b></dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a11">Ejemplo_ADC.c</a>.</dd>
+<dl class="section examples"><dt>Ejemplos</dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a11">Ejemplo_ADC.c</a>.</dd>
 </dl>
+
 </div>
 </div>
 <a id="gaf58fbae95e4083bddf74495df7709674"></a>
@@ -689,8 +799,9 @@ hal_adc_operation_mode_en </dd>
   </dd>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Resultado de la función </dd></dl>
-<dl><dt><b>Ejemplos: </b></dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a12">Ejemplo_ADC.c</a>.</dd>
+<dl class="section examples"><dt>Ejemplos</dt><dd><a class="el" href="Ejemplo_ADC_8c-example.html#a12">Ejemplo_ADC.c</a>.</dd>
 </dl>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -698,7 +809,7 @@ hal_adc_operation_mode_en </dd>
 <hr class="footer"/><address class="footer"><small>
 Generado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.17
 </small></address>
 </body>
 </html>

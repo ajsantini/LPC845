@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode',['mode',['../structhal__adc__sequence__config__t.html#adea8d61d74a67ea1d2da046c57f30590',1,'hal_adc_sequence_config_t']]]
+  ['low_5fpriority_128',['low_priority',['../group__ADC.html#a1dc8fcb4920ed109389a6391e8c1c9ef',1,'hal_adc_sequence_config_t']]]
 ];

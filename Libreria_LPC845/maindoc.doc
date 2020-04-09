@@ -1,9 +1,39 @@
 /**
- * @mainpage Pagina principal de la documentacion
+ * @mainpage Página principal de la documentacion
  * 
- * @section intro Introduccion
+ * @section intro Introducción
  * 
- * Esta libreria esta pensada para... (bla bla bla)
+ * Esta librería esta diseñada para ser utilizada con la línea de microcontroladores \b LPC845 de la firma \b NXP.
+ * En particular, la misma actualmente está siendo desarrollada para el \b LPC845 en encapsulado \b QFP48 teniendo en
+ * cuenta que el mismo se encuentra en el stick de desarrollo <em> LPC845\_BRK </em>.
  * 
- * Mañana mismo me pongo a escribir esto!
+ * El desarrollo está siendo orientado hacia la mayor flexibilidad posible para el usuario final, pudiendo el mismo
+ * ser un usuario con diferentes grados de conocimiento en programación orientada a sistemas embebidos así como 
+ * también distintos intereses a la hora del alcance que busca en una librería.
+ * 
+ * @section estructura_libreria Estructura de la librería
+ * 
+ * La librería se divide en tres capas para aportar la mayor flexibilidad posible como fue explicado en la sección
+ * \ref intro.
+ * Estas tres capas están explicados a continuación.
+ * 
+ * @subsection capa_aplicacion Capa de aplicación de hardware (HAL)
+ * 
+ * En esta capa están definidas todas las funciones necesarias para utilizar los periféricos sin necesidad de 
+ * manejar los registros del microcontrolador. Esto implica ciertas restricciones en la funcionalidad de los 
+ * distintos periféricos, dadas por las implementaciones propuestas en la librería.
+ * 
+ * @subsection capa_periferico Capa de abstracción de hardware (HPL)
+ * 
+ * En esta capa están definidas todas las funciones para acceder a los distintos registros del microcontrolador 
+ * de forma "humanamente legible". En caso de necesitar configuraciones particulares o no dispuestas en la <em>
+ * Capa de aplicación</em>, se deberá utilizar este nivel de abstracción. Esta capa tiene implementaciones con 
+ * funcionalidades mínimas.
+ * 
+ * @subsection capa_registro Capa de registros de hardware (HRI)
+ * 
+ * En esta capa están definidas todas las estructuras y direcciones necesarias para acceder a los distintos 
+ * registros del microcontrolador en forma "directa". En caso de necesitar configuraciones o accesos no explicitados
+ * en la <em>Capa de abstracción de hardware</em> se deberá utilizar esta capa. 
+ * 
  */

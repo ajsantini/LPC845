@@ -1,29 +1,28 @@
-\hypertarget{HAL__SYSTICK_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+CK.h}
-\label{HAL__SYSTICK_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h@{includes/hal/\+H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h}}
+\hypertarget{HAL__SYSTICK_8h}{}\doxysection{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+CK.h}
+\label{HAL__SYSTICK_8h}\index{includes/hal/HAL\_SYSTICK.h@{includes/hal/HAL\_SYSTICK.h}}
 
 
 Declaraciones a nivel de aplicacion del periferico S\+Y\+S\+I\+CK (L\+P\+C845)  
 
 
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
-Dependencia gráfica adjunta para H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h\+:
-\nopagebreak
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=228pt]{HAL__SYSTICK_8h__incl}
 \end{center}
 \end{figure}
-\subsection*{Funciones}
+\doxysubsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{HAL__SYSTICK_8h_a29eb17e59d26a3f1a1f9184154964f36}{hal\+\_\+systick\+\_\+init} (uint32\+\_\+t tick\+\_\+us, void($\ast$callback)(void))
+void \mbox{\hyperlink{HAL__SYSTICK_8h_a29eb17e59d26a3f1a1f9184154964f36}{hal\+\_\+systick\+\_\+init}} (uint32\+\_\+t tick\+\_\+us, void($\ast$callback)(void))
 \begin{DoxyCompactList}\small\item\em Inicializacion del S\+Y\+S\+T\+I\+CK. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__SYSTICK_8h_a7291cb0d9994e019d2b2e804f454b571}{hal\+\_\+systick\+\_\+update\+\_\+callback} (void($\ast$callback)(void))
+void \mbox{\hyperlink{HAL__SYSTICK_8h_a7291cb0d9994e019d2b2e804f454b571}{hal\+\_\+systick\+\_\+update\+\_\+callback}} (void($\ast$callback)(void))
 \begin{DoxyCompactList}\small\item\em Actualizar callback del S\+Y\+S\+T\+I\+CK. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Descripción detallada}
+\doxysubsection{Descripción detallada}
 Declaraciones a nivel de aplicacion del periferico S\+Y\+S\+I\+CK (L\+P\+C845) 
 
 \begin{DoxyAuthor}{Autor}
@@ -37,11 +36,11 @@ Augusto Santini
 \end{DoxyVersion}
 
 
-\subsection{Documentación de las funciones}
+\doxysubsection{Documentación de las funciones}
 \mbox{\Hypertarget{HAL__SYSTICK_8h_a29eb17e59d26a3f1a1f9184154964f36}\label{HAL__SYSTICK_8h_a29eb17e59d26a3f1a1f9184154964f36}} 
-\index{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h}!hal\+\_\+systick\+\_\+init@{hal\+\_\+systick\+\_\+init}}
-\index{hal\+\_\+systick\+\_\+init@{hal\+\_\+systick\+\_\+init}!H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+systick\+\_\+init()}{hal\_systick\_init()}}
+\index{HAL\_SYSTICK.h@{HAL\_SYSTICK.h}!hal\_systick\_init@{hal\_systick\_init}}
+\index{hal\_systick\_init@{hal\_systick\_init}!HAL\_SYSTICK.h@{HAL\_SYSTICK.h}}
+\doxysubsubsection{\texorpdfstring{hal\_systick\_init()}{hal\_systick\_init()}}
 {\footnotesize\ttfamily void hal\+\_\+systick\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{tick\+\_\+us,  }\item[{void($\ast$)(void)}]{callback }\end{DoxyParamCaption})}
 
 
@@ -50,18 +49,18 @@ Inicializacion del S\+Y\+S\+T\+I\+CK.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em tick\+\_\+us} & Tiempo en microsegundos deseado para el tick \\
+\mbox{\texttt{ in}}  & {\em tick\+\_\+us} & Tiempo en microsegundos deseado para el tick \\
 \hline
-\mbox{\tt in}  & {\em callback} & Funcion a llamar en cada tick \\
+\mbox{\texttt{ in}}  & {\em callback} & Funcion a llamar en cada tick \\
 \hline
 \end{DoxyParams}
 \begin{Desc}
-\item[Ejemplos\+: ]\par
-\hyperlink{Ejemplo_ADC_8c-example}{Ejemplo\+\_\+\+A\+D\+C.\+c}.\end{Desc}
+\item[Ejemplos]\par
+\mbox{\hyperlink{Ejemplo_ADC_8c-example}{Ejemplo\+\_\+\+A\+D\+C.\+c}}.\end{Desc}
 \mbox{\Hypertarget{HAL__SYSTICK_8h_a7291cb0d9994e019d2b2e804f454b571}\label{HAL__SYSTICK_8h_a7291cb0d9994e019d2b2e804f454b571}} 
-\index{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h}!hal\+\_\+systick\+\_\+update\+\_\+callback@{hal\+\_\+systick\+\_\+update\+\_\+callback}}
-\index{hal\+\_\+systick\+\_\+update\+\_\+callback@{hal\+\_\+systick\+\_\+update\+\_\+callback}!H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h@{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+systick\+\_\+update\+\_\+callback()}{hal\_systick\_update\_callback()}}
+\index{HAL\_SYSTICK.h@{HAL\_SYSTICK.h}!hal\_systick\_update\_callback@{hal\_systick\_update\_callback}}
+\index{hal\_systick\_update\_callback@{hal\_systick\_update\_callback}!HAL\_SYSTICK.h@{HAL\_SYSTICK.h}}
+\doxysubsubsection{\texorpdfstring{hal\_systick\_update\_callback()}{hal\_systick\_update\_callback()}}
 {\footnotesize\ttfamily void hal\+\_\+systick\+\_\+update\+\_\+callback (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{callback }\end{DoxyParamCaption})}
 
 
@@ -70,6 +69,6 @@ Actualizar callback del S\+Y\+S\+T\+I\+CK.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em callback} & Nuevo callback a ejecutar en cada tick \\
+\mbox{\texttt{ in}}  & {\em callback} & Nuevo callback a ejecutar en cada tick \\
 \hline
 \end{DoxyParams}

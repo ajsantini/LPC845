@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pwm_5fperiod_5fuseg',['pwm_period_useg',['../structhal__ctimer__pwm__config__t.html#ac208333db31433db820ea04fed5ea63a',1,'hal_ctimer_pwm_config_t']]]
+  ['mode_223',['mode',['../group__ADC.html#adea8d61d74a67ea1d2da046c57f30590',1,'hal_adc_sequence_config_t']]]
 ];

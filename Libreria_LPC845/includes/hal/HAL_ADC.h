@@ -42,7 +42,7 @@
  */
 
 /**
- * @defgroup ADC ADC
+ * @defgroup ADC Conversor analógico a digital (ADC)
  *
  * # Descripción
  *
@@ -200,6 +200,9 @@ typedef enum
 	HAL_ADC_SEQUENCE_RESULT_INVALID /**< Resultado inválido */
 }hal_adc_sequence_result_en;
 
+/** Tipo de dato para callback de interrupcion de sequencia */
+typedef void (*adc_sequence_interrupt_t)(void);
+
 /** Configuración de secuencia de \e ADC */
 typedef struct
 {
@@ -208,7 +211,7 @@ typedef struct
 	hal_adc_trigger_pol_sel_en trigger_pol; /**< Configuración de flanco del trigger para la secuencia */
 	hal_adc_sync_sel_en sync_bypass; /**< Configuración de sincronismo de la secuencia */
 	hal_adc_interrupt_mode_en mode;/**< Configuración de modo de interrupcion */
-	uint8_t burst; /** Configuración de modo BURST. En caso de ser 0 esta inhabilitado, cualquier otro
+	uint8_t burst; /**< Configuración de modo BURST. En caso de ser 0 esta inhabilitado, cualquier otro
 						valor lo habilita */
 	uint8_t single_step; /**< Configuración de funcionamiento del trigger. En caso de ser 0, un trigger
 							  dispara la conversión de toda la secuencia configurada, en caso de ser
@@ -218,7 +221,7 @@ typedef struct
 	 	 	 	 	 	 	   \e A. En caso de ser 0, la secuencia \e A tiene prioridad por sobre el \e B,
 	 	 	 	 	 	 	   cualquier otro valor, implica que la secuencia B tiene prioridad por sobre
 	 	 	 	 	 	 	   la \e A */
-	void (*callback)(void); /**< Callback a ejecutar en interrupción de secuencia. La misma se generará
+	adc_callback_t callback; /**< Callback a ejecutar en interrupción de secuencia. La misma se generará
 	 	 	 	 	 	 	 	 al final de la conversión de cada canal, o de toda la secuencia,
 	 	 	 	 	 	 	 	 dependiendo de la configuración global del \e ADC */
 }hal_adc_sequence_config_t;
@@ -251,7 +254,6 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
  * @see hal_adc_clock_source_en
- * @see hal_adc_operation_mode_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
  * @param[in] low_power Selección de modo de bajo consumo

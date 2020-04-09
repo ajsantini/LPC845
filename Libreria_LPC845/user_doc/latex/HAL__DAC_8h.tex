@@ -1,25 +1,24 @@
-\hypertarget{HAL__DAC_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+D\+AC.h}
-\label{HAL__DAC_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+D\+A\+C.\+h@{includes/hal/\+H\+A\+L\+\_\+\+D\+A\+C.\+h}}
+\hypertarget{HAL__DAC_8h}{}\doxysection{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+D\+AC.h}
+\label{HAL__DAC_8h}\index{includes/hal/HAL\_DAC.h@{includes/hal/HAL\_DAC.h}}
 
 
 Declaraciones a nivel de aplicacion del periferico D\+AC (L\+P\+C845)  
 
 
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
-Dependencia gráfica adjunta para H\+A\+L\+\_\+\+D\+A\+C.\+h\+:
-\nopagebreak
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+D\+A\+C.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=206pt]{HAL__DAC_8h__incl}
 \end{center}
 \end{figure}
-\subsection*{Estructuras de datos}
+\doxysubsection*{Estructuras de datos}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{HAL__DAC_8h_structhal__dac__ctrl__config__t}{hal\+\_\+dac\+\_\+ctrl\+\_\+config\+\_\+t}
+struct \mbox{\hyperlink{HAL__DAC_8h_structhal__dac__ctrl__config__t}{hal\+\_\+dac\+\_\+ctrl\+\_\+config\+\_\+t}}
 \end{DoxyCompactItemize}
-\subsection*{Enumeraciones}
+\doxysubsection*{Enumeraciones}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{HAL__DAC_8h_a36a28cc0fff9972f139b7b4959f691e9}\label{HAL__DAC_8h_a36a28cc0fff9972f139b7b4959f691e9}} 
@@ -32,14 +31,14 @@ enum {\bfseries hal\+\_\+dac\+\_\+settling\+\_\+time\+\_\+en} \{ {\bfseries H\+A
 {\bfseries H\+A\+L\+\_\+\+D\+A\+C\+\_\+\+S\+E\+T\+T\+L\+I\+N\+G\+\_\+\+T\+I\+M\+E\+\_\+2\+\_\+5\+U\+S\+\_\+\+M\+AX}
  \}
 \end{DoxyCompactItemize}
-\subsection*{Funciones}
+\doxysubsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{HAL__DAC_8h_a0c3bc10289bf53d637dcf325983d64b9}{hal\+\_\+dac\+\_\+init} (hal\+\_\+dac\+\_\+en dac, hal\+\_\+dac\+\_\+settling\+\_\+time\+\_\+en settling\+\_\+time, uint32\+\_\+t initial\+\_\+value)
+void \mbox{\hyperlink{HAL__DAC_8h_a0c3bc10289bf53d637dcf325983d64b9}{hal\+\_\+dac\+\_\+init}} (hal\+\_\+dac\+\_\+en dac, hal\+\_\+dac\+\_\+settling\+\_\+time\+\_\+en settling\+\_\+time, uint32\+\_\+t initial\+\_\+value)
 \begin{DoxyCompactList}\small\item\em Inicializacion del D\+AC. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Descripción detallada}
+\doxysubsection{Descripción detallada}
 Declaraciones a nivel de aplicacion del periferico D\+AC (L\+P\+C845) 
 
 \begin{DoxyAuthor}{Autor}
@@ -53,10 +52,10 @@ Augusto Santini
 \end{DoxyVersion}
 
 
-\subsection{Documentación de las estructuras de datos}
-\index{hal\+\_\+dac\+\_\+ctrl\+\_\+config\+\_\+t@{hal\+\_\+dac\+\_\+ctrl\+\_\+config\+\_\+t}}\label{structhal__dac__ctrl__config__t}
+\doxysubsection{Documentación de las estructuras de datos}
+\index{hal\_dac\_ctrl\_config\_t@{hal\_dac\_ctrl\_config\_t}}\label{structhal__dac__ctrl__config__t}
 \Hypertarget{HAL__DAC_8h_structhal__dac__ctrl__config__t}
-\subsubsection{struct hal\+\_\+dac\+\_\+ctrl\+\_\+config\+\_\+t}
+\doxysubsubsection{struct hal\+\_\+dac\+\_\+ctrl\+\_\+config\+\_\+t}
 \begin{DoxyFields}{Campos de datos}
 \mbox{\Hypertarget{HAL__DAC_8h_a3dfe52d3dda993a8648198e3957bbdcb}\label{HAL__DAC_8h_a3dfe52d3dda993a8648198e3957bbdcb}} 
 uint8\_t&
@@ -85,11 +84,11 @@ dma\_request: 1&
 \end{DoxyFields}
 
 
-\subsection{Documentación de las funciones}
+\doxysubsection{Documentación de las funciones}
 \mbox{\Hypertarget{HAL__DAC_8h_a0c3bc10289bf53d637dcf325983d64b9}\label{HAL__DAC_8h_a0c3bc10289bf53d637dcf325983d64b9}} 
-\index{H\+A\+L\+\_\+\+D\+A\+C.\+h@{H\+A\+L\+\_\+\+D\+A\+C.\+h}!hal\+\_\+dac\+\_\+init@{hal\+\_\+dac\+\_\+init}}
-\index{hal\+\_\+dac\+\_\+init@{hal\+\_\+dac\+\_\+init}!H\+A\+L\+\_\+\+D\+A\+C.\+h@{H\+A\+L\+\_\+\+D\+A\+C.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+dac\+\_\+init()}{hal\_dac\_init()}}
+\index{HAL\_DAC.h@{HAL\_DAC.h}!hal\_dac\_init@{hal\_dac\_init}}
+\index{hal\_dac\_init@{hal\_dac\_init}!HAL\_DAC.h@{HAL\_DAC.h}}
+\doxysubsubsection{\texorpdfstring{hal\_dac\_init()}{hal\_dac\_init()}}
 {\footnotesize\ttfamily void hal\+\_\+dac\+\_\+init (\begin{DoxyParamCaption}\item[{hal\+\_\+dac\+\_\+en}]{dac,  }\item[{hal\+\_\+dac\+\_\+settling\+\_\+time\+\_\+en}]{settling\+\_\+time,  }\item[{uint32\+\_\+t}]{initial\+\_\+value }\end{DoxyParamCaption})}
 
 
@@ -98,10 +97,10 @@ Inicializacion del D\+AC.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em dac} & Cual de los dos D\+A\+Cs inicializar \\
+\mbox{\texttt{ in}}  & {\em dac} & Cual de los dos D\+A\+Cs inicializar \\
 \hline
-\mbox{\tt in}  & {\em settling\+\_\+time} & Velocidad de conversion del D\+AC \\
+\mbox{\texttt{ in}}  & {\em settling\+\_\+time} & Velocidad de conversion del D\+AC \\
 \hline
-\mbox{\tt in}  & {\em initial\+\_\+value} & Valor inicial del D\+AC \\
+\mbox{\texttt{ in}}  & {\em initial\+\_\+value} & Valor inicial del D\+AC \\
 \hline
 \end{DoxyParams}

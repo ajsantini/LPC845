@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Libreria LPC845: Pagina principal de la documentacion</title>
+<title>Librería LPC845: Página principal de la documentacion</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Libreria LPC845
+   <div id="projectname">Librería LPC845
    </div>
   </td>
  </tr>
@@ -29,18 +29,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.13 -->
+<!-- Generado por Doxygen 1.8.17 -->
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
   initMenu('',true,false,'search.php','Buscar');
   $(document).ready(function() { init_search(); });
 });
-</script>
+/* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <!-- window showing the filter options -->
@@ -57,21 +60,34 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Pagina principal de la documentacion </div>  </div>
+<div class="title">Página principal de la documentacion </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="intro"></a>
-Introduccion</h1>
-<p>Esta libreria esta pensada para... (bla bla bla)</p>
-<p>Mañana mismo me pongo a escribir esto! </p>
-</div></div><!-- contents -->
+Introducción</h1>
+<p>Esta librería esta diseñada para ser utilizada con la línea de microcontroladores <b>LPC845</b> de la firma <b>NXP</b>. En particular, la misma actualmente está siendo desarrollada para el <b>LPC845</b> en encapsulado <b>QFP48</b> teniendo en cuenta que el mismo se encuentra en el stick de desarrollo <em> LPC845_BRK </em>.</p>
+<p>El desarrollo está siendo orientado hacia la mayor flexibilidad posible para el usuario final, pudiendo el mismo ser un usuario con diferentes grados de conocimiento en programación orientada a sistemas embebidos así como también distintos intereses a la hora del alcance que busca en una librería.</p>
+<h1><a class="anchor" id="estructura_libreria"></a>
+Estructura de la librería</h1>
+<p>La librería se divide en tres capas para aportar la mayor flexibilidad posible como fue explicado en la sección <a class="el" href="index.html#intro">Introducción</a>. Estas tres capas están explicados a continuación.</p>
+<h2><a class="anchor" id="capa_aplicacion"></a>
+Capa de aplicación de hardware (HAL)</h2>
+<p>En esta capa están definidas todas las funciones necesarias para utilizar los periféricos sin necesidad de manejar los registros del microcontrolador. Esto implica ciertas restricciones en la funcionalidad de los distintos periféricos, dadas por las implementaciones propuestas en la librería.</p>
+<h2><a class="anchor" id="capa_periferico"></a>
+Capa de abstracción de hardware (HPL)</h2>
+<p>En esta capa están definidas todas las funciones para acceder a los distintos registros del microcontrolador de forma "humanamente legible". En caso de necesitar configuraciones particulares o no dispuestas en la <em> Capa de aplicación</em>, se deberá utilizar este nivel de abstracción. Esta capa tiene implementaciones con funcionalidades mínimas.</p>
+<h2><a class="anchor" id="capa_registro"></a>
+Capa de registros de hardware (HRI)</h2>
+<p>En esta capa están definidas todas las estructuras y direcciones necesarias para acceder a los distintos registros del microcontrolador en forma "directa". En caso de necesitar configuraciones o accesos no explicitados en la <em>Capa de abstracción de hardware</em> se deberá utilizar esta capa. </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.17
 </small></address>
 </body>
 </html>

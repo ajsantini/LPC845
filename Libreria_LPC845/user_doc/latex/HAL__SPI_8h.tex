@@ -1,5 +1,5 @@
-\hypertarget{HAL__SPI_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+S\+PI.h}
-\label{HAL__SPI_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+S\+P\+I.\+h@{includes/hal/\+H\+A\+L\+\_\+\+S\+P\+I.\+h}}
+\hypertarget{HAL__SPI_8h}{}\doxysection{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+S\+PI.h}
+\label{HAL__SPI_8h}\index{includes/hal/HAL\_SPI.h@{includes/hal/HAL\_SPI.h}}
 
 
 Declaraciones a nivel de aplicacion del periferico S\+PI (L\+P\+C845)  
@@ -8,30 +8,29 @@ Declaraciones a nivel de aplicacion del periferico S\+PI (L\+P\+C845)
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$H\+A\+L\+\_\+\+S\+Y\+S\+C\+O\+N.\+h$>$}\newline
 {\ttfamily \#include $<$H\+A\+L\+\_\+\+G\+P\+I\+O.\+h$>$}\newline
-Dependencia gráfica adjunta para H\+A\+L\+\_\+\+S\+P\+I.\+h\+:
-\nopagebreak
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+S\+P\+I.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=279pt]{HAL__SPI_8h__incl}
 \end{center}
 \end{figure}
-\subsection*{Estructuras de datos}
+\doxysubsection*{Estructuras de datos}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structhal__spi__master__mode__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+t}
+struct \mbox{\hyperlink{structhal__spi__master__mode__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+t}}
 \item 
-struct \hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t}
+struct \mbox{\hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t}}
 \item 
-struct \hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__data__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t}
+struct \mbox{\hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__data__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t}}
 \end{DoxyCompactItemize}
-\subsection*{defines}
+\doxysubsection*{defines}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{HAL__SPI_8h_aa155c3ad4568672fbec24698f9e267ad}\label{HAL__SPI_8h_aa155c3ad4568672fbec24698f9e267ad}} 
-\#define {\bfseries H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+D\+U\+M\+M\+Y\+\_\+\+B\+Y\+TE}~(0x\+F\+F)
+\#define {\bfseries H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+D\+U\+M\+M\+Y\+\_\+\+B\+Y\+TE}~(0x\+FF)
 \end{DoxyCompactItemize}
-\subsection*{Enumeraciones}
+\doxysubsection*{Enumeraciones}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{HAL__SPI_8h_af0531d47c7a0508e49c239b8ac94eecb}\label{HAL__SPI_8h_af0531d47c7a0508e49c239b8ac94eecb}} 
@@ -84,24 +83,24 @@ enum {\bfseries hal\+\_\+spi\+\_\+ssel\+\_\+sel\+\_\+en} \{ \newline
 {\bfseries H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+S\+S\+E\+L\+\_\+\+S\+E\+L\+E\+C\+T\+I\+O\+N\+\_\+\+O\+T\+H\+ER}
  \}
 \end{DoxyCompactItemize}
-\subsection*{Funciones}
+\doxysubsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{HAL__SPI_8h_a9babc814c41f2d8714551fc9af81d346}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, const \hyperlink{structhal__spi__master__mode__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+t} $\ast$config)
+void \mbox{\hyperlink{HAL__SPI_8h_a9babc814c41f2d8714551fc9af81d346}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init}} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, const \mbox{\hyperlink{structhal__spi__master__mode__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+t}} $\ast$config)
 \begin{DoxyCompactList}\small\item\em Inicializar S\+PI en modo master. \end{DoxyCompactList}\item 
-uint16\+\_\+t \hyperlink{HAL__SPI_8h_a6ca16392e2331ab9db9d97f3a6358346}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data} (hal\+\_\+spi\+\_\+sel\+\_\+en inst)
+uint16\+\_\+t \mbox{\hyperlink{HAL__SPI_8h_a6ca16392e2331ab9db9d97f3a6358346}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data}} (hal\+\_\+spi\+\_\+sel\+\_\+en inst)
 \begin{DoxyCompactList}\small\item\em Leer el dato recibido. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__SPI_8h_a11b672c8dcef79e8784497b23f1618b7}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, const \hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t} $\ast$config)
+void \mbox{\hyperlink{HAL__SPI_8h_a11b672c8dcef79e8784497b23f1618b7}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx}} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, const \mbox{\hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t}} $\ast$config)
 \begin{DoxyCompactList}\small\item\em Configurar la transmision. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__SPI_8h_ad7cfe819f562f90c6bb07e2577699d86}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, const \hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__data__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t} $\ast$data)
+void \mbox{\hyperlink{HAL__SPI_8h_ad7cfe819f562f90c6bb07e2577699d86}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data}} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, const \mbox{\hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__data__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t}} $\ast$data)
 \begin{DoxyCompactList}\small\item\em Transmitir dato. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__SPI_8h_a5bbc56bb8e86b9b077822fab5297e513}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, void($\ast$new\+\_\+callback)(void))
+void \mbox{\hyperlink{HAL__SPI_8h_a5bbc56bb8e86b9b077822fab5297e513}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback}} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, void($\ast$new\+\_\+callback)(void))
 \begin{DoxyCompactList}\small\item\em Actualizar callback en T\+X\+R\+DY. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__SPI_8h_a363e7e3be50a625bd8fe6a748c473027}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, void($\ast$new\+\_\+callback)(void))
+void \mbox{\hyperlink{HAL__SPI_8h_a363e7e3be50a625bd8fe6a748c473027}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback}} (hal\+\_\+spi\+\_\+sel\+\_\+en inst, void($\ast$new\+\_\+callback)(void))
 \begin{DoxyCompactList}\small\item\em Actualizar callback en R\+X\+R\+DY. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Descripción detallada}
+\doxysubsection{Descripción detallada}
 Declaraciones a nivel de aplicacion del periferico S\+PI (L\+P\+C845) 
 
 \begin{DoxyAuthor}{Autor}
@@ -115,10 +114,10 @@ Augusto Santini
 \end{DoxyVersion}
 
 
-\subsection{Documentación de las estructuras de datos}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t}}\label{structhal__spi__master__mode__tx__config__t}
+\doxysubsection{Documentación de las estructuras de datos}
+\index{hal\_spi\_master\_mode\_tx\_config\_t@{hal\_spi\_master\_mode\_tx\_config\_t}}\label{structhal__spi__master__mode__tx__config__t}
 \Hypertarget{HAL__SPI_8h_structhal__spi__master__mode__tx__config__t}
-\subsubsection{struct hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t}
+\doxysubsubsection{struct hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t}
 \begin{DoxyFields}{Campos de datos}
 \mbox{\Hypertarget{HAL__SPI_8h_af409a6b3ff876d386c8d9b38f05e633c}\label{HAL__SPI_8h_af409a6b3ff876d386c8d9b38f05e633c}} 
 hal\_spi\_clock\_mode\_en&
@@ -133,9 +132,9 @@ clock\_div&
 \hline
 
 \end{DoxyFields}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t}}\label{structhal__spi__master__mode__tx__data__t}
+\index{hal\_spi\_master\_mode\_tx\_data\_t@{hal\_spi\_master\_mode\_tx\_data\_t}}\label{structhal__spi__master__mode__tx__data__t}
 \Hypertarget{HAL__SPI_8h_structhal__spi__master__mode__tx__data__t}
-\subsubsection{struct hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t}
+\doxysubsubsection{struct hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t}
 \begin{DoxyFields}{Campos de datos}
 \mbox{\Hypertarget{HAL__SPI_8h_ace5d9edd50ae7a04c202ce1aa9ffc9d1}\label{HAL__SPI_8h_ace5d9edd50ae7a04c202ce1aa9ffc9d1}} 
 uint32\_t&
@@ -206,12 +205,12 @@ uint32\_t&
 \end{DoxyFields}
 
 
-\subsection{Documentación de las funciones}
+\doxysubsection{Documentación de las funciones}
 \mbox{\Hypertarget{HAL__SPI_8h_a9babc814c41f2d8714551fc9af81d346}\label{HAL__SPI_8h_a9babc814c41f2d8714551fc9af81d346}} 
-\index{H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}!hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init}}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init}!H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init()}{hal\_spi\_master\_mode\_init()}}
-{\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{const \hyperlink{structhal__spi__master__mode__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+t} $\ast$}]{config }\end{DoxyParamCaption})}
+\index{HAL\_SPI.h@{HAL\_SPI.h}!hal\_spi\_master\_mode\_init@{hal\_spi\_master\_mode\_init}}
+\index{hal\_spi\_master\_mode\_init@{hal\_spi\_master\_mode\_init}!HAL\_SPI.h@{HAL\_SPI.h}}
+\doxysubsubsection{\texorpdfstring{hal\_spi\_master\_mode\_init()}{hal\_spi\_master\_mode\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{const \mbox{\hyperlink{structhal__spi__master__mode__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+t}} $\ast$}]{config }\end{DoxyParamCaption})}
 
 
 
@@ -219,15 +218,15 @@ Inicializar S\+PI en modo master.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em inst} & Instancia de S\+PI a inicializar \\
+\mbox{\texttt{ in}}  & {\em inst} & Instancia de S\+PI a inicializar \\
 \hline
-\mbox{\tt in}  & {\em config} & Configuracion deseada \\
+\mbox{\texttt{ in}}  & {\em config} & Configuracion deseada \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__SPI_8h_a6ca16392e2331ab9db9d97f3a6358346}\label{HAL__SPI_8h_a6ca16392e2331ab9db9d97f3a6358346}} 
-\index{H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}!hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data}}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data}!H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data()}{hal\_spi\_master\_mode\_rx\_data()}}
+\index{HAL\_SPI.h@{HAL\_SPI.h}!hal\_spi\_master\_mode\_rx\_data@{hal\_spi\_master\_mode\_rx\_data}}
+\index{hal\_spi\_master\_mode\_rx\_data@{hal\_spi\_master\_mode\_rx\_data}!HAL\_SPI.h@{HAL\_SPI.h}}
+\doxysubsubsection{\texorpdfstring{hal\_spi\_master\_mode\_rx\_data()}{hal\_spi\_master\_mode\_rx\_data()}}
 {\footnotesize\ttfamily uint16\+\_\+t hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+rx\+\_\+data (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst }\end{DoxyParamCaption})}
 
 
@@ -236,17 +235,17 @@ Leer el dato recibido.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em inst} & Instancia a consultar \\
+\mbox{\texttt{ in}}  & {\em inst} & Instancia a consultar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Devuelve}
 Dato recibido 
 \end{DoxyReturn}
 \mbox{\Hypertarget{HAL__SPI_8h_a11b672c8dcef79e8784497b23f1618b7}\label{HAL__SPI_8h_a11b672c8dcef79e8784497b23f1618b7}} 
-\index{H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}!hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx}}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx}!H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx()}{hal\_spi\_master\_mode\_config\_tx()}}
-{\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{const \hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t} $\ast$}]{config }\end{DoxyParamCaption})}
+\index{HAL\_SPI.h@{HAL\_SPI.h}!hal\_spi\_master\_mode\_config\_tx@{hal\_spi\_master\_mode\_config\_tx}}
+\index{hal\_spi\_master\_mode\_config\_tx@{hal\_spi\_master\_mode\_config\_tx}!HAL\_SPI.h@{HAL\_SPI.h}}
+\doxysubsubsection{\texorpdfstring{hal\_spi\_master\_mode\_config\_tx()}{hal\_spi\_master\_mode\_config\_tx()}}
+{\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+config\+\_\+tx (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{const \mbox{\hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__config__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+config\+\_\+t}} $\ast$}]{config }\end{DoxyParamCaption})}
 
 
 
@@ -254,16 +253,16 @@ Configurar la transmision.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\mbox{\texttt{ in}}  & {\em inst} & Instancia a configurar \\
 \hline
-\mbox{\tt in}  & {\em config} & Configuracion para la transmision deseada \\
+\mbox{\texttt{ in}}  & {\em config} & Configuracion para la transmision deseada \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__SPI_8h_ad7cfe819f562f90c6bb07e2577699d86}\label{HAL__SPI_8h_ad7cfe819f562f90c6bb07e2577699d86}} 
-\index{H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}!hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data}}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data}!H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data()}{hal\_spi\_master\_mode\_tx\_data()}}
-{\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{const \hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__data__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t} $\ast$}]{data }\end{DoxyParamCaption})}
+\index{HAL\_SPI.h@{HAL\_SPI.h}!hal\_spi\_master\_mode\_tx\_data@{hal\_spi\_master\_mode\_tx\_data}}
+\index{hal\_spi\_master\_mode\_tx\_data@{hal\_spi\_master\_mode\_tx\_data}!HAL\_SPI.h@{HAL\_SPI.h}}
+\doxysubsubsection{\texorpdfstring{hal\_spi\_master\_mode\_tx\_data()}{hal\_spi\_master\_mode\_tx\_data()}}
+{\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{const \mbox{\hyperlink{HAL__SPI_8h_structhal__spi__master__mode__tx__data__t}{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+tx\+\_\+data\+\_\+t}} $\ast$}]{data }\end{DoxyParamCaption})}
 
 
 
@@ -271,15 +270,15 @@ Transmitir dato.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em inst} & Instancia a utilizar \\
+\mbox{\texttt{ in}}  & {\em inst} & Instancia a utilizar \\
 \hline
-\mbox{\tt in}  & {\em data} & Dato a transmitir, con controles asociados \\
+\mbox{\texttt{ in}}  & {\em data} & Dato a transmitir, con controles asociados \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__SPI_8h_a5bbc56bb8e86b9b077822fab5297e513}\label{HAL__SPI_8h_a5bbc56bb8e86b9b077822fab5297e513}} 
-\index{H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}!hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback}}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback}!H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback()}{hal\_spi\_master\_mode\_register\_tx\_callback()}}
+\index{HAL\_SPI.h@{HAL\_SPI.h}!hal\_spi\_master\_mode\_register\_tx\_callback@{hal\_spi\_master\_mode\_register\_tx\_callback}}
+\index{hal\_spi\_master\_mode\_register\_tx\_callback@{hal\_spi\_master\_mode\_register\_tx\_callback}!HAL\_SPI.h@{HAL\_SPI.h}}
+\doxysubsubsection{\texorpdfstring{hal\_spi\_master\_mode\_register\_tx\_callback()}{hal\_spi\_master\_mode\_register\_tx\_callback()}}
 {\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+tx\+\_\+callback (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{void($\ast$)(void)}]{new\+\_\+callback }\end{DoxyParamCaption})}
 
 
@@ -288,15 +287,15 @@ Actualizar callback en T\+X\+R\+DY.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\mbox{\texttt{ in}}  & {\em inst} & Instancia a configurar \\
 \hline
-\mbox{\tt in}  & {\em new\+\_\+callback} & Nuevo callback a ejecutar en T\+X\+R\+DY \\
+\mbox{\texttt{ in}}  & {\em new\+\_\+callback} & Nuevo callback a ejecutar en T\+X\+R\+DY \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__SPI_8h_a363e7e3be50a625bd8fe6a748c473027}\label{HAL__SPI_8h_a363e7e3be50a625bd8fe6a748c473027}} 
-\index{H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}!hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback}}
-\index{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback@{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback}!H\+A\+L\+\_\+\+S\+P\+I.\+h@{H\+A\+L\+\_\+\+S\+P\+I.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback()}{hal\_spi\_master\_mode\_register\_rx\_callback()}}
+\index{HAL\_SPI.h@{HAL\_SPI.h}!hal\_spi\_master\_mode\_register\_rx\_callback@{hal\_spi\_master\_mode\_register\_rx\_callback}}
+\index{hal\_spi\_master\_mode\_register\_rx\_callback@{hal\_spi\_master\_mode\_register\_rx\_callback}!HAL\_SPI.h@{HAL\_SPI.h}}
+\doxysubsubsection{\texorpdfstring{hal\_spi\_master\_mode\_register\_rx\_callback()}{hal\_spi\_master\_mode\_register\_rx\_callback()}}
 {\footnotesize\ttfamily void hal\+\_\+spi\+\_\+master\+\_\+mode\+\_\+register\+\_\+rx\+\_\+callback (\begin{DoxyParamCaption}\item[{hal\+\_\+spi\+\_\+sel\+\_\+en}]{inst,  }\item[{void($\ast$)(void)}]{new\+\_\+callback }\end{DoxyParamCaption})}
 
 
@@ -305,8 +304,8 @@ Actualizar callback en R\+X\+R\+DY.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em inst} & Instancia a configurar \\
+\mbox{\texttt{ in}}  & {\em inst} & Instancia a configurar \\
 \hline
-\mbox{\tt in}  & {\em new\+\_\+callback} & Nuevo callback a ejecutar en R\+X\+R\+DY \\
+\mbox{\texttt{ in}}  & {\em new\+\_\+callback} & Nuevo callback a ejecutar en R\+X\+R\+DY \\
 \hline
 \end{DoxyParams}

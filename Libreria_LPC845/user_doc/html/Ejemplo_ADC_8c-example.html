@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Libreria LPC845: Ejemplo_ADC.c</title>
+<title>Librería LPC845: Ejemplo_ADC.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Libreria LPC845
+   <div id="projectname">Librería LPC845
    </div>
   </td>
  </tr>
@@ -29,18 +29,21 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.13 -->
+<!-- Generado por Doxygen 1.8.17 -->
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
   initMenu('',true,false,'search.php','Buscar');
   $(document).ready(function() { init_search(); });
 });
-</script>
+/* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
 <!-- window showing the filter options -->
@@ -82,12 +85,166 @@ $(function() {
 </ul>
 <p>Una vez inicializado el periférico, se configura el periférico <em>Systick</em> para interrumpir cada <img class="formulaInl" alt="$ 1mseg $" src="form_2.png"/> y mediante su manejador se lleva la cuenta de los milisegundos transcurridos. Una vez transcurridos <img class="formulaInl" alt="$ 1000mseg $" src="form_3.png"/>, se dispara una conversión de <em>ADC</em>, y sus resultados se guardan en dos variables globales.</p>
 <p>Ubicando un <em>breakpoint</em> adecuadamente, se pueden leer los resultados de las conversiones ya ubicadas en las variables globales.</p>
-<div class="fragment"><div class="line"></div><div class="line"><span class="preprocessor">#include &lt;cr_section_macros.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;stddef.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="HAL__ADC_8h.html">HAL_ADC.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="HAL__SYSTICK_8h.html">HAL_SYSTICK.h</a>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">/* Máscara de configuración de canales habilitados para la secuencia a configurar */</span></div><div class="line"><span class="preprocessor">#define     ADC_CHANNELS                ((1 &lt;&lt; 0) | (1 &lt;&lt; 8))</span></div><div class="line"></div><div class="line"><span class="comment">/* Macro para definir el tiempo de interrupción del \e Systick en \b microsegundos */</span></div><div class="line"><span class="preprocessor">#define     TICK_TIME_USEG              (1000)</span></div><div class="line"></div><div class="line"><span class="comment">/* Frecuencia de muestreo a utilizar por el ADC */</span></div><div class="line"><span class="preprocessor">#define     ADC_SAMPLE_FREQ             (1000000)</span></div><div class="line"></div><div class="line"><span class="preprocessor">#define     ADC_SEQUENCE                (HAL_ADC_SEQUENCE_SEL_A)</span></div><div class="line"></div><div class="line"><span class="comment">/* Tiempo de disparo de conversiones de \e ADC en \b milisegundos */</span></div><div class="line"><span class="preprocessor">#define     ADC_CONVERSION_TIME_MSEG    (1000)</span></div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> adc_callback(<span class="keywordtype">void</span>);</div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> systick_callback(<span class="keywordtype">void</span>);</div><div class="line"></div><div class="line"><span class="keyword">static</span> uint8_t flag_secuencia_adc_completada = 0; <span class="comment">/* Flag para indicar finalización de secuencia de conversión de \e ADC */</span></div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * Variables para guardar los resultados de la secuencia de conversión</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">static</span> <a name="_a0"></a><a class="code" href="group__ADC.html#structhal__adc__sequence__result__t">hal_adc_sequence_result_t</a> resultados_conversion_adc[2];</div><div class="line"></div><div class="line"><span class="comment">/* Configuración de la secuencia. Como no va a cambiar es declarada \e const */</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a name="_a1"></a><a class="code" href="structhal__adc__sequence__config__t.html">hal_adc_sequence_config_t</a> adc_config =</div><div class="line">{</div><div class="line">    .<a name="a2"></a><a class="code" href="structhal__adc__sequence__config__t.html#acebe3f0fdc69a72787ddd6b19870641b">channels</a> = ADC_CHANNELS,</div><div class="line">    .trigger = <a name="a3"></a><a class="code" href="group__ADC.html#gga67fe859b54301579f1b1daef874514caaaf722f012bd0aa063b595333f9012a20">HAL_ADC_TRIGGER_SEL_NONE</a>,</div><div class="line">    .trigger_pol = <a name="a4"></a><a class="code" href="group__ADC.html#gga4c5aa9e0991c432640845d2aedb971b2a007c22a34504d8557d98704becf95dc8">HAL_ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE</a>,</div><div class="line">    .sync_bypass = <a name="a5"></a><a class="code" href="group__ADC.html#gga8aa0efd767a9edc5a80b80c4061e0904a1cbf7646bbe7c32e3e21663fc5952d77">HAL_ADC_SYNC_SEL_BYPASS_SYNC</a>,</div><div class="line">    .mode = <a name="a6"></a><a class="code" href="group__ADC.html#ggaf4981172881d597ede49249ba04fcafeae73eff6d5c4ef7297d31a28e4a76e149">HAL_ADC_INTERRUPT_MODE_EOS</a>,</div><div class="line">    .burst = 0,</div><div class="line">    .single_step = 0,</div><div class="line">    .low_priority = 0,</div><div class="line">    .callback = adc_callback</div><div class="line">};</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * @brief Punto de entrada del programa</span></div><div class="line"><span class="comment"> * @return Nunca deberia terminar esta función</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <span class="comment">// Inicialización del periférico en modo SINCRÓNICO</span></div><div class="line">    <a name="a7"></a><a class="code" href="group__ADC.html#ga952626700075b275e7766c0095e4ec36">hal_adc_init_sync_mode</a>(ADC_SAMPLE_FREQ, <a name="a8"></a><a class="code" href="group__ADC.html#ggaf1570443ca3570a7ae83b90307bbeccaaf92172fb70ce285c23631cb025b3cd52">HAL_ADC_LOW_POWER_MODE_DISABLED</a>);</div><div class="line"></div><div class="line">    <span class="comment">// Configuración de la secuencia a utilizar</span></div><div class="line">    <a name="a9"></a><a class="code" href="group__ADC.html#gadcef726eaa85af74ade96c14f9a48feb">hal_adc_config_sequence</a>(ADC_SEQUENCE, &amp;adc_config);</div><div class="line"></div><div class="line">    <span class="comment">// Inicialización del \e Systick con el tiempo de tick adecuado</span></div><div class="line">    <a name="a10"></a><a class="code" href="HAL__SYSTICK_8h.html#a29eb17e59d26a3f1a1f9184154964f36">hal_systick_init</a>(TICK_TIME_USEG, systick_callback);</div><div class="line"></div><div class="line">    <span class="keywordflow">while</span>(1)</div><div class="line">    {</div><div class="line">        <span class="keywordflow">if</span>(flag_secuencia_adc_completada == 1) <span class="comment">// Esto o hacer &quot;if(flag_secuencia_adc_completada)&quot; es indistinto</span></div><div class="line">        {</div><div class="line">            uint32_t variable_auxiliar;</div><div class="line"></div><div class="line">            flag_secuencia_adc_completada = 0;</div><div class="line"></div><div class="line">            (void) variable_auxiliar; <span class="comment">// Esta línea es ideal para colocar el breakpoint!</span></div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keywordflow">return</span> 0;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * @brief Callback a ejecutar en cada tick del \e Systick</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> systick_callback(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <span class="keyword">static</span> uint32_t contador_disparo_adc = 0;</div><div class="line"></div><div class="line">    <span class="comment">// Conteo con valor límite</span></div><div class="line">    contador_disparo_adc = (contador_disparo_adc + 1) % ADC_CONVERSION_TIME_MSEG;</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span>(contador_disparo_adc == 0) <span class="comment">// Esto o hacer &quot;if(!contador_disparo_adc)&quot; es indistinto</span></div><div class="line">    {</div><div class="line">        <a name="a11"></a><a class="code" href="group__ADC.html#ga154950a81b5f589fde0139178ab1dcf3">hal_adc_start_sequence</a>(ADC_SEQUENCE);</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * @brief Callback a ejecutar en cada finalización de conversión de \b secuencia de \e ADC</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> adc_callback(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <span class="comment">// Obtención de resultados de conversión</span></div><div class="line">    <a name="a12"></a><a class="code" href="group__ADC.html#gaf58fbae95e4083bddf74495df7709674">hal_adc_get_sequence_result</a>(ADC_SEQUENCE, resultados_conversion_adc);</div><div class="line"></div><div class="line">    flag_secuencia_adc_completada = 1;</div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * @file Ejemplo_ADC.c</span></div>
+<div class="line"><span class="comment"> * @brief Ejemplo de utilización del \e ADC con la librería (capa de aplicación)</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el &lt;em&gt;Free Running</span></div>
+<div class="line"><span class="comment"> * Oscillator&lt;/em&gt; funcionando a \f$ 12MHz \f$.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * El periférico será configurado con las siguientes características:</span></div>
+<div class="line"><span class="comment"> *  - Funcionamiento \b sincrónico</span></div>
+<div class="line"><span class="comment"> *  - Frecuencia de muestreo de \f$ 1Mhz \f$</span></div>
+<div class="line"><span class="comment"> *  - Modo bajo consumo inhabilitado</span></div>
+<div class="line"><span class="comment"> *  .</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * La secuencia A es configurada para generar conversiones en los canales 0 y 8:</span></div>
+<div class="line"><span class="comment"> *  - El canal 0 está conectado al preset propio del stick de desarrollo (Puerto 0 pin 7)</span></div>
+<div class="line"><span class="comment"> *  - El canal 8 está ubicado en el pin número 3 (Puerto 0 pin 18) y se le puede conectar un preset externo entre</span></div>
+<div class="line"><span class="comment"> *   VDD y GND.</span></div>
+<div class="line"><span class="comment"> *  .</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * Además, la secuencia tendrá la siguiente configuración:</span></div>
+<div class="line"><span class="comment"> *  - Trigger: Únicamente se disparan conversiones por software</span></div>
+<div class="line"><span class="comment"> *  - Bypass sincronismo: Sí</span></div>
+<div class="line"><span class="comment"> *  - Modo de interrupción: Cuando termina la secuencia completa</span></div>
+<div class="line"><span class="comment"> *  - Burst: Inhabilitado</span></div>
+<div class="line"><span class="comment"> *  - Un trigger dispara: Una conversión de secuencia completa</span></div>
+<div class="line"><span class="comment"> *  - Secuencia A como baja prioridad: No</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada \f$ 1mseg \f$</span></div>
+<div class="line"><span class="comment"> * y mediante su manejador se lleva la cuenta de los milisegundos transcurridos. Una vez transcurridos</span></div>
+<div class="line"><span class="comment"> * \f$ 1000mseg \f$, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * Ubicando un \e breakpoint adecuadamente, se pueden leer los resultados de las conversiones ya ubicadas en</span></div>
+<div class="line"><span class="comment"> * las variables globales.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * @author Augusto Santini</span></div>
+<div class="line"><span class="comment"> * @date 4/2020</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;cr_section_macros.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="HAL__ADC_8h.html">HAL_ADC.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="HAL__SYSTICK_8h.html">HAL_SYSTICK.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Máscara de configuración de canales habilitados para la secuencia a configurar */</span></div>
+<div class="line"><span class="preprocessor">#define     ADC_CHANNELS                ((1 &lt;&lt; 0) | (1 &lt;&lt; 8))</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Macro para definir el tiempo de interrupción del \e Systick en \b microsegundos */</span></div>
+<div class="line"><span class="preprocessor">#define     TICK_TIME_USEG              (1000)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Frecuencia de muestreo a utilizar por el ADC */</span></div>
+<div class="line"><span class="preprocessor">#define     ADC_SAMPLE_FREQ             (1000000)</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/** Secuencia a utilizar en el ADC */</span></div>
+<div class="line"><span class="preprocessor">#define     ADC_SEQUENCE                (HAL_ADC_SEQUENCE_SEL_A)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Tiempo de disparo de conversiones de \e ADC en \b milisegundos */</span></div>
+<div class="line"><span class="preprocessor">#define     ADC_CONVERSION_TIME_MSEG    (1000)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> adc_callback(<span class="keywordtype">void</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> systick_callback(<span class="keywordtype">void</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> uint8_t flag_secuencia_adc_completada = 0; <span class="comment">/* Flag para indicar finalización de secuencia de conversión de \e ADC */</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * Variables para guardar los resultados de la secuencia de conversión</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="keyword">static</span> <a name="_a0"></a><a class="code" href="group__ADC.html#structhal__adc__sequence__result__t">hal_adc_sequence_result_t</a> resultados_conversion_adc[2];</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Configuración de la secuencia. Como no va a cambiar es declarada \e const */</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a name="_a1"></a><a class="code" href="group__ADC.html#structhal__adc__sequence__config__t">hal_adc_sequence_config_t</a> adc_config =</div>
+<div class="line">{</div>
+<div class="line">    .<a name="a2"></a><a class="code" href="group__ADC.html#acebe3f0fdc69a72787ddd6b19870641b">channels</a> = ADC_CHANNELS,</div>
+<div class="line">    .trigger = <a name="a3"></a><a class="code" href="group__ADC.html#gga67fe859b54301579f1b1daef874514caaaf722f012bd0aa063b595333f9012a20">HAL_ADC_TRIGGER_SEL_NONE</a>,</div>
+<div class="line">    .trigger_pol = <a name="a4"></a><a class="code" href="group__ADC.html#gga4c5aa9e0991c432640845d2aedb971b2a007c22a34504d8557d98704becf95dc8">HAL_ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE</a>,</div>
+<div class="line">    .sync_bypass = <a name="a5"></a><a class="code" href="group__ADC.html#gga8aa0efd767a9edc5a80b80c4061e0904a1cbf7646bbe7c32e3e21663fc5952d77">HAL_ADC_SYNC_SEL_BYPASS_SYNC</a>,</div>
+<div class="line">    .mode = <a name="a6"></a><a class="code" href="group__ADC.html#ggaf4981172881d597ede49249ba04fcafeae73eff6d5c4ef7297d31a28e4a76e149">HAL_ADC_INTERRUPT_MODE_EOS</a>,</div>
+<div class="line">    .burst = 0,</div>
+<div class="line">    .single_step = 0,</div>
+<div class="line">    .low_priority = 0,</div>
+<div class="line">    .callback = adc_callback</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * @brief Punto de entrada del programa</span></div>
+<div class="line"><span class="comment"> * @return Nunca deberia terminar esta función</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Inicialización del periférico en modo SINCRÓNICO</span></div>
+<div class="line">    <a name="a7"></a><a class="code" href="group__ADC.html#ga952626700075b275e7766c0095e4ec36">hal_adc_init_sync_mode</a>(ADC_SAMPLE_FREQ, <a name="a8"></a><a class="code" href="group__ADC.html#ggaf1570443ca3570a7ae83b90307bbeccaaf92172fb70ce285c23631cb025b3cd52">HAL_ADC_LOW_POWER_MODE_DISABLED</a>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Configuración de la secuencia a utilizar</span></div>
+<div class="line">    <a name="a9"></a><a class="code" href="group__ADC.html#gadcef726eaa85af74ade96c14f9a48feb">hal_adc_config_sequence</a>(ADC_SEQUENCE, &amp;adc_config);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Inicialización del \e Systick con el tiempo de tick adecuado</span></div>
+<div class="line">    <a name="a10"></a><a class="code" href="HAL__SYSTICK_8h.html#a29eb17e59d26a3f1a1f9184154964f36">hal_systick_init</a>(TICK_TIME_USEG, systick_callback);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">while</span>(1)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span>(flag_secuencia_adc_completada == 1) <span class="comment">// Esto o hacer &quot;if(flag_secuencia_adc_completada)&quot; es indistinto</span></div>
+<div class="line">        {</div>
+<div class="line">            uint32_t variable_auxiliar;</div>
+<div class="line"> </div>
+<div class="line">            flag_secuencia_adc_completada = 0;</div>
+<div class="line"> </div>
+<div class="line">            (void) variable_auxiliar; <span class="comment">// Esta línea es ideal para colocar el breakpoint!</span></div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * @brief Callback a ejecutar en cada tick del \e Systick</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> systick_callback(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> uint32_t contador_disparo_adc = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Conteo con valor límite</span></div>
+<div class="line">    contador_disparo_adc = (contador_disparo_adc + 1) % ADC_CONVERSION_TIME_MSEG;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span>(contador_disparo_adc == 0) <span class="comment">// Esto o hacer &quot;if(!contador_disparo_adc)&quot; es indistinto</span></div>
+<div class="line">    {</div>
+<div class="line">        <a name="a11"></a><a class="code" href="group__ADC.html#ga154950a81b5f589fde0139178ab1dcf3">hal_adc_start_sequence</a>(ADC_SEQUENCE);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment"> * @brief Callback a ejecutar en cada finalización de conversión de \b secuencia de \e ADC</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> adc_callback(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Obtención de resultados de conversión</span></div>
+<div class="line">    <a name="a12"></a><a class="code" href="group__ADC.html#gaf58fbae95e4083bddf74495df7709674">hal_adc_get_sequence_result</a>(ADC_SEQUENCE, resultados_conversion_adc);</div>
+<div class="line"> </div>
+<div class="line">    flag_secuencia_adc_completada = 1;</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><!-- contents -->
+<div class="ttc" id="aHAL__SYSTICK_8h_html"><div class="ttname"><a href="HAL__SYSTICK_8h.html">HAL_SYSTICK.h</a></div><div class="ttdoc">Declaraciones a nivel de aplicacion del periferico SYSICK (LPC845)</div></div>
+<div class="ttc" id="agroup__ADC_html_ga154950a81b5f589fde0139178ab1dcf3"><div class="ttname"><a href="group__ADC.html#ga154950a81b5f589fde0139178ab1dcf3">hal_adc_start_sequence</a></div><div class="ttdeci">void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)</div><div class="ttdoc">Disparar conversiones en una secuencia.</div></div>
+<div class="ttc" id="agroup__ADC_html_structhal__adc__sequence__result__t"><div class="ttname"><a href="group__ADC.html#structhal__adc__sequence__result__t">hal_adc_sequence_result_t</a></div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:230</div></div>
+<div class="ttc" id="agroup__ADC_html_gga67fe859b54301579f1b1daef874514caaaf722f012bd0aa063b595333f9012a20"><div class="ttname"><a href="group__ADC.html#gga67fe859b54301579f1b1daef874514caaaf722f012bd0aa063b595333f9012a20">HAL_ADC_TRIGGER_SEL_NONE</a></div><div class="ttdeci">@ HAL_ADC_TRIGGER_SEL_NONE</div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:146</div></div>
+<div class="ttc" id="aHAL__ADC_8h_html"><div class="ttname"><a href="HAL__ADC_8h.html">HAL_ADC.h</a></div><div class="ttdoc">Declaraciones a nivel de aplicacion del periferico ADC (LPC845)</div></div>
+<div class="ttc" id="agroup__ADC_html_gadcef726eaa85af74ade96c14f9a48feb"><div class="ttname"><a href="group__ADC.html#gadcef726eaa85af74ade96c14f9a48feb">hal_adc_config_sequence</a></div><div class="ttdeci">void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config)</div><div class="ttdoc">Configurar una secuencia de conversión.</div></div>
+<div class="ttc" id="agroup__ADC_html_acebe3f0fdc69a72787ddd6b19870641b"><div class="ttname"><a href="group__ADC.html#acebe3f0fdc69a72787ddd6b19870641b">hal_adc_sequence_config_t::channels</a></div><div class="ttdeci">uint16_t channels</div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:209</div></div>
+<div class="ttc" id="aHAL__SYSTICK_8h_html_a29eb17e59d26a3f1a1f9184154964f36"><div class="ttname"><a href="HAL__SYSTICK_8h.html#a29eb17e59d26a3f1a1f9184154964f36">hal_systick_init</a></div><div class="ttdeci">void hal_systick_init(uint32_t tick_us, void(*callback)(void))</div><div class="ttdoc">Inicializacion del SYSTICK.</div></div>
+<div class="ttc" id="agroup__ADC_html_structhal__adc__sequence__config__t"><div class="ttname"><a href="group__ADC.html#structhal__adc__sequence__config__t">hal_adc_sequence_config_t</a></div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:207</div></div>
+<div class="ttc" id="agroup__ADC_html_ggaf4981172881d597ede49249ba04fcafeae73eff6d5c4ef7297d31a28e4a76e149"><div class="ttname"><a href="group__ADC.html#ggaf4981172881d597ede49249ba04fcafeae73eff6d5c4ef7297d31a28e4a76e149">HAL_ADC_INTERRUPT_MODE_EOS</a></div><div class="ttdeci">@ HAL_ADC_INTERRUPT_MODE_EOS</div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:175</div></div>
+<div class="ttc" id="agroup__ADC_html_ggaf1570443ca3570a7ae83b90307bbeccaaf92172fb70ce285c23631cb025b3cd52"><div class="ttname"><a href="group__ADC.html#ggaf1570443ca3570a7ae83b90307bbeccaaf92172fb70ce285c23631cb025b3cd52">HAL_ADC_LOW_POWER_MODE_DISABLED</a></div><div class="ttdeci">@ HAL_ADC_LOW_POWER_MODE_DISABLED</div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:132</div></div>
+<div class="ttc" id="agroup__ADC_html_ga952626700075b275e7766c0095e4ec36"><div class="ttname"><a href="group__ADC.html#ga952626700075b275e7766c0095e4ec36">hal_adc_init_sync_mode</a></div><div class="ttdeci">void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power)</div><div class="ttdoc">Inicializar el ADC en modo sincrónico.</div></div>
+<div class="ttc" id="agroup__ADC_html_gaf58fbae95e4083bddf74495df7709674"><div class="ttname"><a href="group__ADC.html#gaf58fbae95e4083bddf74495df7709674">hal_adc_get_sequence_result</a></div><div class="ttdeci">hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result)</div><div class="ttdoc">Obtener resultado de la secuencia.</div></div>
+<div class="ttc" id="agroup__ADC_html_gga8aa0efd767a9edc5a80b80c4061e0904a1cbf7646bbe7c32e3e21663fc5952d77"><div class="ttname"><a href="group__ADC.html#gga8aa0efd767a9edc5a80b80c4061e0904a1cbf7646bbe7c32e3e21663fc5952d77">HAL_ADC_SYNC_SEL_BYPASS_SYNC</a></div><div class="ttdeci">@ HAL_ADC_SYNC_SEL_BYPASS_SYNC</div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:168</div></div>
+<div class="ttc" id="agroup__ADC_html_gga4c5aa9e0991c432640845d2aedb971b2a007c22a34504d8557d98704becf95dc8"><div class="ttname"><a href="group__ADC.html#gga4c5aa9e0991c432640845d2aedb971b2a007c22a34504d8557d98704becf95dc8">HAL_ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE</a></div><div class="ttdeci">@ HAL_ADC_TRIGGER_POL_SEL_NEGATIVE_EDGE</div><div class="ttdef"><b>Definition:</b> HAL_ADC.h:160</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.17
 </small></address>
 </body>
 </html>

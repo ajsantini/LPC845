@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uart3_5firq',['UART3_irq',['../HAL__UART_8h.html#a7a61d73fd6ad0a670c4225140fefd7bd',1,'HAL_UART.h']]],
-  ['uart4_5firq',['UART4_irq',['../HAL__UART_8h.html#a28aab3f4a90a2a9d61d88048637c0811',1,'HAL_UART.h']]]
+  ['trigger_135',['trigger',['../group__ADC.html#a6bcb45974cab7522fa8fddd79fa7f1e1',1,'hal_adc_sequence_config_t']]],
+  ['trigger_5fpol_136',['trigger_pol',['../group__ADC.html#a0e3bc5f0a78cf105554a67af8f34d383',1,'hal_adc_sequence_config_t']]]
 ];

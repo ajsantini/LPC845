@@ -1,4 +1,5 @@
 <map id="includes/hal/HAL_SYSCON.h" name="includes/hal/HAL_SYSCON.h">
-<area shape="rect" id="node2" href="$HAL__SPI_8h.html" title="Declaraciones a nivel de aplicacion del periferico SPI (LPC845) " alt="" coords="5,80,167,107"/>
-<area shape="rect" id="node3" href="$HAL__UART_8h.html" title="Declaraciones a nivel de aplicacion del periferico UART (LPC845) " alt="" coords="191,80,367,107"/>
+<area shape="rect" id="node1" title="Declaraciones a nivel de aplicacion del periferico SYSCON (LPC845)" alt="" coords="84,5,280,32"/>
+<area shape="rect" id="node2" href="$HAL__SPI_8h.html" title="Declaraciones a nivel de aplicacion del periferico SPI (LPC845)" alt="" coords="5,80,167,107"/>
+<area shape="rect" id="node3" href="$HAL__UART_8h.html" title="Declaraciones a nivel de aplicacion del periferico UART (LPC845)" alt="" coords="191,80,367,107"/>
 </map>

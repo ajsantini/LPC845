@@ -1,5 +1,5 @@
-\hypertarget{HAL__CTIMER_8h}{}\section{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+C\+T\+I\+M\+ER.h}
-\label{HAL__CTIMER_8h}\index{includes/hal/\+H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{includes/hal/\+H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
+\hypertarget{HAL__CTIMER_8h}{}\doxysection{Referencia del Archivo includes/hal/\+H\+A\+L\+\_\+\+C\+T\+I\+M\+ER.h}
+\label{HAL__CTIMER_8h}\index{includes/hal/HAL\_CTIMER.h@{includes/hal/HAL\_CTIMER.h}}
 
 
 Declaraciones a nivel de aplicacion del periferico C\+T\+I\+M\+ER (L\+P\+C845)  
@@ -7,24 +7,23 @@ Declaraciones a nivel de aplicacion del periferico C\+T\+I\+M\+ER (L\+P\+C845)
 
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$H\+A\+L\+\_\+\+G\+P\+I\+O.\+h$>$}\newline
-Dependencia gráfica adjunta para H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h\+:
-\nopagebreak
+Dependencia gráfica adjunta para H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=223pt]{HAL__CTIMER_8h__incl}
 \end{center}
 \end{figure}
-\subsection*{Estructuras de datos}
+\doxysubsection*{Estructuras de datos}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t}
+struct \mbox{\hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t}}
 \item 
-struct \hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t}
+struct \mbox{\hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t}}
 \item 
-struct \hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t}
+struct \mbox{\hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t}}
 \end{DoxyCompactItemize}
-\subsection*{Enumeraciones}
+\doxysubsection*{Enumeraciones}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{HAL__CTIMER_8h_a6aaedba4bb4587f2eacf9e37d4d164bf}\label{HAL__CTIMER_8h_a6aaedba4bb4587f2eacf9e37d4d164bf}} 
@@ -47,31 +46,31 @@ enum {\bfseries hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+sel\+\_\+en} \{ {\bfs
 {\bfseries H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R\+\_\+\+P\+W\+M\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2}
  \}
 \end{DoxyCompactItemize}
-\subsection*{Funciones}
+\doxysubsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{HAL__CTIMER_8h_a4689eed2a9e77b21de79cc9c9769e269}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init} (uint32\+\_\+t clock\+\_\+div)
+void \mbox{\hyperlink{HAL__CTIMER_8h_a4689eed2a9e77b21de79cc9c9769e269}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init}} (uint32\+\_\+t clock\+\_\+div)
 \begin{DoxyCompactList}\small\item\em Inicializacion del periferico en modo timer. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__CTIMER_8h_a2a68e905c8f05c550bf06e34f4a1484e}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match} (hal\+\_\+ctimer\+\_\+match\+\_\+sel\+\_\+en match\+\_\+sel, const \hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t} $\ast$match\+\_\+config)
+void \mbox{\hyperlink{HAL__CTIMER_8h_a2a68e905c8f05c550bf06e34f4a1484e}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match}} (hal\+\_\+ctimer\+\_\+match\+\_\+sel\+\_\+en match\+\_\+sel, const \mbox{\hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t}} $\ast$match\+\_\+config)
 \begin{DoxyCompactList}\small\item\em Configurar un canal de match. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{HAL__CTIMER_8h_a803fbca6afb0855021986d204ffa4b9f}\label{HAL__CTIMER_8h_a803fbca6afb0855021986d204ffa4b9f}} 
-void \hyperlink{HAL__CTIMER_8h_a803fbca6afb0855021986d204ffa4b9f}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+run} (void)
+void \mbox{\hyperlink{HAL__CTIMER_8h_a803fbca6afb0855021986d204ffa4b9f}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+run}} (void)
 \begin{DoxyCompactList}\small\item\em Habilitar el conteo del ctimer. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{HAL__CTIMER_8h_ad855b264d39d920aee8be3c9a0a37db6}\label{HAL__CTIMER_8h_ad855b264d39d920aee8be3c9a0a37db6}} 
-void \hyperlink{HAL__CTIMER_8h_ad855b264d39d920aee8be3c9a0a37db6}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+stop} (void)
+void \mbox{\hyperlink{HAL__CTIMER_8h_ad855b264d39d920aee8be3c9a0a37db6}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+stop}} (void)
 \begin{DoxyCompactList}\small\item\em Inhabilitar el conteo del ctimer. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{HAL__CTIMER_8h_adc1257569aeffe26a73a3f1af6417d12}\label{HAL__CTIMER_8h_adc1257569aeffe26a73a3f1af6417d12}} 
-void \hyperlink{HAL__CTIMER_8h_adc1257569aeffe26a73a3f1af6417d12}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+reset} (void)
+void \mbox{\hyperlink{HAL__CTIMER_8h_adc1257569aeffe26a73a3f1af6417d12}{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+reset}} (void)
 \begin{DoxyCompactList}\small\item\em Reiniciar el conteo del ctimer. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__CTIMER_8h_a1629367b79d8b3e0fb2769e0b2b96e9c}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init} (const \hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t} $\ast$config)
+void \mbox{\hyperlink{HAL__CTIMER_8h_a1629367b79d8b3e0fb2769e0b2b96e9c}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init}} (const \mbox{\hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t}} $\ast$config)
 \begin{DoxyCompactList}\small\item\em Inicializar el C\+T\+I\+M\+ER en modo P\+WM. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__CTIMER_8h_a722302303f22f47995cc6d48bfa1533f}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period} (uint32\+\_\+t period\+\_\+useg)
+void \mbox{\hyperlink{HAL__CTIMER_8h_a722302303f22f47995cc6d48bfa1533f}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period}} (uint32\+\_\+t period\+\_\+useg)
 \begin{DoxyCompactList}\small\item\em Actualizar el periodo en modo P\+WM. \end{DoxyCompactList}\item 
-void \hyperlink{HAL__CTIMER_8h_a767f590f1745869d37f7d94a7873280b}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel} (hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+sel\+\_\+en channel\+\_\+sel, const \hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t} $\ast$channel\+\_\+config)
+void \mbox{\hyperlink{HAL__CTIMER_8h_a767f590f1745869d37f7d94a7873280b}{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel}} (hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+sel\+\_\+en channel\+\_\+sel, const \mbox{\hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t}} $\ast$channel\+\_\+config)
 \begin{DoxyCompactList}\small\item\em Actualizar configuracion de algun canal de P\+WM. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Descripción detallada}
+\doxysubsection{Descripción detallada}
 Declaraciones a nivel de aplicacion del periferico C\+T\+I\+M\+ER (L\+P\+C845) 
 
 \begin{DoxyAuthor}{Autor}
@@ -85,11 +84,11 @@ Augusto Santini
 \end{DoxyVersion}
 
 
-\subsection{Documentación de las funciones}
+\doxysubsection{Documentación de las funciones}
 \mbox{\Hypertarget{HAL__CTIMER_8h_a4689eed2a9e77b21de79cc9c9769e269}\label{HAL__CTIMER_8h_a4689eed2a9e77b21de79cc9c9769e269}} 
-\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init}}
-\index{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init()}{hal\_ctimer\_timer\_mode\_init()}}
+\index{HAL\_CTIMER.h@{HAL\_CTIMER.h}!hal\_ctimer\_timer\_mode\_init@{hal\_ctimer\_timer\_mode\_init}}
+\index{hal\_ctimer\_timer\_mode\_init@{hal\_ctimer\_timer\_mode\_init}!HAL\_CTIMER.h@{HAL\_CTIMER.h}}
+\doxysubsubsection{\texorpdfstring{hal\_ctimer\_timer\_mode\_init()}{hal\_ctimer\_timer\_mode\_init()}}
 {\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{clock\+\_\+div }\end{DoxyParamCaption})}
 
 
@@ -100,14 +99,14 @@ Esta funcion no pone a correr el contador.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em clock\+\_\+div} & Divisor del clock principal deseado (el valor efectivo es este valor + 1) \\
+\mbox{\texttt{ in}}  & {\em clock\+\_\+div} & Divisor del clock principal deseado (el valor efectivo es este valor + 1) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__CTIMER_8h_a2a68e905c8f05c550bf06e34f4a1484e}\label{HAL__CTIMER_8h_a2a68e905c8f05c550bf06e34f4a1484e}} 
-\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match}}
-\index{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match@{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match()}{hal\_ctimer\_timer\_mode\_config\_match()}}
-{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match (\begin{DoxyParamCaption}\item[{hal\+\_\+ctimer\+\_\+match\+\_\+sel\+\_\+en}]{match\+\_\+sel,  }\item[{const \hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t} $\ast$}]{match\+\_\+config }\end{DoxyParamCaption})}
+\index{HAL\_CTIMER.h@{HAL\_CTIMER.h}!hal\_ctimer\_timer\_mode\_config\_match@{hal\_ctimer\_timer\_mode\_config\_match}}
+\index{hal\_ctimer\_timer\_mode\_config\_match@{hal\_ctimer\_timer\_mode\_config\_match}!HAL\_CTIMER.h@{HAL\_CTIMER.h}}
+\doxysubsubsection{\texorpdfstring{hal\_ctimer\_timer\_mode\_config\_match()}{hal\_ctimer\_timer\_mode\_config\_match()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+timer\+\_\+mode\+\_\+config\+\_\+match (\begin{DoxyParamCaption}\item[{hal\+\_\+ctimer\+\_\+match\+\_\+sel\+\_\+en}]{match\+\_\+sel,  }\item[{const \mbox{\hyperlink{structhal__ctimer__match__config__t}{hal\+\_\+ctimer\+\_\+match\+\_\+config\+\_\+t}} $\ast$}]{match\+\_\+config }\end{DoxyParamCaption})}
 
 
 
@@ -115,16 +114,16 @@ Configurar un canal de match.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em match\+\_\+sel} & Match a configurar \\
+\mbox{\texttt{ in}}  & {\em match\+\_\+sel} & Match a configurar \\
 \hline
-\mbox{\tt in}  & {\em match\+\_\+config} & Configuracion deseada \\
+\mbox{\texttt{ in}}  & {\em match\+\_\+config} & Configuracion deseada \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__CTIMER_8h_a1629367b79d8b3e0fb2769e0b2b96e9c}\label{HAL__CTIMER_8h_a1629367b79d8b3e0fb2769e0b2b96e9c}} 
-\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init}}
-\index{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init()}{hal\_ctimer\_pwm\_mode\_init()}}
-{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{const \hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t} $\ast$}]{config }\end{DoxyParamCaption})}
+\index{HAL\_CTIMER.h@{HAL\_CTIMER.h}!hal\_ctimer\_pwm\_mode\_init@{hal\_ctimer\_pwm\_mode\_init}}
+\index{hal\_ctimer\_pwm\_mode\_init@{hal\_ctimer\_pwm\_mode\_init}!HAL\_CTIMER.h@{HAL\_CTIMER.h}}
+\doxysubsubsection{\texorpdfstring{hal\_ctimer\_pwm\_mode\_init()}{hal\_ctimer\_pwm\_mode\_init()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structhal__ctimer__pwm__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+config\+\_\+t}} $\ast$}]{config }\end{DoxyParamCaption})}
 
 
 
@@ -132,13 +131,13 @@ Inicializar el C\+T\+I\+M\+ER en modo P\+WM.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em config} & Configuracion deseada \\
+\mbox{\texttt{ in}}  & {\em config} & Configuracion deseada \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__CTIMER_8h_a722302303f22f47995cc6d48bfa1533f}\label{HAL__CTIMER_8h_a722302303f22f47995cc6d48bfa1533f}} 
-\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period}}
-\index{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period()}{hal\_ctimer\_pwm\_mode\_set\_period()}}
+\index{HAL\_CTIMER.h@{HAL\_CTIMER.h}!hal\_ctimer\_pwm\_mode\_set\_period@{hal\_ctimer\_pwm\_mode\_set\_period}}
+\index{hal\_ctimer\_pwm\_mode\_set\_period@{hal\_ctimer\_pwm\_mode\_set\_period}!HAL\_CTIMER.h@{HAL\_CTIMER.h}}
+\doxysubsubsection{\texorpdfstring{hal\_ctimer\_pwm\_mode\_set\_period()}{hal\_ctimer\_pwm\_mode\_set\_period()}}
 {\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+set\+\_\+period (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{period\+\_\+useg }\end{DoxyParamCaption})}
 
 
@@ -147,14 +146,14 @@ Actualizar el periodo en modo P\+WM.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em period\+\_\+useg} & Nuevo periodo deseado en microsegundos \\
+\mbox{\texttt{ in}}  & {\em period\+\_\+useg} & Nuevo periodo deseado en microsegundos \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{HAL__CTIMER_8h_a767f590f1745869d37f7d94a7873280b}\label{HAL__CTIMER_8h_a767f590f1745869d37f7d94a7873280b}} 
-\index{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}!hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel}}
-\index{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel@{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel}!H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h@{H\+A\+L\+\_\+\+C\+T\+I\+M\+E\+R.\+h}}
-\subsubsection{\texorpdfstring{hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel()}{hal\_ctimer\_pwm\_mode\_config\_channel()}}
-{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel (\begin{DoxyParamCaption}\item[{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+sel\+\_\+en}]{channel\+\_\+sel,  }\item[{const \hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t} $\ast$}]{channel\+\_\+config }\end{DoxyParamCaption})}
+\index{HAL\_CTIMER.h@{HAL\_CTIMER.h}!hal\_ctimer\_pwm\_mode\_config\_channel@{hal\_ctimer\_pwm\_mode\_config\_channel}}
+\index{hal\_ctimer\_pwm\_mode\_config\_channel@{hal\_ctimer\_pwm\_mode\_config\_channel}!HAL\_CTIMER.h@{HAL\_CTIMER.h}}
+\doxysubsubsection{\texorpdfstring{hal\_ctimer\_pwm\_mode\_config\_channel()}{hal\_ctimer\_pwm\_mode\_config\_channel()}}
+{\footnotesize\ttfamily void hal\+\_\+ctimer\+\_\+pwm\+\_\+mode\+\_\+config\+\_\+channel (\begin{DoxyParamCaption}\item[{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+sel\+\_\+en}]{channel\+\_\+sel,  }\item[{const \mbox{\hyperlink{structhal__ctimer__pwm__channel__config__t}{hal\+\_\+ctimer\+\_\+pwm\+\_\+channel\+\_\+config\+\_\+t}} $\ast$}]{channel\+\_\+config }\end{DoxyParamCaption})}
 
 
 
@@ -162,8 +161,8 @@ Actualizar configuracion de algun canal de P\+WM.
 
 
 \begin{DoxyParams}[1]{Parámetros}
-\mbox{\tt in}  & {\em channel\+\_\+sel} & Seleccion de canal a configurar \\
+\mbox{\texttt{ in}}  & {\em channel\+\_\+sel} & Seleccion de canal a configurar \\
 \hline
-\mbox{\tt in}  & {\em channel\+\_\+config} & Configuracion del canal de P\+WM \\
+\mbox{\texttt{ in}}  & {\em channel\+\_\+config} & Configuracion del canal de P\+WM \\
 \hline
 \end{DoxyParams}
