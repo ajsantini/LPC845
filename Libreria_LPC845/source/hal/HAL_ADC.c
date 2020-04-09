@@ -274,7 +274,7 @@ void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
  * @param[out] result Lugares donde guardar los resultados de la secuencia
  * @return Resultado de la función
  */
-hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result[])
+hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result)
 {
 	if(ADC_sequence_get_mode(sequence) == ADC_INTERRUPT_MODE_EOC)
 	{
@@ -282,8 +282,8 @@ hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en s
 
 		if(data.DATAVALID)
 		{
-			(*result[0]).channel = HAL_ADC_RESULT_CHANNEL_GLOBAL;
-			(*result[0]).result = data.RESULT;
+			(result[0]).channel = HAL_ADC_RESULT_CHANNEL_GLOBAL;
+			(result[0]).result = data.RESULT;
 
 			return HAL_ADC_SEQUENCE_RESULT_VALID;
 		}
@@ -306,8 +306,8 @@ hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en s
 
 				if(data.DATAVALID)
 				{
-					(*result[result_counter]).channel = (hal_adc_result_channel_en) channel_counter;
-					(*result[result_counter++]).result = data.RESULT;
+					(result[result_counter]).channel = (hal_adc_result_channel_en) channel_counter;
+					(result[result_counter++]).result = data.RESULT;
 				}
 			}
 		}

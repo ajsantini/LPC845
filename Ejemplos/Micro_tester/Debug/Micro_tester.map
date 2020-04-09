@@ -681,7 +681,7 @@ END GROUP
                 0x0000000010004000                __top_RamLoc16 = 0x10004000
                 0x0000000010004000                __top_RAM = 0x10004000
 
-.text           0x0000000000000000     0x59e0
+.text           0x0000000000000000     0x59d8
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -690,7 +690,7 @@ END GROUP
                 0x00000000000000c0                . = ALIGN (0x4)
                 0x00000000000000c0                __section_table_start = .
                 0x00000000000000c0                __data_section_table = .
-                0x00000000000000c0        0x4 LONG 0x59e0 LOADADDR (.data)
+                0x00000000000000c0        0x4 LONG 0x59d8 LOADADDR (.data)
                 0x00000000000000c4        0x4 LONG 0x10000000 ADDR (.data)
                 0x00000000000000c8        0x4 LONG 0xcc SIZEOF (.data)
                 0x00000000000000cc                __data_section_table_end = .
@@ -729,702 +729,703 @@ END GROUP
  .text.tick_callback
                 0x00000000000002f8       0xc4 ./src/Micro_tester.o
  .text.adc_callback
-                0x00000000000003bc       0x70 ./src/Micro_tester.o
+                0x00000000000003bc       0x6c ./src/Micro_tester.o
  .text.rx_callback
-                0x000000000000042c       0x40 ./src/Micro_tester.o
+                0x0000000000000428       0x40 ./src/Micro_tester.o
  .text.tx_callback
-                0x000000000000046c       0x3c ./src/Micro_tester.o
+                0x0000000000000468       0x3c ./src/Micro_tester.o
  .text.pinint_callback
-                0x00000000000004a8       0x38 ./src/Micro_tester.o
+                0x00000000000004a4       0x38 ./src/Micro_tester.o
  .text.match_callback
-                0x00000000000004e0       0x1c ./src/Micro_tester.o
+                0x00000000000004dc       0x1c ./src/Micro_tester.o
  .text.spi_tx_callback
-                0x00000000000004fc       0x34 ./src/Micro_tester.o
+                0x00000000000004f8       0x34 ./src/Micro_tester.o
  .text.spi_rx_callback
-                0x0000000000000530       0x38 ./src/Micro_tester.o
+                0x000000000000052c       0x38 ./src/Micro_tester.o
  .text.wkt_callback
-                0x0000000000000568       0x1c ./src/Micro_tester.o
+                0x0000000000000564       0x1c ./src/Micro_tester.o
  .text.ADC_control_config
-                0x0000000000000584       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000580       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_config_channels
-                0x0000000000000608       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000604       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_get_channels
-                0x000000000000064c       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000648       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_config_trigger
-                0x0000000000000678       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000674       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_config_trigger_pol
-                0x00000000000006c0       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000006bc       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_config_sync
-                0x0000000000000708       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000704       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_set_start
-                0x0000000000000750       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x000000000000074c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_set_burst
-                0x0000000000000780       0x58 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x000000000000077c       0x58 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_clear_burst
-                0x00000000000007d8       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000007d4       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_set_singlestep
-                0x000000000000081c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000818       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_clear_singlestep
-                0x000000000000084c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000848       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_A_make_low_priority
-                0x000000000000087c       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000878       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_A_make_high_priority
-                0x0000000000000898       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000894       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_config_interrupt_mode
-                0x00000000000008b8       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000008b4       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_get_mode
-                0x0000000000000900       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000008fc       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_sequence_enable
-                0x000000000000092c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000928       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_enable_sequence_interrupt
-                0x000000000000095c       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000958       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_disable_sequence_interrupt
-                0x0000000000000998       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000994       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_get_global_data
-                0x00000000000009d4       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000009d0       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_get_channel_data
-                0x00000000000009fc       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000009f8       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_set_vrange
-                0x0000000000000a24       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000a20       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.ADC_hardware_calib
-                0x0000000000000a5c       0x74 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000a58       0x74 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SYSCON_set_adc_clock
-                0x0000000000000ad0       0x50 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000acc       0x50 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SYSCON_enable_clock
-                0x0000000000000b20       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000b1c       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SYSCON_assert_reset
-                0x0000000000000b88       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000b84       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SYSCON_clear_reset
-                0x0000000000000bf4       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000bf0       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SYSCON_power_up_peripheral
-                0x0000000000000c5c       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000c58       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SWM_init
-                0x0000000000000ca0       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000c9c       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SWM_deinit
-                0x0000000000000cbc       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000cb8       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.SWM_enable_ADC
-                0x0000000000000cd8      0x218 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000cd4      0x218 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.NVIC_enable_interrupt
-                0x0000000000000ef0       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000eec       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .text.hal_adc_init_async_mode
-                0x0000000000000f2c       0xe8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x0000000000000f2c                hal_adc_init_async_mode
+                0x0000000000000f28       0xe8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000000f28                hal_adc_init_async_mode
  .text.hal_adc_config_sequence
-                0x0000000000001014      0x15c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x0000000000001014                hal_adc_config_sequence
+                0x0000000000001010      0x15c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000001010                hal_adc_config_sequence
  .text.hal_adc_enable_sequence
-                0x0000000000001170       0x1e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x0000000000001170                hal_adc_enable_sequence
+                0x000000000000116c       0x1e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x000000000000116c                hal_adc_enable_sequence
  .text.hal_adc_start_sequence
-                0x000000000000118e       0x1e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x000000000000118e                hal_adc_start_sequence
+                0x000000000000118a       0x1e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x000000000000118a                hal_adc_start_sequence
  .text.hal_adc_get_sequence_result
-                0x00000000000011ac      0x10a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x00000000000011ac                hal_adc_get_sequence_result
+                0x00000000000011a8      0x104 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000011a8                hal_adc_get_sequence_result
  .text.dummy_irq_callback
-                0x00000000000012b6        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000012ac        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+ *fill*         0x00000000000012b6        0x2 ff
  .text.ADC_SEQA_IRQHandler
-                0x00000000000012c0       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x00000000000012c0                ADC_SEQA_IRQHandler
+                0x00000000000012b8       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000012b8                ADC_SEQA_IRQHandler
  .text.ADC_SEQB_IRQHandler
-                0x00000000000012f8       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x00000000000012f8                ADC_SEQB_IRQHandler
+                0x00000000000012f0       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x00000000000012f0                ADC_SEQB_IRQHandler
  .text.ADC_THCMP_IRQHandler
-                0x0000000000001330       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x0000000000001330                ADC_THCMP_IRQHandler
+                0x0000000000001328       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x0000000000001328                ADC_THCMP_IRQHandler
  .text.ADC_OVR_IRQHandler
-                0x0000000000001344       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
-                0x0000000000001344                ADC_OVR_IRQHandler
+                0x000000000000133c       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x000000000000133c                ADC_OVR_IRQHandler
  .text.SYSCON_enable_clock
-                0x0000000000001358       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001350       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.SYSCON_clear_reset
-                0x00000000000013c0       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000013b8       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_get_match_irq_flag
-                0x0000000000001428       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001420       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_get_capture_irq_flag
-                0x0000000000001494       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x000000000000148c       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_clear_match_irq_flag
-                0x0000000000001500       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000014f8       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_clear_capture_irq_flag
-                0x000000000000156c       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001564       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_enable_counter
-                0x00000000000015d8       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000015d0       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_disable_counter
-                0x00000000000015f4       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000015ec       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_assert_counter_reset
-                0x0000000000001610       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001608       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_clear_counter_reset
-                0x000000000000162c       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001624       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_write_prescaler
-                0x0000000000001648       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001640       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_read_prescaler
-                0x0000000000001664       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x000000000000165c       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_enable_interrupt_on_match
-                0x0000000000001678       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001670       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_disable_interrupt_on_match
-                0x00000000000016e4       0x70 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000016dc       0x70 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_enable_reset_on_match
-                0x0000000000001754       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x000000000000174c       0x6c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_disable_stop_on_match
-                0x00000000000017c0       0x74 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000017b8       0x74 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_enable_reload_on_match
-                0x0000000000001834       0x74 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x000000000000182c       0x74 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_write_match_value
-                0x00000000000018a8       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000018a0       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_read_match_value
-                0x00000000000018d4       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000018cc       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_config_counter_timer_mode
-                0x00000000000018fc       0x34 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000018f4       0x34 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_enable_pwm
-                0x0000000000001930       0x54 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001928       0x54 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER_write_shadow_register
-                0x0000000000001984       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x000000000000197c       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.NVIC_enable_interrupt
-                0x00000000000019b0       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000019a8       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.SWM_init
-                0x00000000000019ec       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x00000000000019e4       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.SWM_deinit
-                0x0000000000001a08       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001a00       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.SWM_assign_T0_MAT
-                0x0000000000001a24       0xe0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001a1c       0xe0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.hal_ctimer_pwm_mode_init
-                0x0000000000001b04       0xa8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
-                0x0000000000001b04                hal_ctimer_pwm_mode_init
+                0x0000000000001afc       0xa8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001afc                hal_ctimer_pwm_mode_init
  .text.hal_ctimer_pwm_mode_set_period
-                0x0000000000001bac       0x22 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
-                0x0000000000001bac                hal_ctimer_pwm_mode_set_period
- *fill*         0x0000000000001bce        0x2 ff
+                0x0000000000001ba4       0x22 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001ba4                hal_ctimer_pwm_mode_set_period
+ *fill*         0x0000000000001bc6        0x2 ff
  .text.hal_ctimer_pwm_mode_config_channel
-                0x0000000000001bd0      0x128 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
-                0x0000000000001bd0                hal_ctimer_pwm_mode_config_channel
+                0x0000000000001bc8      0x128 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001bc8                hal_ctimer_pwm_mode_config_channel
  .text.dummy_irq
-                0x0000000000001cf8        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
- *fill*         0x0000000000001d02        0x2 ff
+                0x0000000000001cf0        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+ *fill*         0x0000000000001cfa        0x2 ff
  .text.hal_ctimer_calc_match_value
-                0x0000000000001d04       0x64 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001cfc       0x64 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
  .text.CTIMER0_IRQHandler
-                0x0000000000001d68       0x94 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
-                0x0000000000001d68                CTIMER0_IRQHandler
+                0x0000000000001d60       0x94 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+                0x0000000000001d60                CTIMER0_IRQHandler
  .text.GPIO_write_set
-                0x0000000000001dfc       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001df4       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
  .text.GPIO_write_toggle
-                0x0000000000001e2c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001e24       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
  .text.GPIO_write_dir_set
-                0x0000000000001e5c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001e54       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
  .text.GPIO_write_dir_clear
-                0x0000000000001e8c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001e84       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
  .text.SYSCON_enable_clock
-                0x0000000000001ebc       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001eb4       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
  .text.hal_gpio_init
-                0x0000000000001f24       0x2a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
-                0x0000000000001f24                hal_gpio_init
+                0x0000000000001f1c       0x2a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001f1c                hal_gpio_init
  .text.hal_gpio_set_dir
-                0x0000000000001f4e       0x8c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
-                0x0000000000001f4e                hal_gpio_set_dir
+                0x0000000000001f46       0x8c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001f46                hal_gpio_set_dir
  .text.hal_gpio_toggle_pin
-                0x0000000000001fda       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
-                0x0000000000001fda                hal_gpio_toggle_pin
- *fill*         0x000000000000200a        0x2 ff
+                0x0000000000001fd2       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+                0x0000000000001fd2                hal_gpio_toggle_pin
+ *fill*         0x0000000000002002        0x2 ff
  .text.SYSCON_enable_clock
-                0x000000000000200c       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
+                0x0000000000002004       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
  .text.SYSCON_disable_clock
-                0x0000000000002074       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
+                0x000000000000206c       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
  .text.hal_iocon_config_io
-                0x00000000000020dc      0x1f4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
-                0x00000000000020dc                hal_iocon_config_io
+                0x00000000000020d4      0x1f4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
+                0x00000000000020d4                hal_iocon_config_io
  .text.PININT_set_interrupt_mode
-                0x00000000000022d0       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000022c8       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.PININT_get_interrupt_mode
-                0x0000000000002354       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x000000000000234c       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.PININT_enable_rising_edge
-                0x0000000000002390       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002388       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.PININT_enable_falling_edge
-                0x00000000000023d8       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000023d0       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.PININT_enable_high_level
-                0x0000000000002420       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002418       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.PININT_disable_high_level
-                0x0000000000002468       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002460       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.PININT_clear_edge_level_irq
-                0x00000000000024b0       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000024a8       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.SYSCON_enable_clock
-                0x00000000000024f8       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000024f0       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.SYSCON_set_pinint_pin
-                0x0000000000002560       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002558       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.NVIC_enable_interrupt
-                0x00000000000025a4       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x000000000000259c       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.hal_pinint_init
-                0x00000000000025e0       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x00000000000025e0                hal_pinint_init
+                0x00000000000025d8       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000025d8                hal_pinint_init
  .text.hal_pinint_configure_pin_interrupt
-                0x00000000000025f0       0xe8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x00000000000025f0                hal_pinint_configure_pin_interrupt
+                0x00000000000025e8       0xe8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000025e8                hal_pinint_configure_pin_interrupt
  .text.dummy_irq_callback
-                0x00000000000026d8        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
- *fill*         0x00000000000026e2        0x2 ff
+                0x00000000000026d0        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+ *fill*         0x00000000000026da        0x2 ff
  .text.hal_pinint_handle_irq
-                0x00000000000026e4       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000026dc       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .text.PININT0_IRQHandler
-                0x0000000000002720       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x0000000000002720                PININT0_IRQHandler
+                0x0000000000002718       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002718                PININT0_IRQHandler
  .text.PININT1_IRQHandler
-                0x0000000000002730       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x0000000000002730                PININT1_IRQHandler
+                0x0000000000002728       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002728                PININT1_IRQHandler
  .text.PININT2_IRQHandler
-                0x0000000000002740       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x0000000000002740                PININT2_IRQHandler
+                0x0000000000002738       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002738                PININT2_IRQHandler
  .text.PININT3_IRQHandler
-                0x0000000000002750       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x0000000000002750                PININT3_IRQHandler
+                0x0000000000002748       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002748                PININT3_IRQHandler
  .text.PININT4_IRQHandler
-                0x0000000000002760       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x0000000000002760                PININT4_IRQHandler
+                0x0000000000002758       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002758                PININT4_IRQHandler
  .text.PININT5_IRQHandler
-                0x0000000000002770       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x0000000000002770                PININT5_IRQHandler
+                0x0000000000002768       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002768                PININT5_IRQHandler
  .text.PININT6_IRQHandler
-                0x0000000000002780       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x0000000000002780                PININT6_IRQHandler
+                0x0000000000002778       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x0000000000002778                PININT6_IRQHandler
  .text.PININT7_IRQHandler
-                0x00000000000027a8       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
-                0x00000000000027a8                PININT7_IRQHandler
+                0x00000000000027a0       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x00000000000027a0                PININT7_IRQHandler
  .text.SPI_enable
-                0x00000000000027d0       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000027c8       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_master_mode
-                0x00000000000027fc       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000027f4       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_cpha_change
-                0x0000000000002828       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002820       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_cpha_capture
-                0x0000000000002854       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x000000000000284c       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_cpol_low
-                0x0000000000002880       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002878       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_cpol_high
-                0x00000000000028ac       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000028a4       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_ssel_active_low
-                0x00000000000028d8       0x98 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000028d0       0x98 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_ssel_active_high
-                0x0000000000002970       0x90 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002968       0x90 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_pre_delay
-                0x0000000000002a00       0x40 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000029f8       0x40 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_post_delay
-                0x0000000000002a40       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002a38       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_frame_delay
-                0x0000000000002a84       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002a7c       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_transfer_delay
-                0x0000000000002acc       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002ac4       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_get_status_flag
-                0x0000000000002b14       0xec /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002b0c       0xec /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_enable_irq
-                0x0000000000002c00       0xb0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002bf8       0xb0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_disable_irq
-                0x0000000000002cb0       0xb0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002ca8       0xb0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_read_rx_data
-                0x0000000000002d60       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002d58       0x28 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_select_slave
-                0x0000000000002d88      0x1dc /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002d80      0x1dc /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_data_and_control
-                0x0000000000002f64       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002f5c       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_set_clock_div
-                0x0000000000002f90       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002f88       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI_get_irq_flag_status
-                0x0000000000002fcc       0xb0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000002fc4       0xb0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SYSCON_enable_clock
-                0x000000000000307c       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003074       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SYSCON_clear_reset
-                0x00000000000030e4       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000030dc       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SYSCON_set_peripheral_clock_source
-                0x000000000000314c       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003144       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_init
-                0x0000000000003190       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003188       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_deinit
-                0x00000000000031ac       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000031a4       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_assign_spi_SCK
-                0x00000000000031c8       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000031c0       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_assign_spi_MOSI
-                0x000000000000324c       0x80 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003244       0x80 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_assign_spi_MISO
-                0x00000000000032cc       0x88 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000032c4       0x88 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_assign_spi_SSEL0
-                0x0000000000003354       0x8c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x000000000000334c       0x8c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_assign_spi_SSEL1
-                0x00000000000033e0       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000033d8       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_assign_spi_SSEL2
-                0x0000000000003464       0x58 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x000000000000345c       0x58 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SWM_assign_spi_SSEL3
-                0x00000000000034bc       0x5c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000034b4       0x5c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.NVIC_enable_interrupt
-                0x0000000000003518       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003510       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.hal_spi_master_mode_init
-                0x0000000000003554      0x25c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
-                0x0000000000003554                hal_spi_master_mode_init
+                0x000000000000354c      0x25c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x000000000000354c                hal_spi_master_mode_init
  .text.hal_spi_master_mode_rx_data
-                0x00000000000037b0       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
-                0x00000000000037b0                hal_spi_master_mode_rx_data
+                0x00000000000037a8       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000037a8                hal_spi_master_mode_rx_data
  .text.hal_spi_master_mode_config_tx
-                0x00000000000037d0       0x98 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
-                0x00000000000037d0                hal_spi_master_mode_config_tx
+                0x00000000000037c8       0x98 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000037c8                hal_spi_master_mode_config_tx
  .text.hal_spi_master_mode_tx_data
-                0x0000000000003868       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
-                0x0000000000003868                hal_spi_master_mode_tx_data
+                0x0000000000003860       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003860                hal_spi_master_mode_tx_data
  .text.dummy_irq
-                0x0000000000003898        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
- *fill*         0x00000000000038a2        0x2 ff
+                0x0000000000003890        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+ *fill*         0x000000000000389a        0x2 ff
  .text.spi_irq_handler
-                0x00000000000038a4       0x8c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x000000000000389c       0x8c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .text.SPI0_IRQHandler
-                0x0000000000003930       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
-                0x0000000000003930                SPI0_IRQHandler
+                0x0000000000003928       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003928                SPI0_IRQHandler
  .text.SPI1_IRQHandler
-                0x0000000000003940       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
-                0x0000000000003940                SPI1_IRQHandler
+                0x0000000000003938       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000003938                SPI1_IRQHandler
  .text.SYSCON_set_fro_direct
-                0x0000000000003950       0x34 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003948       0x34 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SYSCON_clear_fro_direct
-                0x0000000000003984       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x000000000000397c       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SYSCON_set_system_clock_source
-                0x00000000000039bc       0xa4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x00000000000039b4       0xa4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SYSCON_set_peripheral_clock_source
-                0x0000000000003a60       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003a58       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SYSCON_set_frg_config
-                0x0000000000003aa4       0xe0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003a9c       0xe0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SYSCON_set_clkout_config
-                0x0000000000003b84       0x54 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003b7c       0x54 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SYSCON_set_iocon_glitch_divider
-                0x0000000000003bd8       0xf8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003bd0       0xf8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SWM_init
-                0x0000000000003cd0       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003cc8       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SWM_deinit
-                0x0000000000003cec       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003ce4       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.SWM_assign_CLKOUT
-                0x0000000000003d08       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003d00       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .text.hal_syscon_get_system_clock
-                0x0000000000003d50       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003d50                hal_syscon_get_system_clock
+                0x0000000000003d48       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003d48                hal_syscon_get_system_clock
  .text.hal_syscon_get_fro_clock
-                0x0000000000003d64       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003d64                hal_syscon_get_fro_clock
+                0x0000000000003d5c       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003d5c                hal_syscon_get_fro_clock
  .text.hal_syscon_config_fro_direct
-                0x0000000000003d78       0x60 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003d78                hal_syscon_config_fro_direct
+                0x0000000000003d70       0x60 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003d70                hal_syscon_config_fro_direct
  .text.hal_syscon_config_clkout
-                0x0000000000003dd8       0x56 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003dd8                hal_syscon_config_clkout
- *fill*         0x0000000000003e2e        0x2 ff
+                0x0000000000003dd0       0x56 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003dd0                hal_syscon_config_clkout
+ *fill*         0x0000000000003e26        0x2 ff
  .text.hal_syscon_config_frg
-                0x0000000000003e30       0xbc /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003e30                hal_syscon_config_frg
+                0x0000000000003e28       0xbc /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003e28                hal_syscon_config_frg
  .text.hal_syscon_set_peripheral_clock_source
-                0x0000000000003eec       0x2a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003eec                hal_syscon_set_peripheral_clock_source
- *fill*         0x0000000000003f16        0x2 ff
+                0x0000000000003ee4       0x2a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003ee4                hal_syscon_set_peripheral_clock_source
+ *fill*         0x0000000000003f0e        0x2 ff
  .text.hal_syscon_get_peripheral_clock
-                0x0000000000003f18       0x7c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003f18                hal_syscon_get_peripheral_clock
+                0x0000000000003f10       0x7c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003f10                hal_syscon_get_peripheral_clock
  .text.hal_syscon_set_iocon_glitch_divider
-                0x0000000000003f94       0x26 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003f94                hal_syscon_set_iocon_glitch_divider
- *fill*         0x0000000000003fba        0x2 ff
+                0x0000000000003f8c       0x26 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003f8c                hal_syscon_set_iocon_glitch_divider
+ *fill*         0x0000000000003fb2        0x2 ff
  .text.hal_syscon_get_pll_clock
-                0x0000000000003fbc       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
-                0x0000000000003fbc                hal_syscon_get_pll_clock
+                0x0000000000003fb4       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000003fb4                hal_syscon_get_pll_clock
  .text.SYSTICK_enable_count
-                0x0000000000003fd0       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+                0x0000000000003fc8       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
  .text.SYSTICK_enable_interrupt
-                0x0000000000003fec       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+                0x0000000000003fe4       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
  .text.SYSTICK_select_clock_source
-                0x0000000000004008       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+                0x0000000000004000       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
  .text.SYSTICK_set_reload
-                0x0000000000004040       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+                0x0000000000004038       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
  .text.SYSTICK_set_clear_current_value
-                0x0000000000004078       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+                0x0000000000004070       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
  .text.hal_systick_init
-                0x0000000000004098       0x78 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
-                0x0000000000004098                hal_systick_init
+                0x0000000000004090       0x78 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+                0x0000000000004090                hal_systick_init
  .text.SysTick_Handler
-                0x0000000000004110       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
-                0x0000000000004110                SysTick_Handler
+                0x0000000000004108       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+                0x0000000000004108                SysTick_Handler
  .text.dummy_irq
-                0x0000000000004124        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
- *fill*         0x000000000000412e        0x2 ff
+                0x000000000000411c        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+ *fill*         0x0000000000004126        0x2 ff
  .text.UART_enable
-                0x0000000000004130       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004128       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_config_data_length
-                0x000000000000415c       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004154       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_config_parity
-                0x00000000000041a0       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004198       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_config_stop_bits
-                0x00000000000041e4       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000041dc       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_get_flag_RXRDY
-                0x0000000000004228       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004220       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_get_flag_TXRDY
-                0x0000000000004254       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x000000000000424c       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_enable_irq_RXRDY
-                0x0000000000004280       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004278       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_enable_irq_TXRDY
-                0x00000000000042ac       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000042a4       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_disable_irq_RXRDY
-                0x00000000000042d8       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000042d0       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_disable_irq_TXRDY
-                0x0000000000004304       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000042fc       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_get_data
-                0x0000000000004330       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004328       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_write_data
-                0x000000000000435c       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004354       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_set_BRGVAL
-                0x0000000000004398       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004390       0x38 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_get_irq_status_RXRDY
-                0x00000000000043d0       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000043c8       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_get_irq_status_TXRDY
-                0x00000000000043fc       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000043f4       0x2c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART_set_OSRVAL
-                0x0000000000004428       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004420       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.NVIC_enable_interrupt
-                0x0000000000004464       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x000000000000445c       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.SYSCON_enable_clock
-                0x00000000000044a0       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004498       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.SYSCON_clear_reset
-                0x0000000000004508       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004500       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.SWM_init
-                0x0000000000004570       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004568       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.SWM_deinit
-                0x000000000000458c       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004584       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.SWM_assign_uart_TXD
-                0x00000000000045a8      0x100 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000045a0      0x100 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.SWM_assign_uart_RXD
-                0x00000000000046a8       0xfc /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000046a0       0xfc /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.hal_uart_init
-                0x00000000000047a4      0x22c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x00000000000047a4                hal_uart_init
+                0x000000000000479c      0x22c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x000000000000479c                hal_uart_init
  .text.hal_uart_tx_byte
-                0x00000000000049d0       0x5c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x00000000000049d0                hal_uart_tx_byte
+                0x00000000000049c8       0x5c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x00000000000049c8                hal_uart_tx_byte
  .text.hal_uart_rx_byte
-                0x0000000000004a2c       0x3a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004a2c                hal_uart_rx_byte
- *fill*         0x0000000000004a66        0x2 ff
+                0x0000000000004a24       0x3a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004a24                hal_uart_rx_byte
+ *fill*         0x0000000000004a5e        0x2 ff
  .text.hal_uart_register_rx_callback
-                0x0000000000004a68       0x54 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004a68                hal_uart_register_rx_callback
+                0x0000000000004a60       0x54 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004a60                hal_uart_register_rx_callback
  .text.hal_uart_register_tx_callback
-                0x0000000000004abc       0x40 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004abc                hal_uart_register_tx_callback
+                0x0000000000004ab4       0x40 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004ab4                hal_uart_register_tx_callback
  .text.dummy_callback
-                0x0000000000004afc        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004af4        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.hal_uart_calculate_brgval
-                0x0000000000004b06       0x32 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004afe       0x32 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.hal_uart_handle_irq
-                0x0000000000004b38       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004b30       0x84 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .text.UART0_IRQHandler
-                0x0000000000004bbc       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004bbc                UART0_IRQHandler
+                0x0000000000004bb4       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004bb4                UART0_IRQHandler
  .text.UART1_IRQHandler
-                0x0000000000004bcc       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004bcc                UART1_IRQHandler
+                0x0000000000004bc4       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004bc4                UART1_IRQHandler
  .text.UART2_IRQHandler
-                0x0000000000004bdc       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004bdc                UART2_IRQHandler
+                0x0000000000004bd4       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004bd4                UART2_IRQHandler
  .text.UART3_irq
-                0x0000000000004bec       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004bec                UART3_irq
+                0x0000000000004be4       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004be4                UART3_irq
  .text.UART4_irq
-                0x0000000000004bfc       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
-                0x0000000000004bfc                UART4_irq
+                0x0000000000004bf4       0x10 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000004bf4                UART4_irq
  .text.WKT_select_clock_source
-                0x0000000000004c0c       0x34 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004c04       0x34 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.WKT_clear_alarm_flag
-                0x0000000000004c40       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004c38       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.WKT_set_internal_clock_source
-                0x0000000000004c5c       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004c54       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.WKT_set_external_clock_source
-                0x0000000000004c78       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004c70       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.WKT_write_count
-                0x0000000000004c94       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004c8c       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.NVIC_enable_interrupt
-                0x0000000000004cb0       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004ca8       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.NVIC_disable_interrupt
-                0x0000000000004cec       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004ce4       0x3c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.NVIC_clear_pending_interrupt
-                0x0000000000004d28       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004d20       0x44 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.SYSCON_enable_clock
-                0x0000000000004d6c       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004d64       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.SYSCON_clear_reset
-                0x0000000000004dd4       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004dcc       0x68 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.PMU_enable_wake_up_clock_pin
-                0x0000000000004e3c       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004e34       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.PMU_disable_wake_up_clock_pin
-                0x0000000000004e58       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004e50       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
  .text.hal_wkt_init
-                0x0000000000004e74       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
-                0x0000000000004e74                hal_wkt_init
+                0x0000000000004e6c       0x48 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004e6c                hal_wkt_init
  .text.hal_wkt_select_clock_source
-                0x0000000000004ebc       0x5c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
-                0x0000000000004ebc                hal_wkt_select_clock_source
+                0x0000000000004eb4       0x5c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004eb4                hal_wkt_select_clock_source
  .text.hal_wkt_register_callback
-                0x0000000000004f18       0x40 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
-                0x0000000000004f18                hal_wkt_register_callback
+                0x0000000000004f10       0x40 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004f10                hal_wkt_register_callback
  .text.hal_wkt_start_count
-                0x0000000000004f58       0x94 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
-                0x0000000000004f58                hal_wkt_start_count
+                0x0000000000004f50       0x94 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004f50                hal_wkt_start_count
  .text.dummy_irq
-                0x0000000000004fec        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
- *fill*         0x0000000000004ff6        0x2 ff
+                0x0000000000004fe4        0xa /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+ *fill*         0x0000000000004fee        0x2 ff
  .text.WKT_IRQHandler
-                0x0000000000004ff8       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
-                0x0000000000004ff8                WKT_IRQHandler
+                0x0000000000004ff0       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+                0x0000000000004ff0                WKT_IRQHandler
  .text.__weak_main
-                0x0000000000005010        0x8 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(__weak__main.o)
-                0x0000000000005010                __main
-                0x0000000000005010                __weak_main
+                0x0000000000005008        0x8 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_c.a(__weak__main.o)
+                0x0000000000005008                __main
+                0x0000000000005008                __weak_main
  .text.__aeabi_division_idivmod
-                0x0000000000005018       0x78 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_32.o)
-                0x0000000000005018                __aeabi_idiv
-                0x0000000000005018                __aeabi_idivmod
-                0x000000000000501e                __aeabi_uidiv
-                0x000000000000501e                __aeabi_uidivmod
+                0x0000000000005010       0x78 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_32.o)
+                0x0000000000005010                __aeabi_idiv
+                0x0000000000005010                __aeabi_idivmod
+                0x0000000000005016                __aeabi_uidiv
+                0x0000000000005016                __aeabi_uidivmod
  .text.__aeabi_division_idiv0
-                0x0000000000005090        0x2 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_idiv0.o)
-                0x0000000000005090                __aeabi_idiv0
- *fill*         0x0000000000005092        0x2 ff
+                0x0000000000005088        0x2 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(division_idiv0.o)
+                0x0000000000005088                __aeabi_idiv0
+ *fill*         0x000000000000508a        0x2 ff
  .text.__aeabi_ddiv
-                0x0000000000005094      0x148 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
-                0x0000000000005094                __aeabi_ddiv
+                0x000000000000508c      0x148 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
+                0x000000000000508c                __aeabi_ddiv
  .text.__aeabi_d2uiz
-                0x00000000000051dc       0x34 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
-                0x00000000000051dc                __aeabi_d2uiz
+                0x00000000000051d4       0x34 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
+                0x00000000000051d4                __aeabi_d2uiz
  .text.__bhs_ui2d
-                0x0000000000005210       0x5e /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
-                0x0000000000005210                __bhs_ui2d
+                0x0000000000005208       0x5e /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
+                0x0000000000005208                __bhs_ui2d
  .text.__aeabi_ui2d
-                0x000000000000526e        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
-                0x000000000000526e                __aeabi_ui2d
- *fill*         0x000000000000527a        0x2 ff
+                0x0000000000005266        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(double.o)
+                0x0000000000005266                __aeabi_ui2d
+ *fill*         0x0000000000005272        0x2 ff
  .text.__aeabi_fmul
-                0x000000000000527c       0xc4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x000000000000527c                __aeabi_fmul
+                0x0000000000005274       0xc4 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x0000000000005274                __aeabi_fmul
  .text.__aeabi_fdiv
-                0x0000000000005340       0xdc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x0000000000005340                __aeabi_fdiv
+                0x0000000000005338       0xdc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x0000000000005338                __aeabi_fdiv
  .text.__aeabi_fsub
-                0x000000000000541c      0x128 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x000000000000541c                __aeabi_fsub
+                0x0000000000005414      0x128 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x0000000000005414                __aeabi_fsub
  .text.__aeabi_fadd
-                0x0000000000005544       0xac /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x0000000000005544                __aeabi_fadd
+                0x000000000000553c       0xac /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x000000000000553c                __aeabi_fadd
  .text.__aeabi_f2uiz
-                0x00000000000055f0       0x2a /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x00000000000055f0                __aeabi_f2uiz
+                0x00000000000055e8       0x2a /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x00000000000055e8                __aeabi_f2uiz
  .text.__bhs_ui2f
-                0x000000000000561a       0x62 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x000000000000561a                __bhs_ui2f
+                0x0000000000005612       0x62 /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x0000000000005612                __bhs_ui2f
  .text.__aeabi_ui2f
-                0x000000000000567c        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x000000000000567c                __aeabi_ui2f
+                0x0000000000005674        0xc /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x0000000000005674                __aeabi_ui2f
  .text.__aeabi_f2d
-                0x0000000000005688       0x3c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
-                0x0000000000005688                __aeabi_f2d
+                0x0000000000005680       0x3c /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(float.o)
+                0x0000000000005680                __aeabi_f2d
  .text.__aeabi_llong_lmul
-                0x00000000000056c4       0x2e /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(llong.o)
-                0x00000000000056c4                __aeabi_lmul
+                0x00000000000056bc       0x2e /usr/local/mcuxpressoide-11.0.0_2516/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.0.0.201905131304/tools/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v6-m/nofp/libcr_eabihelpers.a(llong.o)
+                0x00000000000056bc                __aeabi_lmul
  *(.rodata .rodata.* .constdata .constdata.*)
- *fill*         0x00000000000056f2        0x2 ff
+ *fill*         0x00000000000056ea        0x2 ff
  .rodata.adc_config
-                0x00000000000056f4       0x10 ./src/Micro_tester.o
+                0x00000000000056ec       0x10 ./src/Micro_tester.o
  .rodata.uart_config
-                0x0000000000005704       0x18 ./src/Micro_tester.o
+                0x00000000000056fc       0x18 ./src/Micro_tester.o
  .rodata.pinint_config
-                0x000000000000571c        0xc ./src/Micro_tester.o
+                0x0000000000005714        0xc ./src/Micro_tester.o
  .rodata.pin_config
-                0x0000000000005728        0x8 ./src/Micro_tester.o
+                0x0000000000005720        0x8 ./src/Micro_tester.o
  .rodata.pwm_config
-                0x0000000000005730       0x10 ./src/Micro_tester.o
+                0x0000000000005728       0x10 ./src/Micro_tester.o
  .rodata.spi_master_config
-                0x0000000000005740       0x18 ./src/Micro_tester.o
+                0x0000000000005738       0x18 ./src/Micro_tester.o
  .rodata.spi_tx_config
-                0x0000000000005758        0x4 ./src/Micro_tester.o
+                0x0000000000005750        0x4 ./src/Micro_tester.o
  .rodata.spi_tx_buff
-                0x000000000000575c        0x8 ./src/Micro_tester.o
+                0x0000000000005754        0x8 ./src/Micro_tester.o
  .rodata.SWM_enable_ADC
-                0x0000000000005764       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+                0x000000000000575c       0x30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
  .rodata.hal_pinint_configure_pin_interrupt
-                0x0000000000005794       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+                0x000000000000578c       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
  .rodata.SPI_get_status_flag
-                0x00000000000057b4       0x24 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000057ac       0x24 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .rodata.SPI_enable_irq
-                0x00000000000057d8       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000057d0       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .rodata.SPI_disable_irq
-                0x00000000000057f0       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x00000000000057e8       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .rodata.SPI_get_irq_flag_status
-                0x0000000000005808       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+                0x0000000000005800       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
  .rodata.SYSCON_set_iocon_glitch_divider
-                0x0000000000005820       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000005818       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .rodata.hal_syscon_get_peripheral_clock
-                0x000000000000583c       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+                0x0000000000005834       0x20 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
  .rodata.SWM_assign_uart_TXD
-                0x000000000000585c       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000005854       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .rodata.SWM_assign_uart_RXD
-                0x0000000000005870       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+                0x0000000000005868       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
  .rodata.hal_uart_init
-                0x0000000000005884       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
- .rodata.ADC    0x0000000000005898        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
-                0x0000000000005898                ADC
+                0x000000000000587c       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+ .rodata.ADC    0x0000000000005890        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
+                0x0000000000005890                ADC
  .rodata.CTIMER
-                0x000000000000589c        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
-                0x000000000000589c                CTIMER
- .rodata.GPIO   0x00000000000058a0        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
-                0x00000000000058a0                GPIO
- .rodata.IOCON  0x00000000000058a4        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
-                0x00000000000058a4                IOCON
+                0x0000000000005894        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
+                0x0000000000005894                CTIMER
+ .rodata.GPIO   0x0000000000005898        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
+                0x0000000000005898                GPIO
+ .rodata.IOCON  0x000000000000589c        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
+                0x000000000000589c                IOCON
  .rodata.IOCON_PIN_TABLE
-                0x00000000000058a8      0x100 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
-                0x00000000000058a8                IOCON_PIN_TABLE
- .rodata.NVIC   0x00000000000059a8        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
-                0x00000000000059a8                NVIC
+                0x00000000000058a0      0x100 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
+                0x00000000000058a0                IOCON_PIN_TABLE
+ .rodata.NVIC   0x00000000000059a0        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
+                0x00000000000059a0                NVIC
  .rodata.PININT
-                0x00000000000059ac        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
-                0x00000000000059ac                PININT
- .rodata.PMU    0x00000000000059b0        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
-                0x00000000000059b0                PMU
- .rodata.SPI    0x00000000000059b4        0x8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
-                0x00000000000059b4                SPI
- .rodata.SWM    0x00000000000059bc        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
-                0x00000000000059bc                SWM
+                0x00000000000059a4        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
+                0x00000000000059a4                PININT
+ .rodata.PMU    0x00000000000059a8        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
+                0x00000000000059a8                PMU
+ .rodata.SPI    0x00000000000059ac        0x8 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
+                0x00000000000059ac                SPI
+ .rodata.SWM    0x00000000000059b4        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
+                0x00000000000059b4                SWM
  .rodata.SYSCON
-                0x00000000000059c0        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
-                0x00000000000059c0                SYSCON
+                0x00000000000059b8        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
+                0x00000000000059b8                SYSCON
  .rodata.SYSTICK
-                0x00000000000059c4        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
-                0x00000000000059c4                SYSTICK
- .rodata.UART   0x00000000000059c8       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
-                0x00000000000059c8                UART
- .rodata.WKT    0x00000000000059dc        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
-                0x00000000000059dc                WKT
-                0x00000000000059e0                . = ALIGN (0x4)
+                0x00000000000059bc        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
+                0x00000000000059bc                SYSTICK
+ .rodata.UART   0x00000000000059c0       0x14 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
+                0x00000000000059c0                UART
+ .rodata.WKT    0x00000000000059d4        0x4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
+                0x00000000000059d4                WKT
+                0x00000000000059d8                . = ALIGN (0x4)
 
-.glue_7         0x00000000000059e0        0x0
- .glue_7        0x00000000000059e0        0x0 linker stubs
+.glue_7         0x00000000000059d8        0x0
+ .glue_7        0x00000000000059d8        0x0 linker stubs
 
-.glue_7t        0x00000000000059e0        0x0
- .glue_7t       0x00000000000059e0        0x0 linker stubs
+.glue_7t        0x00000000000059d8        0x0
+ .glue_7t       0x00000000000059d8        0x0 linker stubs
 
-.vfp11_veneer   0x00000000000059e0        0x0
- .vfp11_veneer  0x00000000000059e0        0x0 linker stubs
+.vfp11_veneer   0x00000000000059d8        0x0
+ .vfp11_veneer  0x00000000000059d8        0x0 linker stubs
 
-.v4_bx          0x00000000000059e0        0x0
- .v4_bx         0x00000000000059e0        0x0 linker stubs
+.v4_bx          0x00000000000059d8        0x0
+ .v4_bx         0x00000000000059d8        0x0 linker stubs
 
-.iplt           0x00000000000059e0        0x0
- .iplt          0x00000000000059e0        0x0 ./src/Micro_tester.o
+.iplt           0x00000000000059d8        0x0
+ .iplt          0x00000000000059d8        0x0 ./src/Micro_tester.o
 
-.rel.dyn        0x00000000000059e0        0x0
- .rel.iplt      0x00000000000059e0        0x0 ./src/Micro_tester.o
+.rel.dyn        0x00000000000059d8        0x0
+ .rel.iplt      0x00000000000059d8        0x0 ./src/Micro_tester.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000000059e0                __exidx_start = .
+                0x00000000000059d8                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000000000059e0                __exidx_end = .
-                0x00000000000059e0                _etext = .
+                0x00000000000059d8                __exidx_end = .
+                0x00000000000059d8                _etext = .
 
 .mtb_buffer_default
  *(.mtb*)
@@ -1436,7 +1437,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0xcc load address 0x00000000000059e0
+.data           0x0000000010000000       0xcc load address 0x00000000000059d8
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -1479,10 +1480,10 @@ END GROUP
                 0x00000000100000cc                . = ALIGN (0x4)
                 0x00000000100000cc                _edata = .
 
-.igot.plt       0x00000000100000cc        0x0 load address 0x0000000000005aac
+.igot.plt       0x00000000100000cc        0x0 load address 0x0000000000005aa4
  .igot.plt      0x00000000100000cc        0x0 ./src/Micro_tester.o
 
-.bss            0x00000000100000cc       0x48 load address 0x0000000000005aac
+.bss            0x00000000100000cc       0x48 load address 0x0000000000005aa4
                 0x00000000100000cc                . = ALIGN (0x4)
                 0x00000000100000cc                _bss = .
  *(.bss*)
@@ -1507,9 +1508,9 @@ END GROUP
                 0x00000000100000f0        0x4 ./src/Micro_tester.o
  .bss.nrf_counter.5598
                 0x00000000100000f4        0x4 ./src/Micro_tester.o
- .bss.state.5616
+ .bss.state.5615
                 0x00000000100000f8        0x1 ./src/Micro_tester.o
- .bss.counter.5620
+ .bss.counter.5619
                 0x00000000100000f9        0x1 ./src/Micro_tester.o
  *fill*         0x00000000100000fa        0x2 
  .bss.current_frg_freq
@@ -1529,7 +1530,7 @@ END GROUP
                 0x0000000010000114                _ebss = .
                 [!provide]                        PROVIDE (end = .)
 
-.noinit         0x0000000010000114        0x0 load address 0x0000000000005aac
+.noinit         0x0000000010000114        0x0 load address 0x0000000000005aa4
                 0x0000000010000114                . = ALIGN (0x4)
                 0x0000000010000114                _noinit = .
  *(.noinit*)
@@ -1539,36 +1540,36 @@ END GROUP
                 0x0000000010004000                PROVIDE (_vStackTop = DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc16 - 0x0))
                 0xffffffffefffbb27                PROVIDE (__valid_user_code_checksum = (0x0 - (((_vStackTop + (ResetISR + 0x1)) + (DEFINED (NMI_Handler)?NMI_Handler:M0_NMI_Handler + 0x1)) + (DEFINED (HardFault_Handler)?HardFault_Handler:M0_HardFault_Handler + 0x1))))
                 0x0000000000000000                _image_start = LOADADDR (.text)
-                0x0000000000005aac                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x0000000000005aac                _image_size = (_image_end - _image_start)
+                0x0000000000005aa4                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x0000000000005aa4                _image_size = (_image_end - _image_start)
 OUTPUT(Micro_tester.axf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x2a498
- .debug_info    0x0000000000000000     0x2b11 ./src/Micro_tester.o
- .debug_info    0x0000000000002b11      0x226 ./src/cr_startup_lpc84x.o
- .debug_info    0x0000000000002d37     0x494d /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
- .debug_info    0x0000000000007684     0x480b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
- .debug_info    0x000000000000be8f     0x1d4f /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
- .debug_info    0x000000000000dbde     0x2058 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
- .debug_info    0x000000000000fc36     0x3e2b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
- .debug_info    0x0000000000013a61     0x4744 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
- .debug_info    0x00000000000181a5     0x2fa9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
- .debug_info    0x000000000001b14e      0x395 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
- .debug_info    0x000000000001b4e3     0x45d7 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
- .debug_info    0x000000000001faba     0x311b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
- .debug_info    0x0000000000022bd5      0x810 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
- .debug_info    0x00000000000233e5      0x6b4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
- .debug_info    0x0000000000023a99      0x4ef /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
- .debug_info    0x0000000000023f88      0x4a5 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
- .debug_info    0x000000000002442d     0x10f3 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
- .debug_info    0x0000000000025520      0x4eb /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
- .debug_info    0x0000000000025a0b      0x291 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
- .debug_info    0x0000000000025c9c      0x6a9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
- .debug_info    0x0000000000026345     0x216a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
- .debug_info    0x00000000000284af     0x1446 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
- .debug_info    0x00000000000298f5      0x24a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
- .debug_info    0x0000000000029b3f      0x7bb /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
- .debug_info    0x000000000002a2fa      0x19e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
+.debug_info     0x0000000000000000    0x2a47c
+ .debug_info    0x0000000000000000     0x2afb ./src/Micro_tester.o
+ .debug_info    0x0000000000002afb      0x226 ./src/cr_startup_lpc84x.o
+ .debug_info    0x0000000000002d21     0x4947 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+ .debug_info    0x0000000000007668     0x480b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+ .debug_info    0x000000000000be73     0x1d4f /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+ .debug_info    0x000000000000dbc2     0x2058 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
+ .debug_info    0x000000000000fc1a     0x3e2b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+ .debug_info    0x0000000000013a45     0x4744 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+ .debug_info    0x0000000000018189     0x2fa9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+ .debug_info    0x000000000001b132      0x395 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+ .debug_info    0x000000000001b4c7     0x45d7 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+ .debug_info    0x000000000001fa9e     0x311b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+ .debug_info    0x0000000000022bb9      0x810 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
+ .debug_info    0x00000000000233c9      0x6b4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
+ .debug_info    0x0000000000023a7d      0x4ef /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
+ .debug_info    0x0000000000023f6c      0x4a5 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
+ .debug_info    0x0000000000024411     0x10f3 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
+ .debug_info    0x0000000000025504      0x4eb /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
+ .debug_info    0x00000000000259ef      0x291 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
+ .debug_info    0x0000000000025c80      0x6a9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
+ .debug_info    0x0000000000026329     0x216a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
+ .debug_info    0x0000000000028493     0x1446 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
+ .debug_info    0x00000000000298d9      0x24a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
+ .debug_info    0x0000000000029b23      0x7bb /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
+ .debug_info    0x000000000002a2de      0x19e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
 
 .debug_abbrev   0x0000000000000000     0x2f83
  .debug_abbrev  0x0000000000000000      0x253 ./src/Micro_tester.o
@@ -1718,83 +1719,83 @@ OUTPUT(Micro_tester.axf elf32-littlearm)
  .debug_macro   0x0000000000002af2       0x22 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
  .debug_macro   0x0000000000002b14       0x4c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
 
-.debug_line     0x0000000000000000     0x6c1b
- .debug_line    0x0000000000000000      0x59e ./src/Micro_tester.o
- .debug_line    0x000000000000059e      0x133 ./src/cr_startup_lpc84x.o
- .debug_line    0x00000000000006d1      0xb75 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
- .debug_line    0x0000000000001246      0xbff /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
- .debug_line    0x0000000000001e45      0x49b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
- .debug_line    0x00000000000022e0      0x401 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
- .debug_line    0x00000000000026e1      0x6a0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
- .debug_line    0x0000000000002d81      0xbe1 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
- .debug_line    0x0000000000003962      0x7a9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
- .debug_line    0x000000000000410b      0x3b7 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
- .debug_line    0x00000000000044c2      0x92f /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
- .debug_line    0x0000000000004df1      0x5f6 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
- .debug_line    0x00000000000053e7      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
- .debug_line    0x00000000000055b5      0x1d4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
- .debug_line    0x0000000000005789      0x1d0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
- .debug_line    0x0000000000005959      0x1d2 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
- .debug_line    0x0000000000005b2b      0x1d0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
- .debug_line    0x0000000000005cfb      0x1d4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
- .debug_line    0x0000000000005ecf      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
- .debug_line    0x000000000000609d      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
- .debug_line    0x000000000000626b      0x268 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
- .debug_line    0x00000000000064d3      0x1d4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
- .debug_line    0x00000000000066a7      0x1d6 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
- .debug_line    0x000000000000687d      0x1d0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
- .debug_line    0x0000000000006a4d      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
+.debug_line     0x0000000000000000     0x6c12
+ .debug_line    0x0000000000000000      0x59b ./src/Micro_tester.o
+ .debug_line    0x000000000000059b      0x133 ./src/cr_startup_lpc84x.o
+ .debug_line    0x00000000000006ce      0xb6f /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+ .debug_line    0x000000000000123d      0xbff /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+ .debug_line    0x0000000000001e3c      0x49b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+ .debug_line    0x00000000000022d7      0x401 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
+ .debug_line    0x00000000000026d8      0x6a0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+ .debug_line    0x0000000000002d78      0xbe1 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+ .debug_line    0x0000000000003959      0x7a9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+ .debug_line    0x0000000000004102      0x3b7 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+ .debug_line    0x00000000000044b9      0x92f /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+ .debug_line    0x0000000000004de8      0x5f6 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+ .debug_line    0x00000000000053de      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
+ .debug_line    0x00000000000055ac      0x1d4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
+ .debug_line    0x0000000000005780      0x1d0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
+ .debug_line    0x0000000000005950      0x1d2 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
+ .debug_line    0x0000000000005b22      0x1d0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
+ .debug_line    0x0000000000005cf2      0x1d4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
+ .debug_line    0x0000000000005ec6      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
+ .debug_line    0x0000000000006094      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
+ .debug_line    0x0000000000006262      0x268 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
+ .debug_line    0x00000000000064ca      0x1d4 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
+ .debug_line    0x000000000000669e      0x1d6 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
+ .debug_line    0x0000000000006874      0x1d0 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
+ .debug_line    0x0000000000006a44      0x1ce /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
 
-.debug_str      0x0000000000000000     0xc97c
- .debug_str     0x0000000000000000     0x729b ./src/Micro_tester.o
-                                       0x75e2 (size before relaxing)
- .debug_str     0x000000000000729b      0x1d2 ./src/cr_startup_lpc84x.o
+.debug_str      0x0000000000000000     0xc96f
+ .debug_str     0x0000000000000000     0x728e ./src/Micro_tester.o
+                                       0x75d5 (size before relaxing)
+ .debug_str     0x000000000000728e      0x1d2 ./src/cr_startup_lpc84x.o
                                        0x2ebf (size before relaxing)
- .debug_str     0x000000000000746d     0x2642 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
+ .debug_str     0x0000000000007460     0x2642 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_ADC.o)
                                        0x7e5e (size before relaxing)
- .debug_str     0x0000000000009aaf      0xa30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
+ .debug_str     0x0000000000009aa2      0xa30 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_CTIMER.o)
                                        0x7d0b (size before relaxing)
- .debug_str     0x000000000000a4df      0x131 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
+ .debug_str     0x000000000000a4d2      0x131 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_GPIO.o)
                                        0x5b3a (size before relaxing)
- .debug_str     0x000000000000a610       0x2e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
+ .debug_str     0x000000000000a603       0x2e /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_IOCON.o)
                                        0x5e99 (size before relaxing)
- .debug_str     0x000000000000a63e      0x56b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
+ .debug_str     0x000000000000a631      0x56b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_PININT.o)
                                        0x75ff (size before relaxing)
- .debug_str     0x000000000000aba9      0x767 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
+ .debug_str     0x000000000000ab9c      0x767 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SPI.o)
                                        0x7bb1 (size before relaxing)
- .debug_str     0x000000000000b310      0x7c9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
+ .debug_str     0x000000000000b303      0x7c9 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSCON.o)
                                        0x6ebf (size before relaxing)
- .debug_str     0x000000000000bad9      0x22a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
+ .debug_str     0x000000000000bacc      0x22a /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_SYSTICK.o)
                                        0x46e3 (size before relaxing)
- .debug_str     0x000000000000bd03      0x6cd /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
+ .debug_str     0x000000000000bcf6      0x6cd /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_UART.o)
                                        0x7d2b (size before relaxing)
- .debug_str     0x000000000000c3d0      0x458 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
+ .debug_str     0x000000000000c3c3      0x458 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HAL_WKT.o)
                                        0x695f (size before relaxing)
- .debug_str     0x000000000000c828       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
+ .debug_str     0x000000000000c81b       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_ADC.o)
                                        0x4876 (size before relaxing)
- .debug_str     0x000000000000c840       0x1b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
+ .debug_str     0x000000000000c833       0x1b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_CTIMER.o)
                                        0x46dd (size before relaxing)
- .debug_str     0x000000000000c85b       0x19 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
+ .debug_str     0x000000000000c84e       0x19 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_GPIO.o)
                                        0x4645 (size before relaxing)
- .debug_str     0x000000000000c874       0x24 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
+ .debug_str     0x000000000000c867       0x24 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_IOCON.o)
                                        0x46a5 (size before relaxing)
- .debug_str     0x000000000000c898       0x19 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
+ .debug_str     0x000000000000c88b       0x19 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_NVIC.o)
                                        0x4d5d (size before relaxing)
- .debug_str     0x000000000000c8b1       0x1b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
+ .debug_str     0x000000000000c8a4       0x1b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PININT.o)
                                        0x46dd (size before relaxing)
- .debug_str     0x000000000000c8cc       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
+ .debug_str     0x000000000000c8bf       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_PMU.o)
                                        0x459e (size before relaxing)
- .debug_str     0x000000000000c8e4       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
+ .debug_str     0x000000000000c8d7       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SPI.o)
                                        0x46c4 (size before relaxing)
- .debug_str     0x000000000000c8fc       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
+ .debug_str     0x000000000000c8ef       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SWM.o)
                                        0x583c (size before relaxing)
- .debug_str     0x000000000000c914       0x1b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
+ .debug_str     0x000000000000c907       0x1b /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSCON.o)
                                        0x504d (size before relaxing)
- .debug_str     0x000000000000c92f       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
+ .debug_str     0x000000000000c922       0x1c /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_SYSTICK.o)
                                        0x4560 (size before relaxing)
- .debug_str     0x000000000000c94b       0x19 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
+ .debug_str     0x000000000000c93e       0x19 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_UART.o)
                                        0x4832 (size before relaxing)
- .debug_str     0x000000000000c964       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
+ .debug_str     0x000000000000c957       0x18 /home/augusto/Desktop/InfoII/Libreria_LPC845/LPC845/Libreria_LPC845/Debug/libLibreria_LPC845.a(HPL_WKT.o)
                                        0x44f3 (size before relaxing)
 
 .comment        0x0000000000000000       0x75

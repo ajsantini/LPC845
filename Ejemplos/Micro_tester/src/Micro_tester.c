@@ -327,9 +327,8 @@ static void tick_callback(void)
 static void adc_callback(void)
 {
 	hal_adc_sequence_result_t adc_result;
-	hal_adc_sequence_result_t *adc_result_p = &adc_result;
 
-	if(hal_adc_get_sequence_result(ADC_SEQUENCE, &adc_result_p) == HAL_ADC_SEQUENCE_RESULT_VALID)
+	if(hal_adc_get_sequence_result(ADC_SEQUENCE, &adc_result) == HAL_ADC_SEQUENCE_RESULT_VALID)
 	{
 		adc_conversion = adc_result.result;
 	}

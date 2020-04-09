@@ -1,10 +1,10 @@
 Micro_tester.c:231:5:main	8	static
 Micro_tester.c:297:13:tick_callback	8	static
 Micro_tester.c:327:13:adc_callback	16	static
-Micro_tester.c:356:13:rx_callback	16	static
-Micro_tester.c:368:13:tx_callback	8	static
-Micro_tester.c:380:13:pinint_callback	8	static
-Micro_tester.c:398:13:match_callback	8	static
-Micro_tester.c:405:13:spi_tx_callback	8	static
-Micro_tester.c:417:13:spi_rx_callback	8	static
-Micro_tester.c:424:13:wkt_callback	8	static
+Micro_tester.c:355:13:rx_callback	16	static
+Micro_tester.c:367:13:tx_callback	8	static
+Micro_tester.c:379:13:pinint_callback	8	static
+Micro_tester.c:397:13:match_callback	8	static
+Micro_tester.c:404:13:spi_tx_callback	8	static
+Micro_tester.c:416:13:spi_rx_callback	8	static
+Micro_tester.c:423:13:wkt_callback	8	static
