@@ -1,8 +1,0 @@
-motores.c:56:6:motores_init_pins	16	static
-motores.c:76:6:motores_action	16	static
-motores.c:119:17:motores_get_state	16	static
-motores.c:127:6:motores_check	16	static
-motores.c:190:13:motor_open	16	static
-motores.c:207:13:motor_close	16	static
-motores.c:224:13:motor_break	16	static
-motores.c:240:13:motor_release	16	static
