@@ -12,10 +12,18 @@
 !/Ejemplos/*/.cproject
 !/Ejemplos/*/.project
 
+/Libreria_LPC845/.*
+!/Libreria_LPC845/.cproject
+!/Libreria_LPC845/.project
+
 # Project roots only
 /Ejemplos/*/*.launch
 /Ejemplos/*/*.xml
 !/Ejemplos/*/doxygen_layout.xml
+
+/Libreria_LPC845/*.launch
+/Libreria_LPC845/*.xml
+!/Libreria_LPC845/doxygen_layout.xml
 
 # Project 'Debug' folders only
 # Blacklist everything but .a
@@ -23,8 +31,12 @@
 !/Ejemplos/*/Debug/*.a
 
 # Lib documentation folder only
-/Libreria_LPC845/doc/html/*
-!/Libreria_LPC845/doc/html/index.html
+/**/html/*
+!/**/html/index.html
+#/Libreria_LPC845/doc/html/*
+#!/Libreria_LPC845/doc/html/index.html
 
-/Libreria_LPC845/doc/latex/*
-!/Libreria_LPC845/doc/latex/refman.pdf
+/**/latex/*
+!/**/latex/refman.pdf
+#/Libreria_LPC845/doc/latex/*
+#!/Libreria_LPC845/doc/latex/refman.pdf

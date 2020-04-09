@@ -1,7 +1,7 @@
 /**
  * @file HAL_CTIMER.c
  * @brief Funciones a nivel de aplicacion del periferico CTIMER (LPC845)
- * @author Augusto Santini
+ * @author Augusto Santini, Esteban E. Chiama
  * @date 3/2020
  * @version 1.0
  */
@@ -122,6 +122,7 @@ void hal_ctimer_timer_mode_config_match(hal_ctimer_match_sel_en match_sel, const
 	if(match_config->reload_on_match)
 	{
 		CTIMER_enable_reload_on_match(match_sel);
+		CTIMER_write_shadow_register(match_sel, hal_ctimer_calc_match_value(match_config->match_value_useg) );
 	}
 	else
 	{
@@ -156,6 +157,28 @@ void hal_ctimer_timer_mode_reset(void)
 {
 	CTIMER_assert_counter_reset();
 	CTIMER_clear_counter_reset();
+}
+
+/**
+ * @brief Cambia el valor de MATCH del CTIMER seleccionado.
+ *
+ * Si el CTIMER está configurado para realizar 'reload on match', se escribe el nuevo valor de match
+ * en el Shador Register correspondiente.
+ * Caso contrario, la actualización del valor de match es inmediata.
+ *
+ * @param[in] match_sel Match a configurar
+ * @param[in] match_value_useg Nuevo valor de match, en useg, deseado.
+ */
+void hal_ctimer_timer_mode_change_match_value(hal_ctimer_match_sel_en match, uint32_t match_value_useg)
+{
+
+	if( CTIMER_get_reload_on_match(match) ){
+		CTIMER_write_shadow_register(match, hal_ctimer_calc_match_value(match_value_useg) );
+	}
+	else{
+		CTIMER_write_match_value(match, hal_ctimer_calc_match_value(match_value_useg) );
+	}
+
 }
 
 /**

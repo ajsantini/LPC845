@@ -1,7 +1,0 @@
-<map id="includes/hal/HAL_GPIO.h" name="includes/hal/HAL_GPIO.h">
-<area shape="rect" id="node2" href="$HAL__CTIMER_8h.html" title="Declaraciones a nivel de aplicacion del periferico CTIMER (LPC845) " alt="" coords="5,80,196,107"/>
-<area shape="rect" id="node3" href="$HAL__IOCON_8h.html" title="Declaraciones a nivel de aplicacion del periferico IOCON (LPC845) " alt="" coords="220,80,403,107"/>
-<area shape="rect" id="node4" href="$HAL__PININT_8h.html" title="Declaraciones a nivel de aplicacion del periferico PININT (LPC845) " alt="" coords="427,80,611,107"/>
-<area shape="rect" id="node5" href="$HAL__SPI_8h.html" title="Declaraciones a nivel de aplicacion del periferico SPI (LPC845) " alt="" coords="636,80,797,107"/>
-<area shape="rect" id="node6" href="$HAL__UART_8h.html" title="Declaraciones a nivel de aplicacion del periferico UART (LPC845) " alt="" coords="822,80,998,107"/>
-</map>
