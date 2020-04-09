@@ -381,6 +381,7 @@ static inline uint8_t CTIMER_get_reload_on_match(CTIMER_match_sel_en match){
 	case CTIMER_MATCH_SEL_3: { return CTIMER->MCR.MR3RL; break; }
 	}
 
+	return 0;
 }
 
 /**

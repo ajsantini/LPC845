@@ -30,6 +30,9 @@
 /Ejemplos/*/Debug/*
 !/Ejemplos/*/Debug/*.a
 
+/Libreria_LPC845/Debug/*
+!/Libreria_LPC845/Debug/*.a
+
 # Lib documentation folder only
 /**/html/*
 !/**/html/index.html
