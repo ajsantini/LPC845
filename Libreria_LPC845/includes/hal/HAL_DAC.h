@@ -7,30 +7,6 @@
  */
 
 /**
- * @example Ejemplo_DAC.c
- *
- * El programa utiliza el \e DAC para generar una señal tipo rampa en la salida del canal 0 (Puerto 0 Pin 17) el
- * cual está mapeado al pin número 2 del stick de desarrollo.
- *
- * Para poder tener una visualización del programa de ejemplo, sera necesario un osciloscopio para mayor presición,
- * aunque también se puede utilizar un LED con un resistor en serie.
- *
- * - En caso de utilizar un osciloscopio: Conectar la punta de medición al pin 2 del stick de desarrollo. Debería
- * observar una señal tipo rampa, con un período de aproximadamente un segundo y tensión pico aproximadamente 3.3V.
- * - En caso de utilizar un LED con un resistor en serie: Conectar un extremo del resistor al pin 2 del stick de
- * desarrollo, el otro extremo del resistor conectarlo con el ánodo del LED, y el cátodo del LED conectarlo a la
- * masa del stick de desarrollo. Debería ver como el LED enciende gradualmente hasta apagarse y volver a repetir
- * el ciclo.
- *
- * El periférico \e Systick se configura para generar interrupciones cada \f$1mseg\f$. En cada tick, se escribe en
- * el \e DAC un valor de una tabla, cuyo indice ira incrementando en cada tick. En la tabla se encuentran guardados
- * los valores de la señal tipo rampa, incializados al comienzo del programa en un lazo \e for.
- *
- * El periférico \e DAC es inicializado con un tiempo de asentamiento de \f$1 \mu seg\f$.
- *
- */
-
-/**
  * @defgroup DAC Conversor digital a analógico (DAC)
  *
  * # Introducción
@@ -66,6 +42,30 @@
  * - Servomecanismos controlados por señales analógicas
  *
  * @{
+ */
+
+/**
+ * @example Ejemplo_DAC.c
+ *
+ * El programa utiliza el \e DAC para generar una señal tipo rampa en la salida del canal 0 (Puerto 0 Pin 17) el
+ * cual está mapeado al pin número 2 del stick de desarrollo.
+ *
+ * Para poder tener una visualización del programa de ejemplo, sera necesario un osciloscopio para mayor presición,
+ * aunque también se puede utilizar un LED con un resistor en serie.
+ *
+ * - En caso de utilizar un osciloscopio: Conectar la punta de medición al pin 2 del stick de desarrollo. Debería
+ * observar una señal tipo rampa, con un período de aproximadamente un segundo y tensión pico aproximadamente 3.3V.
+ * - En caso de utilizar un LED con un resistor en serie: Conectar un extremo del resistor al pin 2 del stick de
+ * desarrollo, el otro extremo del resistor conectarlo con el ánodo del LED, y el cátodo del LED conectarlo a la
+ * masa del stick de desarrollo. Debería ver como el LED enciende gradualmente hasta apagarse y volver a repetir
+ * el ciclo.
+ *
+ * El periférico \e Systick se configura para generar interrupciones cada \f$1mseg\f$. En cada tick, se escribe en
+ * el \e DAC un valor de una tabla, cuyo indice ira incrementando en cada tick. En la tabla se encuentran guardados
+ * los valores de la señal tipo rampa, incializados al comienzo del programa en un lazo \e for.
+ *
+ * El periférico \e DAC es inicializado con un tiempo de asentamiento de \f$1 \mu seg\f$.
+ *
  */
 
 #ifndef HAL_DAC_H_

@@ -102,7 +102,7 @@ int main(void)
 
     while(1)
     {
-    	if(flag_secuencia_adc_completada == 1) // Esto o hacer "if(flag_secuencia_adc_completada)" es indistinto
+    	if(flag_secuencia_adc_completada == 1)
     	{
     		uint32_t variable_auxiliar;
 
@@ -125,7 +125,7 @@ static void systick_callback(void)
 	// Conteo con valor límite
 	contador_disparo_adc = (contador_disparo_adc + 1) % ADC_CONVERSION_TIME_MSEG;
 
-	if(contador_disparo_adc == 0) // Esto o hacer "if(!contador_disparo_adc)" es indistinto
+	if(contador_disparo_adc == 0)
 	{
 		hal_adc_start_sequence(ADC_SEQUENCE);
 	}

@@ -36,8 +36,10 @@
  * registros del microcontrolador en forma "directa". En caso de necesitar configuraciones o accesos no explicitados
  * en la <em>Capa de abstracción de hardware</em> se deberá utilizar esta capa.
  * 
- * @section Utilización de la librería en proyectos MCUXpresso
+ * @section utilizacion_libreria Utilización de la librería en proyectos MCUXpresso
  * 
+ * @section acerca_del_stick Acerca del stick de desarrollo \b LPC845_BRK
  * 
+ * Poner la imagen del stick que esta en overleaf, no la puedo bajar AHORA porque me quede sin internet.
  * 
  */

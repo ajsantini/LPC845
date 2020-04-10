@@ -7,40 +7,6 @@
  */
 
 /**
- * @example Ejemplo_ADC.c
- *
- * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
- * Oscillator</em> funcionando a \f$ 12MHz \f$.
- *
- * El periférico será configurado con las siguientes características:
- * 	- Funcionamiento \b sincrónico
- * 	- Frecuencia de muestreo de \f$ 1Mhz \f$
- * 	- Modo bajo consumo inhabilitado
- *  .
- *
- * La secuencia A es configurada para generar conversiones en los canales 0 y 8:
- * 	- El canal 0 está conectado al preset propio del stick de desarrollo (Puerto 0 pin 7)
- * 	- El canal 8 está ubicado en el pin número 3 (Puerto 0 pin 18) y se le puede conectar un preset externo entre
- * 	 VDD y GND.
- * 	.
- *
- * Además, la secuencia tendrá la siguiente configuración:
- * 	- Trigger: Únicamente se disparan conversiones por software
- * 	- Bypass sincronismo: Sí
- * 	- Modo de interrupción: Cuando termina la secuencia completa
- * 	- Burst: Inhabilitado
- * 	- Un trigger dispara: Una conversión de secuencia completa
- * 	- Secuencia A como baja prioridad: No
- *
- * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada \f$ 1mseg \f$
- * y mediante su manejador se lleva la cuenta de los milisegundos transcurridos. Una vez transcurridos
- * \f$ 1000mseg \f$, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.
- *
- * Ubicando un \e breakpoint adecuadamente, se pueden leer los resultados de las conversiones ya ubicadas en
- * las variables globales.
- */
-
-/**
  * @defgroup ADC Conversor analógico a digital (ADC)
  *
  * # Introducción
@@ -151,6 +117,40 @@
  * asociado.
  *
  * @{
+ */
+
+/**
+ * @example Ejemplo_ADC.c
+ *
+ * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
+ * Oscillator</em> funcionando a \f$ 12MHz \f$.
+ *
+ * El periférico será configurado con las siguientes características:
+ * 	- Funcionamiento \b sincrónico
+ * 	- Frecuencia de muestreo de \f$ 1Mhz \f$
+ * 	- Modo bajo consumo inhabilitado
+ *  .
+ *
+ * La secuencia A es configurada para generar conversiones en los canales 0 y 8:
+ * 	- El canal 0 está conectado al preset propio del stick de desarrollo (Puerto 0 pin 7)
+ * 	- El canal 8 está ubicado en el pin número 3 (Puerto 0 pin 18) y se le puede conectar un preset externo entre
+ * 	 VDD y GND.
+ * 	.
+ *
+ * Además, la secuencia tendrá la siguiente configuración:
+ * 	- Trigger: Únicamente se disparan conversiones por software
+ * 	- Bypass sincronismo: Sí
+ * 	- Modo de interrupción: Cuando termina la secuencia completa
+ * 	- Burst: Inhabilitado
+ * 	- Un trigger dispara: Una conversión de secuencia completa
+ * 	- Secuencia A como baja prioridad: No
+ *
+ * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada \f$ 1mseg \f$
+ * y mediante su manejador se lleva la cuenta de los milisegundos transcurridos. Una vez transcurridos
+ * \f$ 1000mseg \f$, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.
+ *
+ * Ubicando un \e breakpoint adecuadamente, se pueden leer los resultados de las conversiones ya ubicadas en
+ * las variables globales.
  */
 
 #ifndef HAL_ADC_H_
