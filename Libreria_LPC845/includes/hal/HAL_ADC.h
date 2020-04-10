@@ -289,7 +289,7 @@ void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence);
  * @see hal_adc_sequence_sel_en
  * @param[in] sequence Secuencia a deshabilitar
  */
-void hal_adc_sequence_disable(hal_adc_sequence_sel_en sequence);
+void hal_adc_disable_sequence(hal_adc_sequence_sel_en sequence);
 
 /**
  * @brief Disparar conversiones en una secuencia

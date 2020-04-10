@@ -98,12 +98,12 @@ void hal_ctimer_timer_mode_reset(void);
 /**
  * @brief Cambia el valor de MATCH del CTIMER seleccionado.
  *
- * Si el CTIMER está configurado para realizar 'reload on match', se escribe el nuevo valor de match
- * en el Shador Register correspondiente.
- * Caso contrario, la actualización del valor de match es inmediata.
+ * Si el match deseado está configurado para realizar <em>reload on match</em>, se escribe el nuevo valor de match
+ * será una actualización efectiva en cuanto el conteo actual alcance dicho match. Caso contrario, la actualización
+ * del valor de match es inmediata.
  *
  * @param[in] match_sel Match a configurar
- * @param[in] match_value_useg Nuevo valor de match, en useg, deseado. *
+ * @param[in] match_value_useg Nuevo valor de match, en useg, deseado.
  */
 void hal_ctimer_timer_mode_change_match_value(hal_ctimer_match_sel_en match, uint32_t match_value_useg);
 
