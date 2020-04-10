@@ -6,6 +6,16 @@
  * @version 1.0
  */
 
+/**
+ * @defgroup IOCON Control de Entrada/Salida (IOCON)
+ *
+ * Prueba IOCON.
+ *
+ * Da da da.
+ *
+ * @{
+ */
+
 #ifndef HAL_IOCON_H_
 #define HAL_IOCON_H_
 
@@ -66,3 +76,7 @@ typedef struct
 void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *config);
 
 #endif /* HAL_IOCON_H_ */
+
+/**
+ * @}
+ */

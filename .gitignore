@@ -26,12 +26,10 @@
 !/Libreria_LPC845/doxygen_layout.xml
 
 # Project 'Debug' folders only
-# Blacklist everything but .a
-/Ejemplos/*/Debug/*
-!/Ejemplos/*/Debug/*.a
+# Blacklist everything
+/Ejemplos/*/Debug
 
-/Libreria_LPC845/Debug/*
-!/Libreria_LPC845/Debug/*.a
+/Libreria_LPC845/Debug
 
 # Lib documentation folder only
 /Libreria_LPC845/doc

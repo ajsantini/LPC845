@@ -7,8 +7,120 @@
  */
 
 /**
+ * @defgroup ADC Conversor analógico a digital (ADC)
+ *
+ * # Introducción
+ *
+ * Este periférico como su nombre lo indica, convierte una o más entradas analógicas, a un
+ * valor equivalente digital. En el caso del LPC845, tiene un único módulo \e ADC con una
+ * resolución de 12 bits, el cual tiene 12 canales, lo cual implica que se pueden realizar
+ * conversiones de 12 fuentes analógicas distintas, pero no así realizar conversiones
+ * <em> al mismo tiempo </em>. En caso de querer tomar señales de múltiples fuentes analógicas, se
+ * deberán hacer sucesivas conversiones en los distintos canales deseados.
+ *
+ * Una resolución de 12 bits implica que la conversión aumentará cada unidad siguiendo la siguiente ecuación:
+ * \f$ ADC_{res} = \frac{V_{ref_{p}}}{2^N} \f$ siendo \f$N\f$ la cantidad de bits disponibles en la conversión.
+ *
+ * Esto implica que podemos preveer el valor resultante de la conversión analógica/digital mediante la
+ * siguiente ecuación: \f$ ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}} \f$
+ *
+ * Cabe destacar, que las conversiones serán redondeadas \b siempre hacia abajo, es decir, se descartan los
+ * valores decimales.
+ *
+ * # Concepto de <em>Secuencia de conversión</em>
+ *
+ * Para el \e ADC de este microcontrolador, un inicio de conversión en realidad puede implicar el inicio de
+ * una <em>secuencia de conversión</em>. Dicha secuencia puede implicar uno o más canales a convertir, y puede
+ * generar eventos tanto cuando se termina la secuencia completa, o cuando se termina cada canal de la
+ * secuencia. Asimismo los inicios de conversión pueden disparar una secuencia completa, o el próximo de los
+ * canales habilitados en dicha secuencia. Se tienen dos secuencias configurables (<em>Secuencia A y
+ * Secuencia B</em>), las cuales se pueden configurar de forma tal que un disparo de <em>Secuencia B</em>
+ * interrumpa a una conversión actual de la <em>Secuencia A</em>.
+ *
+ * # Inicio de conversiones
+ *
+ * El \e ADC de este microcontrolador permite el inicio de secuencia de conversión/canal de dos formas:
+ * 		1. Iniciadas por software: Las secuencias de conversión son iniciadas mediante la escritura de un
+ * 		registro de control del \e ADC. El software puede tener total control sobre el punto de inicio de
+ * 		conversión.
+ * 		2. Iniciadas por hardware: Las secuencias de conversión son iniciadas dependiendo de otras señales,
+ * 		sean las mismas internas o externas al microcontrolador.
+ * 		.
+ *
+ * # Calibración de hardware
+ *
+ * Este periférico contiene un bloque de autocalibración, el cual debe ser utilizado luego de cada reinicio
+ * del microcontrolador o cada vez que se sale de modo de bajo consumo, para obtener la resolución y presición
+ * especificada por el fabricante.
+ *
+ * <b>NOTA</b>: La autocalibración debe realizarse cuando el \b microcontrolador sale de un modo de funcionamiento
+ * de bajo consumo, no cuando el periférico \e ADC sale de modo bajo consumo.
+ *
+ * La librería implementa la calibración por hardware en la función @ref hal_adc_init
+ *
+ * # Modo sicnrónico/asincrónico
+ *
+ * En este microcontrolador, el \e ADC puede ser configurado de dos formas distintas en cuanto a sus clocks:
+ * 		- Modo asincrónico: El clock que alimenta a la lógica de muestreo del periférico puede ser de una
+ * 		naturaleza distinta al clock del sistema que alimenta a la lógica del periférico.
+ * 		- Modo sincrónico: El clock qu ealimenta tanto a la lógica de muestreo del periférico como la lógica del
+ * 		periférico, estan en sincronismo.
+ *
+ * # Modo bajo consumo
+ *
+ * El periférico dispone de una funcionalidad configurable de bajo consumo. Si la misma está habilitada, en
+ * cualquier momento que el \e ADC no esté realizando alguna conversión, la energía del mismo se reducirá,
+ * permitiendo así tener un menor consumo. El costo de este modo de funcionamiento, es un delay extra cada vez
+ * que se dispara una nueva conversión, dado que el periférico deberá salir del modo bajo consumo. Consultar el
+ * manual de usuario del microcontrolador para más información.
+ *
+ * # Velocidad de conversión
+ *
+ * Cada conversión realizada toma un tiempo que dependerá del clock configurado en el periférico. Podemos
+ * obtener este tiempo de conversión mediante la ecuación: \f$ t_{conv_{ADC}} = \frac{1}{f_{ADC} / 25} \f$
+ *
+ * La división por \f$ 25 \f$ en el denominador, es debido a la naturaleza del periférico de <em>aproximaciones
+ * sucesivas</em>. Esto implica que desde que se genera un inicio de conversión hasta que la misma finaliza,
+ * deben transcurrir \f$ 25 \f$ ciclos de clock del \e ADC.
+ *
+ * Ejemplo: Configurando el \e ADC con una \f$f_{ADC} = 25MHz\f$ obtenemos el tiempo tomado por cada
+ * conversión:
+ *
+ * \f{eqnarray*}{
+ *     t_{conv_{ADC}} = \frac{1}{25MHz / 25} \\
+ *     t_{conv_{ADC}} = 1 \mu s
+ * \f}
+ *
+ * Esto implica que entre un inicio de conversión y la finalización de la misma, pasará \f$1 \mu s\f$. Nótese que
+ * este tiempo corresponde a una conversión para un único canal. En caso de estar convirtiendo varios canales, se
+ * deberá multiplicar \f$ t_{conv_{ADC}} \f$ por la cantidad de canales activos en la secuencia de conversión, para
+ * obtener el tiempo total desde un inicio de secuencia de conversión y la finalización de todos los canales
+ * (asumiendo que se dispara una conversión de secuencia completa).
+ *
+ * El \e ADC no puede convertir a cualquier frecuencia de muestreo, existen frecuencias máximas dependiendo del
+ * tipo de funcionamiento configurado para el periférico:
+ * 		- Funcionamiento en modo <em>sincrónico</em>: Frecuencia de muestreo máxima de 1.2MHz
+ * 		- Funcionamiento en modo <em>asincrónico</em>: Frecuencia de muestreo máxima de 0.6MHz
+ * 		.
+ *
+ * # Campos de aplicación típicos
+ *
+ * - Audio/Video
+ * - Señales de naturaleza biológica (ECG, EEG)
+ * - Entradas de usuario de hardware (Preset, Potenciómetro)
+ * - Sensores con salida analógica de variables físicas (Termómetro, Luxómetro)
+ *
+ * # Consideraciones a tener en cuenta en la utilización de la librería
+ *
+ * Los callbacks asociados en las configuraciones posibles son ejecutados en el contexto de una \b interrupción,
+ * por lo que el usuario deberá tener las consideraciones adecuadas a la hora de lo que realiza el callback
+ * asociado.
+ *
+ * @{
+ */
+
+/**
  * @example Ejemplo_ADC.c
- * @brief Ejemplo sobre la utilización del \e ADC.
  *
  * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
  * Oscillator</em> funcionando a \f$ 12MHz \f$.
@@ -39,79 +151,6 @@
  *
  * Ubicando un \e breakpoint adecuadamente, se pueden leer los resultados de las conversiones ya ubicadas en
  * las variables globales.
- */
-
-/**
- * @defgroup ADC ADC
- *
- * # Descripción
- *
- * Este periférico como su nombre lo indica, convierte una o más entradas analógicas, a un
- * valor equivalente digital. En el caso del LPC845, tiene un único módulo \e ADC con una
- * resolución de 12 bits, el cual tiene 12 canales, lo cual implica que se pueden realizar
- * conversiones de 12 fuentes analógicas distintas, pero no así realizar conversiones
- * <em> al mismo tiempo </em>. En caso de querer tomar señales de múltiples fuentes analógicas, se
- * deberán hacer sucesivas conversiones en los distintos canales deseados.
- *
- * Una resolución de 12 bits implica que la conversión aumentará cada unidad siguiendo la siguiente ecuación:
- * \f$ ADC_{res} = \frac{V_{ref_{p}}}{2^N} \f$
- *
- * Esto implica que podemos preveer el valor resultante de la conversión analógica/digital mediante la
- * siguiente ecuación: \f$ ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}} \f$
- *
- * Cabe destacar, que las conversiones serán redondeadas \b siempre hacia abajo, es decir, se descartan los
- * valores decimales.
- *
- * ## Concepto de <em>Secuencia de conversión</em>
- *
- * Para el \e ADC de este microcontrolador, un inicio de conversión en realidad puede implicar el inicio de
- * una <em>secuencia de conversión</em>. Dicha secuencia puede implicar uno o más canales a convertir, y puede
- * generar eventos tanto cuando se termina la secuencia completa, o cuando se termina cada canal de la
- * secuencia. Asimismo los inicios de conversión pueden disparar una secuencia completa, o el próximo de los
- * canales de dicha secuencia. Se tienen dos secuencias configurables (<em>Secuencia A y Secuencia B</em>),
- * las cuales se pueden configurar de forma tal que una secuencia interrumpa a la otra.
- *
- * ## Inicio de conversiones
- *
- * El \e ADC de este microcontrolador permite el inicio de secuencia de conversión/canal de dos formas:
- * 		1. Iniciadas por software: Las secuencias de conversión son iniciadas mediante código.
- * 		2. Iniciadas por hardware: Las secuencias de conversión son iniciadas dependiendo de otras señales,
- * 		sean las mismas internas o externas al microcontrolador.
- * 		.
- *
- * ## Calibración de hardware
- *
- * Este periférico contiene un bloque de autocalibración, el cual debe ser utilizado luego de cada reinicio
- * del microcontrolador o cada vez que se sale de modo de bajo consumo, para obtener la resolución y presición
- * especificada por el fabricante.
- *
- * La librería implementa la calibración por hardware en la función @ref hal_adc_init
- *
- * ## Velocidad de conversión
- *
- * Cada conversión realizada toma un tiempo que dependerá del clock configurado en el periférico. Podemos
- * obtener este tiempo de conversión mediante la ecuación: \f$ t_{conv_{ADC}} = \frac{1}{25 * f_{ADC}} \f$
- *
- * El multiplicador \f$ 25 \f$ en el denominador, es debido a la naturaleza del periférico de <e>aproximaciones
- * sucesivas</e>. Esto implica que desde que se genera un inicio de conversión hasta que la misma finaliza,
- * deben transcurrir \f$ 25 \f$ ciclos de clock del \e ADC.
- *
- * Ejemplo: Configurando el \e ADC con una \f$f_{ADC} = 25MHz\f$ obtenemos el tiempo tomado por cada
- * conversión:
- *
- * \f{eqnarray*}{
- *     t_{conv_{ADC}} = \frac{1}{25 * 1MHz} \\
- *     t_{conv_{ADC}} = 1 \mu s
- * \f}
- *
- * Esto implica que entre un inicio de conversión y la finalización de la misma, pasará \f$1 \mu s\f$. Nótese que
- * este tiempo corresponde a una conversión para un único canal. En caso de estar convirtiendo varios canales, se
- * deberá multiplicar \f$ t_{conv_{ADC}} \f$ por la cantidad de canales activos en la secuencia de conversión, para
- * obtener el tiempo total desde un inicio de secuencia de conversión y la finalización de todos los canales.
- *
- * @see Ejemplo_ADC.c
- *
- * @{
  */
 
 #ifndef HAL_ADC_H_
@@ -200,6 +239,9 @@ typedef enum
 	HAL_ADC_SEQUENCE_RESULT_INVALID /**< Resultado inválido */
 }hal_adc_sequence_result_en;
 
+/** Tipo de dato para callback de interrupcion de sequencia */
+typedef void (*adc_sequence_interrupt_t)(void);
+
 /** Configuración de secuencia de \e ADC */
 typedef struct
 {
@@ -208,7 +250,7 @@ typedef struct
 	hal_adc_trigger_pol_sel_en trigger_pol; /**< Configuración de flanco del trigger para la secuencia */
 	hal_adc_sync_sel_en sync_bypass; /**< Configuración de sincronismo de la secuencia */
 	hal_adc_interrupt_mode_en mode;/**< Configuración de modo de interrupcion */
-	uint8_t burst; /** Configuración de modo BURST. En caso de ser 0 esta inhabilitado, cualquier otro
+	uint8_t burst; /**< Configuración de modo BURST. En caso de ser 0 esta inhabilitado, cualquier otro
 						valor lo habilita */
 	uint8_t single_step; /**< Configuración de funcionamiento del trigger. En caso de ser 0, un trigger
 							  dispara la conversión de toda la secuencia configurada, en caso de ser
@@ -218,9 +260,9 @@ typedef struct
 	 	 	 	 	 	 	   \e A. En caso de ser 0, la secuencia \e A tiene prioridad por sobre el \e B,
 	 	 	 	 	 	 	   cualquier otro valor, implica que la secuencia B tiene prioridad por sobre
 	 	 	 	 	 	 	   la \e A */
-	void (*callback)(void); /**< Callback a ejecutar en interrupción de secuencia. La misma se generará
-	 	 	 	 	 	 	 	 al final de la conversión de cada canal, o de toda la secuencia,
-	 	 	 	 	 	 	 	 dependiendo de la configuración global del \e ADC */
+	adc_sequence_interrupt_t callback; /**< Callback a ejecutar en interrupción de secuencia. La misma se generará
+											al final de la conversión de cada canal, o de toda la secuencia,
+											dependiendo de la configuración global del \e ADC */
 }hal_adc_sequence_config_t;
 
 /** Dato que representa el resultado de una conversión (sea de secuencia completa o de canal) */
@@ -251,7 +293,6 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
  * @see hal_adc_clock_source_en
- * @see hal_adc_operation_mode_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
  * @param[in] low_power Selección de modo de bajo consumo
@@ -287,7 +328,7 @@ void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence);
  * @see hal_adc_sequence_sel_en
  * @param[in] sequence Secuencia a deshabilitar
  */
-void hal_adc_sequence_disable(hal_adc_sequence_sel_en sequence);
+void hal_adc_disable_sequence(hal_adc_sequence_sel_en sequence);
 
 /**
  * @brief Disparar conversiones en una secuencia

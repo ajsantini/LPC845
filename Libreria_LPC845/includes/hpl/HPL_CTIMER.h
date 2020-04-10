@@ -543,10 +543,10 @@ static inline uint8_t CTIMER_read_match_output(CTIMER_match_sel_en match)
 {
 	switch(match)
 	{
-	case CTIMER_MATCH_SEL_0: { CTIMER->EMR.EM0; break; }
-	case CTIMER_MATCH_SEL_1: { CTIMER->EMR.EM1; break; }
-	case CTIMER_MATCH_SEL_2: { CTIMER->EMR.EM2; break; }
-	case CTIMER_MATCH_SEL_3: { CTIMER->EMR.EM3; break; }
+	case CTIMER_MATCH_SEL_0: { return CTIMER->EMR.EM0; break; }
+	case CTIMER_MATCH_SEL_1: { return CTIMER->EMR.EM1; break; }
+	case CTIMER_MATCH_SEL_2: { return CTIMER->EMR.EM2; break; }
+	case CTIMER_MATCH_SEL_3: { return CTIMER->EMR.EM3; break; }
 	}
 
 	return 0;

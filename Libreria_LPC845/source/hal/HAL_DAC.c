@@ -10,6 +10,7 @@
 #include <HPL_DAC.h>
 #include <HPL_SYSCON.h>
 #include <HPL_SWM.h>
+#include <HPL_IOCON.h>
 
 /**
  * @brief Inicializacion del DAC
@@ -19,18 +20,24 @@
  */
 void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32_t initial_value)
 {
+	SWM_init();
+	IOCON_init();
 	if(dac == HAL_DAC_0)
 	{
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_DAC0);
 		SYSCON_power_up_peripheral(SYSCON_POWER_SEL_DAC0);
 		SWM_enable_DAC(dac, SWM_ENABLE);
+		IOCON_enable_dac0();
 	}
 	else
 	{
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_DAC1);
 		SYSCON_power_up_peripheral(SYSCON_POWER_SEL_DAC1);
 		SWM_enable_DAC(dac, SWM_ENABLE);
+		IOCON_enable_dac1();
 	}
+	IOCON_deinit();
+	SWM_deinit();
 
 	DAC_config_settling_time(dac, settling_time);
 	DAC_write(dac, initial_value);
