@@ -13,9 +13,9 @@
 #include <HPL_IOCON.h>
 
 /**
- * @brief Inicializacion del DAC
+ * @brief Inicialización del DAC
  * @param[in] dac Cual de los dos DACs inicializar
- * @param[in] settling_time Velocidad de conversion del DAC
+ * @param[in] settling_time Velocidad de conversión del DAC
  * @param[in] initial_value Valor inicial del DAC
  */
 void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32_t initial_value)
@@ -44,7 +44,7 @@ void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32
 }
 
 /**
- * @brief Actualizacion del valor actual del DAC
+ * @brief Actualización del valor actual del DAC
  * @param[in] dac En que DAC actualizar el valor
  * @param[in] new_value Nuevo valor a poner en el DAC
  */
@@ -54,9 +54,9 @@ void hal_dac_update_value(hal_dac_en dac, uint16_t new_value)
 }
 
 /**
- * @brief Configuracion del registro de control del DAC
+ * @brief Configuración del registro de control del DAC
  * @param[in] dac Que DAC configurar
- * @param[in] config Configuracion deseada
+ * @param[in] config Configuración deseada
  */
 void hal_dac_config_ctrl(hal_dac_en dac, hal_dac_ctrl_config_t * config)
 {

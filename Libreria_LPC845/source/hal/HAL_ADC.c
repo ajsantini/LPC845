@@ -171,15 +171,18 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 	ADC_sequence_config_channels(sequence, config->channels);
 
 	SWM_init();
+	IOCON_init();
 
 	for(counter = 0; counter < ADC_CHANNEL_AMOUNT; counter++)
 	{
 		if(config->channels & (1 << counter))
 		{
+			IOCON_disable_pullup_adc(counter);
 			SWM_enable_ADC(counter, SWM_ENABLE);
 		}
 	}
 
+	IOCON_deinit();
 	SWM_deinit();
 
 	ADC_sequence_config_trigger(sequence, config->trigger);

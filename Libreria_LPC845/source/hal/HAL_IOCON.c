@@ -20,14 +20,9 @@ void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *
 	uint8_t port = HAL_GPIO_PORTPIN_TO_PORT(portpin);
 	uint8_t pin = HAL_GPIO_PORTPIN_TO_PIN(portpin);
 
-	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_IOCON);
+	IOCON_init();
 
-	if(portpin == HAL_GPIO_PORTPIN_0_17)
-	{
-		// Este pin tiene configuracion DAC
-		IOCON->PIO0_17.DACMODE = config->dac_mode;
-	}
-	else if(portpin == HAL_GPIO_PORTPIN_0_11)
+	if(portpin == HAL_GPIO_PORTPIN_0_11)
 	{
 		// Este pin tiene I2C
 		IOCON->PIO0_11.I2CMODE = config->iic_mode;
@@ -49,5 +44,5 @@ void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *
 	IOCON_PIN_TABLE[port][pin]->S_MODE = config->sample_mode;
 	IOCON_PIN_TABLE[port][pin]->CLK_DIV = config->clk_sel;
 
-	SYSCON_disable_clock(SYSCON_ENABLE_CLOCK_SEL_IOCON);
+	IOCON_deinit();
 }

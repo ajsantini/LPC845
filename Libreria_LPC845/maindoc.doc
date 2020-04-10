@@ -13,9 +13,10 @@
  * 
  * @section estructura_libreria Estructura de la librería
  * 
- * La librería se divide en tres capas para aportar la mayor flexibilidad posible como fue explicado en la sección
- * \ref intro.
- * Estas tres capas están explicados a continuación.
+ * La librería se divide en tres capas de abstracción para aportar la mayor flexibilidad posible como fue explicado 
+ * en la sección \ref intro. Es recomendable que el usuario utilice la misma capa de abstracción para la utilización 
+ * de la librería. En caso de no ser posible, es recomendable que al menos para cada periférico se utilice una 
+ * única capa de abstracción. Estas tres capas están explicados a continuación.
  * 
  * @subsection capa_aplicacion Capa de aplicación de hardware (HAL)
  * 
@@ -39,7 +40,7 @@
  * @section acerca_del_stick Acerca del stick de desarrollo LPC845_BRK
  * 
  * @image html LPC845_BRK_PINOUT.png "Pinout del LPC845_BRK"
- * @image latex LPC845_BRK_PINOUT.png "Pinout del LPC845_BRK"
+ * @image latex LPC845_BRK_PINOUT.png "Pinout del LPC845_BRK" width=0.8\textwidth
  * 
  * El stick de desarrollo utilizado a lo largo del desarrollo de esta librería, también utilizado para la 
  * demostración de todos los ejemplos adjuntos, es el indicado en la imágen superior. El mismo viene dotado 

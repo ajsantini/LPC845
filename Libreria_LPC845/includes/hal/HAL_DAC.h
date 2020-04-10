@@ -73,45 +73,51 @@
 
 #include <stdint.h>
 
+/** Enumeraciones de instancias disponibles de \e DAC */
 typedef enum
 {
-	HAL_DAC_0 = 0,
-	HAL_DAC_1
+	HAL_DAC_0 = 0, /**< Instancia 0 */
+	HAL_DAC_1 /**< Instancia 1 */
 }hal_dac_en;
 
+/** Tiempos de establecimiento disponibles para el \e DAC */
 typedef enum
 {
-	HAL_DAC_SETTLING_TIME_1US_MAX = 0,
-	HAL_DAC_SETTLING_TIME_2_5US_MAX
+	HAL_DAC_SETTLING_TIME_1US_MAX = 0, /**< Tiempo de establecimiento de 1 microsegundo máximo */
+	HAL_DAC_SETTLING_TIME_2_5US_MAX /**< Tiempo de establecimiento de 2.5 microsegundos máximo */
 }hal_dac_settling_time_en;
 
+/** Estructura de configuración del \e DAC */
 typedef struct
 {
-	uint8_t count_enable : 1;
-	uint8_t double_buffering : 1;
-	uint8_t dma_enable : 1;
-	uint8_t dma_request : 1;
+	uint8_t count_enable : 1; /**< Habilitación del contador (para modo DMA) */
+	uint8_t double_buffering : 1; /**< Doble buffer (para modo DMA) */
+	uint8_t dma_enable : 1; /**< Habilitacion de funcionamiento con el DMA */
+	uint8_t dma_request : 1; /**< Pedido de DMA */
 }hal_dac_ctrl_config_t;
 
 /**
- * @brief Inicializacion del DAC
+ * @brief Inicialización del DAC
+ *
+ * Esta función inicializa el @ref IOCON de la forma necesaria para que el pin quede configurado correctamente.
+ *
  * @param[in] dac Cual de los dos DACs inicializar
- * @param[in] settling_time Velocidad de conversion del DAC
+ * @param[in] settling_time Velocidad de conversión del DAC
  * @param[in] initial_value Valor inicial del DAC
  */
 void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32_t initial_value);
 
 /**
- * @brief Actualizacion del valor actual del DAC
+ * @brief Actualización del valor actual del DAC
  * @param[in] dac En que DAC actualizar el valor
  * @param[in] new_value Nuevo valor a poner en el DAC
  */
 void hal_dac_update_value(hal_dac_en dac, uint16_t new_value);
 
 /**
- * @brief Configuracion del registro de control del DAC
+ * @brief Configuración del registro de control del DAC
  * @param[in] dac Que DAC configurar
- * @param[in] config Configuracion deseada
+ * @param[in] config Configuración deseada
  */
 void hal_dac_config_ctrl(hal_dac_en dac, hal_dac_ctrl_config_t * config);
 

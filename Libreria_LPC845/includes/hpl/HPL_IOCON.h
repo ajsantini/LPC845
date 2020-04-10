@@ -163,10 +163,34 @@ static inline void IOCON_config_clock_source(uint8_t port, uint8_t pin, IOCON_cl
 }
 
 /**
+ * @brief Inhabilitar pull-up/pull-down en entrada analógica
+ * @param[in] channel Canal de \e ADC
+ */
+static inline void IOCON_disable_pullup_adc(uint8_t channel)
+{
+	switch(channel)
+	{
+	case 0: { IOCON_PIN_TABLE[0][7]->MODE = IOCON_PULL_NONE; break; }
+	case 1: { IOCON_PIN_TABLE[0][6]->MODE = IOCON_PULL_NONE; break; }
+	case 2: { IOCON_PIN_TABLE[0][14]->MODE = IOCON_PULL_NONE; break; }
+	case 3: { IOCON_PIN_TABLE[0][23]->MODE = IOCON_PULL_NONE; break; }
+	case 4: { IOCON_PIN_TABLE[0][22]->MODE = IOCON_PULL_NONE; break; }
+	case 5: { IOCON_PIN_TABLE[0][21]->MODE = IOCON_PULL_NONE; break; }
+	case 6: { IOCON_PIN_TABLE[0][20]->MODE = IOCON_PULL_NONE; break; }
+	case 7: { IOCON_PIN_TABLE[0][19]->MODE = IOCON_PULL_NONE; break; }
+	case 8: { IOCON_PIN_TABLE[0][18]->MODE = IOCON_PULL_NONE; break; }
+	case 9: { IOCON_PIN_TABLE[0][17]->MODE = IOCON_PULL_NONE; break; }
+	case 10: { IOCON_PIN_TABLE[0][13]->MODE = IOCON_PULL_NONE; break; }
+	case 11: { IOCON_PIN_TABLE[0][4]->MODE = IOCON_PULL_NONE; break; }
+	}
+}
+
+/**
  * @brief Habilitar DAC0 en PIO0_17
  */
 static inline void IOCON_enable_dac0(void)
 {
+	IOCON_PIN_TABLE[0][17]->MODE = IOCON_PULL_NONE;
 	IOCON_PIN_TABLE[0][17]->DACMODE = 1;
 }
 
@@ -175,6 +199,7 @@ static inline void IOCON_enable_dac0(void)
  */
 static inline void IOCON_enable_dac1(void)
 {
+	IOCON_PIN_TABLE[0][29]->MODE = IOCON_PULL_NONE;
 	IOCON_PIN_TABLE[0][29]->DACMODE = 1;
 }
 
