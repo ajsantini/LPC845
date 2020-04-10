@@ -14,16 +14,21 @@
 #include <HPL_SWM.h>
 #include <HPL_NVIC.h>
 
-#define	ADC_MAX_FREQ_SYNC		((uint32_t) 1.2e6) //<! Maxima frecuencia de conversion admitida por el ADC (modo sincronico)
-#define	ADC_MAX_FREQ_ASYNC		((uint32_t) 0.6e6) //<! Maxima frecuencia de conversion admitida por el ADC (modo asincronico)
+/** Máxima frecuencia de conversión admitida por el ADC (modo sincrónico) */
+#define	ADC_MAX_FREQ_SYNC		((uint32_t) 1.2e6)
 
+/** Máxima frecuencia de conversión admitida por el ADC (modo asincrónico) */
+#define	ADC_MAX_FREQ_ASYNC		((uint32_t) 0.6e6)
+
+/** Cantidad de ciclos de clock necesarios por el \e ADC para generar una conversión */
 #define	ADC_CYCLE_DELAY			(25)
 
+/** Cantidad de canales disponibles en el \e ADC */
 #define	ADC_CHANNEL_AMOUNT		(12)
 
 static void dummy_irq_callback(void);
 
-/** Callback cuando terminan las secuencias de conversion */
+/** Callback cuando terminan las secuencias de conversión */
 static void (*adc_seq_completed_callback[2])(void) =
 {
 	dummy_irq_callback,
@@ -58,6 +63,7 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
 	SYSCON_clear_reset(SYSCON_RESET_SEL_ADC);
 
 	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
+
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
 	ADC_hardware_calib(hal_syscon_get_fro_clock() / 500e3);
@@ -69,8 +75,10 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
 
 	sample_freq *= ADC_CYCLE_DELAY;
 
-	// El calculo de la frecuencia de sampleo se hace con una frecuencia
-	// que depende de la seleccion de clock en el SYSCON
+	/*
+	 * El cálculo de la frecuencia de muestreo se hace con una frecuencia
+	 * que depende de la selección de clock en el SYSCON
+	 */
 	if(clock_source == HAL_ADC_CLOCK_SOURCE_FRO)
 	{
 		aux = hal_syscon_get_fro_clock() / sample_freq;
@@ -91,7 +99,6 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
  * @see hal_adc_clock_source_en
- * @see hal_adc_operation_mode_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
  * @param[in] low_power Selección de modo de bajo consumo
@@ -111,8 +118,7 @@ void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_
 
 	ADC_hardware_calib(hal_syscon_get_fro_clock() / 500e3);
 
-	// El calculo de la frecuencia de sampleo se hace con la frecuencia
-	// del main clock
+	// El cálculo de la frecuencia de muestreo se hace con la frecuencia del main clock
 
 	if(sample_freq > ADC_MAX_FREQ_SYNC)
 	{
@@ -336,7 +342,7 @@ static void dummy_irq_callback(void)
 }
 
 /**
- * @brief Funcion de interrupcion cuando termina la secuencia de conversion A del ADC
+ * @brief Función de interrupción cuando termina la secuencia de conversión A del \e ADC
  */
 void ADC_SEQA_IRQHandler(void)
 {
@@ -349,7 +355,7 @@ void ADC_SEQA_IRQHandler(void)
 }
 
 /**
- * @brief Funcion de interrupcion cuando termina la secuencia de conversion B del ADC
+ * @brief Función de interrupción cuando termina la secuencia de conversión B del \e ADC
  */
 void ADC_SEQB_IRQHandler(void)
 {
@@ -362,17 +368,19 @@ void ADC_SEQB_IRQHandler(void)
 }
 
 /**
- * @brief Funcion de interrupcion cuando se detecta alguna de las condiciones de threshold establecidas
+ * @brief Función de interrupción cuando se detecta alguna de las condiciones de threshold establecidas
  */
 void ADC_THCMP_IRQHandler(void)
 {
+	#warning Habria que ver que flags y como limpiarlos si es que hace falta
 	adc_compare_callback();
 }
 
 /**
- * @brief Funcion de interrupcion cuando se detecta alguna de las condiciones de overrun
+ * @brief Función de interrupción cuando se detecta alguna de las condiciones de overrun
  */
 void ADC_OVR_IRQHandler(void)
 {
+	#warning Habria que ver que flags y como limpiarlos si es que hace falta
 	adc_overrun_callback();
 }

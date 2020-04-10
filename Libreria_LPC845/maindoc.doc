@@ -34,6 +34,10 @@
  * 
  * En esta capa están definidas todas las estructuras y direcciones necesarias para acceder a los distintos 
  * registros del microcontrolador en forma "directa". En caso de necesitar configuraciones o accesos no explicitados
- * en la <em>Capa de abstracción de hardware</em> se deberá utilizar esta capa. 
+ * en la <em>Capa de abstracción de hardware</em> se deberá utilizar esta capa.
+ * 
+ * @section Utilización de la librería en proyectos MCUXpresso
+ * 
+ * 
  * 
  */

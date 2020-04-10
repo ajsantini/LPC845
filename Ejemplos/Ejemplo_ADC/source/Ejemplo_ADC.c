@@ -41,33 +41,34 @@
 #include <HAL_ADC.h>
 #include <HAL_SYSTICK.h>
 
-/* Máscara de configuración de canales habilitados para la secuencia a configurar */
+/** Máscara de configuración de canales habilitados para la secuencia a configurar */
 #define		ADC_CHANNELS				((1 << 0) | (1 << 8))
 
-/* Macro para definir el tiempo de interrupción del \e Systick en \b microsegundos */
+/** Tiempo de interrupción del \e Systick en \b microsegundos */
 #define		TICK_TIME_USEG				(1000)
 
-/* Frecuencia de muestreo a utilizar por el ADC */
+/** Frecuencia de muestreo a utilizar por el ADC */
 #define		ADC_SAMPLE_FREQ				(1000000)
 
 /** Secuencia a utilizar en el ADC */
 #define		ADC_SEQUENCE				(HAL_ADC_SEQUENCE_SEL_A)
 
-/* Tiempo de disparo de conversiones de \e ADC en \b milisegundos */
+/** Tiempo de disparo de conversiones de \e ADC en \b milisegundos */
 #define		ADC_CONVERSION_TIME_MSEG	(1000)
 
 static void adc_callback(void);
 
 static void systick_callback(void);
 
-static uint8_t flag_secuencia_adc_completada = 0; /* Flag para indicar finalización de secuencia de conversión de \e ADC */
+/** Flag para indicar finalización de secuencia de conversión de \e ADC */
+static uint8_t flag_secuencia_adc_completada = 0;
 
-/*
+/**
  * Variables para guardar los resultados de la secuencia de conversión
  */
 static hal_adc_sequence_result_t resultados_conversion_adc[2];
 
-/* Configuración de la secuencia. Como no va a cambiar es declarada \e const */
+/** Configuración de la secuencia. Como no va a cambiar es declarada \e const */
 static const hal_adc_sequence_config_t adc_config =
 {
 	.channels = ADC_CHANNELS,
@@ -81,7 +82,7 @@ static const hal_adc_sequence_config_t adc_config =
 	.callback = adc_callback
 };
 
-/*
+/**
  * @brief Punto de entrada del programa
  * @return Nunca deberia terminar esta función
  */
@@ -92,6 +93,9 @@ int main(void)
 
 	// Configuración de la secuencia a utilizar
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
+
+	// Habilitación de la secuencia a utilizar
+	hal_adc_enable_sequence(ADC_SEQUENCE);
 
 	// Inicialización del \e Systick con el tiempo de tick adecuado
 	hal_systick_init(TICK_TIME_USEG, systick_callback);
@@ -111,7 +115,7 @@ int main(void)
     return 0;
 }
 
-/*
+/**
  * @brief Callback a ejecutar en cada tick del \e Systick
  */
 static void systick_callback(void)
@@ -127,7 +131,7 @@ static void systick_callback(void)
 	}
 }
 
-/*
+/**
  * @brief Callback a ejecutar en cada finalización de conversión de \b secuencia de \e ADC
  */
 static void adc_callback(void)
