@@ -75,6 +75,9 @@
  * - LED RGB - Rojo: Puerto 1, Pin 2
  * - LED RGB - Azul: Puerto 1, Pin 1
  * - Pulsador de usuario: Puerto 0, Pin 4
+ * .
+ *
+ * 	Ver @ref acerca_del_stick para más información.
  *
  * Se configura el \e Systick para generar ticks cada \f$1 mseg\f$. El mismo se utiliza para generar un
  * titileo en el LED RGB \e rojo siempre y cuando el pulsador de usuario no esté presionado. Mientras el
@@ -267,7 +270,7 @@ void hal_gpio_masked_toggle_port(hal_gpio_port_en port, uint32_t bits_to_toggle)
  */
 uint8_t hal_gpio_read_pin(hal_gpio_portpin_en portpin);
 
-/*
+/**
  * @brief Leer estado de un puerto (sin importar máscara)
  * @param[in] port Puerto a consultar
  * @return Estado del puerto sin enmascarar

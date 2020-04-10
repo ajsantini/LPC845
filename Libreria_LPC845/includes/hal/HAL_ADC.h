@@ -1,6 +1,6 @@
 /**
  * @file HAL_ADC.h
- * @brief Declaraciones a nivel de aplicacion del periferico ADC (LPC845)
+ * @brief Declaraciones a nivel de aplicación del periférico ADC (LPC845)
  * @author Augusto Santini
  * @date 3/2020
  * @version 1.0
@@ -136,6 +136,8 @@
  * 	- El canal 8 está ubicado en el pin número 3 (Puerto 0 pin 18) y se le puede conectar un preset externo entre
  * 	 VDD y GND.
  * 	.
+ *
+ * 	Ver @ref acerca_del_stick para más información.
  *
  * Además, la secuencia tendrá la siguiente configuración:
  * 	- Trigger: Únicamente se disparan conversiones por software

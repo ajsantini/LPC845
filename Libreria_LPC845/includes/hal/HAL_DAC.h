@@ -48,7 +48,7 @@
  * @example Ejemplo_DAC.c
  *
  * El programa utiliza el \e DAC para generar una señal tipo rampa en la salida del canal 0 (Puerto 0 Pin 17) el
- * cual está mapeado al pin número 2 del stick de desarrollo.
+ * cual está mapeado al pin número 2 del stick de desarrollo. Ver @ref acerca_del_stick para más información.
  *
  * Para poder tener una visualización del programa de ejemplo, sera necesario un osciloscopio para mayor presición,
  * aunque también se puede utilizar un LED con un resistor en serie.

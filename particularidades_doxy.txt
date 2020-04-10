@@ -34,3 +34,15 @@ typedef struct
 }mi_tipo_t;
 
 ------------------------------------------------------------------------
+
+Particularidad 2: Error del tipo
+"error ! Argument of \language@active@arg> has an extra }." al generar 
+el latex en spanish
+
+Si aparece este error al intentar generar el pdf con el LaTeX generado
+por doxygen, se soluciona cambiando el paquete {babel} en refman.tex
+
+Fix, esta linea: \usepackage[spanish]{babel}
+Cambiarla a: \usepackage[spanish,es-noshorthands]{babel}
+
+------------------------------------------------------------------------

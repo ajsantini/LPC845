@@ -929,7 +929,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             =
+IMAGE_PATH             = "../Imagenes/"
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -1724,7 +1724,7 @@ PAPER_TYPE             = a4
 # If left blank no extra packages will be included.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-EXTRA_PACKAGES         =
+EXTRA_PACKAGES         = 
 
 # The LATEX_HEADER tag can be used to specify a personal LaTeX header for the
 # generated LaTeX document. The header should contain everything until the first
@@ -1803,7 +1803,7 @@ LATEX_BATCHMODE        = NO
 # The default value is: NO.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-LATEX_HIDE_INDICES     = NO
+LATEX_HIDE_INDICES     = YES
 
 # If the LATEX_SOURCE_CODE tag is set to YES then doxygen will include source
 # code with syntax highlighting in the LaTeX output.
@@ -1813,7 +1813,7 @@ LATEX_HIDE_INDICES     = NO
 # The default value is: NO.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-LATEX_SOURCE_CODE      = NO
+LATEX_SOURCE_CODE      = YES
 
 # The LATEX_BIB_STYLE tag can be used to specify the style to use for the
 # bibliography, e.g. plainnat, or ieeetr. See
@@ -1829,7 +1829,7 @@ LATEX_BIB_STYLE        = plain
 # The default value is: NO.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
-LATEX_TIMESTAMP        = NO
+LATEX_TIMESTAMP        = YES
 
 #---------------------------------------------------------------------------
 # Configuration options related to the RTF output

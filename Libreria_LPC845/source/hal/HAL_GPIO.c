@@ -166,7 +166,7 @@ uint8_t hal_gpio_read_pin(hal_gpio_portpin_en portpin)
 	return GPIO_read_port_byte(portpin);
 }
 
-/*
+/**
  * @brief Leer estado de un puerto (sin importar máscara)
  * @param[in] port Puerto a consultar
  * @return Estado del puerto sin enmascarar
