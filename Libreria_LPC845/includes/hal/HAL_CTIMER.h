@@ -1,7 +1,7 @@
 /**
  * @file HAL_CTIMER.h
  * @brief Declaraciones a nivel de aplicacion del periferico CTIMER (LPC845)
- * @author Augusto Santini
+ * @author Augusto Santini, Esteban E. Chiama
  * @date 3/2020
  * @version 1.0
  */
@@ -94,6 +94,37 @@ void hal_ctimer_timer_mode_stop(void);
  * @brief Reiniciar el conteo del ctimer
  */
 void hal_ctimer_timer_mode_reset(void);
+
+/**
+ * @brief Cambia el valor de MATCH del CTIMER seleccionado.
+ *
+ * Si el CTIMER está configurado para realizar 'reload on match', se escribe el nuevo valor de match
+ * en el Shador Register correspondiente.
+ * Caso contrario, la actualización del valor de match es inmediata.
+ *
+ * @param[in] match_sel Match a configurar
+ * @param[in] match_value_useg Nuevo valor de match, en useg, deseado. *
+ */
+void hal_ctimer_timer_mode_change_match_value(hal_ctimer_match_sel_en match, uint32_t match_value_useg);
+
+/**
+ * @brief Leer estado de match externo
+ * @param[in] match Numero de match externo a consultar
+ * @return Estado del match actual
+ */
+uint8_t hal_ctimer_read_match_output(hal_ctimer_match_sel_en match);
+
+/**
+ * @brief Pone la señal de salida EM# (External Match #) en 1.
+ * @param[in] match Numero de match externo a configurar
+ */
+void hal_ctimer_set_match_output(hal_ctimer_match_sel_en match);
+
+/**
+ * @brief Pone la señal de salida EM# (External Match #) en 0.
+ * @param[in] match Numero de match externo a configurar
+ */
+void hal_ctimer_clear_match_output(hal_ctimer_match_sel_en match);
 
 /**
  * @brief Inicializar el CTIMER en modo PWM

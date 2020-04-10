@@ -245,6 +245,17 @@ void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence)
 }
 
 /**
+ * @brief Deshabilitar una secuencia
+ * @see hal_adc_sequence_sel_en
+ * @param[in] sequence Secuencia a deshabilitar
+ */
+void hal_adc_sequence_disable(hal_adc_sequence_sel_en sequence)
+{
+	ADC_sequence_disable(sequence);
+}
+
+
+/**
  * @brief Disparar conversiones en una secuencia
  *
  * La configuración de la secuencia, en particular el parametro \b single_step, influye
