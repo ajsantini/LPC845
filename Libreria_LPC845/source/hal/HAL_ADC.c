@@ -402,7 +402,7 @@ void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel
 {
 	ADC_set_channel_threshold(adc_channel, threshold);
 
-	if(irq_mode == HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED)
+	if(irq_mode == HAL_ADC_THRESHOLD_IRQ_SEL_DISABLED)
 	{
 		ADC_disable_threshold_interrupt(adc_channel);
 	}
