@@ -26,6 +26,8 @@
  * 		DAC_{conv} = DAC_{res} * DAC_{val}
  * \f}
  *
+ * Para actualizar el valor de salida del \e DAC se utiliza la función @ref hal_dac_update_value.
+ *
  * # Velocidad de conversión
  *
  * El periférico permite dos velocidades de conversión:
@@ -33,7 +35,8 @@
  * 		- Frecuencia de conversión de \f$400KHz\f$ : Implica un menor consumo de energía
  * 		.
  *
- * Existe una relación entre velocidad de conversión y consumo de energía del periférico.
+ * Existe una relación entre velocidad de conversión y consumo de energía del periférico. La velocidad de
+ * conversión del periférico, se configura en la función @ref hal_dac_init.
  *
  * # Campos de aplicación típicos
  *

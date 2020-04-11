@@ -36,7 +36,8 @@
  * secuencia. Asimismo los inicios de conversión pueden disparar una secuencia completa, o el próximo de los
  * canales habilitados en dicha secuencia. Se tienen dos secuencias configurables (<em>Secuencia A y
  * Secuencia B</em>), las cuales se pueden configurar de forma tal que un disparo de <em>Secuencia B</em>
- * interrumpa a una conversión actual de la <em>Secuencia A</em>.
+ * interrumpa a una conversión actual de la <em>Secuencia A</em>. Las secuencias de conversión son
+ * configuradas mediante la función @ref hal_adc_sequence_config.
  *
  * # Inicio de conversiones
  *
@@ -48,17 +49,19 @@
  * 		sean las mismas internas o externas al microcontrolador.
  * 		.
  *
+ * En caso de disparar conversiones por software, se utiliza la función @ref hal_adc_sequence_start para dicho
+ * propósito. En caso de que las conversiones sean iniciadas por hardware, no se debe llamar a ninguna función,
+ * y la secuencia de conversión se disprará cuando suceda el evento configurado en la secuencia.
+ *
  * # Calibración de hardware
  *
  * Este periférico contiene un bloque de autocalibración, el cual debe ser utilizado luego de cada reinicio
  * del microcontrolador o cada vez que se sale de modo de bajo consumo, para obtener la resolución y presición
- * especificada por el fabricante.
+ * especificada por el fabricante. La librería implementa la calibración por hardware en las funciones
+ * @ref hal_adc_init_sync_mode y @ref hal_adc_init_async_mode.
  *
  * <b>NOTA</b>: La autocalibración debe realizarse cuando el \b microcontrolador sale de un modo de funcionamiento
  * de bajo consumo, no cuando el periférico \e ADC sale de modo bajo consumo.
- *
- * La librería implementa la calibración por hardware en la función @ref hal_adc_init_sync_mode y
- * @ref hal_adc_init_async_mode.
  *
  * # Modo sicnrónico/asincrónico
  *
@@ -67,6 +70,10 @@
  * 		naturaleza distinta al clock del sistema que alimenta a la lógica del periférico.
  * 		- Modo sincrónico: El clock que alimenta tanto a la lógica de muestreo del periférico como la lógica del
  * 		periférico, estan en sincronismo.
+ * 		.
+ *
+ * La configuración de esta característica se realiza en la función @ref hal_adc_init_sync_mode o
+ * @ref hal_adc_init_async_mode dependiendo de las necesidades del usuario.
  *
  * # Modo bajo consumo
  *
@@ -76,10 +83,17 @@
  * que se dispara una nueva conversión, dado que el periférico deberá salir del modo bajo consumo. Consultar el
  * manual de usuario del microcontrolador para más información.
  *
- * # Velocidad de conversión
+ * El parámetro de bajo consumo se configura en las funciones de inicialización @ref hal_adc_init_sync_mode o
+ * @ref hal_adc_init_async_mode.
+ *
+ * # Velocidad de conversión/Frecuencia de muestreo
  *
  * Cada conversión realizada toma un tiempo que dependerá del clock configurado en el periférico. Podemos
- * obtener este tiempo de conversión mediante la ecuación: \f$ t_{conv_{ADC}} = \frac{1}{f_{ADC} / 25} \f$
+ * obtener este tiempo de conversión mediante la ecuación:
+ * \f{eqnarray*}{
+ * 		t_{conv_{ADC}} = \frac{1}{f_{ADC} / 25} \\
+ * 		f_{muestreo_{ADC}} = \frac{1}{t_{conv_{ADC}}}
+ * \f}
  *
  * La división por \f$ 25 \f$ en el denominador, es debido a la naturaleza del periférico de <em>aproximaciones
  * sucesivas</em>. Esto implica que desde que se genera un inicio de conversión hasta que la misma finaliza,
@@ -90,7 +104,8 @@
  *
  * \f{eqnarray*}{
  *     t_{conv_{ADC}} = \frac{1}{25MHz / 25} \\
- *     t_{conv_{ADC}} = 1 \mu s
+ *     t_{conv_{ADC}} = 1 \mu s \\
+ *     f_{muestreo_{ADC}} = 1 MHz
  * \f}
  *
  * Esto implica que entre un inicio de conversión y la finalización de la misma, pasará \f$1 \mu s\f$. Nótese que
@@ -101,9 +116,12 @@
  *
  * El \e ADC no puede convertir a cualquier frecuencia de muestreo, existen frecuencias máximas dependiendo del
  * tipo de funcionamiento configurado para el periférico:
- * 		- Funcionamiento en modo <em>sincrónico</em>: Frecuencia de muestreo máxima de 1.2MHz
- * 		- Funcionamiento en modo <em>asincrónico</em>: Frecuencia de muestreo máxima de 0.6MHz
+ * 		- Funcionamiento en modo <em>sincrónico</em>: Frecuencia de muestreo máxima de \f$1.2MHz\f$
+ * 		- Funcionamiento en modo <em>asincrónico</em>: Frecuencia de muestreo máxima de \f$0.6MHz\f$
  * 		.
+ *
+ * La frecuencia de muestreo se configura en las funciones de inicialización @ref hal_adc_init_sync_mode o
+ * @ref hal_adc_init_async_mode.
  *
  * # Campos de aplicación típicos
  *
@@ -112,11 +130,11 @@
  * - Entradas de usuario de hardware (Preset, Potenciómetro)
  * - Sensores con salida analógica de variables físicas (Termómetro, Luxómetro)
  *
- * # Consideraciones a tener en cuenta en la utilización de la librería
+ * # Consideraciones acerca de los callbacks
  *
  * Los callbacks asociados en las configuraciones posibles son ejecutados en el contexto de una \b interrupción,
  * por lo que el usuario deberá tener las consideraciones adecuadas a la hora de lo que realiza el callback
- * asociado.
+ * asociado. Ver @ref adc_sequence_interrupt_t y @ref adc_comparison_interrupt_t.
  *
  * @{
  */
@@ -326,10 +344,20 @@ typedef enum
 	HAL_ADC_COMPARISON_CROSSING_UPWARD /**< El resultado de la conversión actual cruzó algún umbral hacia arriba */
 }hal_adc_compare_crossing_result_en;
 
-/** Tipo de dato para callback de interrupcion de sequencia */
+/**
+ * @brief Tipo de dato para callback de interrupcion de sequencia
+ *
+ * Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener todas las
+ * consideraciones necesarias al respecto.
+ */
 typedef void (*adc_sequence_interrupt_t)(void);
 
-/** Tipo de dato para callback de interrupcion de comparación */
+/**
+ * @brief Tipo de dato para callback de interrupcion de comparación
+ *
+ * Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener todas las
+ * consideraciones necesarias al respecto.
+ */
 typedef void (*adc_comparison_interrupt_t)(void);
 
 /** Configuración de secuencia de \e ADC */
@@ -419,7 +447,8 @@ void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_seq
  * @brief Disparar conversiones en una secuencia
  *
  * La configuración de la secuencia, en particular el parametro \b single_step, influye
- * en si esta funcion dispara una secuencia entera o un paso de la misma.
+ * en si esta funcion dispara una secuencia entera o un paso de la misma. Asimismo, si la secuencia fue
+ * configurada con el parámetro \b BURST activo, se debe llamar a esta función una única vez.
  *
  * @see hal_adc_sequence_sel_en
  * @param[in] sequence Secuencia a disparar

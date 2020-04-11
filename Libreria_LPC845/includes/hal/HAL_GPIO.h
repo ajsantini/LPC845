@@ -12,7 +12,7 @@
  * # Introducción
  *
  * El periférico \e GPIO es el encargado de controlar tanto las entradas como la salidas <b>digitales</b>. Esto
- * implica que las salidas solamente podrán tomar valores <em>cero</em> o <em>uno</em> y que las etnradas
+ * implica que las salidas solamente podrán tomar valores <em>cero</em> o <em>uno</em> y que las entradas
  * únicamente interpretarán valores <em>cero</em> o <em>uno</em>.
  *
  * Cada uno de los pines del microcontrolador están descriptos mediante un número de \e puerto y un número de
@@ -31,14 +31,17 @@
  * <em>señal digital externa</em>. Es importante que el usuario entienda que si la señal externa está en valores
  * que correspondan a la <em>zona prohibida</em> de los niveles de señal digital, la lectura del valor será
  * indefinida. En caso de necesitar leer valores <em>analógicos</em>, referirse al periférico @ref ADC en esta
- * misma documentación.
+ * misma documentación. Las entradas son configuradas como tales mediante la función @ref hal_gpio_set_dir y son
+ * consultadas/leídas mediante las funciones @ref hal_gpio_read_pin y @ref hal_gpio_read_port.
  *
  * # Funcionamiento de salidas
  *
  * Cuando pin en particular es configurado como <em>salida</em>, se podrán colocar en el mismo, <em>valores
  * digitales</em>. Es importante que el usuario entienda que no hay forma de colocar un valor \e analógico en
  * un pin mediante este periférico. Para dicha funcionalidad, referirse al periférico @ref DAC en esta misma
- * documentación.
+ * documentación. Las salidas son configuradas como tales mediante la función @ref hal_gpio_set_dir y son
+ * manipuladas individualmente mediante las funciones @ref hal_gpio_set_pin, @ref hal_gpio_clear_pin y
+ * @ref hal_gpio_toggle_pin.
  *
  * # Enmascaramiento de entradas/salidas
  *
@@ -48,6 +51,9 @@
  * 		del pin.
  * 		- Si el mismo estaba configurado como entrada: Siempre se lee dicho pin como cero.
  * 		.
+ *
+ * Las máscaras son configuradas mediante las funciones @ref hal_gpio_set_mask_bits, @ref hal_gpio_lear_mask_bits y
+ * @ref hal_gpio_toggle_mask_bits.
  *
  * # Lectura/Escritura de Puerto/Pin
  *
@@ -59,6 +65,9 @@
  * Es importante también destacar, que las lecturas/escrituras respetarán las máscaras explicadas anteriormente,
  * por lo cual es recomendable configurar dicha funcionalidad a la hora de leer/escribir múltiples pines, y
  * asimismo es recomendable "liberar" los enmascaramientos una vez trabajados los pines necesarios.
+ *
+ * Las funciones que involucran máscaras son @ref hal_gpio_masked_set_port, @ref hal_gpio_masked_clear_port,
+ * @ref hal_gpio_masked_toggle_port y @ref hal_gpio_masked_read_port.
  *
  * # Campos de aplicación típicos
  *
@@ -278,6 +287,15 @@ uint8_t hal_gpio_read_pin(hal_gpio_portpin_en portpin);
  * @see hal_gpio_port_en
  */
 uint32_t hal_gpio_read_port(hal_gpio_port_en port);
+
+/**
+ * @brief Leer estado de un puerto (teniendo en cuenta máscara)
+ * @param[in] port Puerto a consultar
+ * @return Estado del puerto contemplando la máscara asociada
+ *
+ * @see hal_gpio_port_en
+ */
+uint32_t hal_gpio_masked_read_port(hal_gpio_port_en port);
 
 /**
  * @brief Fijar enmascaramiento de pines en un puerto
