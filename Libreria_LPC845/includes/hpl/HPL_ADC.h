@@ -104,6 +104,41 @@ typedef struct
 	uint32_t DATAVALID : 1;
 }ADC_channel_data_t;
 
+typedef struct
+{
+	uint32_t THCMP0 : 1;
+	uint32_t THCMP1 : 1;
+	uint32_t THCMP2 : 1;
+	uint32_t THCMP3 : 1;
+	uint32_t THCMP4 : 1;
+	uint32_t THCMP5 : 1;
+	uint32_t THCMP6 : 1;
+	uint32_t THCMP7 : 1;
+	uint32_t THCMP8 : 1;
+	uint32_t THCMP9 : 1;
+	uint32_t THCMP10 : 1;
+	uint32_t THCMP11 : 1;
+	uint32_t OVERRUN0 : 1;
+	uint32_t OVERRUN1 : 1;
+	uint32_t OVERRUN2 : 1;
+	uint32_t OVERRUN3 : 1;
+	uint32_t OVERRUN4 : 1;
+	uint32_t OVERRUN5 : 1;
+	uint32_t OVERRUN6 : 1;
+	uint32_t OVERRUN7 : 1;
+	uint32_t OVERRUN8 : 1;
+	uint32_t OVERRUN9 : 1;
+	uint32_t OVERRUN10 : 1;
+	uint32_t OVERRUN11 : 1;
+	uint32_t SEQA_OVR : 1;
+	uint32_t SEQB_OVR : 1;
+	uint32_t : 2;
+	uint32_t SEQA_INT : 1;
+	uint32_t SEQB_INT : 1;
+	uint32_t THCMP_INT : 1;
+	uint32_t OVR_INT : 1;
+}ADC_interrupt_flags_t;
+
 typedef enum
 {
 	ADC_VRANGE_HIGH_VOLTAGE = 0,
@@ -464,6 +499,35 @@ static inline void ADC_hardware_calib(uint8_t div)
 	while(ADC->CTRL.CALMODE);
 
 	*((uint32_t *) &ADC->CTRL) = *((uint32_t *) &adc_ctrl_original);
+}
+
+/**
+ * @brief
+ *
+ * @return
+ */
+static inline ADC_interrupt_flags_t ADC_get_interrupt_flags(void)
+{
+	return  *((ADC_interrupt_flags_t *) &ADC->FLAGS);
+}
+
+/**
+ * @brief
+ */
+static inline void ADC_clear_threshold_flags(void)
+{
+	ADC->FLAGS.THCMP0 = 1;
+	ADC->FLAGS.THCMP1 = 1;
+	ADC->FLAGS.THCMP2 = 1;
+	ADC->FLAGS.THCMP3 = 1;
+	ADC->FLAGS.THCMP4 = 1;
+	ADC->FLAGS.THCMP5 = 1;
+	ADC->FLAGS.THCMP6 = 1;
+	ADC->FLAGS.THCMP7 = 1;
+	ADC->FLAGS.THCMP8 = 1;
+	ADC->FLAGS.THCMP9 = 1;
+	ADC->FLAGS.THCMP10 = 1;
+	ADC->FLAGS.THCMP11 = 1;
 }
 
 #endif /* HPL_ADC_H_ */

@@ -1,7 +1,8 @@
 /**
  * @file HPL_CTIMER.h
  * @brief Definiciones a nivel de abstraccion del periferico CTIMER (LPC845)
- * @author Augusto Santini, Esteban E. Chiama
+ * @author Augusto Santini
+ * @author Esteban E. Chiama
  * @date 3/2020
  * @version 1.0
  */

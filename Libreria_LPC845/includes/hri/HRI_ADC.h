@@ -143,6 +143,8 @@ typedef struct
 	uint32_t OVERRUN9 : 1;
 	uint32_t OVERRUN10 : 1;
 	uint32_t OVERRUN11 : 1;
+	uint32_t SEQA_OVR : 1;
+	uint32_t SEQB_OVR : 1;
 	uint32_t : 2;
 	uint32_t SEQA_INT : 1;
 	uint32_t SEQB_INT : 1;
