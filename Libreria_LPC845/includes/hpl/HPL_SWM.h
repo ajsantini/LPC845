@@ -11,6 +11,7 @@
 
 #include <HRI_SWM.h>
 #include <HPL_SYSCON.h>
+#include <HPL_GPIO.h>
 
 extern volatile SWM_per_t * const SWM; //!< Periferico SWM
 
@@ -387,12 +388,11 @@ static inline void SWM_assign_COMP0_OUT(uint8_t port, uint8_t pin)
 
 /**
  * @brief Asignar un pin del MCU a la funcion CLKOUT
- * @param[in] port Numero de puerto a asignar
- * @param[in] pin Numero de pin a asignar
+ * @param[in] portpin Numero de puerto/pin a asignar
  */
-static inline void SWM_assign_CLKOUT(uint8_t port, uint8_t pin)
+static inline void SWM_assign_CLKOUT(GPIO_portpin_en portpin)
 {
-	SWM->PINASSIGN11.CLKOUT_O = (port * 32) + pin;
+	SWM->PINASSIGN11.CLKOUT_O = portpin;
 }
 
 /**

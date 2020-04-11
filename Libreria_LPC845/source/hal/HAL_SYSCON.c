@@ -90,7 +90,7 @@ void hal_syscon_config_external_crystal(uint32_t crystal_freq, uint8_t use_as_ma
 /**
  * @brief Configurar el clock FRO
  * @param[in] direct Si es distinto de cero se omite el divisor del FRO
- * @param[in] use_as_main Si es distinto de cero, se utilizara el FRO como main clock
+ * @param[in] use_as_main Si es distinto de cero, se utilizará el FRO como main clock
  */
 void hal_syscon_config_fro_direct(uint8_t direct, uint8_t use_as_main)
 {
@@ -114,17 +114,16 @@ void hal_syscon_config_fro_direct(uint8_t direct, uint8_t use_as_main)
 
 /**
  * @brief Configurar el pin de clock out (salida de clock hacia afuera)
- * @param[in] port Numero de puerto por donde sacar el clock out
- * @param[in] pin Numero de pin por donde sacar el clock out
+ * @param[in] portpin Número de puerto/pin por donde sacar el clock out
  * @param[in] clock_source Fuente deseada para la salida clock out
  * @param[in] divider Divisor deseado para la salida clock out
  */
-void hal_syscon_config_clkout(uint8_t port, uint8_t pin, hal_syscon_clkout_source_sel_en clock_source, uint8_t divider)
+void hal_syscon_config_clkout(hal_gpio_portpin_en portpin, hal_syscon_clkout_source_sel_en clock_source, uint8_t divider)
 {
 	SYSCON_set_clkout_config(clock_source, divider);
 
 	SWM_init();
-	SWM_assign_CLKOUT(port, pin);
+	SWM_assign_CLKOUT(portpin);
 	SWM_deinit();
 }
 
@@ -155,19 +154,9 @@ void hal_syscon_config_frg(uint8_t inst, hal_syscon_frg_clock_sel_en clock_sourc
 }
 
 /**
- * @brief Fijar la fuente de clock de un periferico
- * @param[in] peripheral Periferico deseado
- * @param[in] clock_source Fuente de clock deseada
- */
-void hal_syscon_set_peripheral_clock_source(hal_syscon_peripheral_sel_en peripheral, hal_syscon_peripheral_clock_sel_en clock_source)
-{
-	SYSCON_set_peripheral_clock_source(peripheral, clock_source);
-}
-
-/**
- * @brief Obtener la frecuencia de clock en Hz configurada para cierto periferico
- * @param[in] peripheral Periferico deseado
- * @return Frecuencia en Hz del clock del periferico
+ * @brief Obtener la frecuencia de clock en Hz configurada para cierto periférico
+ * @param[in] peripheral Periférico deseado
+ * @return Frecuencia en Hz del clock del periférico
  */
 uint32_t hal_syscon_get_peripheral_clock(hal_syscon_peripheral_sel_en peripheral)
 {
@@ -188,8 +177,8 @@ uint32_t hal_syscon_get_peripheral_clock(hal_syscon_peripheral_sel_en peripheral
 
 /**
  * @brief Configurar divisor para el clock de glitches del IOCON
- * @param[in] sel Seleccion de divisor
- * @param[in] div Valor de division deseado
+ * @param[in] sel Selección de divisor
+ * @param[in] div Valor de división deseado
  */
 void hal_syscon_set_iocon_glitch_divider(hal_syscon_iocon_glitch_sel_en sel, uint32_t div)
 {

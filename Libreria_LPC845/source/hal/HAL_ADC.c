@@ -13,6 +13,7 @@
 #include <HPL_SYSCON.h>
 #include <HPL_SWM.h>
 #include <HPL_NVIC.h>
+#include <HPL_IOCON.h>
 
 /** Máxima frecuencia de conversión admitida por el ADC (modo sincrónico) */
 #define	ADC_MAX_FREQ_SYNC		((uint32_t) 1.2e6)

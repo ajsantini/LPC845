@@ -63,11 +63,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	switch(inst)
 	{
 	case 0:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART0),
-								config->baudrate,
-								config->oversampling);
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART0);
 
@@ -77,11 +77,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 1:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART1),
-								config->baudrate,
-								config->oversampling);
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART1);
 
@@ -91,11 +91,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 2:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART2),
-								config->baudrate,
-								config->oversampling);
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART2);
 
@@ -105,11 +105,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 3:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART3),
-								config->baudrate,
-								config->oversampling);
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART3);
 
@@ -119,11 +119,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 4:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
 
 		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART4),
-								config->baudrate,
-								config->oversampling);
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART4);
 

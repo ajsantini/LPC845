@@ -33,8 +33,7 @@
 #define		UART_RX_PORTPIN		HAL_GPIO_PORTPIN_0_8
 #define		UART_TX_PORTPIN		HAL_GPIO_PORTPIN_0_9
 
-#define		CLOCKOUT_PORT		0
-#define		CLOCKOUT_PIN		18
+#define		CLOCKOUT_PORT_PIN	HAL_GPIO_PORTPIN_0_18
 #define		CLOCKOUT_DIVIDER	10
 
 #define		UART_NUMBER			0
@@ -119,7 +118,6 @@ static const hal_iocon_config_t pin_config =
 	.open_drain = 0,
 	.sample_mode = HAL_IOCON_SAMPLE_MODE_3_CLOCK,
 	.clk_sel = HAL_IOCON_CLK_DIV_0,
-	.dac_mode = 0,
 	.iic_mode = HAL_IOCON_IIC_MODE_GPIO
 };
 
@@ -233,7 +231,7 @@ int main(void)
 	hal_syscon_config_fro_direct(1, 1);
 
 	// Clock principal en un pin (utilizando un divisor)
-	hal_syscon_config_clkout(CLOCKOUT_PORT, CLOCKOUT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
+	hal_syscon_config_clkout(CLOCKOUT_PORT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
 
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
