@@ -75,8 +75,7 @@ void callback(void)
 	{
 		LedOn();
 	}
-	else if( (result.result_range == HAL_ADC_COMPARISON_RANGE_BELOW) ||
-			 (result.result_range == HAL_ADC_COMPARISON_RANGE_ABOVE) )
+	else if(result.result_range == HAL_ADC_COMPARISON_RANGE_BELOW)
 	{
 		LedOff();
 	}

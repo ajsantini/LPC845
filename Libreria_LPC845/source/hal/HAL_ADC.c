@@ -386,8 +386,8 @@ hal_adc_sequence_result_en hal_adc_sequence_get_result(hal_adc_sequence_sel_en s
  */
 void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, uint16_t high)
 {
-	ADC_set_compare_low_threshold(threshold, threshold);
-	ADC_set_compare_high_threshold(threshold, threshold);
+	ADC_set_compare_low_threshold(threshold, low);
+	ADC_set_compare_high_threshold(threshold, high);
 }
 
 /**
