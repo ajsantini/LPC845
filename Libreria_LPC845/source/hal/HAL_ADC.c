@@ -178,7 +178,7 @@ void hal_adc_deinit(void)
  * @param[in] sequence Seleccion de secuencia a configurar
  * @param[in] config Configuracion deseada para la secuencia
  */
-void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config)
+void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config)
 {
 	uint8_t counter;
 
@@ -280,7 +280,7 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
  * @see hal_adc_stop_sequence
  * @param[in] sequence Secuencia a disparar
  */
-void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
+void hal_adc_sequence_start(hal_adc_sequence_sel_en sequence)
 {
 	if(flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A))
 	{
@@ -303,7 +303,7 @@ void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
  * @see hal_adc_sequence_sel_en
  * @see hal_adc_start_sequence
  */
-void hal_adc_stop_sequence(hal_adc_sequence_sel_en sequence)
+void hal_adc_sequence_stop(hal_adc_sequence_sel_en sequence)
 {
 	if(flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A))
 	{
@@ -335,7 +335,7 @@ void hal_adc_stop_sequence(hal_adc_sequence_sel_en sequence)
  * @param[out] result Lugares donde guardar los resultados de la secuencia
  * @return Resultado de la función
  */
-hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result)
+hal_adc_sequence_result_en hal_adc_sequence_get_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result)
 {
 	if(ADC_sequence_get_mode(sequence) == ADC_INTERRUPT_MODE_EOC)
 	{
@@ -378,47 +378,45 @@ hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en s
 }
 
 /**
- * @brief Configurar valor de umbral de comparación
+ * @brief Configurar valor de umbral de comparación.
  * @param[in] threshold	Selección de umbral a configurar
- * @param[in] thr_config Configuración deseada
+ * @param[in] low
+ * @param[in] high
  * @see hal_adc_threshold_sel_en
- * @see hal_adc_threshold_config_t
  */
-void hal_adc_config_threshold(hal_adc_threshold_sel_en threshold, const hal_adc_threshold_config_t *thr_config)
+void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, uint16_t high)
 {
-	uint8_t inx_usr_channel = 0;
-	uint8_t inx_adc_channel = 0;
+	ADC_set_compare_low_threshold(threshold, threshold);
+	ADC_set_compare_high_threshold(threshold, threshold);
+}
 
-	while(inx_adc_channel < ADC_CHANNEL_AMOUNT)
+/**
+ * @brief Configura un canal para utilizar la funcionalidad de comparación con un umbral y su tipo de interrupción deseada.
+ * @param[in] adc_channel
+ * @param[in] threshold	Selección de umbral a configurar
+ * @param[in] irq_mode Indica el tipo evento por el cual la comparación con el umbral dispara la interrupción, o la desactiva.
+ * @see hal_adc_threshold_sel_en
+ * @see hal_adc_threshold_interrupt_sel_en
+ */
+void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel_en threshold, const hal_adc_threshold_interrupt_sel_en irq_mode)
+{
+	ADC_set_channel_threshold(adc_channel, threshold);
+
+	if(irq_mode == HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED)
 	{
-		if(thr_config->chans & (1 << inx_adc_channel))
-		{
-			ADC_set_channel_threshold(inx_adc_channel, threshold);
-
-			if(thr_config->irq_modes[inx_usr_channel] == HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED)
-			{
-				ADC_disable_threshold_interrupt(inx_adc_channel);
-			}
-			else
-			{
-				ADC_enable_threshold_interrupt(inx_adc_channel, thr_config->irq_modes[inx_usr_channel]);
-			}
-
-			inx_usr_channel++;
-		}
-
-		inx_adc_channel++;
+		ADC_disable_threshold_interrupt(adc_channel);
 	}
-
-	ADC_set_compare_low_threshold(threshold, thr_config->low);
-	ADC_set_compare_high_threshold(threshold, thr_config->high);
+	else
+	{
+		ADC_enable_threshold_interrupt(adc_channel, irq_mode);
+	}
 }
 
 /**
  * @brief Registrar un callabck de interrupción para interrupción por threshold
  * @param[in] callback Callback a ejecutar en interrupción por threshold
  */
-void hal_adc_register_threshold_interrupt(void (*callback)(void))
+void hal_adc_threshold_register_interrupt(void (*callback)(void))
 {
 	if(callback != NULL)
 	{
@@ -441,7 +439,7 @@ void hal_adc_register_threshold_interrupt(void (*callback)(void))
  *
  * @see hal_adc_channel_compare_result_t
  */
-void hal_adc_get_comparison_results(hal_adc_channel_compare_result_t *results)
+void hal_adc_threshold_get_comparison_results(hal_adc_channel_compare_result_t *results)
 {
 	ADC_interrupt_flags_t aux_flags_reg = ADC_get_interrupt_flags();
 	uint16_t irq_thr_channels = 0xFFF & *((uint16_t *) &aux_flags_reg);
