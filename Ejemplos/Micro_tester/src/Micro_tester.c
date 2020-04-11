@@ -253,7 +253,7 @@ int main(void)
 	hal_gpio_set_dir(WKT_OUT_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
 
 	hal_adc_init_async_mode(ADC_FREQUENCY, 0, HAL_ADC_CLOCK_SOURCE_FRO, HAL_ADC_LOW_POWER_MODE_DISABLED);
-	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
+	hal_adc_sequence_config(ADC_SEQUENCE, &adc_config);
 
 	hal_uart_init(UART_NUMBER, &uart_config);
 
@@ -276,7 +276,6 @@ int main(void)
 	hal_spi_master_mode_init(SPI_INSTANCE, &spi_master_config);
 
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
-	hal_adc_start_sequence(ADC_SEQUENCE);
 
 	hal_wkt_init(HAL_WKT_CLOCK_SOURCE_FRO_DIV, 0, wkt_callback);
 	hal_wkt_start_count(WKT_TIME_USEG);
@@ -309,7 +308,7 @@ static void tick_callback(void)
 
 	if(adc_counter == 0)
 	{
-		hal_adc_start_sequence(ADC_SEQUENCE);
+		hal_adc_sequence_start(ADC_SEQUENCE);
 	}
 
 	if(nrf_counter == 0)
@@ -326,7 +325,7 @@ static void adc_callback(void)
 {
 	hal_adc_sequence_result_t adc_result;
 
-	if(hal_adc_get_sequence_result(ADC_SEQUENCE, &adc_result) == HAL_ADC_SEQUENCE_RESULT_VALID)
+	if(hal_adc_sequence_get_result(ADC_SEQUENCE, &adc_result) == HAL_ADC_SEQUENCE_RESULT_VALID)
 	{
 		adc_conversion = adc_result.result;
 	}
