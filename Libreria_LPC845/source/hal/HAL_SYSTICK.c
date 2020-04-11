@@ -6,6 +6,7 @@
  * @version 1.0
  */
 
+#include <stddef.h>
 #include <HAL_SYSTICK.h>
 #include <HAL_SYSCON.h>
 #include <HPL_SYSTICK.h>
@@ -44,9 +45,7 @@ void hal_systick_init(uint32_t tick_us, void (*callback)(void))
 
 	SYSTICK_enable_count();
 
-	systick_callback = callback;
-
-	SYSTICK_enable_interrupt();
+	hal_systick_update_callback(callback);
 }
 
 /**
@@ -55,7 +54,32 @@ void hal_systick_init(uint32_t tick_us, void (*callback)(void))
  */
 void hal_systick_update_callback(void (*callback)(void))
 {
-	systick_callback = callback;
+	if(callback != NULL)
+	{
+		systick_callback = callback;
+		SYSTICK_enable_interrupt();
+	}
+	else
+	{
+		systick_callback = dummy_irq;
+		SYSTICK_disable_interrupt();
+	}
+}
+
+/**
+ * @brief Inhabilitar interrupciones de \e SYSTICK
+ */
+void hal_systick_inhibit_set(void)
+{
+	SYSTICK_enable_interrupt();
+}
+
+/**
+ * @brief Habilitar interrupciones de \e SYSTICK
+ */
+void hal_systick_inhibit_clear(void)
+{
+	SYSTICK_disable_interrupt();
 }
 
 /**
