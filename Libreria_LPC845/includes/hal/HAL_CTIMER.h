@@ -122,7 +122,7 @@ uint8_t hal_ctimer_read_match_output(hal_ctimer_match_sel_en match);
 void hal_ctimer_set_match_output(hal_ctimer_match_sel_en match);
 
 /**
- * @brief Pone la señal de salida EM# (External Match #) en 0.
+ * @brief Pone la señal de salida EMn (External Match n) en 0.
  * @param[in] match Numero de match externo a configurar
  */
 void hal_ctimer_clear_match_output(hal_ctimer_match_sel_en match);

@@ -77,8 +77,9 @@ int main(void) {
 
 	hal_adc_init_sync_mode(ADC_SAMPLE_RATE, HAL_ADC_LOW_POWER_MODE_DISABLED);
 	hal_adc_config_sequence(HAL_ADC_SEQUENCE_SEL_A, &adc_config);
+
 	hal_adc_config_threshold(HAL_ADC_THRESHOLD_SEL_0, &thrConf);
-	hal_adc_threshold_interrupt( callback_threshold );
+	hal_adc_register_threshold_interrupt( callback_threshold );
 
 	hal_adc_start_sequence(HAL_ADC_SEQUENCE_SEL_A);
 

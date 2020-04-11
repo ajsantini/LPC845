@@ -307,25 +307,23 @@ typedef struct
 	uint16_t result; /**< Valor de la conversión */
 }hal_adc_sequence_result_t;
 
-/** */
+/** Configuración de umbrales de comparación */
 typedef struct
 {
-	uint16_t low;
-	uint16_t high;
-	uint16_t chans;
-	hal_adc_threshold_interrupt_sel_en *irq_modes;
+	uint16_t low; /**< Umbral bajo */
+	uint16_t high; /**< Umbral alto */
+	uint16_t chans; /**< Máscara de canales habilitados */
+	hal_adc_threshold_interrupt_sel_en *irq_modes; /**< Configuracion de modos de interrupción */
 }hal_adc_threshold_config_t;
 
-/** */
+/** Resultado de comparaciones */
 typedef struct
 {
-	uint8_t channel;
+	hal_adc_result_channel_en channel; /**< Canal que detectó comparación configurada */
 	uint16_t value; /**< Valor de la conversión */
-	hal_adc_compare_range_result_en result_range;
-	hal_adc_compare_crossing_result_en result_crossing;
+	hal_adc_compare_range_result_en result_range; /**< Rango de la comparación */
+	hal_adc_compare_crossing_result_en result_crossing; /**< Resultado si está cruzando */
 }hal_adc_channel_compare_result_t;
-
-
 
 /**
  * @brief Inicializar el \e ADC en modo \b asincrónico
@@ -382,6 +380,9 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
  */
 void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence);
 
+
+void hal_adc_stop_sequence(hal_adc_sequence_sel_en sequence);
+
 /**
  * @brief Obtener resultado de la secuencia
  *
@@ -396,16 +397,37 @@ void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence);
  * @see hal_adc_sequence_result_t
  * @param[in] sequence Secuencia de la cual obtener el resultado
  * @param[out] result Lugares donde guardar los resultados de la secuencia
+ *
+ * El usuario debe garantizar que existe lugar para la misma cantidad de canales habilitados en la secuencia.
+ *
  * @return Resultado de la función
  */
 hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result);
 
-void hal_adc_stop_sequence(hal_adc_sequence_sel_en sequence);
-
+/**
+ * @brief Configurar valor de umbral de comparación
+ * @param[in] threshold	Selección de umbral a configurar
+ * @param[in] thr_config Configuración deseada
+ * @see hal_adc_threshold_sel_en
+ * @see hal_adc_threshold_config_t
+ */
 void hal_adc_config_threshold(hal_adc_threshold_sel_en threshold, const hal_adc_threshold_config_t * thr_config);
 
-void hal_adc_threshold_interrupt( void (*callback)(void) );
+/**
+ * @brief Registrar un callabck de interrupción para interrupción por threshold
+ * @param[in] callback Callback a ejecutar en interrupción por threshold
+ */
+void hal_adc_register_threshold_interrupt(void (*callback)(void));
 
+/**
+ * @brief Obtener resultados de comparación de la última conversión
+ * @param[out] results Puntero a donde guardar los resultados
+ *
+ * El usuario \b debe garantizar que hayan por lo menos la cantidad de memoria reservada de este tipo
+ * como cantidad de canales habilitados para comparar contra un umbral.
+ *
+ * @see hal_adc_channel_compare_result_t
+ */
 void hal_adc_get_comparison_results(hal_adc_channel_compare_result_t *results);
 
 #endif /* HAL_ADC_H_ */

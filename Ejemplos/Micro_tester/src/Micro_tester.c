@@ -276,7 +276,7 @@ int main(void)
 	hal_spi_master_mode_init(SPI_INSTANCE, &spi_master_config);
 
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
-	hal_adc_enable_sequence(ADC_SEQUENCE);
+	hal_adc_start_sequence(ADC_SEQUENCE);
 
 	hal_wkt_init(HAL_WKT_CLOCK_SOURCE_FRO_DIV, 0, wkt_callback);
 	hal_wkt_start_count(WKT_TIME_USEG);

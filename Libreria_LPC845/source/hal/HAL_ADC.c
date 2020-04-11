@@ -45,13 +45,12 @@ typedef struct
 {
 	uint8_t SEQA_burst : 1;
 	uint8_t SEQB_burst : 1;
-	uint8_t : 6;
 }flag_sequence_burst_mode_t;
 
 static flag_sequence_burst_mode_t flag_seq_burst_mode =
 {
-		.SEQA_burst = 0,
-		.SEQB_burst = 0
+	.SEQA_burst = 0,
+	.SEQB_burst = 0
 };
 
 /**
@@ -278,15 +277,16 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
  * en si esta funcion dispara una secuencia entera o un paso de la misma.
  *
  * @see hal_adc_sequence_sel_en
+ * @see hal_adc_stop_sequence
  * @param[in] sequence Secuencia a disparar
  */
 void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
 {
-	if( flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A) )
+	if(flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A))
 	{
 		ADC_sequence_set_burst(sequence);
 	}
-	else if( flag_seq_burst_mode.SEQB_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_B) )
+	else if(flag_seq_burst_mode.SEQB_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_B))
 	{
 		ADC_sequence_set_burst(sequence);
 	}
@@ -298,20 +298,18 @@ void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
 }
 
 /**
- * @brief
- *
- * @see
- * @see
- *
- * @param[in] callback
+ * @brief Detener conversiones en una secuencia de conversión
+ * @param[in] sequence Secuencia a detener
+ * @see hal_adc_sequence_sel_en
+ * @see hal_adc_start_sequence
  */
 void hal_adc_stop_sequence(hal_adc_sequence_sel_en sequence)
 {
-	if( flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A) )
+	if(flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A))
 	{
 		ADC_sequence_clear_burst(sequence);
 	}
-	else if( flag_seq_burst_mode.SEQB_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_B) )
+	else if(flag_seq_burst_mode.SEQB_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_B))
 	{
 		ADC_sequence_clear_burst(sequence);
 	}
@@ -380,54 +378,49 @@ hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en s
 }
 
 /**
- * @brief
- *
- * @see
- * @see
- *
- * @param[in] threshold	Selección del umbral a configurar.
- * @param[in] thr_config
+ * @brief Configurar valor de umbral de comparación
+ * @param[in] threshold	Selección de umbral a configurar
+ * @param[in] thr_config Configuración deseada
+ * @see hal_adc_threshold_sel_en
+ * @see hal_adc_threshold_config_t
  */
-void hal_adc_config_threshold(hal_adc_threshold_sel_en threshold, const hal_adc_threshold_config_t * thr_config)
+void hal_adc_config_threshold(hal_adc_threshold_sel_en threshold, const hal_adc_threshold_config_t *thr_config)
 {
 	uint8_t inx_usr_channel = 0;
 	uint8_t inx_adc_channel = 0;
 
-	while( inx_adc_channel < ADC_CHANNEL_AMOUNT )
+	while(inx_adc_channel < ADC_CHANNEL_AMOUNT)
 	{
-		if( thr_config->chans & (1 << inx_adc_channel) )
+		if(thr_config->chans & (1 << inx_adc_channel))
 		{
 			ADC_set_channel_threshold(inx_adc_channel, threshold);
 
-			if( thr_config->irq_modes[inx_usr_channel] == HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED )
+			if(thr_config->irq_modes[inx_usr_channel] == HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED)
 			{
 				ADC_disable_threshold_interrupt(inx_adc_channel);
 			}
 			else
 			{
-				ADC_enable_threshold_interrupt(inx_adc_channel, thr_config->irq_modes[inx_usr_channel] );
+				ADC_enable_threshold_interrupt(inx_adc_channel, thr_config->irq_modes[inx_usr_channel]);
 			}
 
 			inx_usr_channel++;
 		}
+
 		inx_adc_channel++;
 	}
 
-	ADC_set_compare_low_threshold(threshold, thr_config->low );
-	ADC_set_compare_high_threshold(threshold, thr_config->high );
+	ADC_set_compare_low_threshold(threshold, thr_config->low);
+	ADC_set_compare_high_threshold(threshold, thr_config->high);
 }
 
 /**
- * @brief
- *
- * @see
- * @see
- *
- * @param[in] callback
+ * @brief Registrar un callabck de interrupción para interrupción por threshold
+ * @param[in] callback Callback a ejecutar en interrupción por threshold
  */
-void hal_adc_threshold_interrupt( void (*callback)(void) )
+void hal_adc_register_threshold_interrupt(void (*callback)(void))
 {
-	if( callback != NULL )
+	if(callback != NULL)
 	{
 		adc_compare_callback = callback;
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_ADC_THCMP);
@@ -440,32 +433,37 @@ void hal_adc_threshold_interrupt( void (*callback)(void) )
 }
 
 /**
- * @brief
+ * @brief Obtener resultados de comparación de la última conversión
+ * @param[out] results Puntero a donde guardar los resultados
  *
- * @see
- * @see
+ * El usuario \b debe garantizar que hayan por lo menos la cantidad de memoria reservada de este tipo
+ * como cantidad de canales habilitados para comparar contra un umbral.
  *
- * @param[in] callback
+ * @see hal_adc_channel_compare_result_t
  */
 void hal_adc_get_comparison_results(hal_adc_channel_compare_result_t *results)
 {
 	ADC_interrupt_flags_t aux_flags_reg = ADC_get_interrupt_flags();
 	uint16_t irq_thr_channels = 0xFFF & *((uint16_t *) &aux_flags_reg);
 
-	uint8_t inx_result = 0;
-	uint8_t inx_adc_channel = 0;
-	while(inx_adc_channel < ADC_CHANNEL_AMOUNT)
+	uint8_t idx_result = 0;
+	uint8_t idx_adc_channel = 0;
+
+	while(idx_adc_channel < ADC_CHANNEL_AMOUNT)
 	{
-		if( irq_thr_channels & (1 << inx_adc_channel) )
+		if(irq_thr_channels & (1 << idx_adc_channel))
 		{
-			ADC_channel_data_t data = ADC_get_channel_data(inx_adc_channel);
-			(results + inx_result)->channel = inx_adc_channel;
-			(results + inx_result)->value = data.RESULT;
-			(results + inx_result)->result_range = data.THCMPRANGE;
-			(results + inx_result)->result_crossing = data.THCMPCROSS;
-			inx_result++;
+			ADC_channel_data_t data = ADC_get_channel_data(idx_adc_channel);
+
+			(results + idx_result)->channel = idx_adc_channel;
+			(results + idx_result)->value = data.RESULT;
+			(results + idx_result)->result_range = data.THCMPRANGE;
+			(results + idx_result)->result_crossing = data.THCMPCROSS;
+
+			idx_result++;
 		}
-		inx_adc_channel++;
+
+		idx_adc_channel++;
 	}
 }
 
@@ -510,7 +508,7 @@ void ADC_THCMP_IRQHandler(void)
 {
 	adc_compare_callback();
 
-	if( ADC_get_interrupt_flags().THCMP_INT )
+	if(ADC_get_interrupt_flags().THCMP_INT)
 	{
 		ADC_clear_threshold_flags();
 	}
