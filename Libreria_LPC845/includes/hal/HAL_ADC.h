@@ -2,6 +2,7 @@
  * @file HAL_ADC.h
  * @brief Declaraciones a nivel de aplicación del periférico ADC (LPC845)
  * @author Augusto Santini
+ * @author Esteban E. Chiama
  * @date 3/2020
  * @version 1.0
  */
@@ -241,6 +242,38 @@ typedef enum
 	HAL_ADC_SEQUENCE_RESULT_INVALID /**< Resultado inválido */
 }hal_adc_sequence_result_en;
 
+/** Selección del umbral del ADC.*/
+typedef enum
+{
+	HAL_ADC_THRESHOLD_SEL_0 = 0,
+	HAL_ADC_THRESHOLD_SEL_1
+}hal_adc_threshold_sel_en;
+
+/** */
+/** Posibles configuraciones de la interrupción por comparación de las muestras obtenidas de un canal con el umbral establecido. */
+typedef enum
+{
+	HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED = 0,
+	HAL_ADC_THRESHOLD_INTERRUPT_SEL_OUTSIDE,
+	HAL_ADC_THRESHOLD_INTERRUPT_SEL_CROSSING
+}hal_adc_threshold_interrupt_sel_en;
+
+/** */
+typedef enum
+{
+	HAL_ADC_COMPARISON_RANGE_INSIDE = 0,
+	HAL_ADC_COMPARISON_RANGE_BELOW,
+	HAL_ADC_COMPARISON_RANGE_ABOVE
+}hal_adc_compare_range_result_en;
+
+/** */
+typedef enum
+{
+	HAL_ADC_COMPARISON_CROSSING_MAINTAINED = 0,
+	HAL_ADC_COMPARISON_CROSSING_DOWNWARD = 2,
+	HAL_ADC_COMPARISON_CROSSING_UPWARD
+}hal_adc_compare_crossing_result_en;
+
 /** Tipo de dato para callback de interrupcion de sequencia */
 typedef void (*adc_sequence_interrupt_t)(void);
 
@@ -273,6 +306,26 @@ typedef struct
 	hal_adc_result_channel_en channel; /**< Canal que generó el resultado */
 	uint16_t result; /**< Valor de la conversión */
 }hal_adc_sequence_result_t;
+
+/** */
+typedef struct
+{
+	uint16_t low;
+	uint16_t high;
+	uint16_t chans;
+	hal_adc_threshold_interrupt_sel_en *irq_modes;
+}hal_adc_threshold_config_t;
+
+/** */
+typedef struct
+{
+	uint8_t channel;
+	uint16_t value; /**< Valor de la conversión */
+	hal_adc_compare_range_result_en result_range;
+	hal_adc_compare_crossing_result_en result_crossing;
+}hal_adc_channel_compare_result_t;
+
+
 
 /**
  * @brief Inicializar el \e ADC en modo \b asincrónico
@@ -319,20 +372,6 @@ void hal_adc_deinit(void);
 void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config);
 
 /**
- * @brief Habilitar una secuencia
- * @see hal_adc_sequence_sel_en
- * @param[in] sequence Secuencia a habilitar
- */
-void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence);
-
-/**
- * @brief Deshabilitar una secuencia
- * @see hal_adc_sequence_sel_en
- * @param[in] sequence Secuencia a deshabilitar
- */
-void hal_adc_disable_sequence(hal_adc_sequence_sel_en sequence);
-
-/**
  * @brief Disparar conversiones en una secuencia
  *
  * La configuración de la secuencia, en particular el parametro \b single_step, influye
@@ -360,6 +399,14 @@ void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence);
  * @return Resultado de la función
  */
 hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result);
+
+void hal_adc_stop_sequence(hal_adc_sequence_sel_en sequence);
+
+void hal_adc_config_threshold(hal_adc_threshold_sel_en threshold, const hal_adc_threshold_config_t * thr_config);
+
+void hal_adc_threshold_interrupt( void (*callback)(void) );
+
+void hal_adc_get_comparison_results(hal_adc_channel_compare_result_t *results);
 
 #endif /* HAL_ADC_H_ */
 

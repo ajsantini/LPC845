@@ -1,7 +1,8 @@
 /**
  * @file HAL_CTIMER.c
  * @brief Funciones a nivel de aplicacion del periferico CTIMER (LPC845)
- * @author Augusto Santini, Esteban E. Chiama
+ * @author Augusto Santini
+ * @author Esteban E. Chiama
  * @date 3/2020
  * @version 1.0
  */

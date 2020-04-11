@@ -2,6 +2,7 @@
  * @file HAL_ADC.c
  * @brief Funciones a nivel de aplicacion del periferico ADC (LPC845)
  * @author Augusto Santini
+ * @author Esteban E. Chiama
  * @date 3/2020
  * @version 1.0
  */
@@ -40,6 +41,19 @@ static void (*adc_overrun_callback)(void) = dummy_irq_callback; //!< Callback cu
 
 static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
 
+typedef struct
+{
+	uint8_t SEQA_burst : 1;
+	uint8_t SEQB_burst : 1;
+	uint8_t : 6;
+}flag_sequence_burst_mode_t;
+
+static flag_sequence_burst_mode_t flag_seq_burst_mode =
+{
+		.SEQA_burst = 0,
+		.SEQB_burst = 0
+};
+
 /**
  * @brief Inicializar el \e ADC en modo \b asincrónico
  *
@@ -67,7 +81,7 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
 
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
-	ADC_hardware_calib(hal_syscon_get_fro_clock() / 500e3);
+	ADC_hardware_calib(hal_syscon_get_system_clock() / 500e3);
 
 	if(sample_freq > ADC_MAX_FREQ_ASYNC)
 	{
@@ -117,7 +131,7 @@ void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_
 	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
-	ADC_hardware_calib(hal_syscon_get_fro_clock() / 500e3);
+	ADC_hardware_calib(hal_syscon_get_system_clock() / 500e3);
 
 	// El cálculo de la frecuencia de muestreo se hace con la frecuencia del main clock
 
@@ -224,14 +238,27 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 		ADC_disable_sequence_interrupt(sequence);
 	}
 
-
 	if(config->burst)
 	{
-		ADC_sequence_set_burst(sequence);
+		if(sequence == HAL_ADC_SEQUENCE_SEL_A)
+		{
+			flag_seq_burst_mode.SEQA_burst = 1;
+		}
+		else if(sequence == HAL_ADC_SEQUENCE_SEL_B)
+		{
+			flag_seq_burst_mode.SEQB_burst = 1;
+		}
 	}
 	else
 	{
-		ADC_sequence_clear_burst(sequence);
+		if(sequence == HAL_ADC_SEQUENCE_SEL_A)
+		{
+			flag_seq_burst_mode.SEQA_burst = 0;
+		}
+		else if(sequence == HAL_ADC_SEQUENCE_SEL_B)
+		{
+			flag_seq_burst_mode.SEQB_burst = 0;
+		}
 	}
 
 	if(sequence == HAL_ADC_SEQUENCE_SEL_A)
@@ -245,27 +272,6 @@ void hal_adc_config_sequence(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 }
 
 /**
- * @brief Habilitar una secuencia
- * @see hal_adc_sequence_sel_en
- * @param[in] sequence Secuencia a habilitar
- */
-void hal_adc_enable_sequence(hal_adc_sequence_sel_en sequence)
-{
-	ADC_sequence_enable(sequence);
-}
-
-/**
- * @brief Deshabilitar una secuencia
- * @see hal_adc_sequence_sel_en
- * @param[in] sequence Secuencia a deshabilitar
- */
-void hal_adc_disable_sequence(hal_adc_sequence_sel_en sequence)
-{
-	ADC_sequence_disable(sequence);
-}
-
-
-/**
  * @brief Disparar conversiones en una secuencia
  *
  * La configuración de la secuencia, en particular el parametro \b single_step, influye
@@ -276,7 +282,43 @@ void hal_adc_disable_sequence(hal_adc_sequence_sel_en sequence)
  */
 void hal_adc_start_sequence(hal_adc_sequence_sel_en sequence)
 {
-	ADC_sequence_set_start(sequence);
+	if( flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A) )
+	{
+		ADC_sequence_set_burst(sequence);
+	}
+	else if( flag_seq_burst_mode.SEQB_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_B) )
+	{
+		ADC_sequence_set_burst(sequence);
+	}
+	else
+	{
+		ADC_sequence_enable(sequence);
+		ADC_sequence_set_start(sequence);
+	}
+}
+
+/**
+ * @brief
+ *
+ * @see
+ * @see
+ *
+ * @param[in] callback
+ */
+void hal_adc_stop_sequence(hal_adc_sequence_sel_en sequence)
+{
+	if( flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A) )
+	{
+		ADC_sequence_clear_burst(sequence);
+	}
+	else if( flag_seq_burst_mode.SEQB_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_B) )
+	{
+		ADC_sequence_clear_burst(sequence);
+	}
+	else
+	{
+		ADC_sequence_disable(sequence);
+	}
 }
 
 /**
@@ -338,6 +380,96 @@ hal_adc_sequence_result_en hal_adc_get_sequence_result(hal_adc_sequence_sel_en s
 }
 
 /**
+ * @brief
+ *
+ * @see
+ * @see
+ *
+ * @param[in] threshold	Selección del umbral a configurar.
+ * @param[in] thr_config
+ */
+void hal_adc_config_threshold(hal_adc_threshold_sel_en threshold, const hal_adc_threshold_config_t * thr_config)
+{
+	uint8_t inx_usr_channel = 0;
+	uint8_t inx_adc_channel = 0;
+
+	while( inx_adc_channel < ADC_CHANNEL_AMOUNT )
+	{
+		if( thr_config->chans & (1 << inx_adc_channel) )
+		{
+			ADC_set_channel_threshold(inx_adc_channel, threshold);
+
+			if( thr_config->irq_modes[inx_usr_channel] == HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED )
+			{
+				ADC_disable_threshold_interrupt(inx_adc_channel);
+			}
+			else
+			{
+				ADC_enable_threshold_interrupt(inx_adc_channel, thr_config->irq_modes[inx_usr_channel] );
+			}
+
+			inx_usr_channel++;
+		}
+		inx_adc_channel++;
+	}
+
+	ADC_set_compare_low_threshold(threshold, thr_config->low );
+	ADC_set_compare_high_threshold(threshold, thr_config->high );
+}
+
+/**
+ * @brief
+ *
+ * @see
+ * @see
+ *
+ * @param[in] callback
+ */
+void hal_adc_threshold_interrupt( void (*callback)(void) )
+{
+	if( callback != NULL )
+	{
+		adc_compare_callback = callback;
+		NVIC_enable_interrupt(NVIC_IRQ_SEL_ADC_THCMP);
+	}
+	else
+	{
+		adc_compare_callback = dummy_irq_callback;
+		NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_THCMP);
+	}
+}
+
+/**
+ * @brief
+ *
+ * @see
+ * @see
+ *
+ * @param[in] callback
+ */
+void hal_adc_get_comparison_results(hal_adc_channel_compare_result_t *results)
+{
+	ADC_interrupt_flags_t aux_flags_reg = ADC_get_interrupt_flags();
+	uint16_t irq_thr_channels = 0xFFF & *((uint16_t *) &aux_flags_reg);
+
+	uint8_t inx_result = 0;
+	uint8_t inx_adc_channel = 0;
+	while(inx_adc_channel < ADC_CHANNEL_AMOUNT)
+	{
+		if( irq_thr_channels & (1 << inx_adc_channel) )
+		{
+			ADC_channel_data_t data = ADC_get_channel_data(inx_adc_channel);
+			(results + inx_result)->channel = inx_adc_channel;
+			(results + inx_result)->value = data.RESULT;
+			(results + inx_result)->result_range = data.THCMPRANGE;
+			(results + inx_result)->result_crossing = data.THCMPCROSS;
+			inx_result++;
+		}
+		inx_adc_channel++;
+	}
+}
+
+/**
  * @brief Funcion dummy para usar como default para las interrupciones
  */
 static void dummy_irq_callback(void)
@@ -376,8 +508,12 @@ void ADC_SEQB_IRQHandler(void)
  */
 void ADC_THCMP_IRQHandler(void)
 {
-	#warning Habria que ver que flags y como limpiarlos si es que hace falta
 	adc_compare_callback();
+
+	if( ADC_get_interrupt_flags().THCMP_INT )
+	{
+		ADC_clear_threshold_flags();
+	}
 }
 
 /**
