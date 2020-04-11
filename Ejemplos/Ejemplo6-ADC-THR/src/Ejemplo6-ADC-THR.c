@@ -17,11 +17,19 @@
 #include <stddef.h>
 
 #define LED_AZUL		HAL_GPIO_PORTPIN_1_1
-
 #define LED_OFF_STATE	1
 #define LED_ON_STATE	0
 
-#define	ADC_SAMPLE_RATE		480e3
+#define LedOff()		hal_gpio_set_pin(LED_AZUL)
+#define LedOn()			hal_gpio_clear_pin(LED_AZUL)
+
+#define	ADC_SAMPLE_RATE	480e3
+#define	ADC_CHANNEL		0
+
+#define ADC_THR_LOW		1500
+#define ADC_THR_HIGH	2000
+
+void callback(void);
 
 static const hal_adc_sequence_config_t adc_config =
 {
@@ -36,37 +44,7 @@ static const hal_adc_sequence_config_t adc_config =
 	.callback = NULL
 };
 
-hal_adc_threshold_interrupt_sel_en thr_irq_type = HAL_ADC_THRESHOLD_INTERRUPT_SEL_CROSSING;
-
-static const hal_adc_threshold_config_t thrConf =
-{
-		.low = 1500,
-		.high = 2000,
-		.chans = 0x1,
-		.irq_modes = &thr_irq_type
-};
-
-#define MAX_TOGGLES		5
-
 static hal_adc_channel_compare_result_t result;
-static uint8_t toggle_count = 0;
-
-void callback_threshold(void);
-
-void callback_threshold(void)
-{
-	hal_adc_get_comparison_results(&result);
-
-	if( result.result_range == HAL_ADC_COMPARISON_RANGE_BELOW )
-	{
-		hal_gpio_toggle_pin(LED_AZUL);
-		toggle_count++;
-		if(toggle_count == MAX_TOGGLES)
-		{
-			hal_adc_stop_sequence(HAL_ADC_SEQUENCE_SEL_A);
-		}
-	}
-}
 
 int main(void) {
 
@@ -76,15 +54,30 @@ int main(void) {
 	hal_gpio_set_dir(LED_AZUL, HAL_GPIO_DIR_OUTPUT, LED_OFF_STATE);
 
 	hal_adc_init_sync_mode(ADC_SAMPLE_RATE, HAL_ADC_LOW_POWER_MODE_DISABLED);
-	hal_adc_config_sequence(HAL_ADC_SEQUENCE_SEL_A, &adc_config);
+	hal_adc_sequence_config(HAL_ADC_SEQUENCE_SEL_A, &adc_config);
+	hal_adc_threshold_config(HAL_ADC_THRESHOLD_SEL_0, ADC_THR_LOW, ADC_THR_HIGH);
+	hal_adc_threshold_channel_config(ADC_CHANNEL, HAL_ADC_THRESHOLD_SEL_0, HAL_ADC_THRESHOLD_INTERRUPT_SEL_CROSSING);
+	hal_adc_threshold_register_interrupt(callback);
 
-	hal_adc_config_threshold(HAL_ADC_THRESHOLD_SEL_0, &thrConf);
-	hal_adc_register_threshold_interrupt( callback_threshold );
-
-	hal_adc_start_sequence(HAL_ADC_SEQUENCE_SEL_A);
+	hal_adc_sequence_start(HAL_ADC_SEQUENCE_SEL_A);
 
     while(1) {
 
     }
     return 0 ;
+}
+
+void callback(void)
+{
+	hal_adc_threshold_get_comparison_results(&result);
+
+	if(result.result_range == HAL_ADC_COMPARISON_RANGE_INSIDE)
+	{
+		LedOn();
+	}
+	else if( (result.result_range == HAL_ADC_COMPARISON_RANGE_BELOW) ||
+			 (result.result_range == HAL_ADC_COMPARISON_RANGE_ABOVE) )
+	{
+		LedOff();
+	}
 }
