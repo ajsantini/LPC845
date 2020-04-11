@@ -33,16 +33,19 @@
  * las variables globales.
  *
  * @author Augusto Santini
+ * @author Esteban E. Chiama
  * @date 4/2020
  */
 
 #include <cr_section_macros.h>
 #include <stddef.h>
+#include <HAL_GPIO.h>
 #include <HAL_ADC.h>
 #include <HAL_SYSTICK.h>
 
 /** Máscara de configuración de canales habilitados para la secuencia a configurar */
 #define		ADC_CHANNELS				((1 << 0) | (1 << 8))
+#define		ADC_CHANNEL0_PRESET			0
 
 /** Tiempo de interrupción del \e Systick en \b microsegundos */
 #define		TICK_TIME_USEG				(1000)
@@ -54,19 +57,46 @@
 #define		ADC_SEQUENCE				(HAL_ADC_SEQUENCE_SEL_A)
 
 /** Tiempo de disparo de conversiones de \e ADC en \b milisegundos */
-#define		ADC_CONVERSION_TIME_MSEG	(1000)
+#define		ADC_CONVERSION_TIME_MSEG	(100)
+
+/** Valores de umbral para las comparaciones del ADC */
+#define		THR_LOW						1000
+#define 	THR_HIGH					2500
+
+/** Puerto de ambos LEDS */
+#define LED_PORT		1
+
+/** Puerto y pin de Led Azul */
+#define LED_AZUL		HAL_GPIO_PORTPIN_1_1
+
+/** Puerto y pin de Led Rojo */
+#define LED_ROJO		HAL_GPIO_PORTPIN_1_2
+
+/** Valor lógico de LED encendido */
+#define LED_ON_STATE	0
+
+/** Valor lógico de LED apagado */
+#define LED_OFF_STATE	1
 
 static void adc_callback(void);
+
+static void adc_thr_callback(void);
 
 static void systick_callback(void);
 
 /** Flag para indicar finalización de secuencia de conversión de \e ADC */
 static uint8_t flag_secuencia_adc_completada = 0;
 
-/**
- * Variables para guardar los resultados de la secuencia de conversión
- */
+/** Variables para guardar los resultados de la secuencia de conversión */
 static hal_adc_sequence_result_t resultados_conversion_adc[2];
+
+/** Variable para guardar el resultado de una comparación válida contra el umbral */
+static hal_adc_channel_compare_result_t comparison_result =
+{
+		.value = 0,
+		.result_range = 0,
+		.result_crossing = 0
+};
 
 /** Configuración de la secuencia. Como no va a cambiar es declarada \e const */
 static const hal_adc_sequence_config_t adc_config =
@@ -92,13 +122,19 @@ int main(void)
 	hal_adc_init_sync_mode(ADC_SAMPLE_FREQ, HAL_ADC_LOW_POWER_MODE_DISABLED);
 
 	// Configuración de la secuencia a utilizar
-	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
+	hal_adc_sequence_config(ADC_SEQUENCE, &adc_config);
 
-	// Habilitación de la secuencia a utilizar
-	hal_adc_start_sequence(ADC_SEQUENCE);
+	// Configuración de comparaciones e interrupción
+	hal_adc_threshold_config(HAL_ADC_THRESHOLD_SEL_0, THR_LOW, THR_HIGH);
+	hal_adc_threshold_channel_config(ADC_CHANNEL0_PRESET, HAL_ADC_THRESHOLD_SEL_0, HAL_ADC_THRESHOLD_INTERRUPT_SEL_CROSSING);
+	hal_adc_threshold_register_interrupt(adc_thr_callback);
 
 	// Inicialización del \e Systick con el tiempo de tick adecuado
 	hal_systick_init(TICK_TIME_USEG, systick_callback);
+
+	hal_gpio_init(LED_PORT);
+	hal_gpio_set_dir(LED_AZUL, HAL_GPIO_DIR_OUTPUT, LED_OFF_STATE);
+	hal_gpio_set_dir(LED_ROJO, HAL_GPIO_DIR_OUTPUT, LED_OFF_STATE);
 
     while(1)
     {
@@ -127,7 +163,7 @@ static void systick_callback(void)
 
 	if(contador_disparo_adc == 0)
 	{
-		hal_adc_start_sequence(ADC_SEQUENCE);
+		hal_adc_sequence_start(ADC_SEQUENCE);
 	}
 }
 
@@ -137,7 +173,23 @@ static void systick_callback(void)
 static void adc_callback(void)
 {
 	// Obtención de resultados de conversión
-	hal_adc_get_sequence_result(ADC_SEQUENCE, resultados_conversion_adc);
+	hal_adc_sequence_get_result(ADC_SEQUENCE, resultados_conversion_adc);
 
 	flag_secuencia_adc_completada = 1;
+}
+
+static void adc_thr_callback(void)
+{
+	hal_adc_threshold_get_comparison_results(&comparison_result);
+
+	if(comparison_result.result_crossing == HAL_ADC_COMPARISON_CROSSING_DOWNWARD)
+	{
+		hal_gpio_set_pin(LED_ROJO);		// Apaga rojo
+		hal_gpio_clear_pin(LED_AZUL);	// Prende azul
+	}
+	else if(comparison_result.result_crossing == HAL_ADC_COMPARISON_CROSSING_UPWARD)
+	{
+		hal_gpio_set_pin(LED_AZUL);		// Apaga azul
+		hal_gpio_clear_pin(LED_ROJO);	// Prende rojo
+	}
 }
