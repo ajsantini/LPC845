@@ -259,7 +259,7 @@ int main(void)
 
 	hal_pinint_init();
 
-	hal_pinint_configure_pin_interrupt(&pinint_config);
+	hal_pinint_pin_interrupt_config(&pinint_config);
 
 #ifndef	CTIMER_IN_PWM_MODE
 	hal_ctimer_timer_mode_init(0); // Divisor de prescaler en 1
@@ -270,7 +270,7 @@ int main(void)
 #else
 	hal_ctimer_pwm_mode_init(&pwm_config);
 
-	hal_ctimer_pwm_mode_config_channel(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
+	hal_ctimer_pwm_mode_channel_config(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
 #endif
 
 	hal_spi_master_mode_init(SPI_INSTANCE, &spi_master_config);
@@ -314,7 +314,7 @@ static void tick_callback(void)
 
 	if(nrf_counter == 0)
 	{
-		hal_spi_master_mode_config_tx(SPI_INSTANCE, &spi_tx_config);
+		hal_spi_master_mode_tx_config(SPI_INSTANCE, &spi_tx_config);
 
 		spi_tx_idx = 0;
 		spi_rx_idx = 0;
@@ -344,7 +344,7 @@ static void adc_callback(void)
 		pwm_channel_config.duty = adc_conversion;
 	}
 
-	hal_ctimer_pwm_mode_config_channel(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
+	hal_ctimer_pwm_mode_channel_config(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
 }
 
 static char trama[] = "Trama de prueba para ver que onda\n";
@@ -354,11 +354,11 @@ static void rx_callback(void)
 {
 	uint32_t data;
 
-	hal_uart_rx_byte(UART_NUMBER, &data);
+	hal_uart_rx_data(UART_NUMBER, &data);
 
 	if((char) data == ' ')
 	{
-		hal_uart_tx_byte(UART_NUMBER, trama[trama_counter++]);
+		hal_uart_tx_data(UART_NUMBER, trama[trama_counter++]);
 	}
 }
 
@@ -366,7 +366,7 @@ static void tx_callback(void)
 {
 	if(trama[trama_counter] != '\0')
 	{
-		hal_uart_tx_byte(UART_NUMBER, trama[trama_counter++]);
+		hal_uart_tx_data(UART_NUMBER, trama[trama_counter++]);
 	}
 	else
 	{
@@ -382,13 +382,13 @@ static void pinint_callback(void)
 	{
 		state = 1;
 
-		hal_ctimer_pwm_mode_set_period(2000);
+		hal_ctimer_pwm_mode_period_set(2000);
 	}
 	else
 	{
 		state = 0;
 
-		hal_ctimer_pwm_mode_set_period(1000);
+		hal_ctimer_pwm_mode_period_set(1000);
 	}
 }
 

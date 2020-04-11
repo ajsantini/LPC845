@@ -95,7 +95,7 @@ int main(void)
 	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
 
 	// Habilitación de la secuencia a utilizar
-	hal_adc_enable_sequence(ADC_SEQUENCE);
+	hal_adc_start_sequence(ADC_SEQUENCE);
 
 	// Inicialización del \e Systick con el tiempo de tick adecuado
 	hal_systick_init(TICK_TIME_USEG, systick_callback);

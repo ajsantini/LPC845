@@ -79,7 +79,7 @@ void hal_ctimer_timer_mode_init(uint32_t clock_div);
  * @param[in] match_sel Match a configurar
  * @param[in] match_config Configuracion deseada
  */
-void hal_ctimer_timer_mode_config_match(hal_ctimer_match_sel_en match_sel, const hal_ctimer_match_config_t *match_config);
+void hal_ctimer_timer_mode_match_config(hal_ctimer_match_sel_en match_sel, const hal_ctimer_match_config_t *match_config);
 
 /**
  * @brief Habilitar el conteo del ctimer
@@ -106,26 +106,26 @@ void hal_ctimer_timer_mode_reset(void);
  * @param[in] match_sel Match a configurar
  * @param[in] match_value_useg Nuevo valor de match, en useg, deseado.
  */
-void hal_ctimer_timer_mode_change_match_value(hal_ctimer_match_sel_en match, uint32_t match_value_useg);
+void hal_ctimer_timer_mode_match_change_value(hal_ctimer_match_sel_en match, uint32_t match_value_useg);
 
 /**
  * @brief Leer estado de match externo
  * @param[in] match Numero de match externo a consultar
  * @return Estado del match actual
  */
-uint8_t hal_ctimer_read_match_output(hal_ctimer_match_sel_en match);
+uint8_t hal_ctimer_match_read_output(hal_ctimer_match_sel_en match);
 
 /**
  * @brief Pone la señal de salida EM# (External Match #) en 1.
  * @param[in] match Numero de match externo a configurar
  */
-void hal_ctimer_set_match_output(hal_ctimer_match_sel_en match);
+void hal_ctimer_match_set_output(hal_ctimer_match_sel_en match);
 
 /**
  * @brief Pone la señal de salida EMn (External Match n) en 0.
  * @param[in] match Numero de match externo a configurar
  */
-void hal_ctimer_clear_match_output(hal_ctimer_match_sel_en match);
+void hal_ctimer_match_clear_output(hal_ctimer_match_sel_en match);
 
 /**
  * @brief Inicializar el CTIMER en modo PWM
@@ -138,13 +138,13 @@ void hal_ctimer_pwm_mode_init(const hal_ctimer_pwm_config_t *config);
  * @brief Actualizar el periodo en modo PWM
  * @param[in] period_useg Nuevo periodo deseado en microsegundos
  */
-void hal_ctimer_pwm_mode_set_period(uint32_t period_useg);
+void hal_ctimer_pwm_mode_period_set(uint32_t period_useg);
 
 /**
  * @brief Actualizar configuracion de algun canal de PWM
  * @param[in] channel_sel Seleccion de canal a configurar
  * @param[in] channel_config Configuracion del canal de PWM
  */
-void hal_ctimer_pwm_mode_config_channel(hal_ctimer_pwm_channel_sel_en channel_sel, const hal_ctimer_pwm_channel_config_t *channel_config);
+void hal_ctimer_pwm_mode_channel_config(hal_ctimer_pwm_channel_sel_en channel_sel, const hal_ctimer_pwm_channel_config_t *channel_config);
 
 #endif /* HAL_CTIMER_H_ */

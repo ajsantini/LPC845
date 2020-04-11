@@ -21,12 +21,12 @@ static void (*systick_callback)(void) = dummy_irq; //!< Callback a llamar en la 
  */
 void hal_systick_init(uint32_t tick_us, void (*callback)(void))
 {
+	float aux_f;
 	uint32_t aux;
 
 	// En base a los us deseados calculo el valor de STRELOAD
-	aux = hal_syscon_get_system_clock() / 10;
-	aux *= tick_us;
-	aux /= 100000; // La cuenta hecha asi aumenta la presicion sin generar nunca un overflow
+	aux_f = ((float) hal_syscon_get_system_clock()) * ((float) tick_us);
+	aux = aux_f / 1e6;
 
 	aux--;
 
