@@ -57,14 +57,15 @@
  * <b>NOTA</b>: La autocalibración debe realizarse cuando el \b microcontrolador sale de un modo de funcionamiento
  * de bajo consumo, no cuando el periférico \e ADC sale de modo bajo consumo.
  *
- * La librería implementa la calibración por hardware en la función @ref hal_adc_init
+ * La librería implementa la calibración por hardware en la función @ref hal_adc_init_sync_mode y
+ * @ref hal_adc_init_async_mode.
  *
  * # Modo sicnrónico/asincrónico
  *
  * En este microcontrolador, el \e ADC puede ser configurado de dos formas distintas en cuanto a sus clocks:
  * 		- Modo asincrónico: El clock que alimenta a la lógica de muestreo del periférico puede ser de una
  * 		naturaleza distinta al clock del sistema que alimenta a la lógica del periférico.
- * 		- Modo sincrónico: El clock qu ealimenta tanto a la lógica de muestreo del periférico como la lógica del
+ * 		- Modo sincrónico: El clock que alimenta tanto a la lógica de muestreo del periférico como la lógica del
  * 		periférico, estan en sincronismo.
  *
  * # Modo bajo consumo
@@ -123,37 +124,88 @@
 /**
  * @example Ejemplo_ADC.c
  *
+ * # Configuraciones
+ *
  * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
  * Oscillator</em> funcionando a \f$ 12MHz \f$.
  *
- * El periférico será configurado con las siguientes características:
+ * El periférico \e ADC será configurado con las siguientes características:
  * 	- Funcionamiento \b sincrónico
  * 	- Frecuencia de muestreo de \f$ 1Mhz \f$
  * 	- Modo bajo consumo inhabilitado
  *  .
  *
- * La secuencia A es configurada para generar conversiones en los canales 0 y 8:
+ * La secuencia A es configurada para generar conversiones en el canal 0:
  * 	- El canal 0 está conectado al preset propio del stick de desarrollo (Puerto 0 pin 7)
- * 	- El canal 8 está ubicado en el pin número 3 (Puerto 0 pin 18) y se le puede conectar un preset externo entre
- * 	 VDD y GND.
  * 	.
  *
- * 	Ver @ref acerca_del_stick para más información.
+ * La secuencia B es configurada para generar conversiones en los canales 4 y 8:
+ * 	- El canal 4 está ubicado en el pin número 7 (Puerto 0 pin 22)
+ * 	- El canal 8 está ubicado en el pin número 3 (Puerto 0 pin 18)
+ * 	.
  *
- * Además, la secuencia tendrá la siguiente configuración:
+ * En ambos canales de la secuencia B se puede conectar un preset con los terminales de los extremos uno a VDD y el
+ * otro a VSS, y el terminal central a cada uno de los canales.
+ *
+ * Además, la secuencia A tendrá la siguiente configuración:
  * 	- Trigger: Únicamente se disparan conversiones por software
  * 	- Bypass sincronismo: Sí
- * 	- Modo de interrupción: Cuando termina la secuencia completa
+ * 	- Modo de interrupción: Cuando termina cada canal
+ * 	- Burst: Habilitado
+ * 	- Un trigger dispara: Una conversión de canal
+ * 	- Secuencia A como baja prioridad: Si
+ * 	.
+ *
+ * La secuencia B tendrá la siguiente configuración:
+ * 	- Trigger: Únicamente se disparan conversiones por software
+ * 	- Bypass sincronismo: Sí
+ * 	- Modo de interrupción: Cuando se termina la secuencia completa
  * 	- Burst: Inhabilitado
  * 	- Un trigger dispara: Una conversión de secuencia completa
- * 	- Secuencia A como baja prioridad: No
+ * 	.
  *
  * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada \f$ 1mseg \f$
  * y mediante su manejador se lleva la cuenta de los milisegundos transcurridos. Una vez transcurridos
  * \f$ 1000mseg \f$, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.
  *
- * Ubicando un \e breakpoint adecuadamente, se pueden leer los resultados de las conversiones ya ubicadas en
- * las variables globales.
+ * # Descripción de funcionamiento
+ *
+ * La idea de este ejemplo es demostrar las capacidades de la librería para con el periférico \e ADC. Con dicho
+ * fin, se muestran las dos principales capacidades del periférico, incluidas particularidades explicadas a
+ * continuación.
+ *
+ * ## Conversiones no continuas
+ *
+ * La <em>secuencia B</em> está configurada para generar conversiones disparadas por software. Esta forma es
+ * usualmente utilizada cuando no es necesario tener conversiones continuas, dada la naturaleza de necesidad de
+ * la aplicación a desarrollar. Sin embargo, no es la óptima para distintos casos como pueden ser, por ejemplo:
+ * 		- Conversiones con tiempos precisos. En estos casos, se recomienda disparar conversiones disparadas
+ * 		por algún timer, la librería tiene implementada esta configuración.
+ * 		- Conversiones que dependen de variables externas. En estos casos, es útil disparar las conversiones
+ * 		mediante interrupciones de \e PININT o \e ACOMP.
+ * 		.
+ *
+ * En el caso del ejemplo, se disparan conversiones cada aproximadamente \f$100mseg\f$ con ayuda del \e Systick.
+ *
+ * ## Conversiones continuas
+ *
+ * La <em>secuencia A</em>, al tener el modo \e BURST habilitado, genera conversiones continuamente. Dependiendo
+ * de la necesidad de procesamiento de dichos resultados, tal vez es deseable que el programa no sea interrumpido
+ * constantemente, dado que tal vez se necesiten condiciones muy simples de análisis, como puede ser un umbral. En
+ * este ejemplo, se demuestra la potencia del periférico \e ADC al utilizar el <em>threshold compare</em>. El
+ * mismo es configurado para generar interrupciones cuando el valor convertido en el <em>Canal 0</em> cruce por
+ * ciertos umbrales estipulados por el usuario. Para el ejemplo, dependiendo de si la conversión que generó la
+ * interrupción estaba entre los valores de umbral, o por fuera, se enciende alguno de los LEDs RGB (rojo o azul)
+ * del stick de desarrollo, sin una interrupción constante por parte de la finalización de conversión de la
+ * <em>secuencia A</em>.
+ *
+ * ## Posibilidad de interrupcion de secuencia de conversión A
+ *
+ * La <em>secuencia A</em> está configurada como <em>baja prioridad</em>. Esto implica que cualquier disparo de
+ * conversión de <em>secuencia B</em> frenará las conversiones de la <em>secuencia A</em>, realizará la/s
+ * conversiones de la <em>secuencia B</em> y luego retomará las conversiones de <em>secuencia A</em>. Como la
+ * <em>secuencia A</em> está configurada para convertir continuamente, queda en real evidencia la condición de
+ * baja prioridad de la <em>secuencia A</em>.
  */
 
 #ifndef HAL_ADC_H_
@@ -245,37 +297,40 @@ typedef enum
 /** Selección del umbral del ADC.*/
 typedef enum
 {
-	HAL_ADC_THRESHOLD_SEL_0 = 0,
-	HAL_ADC_THRESHOLD_SEL_1
+	HAL_ADC_THRESHOLD_SEL_0 = 0, /**< Banco 0 de threshold */
+	HAL_ADC_THRESHOLD_SEL_1 /**< Banco 1 de threshold */
 }hal_adc_threshold_sel_en;
 
-/** */
-/** Posibles configuraciones de la interrupción por comparación de las muestras obtenidas de un canal con el umbral establecido. */
+/** Posibles configuraciones de la interrupción por comparación de las muestras obtenidas de un
+ * canal con el umbral establecido. */
 typedef enum
 {
-	HAL_ADC_THRESHOLD_INTERRUPT_SEL_DISABLED = 0,
-	HAL_ADC_THRESHOLD_INTERRUPT_SEL_OUTSIDE,
-	HAL_ADC_THRESHOLD_INTERRUPT_SEL_CROSSING
+	HAL_ADC_THRESHOLD_IRQ_SEL_DISABLED = 0, /**< Interrupción por umbral inhabilitada */
+	HAL_ADC_THRESHOLD_IRQ_SEL_OUTSIDE, /**< Interrupción por conversión fuera del umbral establecido */
+	HAL_ADC_THRESHOLD_IRQ_SEL_CROSSING /**< Interrupción por conversión cruzando alguno de los umbrales establecidos */
 }hal_adc_threshold_interrupt_sel_en;
 
-/** */
+/** Resultado de comparación de conversión contra los umbrales */
 typedef enum
 {
-	HAL_ADC_COMPARISON_RANGE_INSIDE = 0,
-	HAL_ADC_COMPARISON_RANGE_BELOW,
-	HAL_ADC_COMPARISON_RANGE_ABOVE
+	HAL_ADC_COMPARISON_RANGE_INSIDE = 0, /**< Resultado de conversión dentro del umbral estipulado */
+	HAL_ADC_COMPARISON_RANGE_BELOW, /**< Resultado de conversión por debajo del umbral estipulado */
+	HAL_ADC_COMPARISON_RANGE_ABOVE /**< Resultado de conversión por encima del umbral estipulado */
 }hal_adc_compare_range_result_en;
 
-/** */
+/** Resultado de comparación de conversión (cruce) */
 typedef enum
 {
-	HAL_ADC_COMPARISON_CROSSING_MAINTAINED = 0,
-	HAL_ADC_COMPARISON_CROSSING_DOWNWARD = 2,
-	HAL_ADC_COMPARISON_CROSSING_UPWARD
+	HAL_ADC_COMPARISON_NO_CROSSING = 0, /**< Resultado de conversión no estaba cruzando ningún umbral */
+	HAL_ADC_COMPARISON_CROSSING_DOWNWARD = 2, /**< El resultado de la conversión actual cruzó algún umbral hacia abajo */
+	HAL_ADC_COMPARISON_CROSSING_UPWARD /**< El resultado de la conversión actual cruzó algún umbral hacia arriba */
 }hal_adc_compare_crossing_result_en;
 
 /** Tipo de dato para callback de interrupcion de sequencia */
 typedef void (*adc_sequence_interrupt_t)(void);
+
+/** Tipo de dato para callback de interrupcion de comparación */
+typedef void (*adc_comparison_interrupt_t)(void);
 
 /** Configuración de secuencia de \e ADC */
 typedef struct
@@ -417,13 +472,13 @@ void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, 
  * @see hal_adc_threshold_sel_en
  * @see hal_adc_threshold_interrupt_sel_en
  */
-void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel_en threshold, const hal_adc_threshold_interrupt_sel_en irq_mode);
+void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel_en threshold, hal_adc_threshold_interrupt_sel_en irq_mode);
 
 /**
  * @brief Registrar un callabck de interrupción para interrupción por threshold
  * @param[in] callback Callback a ejecutar en interrupción por threshold
  */
-void hal_adc_threshold_register_interrupt(void (*callback)(void));
+void hal_adc_threshold_register_interrupt(adc_comparison_interrupt_t callback);
 
 /**
  * @brief Obtener resultados de comparación de la última conversión

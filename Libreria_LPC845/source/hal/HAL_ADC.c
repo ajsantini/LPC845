@@ -398,7 +398,7 @@ void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, 
  * @see hal_adc_threshold_sel_en
  * @see hal_adc_threshold_interrupt_sel_en
  */
-void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel_en threshold, const hal_adc_threshold_interrupt_sel_en irq_mode)
+void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel_en threshold, hal_adc_threshold_interrupt_sel_en irq_mode)
 {
 	ADC_set_channel_threshold(adc_channel, threshold);
 
