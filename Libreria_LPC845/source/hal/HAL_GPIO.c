@@ -179,6 +179,18 @@ uint32_t hal_gpio_read_port(hal_gpio_port_en port)
 }
 
 /**
+ * @brief Leer estado de un puerto (teniendo en cuenta máscara)
+ * @param[in] port Puerto a consultar
+ * @return Estado del puerto contemplando la máscara asociada
+ *
+ * @see hal_gpio_port_en
+ */
+uint32_t hal_gpio_masked_read_port(hal_gpio_port_en port)
+{
+	return GPIO_read_masked_portpin(port);
+}
+
+/**
  * @brief Fijar enmascaramiento de pines en un puerto
  * @param[in] port Puerto a fijar enmascaramiento
  * @param[in] mask Máscara de bits a fijar
