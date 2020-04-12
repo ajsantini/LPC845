@@ -13,6 +13,11 @@
 #include <HPL_ACMP.h>
 #include <HAL_ACMP.h>
 
+/**
+ * @brief Inicialización del periférico Comparador Analógico.
+ * @see hal_acmp_deinit
+ * @see hal_acmp_config
+ */
 void hal_acmp_init(void)
 {
 	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_ACMP);
@@ -24,6 +29,12 @@ void hal_acmp_init(void)
 	NVIC_enable_interrupt(NVIC_IRQ_SEL_CMP_CAPT);
 }
 
+/**
+ * @brief De-inicialización del periferico Comparador Analógico.
+ *
+ * Además de la usual deinicialización de un periférico,
+ * libera todos los pines posiblemente utilizados por el comparador de su función analógica.
+ */
 void hal_acmp_deinit(void)
 {
 	SYSCON_assert_reset(SYSCON_RESET_SEL_ACMP);
@@ -42,6 +53,21 @@ void hal_acmp_deinit(void)
 	SWM_enable_ACMP(5, SWM_DISABLE);
 }
 
+/**
+ * @brief Configuración de parámetros generales del comparador analógico.
+ *
+ * Esta función configura las siguientes características del comparador:
+ *
+ * - Sincronización de la señal de salida del comparador con clock de bus.
+ * - Rango de histérisis sobre la comparación para validar un cambio de la salida del comparador.
+ * - Habilitación o deshabilitación de interrupciones, y según qué tipo de flanco se quiera
+ * de la salida del comparador.
+ *
+ * @param[in] acmp_config Puntero a estructura con parámetros a configurar.
+ * @see hal_acpm_config_t
+ * @see hal_acmp_ladder_config
+ * @see hal_acmp_input_select
+ */
 void hal_acmp_config(const hal_acpm_config_t *acmp_config)
 {
 	ACMP_control_config(acmp_config->edge_sel, acmp_config->output_control, acmp_config->hysteresis);
@@ -56,6 +82,22 @@ void hal_acmp_config(const hal_acpm_config_t *acmp_config)
 	}
 }
 
+/**
+ * @brief Configuración de la escalera de tensión del comparador analógico.
+ *
+ * Configura las siguientes características de la escalera de tensión del comparador:
+ *
+ * - Habilitación o no.
+ * - Tensión de referencia.
+ * - Fracción ('step') utilizada de dicha tensión de referencia.
+ *
+ * @param[in] config Puntero a estructura con parámetros de configuración deseados de la escalera de tensión.
+ * @see hal_acmp_ladder_config_t
+ * @see hal_acmp_config
+ * @see hal_acmp_ladder_config
+ * @see hal_acmp_input_select
+ * @see hal_acmp_deinit
+ */
 void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *ladder_config)
 {
 	SWM_init();
@@ -87,6 +129,17 @@ void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *ladder_config)
 	SWM_deinit();
 }
 
+/**
+ * @brief Selecciona las entradas positiva y negativa deseadas para el comparador.
+ *
+ * Para entradas analógicas además realiza la configuración necesaria del pin externo.
+ *
+ * @param[in] positive_input Selección de entrada para la entrada positiva del comparador analógico.
+ * @param[in] negative_input Selección de entrada para la entrada negativa del comparador analógico.
+ * @see hal_acmp_input_voltage_sel_en
+ * @see hal_acmp_ladder_config
+ * @see hal_acmp_deinit
+ */
 void hal_acmp_input_select(hal_acmp_input_voltage_sel_en positive_input,
 						 hal_acmp_input_voltage_sel_en negative_input)
 {
