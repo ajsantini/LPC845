@@ -2,6 +2,7 @@
  * @file HPL_IOCON.h
  * @brief Declaraciones a nivel de abstraccion de periferico del IOCON (LPC845)
  * @author Augusto Santini
+ * @author Esteban E. Chiama
  * @date 6/2019
  * @version 1.0
  */
@@ -163,7 +164,7 @@ static inline void IOCON_config_clock_source(uint8_t port, uint8_t pin, IOCON_cl
 }
 
 /**
- * @brief Inhabilitar pull-up/pull-down en entrada analógica
+ * @brief Inhabilitar pull-up/pull-down en entrada analógica del periférico ADC.
  * @param[in] channel Canal de \e ADC
  */
 static inline void IOCON_disable_pullup_adc(uint8_t channel)
@@ -183,6 +184,31 @@ static inline void IOCON_disable_pullup_adc(uint8_t channel)
 	case 10: { IOCON_PIN_TABLE[0][13]->MODE = IOCON_PULL_NONE; break; }
 	case 11: { IOCON_PIN_TABLE[0][4]->MODE = IOCON_PULL_NONE; break; }
 	}
+}
+
+/**
+ * @brief Inhabilitar pull-up/pull-down en entrada analógica del comparador analógico.
+ * @param[in] acmp_input Entrada del comparador analógico.
+ */
+static inline void IOCON_disable_pullup_acmp_input(uint8_t acmp_input)
+{
+	switch(acmp_input)
+	{
+	case 1: { IOCON_PIN_TABLE[0][0]->MODE = IOCON_PULL_NONE; break; }
+	case 2: { IOCON_PIN_TABLE[0][1]->MODE = IOCON_PULL_NONE; break; }
+	case 3: { IOCON_PIN_TABLE[0][14]->MODE = IOCON_PULL_NONE; break; }
+	case 4: { IOCON_PIN_TABLE[0][23]->MODE = IOCON_PULL_NONE; break; }
+	case 5: { IOCON_PIN_TABLE[0][30]->MODE = IOCON_PULL_NONE; break; }
+	}
+}
+
+/**
+ * @brief Inhabilitar pull-up/pull-down en entrada analógica de tensión de referencia externa
+ * de la voltage ladder del comparador analógico.
+ */
+static inline void IOCON_disable_pullup_acmp_ladder_external_ref_VDDCMP(void)
+{
+	IOCON_PIN_TABLE[0][6]->MODE = IOCON_PULL_NONE;
 }
 
 /**

@@ -1,134 +1,131 @@
-/*
- * HPL_ANALOG_COMPARATOR.h
- *
- *  Created on: Apr 12, 2020
- *      Author: stv
+/**
+ * @file HPL_ACMP.h
+ * @brief Declaraciones a nivel de abstraccion de periferico del ADC (LPC845)
+ * @author Esteban E. Chiama
+ * @date 4/2020
+ * @version 1.0
  */
 
-#ifndef HPL_ANALOG_COMPARATOR_H_
-#define HPL_ANALOG_COMPARATOR_H_
+#ifndef HPL_ANALOG_COMPARATOR_
+#define HPL_ANALOG_COMPARATOR_
 
 #include <HRI_ANALOG_COMPARATOR.h>
 
-extern volatile ANALOG_COMPARATOR_per_t * const ANALOG_COMPARATOR; //!< Periferico ANALOG COMPARATOR
+extern volatile ACMP_per_t * const ACMP; //!< Periferico ANALOG COMPARATOR
 
 typedef enum
 {
-	ANALOG_COMPARATOR_EDGE_FALLING = 0,
-	ANALOG_COMPARATOR_EDGE_RISING,
-	ANALOG_COMPARATOR_EDGE_BOTH
-}ANALOG_COMPARATOR_edge_sel_en;
+	ACMP_EDGE_FALLING = 0,
+	ACMP_EDGE_RISING,
+	ACMP_EDGE_BOTH
+}ACMP_edge_sel_en;
 
 typedef enum
 {
-	ANALOG_COMPARATOR_OUTPUT_DIRECT = 0,
-	ANALOG_COMPARATOR_OUTPUT_SYNC,
-}ANALOG_COMPARATOR_output_control_en;
+	ACMP_OUTPUT_DIRECT = 0,
+	ACMP_OUTPUT_SYNC,
+}ACMP_output_control_en;
 
 typedef enum
 {
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_VLADDER_OUT = 0,
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_ACMP_I1,
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_ACMP_I2,
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_ACMP_I3,
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_ACMP_I4,
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_ACMP_I5,
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_BANDGAP,
-	ANALOG_COMPARATOR_INPUT_VOLTAGE_DACOUT0
-}ANALOG_COMPARATOR_input_voltage_sel_en;
+	ACMP_INPUT_VOLTAGE_VLADDER_OUT = 0,
+	ACMP_INPUT_VOLTAGE_ACMP_I1,
+	ACMP_INPUT_VOLTAGE_ACMP_I2,
+	ACMP_INPUT_VOLTAGE_ACMP_I3,
+	ACMP_INPUT_VOLTAGE_ACMP_I4,
+	ACMP_INPUT_VOLTAGE_ACMP_I5,
+	ACMP_INPUT_VOLTAGE_BANDGAP,
+	ACMP_INPUT_VOLTAGE_DACOUT0
+}ACMP_input_voltage_sel_en;
 
 typedef enum
 {
-	ANALOG_COMPARATOR_HYSTERESIS_NONE = 0,
-	ANALOG_COMPARATOR_HYSTERESIS_5mV,
-	ANALOG_COMPARATOR_HYSTERESIS_10mV,
-	ANALOG_COMPARATOR_HYSTERESIS_20mV
-}ANALOG_COMPARATOR_hysteresis_sel_en;
+	ACMP_HYSTERESIS_NONE = 0,
+	ACMP_HYSTERESIS_5mV,
+	ACMP_HYSTERESIS_10mV,
+	ACMP_HYSTERESIS_20mV
+}ACMP_hysteresis_sel_en;
 
 typedef enum
 {
-	ANALOG_COMPARATOR_LADDER_VREF_VDD = 0,
-	ANALOG_COMPARATOR_LADDER_VREF_VDDCMP
-}ANALOG_COMPARATOR_ladder_vref_sel_en;
+	ACMP_LADDER_VREF_VDD = 0,
+	ACMP_LADDER_VREF_VDDCMP
+}ACMP_ladder_vref_sel_en;
 
-static inline void ANALOG_COMPARATOR_control_config(ANALOG_COMPARATOR_edge_sel_en edge_sel,
-		ANALOG_COMPARATOR_output_control_en output_ctrl, ANALOG_COMPARATOR_hysteresis_sel_en hyst_sel)
+static inline void ACMP_control_config(ACMP_edge_sel_en edge_sel, ACMP_output_control_en output_ctrl,
+		ACMP_hysteresis_sel_en hyst_sel)
 {
-	ANALOG_COMPARATOR->CTRL.EDGESEL = edge_sel;
-	ANALOG_COMPARATOR->CTRL.COMPSA = output_ctrl;
-	ANALOG_COMPARATOR->CTRL.HYS = hyst_sel;
+	ACMP->CTRL.EDGESEL = edge_sel;
+	ACMP->CTRL.COMPSA = output_ctrl;
+	ACMP->CTRL.HYS = hyst_sel;
 }
 
-static inline void ANALOG_COMPARATOR_voltage_input_select(ANALOG_COMPARATOR_input_voltage_sel_en in_positive,
-		ANALOG_COMPARATOR_input_voltage_sel_en in_negative)
+static inline void ACMP_voltage_input_select(ACMP_input_voltage_sel_en in_positive,
+		ACMP_input_voltage_sel_en in_negative)
 {
-	ANALOG_COMPARATOR->CTRL.COMP_VP_SEL = in_positive;
-	ANALOG_COMPARATOR->CTRL.COMP_VM_SEL = in_negative;
+	ACMP->CTRL.COMP_VP_SEL = in_positive;
+	ACMP->CTRL.COMP_VM_SEL = in_negative;
 }
 
-static inline void ANALOG_COMPARATOR_interrupt_clear(void)
+static inline void ACMP_interrupt_clear(void)
 {
-	ANALOG_COMPARATOR->CTRL.EDGECLR = 1;
-	ANALOG_COMPARATOR->CTRL.EDGECLR = 0;
+	ACMP->CTRL.EDGECLR = 1;
+	ACMP->CTRL.EDGECLR = 0;
 }
 
-static inline uint8_t ANALOG_COMPARATOR_interrupt_flag_get(void)
+static inline uint8_t ACMP_interrupt_flag_get(void)
 {
-	return ANALOG_COMPARATOR->CTRL.EDGECLR;
+	return ACMP->CTRL.EDGECLR;
 }
 
-static inline uint8_t ANALOG_COMPARATOR_output_status_get(void)
+static inline uint8_t ACMP_output_status_get(void)
 {
-	return ANALOG_COMPARATOR->CTRL.COMPSTAT;
+	return ACMP->CTRL.COMPSTAT;
 }
 
-static inline void ANALOG_COMPARATOR_interrupt_enable(void)
+static inline void ACMP_interrupt_enable(void)
 {
-	ANALOG_COMPARATOR->CTRL.INTENA = 1;
+	ACMP->CTRL.INTENA = 1;
 }
 
-static inline void ANALOG_COMPARATOR_interrupt_disable(void)
+static inline void ACMP_interrupt_disable(void)
 {
-	ANALOG_COMPARATOR->CTRL.INTENA = 0;
+	ACMP->CTRL.INTENA = 0;
 }
 
-static inline uint8_t ANALOG_COMPARATOR_edge_detected_get(void)
+static inline uint8_t ACMP_edge_detected_get(void)
 {
-	return ANALOG_COMPARATOR->CTRL.COMPEDGE;
+	return ACMP->CTRL.COMPEDGE;
 }
 
-static inline void ANALOG_COMPARATOR_ladder_enable(void)
+static inline void ACMP_ladder_enable(void)
 {
-	ANALOG_COMPARATOR->LAD.LADEN = 1;
+	ACMP->LAD.LADEN = 1;
 }
 
-static inline void ANALOG_COMPARATOR_ladder_disable(void)
+static inline void ACMP_ladder_disable(void)
 {
-	ANALOG_COMPARATOR->LAD.LADEN = 0;
+	ACMP->LAD.LADEN = 0;
 }
 
-// PARA ESTAS 2 USO uint8_t O HAGO UN ENUM ??
-// ===========================================
-static inline void ANALOG_COMPARATOR_ladder_value_set(uint8_t)
+static inline void ACMP_ladder_step_set(uint8_t ladder_step)
 {
-	#warning hacer la función. No sé que tipo de dato usar.
+	ACMP->LAD.LADSEL = ladder_step;
 }
 
-// ídem arriba
-static inline uint8_t ANALOG_COMPARATOR_ladder_value_get(void)
+static inline uint8_t ACMP_ladder_step_get(void)
 {
-	return 0;
+	return ACMP->LAD.LADSEL;
 }
 
-static inline void ANALOG_COMPARATOR_voltage_ladder_vref_set(ANALOG_COMPARATOR_ladder_vref_sel_en vref)
+static inline void ACMP_ladder_vref_select(ACMP_ladder_vref_sel_en vref)
 {
-	ANALOG_COMPARATOR->LAD.LADREF = vref;
+	ACMP->LAD.LADREF = vref;
 }
 
-static inline uint8_t ANALOG_COMPARATOR_voltage_ladder_vref_get(void)
+static inline ACMP_ladder_vref_sel_en ACMP_voltage_ladder_vref_get(void)
 {
-	return ANALOG_COMPARATOR->LAD.LADREF;
+	return ACMP->LAD.LADREF;
 }
 
-
-#endif /* HPL_ANALOG_COMPARATOR_H_ */
+#endif /* HPL_ANALOG_COMPARATOR_ */

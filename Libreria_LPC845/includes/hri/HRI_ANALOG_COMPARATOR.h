@@ -31,7 +31,7 @@ typedef struct
 	uint32_t INTENA : 1; //!< Enable de interrupción.
 	uint32_t HYS : 2; //!< Control de histérisis del comparador.
 	uint32_t : 5; //!< Reservado
-}ANALOG_COMPARATOR_CTRL_reg_t;
+}ACMP_CTRL_reg_t;
 
 //! Registro de habilitación y control de la voltage ladder.
 typedef struct
@@ -40,12 +40,12 @@ typedef struct
 	uint32_t LADSEL : 5; //!< Valor de la voltage ladder.
 	uint32_t LADREF : 1; //!< Selección del voltage de referencia Vref para la voltage ladder.
 	uint32_t : 25; //!< Reservado
-}ANALOG_COMPARATOR_LAD_reg_t;
+}ACMP_LAD_reg_t;
 
 typedef struct
 {
-	ANALOG_COMPARATOR_CTRL_reg_t CTRL;
-	ANALOG_COMPARATOR_LAD_reg_t LAD;
-}ANALOG_COMPARATOR_per_t;
+	ACMP_CTRL_reg_t CTRL;
+	ACMP_LAD_reg_t LAD;
+}ACMP_per_t;
 
 #endif /* HRI_ANALOG_COMPARATOR_H_ */

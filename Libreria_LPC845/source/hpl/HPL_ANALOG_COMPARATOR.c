@@ -8,5 +8,4 @@
 
 #include <HRI_ANALOG_COMPARATOR.h>
 
-volatile ANALOG_COMPARATOR_per_t * const ANALOG_COMPARATOR =
-		(ANALOG_COMPARATOR_per_t *) ANALOG_COMPARATOR_BASE; //!< Periferico ANALOG COMPARATOR
+volatile ACMP_per_t * const ACMP = (ACMP_per_t *) ANALOG_COMPARATOR_BASE; //!< Periferico ANALOG COMPARATOR
