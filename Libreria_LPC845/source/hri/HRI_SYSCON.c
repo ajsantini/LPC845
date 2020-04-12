@@ -1,8 +1,8 @@
 /**
- * @file HPL_SYSCON.c
- * @brief Funciones a nivel de abstraccion de periferico para el SYSCON (LPC845)
+ * @file HRI_SYSCON.c
+ * @brief Declaración del periférico SYSCON (LPC845)
  * @author Augusto Santini
- * @date 6/2019
+ * @date 4/20120
  * @version 1.0
  */
 

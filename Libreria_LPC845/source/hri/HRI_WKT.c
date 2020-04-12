@@ -1,8 +1,8 @@
 /**
- * @file HPL_WKT.c
- * @brief Funciones a nivel de abstraccion de periferico para el WKT (LPC845)
+ * @file HRI_WKT.c
+ * @brief Declaración del periférico WKT (LPC845)
  * @author Augusto Santini
- * @date 3/2020
+ * @date 4/2020
  * @version 1.0
  */
 

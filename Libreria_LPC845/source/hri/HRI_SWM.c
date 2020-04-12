@@ -1,8 +1,8 @@
 /**
- * @file HPL_SWM.c
- * @brief Funciones a nivel de abstraccion de periferico para el SWM (LPC845)
+ * @file HRI_SWM.c
+ * @brief Declaración del periférico SWM (LPC845)
  * @author Augusto Santini
- * @date 6/2019
+ * @date 4/2020
  * @version 1.0
  */
 

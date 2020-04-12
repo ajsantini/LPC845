@@ -1,8 +1,8 @@
 /**
- * @file HPL_IOCON.c
- * @brief Funciones a nivel de abstraccion de periferico para el IOCON (LPC845)
+ * @file HRI_IOCON.c
+ * @brief Declaración del periférico IOCON (LPC845)
  * @author Augusto Santini
- * @date 6/2019
+ * @date 4/2020
  * @version 1.0
  */
 

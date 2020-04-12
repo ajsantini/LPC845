@@ -1,8 +1,8 @@
 /**
- * @file HPL_NVIC.c
- * @brief Funciones a nivel de abstraccion de periferico para el NVIC (LPC845)
+ * @file HRI_NVIC.c
+ * @brief Declaración del periférico NVIC (LPC845)
  * @author Augusto Santini
- * @date 6/2019
+ * @date 4/2020
  * @version 1.0
  */
 

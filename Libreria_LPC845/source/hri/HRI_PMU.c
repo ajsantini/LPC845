@@ -1,6 +1,6 @@
 /**
- * @file HPL_PMU.c
- * @brief Funciones a nivel de abstraccion de periferico para el PMU (LPC845)
+ * @file HRI_PMU.c
+ * @brief Declaración del periférico PMU (LPC845)
  * @author Augusto Santini
  * @date 4/2020
  * @version 1.0
