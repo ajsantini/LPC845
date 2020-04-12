@@ -30,8 +30,11 @@
  */
 int main(void)
 {
-	// Configuración del FRO para que esté sin divisor y que sea el clock principal
-	hal_syscon_fro_clock_config(1, 1);
+	// Configuración del FRO para que esté sin divisor
+	hal_syscon_fro_clock_config(1);
+
+	// Selección del FRO como clock principal
+	hal_syscon_system_clock_set_source(HAL_SYSCON_SYSTEM_CLOCK_SEL_FRO);
 
 	// Clock principal en un pin (utilizando un divisor)
 	hal_syscon_clkout_config(CLKOUT_PORTPIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLKOUT_DIVISOR);
