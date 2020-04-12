@@ -94,6 +94,8 @@
  * corren con un clock asociado al mismo, se verá reducido el consumo notablemente, a expensas de reducir
  * la velocidad de procesamiento.
  *
+ * @note La función para el control de este divisor es @ref hal_syscon_set_system_clock_divider.
+ *
  * ### Divisor del clock del ADC
  *
  * El clock de la lógica del periférico @ref ADC es alimentado por el clock principal luego de pasar por este
@@ -101,11 +103,17 @@
  * clock del \e ADC será anulado. Nótese que la configuración necesaria del divisor es realizada en las
  * funciones de inicialización del \e ADC.
  *
+ * @note El periférico @ref ADC se ocupará de configurar su divisor en caso de ser necesario. No se proveen
+ * funciones en este módulo para la configuración del mismo.
+ *
  * ### Divisor del clock del SCT
  *
  * Al igual que con el \e ADC, el clock de la lógica del periférico @ref SCT es alimentado por el clock principal
  * luego de pasar por este divisor. El divisor puede ser configurado en cualquier valor entero entre 0 y 255. Si se
- * coloca en 0, el clock del \e SCT será anulado. NOTA: Este periférico todavía no está implementado en la librería.
+ * coloca en 0, el clock del \e SCT será anulado.
+ *
+ * @note Este periférico, así como las funciones para configurar su divisor en el \e SYSCON, todavía no
+ * está implementado en la librería.
  *
  * ### Divisor de la salida CLKOUT
  *
@@ -120,6 +128,8 @@
  * 		- Oscilador del watchdog
  * 		.
  *
+ * @note La función para el manejo de la salida \e CLKOUT es @ref hal_syscon_config_clkout.
+ *
  * ### Divisores para el filtro de Glitches del IOCON
  *
  * El periférico @ref IOCON tiene la posibilidad de ser configurado para eliminar glitches en entradas mediante
@@ -127,6 +137,9 @@
  * uno de los siete divisores que tiene el \e SYSCON reservados para este fin. El valor de estos divisores puede
  * ser cualquier valor entero entre 0 y 255. Si se configura como 0, el divisor no generará señal de excitación,
  * anulando así la funcionalidad.
+ *
+ * @note La función para el manejo de los divisores de filtros de glitches es
+ * @ref hal_syscon_set_iocon_glitch_divider.
  *
  * @{
  */
@@ -222,6 +235,12 @@ typedef enum
  * @return Frecuencia del main clock en Hz
  */
 uint32_t hal_syscon_get_system_clock(void);
+
+/*
+ * @brief Fijar el divisor del clock principal
+ * @param[in] div Divisor deseado. Cero inhabilita el clock principal
+ */
+void hal_syscon_set_system_clock_divider(uint8_t div);
 
 /**
  * @brief Obtener la frecuencia actual del FRO

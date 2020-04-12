@@ -20,6 +20,7 @@
 #define		FRO_DIRECT_FREQ		24e6
 
 static uint32_t current_main_freq = FRO_DIRECT_FREQ / 2; //!< Frecuencia actual del main clock
+static uint8_t current_main_div = 1; //!< Divisor actual del clock principal
 static uint32_t current_fro_freq = FRO_DIRECT_FREQ / 2; //!< Frecuencia actual del FRO
 static uint32_t current_crystal_freq = 0; //!< Frecuencia del cristal configurada
 static uint32_t current_frg_freq[2] = { 0, 0 }; //!< Frecuencia de los FRG
@@ -31,7 +32,17 @@ static uint32_t current_pll_freq = 0; //!< Frecuencia del PLL
  */
 uint32_t hal_syscon_get_system_clock(void)
 {
-	return current_main_freq;
+	return current_main_freq / current_main_div;
+}
+
+/*
+ * @brief Fijar el divisor del clock principal
+ * @param[in] div Divisor deseado. Cero inhabilita el clock principal
+ */
+void hal_syscon_set_system_clock_divider(uint8_t div)
+{
+	current_main_div = div;
+	SYSCON_set_system_clock_divider(div);
 }
 
 /**
