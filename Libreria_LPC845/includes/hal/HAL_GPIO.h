@@ -22,7 +22,7 @@
  * en esta librería (por ahora), se tienen todos los pines del \e puerto 0, y los pines del 0 al 9 del \e puerto 1.
  * Referirse a la sección @ref acerca_del_stick para más información.
  *
- * Este periférico está intimamente relacionado con el periférico \e IOCON, particularmente para el manejo de
+ * @note Este periférico está intimamente relacionado con el periférico \e IOCON, particularmente para el manejo de
  * ciertos aspectos de hardware de los pines. Para más información, referirse a la sección @ref IOCON.
  *
  * # Funcionamiento de entradas
@@ -31,7 +31,9 @@
  * <em>señal digital externa</em>. Es importante que el usuario entienda que si la señal externa está en valores
  * que correspondan a la <em>zona prohibida</em> de los niveles de señal digital, la lectura del valor será
  * indefinida. En caso de necesitar leer valores <em>analógicos</em>, referirse al periférico @ref ADC en esta
- * misma documentación. Las entradas son configuradas como tales mediante la función @ref hal_gpio_set_dir y son
+ * misma documentación.
+ *
+ * @note Las entradas son configuradas como tales mediante la función @ref hal_gpio_set_dir y son
  * consultadas/leídas mediante las funciones @ref hal_gpio_read_pin y @ref hal_gpio_read_port.
  *
  * # Funcionamiento de salidas
@@ -39,7 +41,9 @@
  * Cuando pin en particular es configurado como <em>salida</em>, se podrán colocar en el mismo, <em>valores
  * digitales</em>. Es importante que el usuario entienda que no hay forma de colocar un valor \e analógico en
  * un pin mediante este periférico. Para dicha funcionalidad, referirse al periférico @ref DAC en esta misma
- * documentación. Las salidas son configuradas como tales mediante la función @ref hal_gpio_set_dir y son
+ * documentación.
+ *
+ * @note Las salidas son configuradas como tales mediante la función @ref hal_gpio_set_dir y son
  * manipuladas individualmente mediante las funciones @ref hal_gpio_set_pin, @ref hal_gpio_clear_pin y
  * @ref hal_gpio_toggle_pin.
  *
@@ -52,7 +56,7 @@
  * 		- Si el mismo estaba configurado como entrada: Siempre se lee dicho pin como cero.
  * 		.
  *
- * Las máscaras son configuradas mediante las funciones @ref hal_gpio_set_mask_bits, @ref hal_gpio_lear_mask_bits y
+ * @note Las máscaras son configuradas mediante las funciones @ref hal_gpio_set_mask_bits, @ref hal_gpio_lear_mask_bits y
  * @ref hal_gpio_toggle_mask_bits.
  *
  * # Lectura/Escritura de Puerto/Pin
@@ -66,7 +70,7 @@
  * por lo cual es recomendable configurar dicha funcionalidad a la hora de leer/escribir múltiples pines, y
  * asimismo es recomendable "liberar" los enmascaramientos una vez trabajados los pines necesarios.
  *
- * Las funciones que involucran máscaras son @ref hal_gpio_masked_set_port, @ref hal_gpio_masked_clear_port,
+ * @note Las funciones que involucran máscaras son @ref hal_gpio_masked_set_port, @ref hal_gpio_masked_clear_port,
  * @ref hal_gpio_masked_toggle_port y @ref hal_gpio_masked_read_port.
  *
  * # Campos de aplicación típicos
@@ -184,8 +188,9 @@ void hal_gpio_init(hal_gpio_port_en port);
  * @param[in] dir Dirección deseada
  * @param[in] initial_state Estado inicial (aplica únicamente para salidas)
  *
- * Es importante recordar que el @ref IOCON controla aspectos de hardware del puerto/pin, por ejemplo la
- * inversión en la lógica del mismo.
+ * @note Es importante recordar que el @ref IOCON controla aspectos de hardware del puerto/pin, por ejemplo la
+ * inversión en la lógica del mismo, y que esta función no configura ninguno de esos aspectos. En caso de ser
+ * necesario configurar dichas características, ver @ref hal_iocon_config_io.
  *
  * @see hal_gpio_portpin_en
  * @see hal_gpio_dir_en

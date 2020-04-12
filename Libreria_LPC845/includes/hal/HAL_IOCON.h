@@ -82,6 +82,13 @@
  * Cuando se utiliza el periférico @ref IIC, en particular la instancia 0, se debe configurar mediante el \e IOCON
  * dependiendo de la velocidad con la que se va a utilizar.
  *
+ * # Implementación en la librería
+ *
+ * Es importante destacar que cada periférico inicializará el \e IOCON en el punto que lo necesite, y luego lo
+ * desactivara para conservar energía. La única excepción es el periférico @ref GPIO el cual no genera ninguna
+ * inicialización respecto del \e IOCON, por lo que el usuario deberá configurar (en caso de ser necesario) cada
+ * uno de los pines como se desee.
+ *
  * @{
  */
 

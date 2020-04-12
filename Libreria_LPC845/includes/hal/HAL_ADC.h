@@ -25,7 +25,7 @@
  * Esto implica que podemos preveer el valor resultante de la conversión analógica/digital mediante la
  * siguiente ecuación: \f$ ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}} \f$
  *
- * Cabe destacar, que las conversiones serán redondeadas \b siempre hacia abajo, es decir, se descartan los
+ * @note Cabe destacar, que las conversiones serán redondeadas \b siempre hacia abajo, es decir, se descartan los
  * valores decimales.
  *
  * # Concepto de <em>Secuencia de conversión</em>
@@ -36,8 +36,9 @@
  * secuencia. Asimismo los inicios de conversión pueden disparar una secuencia completa, o el próximo de los
  * canales habilitados en dicha secuencia. Se tienen dos secuencias configurables (<em>Secuencia A y
  * Secuencia B</em>), las cuales se pueden configurar de forma tal que un disparo de <em>Secuencia B</em>
- * interrumpa a una conversión actual de la <em>Secuencia A</em>. Las secuencias de conversión son
- * configuradas mediante la función @ref hal_adc_sequence_config.
+ * interrumpa a una conversión actual de la <em>Secuencia A</em>.
+ *
+ * @noteLas secuencias de conversión son configuradas mediante la función @ref hal_adc_sequence_config.
  *
  * # Inicio de conversiones
  *
@@ -49,9 +50,9 @@
  * 		sean las mismas internas o externas al microcontrolador.
  * 		.
  *
- * En caso de disparar conversiones por software, se utiliza la función @ref hal_adc_sequence_start para dicho
- * propósito. En caso de que las conversiones sean iniciadas por hardware, no se debe llamar a ninguna función,
- * y la secuencia de conversión se disprará cuando suceda el evento configurado en la secuencia.
+ * @note En caso de disparar conversiones por software, se utiliza la función @ref hal_adc_sequence_start
+ * para dicho propósito. En caso de que las conversiones sean iniciadas por hardware, no se debe llamar a
+ * ninguna función, y la secuencia de conversión se disprará cuando suceda el evento configurado en la secuencia.
  *
  * # Calibración de hardware
  *
@@ -60,7 +61,7 @@
  * especificada por el fabricante. La librería implementa la calibración por hardware en las funciones
  * @ref hal_adc_init_sync_mode y @ref hal_adc_init_async_mode.
  *
- * <b>NOTA</b>: La autocalibración debe realizarse cuando el \b microcontrolador sale de un modo de funcionamiento
+ * @note La autocalibración debe realizarse cuando el \b microcontrolador sale de un modo de funcionamiento
  * de bajo consumo, no cuando el periférico \e ADC sale de modo bajo consumo.
  *
  * # Modo sicnrónico/asincrónico
@@ -72,7 +73,7 @@
  * 		periférico, estan en sincronismo.
  * 		.
  *
- * La configuración de esta característica se realiza en la función @ref hal_adc_init_sync_mode o
+ * @note La configuración de esta característica se realiza en la función @ref hal_adc_init_sync_mode o
  * @ref hal_adc_init_async_mode dependiendo de las necesidades del usuario.
  *
  * # Modo bajo consumo
@@ -83,8 +84,8 @@
  * que se dispara una nueva conversión, dado que el periférico deberá salir del modo bajo consumo. Consultar el
  * manual de usuario del microcontrolador para más información.
  *
- * El parámetro de bajo consumo se configura en las funciones de inicialización @ref hal_adc_init_sync_mode o
- * @ref hal_adc_init_async_mode.
+ * @note El parámetro de bajo consumo se configura en las funciones de inicialización
+ * @ref hal_adc_init_sync_mode o @ref hal_adc_init_async_mode.
  *
  * # Velocidad de conversión/Frecuencia de muestreo
  *
@@ -120,7 +121,7 @@
  * 		- Funcionamiento en modo <em>asincrónico</em>: Frecuencia de muestreo máxima de \f$0.6MHz\f$
  * 		.
  *
- * La frecuencia de muestreo se configura en las funciones de inicialización @ref hal_adc_init_sync_mode o
+ * @note La frecuencia de muestreo se configura en las funciones de inicialización @ref hal_adc_init_sync_mode o
  * @ref hal_adc_init_async_mode.
  *
  * # Campos de aplicación típicos
@@ -347,16 +348,16 @@ typedef enum
 /**
  * @brief Tipo de dato para callback de interrupcion de sequencia
  *
- * Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener todas las
- * consideraciones necesarias al respecto.
+ * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
+ * todas las consideraciones necesarias al respecto.
  */
 typedef void (*adc_sequence_interrupt_t)(void);
 
 /**
  * @brief Tipo de dato para callback de interrupcion de comparación
  *
- * Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener todas las
- * consideraciones necesarias al respecto.
+ * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
+ * todas las consideraciones necesarias al respecto.
  */
 typedef void (*adc_comparison_interrupt_t)(void);
 
@@ -403,7 +404,8 @@ typedef struct
  * @brief Inicializar el \e ADC en modo \b asincrónico
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
- * Nota: Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC
+ *
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
  *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
@@ -418,6 +420,8 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  * @brief Inicializar el \e ADC en modo \b sincrónico
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
+ *
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
  *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
@@ -434,7 +438,7 @@ void hal_adc_deinit(void);
 /**
  * @brief Configurar una secuencia de conversión
  *
- * Esta función no habilita la secuencia, al menos que el parametro \b burst este activo
+ * @note Esta función no habilita la secuencia.
  *
  * @see hal_adc_sequence_sel_en
  * @see hal_adc_sequence_config_t
@@ -446,7 +450,7 @@ void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 /**
  * @brief Disparar conversiones en una secuencia
  *
- * La configuración de la secuencia, en particular el parametro \b single_step, influye
+ * @note La configuración de la secuencia, en particular el parametro \b single_step, influye
  * en si esta funcion dispara una secuencia entera o un paso de la misma. Asimismo, si la secuencia fue
  * configurada con el parámetro \b BURST activo, se debe llamar a esta función una única vez.
  *
