@@ -13,12 +13,11 @@
  *
  * Este periférico es un contador básico con posibilidad de tres fuentes distintas de clock. El mismo puede
  * ser utilizado para despertar al microcontrolador de modos de bajo consumo siempre y cuando la fuente de
- * clock sea correctamente seleccionada, y se encuentra siempre encendido. En caso de no utilizarlo para
- * despertar al microcontrolador de modos de bajo consumo, se puede utilizar como un timer genérico.
+ * clock sea correctamente seleccionada. También se puede utilizar como un timer genérico.
  *
- * Al cargar un valor distinto de cero en el periférico, el mismo se enciende automáticamente y comienza el conteo.
- * Una vez transcurrido el conteo, el periférico genera la interrupción correspondiente y se vuelve a apagar hasta
- * un próximo conteo.
+ * Al cargar un valor distinto de cero en la cuenta del periférico, el mismo se enciende automáticamente y
+ * comienza el conteo. Una vez transcurrido el conteo, el periférico genera la interrupción correspondiente
+ * y se vuelve a apagar hasta un próximo conteo.
  *
  * @note El periférico se inicializa mediante la función @ref hal_wkt_init y se dispara un conteo mediante las
  * funciones @ref hal_wkt_start_count o @ref hal_wkt_start_count_with_value dependiendo de la necesidad del
