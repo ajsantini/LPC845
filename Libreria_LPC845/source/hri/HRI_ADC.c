@@ -1,8 +1,8 @@
 /**
- * @file HPL_ADC.c
- * @brief Funciones a nivel de abstraccion de periferico para el ADC (LPC845)
+ * @file HRI_ADC.c
+ * @brief Declaración del periférico ADC (LPC845)
  * @author Augusto Santini
- * @date 6/2019
+ * @date 4/2020
  * @version 1.0
  */
 

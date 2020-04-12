@@ -1,8 +1,8 @@
 /**
- * @file HPL_SPI.c
- * @brief Funciones a nivel de abstraccion de periferico para el SPI (LPC845)
+ * @file HRI_SPI.c
+ * @brief Declaración del periférico SPI (LPC845)
  * @author Augusto Santini
- * @date 3/2020
+ * @date 4/2020
  * @version 1.0
  */
 

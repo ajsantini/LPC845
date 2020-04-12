@@ -115,25 +115,25 @@
 #define		ADC_CONVERSION_TIME_MSEG	(100)
 
 /** Valor de umbral bajo para las comparaciones del ADC */
-#define		THR_LOW						1000
+#define		THR_LOW						(1000)
 
 /** Valor de umbral alto para las comparaciones del ADC */
-#define 	THR_HIGH					2500
+#define 	THR_HIGH					(2500)
 
 /** Puerto de ambos LEDS */
-#define 	LED_PORT					1
+#define 	LED_PORT					(1)
 
 /** Puerto y pin de Led Azul */
-#define 	LED_AZUL					HAL_GPIO_PORTPIN_1_1
+#define 	LED_AZUL					(HAL_GPIO_PORTPIN_1_1)
 
 /** Puerto y pin de Led Rojo */
-#define 	LED_ROJO					HAL_GPIO_PORTPIN_1_2
+#define 	LED_ROJO					(HAL_GPIO_PORTPIN_1_2)
 
 /** Valor lógico de LED encendido */
-#define 	LED_ON_STATE				0
+#define 	LED_ON_STATE				(0)
 
 /** Valor lógico de LED apagado */
-#define 	LED_OFF_STATE				1
+#define 	LED_OFF_STATE				(1)
 
 static void adc_sequence_callback(void);
 

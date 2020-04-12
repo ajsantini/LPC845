@@ -228,7 +228,8 @@ static uint8_t spi_rx_complete_flag = 0;
 
 int main(void)
 {
-	hal_syscon_fro_clock_config(1, 1);
+	hal_syscon_fro_clock_config(1);
+	hal_syscon_system_clock_set_source(HAL_SYSCON_SYSTEM_CLOCK_SEL_FRO);
 
 	// Clock principal en un pin (utilizando un divisor)
 	hal_syscon_clkout_config(CLOCKOUT_PORT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);

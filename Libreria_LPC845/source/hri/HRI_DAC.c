@@ -1,8 +1,8 @@
 /**
- * @file HPL_DAC.c
- * @brief Funciones a nivel de abstraccion de periferico para el DAC (LPC845)
+ * @file HRI_DAC.c
+ * @brief Declaración del periférico DAC (LPC845)
  * @author Augusto Santini
- * @date 6/2019
+ * @date 4/2020
  * @version 1.0
  */
 

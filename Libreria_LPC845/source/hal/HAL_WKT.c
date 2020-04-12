@@ -14,21 +14,28 @@
 #include <HPL_SYSCON.h>
 #include <HPL_PMU.h>
 
+/** Valor de división que genera el \e WKT al utilizar el \e FRO como fuente de clock */
 #define		HAL_WKT_DIVIDE_VALUE		(16)
+
+/** Frecuencia del oscilador de bajo consumo */
 #define		HAL_WKT_LOW_POWER_OSC_FREQ	(10e3)
 
+/** Fuente actual configurada para el \e WKT */
 static hal_wkt_clock_source_en current_clock_source = HAL_WKT_CLOCK_SOURCE_FRO_DIV;
+
+/** Frecuencia actual externa configurada para el \e WKT */
 static uint32_t current_ext_clock = 0;
 
 static void dummy_irq(void);
 
-static void (*hal_wkt_irq_callback)(void) = dummy_irq;
+/** Puntero al callback a ejecutar en interrupción de \e WKT */
+static hal_wkt_callback_t hal_wkt_irq_callback = dummy_irq;
 
 /**
  * @brief Inicializar el WKT
- * @param[in] clock_sel Seleccion de clock deseada para el WKT
- * @param[in] ext_clock_value Valor de clock externo (si la seleccion es interna, no importa este parametro)
- * @param[in] callback Callback a ejecutar en la interrupcion del WKT
+ * @param[in] clock_sel Selección de clock deseada para el WKT
+ * @param[in] ext_clock_value Valor de clock externo (si la selección es interna, no importa este parámetro)
+ * @param[in] callback Callback a ejecutar en la interrupción del WKT
  */
 void hal_wkt_init(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value, void (*callback)(void))
 {
@@ -42,10 +49,10 @@ void hal_wkt_init(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value, v
 	hal_wkt_register_callback(callback);
 }
 
-/*
+/**
  * @brief Configurar fuente de clock para el WKT
- * @param[in] clock_sel Seleccion de clock deseada para el WKT
- * @param[in] ext_clock_value Valor de clock externo (si la seleccion es interna, no importa este parametro)
+ * @param[in] clock_sel Selección de clock deseada para el WKT
+ * @param[in] ext_clock_value Valor de clock externo (si la selección es interna, no importa este parámetro)
  */
 void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value)
 {
@@ -82,8 +89,8 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 }
 
 /**
- * @brief Registrar un callback para la interrupcion del WKT
- * @param[in] new_callback Nuevo callback para la interrupcion del WKT
+ * @brief Registrar un callback para la interrupción del WKT
+ * @param[in] new_callback Nuevo callback para la interrupción del WKT
  */
 void hal_wkt_register_callback(void (*new_callback)(void))
 {
@@ -100,9 +107,9 @@ void hal_wkt_register_callback(void (*new_callback)(void))
 	}
 }
 
-/*
+/**
  * @brief Iniciar el conteo con el WKT en base a un tiempo
- * @param[in] time_useg Tiempo en microsegundos deseado (se redondeara al valor primer posible hacia arriba)
+ * @param[in] time_useg Tiempo en microsegundos deseado (se redondeará al valor primer posible hacia arriba)
  */
 void hal_wkt_start_count(uint32_t time_useg)
 {
@@ -121,19 +128,19 @@ void hal_wkt_start_count(uint32_t time_useg)
 	WKT_write_count(calculated_count);
 }
 
-/*
+/**
  * @brief Iniciar el conteo con el WKT en base a un valor
  *
  * El usuario es responsable de colocar un valor que tenga sentido en base al clock utilizado.
  *
- * @param[in] value Valor deseado a poner en el conteo (util para una actualizacion mas rapida)
+ * @param[in] value Valor deseado a poner en el conteo (útil para una actualización mas rapida)
  */
 void hal_wkt_start_count_with_value(uint32_t value)
 {
 	WKT_write_count(value);
 }
 
-/*
+/**
  * @brief Funcion dummy para inicializar punteros a funcion de interrupcion
  */
 static void dummy_irq(void)

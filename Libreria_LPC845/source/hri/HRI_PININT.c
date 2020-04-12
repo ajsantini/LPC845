@@ -1,8 +1,8 @@
 /**
- * @file HPL_PININT.c
- * @brief Funciones a nivel de abstraccion de periferico para el PININT (LPC845)
+ * @file HRI_PININT.c
+ * @brief Declaración del periférico PININT (LPC845)
  * @author Augusto Santini
- * @date 6/2019
+ * @date 4/2020
  * @version 1.0
  */
 
