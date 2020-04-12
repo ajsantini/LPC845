@@ -1,70 +1,19 @@
-/*
- * HAL_ANALOG_COMPARATOR.c
- *
- *  Created on: Apr 12, 2020
- *      Author: stv
+/**
+ * @file HAL_ACMP.h
+ * @brief Declaraciones a nivel de aplicación del periférico ADC (LPC845)
+ * @author Esteban E. Chiama
+ * @date 4/2020
+ * @version 1.0
  */
 
 #include <HPL_SYSCON.h>
 #include <HPL_NVIC.h>
 #include <HPL_SWM.h>
 #include <HPL_IOCON.h>
-#include <HPL_ANALOG_COMPARATOR.h>
+#include <HPL_ACMP.h>
+#include <HAL_ACMP.h>
 
-typedef enum
-{
-	HAL_ACMP_OUTPUT_DIRECT = 0,
-	HAL_ACMP_OUTPUT_SYNC,
-}hal_acmp_output_control_en;
-
-typedef enum
-{
-	HAL_ACMP_HYSTERESIS_NONE = 0,
-	HAL_ACMP_HYSTERESIS_5mV,
-	HAL_ACMP_HYSTERESIS_10mV,
-	HAL_ACMP_HYSTERESIS_20mV
-}hal_acmp_hysteresis_sel_en;
-
-typedef enum
-{
-	HAL_ACMP_LADDER_VREF_VDD = 0,
-	HAL_ACMP_LADDER_VREF_VDDCMP_PIN
-}hal_acmp_ladder_vref_sel_en;
-
-typedef enum
-{
-	HAL_ACMP_EDGE_FALLING = 0,
-	HAL_ACMP_EDGE_RISING,
-	HAL_ACMP_EDGE_BOTH
-}hal_acmp_edge_sel_en;
-
-typedef struct
-{
-	hal_acmp_output_control_en output_control;
-	hal_acmp_hysteresis_sel_en hysteresis;
-
-	uint8_t ladder_enable;
-	hal_acmp_ladder_vref_sel_en ladder_vref_sel;
-	uint8_t ladder_step;
-
-	uint8_t interrupt_enable;
-	hal_acmp_edge_sel_en edge_sel;
-
-}hal_acpm_config_t;
-
-typedef enum
-{
-	HAL_ACMP_INPUT_VOLTAGE_VLADDER_OUT = 0,
-	HAL_ACMP_INPUT_VOLTAGE_ACMP_I1,
-	HAL_ACMP_INPUT_VOLTAGE_ACMP_I2,
-	HAL_ACMP_INPUT_VOLTAGE_ACMP_I3,
-	HAL_ACMP_INPUT_VOLTAGE_ACMP_I4,
-	HAL_ACMP_INPUT_VOLTAGE_ACMP_I5,
-	HAL_ACMP_INPUT_VOLTAGE_BANDGAP,
-	HAL_ACMP_INPUT_VOLTAGE_DACOUT0
-}hal_acmp_input_voltage_sel_en;
-
-void hal_analog_comparator_init(void)
+void hal_acmp_init(void)
 {
 	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_ACMP);
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_ACMP);
@@ -97,10 +46,23 @@ void hal_acmp_config(const hal_acpm_config_t *acmp_config)
 {
 	ACMP_control_config(acmp_config->edge_sel, acmp_config->output_control, acmp_config->hysteresis);
 
-	SWM_init();
-	if(acmp_config->ladder_enable)
+	if(acmp_config->interrupt_enable)
 	{
-		if(acmp_config->ladder_vref_sel ==  HAL_ACMP_LADDER_VREF_VDDCMP_PIN)
+		ACMP_interrupt_enable();
+	}
+	else
+	{
+		ACMP_interrupt_disable();
+	}
+}
+
+void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *ladder_config)
+{
+	SWM_init();
+
+	if(ladder_config->enable)
+	{
+		if(ladder_config->vref_sel ==  HAL_ACMP_LADDER_VREF_VDDCMP_PIN)
 		{
 			IOCON_init();
 			IOCON_disable_pullup_acmp_ladder_external_ref_VDDCMP();
@@ -112,8 +74,8 @@ void hal_acmp_config(const hal_acpm_config_t *acmp_config)
 			SWM_enable_VDDCMP(SWM_DISABLE);
 		}
 
-		ACMP_ladder_vref_select(acmp_config->ladder_vref_sel);
-		ACMP_ladder_step_set( (0x1F) & (acmp_config->ladder_step) );
+		ACMP_ladder_vref_select(ladder_config->vref_sel);
+		ACMP_ladder_step_set( (0x1F) & (ladder_config->step) );
 		ACMP_ladder_enable();
 	}
 	else
@@ -121,16 +83,8 @@ void hal_acmp_config(const hal_acpm_config_t *acmp_config)
 		ACMP_ladder_disable();
 		SWM_enable_VDDCMP(SWM_DISABLE);
 	}
-	SWM_deinit();
 
-	if(acmp_config->interrupt_enable)
-	{
-		ACMP_interrupt_enable();
-	}
-	else
-	{
-		ACMP_interrupt_disable();
-	}
+	SWM_deinit();
 }
 
 void hal_acmp_input_select(hal_acmp_input_voltage_sel_en positive_input,

@@ -1,17 +1,17 @@
 /**
- * @file HRI_ANALOG_COMPARATOR.h
+ * @file HRI_ACMP.h
  * @brief Declaraciones a nivel de registros del ADC (LPC845)
  * @author Esteban E. Chiama
  * @date 4/2020
  * @version 1.0
  */
 
-#ifndef HRI_ANALOG_COMPARATOR_H_
-#define HRI_ANALOG_COMPARATOR_H_
+#ifndef HRI_ACMP_H_
+#define HRI_ACMP_H_
 
 #include <stdint.h>
 
-#define		ANALOG_COMPARATOR_BASE		0x40024000 //!< Direccion base del Comparador Analígico
+#define			ACMP_BASE			0x40024000 //!< Direccion base del Comparador Analígico
 
 //! Registro de control del comparador analógico
 typedef struct
@@ -48,4 +48,6 @@ typedef struct
 	ACMP_LAD_reg_t LAD;
 }ACMP_per_t;
 
-#endif /* HRI_ANALOG_COMPARATOR_H_ */
+extern volatile ACMP_per_t * const ACMP; //!< Periferico Comparador Analógico.
+
+#endif /* HRI_ACMP_H_ */

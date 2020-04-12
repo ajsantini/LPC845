@@ -6,12 +6,10 @@
  * @version 1.0
  */
 
-#ifndef HPL_ANALOG_COMPARATOR_
-#define HPL_ANALOG_COMPARATOR_
+#ifndef HPL_ACMP_H_
+#define HPL_ACMP_H_
 
-#include <HRI_ANALOG_COMPARATOR.h>
-
-extern volatile ACMP_per_t * const ACMP; //!< Periferico ANALOG COMPARATOR
+#include <HRI_ACMP.h>
 
 typedef enum
 {
@@ -128,4 +126,4 @@ static inline ACMP_ladder_vref_sel_en ACMP_voltage_ladder_vref_get(void)
 	return ACMP->LAD.LADREF;
 }
 
-#endif /* HPL_ANALOG_COMPARATOR_ */
+#endif /* HPL_ACMP_H_ */
