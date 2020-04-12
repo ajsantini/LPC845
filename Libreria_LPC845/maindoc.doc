@@ -19,7 +19,7 @@
  * única capa de abstracción. Estas tres capas están explicados a continuación.
  * 
  * @note Toda la documentación acerca de los distintos periféricos implementados en la documentación de la 
- * librería, están referidos a la capa @ref HAL, pero se explica la estructura de la librería 
+ * librería, están referidos a la capa @ref capa_aplicacion, pero se explica la estructura de la librería 
  * dado que usuarios más avanzados en el campo de sistemas embebidos puedan llegar a utilizar con mayor 
  * frecuencia las dos capas inferiores.
  * 
