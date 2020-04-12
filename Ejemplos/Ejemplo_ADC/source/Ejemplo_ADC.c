@@ -198,7 +198,7 @@ int main(void)
 
 	// Configuración de comparaciones e interrupción
 	hal_adc_threshold_config(HAL_ADC_THRESHOLD_SEL_0, THR_LOW, THR_HIGH);
-	hal_adc_threshold_channel_config(ADC_PRESET_CHANNEL, HAL_ADC_THRESHOLD_SEL_0, HAL_ADC_THRESHOLD_INTERRUPT_SEL_CROSSING);
+	hal_adc_threshold_channel_config(ADC_PRESET_CHANNEL, HAL_ADC_THRESHOLD_SEL_0, HAL_ADC_THRESHOLD_IRQ_SEL_CROSSING);
 	hal_adc_threshold_register_interrupt(adc_thr_callback);
 
 	// Inicialización del \e Systick con el tiempo de tick adecuado

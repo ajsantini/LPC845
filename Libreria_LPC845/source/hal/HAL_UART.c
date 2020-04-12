@@ -65,7 +65,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	case 0:
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART0),
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART0),
 										config->baudrate,
 										config->oversampling);
 
@@ -79,7 +79,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	case 1:
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART1),
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART1),
 										config->baudrate,
 										config->oversampling);
 
@@ -93,7 +93,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	case 2:
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART2),
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART2),
 										config->baudrate,
 										config->oversampling);
 
@@ -107,7 +107,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	case 3:
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART3),
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART3),
 										config->baudrate,
 										config->oversampling);
 
@@ -121,7 +121,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	case 4:
 		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART4),
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART4),
 										config->baudrate,
 										config->oversampling);
 

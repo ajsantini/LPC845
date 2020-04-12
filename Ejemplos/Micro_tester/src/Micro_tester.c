@@ -228,20 +228,20 @@ static uint8_t spi_rx_complete_flag = 0;
 
 int main(void)
 {
-	hal_syscon_config_fro_direct(1, 1);
+	hal_syscon_fro_clock_config(1, 1);
 
 	// Clock principal en un pin (utilizando un divisor)
-	hal_syscon_config_clkout(CLOCKOUT_PORT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
+	hal_syscon_clkout_config(CLOCKOUT_PORT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
 
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
 	// Como fuente utilizo el FRO a 24MHz ya configurado
 	// 24MHz / (1 + (47 / 256)) = 20.2772272MHz
-	hal_syscon_config_frg(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
+	hal_syscon_frg_config(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
 	// Divisor para glitches de IOCON
-	hal_syscon_set_iocon_glitch_divider(HAL_SYSCON_IOCON_GLITCH_SEL_0, 255);
+	hal_syscon_iocon_glitch_divider_set(HAL_SYSCON_IOCON_GLITCH_SEL_0, 255);
 
 	hal_iocon_config_io(KEY_PORTPIN, &pin_config);
 

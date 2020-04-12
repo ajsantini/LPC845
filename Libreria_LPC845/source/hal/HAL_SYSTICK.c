@@ -26,7 +26,7 @@ void hal_systick_init(uint32_t tick_us, void (*callback)(void))
 	uint32_t aux;
 
 	// En base a los us deseados calculo el valor de STRELOAD
-	aux_f = ((float) hal_syscon_get_system_clock()) * ((float) tick_us);
+	aux_f = ((float) hal_syscon_system_clock_get()) * ((float) tick_us);
 	aux = aux_f / 1e6;
 
 	aux--;

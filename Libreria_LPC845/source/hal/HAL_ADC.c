@@ -80,7 +80,7 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
 
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
-	ADC_hardware_calib(hal_syscon_get_system_clock() / 500e3);
+	ADC_hardware_calib(hal_syscon_system_clock_get() / 500e3);
 
 	if(sample_freq > ADC_MAX_FREQ_ASYNC)
 	{
@@ -95,11 +95,11 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
 	 */
 	if(clock_source == HAL_ADC_CLOCK_SOURCE_FRO)
 	{
-		aux = hal_syscon_get_fro_clock() / sample_freq;
+		aux = hal_syscon_fro_clock_get() / sample_freq;
 	}
 	else
 	{
-		aux = hal_syscon_get_pll_clock() / sample_freq;
+		aux = hal_syscon_pll_clock_get() / sample_freq;
 	}
 
 	SYSCON_set_adc_clock(clock_source, (uint8_t) aux);
@@ -130,7 +130,7 @@ void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_
 	SYSCON_set_adc_clock(SYSCON_ADC_CLOCK_SEL_FRO, 1);
 	ADC_set_vrange(ADC_VRANGE_HIGH_VOLTAGE);
 
-	ADC_hardware_calib(hal_syscon_get_system_clock() / 500e3);
+	ADC_hardware_calib(hal_syscon_system_clock_get() / 500e3);
 
 	// El cálculo de la frecuencia de muestreo se hace con la frecuencia del main clock
 
@@ -141,7 +141,7 @@ void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_
 
 	sample_freq *= ADC_CYCLE_DELAY;
 
-	aux = hal_syscon_get_system_clock() / sample_freq;
+	aux = hal_syscon_system_clock_get() / sample_freq;
 
 	if(aux > 0)
 	{

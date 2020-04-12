@@ -41,10 +41,16 @@
  * mismo se puede configurar (<em>no implementado todavia</em>) pero por default comienza en \f$24MHz\f$ con
  * un divisor \f$/2\f$, resultando en una frecuencia efectiva de \f$12MHz\f$.
  *
+ * @note Las funciones relacionadas con el \e FRO son @ref hal_syscon_fro_clock_config y
+ * @ref hal_syscon_fro_clock_get
+ *
  * ### Phase Locked Loop (PLL)
  *
  * Este oscilador toma una frecuencia de entrada y genera una conversión para obtener una frecuencia efectiva
  * mayor a la de entrada. La frecuencia de entrada mínima del mismo es de \f$10MHz\f$.
+ *
+ * @note Las funciones relacionadas con el \e PLL son @ref hal_syscon_pll_clock_config y
+ * @ref hal_syscon_pll_clock_get
  *
  * ### Main/System clock
  *
@@ -234,33 +240,33 @@ typedef enum
  * @brief Obtener la frecuencia actual del main clock
  * @return Frecuencia del main clock en Hz
  */
-uint32_t hal_syscon_get_system_clock(void);
+uint32_t hal_syscon_system_clock_get(void);
 
 /*
  * @brief Fijar el divisor del clock principal
  * @param[in] div Divisor deseado. Cero inhabilita el clock principal
  */
-void hal_syscon_set_system_clock_divider(uint8_t div);
+void hal_syscon_system_clock_set_divider(uint8_t div);
 
 /**
  * @brief Obtener la frecuencia actual del FRO
  * @return Frecuencia del FRO en Hz
  */
-uint32_t hal_syscon_get_fro_clock(void);
+uint32_t hal_syscon_fro_clock_get(void);
 
 /**
  * @brief Configurar el ext clock a partir de un cristal externo
  * @param[in] crystal_freq Frecuencia del cristal externo utilizado
  * @param[in] use_as_main Si es distinto de cero, se utilizara el oscilador a cristal como main clock
  */
-void hal_syscon_config_external_crystal(uint32_t crystal_freq, uint8_t use_as_main);
+void hal_syscon_external_crystal_config(uint32_t crystal_freq, uint8_t use_as_main);
 
 /**
  * @brief Configurar el clock FRO
  * @param[in] direct Si es distinto de cero se omite el divisor del FRO
  * @param[in] use_as_main Si es distinto de cero, se utilizará el FRO como main clock
  */
-void hal_syscon_config_fro_direct(uint8_t direct, uint8_t use_as_main);
+void hal_syscon_fro_clock_config(uint8_t direct, uint8_t use_as_main);
 
 /**
  * @brief Configurar el pin de clock out (salida de clock hacia afuera)
@@ -268,7 +274,7 @@ void hal_syscon_config_fro_direct(uint8_t direct, uint8_t use_as_main);
  * @param[in] clock_source Fuente deseada para la salida clock out
  * @param[in] divider Divisor deseado para la salida clock out
  */
-void hal_syscon_config_clkout(hal_gpio_portpin_en portpin, hal_syscon_clkout_source_sel_en clock_source, uint8_t divider);
+void hal_syscon_clkout_config(hal_gpio_portpin_en portpin, hal_syscon_clkout_source_sel_en clock_source, uint8_t divider);
 
 /**
  * @brief Configurar el divisor fraccional
@@ -279,34 +285,34 @@ void hal_syscon_config_clkout(hal_gpio_portpin_en portpin, hal_syscon_clkout_sou
  * @param[in] clock_source Fuente de clock de entrada para el FRG
  * @param[in] mul Multiplicador deseado
  */
-void hal_syscon_config_frg(uint8_t inst, hal_syscon_frg_clock_sel_en clock_source, uint32_t mul);
+void hal_syscon_frg_config(uint8_t inst, hal_syscon_frg_clock_sel_en clock_source, uint32_t mul);
 
 /**
  * @brief Obtener la frecuencia de clock en Hz configurada para cierto periférico
  * @param[in] peripheral Periférico deseado
  * @return Frecuencia en Hz del clock del periférico
  */
-uint32_t hal_syscon_get_peripheral_clock(hal_syscon_peripheral_sel_en peripheral);
+uint32_t hal_syscon_peripheral_clock_get(hal_syscon_peripheral_sel_en peripheral);
 
 /**
  * @brief Configurar divisor para el clock de glitches del IOCON
  * @param[in] sel Selección de divisor
  * @param[in] div Valor de división deseado
  */
-void hal_syscon_set_iocon_glitch_divider(hal_syscon_iocon_glitch_sel_en sel, uint32_t div);
+void hal_syscon_iocon_glitch_divider_set(hal_syscon_iocon_glitch_sel_en sel, uint32_t div);
 
 /**
  * @brief Configurar el PLL
  * @param[in] clock_source Fuente de clock de referencia para el PLL
  * @param[in] freq Frecuencia deseada de salida del PLL
  */
-void hal_syscon_config_pll(hal_syscon_pll_source_sel_en clock_source, uint32_t freq);
+void hal_syscon_pll_clock_config(hal_syscon_pll_source_sel_en clock_source, uint32_t freq);
 
 /**
  * @brief Obtener frecuencia actual configurada del PLL
  * @return Frecuencia actual del PLL en Hz
  */
-uint32_t hal_syscon_get_pll_clock(void);
+uint32_t hal_syscon_pll_clock_get(void);
 
 #endif /* HAL_SYSCON_H_ */
 

@@ -111,7 +111,7 @@ void hal_wkt_start_count(uint32_t time_useg)
 
 	switch(current_clock_source)
 	{
-	case HAL_WKT_CLOCK_SOURCE_FRO_DIV: { clock_base_value = (float) (hal_syscon_get_fro_clock() / HAL_WKT_DIVIDE_VALUE); break; }
+	case HAL_WKT_CLOCK_SOURCE_FRO_DIV: { clock_base_value = (float) (hal_syscon_fro_clock_get() / HAL_WKT_DIVIDE_VALUE); break; }
 	case HAL_WKT_CLOCK_SOURCE_LOW_POWER_OSC: { clock_base_value = (float) (HAL_WKT_LOW_POWER_OSC_FREQ); break; }
 	case HAL_WKT_CLOCK_SOURCE_EXTERNAL: { clock_base_value = (float) (current_ext_clock); break; }
 	}
