@@ -32,6 +32,7 @@ static uint32_t current_fro_freq = FRO_DIRECT_FREQ / 2; //!< Frecuencia actual d
 static uint32_t current_crystal_freq = 0; //!< Frecuencia del cristal configurada
 static uint32_t current_frg_freq[2] = { 0, 0 }; //!< Frecuencia de los FRG
 static uint32_t current_pll_freq = 0; //!< Frecuencia del PLL
+static uint32_t current_ext_freq = 0; //!< Frecuencia de la fuente de clock externa
 
 /**
  * @brief Obtener la frecuencia actual del main clock
@@ -40,6 +41,15 @@ static uint32_t current_pll_freq = 0; //!< Frecuencia del PLL
 uint32_t hal_syscon_system_clock_get(void)
 {
 	return current_main_freq / current_main_div;
+}
+
+/**
+ * @brief Configuración de fuente de clock para el clock principal
+ * @param[in] clock_source Selección deseada
+ */
+void hal_syscon_system_clock_set_source(hal_syscon_system_clock_sel_en clock_source)
+{
+	SYSCON_set_system_clock_source(clock_source);
 }
 
 /*
@@ -64,9 +74,8 @@ uint32_t hal_syscon_fro_clock_get(void)
 /**
  * @brief Configurar el ext clock a partir de un cristal externo
  * @param[in] crystal_freq Frecuencia del cristal externo utilizado
- * @param[in] use_as_main Si es distinto de cero, se utilizara el oscilador a cristal como main clock
  */
-void hal_syscon_external_crystal_config(uint32_t crystal_freq, uint8_t use_as_main)
+void hal_syscon_external_crystal_config(uint32_t crystal_freq)
 {
 	uint8_t counter;
 
@@ -97,21 +106,31 @@ void hal_syscon_external_crystal_config(uint32_t crystal_freq, uint8_t use_as_ma
 
 	SYSCON_set_ext_clock_source(SYSCON_EXT_CLOCK_SOURCE_SEL_CRYSTAL);
 	current_crystal_freq = crystal_freq;
+}
 
-	if(use_as_main)
-	{
-		SYSCON_set_system_clock_source(SYSCON_MAIN_CLOCK_SEL_EXT_CLK);
-		current_main_freq = current_crystal_freq;
-	}
+/**
+ * @brief Configurar el ext clock a partir de una fuente de clock externa
+ * @param[in] external_clock_freq Frecuencia de la fuente de clock externa
+ */
+void hal_syscon_external_clock_config(uint32_t external_clock_freq)
+{
+	SYSCON_set_ext_clock_source(SYSCON_EXT_CLOCK_SOURCE_SEL_CLK_IN);
+	current_ext_freq = external_clock_freq;
 }
 
 /**
  * @brief Configurar el clock FRO
+ *
+ * @note Esta función habilita el FRO
+ *
  * @param[in] direct Si es distinto de cero se omite el divisor del FRO
- * @param[in] use_as_main Si es distinto de cero, se utilizará el FRO como main clock
  */
-void hal_syscon_fro_clock_config(uint8_t direct, uint8_t use_as_main)
+void hal_syscon_fro_clock_config(uint8_t direct)
 {
+	// Encendido del FRO
+	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_FRO);
+	SYSCON_power_up_peripheral(SYSCON_POWER_SEL_FROOUT);
+
 	if(direct)
 	{
 		SYSCON_set_fro_direct();
@@ -122,12 +141,15 @@ void hal_syscon_fro_clock_config(uint8_t direct, uint8_t use_as_main)
 		SYSCON_clear_fro_direct();
 		current_fro_freq = (uint32_t) (FRO_DIRECT_FREQ / 2);
 	}
+}
 
-	if(use_as_main)
-	{
-		SYSCON_set_system_clock_source(SYSCON_MAIN_CLOCK_SEL_FRO);
-		current_main_freq = current_fro_freq;
-	}
+/**
+ * @brief Inhabilitar el FRO
+ */
+void hal_syscon_fro_clock_disable(void)
+{
+	SYSCON_power_down_peripheral(SYSCON_POWER_SEL_FRO);
+	SYSCON_power_down_peripheral(SYSCON_POWER_SEL_FROOUT);
 }
 
 /**
@@ -172,6 +194,16 @@ void hal_syscon_frg_config(uint8_t inst, hal_syscon_frg_clock_sel_en clock_sourc
 }
 
 /**
+ * @brief Configuración del watchdog oscillator
+ * @param[in] clkana_sel Selección de frecuencia base del oscilador
+ * @param[in] div Divisor
+ */
+void hal_syscon_watchdog_oscillator_config(hal_syscon_watchdog_clkana_sel_en clkana_sel, uint8_t div)
+{
+	SYSCON_set_watchdog_oscillator_control(div, clkana_sel);
+}
+
+/**
  * @brief Obtener la frecuencia de clock en Hz configurada para cierto periférico
  * @param[in] peripheral Periférico deseado
  * @return Frecuencia en Hz del clock del periférico
@@ -210,7 +242,7 @@ void hal_syscon_iocon_glitch_divider_set(hal_syscon_iocon_glitch_sel_en sel, uin
  */
 void hal_syscon_pll_clock_config(hal_syscon_pll_source_sel_en clock_source, uint32_t freq)
 {
-	#warning Ojo, falta hacer esta funcion
+	#warning Ojo, falta hacer la implementación de esta función
 	current_pll_freq = 0; // Tiene que dejar el valor correcto de la frecuencia del PLL, en Hz
 }
 

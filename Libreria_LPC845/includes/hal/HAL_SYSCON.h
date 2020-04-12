@@ -50,13 +50,17 @@
  * mayor a la de entrada. La frecuencia de entrada mínima del mismo es de \f$10MHz\f$.
  *
  * @note Las funciones relacionadas con el \e PLL son @ref hal_syscon_pll_clock_config y
- * @ref hal_syscon_pll_clock_get
+ * @ref hal_syscon_pll_clock_get.
  *
  * ### Main/System clock
  *
  * El clock principal o de sistema (estos nombres se usan indistintamente) genera la frecuencia base de la cual
  * se derivan la mayoría de los periféricos. El mismo puede ser tomado de la señal de salida del \e PLL o de la
  * señal previa al \e PLL. Este clock es el que provee la frecuencia del núcleo del microcontrolador.
+ *
+ * @note La selección de la fuente de clock principal se realiza mediante la función
+ * @ref hal_syscon_system_clock_set_source mientras que la obtención de la frecuencia actual del clock
+ * principal configurada se obtiene con la función @ref hal_syscon_system_clock_get.
  *
  * ### Clock externo
  *
@@ -65,6 +69,9 @@
  * Si se utiliza un <em>cristal externo</em> se utilizarán los pines P0_8 y P0_9 como fuentes de entrada para el
  * circuito oscilador interno, el cual se encargará de generar la frecuencia de clock correspondiente, mientras que
  * si se utiliza un oscilador externo, se utilizará únicamente el pin P0_1.
+ *
+ * @note Para configurar el clock externo se utilizan las funciones @ref hal_syscon_external_crystal_config y
+ * @ref hal_syscon_external_clock_config.
  *
  * ### Generadores fraccionales de clock
  *
@@ -81,11 +88,17 @@
  * 		- @ref IIC
  * 		.
  *
+ * @note La función para configurar los generadores fraccionales de clock es @ref hal_syscon_frg_config.
+ *
  * ### Oscilador del <em>Watchdog</em>
  *
  * El periférico @ref WATCHDOG tiene su propia fuente de clock. Este oscilador es de ultra bajo consumo, pero su
  * presición es de \f$\pm40\%\f$. El oscilador puede tener como base una variedad de valores y también tiene su
- * propio divisor, logrando rangos entre \f$9.3KHz\f$ y \f$2.3MHz\f$.
+ * propio divisor, logrando rangos entre \f$9.3KHz\f$ y \f$2.3MHz\f$. Se parte de una frecuencia base
+ * seleccionable, y luego se aplica un divisor al mismo para obtener la frecuencia final de oscilación.
+ *
+ * @note Las características de este oscilador se controlan mediante la función
+ * @ref hal_syscon_watchdog_oscillator_config
  *
  * ## Divisores de clock
  *
@@ -100,7 +113,7 @@
  * corren con un clock asociado al mismo, se verá reducido el consumo notablemente, a expensas de reducir
  * la velocidad de procesamiento.
  *
- * @note La función para el control de este divisor es @ref hal_syscon_set_system_clock_divider.
+ * @note La función para el control de este divisor es @ref hal_syscon_system_clock_set_divider.
  *
  * ### Divisor del clock del ADC
  *
@@ -134,7 +147,7 @@
  * 		- Oscilador del watchdog
  * 		.
  *
- * @note La función para el manejo de la salida \e CLKOUT es @ref hal_syscon_config_clkout.
+ * @note La función para el manejo de la salida \e CLKOUT es @ref hal_syscon_clkout_config.
  *
  * ### Divisores para el filtro de Glitches del IOCON
  *
@@ -145,7 +158,7 @@
  * anulando así la funcionalidad.
  *
  * @note La función para el manejo de los divisores de filtros de glitches es
- * @ref hal_syscon_set_iocon_glitch_divider.
+ * @ref hal_syscon_iocon_glitch_divider_set.
  *
  * @{
  */
@@ -168,6 +181,16 @@
 #include <stdint.h>
 #include <HAL_GPIO.h>
 
+/** Selección de fuente de clock para el clock principal */
+typedef enum
+{
+	HAL_SYSCON_SYSTEM_CLOCK_SEL_FRO = 0, /**< Free Running Oscillator */
+	HAL_SYSCON_SYSTEM_CLOCK_SEL_EXT, /**< Clcok externo */
+	HAL_SYSCON_SYSTEM_CLOCK_SEL_WATCHDOG, /**< Watchdog Oscillator */
+	HAL_SYSCON_SYSTEM_CLOCK_SEL_FRO_DIV, /**< Free Running Oscillator dividido 2 */
+	HAL_SYSCON_SYSTEM_CLOCK_SEL_PLL /**< Phase Locked Loop */
+}hal_syscon_system_clock_sel_en;
+
 /** Selección de fuente de clock para la salida CLKOUT */
 typedef enum
 {
@@ -186,6 +209,26 @@ typedef enum
 	HAL_SYSCON_FRG_CLOCK_SEL_SYS_PLL, /**< Phase Locked Loop */
 	HAL_SYSCON_FRG_CLOCK_SEL_NONE /**< Ninguno */
 }hal_syscon_frg_clock_sel_en;
+
+/** Selección de frecuencia base para el watchdog oscillator */
+typedef enum
+{
+	HAL_SYSCON_WATCHDOG_CLKANA_0KHZ = 0, /**< 0MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_600KHZ, /**< 0.6MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_1050KHZ, /**< 1.05MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_1400KHZ, /**< 1.4MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_1750KHZ, /**< 1.75MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_2100KHZ, /**< 2.1MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_2400KHZ, /**< 2.4MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_3000KHZ, /**< 3MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_3250KHZ, /**< 3.25MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_3500KHZ, /**< 3.5MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_3750KHZ, /**< 3.75MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_4000KHZ, /**< 4MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_4200KHZ, /**< 4.2MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_4400KHZ, /**< 4.4MHz */
+	HAL_SYSCON_WATCHDOG_CLKANA_4600KHZ /**< 4.6MHz */
+}hal_syscon_watchdog_clkana_sel_en;
 
 /** Selección de periférico para controlar fuente de clock */
 typedef enum
@@ -242,7 +285,13 @@ typedef enum
  */
 uint32_t hal_syscon_system_clock_get(void);
 
-/*
+/**
+ * @brief Configuración de fuente de clock para el clock principal
+ * @param[in] clock_source Selección deseada
+ */
+void hal_syscon_system_clock_set_source(hal_syscon_system_clock_sel_en clock_source);
+
+/**
  * @brief Fijar el divisor del clock principal
  * @param[in] div Divisor deseado. Cero inhabilita el clock principal
  */
@@ -257,16 +306,28 @@ uint32_t hal_syscon_fro_clock_get(void);
 /**
  * @brief Configurar el ext clock a partir de un cristal externo
  * @param[in] crystal_freq Frecuencia del cristal externo utilizado
- * @param[in] use_as_main Si es distinto de cero, se utilizara el oscilador a cristal como main clock
  */
-void hal_syscon_external_crystal_config(uint32_t crystal_freq, uint8_t use_as_main);
+void hal_syscon_external_crystal_config(uint32_t crystal_freq);
+
+/**
+ * @brief Configurar el ext clock a partir de una fuente de clock externa
+ * @param[in] external_clock_freq Frecuencia de la fuente de clock externa
+ */
+void hal_syscon_external_clock_config(uint32_t external_clock_freq);
 
 /**
  * @brief Configurar el clock FRO
+ *
+ * @note Esta función habilita el FRO
+ *
  * @param[in] direct Si es distinto de cero se omite el divisor del FRO
- * @param[in] use_as_main Si es distinto de cero, se utilizará el FRO como main clock
  */
-void hal_syscon_fro_clock_config(uint8_t direct, uint8_t use_as_main);
+void hal_syscon_fro_clock_config(uint8_t direct);
+
+/**
+ * @brief Inhabilitar el FRO
+ */
+void hal_syscon_fro_clock_disable(void);
 
 /**
  * @brief Configurar el pin de clock out (salida de clock hacia afuera)
@@ -286,6 +347,16 @@ void hal_syscon_clkout_config(hal_gpio_portpin_en portpin, hal_syscon_clkout_sou
  * @param[in] mul Multiplicador deseado
  */
 void hal_syscon_frg_config(uint8_t inst, hal_syscon_frg_clock_sel_en clock_source, uint32_t mul);
+
+/**
+ * @brief Configuración del watchdog oscillator
+ * @param[in] clkana_sel Selección de frecuencia base del oscilador
+ * @param[in] div Divisor. El valor efectivo de división es: \f$2 (1 + div)\f$
+ *
+ * @note Recordar que la presición de este oscilador es de \f$\pm 40\%\f$
+ *
+ */
+void hal_syscon_watchdog_oscillator_config(hal_syscon_watchdog_clkana_sel_en clkana_sel, uint8_t div);
 
 /**
  * @brief Obtener la frecuencia de clock en Hz configurada para cierto periférico
