@@ -38,8 +38,8 @@
  * ### Free Running Oscillator (FRO)
  *
  * Este oscilador es con el que comienza el microcontrolador por defecto luego de un reset. La frecuencia del
- * mismo se puede configurar (<em>no implementado todavia</em>) pero por default comienza en \f$24MHz\f$ con
- * un divisor \f$/2\f$, resultando en una frecuencia efectiva de \f$12MHz\f$.
+ * mismo se puede configurar (<em>no implementado todavia</em>) pero por default comienza en 24MHz con
+ * un divisor /2, resultando en una frecuencia efectiva de 12MHz.
  *
  * @note Las funciones relacionadas con el \e FRO son @ref hal_syscon_fro_clock_config y
  * @ref hal_syscon_fro_clock_get
@@ -47,7 +47,7 @@
  * ### Phase Locked Loop (PLL)
  *
  * Este oscilador toma una frecuencia de entrada y genera una conversión para obtener una frecuencia efectiva
- * mayor a la de entrada. La frecuencia de entrada mínima del mismo es de \f$10MHz\f$.
+ * mayor a la de entrada. La frecuencia de entrada mínima del mismo es de 10MHz.
  *
  * @note Las funciones relacionadas con el \e PLL son @ref hal_syscon_pll_clock_config y
  * @ref hal_syscon_pll_clock_get.
@@ -79,7 +79,7 @@
  * cuando se necesita tener presición en la frecuencia de algún periférico y la frecuencia del clock principal
  * con los divisores del periférico no nos alcanzas para lograr dicha presición. La ventaja de estos generadores
  * es que toman una frecuencia de referencia, y generan una división fraccional del mismo. El divisor de estos
- * generadores varía entre \f$1 y 2\f$ con valores decimales, pudiendo así lograr frecuencias que los demás
+ * generadores varía entre 1 y 2 con valores decimales, pudiendo así lograr frecuencias que los demás
  * divisores no pueden, dada su naturaleza de división entera.
  *
  * Periféricos que pueden ser excitados mediante estos generadores:
@@ -93,8 +93,8 @@
  * ### Oscilador del <em>Watchdog</em>
  *
  * El periférico @ref WATCHDOG tiene su propia fuente de clock. Este oscilador es de ultra bajo consumo, pero su
- * presición es de \f$\pm40\%\f$. El oscilador puede tener como base una variedad de valores y también tiene su
- * propio divisor, logrando rangos entre \f$9.3KHz\f$ y \f$2.3MHz\f$. Se parte de una frecuencia base
+ * presición es de más/menos 40. El oscilador puede tener como base una variedad de valores y también tiene su
+ * propio divisor, logrando rangos entre 9.3KHz y 2.3MHz. Se parte de una frecuencia base
  * seleccionable, y luego se aplica un divisor al mismo para obtener la frecuencia final de oscilación.
  *
  * @note Las características de este oscilador se controlan mediante la función
@@ -351,9 +351,9 @@ void hal_syscon_frg_config(uint8_t inst, hal_syscon_frg_clock_sel_en clock_sourc
 /**
  * @brief Configuración del watchdog oscillator
  * @param[in] clkana_sel Selección de frecuencia base del oscilador
- * @param[in] div Divisor. El valor efectivo de división es: \f$2 (1 + div)\f$
+ * @param[in] div Divisor. El valor efectivo de división es: 2 (1 + div)
  *
- * @note Recordar que la presición de este oscilador es de \f$\pm 40\%\f$
+ * @note Recordar que la presición de este oscilador es de más/menos 40%
  *
  */
 void hal_syscon_watchdog_oscillator_config(hal_syscon_watchdog_clkana_sel_en clkana_sel, uint8_t div);

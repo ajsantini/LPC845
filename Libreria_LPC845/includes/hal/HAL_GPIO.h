@@ -84,23 +84,27 @@
 /**
  * @example Ejemplo_GPIO.c
  *
+ * # Configuraciones
+ *
  * El programa utiliza únicamente el LED RGB y el pulsador de usuario del stick de desarrollo.
  * - LED RGB - Rojo: Puerto 1, Pin 2
  * - LED RGB - Azul: Puerto 1, Pin 1
  * - Pulsador de usuario: Puerto 0, Pin 4
- * .
  *
- * 	Ver @ref acerca_del_stick para más información.
+ * Ver @ref acerca_del_stick para más información.
  *
- * Se configura el \e Systick para generar ticks cada \f$1 mseg\f$. El mismo se utiliza para generar un
- * titileo en el LED RGB \e rojo siempre y cuando el pulsador de usuario no esté presionado. Mientras el
- * pulsador de usuario se encuentre presionado, el LED RGB \e azul estará fijo y el \e rojo quedará apagado. El
- * titileo nunca deja de suceder, sino que se enmascara la salida correspondiente. Esto implica que si el pulsador
- * se deja de presionar en el momento en que el mismo tiene el LED RGB \e rojo encendido, no se va a ver el LED
- * RGB \e azul encender, dado el tipo de conexión en el stick de desarrollo y los valores de tensión de LED.
+ * Se configura el \e Systick para generar ticks cada 1 milisegundo.
  *
- * Nótese que no se realizó ninguna configuración en el \e IOCON. Esto es debido a que las configuraciones por
- * default están bien para el programa. En caso de necesitar información sobre el \e IOCON, referirse a @ref IOCON.
+ * Se configura el pin del pulsador para utilizar lógica invertida en su hardware.
+ *
+ * # Funcionamiento del programa
+ *
+ * El \e Systick se utiliza para generar un titileo en el LED RGB \e rojo siempre y cuando el pulsador de usuario
+ * no esté presionado. Mientras el pulsador de usuario se encuentre presionado, el LED RGB \e azul estará fijo y
+ * el \e rojo quedará apagado. El titileo nunca deja de suceder, sino que se enmascara la salida correspondiente.
+ * Esto implica que si el pulsador se deja de presionar en el momento en que el mismo tiene el LED RGB \e rojo
+ * encendido, no se va a ver el LED RGB \e azul encender, dado el tipo de conexión en el stick de desarrollo
+ * y los valores de tensión de LED.
  */
 
 #ifndef HAL_GPIO_H_

@@ -13,8 +13,8 @@
  *
  * El periférico \e SYSTICK es un timer básico cuya funcionalidad principal es mantener una base de tiempos, en
  * general fija, para múltiples tareas que necesiten cierta periodicidad o una base de tiempo. La frecuencia con
- * la que ocurren dichos ticks es configurable y valores típicos pueden ser: \f$1mseg\f$, \f$2.5mseg\f$,
- * \f$10mseg\f$ entre otros.
+ * la que ocurren dichos ticks es configurable y valores típicos pueden ser: 1 milisegundo, 2.5 milisegundos,
+ * 10 milisegundos entre otros.
  *
  * # Fuente de clock
  *
