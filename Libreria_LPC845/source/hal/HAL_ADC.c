@@ -380,8 +380,8 @@ hal_adc_sequence_result_en hal_adc_sequence_get_result(hal_adc_sequence_sel_en s
 /**
  * @brief Configurar valor de umbral de comparación.
  * @param[in] threshold	Selección de umbral a configurar
- * @param[in] low
- * @param[in] high
+ * @param[in] low Umbral bajo
+ * @param[in] high Umbral alto
  * @see hal_adc_threshold_sel_en
  */
 void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, uint16_t high)
@@ -392,7 +392,7 @@ void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, 
 
 /**
  * @brief Configura un canal para utilizar la funcionalidad de comparación con un umbral y su tipo de interrupción deseada.
- * @param[in] adc_channel
+ * @param[in] adc_channel Canal de ADC en el cual configurar el umbral
  * @param[in] threshold	Selección de umbral a configurar
  * @param[in] irq_mode Indica el tipo evento por el cual la comparación con el umbral dispara la interrupción, o la desactiva.
  * @see hal_adc_threshold_sel_en

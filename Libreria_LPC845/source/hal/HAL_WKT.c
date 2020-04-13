@@ -70,6 +70,7 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 	case HAL_WKT_CLOCK_SOURCE_LOW_POWER_OSC:
 	{
 		PMU_disable_wake_up_clock_pin();
+		PMU_enable_low_power_oscillator();
 		WKT_set_internal_clock_source();
 		WKT_select_clock_source(WKT_CLOCK_SOURCE_LOW_POWER_CLOCK);
 
@@ -155,5 +156,8 @@ void WKT_IRQHandler(void)
 {
 	hal_wkt_irq_callback();
 
-	WKT_clear_alarm_flag();
+	if(WKT_get_alarm_flag())
+	{
+		WKT_clear_alarm_flag();
+	}
 }

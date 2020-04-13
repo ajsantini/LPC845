@@ -19,7 +19,7 @@
  * 		DAC_{res} = \frac{V_{ref_{p}}}{2^N}
  * \f}
  *
- * Siendo \f$N\f$ la cantidad de bits de resolución del \e DAC. Esto implica que podemos preveer el valor de salida
+ * Siendo N la cantidad de bits de resolución del \e DAC. Esto implica que podemos preveer el valor de salida
  * de tensión analógica conociendo el valor a convertir por el \e DAC mediante:
  *
  * \f{eqnarray*}{
@@ -31,8 +31,8 @@
  * # Velocidad de conversión
  *
  * El periférico permite dos velocidades de conversión:
- * 		- Frecuencia de conversión de \f$1Mhz\f$ : Implica un mayor consumo de energía
- * 		- Frecuencia de conversión de \f$400KHz\f$ : Implica un menor consumo de energía
+ * 		- Frecuencia de conversión de 1Mhz: Implica un mayor consumo de energía
+ * 		- Frecuencia de conversión de 400KHz: Implica un menor consumo de energía
  * 		.
  *
  * @note Existe una relación entre velocidad de conversión y consumo de energía del periférico. La velocidad de
@@ -63,11 +63,11 @@
  * masa del stick de desarrollo. Debería ver como el LED enciende gradualmente hasta apagarse y volver a repetir
  * el ciclo.
  *
- * El periférico \e Systick se configura para generar interrupciones cada \f$1mseg\f$. En cada tick, se escribe en
+ * El periférico \e Systick se configura para generar interrupciones cada 1 milisegundo. En cada tick, se escribe en
  * el \e DAC un valor de una tabla, cuyo indice ira incrementando en cada tick. En la tabla se encuentran guardados
  * los valores de la señal tipo rampa, incializados al comienzo del programa en un lazo \e for.
  *
- * El periférico \e DAC es inicializado con un tiempo de asentamiento de \f$1 \mu seg\f$.
+ * El periférico \e DAC es inicializado con un tiempo de asentamiento de 1 microsegundo.
  *
  */
 

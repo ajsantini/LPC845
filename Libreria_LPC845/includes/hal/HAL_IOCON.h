@@ -25,15 +25,15 @@
  *
  * Este periférico tiene la posibilidad de invertir la lógica del pin, sea entrada o salida, mediante hardware.
  * Asumiendo que no está activada la inversión del pin y que está configurado como entrada, si se toma una lectura
- * del mismo, se leerá como \b cero cuando externamente esté a una tensión de aproximadamente \f$V_{SS}\f$ y se
- * leerá como \b uno cuando externamente esté a una tensión de aproximadamente \f$V_{DD}\f$. Inversamente, si el
+ * del mismo, se leerá como \b cero cuando externamente esté a una tensión de aproximadamente VSS y se
+ * leerá como \b uno cuando externamente esté a una tensión de aproximadamente VDD. Inversamente, si el
  * pin está configurado como salida, al actualizarla a \b cero colocará en el pin una tensión de aproximadamente
- * \f$V_{SS}\f$ y al actualizarla a \b uno colocará en el pin una tensión de aproximadamente \f$V_{DD}\f$. Si se
+ * VSS y al actualizarla a \b uno colocará en el pin una tensión de aproximadamente VDD. Si se
  * activa la inversión del pin sucederá lo inverso, es decir, si está configurado como entrada y externamente hay
- * una tensión de aproximadamente \f$V_{SS}\f$ la lectura se tomará como \b uno y si hay una tensión de
- * aproximadamente \f$V_{DD}\f$ la lectura se tomará como \b cero, y cuando se configure el pin como salida, al
- * actualizarla en \b cero colocará una tensión de aproximadamente \f$V_{DD}\f$ y al actualizarla en
- * \b uno colocará una tensión de aproximadamente \f$V_{SS}\f$.
+ * una tensión de aproximadamente VSS la lectura se tomará como \b uno y si hay una tensión de
+ * aproximadamente VDD la lectura se tomará como \b cero, y cuando se configure el pin como salida, al
+ * actualizarla en \b cero colocará una tensión de aproximadamente VDD y al actualizarla en
+ * \b uno colocará una tensión de aproximadamente VSS.
  *
  * # Resistencias para fijar un nivel
  *
@@ -52,12 +52,12 @@
  * de tensión distinto al de la alimentación del microcontrolador cuando se acciona el pin.
  *
  * \b NOTA: La hoja de datos aclara que la tensión a la cual se puede manejar el pin mediante un resistor de
- * <em>pull-up</em> externo, no puede superar la tensión \f$V_{DD}\f$.
+ * <em>pull-up</em> externo, no puede superar la tensión VDD.
  *
  * # Histéresis
  *
  * Cada pin puede configurar una <em>histéresis</em> cuando se comporta como entrada. Que el pin tenga una
- * <em>histéresis</em> implica que el valor cambiará su lectura una vez superado un cierto umbral \f$V_{hys}\f$.
+ * <em>histéresis</em> implica que el valor cambiará su lectura una vez superado un cierto umbral Vhys.
  * Esto evita lecturas erróneas cuando la entrada tiene una variación a un ritmo lenta que no se puede evitar.
  *
  * # Filtro de <em>Glitches</em>
@@ -95,7 +95,6 @@
 #ifndef HAL_IOCON_H_
 #define HAL_IOCON_H_
 
-#include <HPL_IOCON.h>
 #include <HAL_GPIO.h>
 
 /** Selección de resistor interno en el pin */

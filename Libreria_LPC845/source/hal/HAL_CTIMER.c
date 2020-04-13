@@ -319,7 +319,7 @@ static void dummy_irq(void)
  */
 static uint32_t hal_ctimer_calc_match_value(uint32_t match_value_useg)
 {
-	float per_clock = hal_syscon_system_clock_get() / (CTIMER_read_prescaler() + 1);
+	float per_clock = ((float) hal_syscon_system_clock_get()) / ((float) (CTIMER_read_prescaler() + 1));
 
 	return (uint32_t) ((per_clock * match_value_useg) / 1e6);
 }

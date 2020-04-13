@@ -16,14 +16,21 @@
  * valor equivalente digital. En el caso del LPC845, tiene un único módulo \e ADC con una
  * resolución de 12 bits, el cual tiene 12 canales, lo cual implica que se pueden realizar
  * conversiones de 12 fuentes analógicas distintas, pero no así realizar conversiones
- * <em> al mismo tiempo </em>. En caso de querer tomar señales de múltiples fuentes analógicas, se
+ * <em>al mismo tiempo</em>. En caso de querer tomar señales de múltiples fuentes analógicas, se
  * deberán hacer sucesivas conversiones en los distintos canales deseados.
  *
  * Una resolución de 12 bits implica que la conversión aumentará cada unidad siguiendo la siguiente ecuación:
- * \f$ ADC_{res} = \frac{V_{ref_{p}}}{2^N} \f$ siendo \f$N\f$ la cantidad de bits disponibles en la conversión.
  *
- * Esto implica que podemos preveer el valor resultante de la conversión analógica/digital mediante la
- * siguiente ecuación: \f$ ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}} \f$
+ * \f{eqnarray*}{
+ * 		ADC_{res} = \frac{V_{ref_{p}}}{2^N}
+ * \f}
+ *
+ * Siendo N la cantidad de bits disponibles en la conversión. Esto implica que podemos preveer el valor
+ * resultante de la conversión analógica/digital mediante la siguiente ecuación:
+ *
+ * \f{eqnarray*}{
+ * 		ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}}
+ * \f}
  *
  * @note Cabe destacar, que las conversiones serán redondeadas \b siempre hacia abajo, es decir, se descartan los
  * valores decimales.
@@ -38,7 +45,7 @@
  * Secuencia B</em>), las cuales se pueden configurar de forma tal que un disparo de <em>Secuencia B</em>
  * interrumpa a una conversión actual de la <em>Secuencia A</em>.
  *
- * @noteLas secuencias de conversión son configuradas mediante la función @ref hal_adc_sequence_config.
+ * @note Las secuencias de conversión son configuradas mediante la función @ref hal_adc_sequence_config.
  *
  * # Inicio de conversiones
  *
@@ -91,16 +98,17 @@
  *
  * Cada conversión realizada toma un tiempo que dependerá del clock configurado en el periférico. Podemos
  * obtener este tiempo de conversión mediante la ecuación:
+ *
  * \f{eqnarray*}{
  * 		t_{conv_{ADC}} = \frac{1}{f_{ADC} / 25} \\
  * 		f_{muestreo_{ADC}} = \frac{1}{t_{conv_{ADC}}}
  * \f}
  *
- * La división por \f$ 25 \f$ en el denominador, es debido a la naturaleza del periférico de <em>aproximaciones
+ * La división por 25 en el denominador, es debido a la naturaleza del periférico de <em>aproximaciones
  * sucesivas</em>. Esto implica que desde que se genera un inicio de conversión hasta que la misma finaliza,
- * deben transcurrir \f$ 25 \f$ ciclos de clock del \e ADC.
+ * deben transcurrir 25 ciclos de clock del \e ADC.
  *
- * Ejemplo: Configurando el \e ADC con una \f$f_{ADC} = 25MHz\f$ obtenemos el tiempo tomado por cada
+ * Ejemplo: Configurando el \e ADC con una frecuencia de 25MHz obtenemos el tiempo tomado por cada
  * conversión:
  *
  * \f{eqnarray*}{
@@ -109,16 +117,16 @@
  *     f_{muestreo_{ADC}} = 1 MHz
  * \f}
  *
- * Esto implica que entre un inicio de conversión y la finalización de la misma, pasará \f$1 \mu s\f$. Nótese que
+ * Esto implica que entre un inicio de conversión y la finalización de la misma, pasará 1 microsegundo. Nótese que
  * este tiempo corresponde a una conversión para un único canal. En caso de estar convirtiendo varios canales, se
- * deberá multiplicar \f$ t_{conv_{ADC}} \f$ por la cantidad de canales activos en la secuencia de conversión, para
- * obtener el tiempo total desde un inicio de secuencia de conversión y la finalización de todos los canales
- * (asumiendo que se dispara una conversión de secuencia completa).
+ * deberá multiplicar dicho tiempo de conversión por la cantidad de canales activos en la secuencia de
+ * conversión, para obtener el tiempo total desde un inicio de secuencia de conversión y la finalización de
+ * todos los canales (asumiendo que se dispara una conversión de secuencia completa).
  *
  * El \e ADC no puede convertir a cualquier frecuencia de muestreo, existen frecuencias máximas dependiendo del
  * tipo de funcionamiento configurado para el periférico:
- * 		- Funcionamiento en modo <em>sincrónico</em>: Frecuencia de muestreo máxima de \f$1.2MHz\f$
- * 		- Funcionamiento en modo <em>asincrónico</em>: Frecuencia de muestreo máxima de \f$0.6MHz\f$
+ * 		- Funcionamiento en modo <em>sincrónico</em>: Frecuencia de muestreo máxima de 1.2MHz
+ * 		- Funcionamiento en modo <em>asincrónico</em>: Frecuencia de muestreo máxima de 0.6MHz
  * 		.
  *
  * @note La frecuencia de muestreo se configura en las funciones de inicialización @ref hal_adc_init_sync_mode o
@@ -146,11 +154,11 @@
  * # Configuraciones
  *
  * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
- * Oscillator</em> funcionando a \f$ 12MHz \f$.
+ * Oscillator</em> funcionando a 12MHz
  *
  * El periférico \e ADC será configurado con las siguientes características:
  * 	- Funcionamiento \b sincrónico
- * 	- Frecuencia de muestreo de \f$ 1Mhz \f$
+ * 	- Frecuencia de muestreo de 1Mhz
  * 	- Modo bajo consumo inhabilitado
  *  .
  *
@@ -183,9 +191,9 @@
  * 	- Un trigger dispara: Una conversión de secuencia completa
  * 	.
  *
- * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada \f$ 1mseg \f$
+ * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada 1 milisegundo
  * y mediante su manejador se lleva la cuenta de los milisegundos transcurridos. Una vez transcurridos
- * \f$ 1000mseg \f$, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.
+ * 1 segundo, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.
  *
  * # Descripción de funcionamiento
  *
@@ -204,7 +212,7 @@
  * 		mediante interrupciones de \e PININT o \e ACOMP.
  * 		.
  *
- * En el caso del ejemplo, se disparan conversiones cada aproximadamente \f$100mseg\f$ con ayuda del \e Systick.
+ * En el caso del ejemplo, se disparan conversiones cada aproximadamente 100 milisegundos con ayuda del \e Systick.
  *
  * ## Conversiones continuas
  *
@@ -491,15 +499,15 @@ hal_adc_sequence_result_en hal_adc_sequence_get_result(hal_adc_sequence_sel_en s
 /**
  * @brief Configurar valor de umbral de comparación.
  * @param[in] threshold	Selección de umbral a configurar
- * @param[in] low
- * @param[in] high
+ * @param[in] low Umbral bajo
+ * @param[in] high Umbral alto
  * @see hal_adc_threshold_sel_en
  */
 void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, uint16_t high);
 
 /**
  * @brief Configura un canal para utilizar la funcionalidad de comparación con un umbral y su tipo de interrupción deseada.
- * @param[in] adc_channel
+ * @param[in] adc_channel Canal de ADC en el cual configurar el umbral
  * @param[in] threshold	Selección de umbral a configurar
  * @param[in] irq_mode Indica el tipo evento por el cual la comparación con el umbral dispara la interrupción, o la desactiva.
  * @see hal_adc_threshold_sel_en
