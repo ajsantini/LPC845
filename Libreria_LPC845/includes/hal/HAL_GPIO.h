@@ -38,7 +38,7 @@
  *
  * # Funcionamiento de salidas
  *
- * Cuando pin en particular es configurado como <em>salida</em>, se podrán colocar en el mismo, <em>valores
+ * Cuando un pin en particular es configurado como <em>salida</em>, se podrán colocar en el mismo, <em>valores
  * digitales</em>. Es importante que el usuario entienda que no hay forma de colocar un valor \e analógico en
  * un pin mediante este periférico. Para dicha funcionalidad, referirse al periférico @ref DAC en esta misma
  * documentación.
