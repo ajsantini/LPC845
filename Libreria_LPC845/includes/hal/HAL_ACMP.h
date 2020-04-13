@@ -7,7 +7,7 @@
  */
 
 /**
- * @defgroup ACMP Comparador analógico.
+ * @defgroup ACMP Comparador analógico (ACMP)
  *
  * # Introducción
  *
