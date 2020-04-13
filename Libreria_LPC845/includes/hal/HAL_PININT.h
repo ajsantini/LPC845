@@ -18,13 +18,27 @@
  *
  * El periférico dispone de 8 canales configurables para detección de distintos eventos externos al
  * microcontrolador. Cada uno de estos canales es configurable para detectar cambios de nivel o de flanco
- * en el pin asociado, pudiendo así también detectar flancos ascendentes/descendentes como nivel alto/bajo.
+ * en el pin asociado, pudiendo así también detectar flancos ascendentes/descendentes como nivel alto/bajo. Cada
+ * canal tiene su propia configuración independiente de los demás.
  *
  * # Funcionamiento como <em>Motor de detección de patrones</em>
  *
- * Falta desarrollar!
+ * @warning Falta desarrollar!
+ *
+ * # Campos de aplicación típicos
+ *
+ * - Detección de eventos externos que necesiten prioridad
+ * - Utilización como interfaz para disparar otros periféricos, como el @ref ADC, mediante señales externas
+ * - Detección de patrones en múltiples pines externos
+ * .
  *
  * @{
+ */
+
+/**
+ * @example Ejemplo_PININT.c
+ *
+ *
  */
 
 #ifndef HAL_PININT_H_
@@ -99,6 +113,9 @@ void hal_pinint_pin_interrupt_config(const hal_pinint_config_t *config);
 
 /**
  * @brief Registrar callback a llamar en interrupción de PININTn
+ *
+ * Si el callback pasado en la configuración es \e NULL, no se habilitará la interrupción correspondiente.
+ *
  * @param[in] channel Canal al cual registrar el callback
  * @param[in] new_callback Puntero a función a ejecutar
  *

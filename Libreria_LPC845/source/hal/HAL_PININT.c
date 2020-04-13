@@ -14,9 +14,12 @@
 #include <HPL_SWM.h>
 #include <HPL_NVIC.h>
 
+/** Cantidad de canales de \e PININT disponibles */
+#define		PININT_CHANNEL_AMOUNT		(8)
+
 static void dummy_irq_callback(void);
 
-static void (*pinint_callbacks[8])(void) = { //!< Callbacks para las 8 interrupciones disponibles
+static void (*pinint_callbacks[PININT_CHANNEL_AMOUNT])(void) = { //!< Callbacks para las 8 interrupciones disponibles
 		dummy_irq_callback,
 		dummy_irq_callback,
 		dummy_irq_callback,
@@ -25,6 +28,10 @@ static void (*pinint_callbacks[8])(void) = { //!< Callbacks para las 8 interrupc
 		dummy_irq_callback,
 		dummy_irq_callback
 };
+
+static void hal_pinint_enable_channel_irq(hal_pinint_channel_en channel);
+
+static void hal_pinint_disable_channel_irq(hal_pinint_channel_en channel);
 
 static void hal_pinint_handle_irq(hal_pinint_channel_en channel);
 
@@ -41,6 +48,17 @@ void hal_pinint_init(void)
  */
 void hal_pinint_deinit(void)
 {
+	// Inhabilitación de canales en el periférico
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_0, HAL_GPIO_PORTPIN_NOT_USED);
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_1, HAL_GPIO_PORTPIN_NOT_USED);
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_2, HAL_GPIO_PORTPIN_NOT_USED);
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_3, HAL_GPIO_PORTPIN_NOT_USED);
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_4, HAL_GPIO_PORTPIN_NOT_USED);
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_5, HAL_GPIO_PORTPIN_NOT_USED);
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_6, HAL_GPIO_PORTPIN_NOT_USED);
+	SYSCON_set_pinint_pin(HAL_PININT_CHANNEL_7, HAL_GPIO_PORTPIN_NOT_USED);
+
+	// Inhabilitación de canales en el NVIC
 	NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT0);
 	NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT1);
 	NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT2);
@@ -89,29 +107,22 @@ void hal_pinint_pin_interrupt_config(const hal_pinint_config_t *config)
 	if(config->callback != NULL)
 	{
 		pinint_callbacks[config->channel] = config->callback;
+		hal_pinint_enable_channel_irq(config->channel);
 	}
 	else
 	{
 		pinint_callbacks[config->channel] = dummy_irq_callback;
+		hal_pinint_disable_channel_irq(config->channel);
 	}
 
 	SYSCON_set_pinint_pin(config->channel, config->portpin);
-
-	switch(config->channel)
-	{
-	case 0: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT0); break; }
-	case 1: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT1); break; }
-	case 2: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT2); break; }
-	case 3: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT3); break; }
-	case 4: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT4); break; }
-	case 5: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT5_DAC1); break; }
-	case 6: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT6_UART3); break; }
-	case 7: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT7_UART4); break; }
-	}
 }
 
 /**
  * @brief Registrar callback a llamar en interrupción de PININTn
+ *
+ * Si el callback pasado en la configuración es \e NULL, no se habilitará la interrupción correspondiente.
+ *
  * @param[in] channel Canal al cual registrar el callback
  * @param[in] new_callback Puntero a función a ejecutar
  *
@@ -125,11 +136,13 @@ void hal_pinint_register_callback(hal_pinint_channel_en channel, hal_pinint_call
 {
 	if(new_callback != NULL)
 	{
-		pinint_callbacks[channel] = new_callback;;
+		pinint_callbacks[channel] = new_callback;
+		hal_pinint_enable_channel_irq(channel);
 	}
 	else
 	{
 		pinint_callbacks[channel] = dummy_irq_callback;
+		hal_pinint_disable_channel_irq(channel);
 	}
 }
 
@@ -139,6 +152,38 @@ void hal_pinint_register_callback(hal_pinint_channel_en channel, hal_pinint_call
 static void dummy_irq_callback(void)
 {
 	return;
+}
+
+
+static void hal_pinint_enable_channel_irq(hal_pinint_channel_en channel)
+{
+	switch(channel)
+	{
+	case 0: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT0); break; }
+	case 1: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT1); break; }
+	case 2: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT2); break; }
+	case 3: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT3); break; }
+	case 4: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT4); break; }
+	case 5: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT5_DAC1); break; }
+	case 6: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT6_UART3); break; }
+	case 7: { NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT7_UART4); break; }
+	}
+}
+
+
+static void hal_pinint_disable_channel_irq(hal_pinint_channel_en channel)
+{
+	switch(channel)
+	{
+	case 0: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT0); break; }
+	case 1: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT1); break; }
+	case 2: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT2); break; }
+	case 3: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT3); break; }
+	case 4: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT4); break; }
+	case 5: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT5_DAC1); break; }
+	case 6: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT6_UART3); break; }
+	case 7: { NVIC_disable_interrupt(NVIC_IRQ_SEL_PININT7_UART4); break; }
+	}
 }
 
 /**
