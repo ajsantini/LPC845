@@ -6,6 +6,7 @@
  * @version 1.0
  */
 
+#include <stddef.h>
 #include <HAL_PININT.h>
 #include <HAL_UART.h>
 #include <HPL_PININT.h>
@@ -122,7 +123,7 @@ void hal_pinint_pin_interrupt_config(const hal_pinint_config_t *config)
  */
 void hal_pinint_register_callback(hal_pinint_channel_en channel, hal_pinint_callback_t new_callback)
 {
-	if(config->callback != NULL)
+	if(new_callback != NULL)
 	{
 		pinint_callbacks[channel] = new_callback;;
 	}
