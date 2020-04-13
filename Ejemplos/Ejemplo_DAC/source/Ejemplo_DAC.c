@@ -3,7 +3,7 @@
  * @brief Ejemplo de utilización del \e DAC con la librería (capa de aplicación)
  *
  * El programa utiliza el \e DAC para generar una señal tipo rampa en la salida del canal 0 (Puerto 0 Pin 17) el
- * cual está mapeado al pin número 2 del stick de desarrollo.
+ * cual está mapeado al pin número 2 del stick de desarrollo. Ver @ref acerca_del_stick para más información.
  *
  * Para poder tener una visualización del programa de ejemplo, sera necesario un osciloscopio para mayor presición,
  * aunque también se puede utilizar un LED con un resistor en serie.
@@ -15,11 +15,11 @@
  * masa del stick de desarrollo. Debería ver como el LED enciende gradualmente hasta apagarse y volver a repetir
  * el ciclo.
  *
- * El periférico \e Systick se configura para generar interrupciones cada \f$1mseg\f$. En cada tick, se escribe en
+ * El periférico \e Systick se configura para generar interrupciones cada 1 milisegundo. En cada tick, se escribe en
  * el \e DAC un valor de una tabla, cuyo indice ira incrementando en cada tick. En la tabla se encuentran guardados
  * los valores de la señal tipo rampa, incializados al comienzo del programa en un lazo \e for.
  *
- * El periférico \e DAC es inicializado con un tiempo de asentamiento de \f$1 \mu seg\f$.
+ * El periférico \e DAC es inicializado con un tiempo de asentamiento de 1 microsegundo.
  *
  * @author Augusto Santini
  * @date 4/2020

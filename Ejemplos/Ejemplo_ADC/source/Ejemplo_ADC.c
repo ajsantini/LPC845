@@ -5,11 +5,11 @@
  * # Configuraciones
  *
  * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
- * Oscillator</em> funcionando a \f$ 12MHz \f$.
+ * Oscillator</em> funcionando a 12MHz
  *
  * El periférico \e ADC será configurado con las siguientes características:
  * 	- Funcionamiento \b sincrónico
- * 	- Frecuencia de muestreo de \f$ 1Mhz \f$
+ * 	- Frecuencia de muestreo de 1Mhz
  * 	- Modo bajo consumo inhabilitado
  *  .
  *
@@ -42,9 +42,9 @@
  * 	- Un trigger dispara: Una conversión de secuencia completa
  * 	.
  *
- * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada \f$ 1mseg \f$
+ * Una vez inicializado el periférico, se configura el periférico \e Systick para interrumpir cada 1 milisegundo
  * y mediante su manejador se lleva la cuenta de los milisegundos transcurridos. Una vez transcurridos
- * \f$ 1000mseg \f$, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.
+ * 1 segundo, se dispara una conversión de \e ADC, y sus resultados se guardan en dos variables globales.
  *
  * # Descripción de funcionamiento
  *
@@ -63,7 +63,7 @@
  * 		mediante interrupciones de \e PININT o \e ACOMP.
  * 		.
  *
- * En el caso del ejemplo, se disparan conversiones cada aproximadamente \f$100mseg\f$ con ayuda del \e Systick.
+ * En el caso del ejemplo, se disparan conversiones cada aproximadamente 100 milisegundos con ayuda del \e Systick.
  *
  * ## Conversiones continuas
  *
