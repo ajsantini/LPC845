@@ -421,6 +421,7 @@ typedef struct
  * @param[in] div Divisor para la lógica del \e ADC
  * @param[in] clock_source Fuente de clock para el \e ADC
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_low_power_mode_en low_power);
 
@@ -435,6 +436,7 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power);
 
@@ -452,6 +454,7 @@ void hal_adc_deinit(void);
  * @see hal_adc_sequence_config_t
  * @param[in] sequence Seleccion de secuencia a configurar
  * @param[in] config Configuracion deseada para la secuencia
+ * @pre Haber inicializado el periférico
  */
 void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config);
 
@@ -464,11 +467,16 @@ void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_seq
  *
  * @see hal_adc_sequence_sel_en
  * @param[in] sequence Secuencia a disparar
+ * @pre Haber configurado la secuencia a disparar
  */
 void hal_adc_sequence_start(hal_adc_sequence_sel_en sequence);
 
 /**
  * @brief Detener conversiones en una secuencia de conversión
+ *
+ * En caso de haber configurado la secuencia para generar conversiones continuas (parámetro BURST = 1),
+ * esta función detiene las mismas.
+ *
  * @param[in] sequence Secuencia a detener
  * @see hal_adc_sequence_sel_en
  * @see hal_adc_start_sequence

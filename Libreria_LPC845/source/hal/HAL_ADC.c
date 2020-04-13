@@ -41,12 +41,14 @@ static void (*adc_overrun_callback)(void) = dummy_irq_callback; //!< Callback cu
 
 static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
 
+/** Flags para determinar si cada secuencia fue configurada en modo burst o no */
 typedef struct
 {
-	uint8_t SEQA_burst : 1;
-	uint8_t SEQB_burst : 1;
+	uint8_t SEQA_burst : 1; /**< Flag burst para secuencia A */
+	uint8_t SEQB_burst : 1; /**< Flag burst para secuencia B */
 }flag_sequence_burst_mode_t;
 
+/** Variable para tener la configuración de modo burst de cada secuencia */
 static flag_sequence_burst_mode_t flag_seq_burst_mode =
 {
 	.SEQA_burst = 0,
@@ -57,7 +59,8 @@ static flag_sequence_burst_mode_t flag_seq_burst_mode =
  * @brief Inicializar el \e ADC en modo \b asincrónico
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
- * Nota: Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC
+ *
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
  *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
@@ -65,6 +68,7 @@ static flag_sequence_burst_mode_t flag_seq_burst_mode =
  * @param[in] div Divisor para la lógica del \e ADC
  * @param[in] clock_source Fuente de clock para el \e ADC
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_low_power_mode_en low_power)
 {
@@ -112,10 +116,13 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
+ *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power)
 {
@@ -171,12 +178,13 @@ void hal_adc_deinit(void)
 /**
  * @brief Configurar una secuencia de conversión
  *
- * Esta función no habilita la secuencia, al menos que el parametro \b burst este activo
+ * @note Esta función no habilita la secuencia.
  *
  * @see hal_adc_sequence_sel_en
  * @see hal_adc_sequence_config_t
  * @param[in] sequence Seleccion de secuencia a configurar
  * @param[in] config Configuracion deseada para la secuencia
+ * @pre Haber inicializado el periférico
  */
 void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config)
 {
@@ -273,12 +281,13 @@ void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 /**
  * @brief Disparar conversiones en una secuencia
  *
- * La configuración de la secuencia, en particular el parametro \b single_step, influye
- * en si esta funcion dispara una secuencia entera o un paso de la misma.
+ * @note La configuración de la secuencia, en particular el parametro \b single_step, influye
+ * en si esta funcion dispara una secuencia entera o un paso de la misma. Asimismo, si la secuencia fue
+ * configurada con el parámetro \b BURST activo, se debe llamar a esta función una única vez.
  *
  * @see hal_adc_sequence_sel_en
- * @see hal_adc_stop_sequence
  * @param[in] sequence Secuencia a disparar
+ * @pre Haber configurado la secuencia a disparar
  */
 void hal_adc_sequence_start(hal_adc_sequence_sel_en sequence)
 {
@@ -299,6 +308,10 @@ void hal_adc_sequence_start(hal_adc_sequence_sel_en sequence)
 
 /**
  * @brief Detener conversiones en una secuencia de conversión
+ *
+ * En caso de haber configurado la secuencia para generar conversiones continuas (parámetro BURST = 1),
+ * esta función detiene las mismas.
+ *
  * @param[in] sequence Secuencia a detener
  * @see hal_adc_sequence_sel_en
  * @see hal_adc_start_sequence
