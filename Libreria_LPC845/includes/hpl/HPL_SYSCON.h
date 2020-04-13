@@ -427,9 +427,18 @@ static inline void SYSCON_set_sct_clock(SYSCON_sct_clock_sel_en source_sel, uint
  * @brief Seleccion de fuente para el clock externo
  * @param[in] source_selection Seleccion deseada
  */
-static inline void SYSCON_set_ext_clock_source(SYSCON_ext_clock_source_sel_en source_selection)
+static inline void SYSCON_ext_clock_source_set(SYSCON_ext_clock_source_sel_en source_selection)
 {
 	SYSCON->EXTCLKSEL.SEL = source_selection;
+}
+
+/**
+ * @brief Obtención de fuente de clock externo configurada
+ * @return Configuración actual
+ */
+static inline SYSCON_ext_clock_source_sel_en SYSCON_ext_clock_source_get(void)
+{
+	return SYSCON->EXTCLKSEL.SEL;
 }
 
 /**

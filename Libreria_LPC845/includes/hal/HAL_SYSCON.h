@@ -311,7 +311,7 @@ void hal_syscon_external_crystal_config(uint32_t crystal_freq);
 
 /**
  * @brief Configurar el ext clock a partir de una fuente de clock externa
- * @param[in] external_clock_freq Frecuencia de la fuente de clock externa
+ * @param[in] external_clock_freq Frecuencia de la fuente de clock externa en Hz
  */
 void hal_syscon_external_clock_config(uint32_t external_clock_freq);
 
