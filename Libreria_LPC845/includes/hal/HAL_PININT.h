@@ -38,7 +38,17 @@
 /**
  * @example Ejemplo_PININT.c
  *
+ * # Configuraciones
  *
+ * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
+ * Oscillator</em> funcionando a 12MHz
+ *
+ * El periférico \e PININT será configurado de la siguiente manera:
+ * 		- Canal 0 en el pulsador de usuario (Puerto 0 ; Pin 4)
+ * 		- Detecciones por nivel (inicialmente nivel bajo, ver descripción de programa)
+ * 		.
+ *
+ * Se configura el pin correspondiente al LED RGB \e Rojo como salida.
  */
 
 #ifndef HAL_PININT_H_
@@ -60,19 +70,22 @@ typedef enum
 	HAL_PININT_CHANNEL_7 /**< Canal 7 */
 }hal_pinint_channel_en;
 
-/** Selección de modo de detección de \e PININT */
+/** Selección de flancos a detectar */
 typedef enum
 {
-	HAL_PININT_INTERRUPT_MODE_EDGE = 0, /**< Detección por flanco */
-	HAL_PININT_INTERRUPT_MODE_LEVEL /**< Detección por nivel */
-}hal_pinint_interrupt_mode_en;
+	HAL_PININT_EDGE_DETECTIONS_NONE = 0, /**< Inhabiltar detecciones por flanco */
+	HAL_PININT_EDGE_DETECTIONS_RISING, /**< Detección de flancos ascendentes */
+	HAL_PININT_EDGE_DETECTIONS_FALLING, /**< Detección de flancos descendentes */
+	HAL_PININT_EDGE_DETECTIONS_BOTH /**< Detección de ambos flancos */
+}hal_pinint_edge_detections_en;
 
 /** Selección de polaridad para detecciones por nivel */
 typedef enum
 {
-	HAL_PININT_LEVEL_INT_HIGH = 0, /**< Polaridad positiva */
-	HAL_PININT_LEVEL_INT_LOW /**< Polaridad negativa */
-}hal_pinint_level_int_en;
+	HAL_PININT_LEVEL_DETECTIONS_NONE = 0, /**< Inhabilitar detecciones por nivel */
+	HAL_PININT_LEVEL_DETECTIONS_HIGH, /**< Polaridad positiva */
+	HAL_PININT_LEVEL_DETECTIONS_LOW /**< Polaridad negativa */
+}hal_pinint_level_detections_en;
 
 /**
  * @brief Tipo de dato para callback de \e PININT
@@ -81,18 +94,6 @@ typedef enum
  * mismo deberá tener todas las consideraciones necesarias
  */
 typedef void (*hal_pinint_callback_t)(void);
-
-/** Estructura de configuración para un canal de \e PININT */
-typedef struct
-{
-	hal_pinint_channel_en channel; /**< Canal asociado */
-	hal_pinint_interrupt_mode_en mode; /**< Modo de detección */
-	hal_pinint_level_int_en int_on_level; /**< Selección de polaridad (aplica para detección por nivel) */
-	uint8_t int_on_rising_edge; /**< Habilitar detección en flanco ascendente (aplica para detección por flanco) */
-	uint8_t int_on_falling_edge; /**< Habilitar detección en flanco descendente (aplica para detección por flanco) */
-	hal_gpio_portpin_en portpin; /**< Puerto/pin asociado */
-	hal_pinint_callback_t callback; /**< Callback a ejecutar en la detección */
-}hal_pinint_config_t;
 
 /**
  * @brief Inicialización del periférico
@@ -105,27 +106,30 @@ void hal_pinint_init(void);
 void hal_pinint_deinit(void);
 
 /**
- * @brief Configurar interrupciones de pin
- * @param[in] config Configuración de interrupciones de pin
- * @see hal_pinint_config_t
+ * @brief Configuración de canal de \e PININT
+ *
+ * @note Esta función no configura el modo de detección. Ver: @ref hal_pinint_edge_detections_config y
+ * @ref hal_pinint_level_detections_config
+ *
+ * @param[in] channel Canal a configurar
+ * @param[in] portpin Puerto/pin en donde configurar el canal
+ * @param[in] callback Callback a ejecutar en detección
  */
-void hal_pinint_pin_interrupt_config(const hal_pinint_config_t *config);
+void hal_pinint_channel_config(hal_pinint_channel_en channel, hal_gpio_portpin_en portpin, hal_pinint_callback_t callback);
 
 /**
- * @brief Registrar callback a llamar en interrupción de PININTn
- *
- * Si el callback pasado en la configuración es \e NULL, no se habilitará la interrupción correspondiente.
- *
- * @param[in] channel Canal al cual registrar el callback
- * @param[in] new_callback Puntero a función a ejecutar
- *
- * @note Cabe recordar que estos callbacks se ejecutan bajo el contexto de una interrupción, por lo que el
- * mismo deberá tener todas las consideraciones necesarias
- *
- * @see hal_pinint_channel_en
- * @see hal_pinint_callback_t
+ * @brief Configurar detecciones por flanco
+ * @param[in] channel Canal a configurar
+ * @param[in] edge Flancos a detectar
  */
-void hal_pinint_register_callback(hal_pinint_channel_en channel, hal_pinint_callback_t new_callback);
+void hal_pinint_edge_detections_config(hal_pinint_channel_en channel, hal_pinint_edge_detections_en edge);
+
+/**
+ * @brief Configurar detecciones por nivel
+ * @param[in] channel Canal a configurar
+ * @param[in] level Nivel a detectar
+ */
+void hal_pinint_level_detections_config(hal_pinint_channel_en channel, hal_pinint_level_detections_en level);
 
 #endif /* HAL_PININT_H_ */
 
