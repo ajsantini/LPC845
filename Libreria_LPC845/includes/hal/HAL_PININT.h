@@ -114,6 +114,7 @@ void hal_pinint_deinit(void);
  * @param[in] channel Canal a configurar
  * @param[in] portpin Puerto/pin en donde configurar el canal
  * @param[in] callback Callback a ejecutar en detección
+ * @pre Haber inicializado el periférico
  */
 void hal_pinint_channel_config(hal_pinint_channel_en channel, hal_gpio_portpin_en portpin, hal_pinint_callback_t callback);
 
@@ -121,6 +122,7 @@ void hal_pinint_channel_config(hal_pinint_channel_en channel, hal_gpio_portpin_e
  * @brief Configurar detecciones por flanco
  * @param[in] channel Canal a configurar
  * @param[in] edge Flancos a detectar
+ * @pre Haber inicializado el periférico
  */
 void hal_pinint_edge_detections_config(hal_pinint_channel_en channel, hal_pinint_edge_detections_en edge);
 
@@ -128,6 +130,7 @@ void hal_pinint_edge_detections_config(hal_pinint_channel_en channel, hal_pinint
  * @brief Configurar detecciones por nivel
  * @param[in] channel Canal a configurar
  * @param[in] level Nivel a detectar
+ * @pre Haber inicializado el periférico
  */
 void hal_pinint_level_detections_config(hal_pinint_channel_en channel, hal_pinint_level_detections_en level);
 
