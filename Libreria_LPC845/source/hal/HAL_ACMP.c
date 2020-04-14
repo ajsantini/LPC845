@@ -132,7 +132,7 @@ void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *ladder_config)
 /**
  * @brief Selecciona las entradas positiva y negativa deseadas para el comparador.
  *
- * Para entradas analógicas además realiza la configuración necesaria del pin externo.
+ * Para entradas analógicas además realiza la configuración necesaria del pin externo de entrada analógica.
  *
  * @param[in] positive_input Selección de entrada para la entrada positiva del comparador analógico.
  * @param[in] negative_input Selección de entrada para la entrada negativa del comparador analógico.
@@ -205,4 +205,29 @@ void hal_acmp_input_select(hal_acmp_input_voltage_sel_en positive_input,
 	SWM_deinit();
 
 	ACMP_voltage_input_select(positive_input, negative_input);
+}
+
+/** @brief Asigna la salida del comparador a un pin externo del microcontrolador.
+ *
+ *	@note: No realiza ningún tipo de configuración del pin respecto a sus resistores.
+ *
+ *  @param[in] port_pin Indica puerto y pin deseado.
+ *  @see hal_acmp_output_pin_clear
+ */
+void hal_acmp_output_pin_set(hal_gpio_portpin_en port_pin)
+{
+	SWM_init();
+	SWM_assign_COMP0_OUT(HAL_GPIO_PORTPIN_TO_PORT(port_pin), HAL_GPIO_PORTPIN_TO_PIN(port_pin));
+	SWM_deinit();
+}
+
+/**
+ * @brief Deshace la asignación de la salida del comparador a un pin externo del microcontrolador.
+ * @see hal_acmp_output_pin_set
+ */
+void hal_acmp_output_pin_clear()
+{
+	SWM_init();
+	SWM_assign_COMP0_OUT(HAL_GPIO_PORTPIN_TO_PORT(0xFF), HAL_GPIO_PORTPIN_TO_PIN(0xFF));
+	SWM_deinit();
 }
