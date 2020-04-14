@@ -14,44 +14,58 @@
  * Este periférico compara 2 señales analógicas y responde con una salida digital que indica cuál de ellas es la mayor. Es posible
  * conectar la señal de salida del comparador a un pin digital de salida.
  *
- * Cuenta además con la posibilidad de generar un pedido de interrupción según el tipo de flanco generado por un cambio a la salida del comparador.
+ * El comparador tiene 2 entradas, una considerada positiva y otra negativa.
+ * - Si la señal conectada a la entrada positiva es mayor, la salida del comparador estará en estado alto.
+ * - Si la señal conectada a la entrada negativa es mayor, la salida del comparador estará en estado bajo.
+ *
+ * Este periférico cuenta además con la posibilidad de generar un pedido de interrupción
+ * según el tipo de flanco generado por un cambio a la salida del comparador.
  *
  * # Selección de las entradas analógicas al comparador
  *
- * Para el LPC845 ambas entradas del comparador son seleccionables entre entradas analógicas externas y algunas señales internas del micro-controlador,
- * como por ejemplo la tensión 'Bandgap' o la salida de un convesor digital analógico (DAC).
+ * Para este microcontrolador ambas entradas del comparador son seleccionables entre entradas analógicas externas
+ * y algunas señales internas del microcontrolador.
  *
- * Una posible señal interna seleccionable es aquella tensión entregada por un dispositivo llamado "Voltage Ladder" o "Escalera de tensión".
+ * Las entradas seleccionables son:
+ * - Tensión de salida de la <em>Voltage Ladder</em>.
+ * - 5 entradas analógicas externas.
+ * - Tensión de referencia interna <em>Bandgap</em>.
+ * - Salida del conversor digital a analógico <em>DAC</em>.
  *
- * # Escalera de tensión
+ * # Voltage Ladder
  *
- * La escalera de tensión tiene la capacidad de, en base a una tensión de referencia, generar una tensión de salida que sea una fracción de ella.
+ * La <em>Voltage Ladder</em> puede ser utilizada para generar una tensión determinada a partir de una tensión externa,
+ *  o de la propia alimentación del microcontrolador V_{DD}.
  *
- * Este periférico tiene la capacidad de seleccionar la tensión de referencia de la escalera de tensión entre:
- * - VDD
- * - Una tensión externa de entrada conectada a un pin.
+ * La tensión de salida es configurable por el usuario y responde a la siguiente ecuación
+ * (en función de la tensión de referencia elegida):
  *
- * La fracción de salida es seleccionable entre 32 posibles pasos ('steps') que representan la tensión VSS del micro-controlador
- * y 31 fracciones de la tensión de referencia seleccionada.
+ * \f{eqnarray*}{
+ * 		V_{LAD} = \frac{n * V_{ref}}{31}
+ * \f}
  *
- * La tensión de salida de la escalera puede ser entonces, en función de la tensión de referencia:
- *
- * \f$ \frac{n * Vref}{31} \f$
- *
- * n: Entero entre 0 y 31.
+ * Donde:
+ * - n: Entero entre 0 y 31.
+ * - V_{ref}: Tensión de referencia de la <em>Voltage Ladder</em>.
  *
  * # Salida del comparador como trigger de hardware de otros periféricos
  *
- * Es posible utilizar la salida del comparador como trigger por hardware para otros periféricos, sin la necesidad de asignar a la
- * salida del comparador un pin externo por medio de la utilización de la Switch Matrix.
+ * Es posible utilizar la salida del comparador como trigger por hardware para otros periféricos
+ * para que estos lleven a cabo alguna funcionalidad sin la necesidad de intervención por software del microcontrolador .
  *
- * Por ejemplo, es posible de esta manera disparar conversiones analógicas del periférico ADC.
+ * De hecho, este es uno de los triggers por hardware de disparo de conversiones del periférico <em>ADC</em>.
+ *
+ * # Campos de aplicación típicos
+ *
+ * Loren Ipsum
  *
  * @{
  */
 
 #ifndef HAL_ACMP_H_
 #define HAL_ACMP_H_
+
+#include <HAL_GPIO.h>
 
 /** Selección de sincronismo de la señal digital de salida del comparador analógico.*/
 typedef enum
@@ -69,7 +83,7 @@ typedef enum
 	HAL_ACMP_HYSTERESIS_20mV /**< Umbral de 20mV. */
 }hal_acmp_hysteresis_sel_en;
 
-/** Posibles tensiones de referencia para la escalera de tensión del comparador analógico.*/
+/** Posibles tensiones de referencia para la Voltage Ladder del comparador analógico.*/
 typedef enum
 {
 	HAL_ACMP_LADDER_VREF_VDD = 0, /**< Tensión de referencia VDD.*/
@@ -88,7 +102,7 @@ typedef enum
 /** Posibles entradas al comparador analógico, válidas tanto para la positiva como la negativa.*/
 typedef enum
 {
-	HAL_ACMP_INPUT_VOLTAGE_VLADDER_OUT = 0, /**< Tensión interna de salida de la escalera de tensión.*/
+	HAL_ACMP_INPUT_VOLTAGE_VLADDER_OUT = 0, /**< Tensión interna de salida de la Voltage Ladder.*/
 	HAL_ACMP_INPUT_VOLTAGE_ACMP_I1, /**< Pin externo con función analógica ACMP_I1.*/
 	HAL_ACMP_INPUT_VOLTAGE_ACMP_I2, /**< Pin externo con función analógica ACMP_I2.*/
 	HAL_ACMP_INPUT_VOLTAGE_ACMP_I3, /**< Pin externo con función analógica ACMP_I3.*/
@@ -107,12 +121,12 @@ typedef struct
 	hal_acmp_edge_sel_en edge_sel; /**< Configura el tipo de flanco de la señal de salida del comparador que genera un pedido de interrupción.*/
 }hal_acpm_config_t;
 
-/** Estructura de configuración de la escalera de tensión del comparador analógico.*/
+/** Estructura de configuración de la Voltage Ladder del comparador analógico.*/
 typedef struct
 {
-	uint8_t enable; /**< Habilitación/deshabilitación de la escalera de tensión.*/
-	hal_acmp_ladder_vref_sel_en vref_sel; /**< Selección de tensión de referencia de la escalera de tensión.*/
-	uint8_t step; /**< Configura qué fracción de la tensión de referencia estará será la tensión de salida de la escalera de tensión.*/
+	uint8_t enable; /**< Habilitación/deshabilitación de la Voltage Ladder.*/
+	hal_acmp_ladder_vref_sel_en vref_sel; /**< Selección de tensión de referencia de la Voltage Ladder.*/
+	uint8_t step; /**< Configura qué fracción de la tensión de referencia estará será la tensión de salida de la Voltage Ladder.*/
 }hal_acmp_ladder_config_t;
 
 /**
@@ -148,15 +162,15 @@ void hal_acmp_deinit(void);
 void hal_acmp_config(const hal_acpm_config_t *acmp_config);
 
 /**
- * @brief Configuración de la escalera de tensión del comparador analógico.
+ * @brief Configuración de la Voltage Ladder del comparador analógico.
  *
- * Configura las siguientes características de la escalera de tensión del comparador:
+ * Configura las siguientes características de la Voltage Ladder del comparador:
  *
  * - Habilitación o no.
  * - Tensión de referencia.
  * - Fracción ('step') utilizada de dicha tensión de referencia.
  *
- * @param[in] config Puntero a estructura con parámetros de configuración deseados de la escalera de tensión.
+ * @param[in] config Puntero a estructura con parámetros de configuración deseados de la Voltage Ladder.
  * @see hal_acmp_ladder_config_t
  * @see hal_acmp_config
  * @see hal_acmp_ladder_config
@@ -177,6 +191,21 @@ void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *config);
  * @see hal_acmp_deinit
  */
 void hal_acmp_input_select(hal_acmp_input_voltage_sel_en positive_input, hal_acmp_input_voltage_sel_en negative_input);
+
+/** @brief Asigna la salida del comparador a un pin externo del microcontrolador.
+ *
+ *	@note: No realiza ningún tipo de configuración del pin respecto a sus resistores.
+ *
+ *  @param[in] port_pin Indica puerto y pin deseado.
+ *  @see hal_acmp_output_pin_clear
+ */
+void hal_acmp_output_pin_set(hal_gpio_portpin_en port_pin);
+
+/**
+ * @brief Deshace la asignación de la salida del comparador a un pin externo del microcontrolador.
+ * @see hal_acmp_output_pin_set
+ */
+void hal_acmp_output_pin_clear();
 
 #endif /* HAL_ACMP_H_ */
 
