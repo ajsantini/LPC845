@@ -7,7 +7,7 @@
  */
 
 /**
- * @defgroup ACMP Comparador analógico.
+ * @defgroup ACMP Comparador analógico (ACMP)
  *
  * # Introducción
  *
@@ -36,7 +36,7 @@
  *
  * La tensión de salida de la escalera puede ser entonces, en función de la tensión de referencia:
  *
- * \f$ \huge  \frac{n * Vref}{31} \f$
+ * \f$ \frac{n * Vref}{31} \f$
  *
  * n: Entero entre 0 y 31.
  *

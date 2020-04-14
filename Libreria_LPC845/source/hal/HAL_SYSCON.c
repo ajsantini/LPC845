@@ -134,7 +134,7 @@ void hal_syscon_external_crystal_config(uint32_t crystal_freq)
 	counter = crystal_freq / 100; // Delay de aprox 1mseg a lo guaso
 	while(counter) counter--; // Estabilizacion del cristal
 
-	SYSCON_ext_clock_set_source(SYSCON_EXT_CLOCK_SOURCE_SEL_CRYSTAL);
+	SYSCON_ext_clock_source_set(SYSCON_EXT_CLOCK_SOURCE_SEL_CRYSTAL);
 	current_crystal_freq = crystal_freq;
 }
 
@@ -144,7 +144,7 @@ void hal_syscon_external_crystal_config(uint32_t crystal_freq)
  */
 void hal_syscon_external_clock_config(uint32_t external_clock_freq)
 {
-	SYSCON_ext_clock_set_source(SYSCON_EXT_CLOCK_SOURCE_SEL_CLK_IN);
+	SYSCON_ext_clock_source_set(SYSCON_EXT_CLOCK_SOURCE_SEL_CLK_IN);
 	current_ext_freq = external_clock_freq;
 }
 
