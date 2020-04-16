@@ -33,8 +33,7 @@
 #define		UART_RX_PORTPIN		HAL_GPIO_PORTPIN_0_8
 #define		UART_TX_PORTPIN		HAL_GPIO_PORTPIN_0_9
 
-#define		CLOCKOUT_PORT		0
-#define		CLOCKOUT_PIN		18
+#define		CLOCKOUT_PORT_PIN	HAL_GPIO_PORTPIN_0_18
 #define		CLOCKOUT_DIVIDER	10
 
 #define		UART_NUMBER			0
@@ -100,17 +99,6 @@ static const hal_uart_config_t uart_config =
 	.tx_ready_callback = tx_callback,
 	.rx_ready_callback = rx_callback
 };
-
-static const hal_pinint_config_t pinint_config =
-{
-	.channel = HAL_PININT_CHANNEL_0,
-	.mode = HAL_PININT_INTERRUPT_MODE_EDGE,
-	.int_on_rising_edge = 0,
-	.int_on_falling_edge = 1,
-	.portpin = KEY_PORTPIN,
-	.callback = pinint_callback
-};
-
 static const hal_iocon_config_t pin_config =
 {
 	.pull_mode = HAL_IOCON_PULL_UP,
@@ -119,7 +107,6 @@ static const hal_iocon_config_t pin_config =
 	.open_drain = 0,
 	.sample_mode = HAL_IOCON_SAMPLE_MODE_3_CLOCK,
 	.clk_sel = HAL_IOCON_CLK_DIV_0,
-	.dac_mode = 0,
 	.iic_mode = HAL_IOCON_IIC_MODE_GPIO
 };
 
@@ -230,20 +217,21 @@ static uint8_t spi_rx_complete_flag = 0;
 
 int main(void)
 {
-	hal_syscon_config_fro_direct(1, 1);
+	hal_syscon_fro_clock_config(1);
+	hal_syscon_system_clock_set_source(HAL_SYSCON_SYSTEM_CLOCK_SEL_FRO);
 
 	// Clock principal en un pin (utilizando un divisor)
-	hal_syscon_config_clkout(CLOCKOUT_PORT, CLOCKOUT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
+	hal_syscon_clkout_config(CLOCKOUT_PORT_PIN, HAL_SYSCON_CLKOUT_SOURCE_SEL_MAIN_CLOCK, CLOCKOUT_DIVIDER);
 
 	// Hasta aca queda el clock configurado con el FRO interno en 24MHz
 	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
 	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
 	// Como fuente utilizo el FRO a 24MHz ya configurado
 	// 24MHz / (1 + (47 / 256)) = 20.2772272MHz
-	hal_syscon_config_frg(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
+	hal_syscon_frg_config(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
 	// Divisor para glitches de IOCON
-	hal_syscon_set_iocon_glitch_divider(HAL_SYSCON_IOCON_GLITCH_SEL_0, 255);
+	hal_syscon_iocon_glitch_divider_set(HAL_SYSCON_IOCON_GLITCH_SEL_0, 255);
 
 	hal_iocon_config_io(KEY_PORTPIN, &pin_config);
 
@@ -255,13 +243,13 @@ int main(void)
 	hal_gpio_set_dir(WKT_OUT_PORTPIN, HAL_GPIO_DIR_OUTPUT, 0);
 
 	hal_adc_init_async_mode(ADC_FREQUENCY, 0, HAL_ADC_CLOCK_SOURCE_FRO, HAL_ADC_LOW_POWER_MODE_DISABLED);
-	hal_adc_config_sequence(ADC_SEQUENCE, &adc_config);
+	hal_adc_sequence_config(ADC_SEQUENCE, &adc_config);
 
 	hal_uart_init(UART_NUMBER, &uart_config);
 
 	hal_pinint_init();
 
-	hal_pinint_configure_pin_interrupt(&pinint_config);
+	hal_pinint_pin_interrupt_config(&pinint_config);
 
 #ifndef	CTIMER_IN_PWM_MODE
 	hal_ctimer_timer_mode_init(0); // Divisor de prescaler en 1
@@ -272,13 +260,12 @@ int main(void)
 #else
 	hal_ctimer_pwm_mode_init(&pwm_config);
 
-	hal_ctimer_pwm_mode_config_channel(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
+	hal_ctimer_pwm_mode_channel_config(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
 #endif
 
 	hal_spi_master_mode_init(SPI_INSTANCE, &spi_master_config);
 
 	hal_systick_init(TICK_PERIOD_US, tick_callback);
-	hal_adc_enable_sequence(ADC_SEQUENCE);
 
 	hal_wkt_init(HAL_WKT_CLOCK_SOURCE_FRO_DIV, 0, wkt_callback);
 	hal_wkt_start_count(WKT_TIME_USEG);
@@ -311,12 +298,12 @@ static void tick_callback(void)
 
 	if(adc_counter == 0)
 	{
-		hal_adc_start_sequence(ADC_SEQUENCE);
+		hal_adc_sequence_start(ADC_SEQUENCE);
 	}
 
 	if(nrf_counter == 0)
 	{
-		hal_spi_master_mode_config_tx(SPI_INSTANCE, &spi_tx_config);
+		hal_spi_master_mode_tx_config(SPI_INSTANCE, &spi_tx_config);
 
 		spi_tx_idx = 0;
 		spi_rx_idx = 0;
@@ -328,7 +315,7 @@ static void adc_callback(void)
 {
 	hal_adc_sequence_result_t adc_result;
 
-	if(hal_adc_get_sequence_result(ADC_SEQUENCE, &adc_result) == HAL_ADC_SEQUENCE_RESULT_VALID)
+	if(hal_adc_sequence_get_result(ADC_SEQUENCE, &adc_result) == HAL_ADC_SEQUENCE_RESULT_VALID)
 	{
 		adc_conversion = adc_result.result;
 	}
@@ -346,7 +333,7 @@ static void adc_callback(void)
 		pwm_channel_config.duty = adc_conversion;
 	}
 
-	hal_ctimer_pwm_mode_config_channel(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
+	hal_ctimer_pwm_mode_channel_config(HAL_CTIMER_PWM_CHANNEL_0, &pwm_channel_config);
 }
 
 static char trama[] = "Trama de prueba para ver que onda\n";
@@ -356,11 +343,11 @@ static void rx_callback(void)
 {
 	uint32_t data;
 
-	hal_uart_rx_byte(UART_NUMBER, &data);
+	hal_uart_rx_data(UART_NUMBER, &data);
 
 	if((char) data == ' ')
 	{
-		hal_uart_tx_byte(UART_NUMBER, trama[trama_counter++]);
+		hal_uart_tx_data(UART_NUMBER, trama[trama_counter++]);
 	}
 }
 
@@ -368,7 +355,7 @@ static void tx_callback(void)
 {
 	if(trama[trama_counter] != '\0')
 	{
-		hal_uart_tx_byte(UART_NUMBER, trama[trama_counter++]);
+		hal_uart_tx_data(UART_NUMBER, trama[trama_counter++]);
 	}
 	else
 	{
@@ -384,13 +371,13 @@ static void pinint_callback(void)
 	{
 		state = 1;
 
-		hal_ctimer_pwm_mode_set_period(2000);
+		hal_ctimer_pwm_mode_period_set(2000);
 	}
 	else
 	{
 		state = 0;
 
-		hal_ctimer_pwm_mode_set_period(1000);
+		hal_ctimer_pwm_mode_period_set(1000);
 	}
 }
 

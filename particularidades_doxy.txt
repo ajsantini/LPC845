@@ -1,0 +1,48 @@
+Al editar con cualquier editor de texto, no superar este ancho de texto-
+
+------------------------------------------------------------------------
+
+Particularidad 1: Punteros a funcion en estructuras
+
+Cuando una estructura contiene punteros a funcion, ejemplo:
+
+typedef struct
+{
+	int a;
+	int b;
+	void (*callback)(void);
+}mi_tipo_t;
+
+Por mas que se documente correctamente cada campo de la estructura, la
+documentacion generada queda unicamente en una pagina de documentacion
+perteneciente a donde se encuentre definida la estructura.
+
+Es decir, si la estructura pertenece a algun grupo, no incluye la
+descripcion detallada en el mismo, sino en una pagina aparte.
+
+Solucion:
+
+Utilizar tipos de dato propios, ejemplo:
+
+typedef void (*mi_callback_t)(void);
+
+typedef struct
+{
+	int a;
+	int b;
+	mi_callback_t callback;
+}mi_tipo_t;
+
+------------------------------------------------------------------------
+
+Particularidad 2: Error del tipo
+"error ! Argument of \language@active@arg> has an extra }." al generar 
+el latex en spanish
+
+Si aparece este error al intentar generar el pdf con el LaTeX generado
+por doxygen, se soluciona cambiando el paquete {babel} en refman.tex
+
+Fix, esta linea: \usepackage[spanish]{babel}
+Cambiarla a: \usepackage[spanish,es-noshorthands]{babel}
+
+------------------------------------------------------------------------

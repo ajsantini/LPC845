@@ -63,11 +63,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	switch(inst)
 	{
 	case 0:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART0),
-								config->baudrate,
-								config->oversampling);
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART0),
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART0);
 
@@ -77,11 +77,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 1:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART1),
-								config->baudrate,
-								config->oversampling);
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART1),
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART1);
 
@@ -91,11 +91,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 2:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART2),
-								config->baudrate,
-								config->oversampling);
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART2),
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART2);
 
@@ -105,11 +105,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 3:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART3),
-								config->baudrate,
-								config->oversampling);
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART3),
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART3);
 
@@ -119,11 +119,11 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 
 		break;
 	case 4:
-		hal_syscon_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
+		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
 
-		aux = hal_uart_calculate_brgval(hal_syscon_get_peripheral_clock(HAL_SYSCON_PERIPHERAL_SEL_UART4),
-								config->baudrate,
-								config->oversampling);
+		aux = hal_uart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART4),
+										config->baudrate,
+										config->oversampling);
 
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART4);
 
@@ -150,12 +150,12 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
 	if(config->rx_ready_callback != NULL)
 	{
 		UART_enable_irq_RXRDY(inst);
-		hal_uart_register_rx_callback(inst, config->rx_ready_callback);
+		hal_uart_rx_register_callback(inst, config->rx_ready_callback);
 	}
 
 	if(config->tx_ready_callback != NULL)
 	{
-		hal_uart_register_tx_callback(inst, config->tx_ready_callback);
+		hal_uart_tx_register_callback(inst, config->tx_ready_callback);
 	}
 
 	UART_enable(inst);
@@ -166,7 +166,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config)
  * @param[in] inst Que instancia de UART usar
  * @param[in] data Dato a transmitir. Puede ser de 7, 8 o 9 bits
  */
-hal_uart_tx_result hal_uart_tx_byte(uint8_t inst, uint32_t data)
+hal_uart_tx_result hal_uart_tx_data(uint8_t inst, uint32_t data)
 {
 	// Chequeo si se puede enviar data
 	if(UART_get_flag_TXRDY(inst))
@@ -194,7 +194,7 @@ hal_uart_tx_result hal_uart_tx_byte(uint8_t inst, uint32_t data)
  * @param[in] data Puntero a donde guardar el dato recibido
  * @return Estado de la recepcion
  */
-hal_uart_rx_result hal_uart_rx_byte(uint8_t inst, uint32_t *data)
+hal_uart_rx_result hal_uart_rx_data(uint8_t inst, uint32_t *data)
 {
 	if(UART_get_flag_RXRDY(inst))
 	{
@@ -213,7 +213,7 @@ hal_uart_rx_result hal_uart_rx_byte(uint8_t inst, uint32_t *data)
  * @param[in] inst A que instancia de UART registrar el callback
  * @param[in] new_callback Puntero a funcion a llamar cada vez que se recibe un dato por UART
  */
-void hal_uart_register_rx_callback(uint8_t inst, void (*new_callback)(void))
+void hal_uart_rx_register_callback(uint8_t inst, void (*new_callback)(void))
 {
 	if(new_callback == NULL)
 	{
@@ -232,7 +232,7 @@ void hal_uart_register_rx_callback(uint8_t inst, void (*new_callback)(void))
  * @param[in] inst A que instancia de UART registrar el callback
  * @param[in] new_callback Puntero a funcion a llamar cada vez que se termina de enviar un dato por UART
  */
-void hal_uart_register_tx_callback(uint8_t inst, void (*new_callback)(void))
+void hal_uart_tx_register_callback(uint8_t inst, void (*new_callback)(void))
 {
 	if(new_callback == NULL)
 	{

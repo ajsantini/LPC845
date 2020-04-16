@@ -89,6 +89,24 @@ static inline void PININT_disable_falling_edge(uint8_t channel)
 }
 
 /**
+ * @brief Habilitar detecciones por nivel
+ * @param[in] channel Canal deseado
+ */
+static inline void PININT_enable_level_detections(uint8_t channel)
+{
+	PININT->IENR.ENRL |= (1 << channel);
+}
+
+/**
+ * @brief Inhabilitar detecciones por nivel
+ * @param[in] channel Canal deseado
+ */
+static inline void PININT_disable_level_detections(uint8_t channel)
+{
+	PININT->CIENR.CENRL |= (1 << channel);
+}
+
+/**
  * @brief Habilitar detecciones por nivel alto
  * @param[in] channel Canal deseado
  */
@@ -101,7 +119,7 @@ static inline void PININT_enable_high_level(uint8_t channel)
  * @brief Inhabilitar detecciones por flanco ascendente
  * @param[in] channel Canal deseado
  */
-static inline void PININT_disable_high_level(uint8_t channel)
+static inline void PININT_enable_low_level(uint8_t channel)
 {
 	PININT->CIENF.CENAF |= (1 << channel);
 }

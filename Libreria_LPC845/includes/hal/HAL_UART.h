@@ -87,7 +87,7 @@ void hal_uart_init(uint8_t inst, const hal_uart_config_t * config);
  * @param[in] inst Que instancia de UART usar
  * @param[in] data Dato a transmitir. Puede ser de 7, 8 o 9 bits
  */
-hal_uart_tx_result hal_uart_tx_byte(uint8_t inst, uint32_t data);
+hal_uart_tx_result hal_uart_tx_data(uint8_t inst, uint32_t data);
 
 /**
  * @brief Recibir un dato de la UART
@@ -95,21 +95,21 @@ hal_uart_tx_result hal_uart_tx_byte(uint8_t inst, uint32_t data);
  * @param[in] data Puntero a donde guardar el dato recibido
  * @return Estado de la recepcion
  */
-hal_uart_rx_result hal_uart_rx_byte(uint8_t inst, uint32_t *data);
+hal_uart_rx_result hal_uart_rx_data(uint8_t inst, uint32_t *data);
 
 /**
  * @brief Registrar el callback a ser llamado una vez finalizada la transmision de un dato por UART
  * @param[in] inst A que instancia de UART registrar el callback
  * @param[in] new_callback Puntero a funcion a llamar cada vez que se termina de enviar un dato por UART
  */
-void hal_uart_register_tx_callback(uint8_t inst, void (*new_callback)(void));
+void hal_uart_tx_register_callback(uint8_t inst, void (*new_callback)(void));
 
 /**
  * @brief Registrar el callback a ser llamado en la recepcion de un dato por UART
  * @param[in] inst A que instancia de UART registrar el callback
  * @param[in] new_callback Puntero a funcion a llamar cada vez que se recibe un dato por UART
  */
-void hal_uart_register_rx_callback(uint8_t inst, void (*new_callback)(void));
+void hal_uart_rx_register_callback(uint8_t inst, void (*new_callback)(void));
 
 /**
  * @brief Interrupcion de UART3

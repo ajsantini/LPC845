@@ -2,6 +2,7 @@
  * @file HPL_CTIMER.h
  * @brief Definiciones a nivel de abstraccion del periferico CTIMER (LPC845)
  * @author Augusto Santini
+ * @author Esteban E. Chiama
  * @date 3/2020
  * @version 1.0
  */
@@ -367,6 +368,24 @@ static inline void CTIMER_disable_stop_on_match(CTIMER_match_sel_en match)
 }
 
 /**
+ * @brief Leer bit de configuración de 'reload on match'.
+ * @param[in] match Numero de match externo a consultar
+ * @return estado actual
+ */
+static inline uint8_t CTIMER_get_reload_on_match(CTIMER_match_sel_en match){
+
+	switch(match)
+	{
+	case CTIMER_MATCH_SEL_0: { return CTIMER->MCR.MR0RL; break; }
+	case CTIMER_MATCH_SEL_1: { return CTIMER->MCR.MR1RL; break; }
+	case CTIMER_MATCH_SEL_2: { return CTIMER->MCR.MR2RL; break; }
+	case CTIMER_MATCH_SEL_3: { return CTIMER->MCR.MR3RL; break; }
+	}
+
+	return 0;
+}
+
+/**
  * @brief Habilitar reload en match
  * @param[in] match Numero de match a configurar
  */
@@ -521,7 +540,7 @@ static inline uint32_t CTIMER_read_capture_value(CTIMER_capture_sel_en capture)
  * @param[in] match Numero de match externo a consultar
  * @return Estado del match actual
  */
-static inline uint8_t CTIMER_read_match_status(CTIMER_match_sel_en match)
+static inline uint8_t CTIMER_read_match_output(CTIMER_match_sel_en match)
 {
 	switch(match)
 	{
@@ -532,6 +551,36 @@ static inline uint8_t CTIMER_read_match_status(CTIMER_match_sel_en match)
 	}
 
 	return 0;
+}
+
+/**
+ * @brief Pone la señal de salida EM# (External Match #) en 1.
+ * @param[in] match Numero de match externo a configurar
+ */
+static inline void CTIMER_set_match_output(CTIMER_match_sel_en match){
+	switch(match)
+	{
+	case CTIMER_MATCH_SEL_0: { CTIMER->EMR.EM0 = 1; break; }
+	case CTIMER_MATCH_SEL_1: { CTIMER->EMR.EM1 = 1; break; }
+	case CTIMER_MATCH_SEL_2: { CTIMER->EMR.EM2 = 1; break; }
+	case CTIMER_MATCH_SEL_3: { CTIMER->EMR.EM3 = 1; break; }
+	}
+}
+
+/**
+ * @brief Pone la señal de salida EM# (External Match #) en 0.
+ * @param[in] match Numero de match externo a configurar
+ */
+static inline void CTIMER_clear_match_output(CTIMER_match_sel_en match){
+
+	switch(match)
+	{
+	case CTIMER_MATCH_SEL_0: { CTIMER->EMR.EM0 = 0; break; }
+	case CTIMER_MATCH_SEL_1: { CTIMER->EMR.EM1 = 0; break; }
+	case CTIMER_MATCH_SEL_2: { CTIMER->EMR.EM2 = 0; break; }
+	case CTIMER_MATCH_SEL_3: { CTIMER->EMR.EM3 = 0; break; }
+	}
+
 }
 
 /**
