@@ -1,8 +1,8 @@
 # Introducción
 
-Esta librería esta diseñada para ser utilizada con la línea de microcontroladores \b LPC845 de la firma \b NXP.
-En particular, la misma actualmente está siendo desarrollada para el \b LPC845 en encapsulado \b QFP48 teniendo en
-cuenta que el mismo se encuentra en el stick de desarrollo <em> LPC845\_BRK </em>.
+Esta librería esta diseñada para ser utilizada con la línea de microcontroladores **LPC845** de la firma **NXP**.
+En particular, la misma actualmente está siendo desarrollada para el **LPC845** en encapsulado **QFP48** teniendo en
+cuenta que el mismo se encuentra en el stick de desarrollo *LPC845\_BRK*.
 
 El desarrollo está siendo orientado hacia la mayor flexibilidad posible para el usuario final, pudiendo el mismo
 ser un usuario con diferentes grados de conocimiento en programación orientada a sistemas embebidos como así 
@@ -52,32 +52,32 @@ demostración de todos los ejemplos adjuntos, es el indicado en la imágen super
 de varios componentes útiles a la hora de desarrollar un proyecto, evitándonos en gran medida realizar 
 nuestro propio hardware, ahorrándonos así tiempo de desarrollo causado por errores en el desarrollo del 
 hardware, fabricación de prototipos y demás. Dichos componentes son:
-		- LED RGB: LEDs *rojo*, *verde* y *azul* en un mismo sustrato. Los tres LEDs se encuentran en paralelo, 
-		por lo que **no es posible encender más de un LED a la vez**. Estos LEDs permiten pruebas de salidas con 
-		el periférico *GPIO*. Los puertos/pines de los mismos son:
-			- Rojo: Puerto 1 ; Pin 2
-			- Azul: Puerto 1 ; Pin 1
-			- Verde: Puerto 1 ; Pin 0
-		- Preset de una vuelta sin tope: Resistor variable de tres terminales, muy útil para pruebas de *ADC*. 
-		Ubicado en:
-			- Puerto 0 ; Pin 7
-		- Tres pulsadores:
-			- Pulsador de usuario: Útil para pruebas relacionadas con lectura de *GPIO* interrupciones de pin
-			*PININT*. El pulsador de usuario también se encuentra en un pin disponible para despertar al 
-			microcontrolador de modos de funcionamiento de bajo consumo. Ubicado en: Puerto 0 ; Pin 4
-			- Pulsador de reset: Con este pulsador se puede generar un *RESET* por hadrware en caso de 
-			habilitar dicha función en el pin correspondiente. En caso de no habilitar dicha función, se puede 
-			utilizar el pulsador como un pulsador normal. Ubicado en: Puerto 0 ; Pin 5
-			- Pulsador para modo ISP: La principal utilidad de este pulsador, es en conjunto con el de reset, para 
-			entrar a modo de programación ISP, para recuperar el microcontrolador de ciertos estados de falla.
-		- Conexión con un emulador de puerto serie: El chip que hace las veces de programador en el stick de 
-		desarrollo, cuenta con el software necesario para emular un puerto serie en un puerto USB. Esto es una 
-		gran ventaja, dado que no necesitamos ninguna interfaz adicional al stick de desarrollo para realizar 
-		pruebas con el periférico *UART*. Ubicación de pines en:
-			- Pin RX (Receptor del emulador): Puerto 0 ; Pin 25
-			- Pin TX (Transmisor del emulador): Puerto 0 ; Pin 24
-		- Pad táctil: El stick de desarrollo tiene en su borde opuesto al puerto USB, un pad táctil. El mismo 
-		puede ser utilizado por el microcontrolador y el periférico *CAPTOUCH*.
+- LED RGB: LEDs *rojo*, *verde* y *azul* en un mismo sustrato. Los tres LEDs se encuentran en paralelo, 
+por lo que **no es posible encender más de un LED a la vez**. Estos LEDs permiten pruebas de salidas con 
+el periférico *GPIO*. Los puertos/pines de los mismos son:
+	- Rojo: Puerto 1 ; Pin 2
+	- Azul: Puerto 1 ; Pin 1
+	- Verde: Puerto 1 ; Pin 0
+- Preset de una vuelta sin tope: Resistor variable de tres terminales, muy útil para pruebas de *ADC*. 
+Ubicado en:
+	- Puerto 0 ; Pin 7
+- Tres pulsadores:
+	- Pulsador de usuario: Útil para pruebas relacionadas con lectura de *GPIO* interrupciones de pin
+	*PININT*. El pulsador de usuario también se encuentra en un pin disponible para despertar al 
+	microcontrolador de modos de funcionamiento de bajo consumo. Ubicado en: Puerto 0 ; Pin 4
+	- Pulsador de reset: Con este pulsador se puede generar un *RESET* por hadrware en caso de 
+	habilitar dicha función en el pin correspondiente. En caso de no habilitar dicha función, se puede 
+	utilizar el pulsador como un pulsador normal. Ubicado en: Puerto 0 ; Pin 5
+	- Pulsador para modo ISP: La principal utilidad de este pulsador, es en conjunto con el de reset, para 
+	entrar a modo de programación ISP, para recuperar el microcontrolador de ciertos estados de falla.
+- Conexión con un emulador de puerto serie: El chip que hace las veces de programador en el stick de 
+desarrollo, cuenta con el software necesario para emular un puerto serie en un puerto USB. Esto es una 
+gran ventaja, dado que no necesitamos ninguna interfaz adicional al stick de desarrollo para realizar 
+pruebas con el periférico *UART*. Ubicación de pines en:
+	- Pin RX (Receptor del emulador): Puerto 0 ; Pin 25
+	- Pin TX (Transmisor del emulador): Puerto 0 ; Pin 24
+- Pad táctil: El stick de desarrollo tiene en su borde opuesto al puerto USB, un pad táctil. El mismo 
+puede ser utilizado por el microcontrolador y el periférico *CAPTOUCH*.
 
 Cabe destacar que ciertos pines no estén disponibles o tengan componentes conectados, por lo cual es 
 altamente recomendable revisar las conexiones en cada pin a utilizar, en el esquemático del stick de 
@@ -95,19 +95,18 @@ En ciertos casos es deseable en el proyecto a trabajar, que la librería esté c
 proyecto separado, para tener mayor control entre los distintos proyectos que utilicen la librería, y para un 
 mayor encapsulamiento de las funciones. Con esta estrategia, cualquier cambio realizado en la librería, afectará 
 a todos los proyectos que la utilicen. Para utilizar esta estrategia, seguir los siguientes pasos:
-		1. Compilar la librería en un proyecto de tipo <b>Librería estática</b>
-		2. En el proyecto que desee utilizar la librería, configurar las siguientes propiedades bajo las propiedades 
-		C/C++ Build -> Settings:
-			- *MCU C Compiler -> Includes -> Include paths*: Indicar el directorio a la capa de abstracción a 
-			utilizar del proyecto de librería estática ya compilado correctamente.
-			Ejemplo: "${workspace_loc:/Libreria_LPC845/includes/hal}"
-			- *MCU Linker -> Libraries -> Libraries*: Indicar el nombre de la librería compilada.
-			Ejemplo: "Libreria_LPC845"
-			- *MCU Linker -> Libraries -> Library search path*: Indicar el directorio donde la librería 
-			estática haya sido compilada. Dicho directorio dependerá de si la compilación de la librería fue hecha 
-			en modo *Release* o *Debug*. Ejemplo: "${workspace_loc:/Libreria_LPC845/Debug}"
-			.
-		3. En este punto debería poder utilizar la librería sin ningún problema
+1. Compilar la librería en un proyecto de tipo <b>Librería estática</b>
+2. En el proyecto que desee utilizar la librería, configurar las siguientes propiedades bajo las propiedades 
+C/C++ Build -> Settings:
+	- *MCU C Compiler -> Includes -> Include paths*: Indicar el directorio a la capa de abstracción a 
+	utilizar del proyecto de librería estática ya compilado correctamente.
+	Ejemplo: "${workspace_loc:/Libreria_LPC845/includes/hal}"
+	- *MCU Linker -> Libraries -> Libraries*: Indicar el nombre de la librería compilada.
+	Ejemplo: "Libreria_LPC845"
+	- *MCU Linker -> Libraries -> Library search path*: Indicar el directorio donde la librería 
+	estática haya sido compilada. Dicho directorio dependerá de si la compilación de la librería fue hecha 
+	en modo *Release* o *Debug*. Ejemplo: "${workspace_loc:/Libreria_LPC845/Debug}"
+3. En este punto debería poder utilizar la librería sin ningún problema
 
 Las opciones de compilación de la librería como pueden ser niveles de optimización, quedan en este caso a 
 cargo del usuario y son modificables en las configuraciones del proyecto de la librería.
