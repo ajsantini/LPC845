@@ -8,7 +8,7 @@
 
 #include <stddef.h>
 #include <HAL_PININT.h>
-#include <HAL_UART.h>
+#include <HAL_USART.h>
 #include <HPL_PININT.h>
 #include <HPL_SYSCON.h>
 #include <HPL_SWM.h>
