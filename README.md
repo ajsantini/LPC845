@@ -45,7 +45,7 @@ en la *Capa de abstracción de hardware* se deberá utilizar esta capa.
 
 # Acerca del stick de desarrollo LPC845_BRK
 
-![Pinout del LPC845_BRK](https://github.com/ajs93/LPC845/tree/develop_augusto/Imagenes/LPC845_BRK_PINOUT.png)
+![Pinout del LPC845_BRK](https://raw.githubusercontent.com/ajs93/LPC845/develop_augusto/Imagenes/LPC845_BRK_PINOUT.png)
 
 El stick de desarrollo utilizado a lo largo del desarrollo de esta librería, también utilizado para la 
 demostración de todos los ejemplos adjuntos, es el indicado en la imágen superior. El mismo viene dotado 
@@ -117,3 +117,9 @@ Si es necesario agregar/quitar funcionalidades de la librería, o se desea cambi
 realizadas, solo es necesario agregar los archivos de cabecera y fuentes necesarios al proyecto donde se va a 
 trabajar. Esta opción permite una personalización de la librería, así como utilización de menos espacio de 
 memoria de código, dado que el compilador probablemente descarte todas las funciones que no sean utilizadas.
+
+-----------------------------------------------------------------------------------------------------------------
+
+# Documentación completa de la libreria
+
+La documentación completa de la librería se encuentra bajo el directorio /Libreria_LPC845/doc/refman.pdf
