@@ -17,6 +17,16 @@
 /** Cantidad de canales de \e PININT disponibles */
 #define		PININT_CHANNEL_AMOUNT		(8)
 
+/**
+ * @brief Interrupcion de UART3
+ */
+extern void UART3_irq(void);
+
+/**
+ * @brief Interrupcion de UART4
+ */
+extern void UART4_irq(void);
+
 static void dummy_irq_callback(void);
 
 static void (*pinint_callbacks[PININT_CHANNEL_AMOUNT])(void) = { //!< Callbacks para las 8 interrupciones disponibles
