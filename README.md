@@ -122,4 +122,5 @@ memoria de código, dado que el compilador probablemente descarte todas las func
 
 # Documentación completa de la libreria
 
-La documentación completa de la librería se encuentra bajo el directorio /Libreria_LPC845/doc/refman.pdf
+La documentación completa de la librería se encuentra en [Documentación librería](https://github.com/ajs93/LPC845/blob/master/Libreria_LPC845/doc/refman.pdf) 
+únicamente en la rama master
