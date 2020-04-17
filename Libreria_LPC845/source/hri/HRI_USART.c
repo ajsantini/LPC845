@@ -6,12 +6,12 @@
  * @version 1.0
  */
 
-#include <HRI_UART.h>
+#include <HRI_USART.h>
 
-volatile UART_per_t * const UART[] = { //!< Perifericos USART
-		(UART_per_t *) UART0_BASE,
-		(UART_per_t *) UART1_BASE,
-		(UART_per_t *) UART2_BASE,
-		(UART_per_t *) UART3_BASE,
-		(UART_per_t *) UART4_BASE
+volatile USART_per_t * const USART[] = { //!< Perifericos USART
+		(USART_per_t *) UART0_BASE,
+		(USART_per_t *) UART1_BASE,
+		(USART_per_t *) UART2_BASE,
+		(USART_per_t *) UART3_BASE,
+		(USART_per_t *) UART4_BASE
 };
