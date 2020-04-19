@@ -35,7 +35,7 @@
  * # Voltage Ladder
  *
  * La <em>Voltage Ladder</em> puede ser utilizada para generar una tensión determinada a partir de una tensión externa,
- *  o de la propia alimentación del microcontrolador V_{DD}.
+ *  o de la propia alimentación del microcontrolador $V_{DD}$.
  *
  * La tensión de salida es configurable por el usuario y responde a la siguiente ecuación
  * (en función de la tensión de referencia elegida):
