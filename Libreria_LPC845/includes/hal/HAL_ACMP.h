@@ -19,7 +19,7 @@
  * - Si la señal conectada a la entrada negativa es mayor, la salida del comparador estará en estado bajo.
  *
  * Este periférico cuenta además con la posibilidad de generar un pedido de interrupción
- * según el tipo de flanco generado por un cambio a la salida del comparador.
+ * según el tipo de flanco generado un cambio en la salida del comparador.
  *
  * # Selección de las entradas analógicas al comparador
  *
@@ -27,15 +27,15 @@
  * y algunas señales internas del microcontrolador.
  *
  * Las entradas seleccionables son:
- * - Tensión de salida de la <em>Voltage Ladder</em>.
+ * - Tensión de salida de la *Voltage Ladder*.
  * - 5 entradas analógicas externas.
- * - Tensión de referencia interna <em>Bandgap</em>.
- * - Salida del conversor digital a analógico <em>DAC</em>.
+ * - Tensión de referencia interna *Bandgap*.
+ * - Salida del conversor digital a analógico *DAC*.
  *
  * # Voltage Ladder
  *
- * La <em>Voltage Ladder</em> puede ser utilizada para generar una tensión determinada a partir de una tensión externa,
- *  o de la propia alimentación del microcontrolador $V_{DD}$.
+ * El módulo *Voltage Ladder* puede ser utilizado para generar una tensión determinada a partir de una tensión externa,
+ *  o de la propia alimentación del microcontrolador \f$V_{DD}\f$.
  *
  * La tensión de salida es configurable por el usuario y responde a la siguiente ecuación
  * (en función de la tensión de referencia elegida):
@@ -46,18 +46,19 @@
  *
  * Donde:
  * - n: Entero entre 0 y 31.
- * - V_{ref}: Tensión de referencia de la <em>Voltage Ladder</em>.
+ * - \f$V_{ref}\f$: Tensión de referencia de la *Voltage Ladder*.
  *
  * # Salida del comparador como trigger de hardware de otros periféricos
  *
- * Es posible utilizar la salida del comparador como trigger por hardware para otros periféricos
- * para que estos lleven a cabo alguna funcionalidad sin la necesidad de intervención por software del microcontrolador .
+ * Es posible interconectar la salida del \e ACMP a señales de otros periféricos, de modo de implementar
+ * ciertas funcionalidades sin intervención del microcontrolador.
  *
- * De hecho, este es uno de los triggers por hardware de disparo de conversiones del periférico <em>ADC</em>.
+ * Por ejemplo, uno de los posibles triggers de hardware para disparar conversiones del periférico *ADC*, es esta señal de salida del \e ACMP.
  *
  * # Campos de aplicación típicos
  *
- * Loren Ipsum
+ * - Comparación de niveles analógicos sin necesidad de convertir los mismos.
+ * - Accionamiento a partir de monitoreo de señal analógica externa con punto de referencia variable.
  *
  * @{
  */
