@@ -1,5 +1,5 @@
 /**
- * @file HAL_ACMP.h
+ * @file HAL_ACMP.c
  * @brief Declaraciones a nivel de aplicación del periférico ADC (LPC845)
  * @author Esteban E. Chiama
  * @date 4/2020
