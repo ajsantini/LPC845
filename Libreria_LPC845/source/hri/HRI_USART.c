@@ -1,5 +1,5 @@
 /**
- * @file HRI_UART.c
+ * @file HRI_USART.c
  * @brief Declaración del periférico UART (LPC845)
  * @author Augusto Santini
  * @date 4/2020

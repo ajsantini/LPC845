@@ -11,22 +11,22 @@
  *
  * # Introducción
  *
- * El \e DAC, como su nombre lo indica, convierte un valor digital en una tensión analógica. En el caso de este
- * microcontrolador, tiene dos módulos \e DACs independientes con una resolución de 10 bits cada uno. Se puede
- * calcular la resolución de cada paso de \e DAC como:
+ * El *DAC*, como su nombre lo indica, convierte un valor digital en una tensión analógica. En el caso de este
+ * microcontrolador, tiene dos módulos *DACs* independientes con una resolución de 10 bits cada uno. Se puede
+ * calcular la resolución de cada paso de *DAC* como:
  *
  * \f{eqnarray*}{
  * 		DAC_{res} = \frac{V_{ref_{p}}}{2^N}
  * \f}
  *
- * Siendo N la cantidad de bits de resolución del \e DAC. Esto implica que podemos preveer el valor de salida
- * de tensión analógica conociendo el valor a convertir por el \e DAC mediante:
+ * Siendo N la cantidad de bits de resolución del *DAC*. Esto implica que podemos preveer el valor de salida
+ * de tensión analógica conociendo el valor a convertir por el *DAC* mediante:
  *
  * \f{eqnarray*}{
  * 		DAC_{conv} = DAC_{res} * DAC_{val}
  * \f}
  *
- * @note Para actualizar el valor de salida del \e DAC se utiliza la función @ref hal_dac_update_value.
+ * @note Para actualizar el valor de salida del *DAC* se utiliza la función @ref hal_dac_update_value.
  *
  * # Velocidad de conversión
  *
@@ -50,7 +50,7 @@
 /**
  * @example Ejemplo_DAC.c
  *
- * El programa utiliza el \e DAC para generar una señal tipo rampa en la salida del canal 0 (Puerto 0 Pin 17) el
+ * El programa utiliza el *DAC* para generar una señal tipo rampa en la salida del canal 0 (Puerto 0 Pin 17) el
  * cual está mapeado al pin número 2 del stick de desarrollo. Ver @ref acerca_del_stick para más información.
  *
  * Para poder tener una visualización del programa de ejemplo, sera necesario un osciloscopio para mayor presición,
@@ -63,11 +63,11 @@
  * masa del stick de desarrollo. Debería ver como el LED enciende gradualmente hasta apagarse y volver a repetir
  * el ciclo.
  *
- * El periférico \e Systick se configura para generar interrupciones cada 1 milisegundo. En cada tick, se escribe en
- * el \e DAC un valor de una tabla, cuyo indice ira incrementando en cada tick. En la tabla se encuentran guardados
- * los valores de la señal tipo rampa, incializados al comienzo del programa en un lazo \e for.
+ * El periférico *Systick* se configura para generar interrupciones cada 1 milisegundo. En cada tick, se escribe en
+ * el *DAC* un valor de una tabla, cuyo indice ira incrementando en cada tick. En la tabla se encuentran guardados
+ * los valores de la señal tipo rampa, incializados al comienzo del programa en un lazo "for".
  *
- * El periférico \e DAC es inicializado con un tiempo de asentamiento de 1 microsegundo.
+ * El periférico *DAC* es inicializado con un tiempo de asentamiento de 1 microsegundo.
  */
 
 #ifndef HAL_DAC_H_
@@ -75,21 +75,21 @@
 
 #include <stdint.h>
 
-/** Enumeraciones de instancias disponibles de \e DAC */
+/** Enumeraciones de instancias disponibles de *DAC* */
 typedef enum
 {
 	HAL_DAC_0 = 0, /**< Instancia 0 */
 	HAL_DAC_1 /**< Instancia 1 */
 }hal_dac_en;
 
-/** Tiempos de establecimiento disponibles para el \e DAC */
+/** Tiempos de establecimiento disponibles para el *DAC* */
 typedef enum
 {
 	HAL_DAC_SETTLING_TIME_1US_MAX = 0, /**< Tiempo de establecimiento de 1 microsegundo máximo */
 	HAL_DAC_SETTLING_TIME_2_5US_MAX /**< Tiempo de establecimiento de 2.5 microsegundos máximo */
 }hal_dac_settling_time_en;
 
-/** Estructura de configuración del \e DAC */
+/** Estructura de configuración del *DAC* */
 typedef struct
 {
 	uint8_t count_enable : 1; /**< Habilitación del contador (para modo DMA) */

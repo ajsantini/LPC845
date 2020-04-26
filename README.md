@@ -1,3 +1,5 @@
+# Página principal # {#mainpage}
+
 # Introducción
 
 Esta librería esta diseñada para ser utilizada con la línea de microcontroladores **LPC845** de la firma **NXP**.
@@ -43,7 +45,7 @@ en la *Capa de abstracción de hardware* se deberá utilizar esta capa.
 
 -----------------------------------------------------------------------------------------------------------------
 
-# Acerca del stick de desarrollo LPC845_BRK
+# Acerca del stick de desarrollo LPC845_BRK {#acerca_del_stick}
 
 ![Pinout del LPC845_BRK](https://raw.githubusercontent.com/ajs93/LPC845/develop_augusto/Imagenes/LPC845_BRK_PINOUT.png)
 

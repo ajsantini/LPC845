@@ -14,7 +14,7 @@
 #include <HPL_SWM.h>
 #include <HPL_NVIC.h>
 
-/** Cantidad de canales de \e PININT disponibles */
+/** Cantidad de canales de *PININT* disponibles */
 #define		PININT_CHANNEL_AMOUNT		(8)
 
 /**
@@ -82,7 +82,7 @@ void hal_pinint_deinit(void)
 }
 
 /**
- * @brief Configuración de canal de \e PININT
+ * @brief Configuración de canal de *PININT*
  *
  * @note Esta función no configura el modo de detección. Ver: @ref hal_pinint_edge_detections_config y
  * @ref hal_pinint_level_detections_config

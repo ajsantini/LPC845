@@ -11,7 +11,7 @@
  *
  * # Introducción
  *
- * Este periférico permite generar comunicaciones de tipo <em>serie</em> para la transferencia de datos
+ * Este periférico permite generar comunicaciones de tipo *serie* para la transferencia de datos
  * entre dos dispositivos. En particular, el mismo puede o no utilizar una línea de clock para arbitrar
  * dichas comunicaciones. Para el caso asincrónico, los dispositivos a comunicar deberán establecer una
  * velocidad conocida de comunicación.
@@ -22,7 +22,7 @@
  * @image latex conexiones_usart.png "Interconexiones USART" width=0.8\textwidth
  *
  * En la imágen se muestra un esquema de conexionado típico entre dos dispositivos que se comunican mediante
- * un protocolo \e USART. Cabe destacar que pueden existir dispositivos intermedios para adaptar la señal
+ * un protocolo *USART*. Cabe destacar que pueden existir dispositivos intermedios para adaptar la señal
  * a niveles de tensión que cumplan con una determinada norma. Normas típicas son:
  * 		- RS232
  * 		- RS485
@@ -30,9 +30,9 @@
  * 		- Lazo de corriente
  * 		.
  *
- * Algunas normas pueden incluir definiciones acerca de los conectores que se necesitan utilizar, pero <b>todas
- * </b> ellas definen niveles de tensión necesarios para cumplir con la misma. Dependiendo de la norma, la
- * comunicación entre los dispositivos podrá ser <em>Half Duplex</em> o <em>Full Duplex</em>.
+ * Algunas normas pueden incluir definiciones acerca de los conectores que se necesitan utilizar, pero **todas**
+ * ellas definen niveles de tensión necesarios para cumplir con la misma. Dependiendo de la norma, la
+ * comunicación entre los dispositivos podrá ser *Half Duplex* o *Full Duplex*.
  *
  * # Parámetros de la comunicación
  *
@@ -40,26 +40,26 @@
  * @image latex comunicacion_usart.png "Trama USART" width=0.8\textwidth
  *
  * En la imágen se muestra la estructura de una comunicación generada por este periférico:
- * 		- <em>Baudrate</em>: Define la velocidad de comunicación entre los dispositivos. Se encuentra
- * 		expresada en <em>bits por segundo (bps)</em>. Conociendo la velocidad de comunicación, podemos
+ * 		- *Baudrate*: Define la velocidad de comunicación entre los dispositivos. Se encuentra
+ * 		expresada en *bits por segundo (bps)*. Conociendo la velocidad de comunicación, podemos
  * 		obtener el tiempo que tomará cada bit de la comunicación mediante la fórmula
  * 		\f{eqnarray*}{
  * 			t_{bit} = \frac{1}{baudrate}
  * 		\f}
- * 		- <em>Bit de start</em>: El bit de start se utiliza para indicar el inicio de una comunicación
+ * 		- *Bit de start*: El bit de start se utiliza para indicar el inicio de una comunicación
  * 		entre los dispositivos interconectados. Siempre es fijado como un 0 lógico, y tiene un
  * 		largo de un bit.
- * 		- <em>Bits de datos</em>: Esta es la información a transmitir de un dispositivo a otro. Su longitud
+ * 		- *Bits de datos*: Esta es la información a transmitir de un dispositivo a otro. Su longitud
  * 		puede variar dependiendo de la aplicación, en general se encuentra entre 5 y 9 bits.
- * 		- <em>Bit de paridad</em>: El bit de paridad puede o no existir en la configuración de la comunicación.
+ * 		- *Bit de paridad*: El bit de paridad puede o no existir en la configuración de la comunicación.
  * 		El mismo se utiliza para detectar errores simples en la comunicación, la cual se puede ver
  * 		afectada por factores externos como: ruido, cables defectuosos, mala instalación, etc.
- * 			- Paridad <b>Par</b>: El bit de paridad será un 1 lógico cuando la cantidad de bits
+ * 			- Paridad **Par**: El bit de paridad será un 1 lógico cuando la cantidad de bits
  * 			en el dato a transmitir en 1 (excluyendo bit de start y bit/s de stop) sea par.
- * 			- Paridad <b>Impar</b>: El bit de paridad será un 1 lógico cuando la cantidad de bits
+ * 			- Paridad **Impar**: El bit de paridad será un 1 lógico cuando la cantidad de bits
  * 			en el dato a transmitir en 1 (excluyendo bit de start y bit/s de stop) sea impar.
  * 			.
- * 		- <em>Bit/s de stop</em>: El o los bit/s de stop se utilizan para indicar el fin de la transmisión
+ * 		- *Bit/s de stop*: El o los bit/s de stop se utilizan para indicar el fin de la transmisión
  * 		del dato actual. Siempre se fijan al valor 1 lógico, y su duración puede ser configurable,
  * 		en general pudiendo tomar valores de 1 o 2 bits.
  * 		.

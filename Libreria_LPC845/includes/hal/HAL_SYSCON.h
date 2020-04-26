@@ -32,16 +32,16 @@
  *
  * ## Fuentes de clock
  *
- * Las distintas fuentes de clock que se explican a continuación, son seleccionables mediante el \e SYSCON. Algunos
+ * Las distintas fuentes de clock que se explican a continuación, son seleccionables mediante el *SYSCON*. Algunos
  * necesitan una referencia para funcionar, mientras que otros funcionan sin necesidad de ninguna.
  *
  * ### Free Running Oscillator (FRO)
  *
  * Este oscilador es con el que comienza el microcontrolador por defecto luego de un reset. La frecuencia del
- * mismo se puede configurar (<em>no implementado todavia</em>) pero por default comienza en 24MHz con
+ * mismo se puede configurar (*no implementado todavia*) pero por default comienza en 24MHz con
  * un divisor /2, resultando en una frecuencia efectiva de 12MHz.
  *
- * @note Las funciones relacionadas con el \e FRO son @ref hal_syscon_fro_clock_config y
+ * @note Las funciones relacionadas con el *FRO* son @ref hal_syscon_fro_clock_config y
  * @ref hal_syscon_fro_clock_get
  *
  * ### Phase Locked Loop (PLL)
@@ -49,14 +49,14 @@
  * Este oscilador toma una frecuencia de entrada y genera una conversión para obtener una frecuencia efectiva
  * mayor a la de entrada. La frecuencia de entrada mínima del mismo es de 10MHz.
  *
- * @note Las funciones relacionadas con el \e PLL son @ref hal_syscon_pll_clock_config y
+ * @note Las funciones relacionadas con el *PLL* son @ref hal_syscon_pll_clock_config y
  * @ref hal_syscon_pll_clock_get.
  *
  * ### Main/System clock
  *
  * El clock principal o de sistema (estos nombres se usan indistintamente) genera la frecuencia base de la cual
- * se derivan la mayoría de los periféricos. El mismo puede ser tomado de la señal de salida del \e PLL o de la
- * señal previa al \e PLL. Este clock es el que provee la frecuencia del núcleo del microcontrolador.
+ * se derivan la mayoría de los periféricos. El mismo puede ser tomado de la señal de salida del *PLL* o de la
+ * señal previa al *PLL*. Este clock es el que provee la frecuencia del núcleo del microcontrolador.
  *
  * @note La selección de la fuente de clock principal se realiza mediante la función
  * @ref hal_syscon_system_clock_set_source mientras que la obtención de la frecuencia actual del clock
@@ -65,8 +65,8 @@
  * ### Clock externo
  *
  * El clock externo puede ser de utilidad cuando se tiene una referencia de frecuencia de muy buena estabilidad
- * externa al microcontrolador. Casos típicos son <em>cristales</em>, u osciladores de alta presición y bajo drift.
- * Si se utiliza un <em>cristal externo</em> se utilizarán los pines P0_8 y P0_9 como fuentes de entrada para el
+ * externa al microcontrolador. Casos típicos son *cristales*, u osciladores de alta presición y bajo drift.
+ * Si se utiliza un *cristal externo* se utilizarán los pines P0_8 y P0_9 como fuentes de entrada para el
  * circuito oscilador interno, el cual se encargará de generar la frecuencia de clock correspondiente, mientras que
  * si se utiliza un oscilador externo, se utilizará únicamente el pin P0_1.
  *
@@ -75,7 +75,7 @@
  *
  * ### Generadores fraccionales de clock
  *
- * El microcontrolador dispone de dos <em>Generadores fraccionales de clock</em>. Los mismos son de gran utilidad
+ * El microcontrolador dispone de dos *Generadores fraccionales de clock*. Los mismos son de gran utilidad
  * cuando se necesita tener presición en la frecuencia de algún periférico y la frecuencia del clock principal
  * con los divisores del periférico no nos alcanzas para lograr dicha presición. La ventaja de estos generadores
  * es que toman una frecuencia de referencia, y generan una división fraccional del mismo. El divisor de estos
@@ -90,7 +90,7 @@
  *
  * @note La función para configurar los generadores fraccionales de clock es @ref hal_syscon_frg_config.
  *
- * ### Oscilador del <em>Watchdog</em>
+ * ### Oscilador del *Watchdog*
  *
  * El periférico @ref WATCHDOG tiene su propia fuente de clock. Este oscilador es de ultra bajo consumo, pero su
  * presición es de más/menos 40. El oscilador puede tener como base una variedad de valores y también tiene su
@@ -119,24 +119,24 @@
  *
  * El clock de la lógica del periférico @ref ADC es alimentado por el clock principal luego de pasar por este
  * divisor. El divisor puede ser configurado en cualquier valor entero entre 0 y 255. Si se coloca en 0, el
- * clock del \e ADC será anulado. Nótese que la configuración necesaria del divisor es realizada en las
- * funciones de inicialización del \e ADC.
+ * clock del *ADC* será anulado. Nótese que la configuración necesaria del divisor es realizada en las
+ * funciones de inicialización del *ADC*.
  *
  * @note El periférico @ref ADC se ocupará de configurar su divisor en caso de ser necesario. No se proveen
  * funciones en este módulo para la configuración del mismo.
  *
  * ### Divisor del clock del SCT
  *
- * Al igual que con el \e ADC, el clock de la lógica del periférico @ref SCT es alimentado por el clock principal
+ * Al igual que con el *ADC*, el clock de la lógica del periférico @ref SCT es alimentado por el clock principal
  * luego de pasar por este divisor. El divisor puede ser configurado en cualquier valor entero entre 0 y 255. Si se
- * coloca en 0, el clock del \e SCT será anulado.
+ * coloca en 0, el clock del *SCT* será anulado.
  *
- * @note Este periférico, así como las funciones para configurar su divisor en el \e SYSCON, todavía no
+ * @note Este periférico, así como las funciones para configurar su divisor en el *SYSCON*, todavía no
  * está implementado en la librería.
  *
  * ### Divisor de la salida CLKOUT
  *
- * En caso de ser necesario, el periférico \e SYSCON puede ser configurado para general una salida en uno de los
+ * En caso de ser necesario, el periférico *SYSCON* puede ser configurado para general una salida en uno de los
  * pines del microcontrolador que esté relacionada a algunas fuentes de clock. Antes de salir por el pin, la señal
  * pasa por un divisor, el cual puede ser configurado en cualquier valor entero entre 0 y 255. Si el mismo es
  * configurado en 0, la salida es anulada. Fuentes de clock disponibles para la salida CLKOUT:
@@ -147,13 +147,13 @@
  * 		- Oscilador del watchdog
  * 		.
  *
- * @note La función para el manejo de la salida \e CLKOUT es @ref hal_syscon_clkout_config.
+ * @note La función para el manejo de la salida *CLKOUT* es @ref hal_syscon_clkout_config.
  *
  * ### Divisores para el filtro de Glitches del IOCON
  *
  * El periférico @ref IOCON tiene la posibilidad de ser configurado para eliminar glitches en entradas mediante
  * un filtrado por hardware. Dicho filtro de glitches puede ser configurado para tomar su señal de excitación de
- * uno de los siete divisores que tiene el \e SYSCON reservados para este fin. El valor de estos divisores puede
+ * uno de los siete divisores que tiene el *SYSCON* reservados para este fin. El valor de estos divisores puede
  * ser cualquier valor entero entre 0 y 255. Si se configura como 0, el divisor no generará señal de excitación,
  * anulando así la funcionalidad.
  *
@@ -201,7 +201,7 @@ typedef enum
 	HAL_SYSCON_CLKOUT_SOURCE_SEL_WATCHDOG_OSC /**< Watchdog Oscillator */
 }hal_syscon_clkout_source_sel_en;
 
-/**< Selección de fuente de clock para los generadores fraccionales de clock */
+/** Selección de fuente de clock para los generadores fraccionales de clock */
 typedef enum
 {
 	HAL_SYSCON_FRG_CLOCK_SEL_FRO = 0, /**< Free Running Oscillator */
@@ -354,7 +354,6 @@ void hal_syscon_frg_config(uint8_t inst, hal_syscon_frg_clock_sel_en clock_sourc
  * @param[in] div Divisor. El valor efectivo de división es: 2 (1 + div)
  *
  * @note Recordar que la presición de este oscilador es de más/menos 40%
- *
  */
 void hal_syscon_watchdog_oscillator_config(hal_syscon_watchdog_clkana_sel_en clkana_sel, uint8_t div);
 

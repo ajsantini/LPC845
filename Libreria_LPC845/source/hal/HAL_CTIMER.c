@@ -41,15 +41,15 @@ void (*capture_callbacks[CAPTURE_AMOUNT])(void) = //!< Callbacks para interrupci
 };
 
 /**
- * @brief Inicialización del periférico <em>CTIMER</em> en modo timer.
+ * @brief Inicialización del periférico *CTIMER* en modo timer.
  *
- * La frecuencia de clock del periférico <em>CTIMER</em> será aquella del <em>system_clock</em> dividida por <em>clock_div</em>.
- * En caso de que <em>clock_div</em> sea 0, la frecuencia del <em>CTIMER</em> será igual a la del <em>system_clock</em>.
+ * La frecuencia de clock del periférico *CTIMER* será aquella del *system_clock* dividida por *clock_div*.
+ * En caso de que *clock_div* sea 0, la frecuencia del *CTIMER* será igual a la del *system_clock*.
  *
  * @note La inicialización no dispara el contador.
  * @note El periférico debiera inicializarse para modo timer o para modo PWM, no ambos a la vez.
  *
- * @param[in] clock_div Divisor que se aplicará al <em>system clock</em>.
+ * @param[in] clock_div Divisor que se aplicará al *system clock*.
  * @see hal_ctimer_timer_mode_match_config
  * @see hal_ctimer_timer_mode_start
  * @see hal_ctimer_pwm_mode_init
@@ -77,8 +77,8 @@ void hal_ctimer_timer_mode_init(uint32_t clock_div)
 /**
  * @brief Configurar un canal de match
  *
- * El canal de match especificado por el parámetro <em>match_sel</em> será configurado según la
- * estructura <em>match_config</em>.
+ * El canal de match especificado por el parámetro *match_sel* será configurado según la
+ * estructura *match_config*.
  *
  * @note Antes de llamar a esta función, el periférico debiera de haber sido inicializado con
  * la función hal_ctimer_timer_mode_init().
@@ -157,9 +157,9 @@ void hal_ctimer_timer_mode_match_config(hal_ctimer_match_sel_en match_sel, const
 }
 
 /**
- * @brief Habilitar el conteo del <em>CTIMER</em>.
+ * @brief Habilitar el conteo del *CTIMER*.
  *
- * Previamente, el periférico <em>CTIMER</em> debe haber sido inicializado con la función hal_ctimer_timer_mode_init().
+ * Previamente, el periférico *CTIMER* debe haber sido inicializado con la función hal_ctimer_timer_mode_init().
  *
  * Además, el usuario probablemente debiera de haber establecido previamente su configuración deseada con la
  * función hal_ctimer_timer_mode_match_config().
@@ -174,8 +174,8 @@ void hal_ctimer_timer_mode_start(void)
 }
 
 /**
- * @brief Inhabilita el conteo del <em>CTIMER</em>.
- * @note Esta función no reinicia el contador del <em>CTIMER</em>, ni altera alguna otra configuración.
+ * @brief Inhabilita el conteo del *CTIMER*.
+ * @note Esta función no reinicia el contador del *CTIMER*, ni altera alguna otra configuración.
  * @see hal_ctimer_timer_mode_start
  * @see hal_ctimer_timer_mode_reset
  */
@@ -185,7 +185,7 @@ void hal_ctimer_timer_mode_stop(void)
 }
 
 /**
- * @brief Reinicia el conteo del <em>CTIMER</em>.
+ * @brief Reinicia el conteo del *CTIMER*.
  * @see hal_ctimer_timer_mode_start
  * @see hal_ctimer_timer_mode_stop
  */
@@ -196,16 +196,16 @@ void hal_ctimer_timer_mode_reset(void)
 }
 
 /**
- * @brief Cambia el tiempo de <em>MATCH</em> del canal de match especificado.
+ * @brief Cambia el tiempo de *MATCH* del canal de match especificado.
  *
  * Si el canal de match especificado está configurado para realizar hal_ctimer_match_config_t::reload_on_match,
- * la actualización del valor de match se hará efectiva cuando el contador del <em>CTIMER</em>
- * se reinicie (ya sea manualmente o por alcanzar un valor de <em>MATCH</em> que haya
+ * la actualización del valor de match se hará efectiva cuando el contador del *CTIMER*
+ * se reinicie (ya sea manualmente o por alcanzar un valor de *MATCH* que haya
  * sido configurado para disparar un reset).
  *
  * Caso contrario, la actualización del valor de match es inmediata.
  *
- * @param[in] match_sel Canal de <em>match</em> a configurar.
+ * @param[in] match_sel Canal de *match* a configurar.
  * @param[in] match_value_useg Nuevo valor de match, en useg, deseado.
  * @see hal_ctimer_match_config_t
  * @see hal_ctimer_timer_mode_match_config
@@ -223,9 +223,9 @@ void hal_ctimer_timer_mode_match_change_value(hal_ctimer_match_sel_en match, uin
 }
 
 /**
- * @brief Lee el estado de la <em>salida de match</em> de un canal especificado.
+ * @brief Lee el estado de la *salida de match* de un canal especificado.
  * @param[in] match Canal de match a consultar.
- * @return Estado actual de la <em>salida de match</em> consultada.
+ * @return Estado actual de la *salida de match* consultada.
  * @see hal_ctimer_match_set_output
  * @see hal_ctimer_match_clear_output
  */
@@ -235,7 +235,7 @@ uint8_t hal_ctimer_match_read_output(hal_ctimer_match_sel_en match)
 }
 
 /**
- * @brief Establece en alto la <em>salida de match</em> de un canal especificado.
+ * @brief Establece en alto la *salida de match* de un canal especificado.
  * @param[in] match Canal de match seleccionado.
  * @see hal_ctimer_match_read_output
  * @see hal_ctimer_match_clear_output
@@ -246,7 +246,7 @@ void hal_ctimer_match_set_output(hal_ctimer_match_sel_en match)
 }
 
 /**
- * @brief Establece en bajo la <em>salida de match</em> de un canal especificado.
+ * @brief Establece en bajo la *salida de match* de un canal especificado.
  * @param[in] match Canal de match seleccionado.
  * @see hal_ctimer_match_read_output
  * @see hal_ctimer_match_set_output
@@ -257,7 +257,7 @@ void hal_ctimer_match_clear_output(hal_ctimer_match_sel_en match)
 }
 
 /**
- * @brief Inicialización del periférico <em>CTIMER</em> en modo PWM.
+ * @brief Inicialización del periférico *CTIMER* en modo PWM.
  *
  * @note La inicialización en modo PWM dispara el contador.
  * @note El periférico debiera inicializarse para modo timer o para modo PWM, no ambos a la vez.

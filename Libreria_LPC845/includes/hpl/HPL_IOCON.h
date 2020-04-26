@@ -165,7 +165,7 @@ static inline void IOCON_config_clock_source(uint8_t port, uint8_t pin, IOCON_cl
 
 /**
  * @brief Inhabilitar pull-up/pull-down en entrada analógica del periférico ADC.
- * @param[in] channel Canal de \e ADC
+ * @param[in] channel Canal de *ADC*
  */
 static inline void IOCON_disable_pullup_adc(uint8_t channel)
 {
