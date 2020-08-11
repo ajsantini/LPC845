@@ -41,12 +41,14 @@ static void (*adc_overrun_callback)(void) = dummy_irq_callback; //!< Callback cu
 
 static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
 
+/** Flags para determinar si cada secuencia fue configurada en modo burst o no */
 typedef struct
 {
-	uint8_t SEQA_burst : 1;
-	uint8_t SEQB_burst : 1;
+	uint8_t SEQA_burst : 1; /**< Flag burst para secuencia A */
+	uint8_t SEQB_burst : 1; /**< Flag burst para secuencia B */
 }flag_sequence_burst_mode_t;
 
+/** Variable para tener la configuración de modo burst de cada secuencia */
 static flag_sequence_burst_mode_t flag_seq_burst_mode =
 {
 	.SEQA_burst = 0,
@@ -57,7 +59,8 @@ static flag_sequence_burst_mode_t flag_seq_burst_mode =
  * @brief Inicializar el \e ADC en modo \b asincrónico
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
- * Nota: Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC
+ *
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
  *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
@@ -65,6 +68,7 @@ static flag_sequence_burst_mode_t flag_seq_burst_mode =
  * @param[in] div Divisor para la lógica del \e ADC
  * @param[in] clock_source Fuente de clock para el \e ADC
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_low_power_mode_en low_power)
 {
@@ -112,10 +116,13 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
+ *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power)
 {

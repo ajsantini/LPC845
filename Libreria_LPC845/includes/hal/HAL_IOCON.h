@@ -23,17 +23,13 @@
  *
  * # Inversión de lógica del pin
  *
- * Este periférico tiene la posibilidad de invertir la lógica del pin, sea entrada o salida, mediante hardware.
+ * Este periférico tiene la posibilidad de invertir la lógica del pin, cuando el mismo es una entrada, mediante hardware.
  * Asumiendo que no está activada la inversión del pin y que está configurado como entrada, si se toma una lectura
  * del mismo, se leerá como \b cero cuando externamente esté a una tensión de aproximadamente VSS y se
- * leerá como \b uno cuando externamente esté a una tensión de aproximadamente VDD. Inversamente, si el
- * pin está configurado como salida, al actualizarla a \b cero colocará en el pin una tensión de aproximadamente
- * VSS y al actualizarla a \b uno colocará en el pin una tensión de aproximadamente VDD. Si se
+ * leerá como \b uno cuando externamente esté a una tensión de aproximadamente VDD. Si se
  * activa la inversión del pin sucederá lo inverso, es decir, si está configurado como entrada y externamente hay
  * una tensión de aproximadamente VSS la lectura se tomará como \b uno y si hay una tensión de
- * aproximadamente VDD la lectura se tomará como \b cero, y cuando se configure el pin como salida, al
- * actualizarla en \b cero colocará una tensión de aproximadamente VDD y al actualizarla en
- * \b uno colocará una tensión de aproximadamente VSS.
+ * aproximadamente VDD la lectura se tomará como \b cero.
  *
  * # Resistencias para fijar un nivel
  *
@@ -85,7 +81,7 @@
  * # Implementación en la librería
  *
  * Es importante destacar que cada periférico inicializará el \e IOCON en el punto que lo necesite, y luego lo
- * desactivara para conservar energía. La única excepción es el periférico @ref GPIO el cual no genera ninguna
+ * desactivará para conservar energía. La única excepción es el periférico @ref GPIO el cual no genera ninguna
  * inicialización respecto del \e IOCON, por lo que el usuario deberá configurar (en caso de ser necesario) cada
  * uno de los pines como se desee.
  *
@@ -140,7 +136,7 @@ typedef struct
 {
 	hal_iocon_pull_mode_en pull_mode; /**< Resistor interno */
 	uint8_t hysteresis; /**< Histéresis. Cualquier valor distinto de cero la activa */
-	uint8_t invert_input; /**< Inversión de lógica. Cualquier valor distinto de cero la activa */
+	uint8_t invert_input; /**< Inversión de lógica de lectura. Cualquier valor distinto de cero la activa */
 	uint8_t open_drain; /**< Modo <em>Open Drain</em>. Cualquier valor distinto de cero lo activa */
 	hal_iocon_sample_mode_en sample_mode; /**< Cantidad de muestras del filtro de glitches */
 	hal_iocon_clk_sel_en clk_sel; /**< Selección de clock para el filtro de glitches */
@@ -156,6 +152,7 @@ typedef struct
  *
  * @param[in] portpin Puerto/pin a configurar
  * @param[in] pin_config Puntero a estructura de configuracion del pin
+ * @pre Configuración de divisores de clock de bancos de filtro de glitches en caso de ser necesario.
  */
 void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *config);
 

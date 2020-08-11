@@ -14,6 +14,9 @@
 
 /**
  * @brief Inicialización del DAC
+ *
+ * Esta función inicializa el @ref IOCON de la forma necesaria para que el pin quede configurado correctamente.
+ *
  * @param[in] dac Cual de los dos DACs inicializar
  * @param[in] settling_time Velocidad de conversión del DAC
  * @param[in] initial_value Valor inicial del DAC
@@ -47,6 +50,7 @@ void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32
  * @brief Actualización del valor actual del DAC
  * @param[in] dac En que DAC actualizar el valor
  * @param[in] new_value Nuevo valor a poner en el DAC
+ * @pre Haber inicializado el periférico
  */
 void hal_dac_update_value(hal_dac_en dac, uint16_t new_value)
 {
@@ -57,6 +61,7 @@ void hal_dac_update_value(hal_dac_en dac, uint16_t new_value)
  * @brief Configuración del registro de control del DAC
  * @param[in] dac Que DAC configurar
  * @param[in] config Configuración deseada
+ * @pre Haber inicializado el periférico
  */
 void hal_dac_config_ctrl(hal_dac_en dac, hal_dac_ctrl_config_t * config)
 {

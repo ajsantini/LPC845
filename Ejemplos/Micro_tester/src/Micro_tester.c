@@ -99,17 +99,6 @@ static const hal_uart_config_t uart_config =
 	.tx_ready_callback = tx_callback,
 	.rx_ready_callback = rx_callback
 };
-
-static const hal_pinint_config_t pinint_config =
-{
-	.channel = HAL_PININT_CHANNEL_0,
-	.mode = HAL_PININT_INTERRUPT_MODE_EDGE,
-	.int_on_rising_edge = 0,
-	.int_on_falling_edge = 1,
-	.portpin = KEY_PORTPIN,
-	.callback = pinint_callback
-};
-
 static const hal_iocon_config_t pin_config =
 {
 	.pull_mode = HAL_IOCON_PULL_UP,

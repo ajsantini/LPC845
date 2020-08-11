@@ -421,6 +421,7 @@ typedef struct
  * @param[in] div Divisor para la lógica del \e ADC
  * @param[in] clock_source Fuente de clock para el \e ADC
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_low_power_mode_en low_power);
 
@@ -435,6 +436,7 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
  * @param[in] low_power Selección de modo de bajo consumo
+ * @pre Configuración del clock a utilizar
  */
 void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power);
 

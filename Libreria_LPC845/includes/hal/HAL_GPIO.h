@@ -38,7 +38,7 @@
  *
  * # Funcionamiento de salidas
  *
- * Cuando pin en particular es configurado como <em>salida</em>, se podrán colocar en el mismo, <em>valores
+ * Cuando un pin en particular es configurado como <em>salida</em>, se podrán colocar en el mismo, <em>valores
  * digitales</em>. Es importante que el usuario entienda que no hay forma de colocar un valor \e analógico en
  * un pin mediante este periférico. Para dicha funcionalidad, referirse al periférico @ref DAC en esta misma
  * documentación.
@@ -198,6 +198,7 @@ void hal_gpio_init(hal_gpio_port_en port);
  *
  * @see hal_gpio_portpin_en
  * @see hal_gpio_dir_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_set_dir(hal_gpio_portpin_en portpin, hal_gpio_dir_en dir, uint8_t initial_state);
 
@@ -206,6 +207,7 @@ void hal_gpio_set_dir(hal_gpio_portpin_en portpin, hal_gpio_dir_en dir, uint8_t 
  * @param[in] portpin Número de puerto/pin a accionar
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_set_pin(hal_gpio_portpin_en portpin);
 
@@ -215,6 +217,7 @@ void hal_gpio_set_pin(hal_gpio_portpin_en portpin);
  * @param[in] bits_to_set Máscara de bits a fijar
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_set_port(hal_gpio_port_en port, uint32_t bits_to_set);
 
@@ -224,6 +227,7 @@ void hal_gpio_set_port(hal_gpio_port_en port, uint32_t bits_to_set);
  * @param[in] bits_to_set Máscara de bits a fijar
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_masked_set_port(hal_gpio_port_en port, uint32_t bits_to_set);
 
@@ -232,6 +236,7 @@ void hal_gpio_masked_set_port(hal_gpio_port_en port, uint32_t bits_to_set);
  * @param[in] portpin Número de puerto/pin a accionar
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_clear_pin(hal_gpio_portpin_en portpin);
 
@@ -241,6 +246,7 @@ void hal_gpio_clear_pin(hal_gpio_portpin_en portpin);
  * @param[in] bits_to_clear Máscara de bits a limpiar
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_clear_port(hal_gpio_port_en port, uint32_t bits_to_clear);
 
@@ -250,6 +256,7 @@ void hal_gpio_clear_port(hal_gpio_port_en port, uint32_t bits_to_clear);
  * @param[in] bits_to_clear Máscara de bits a limpiar
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_masked_clear_port(hal_gpio_port_en port, uint32_t bits_to_clear);
 
@@ -267,6 +274,7 @@ void hal_gpio_toggle_pin(hal_gpio_portpin_en portpin);
  * @param[in] bits_to_toggle Máscara de bits a invertir
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_toggle_port(hal_gpio_port_en port, uint32_t bits_to_toggle);
 
@@ -276,6 +284,7 @@ void hal_gpio_toggle_port(hal_gpio_port_en port, uint32_t bits_to_toggle);
  * @param[in] bits_to_toggle Máscara de bits a invertir
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_masked_toggle_port(hal_gpio_port_en port, uint32_t bits_to_toggle);
 
@@ -285,6 +294,7 @@ void hal_gpio_masked_toggle_port(hal_gpio_port_en port, uint32_t bits_to_toggle)
  * @return Estado actual del puerto/pin omitiendo máscara
  *
  * @see hal_gpio_portpin_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 uint8_t hal_gpio_read_pin(hal_gpio_portpin_en portpin);
 
@@ -294,6 +304,7 @@ uint8_t hal_gpio_read_pin(hal_gpio_portpin_en portpin);
  * @return Estado del puerto sin enmascarar
  *
  * @see hal_gpio_port_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 uint32_t hal_gpio_read_port(hal_gpio_port_en port);
 
@@ -303,6 +314,7 @@ uint32_t hal_gpio_read_port(hal_gpio_port_en port);
  * @return Estado del puerto contemplando la máscara asociada
  *
  * @see hal_gpio_port_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 uint32_t hal_gpio_masked_read_port(hal_gpio_port_en port);
 
@@ -312,6 +324,7 @@ uint32_t hal_gpio_masked_read_port(hal_gpio_port_en port);
  * @param[in] mask Máscara de bits a fijar
  *
  * @see hal_gpio_port_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_set_mask_bits(hal_gpio_port_en port, uint32_t mask);
 
@@ -321,6 +334,7 @@ void hal_gpio_set_mask_bits(hal_gpio_port_en port, uint32_t mask);
  * @param[in] mask Máscara de bits a limpiar
  *
  * @see hal_gpio_port_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_clear_mask_bits(hal_gpio_port_en port, uint32_t mask);
 
@@ -330,6 +344,7 @@ void hal_gpio_clear_mask_bits(hal_gpio_port_en port, uint32_t mask);
  * @param[in] mask Máscara de bits a invertir
  *
  * @see hal_gpio_port_en
+ * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_toggle_mask_bits(hal_gpio_port_en port, uint32_t mask);
 
