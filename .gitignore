@@ -4,6 +4,7 @@
 # Blacklist all hidden folders or files
 /.*
 /FreeRTOS_TAD_logs
+/RemoteSystemsTempFiles
 
 # Project roots only
 # Blacklist hidden files and folders
