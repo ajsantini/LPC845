@@ -85,6 +85,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 /** Selección de fuente de clock para el *WKT* */
 typedef enum
 {
@@ -142,6 +146,10 @@ void hal_wkt_start_count(uint32_t time_useg);
  * @param[in] value Valor deseado a poner en el conteo (útil para una actualización mas rapida)
  */
 void hal_wkt_start_count_with_value(uint32_t value);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_WKT_H_ */
 

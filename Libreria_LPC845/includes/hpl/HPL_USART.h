@@ -9,7 +9,11 @@
 #ifndef HPL_USART_H_
 #define HPL_USART_H_
 
-#include <HRI_USART.h>
+#include "HRI_USART.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile USART_per_t * const USART[]; //!< Perifericos USART
 
@@ -920,5 +924,9 @@ static inline void USART_set_address(uint8_t inst, uint32_t addr)
 {
 	USART[inst]->ADDR.ADDRESS = addr;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_USART_H_ */

@@ -53,6 +53,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 /** Tipo de dato para callbacks del *SYSTICK* */
 typedef void (*hal_systick_callback_t)(void);
 
@@ -80,6 +84,10 @@ void hal_systick_inhibit_set(void);
  * @brief Habilitar interrupciones de *SYSTICK*
  */
 void hal_systick_inhibit_clear(void);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_SYSTICK_H_ */
 

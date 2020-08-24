@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	SWM_BASE	0x4000C000 //!< Base del eriferico SWM
 
 typedef struct
@@ -207,5 +211,9 @@ typedef struct
 	SWM_PINENABLE0_reg_t PINENABLE0;
 	SWM_PINENABLE1_reg_t PINENABLE1;
 }SWM_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_SWM_H_ */

@@ -9,7 +9,11 @@
 #ifndef HPL_GPIO_H_
 #define HPL_GPIO_H_
 
-#include <HRI_GPIO.h>
+#include "HRI_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile GPIO_per_t * const GPIO; //!< Periferico GPIO
 
@@ -262,5 +266,9 @@ static inline void GPIO_write_dir_toggle(GPIO_port_en port, uint32_t value)
 {
 	GPIO->DIRNOT[port].DIRNOTP = value;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_GPIO_H_ */

@@ -179,7 +179,11 @@
 #define HAL_SYSCON_H_
 
 #include <stdint.h>
-#include <HAL_GPIO.h>
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 /** Selección de fuente de clock para el clock principal */
 typedef enum
@@ -383,6 +387,10 @@ void hal_syscon_pll_clock_config(hal_syscon_pll_source_sel_en clock_source, uint
  * @return Frecuencia actual del PLL en Hz
  */
 uint32_t hal_syscon_pll_clock_get(void);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_SYSCON_H_ */
 

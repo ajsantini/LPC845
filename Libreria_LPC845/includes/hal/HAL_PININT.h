@@ -55,7 +55,11 @@
 #define HAL_PININT_H_
 
 #include <stdint.h>
-#include <HAL_GPIO.h>
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 /** Seleccion de canal de *PININT* */
 typedef enum
@@ -133,6 +137,10 @@ void hal_pinint_edge_detections_config(hal_pinint_channel_en channel, hal_pinint
  * @pre Haber inicializado el periférico
  */
 void hal_pinint_level_detections_config(hal_pinint_channel_en channel, hal_pinint_level_detections_en level);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_PININT_H_ */
 

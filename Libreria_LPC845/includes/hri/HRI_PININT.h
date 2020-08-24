@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	PININT_BASE	0xA0004000 //!< Direccion base del PININT
 
 typedef struct
@@ -130,5 +134,9 @@ typedef struct
 	PININT_PMSRC_reg_t PMSRC;
 	PININT_PMCFG_reg_t PMCFG;
 }PININT_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_PININT_H_ */

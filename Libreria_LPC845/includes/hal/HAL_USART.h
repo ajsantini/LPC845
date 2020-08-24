@@ -14,7 +14,8 @@
  * Este periférico permite generar comunicaciones de tipo *serie* para la transferencia de datos
  * entre dos dispositivos. En particular, el mismo puede o no utilizar una línea de clock para arbitrar
  * dichas comunicaciones. Para el caso asincrónico, los dispositivos a comunicar deberán establecer una
- * velocidad conocida de comunicación.
+ * velocidad conocida de comunicación. En particular en la documentación presente, se explican e implementan
+ * funciones para el modo **asincrónico** únicamente.
  *
  * # Componentes de entrada/salida
  *
@@ -67,7 +68,20 @@
  * Cabe destacar que ambos dispositivos deben conocer estos parámetros y deben estar configurados con los
  * mismos para que la comunicación pueda establecerse.
  *
+ * # Configuración y consideraciones para la generación del Baudrate
  *
+ * El periférico *USART* puede utilizar una de las siguientes fuentes de clock para la generación de
+ * su *Baudrate*:
+ * 		- FRO
+ * 		- Main Clock
+ * 		- FRG0/1
+ * 		- FRO / 2
+ * 		.
+ *
+ * En particular, si se necesita un bajo error en la comunicación, es deseable utilizar alguna instancia de
+ * *FRG* como fuente de clock para la generación del baudrate, dado que permitirá obtener valores de clock
+ * más flexibles que las demás fuentes de clock. Es aconsejable utilizar una fuente de clock que sea lo más
+ * alta y lo más cercana a un múltiplo del *baudrate* deseado posible, para así minimizar el error.
  *
  * @{
  */
@@ -76,8 +90,12 @@
 #define HAL_USART_H_
 
 #include <stdint.h>
-#include <HAL_SYSCON.h>
-#include <HAL_GPIO.h>
+#include "HAL_SYSCON.h"
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 /** Cantidad de bits en cada dato */
 typedef enum
@@ -134,14 +152,14 @@ typedef enum
 }hal_usart_rx_result;
 
 /**
- * @brief Tipo de dato para los callback en recepción de dato completa
+ * @brief Tipo de dato para los callback en recepción de dato completa.
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
 typedef void (*hal_usart_rx_callback)(void);
 
 /**
- * Tipo de dato para los callback en transmisión de dato completa
+ * @brief Tipo de dato para los callback en transmisión de dato completa
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
@@ -158,8 +176,8 @@ typedef struct
 	uint32_t baudrate; /**< Baudrate deseado para la comunicación */
 	hal_gpio_portpin_en tx_portpin; /**< Puerto/pin donde configurar las transmisiones */
 	hal_gpio_portpin_en rx_portpin; /**< Puerto/pin donde configurar las recepciones */
-	hal_usart_rx_callback rx_ready_callback; /**< Callback a ejecutar en una recepción exitosa (Cuando se terminó de recibir un dato) */
 	hal_usart_tx_callback tx_ready_callback; /**< Callback a ejecutar en una transmisión exitosa (Cuando se terminó de enviar un dato) */
+	hal_usart_rx_callback rx_ready_callback; /**< Callback a ejecutar en una recepción exitosa (Cuando se terminó de recibir un dato) */
 }hal_usart_config_t;
 
 /**
@@ -204,6 +222,10 @@ void hal_usart_rx_register_callback(uint8_t inst, hal_usart_rx_callback new_call
  * tener todas las consideraciones encesarias en el mismo.
  */
 void hal_usart_tx_register_callback(uint8_t inst, hal_usart_tx_callback new_callback);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_USART_H_ */
 

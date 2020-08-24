@@ -112,8 +112,12 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 /** Macro para obtener número de puerto a partir de un puerto/pin */
-#define		HAL_GPIO_PORTPIN_TO_PORT(x)		(x / 32)
+#define		HAL_GPIO_PORTPIN_TO_PORT(x)		((hal_gpio_port_en)(x / 32))
 
 /** Macro para obtener número de pin a partir de un puerto/pin */
 #define		HAL_GPIO_PORTPIN_TO_PIN(x)		(x % 32)
@@ -347,6 +351,10 @@ void hal_gpio_clear_mask_bits(hal_gpio_port_en port, uint32_t mask);
  * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_toggle_mask_bits(hal_gpio_port_en port, uint32_t mask);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_GPIO_H_ */
 

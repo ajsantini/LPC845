@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define		MRT_BASE		0x40004000
 
 typedef struct
@@ -70,5 +74,9 @@ typedef struct
 	const MRT_IDLE_CH_reg_t IDLE_CH;
 	MRT_IRQ_FLAG_reg_t IRQ_FLAG;
 }MRT_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_MRT_H_ */

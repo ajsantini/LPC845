@@ -9,7 +9,11 @@
 #ifndef HPL_SYSTICK_H_
 #define HPL_SYSTICK_H_
 
-#include <HRI_SYSTICK.h>
+#include "HRI_SYSTICK.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile SYSTICK_reg_t * const SYSTICK; //!< Periferico SYSTICK
 
@@ -90,5 +94,9 @@ static inline void SYSTICK_set_clear_current_value(void)
 {
 	SYSTICK->CVR.CURRENT = 1;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_SYSTICK_H_ */

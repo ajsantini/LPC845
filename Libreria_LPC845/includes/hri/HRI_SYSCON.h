@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	SYSCON_BASE						0x40048000
 
 #define	SYSCON_PER_CLK_SOURCE_FRO		0
@@ -502,5 +506,9 @@ typedef struct
 	const SYSCON_RESERVED_reg_t RESERVED_25[0x1BC / 4];
 	const SYSCON_DEVICE_ID_reg_t DEVICE_ID;
 }SYSCON_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_SYSCON_H_ */

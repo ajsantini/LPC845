@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define		PMU_BASE		0x40020000
 
 #define		SCR_REG_BASE	0xE000ED10
@@ -60,5 +64,9 @@ typedef struct
 	PMU_GPREG_reg_t GPREG[4];
 	PMU_DPDCTRL_reg_t DPDCTRL;
 }PMU_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_PMU_H_ */

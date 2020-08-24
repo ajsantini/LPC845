@@ -99,6 +99,7 @@ static const hal_usart_config_t uart_config =
 	.tx_ready_callback = tx_callback,
 	.rx_ready_callback = rx_callback
 };
+
 static const hal_iocon_config_t pin_config =
 {
 	.pull_mode = HAL_IOCON_PULL_UP,

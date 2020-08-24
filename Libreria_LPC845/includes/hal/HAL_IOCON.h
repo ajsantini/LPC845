@@ -14,7 +14,7 @@
  * El periférico *IOCON* es el responsable de configurar las características eléctricas de cada pin del
  * microcontrolador. Dichas características son:
  * 		- Resistor de Pull-up/Pull-Down
- * 		- Modo *open rain*
+ * 		- Modo *open drain*
  * 		- Histéresis
  * 		- Filtro de *glitches* configurable
  * 		- Modo analógico
@@ -53,13 +53,13 @@
  * # Histéresis
  *
  * Cada pin puede configurar una *histéresis* cuando se comporta como entrada. Que el pin tenga una
- * *histéresis* implica que el valor cambiará su lectura una vez superado un cierto umbral Vhys.
+ * *histéresis* implica que el valor cambiará su lectura una vez superado un cierto umbral *Vhys*.
  * Esto evita lecturas erróneas cuando la entrada tiene una variación a un ritmo lenta que no se puede evitar.
  *
  * # Filtro de *Glitches*
  *
- * @image html entrada_con_glitches.png "Entrada con *Glitches*"
- * @image latex entrada_con_glitches.png "Entrada con *Glitches*" width=0.8\textwidth
+ * @image html entrada_con_glitches.png "Entrada con Glitches"
+ * @image latex entrada_con_glitches.png "Entrada con Glitches" width=0.8\textwidth
  *
  * Si una entrada tiene *glitches*, como se muestra en la imágen, se pueden tomar lecturas erróneas a causa
  * de la falta de estabilidad de la señal que excita a la entrada. Una forma de evitar este problema es
@@ -91,7 +91,11 @@
 #ifndef HAL_IOCON_H_
 #define HAL_IOCON_H_
 
-#include <HAL_GPIO.h>
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 /** Selección de resistor interno en el pin */
 typedef enum
@@ -155,6 +159,10 @@ typedef struct
  * @pre Configuración de divisores de clock de bancos de filtro de glitches en caso de ser necesario.
  */
 void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *config);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_IOCON_H_ */
 

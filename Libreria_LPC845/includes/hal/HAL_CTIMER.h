@@ -11,7 +11,11 @@
 #define HAL_CTIMER_H_
 
 #include <stdint.h>
-#include <HAL_GPIO.h>
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 /**
  * @defgroup CTIMER Standard Counter/Timer (CTIMER)
@@ -338,6 +342,10 @@ void hal_ctimer_pwm_mode_period_set(uint32_t period_useg);
  * @param[in] channel_config Configuracion del canal de PWM
  */
 void hal_ctimer_pwm_mode_channel_config(hal_ctimer_pwm_channel_sel_en channel_sel, const hal_ctimer_pwm_channel_config_t *channel_config);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_CTIMER_H_ */
 

@@ -9,7 +9,11 @@
 #ifndef HPL_DAC_H_
 #define HPL_DAC_H_
 
-#include <HRI_DAC.h>
+#include "HRI_DAC.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile DAC_per_t * const DAC[]; //!< Perifericos DAC
 
@@ -126,5 +130,9 @@ static inline void DAC_write_reaload_value(DAC_sel_en dac, uint16_t value)
 {
 	DAC[dac]->CNTVAL.VALUE = value;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_DAC_H_ */

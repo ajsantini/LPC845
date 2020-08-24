@@ -75,6 +75,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 /** Enumeraciones de instancias disponibles de *DAC* */
 typedef enum
 {
@@ -124,6 +128,10 @@ void hal_dac_update_value(hal_dac_en dac, uint16_t new_value);
  * @pre Haber inicializado el periférico
  */
 void hal_dac_config_ctrl(hal_dac_en dac, hal_dac_ctrl_config_t * config);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_DAC_H_ */
 

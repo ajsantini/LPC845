@@ -9,7 +9,11 @@
 #ifndef HPL_ACMP_H_
 #define HPL_ACMP_H_
 
-#include <HRI_ACMP.h>
+#include "HRI_ACMP.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 typedef enum
 {
@@ -125,5 +129,9 @@ static inline ACMP_ladder_vref_sel_en ACMP_voltage_ladder_vref_get(void)
 {
 	return ACMP->LAD.LADREF;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_ACMP_H_ */

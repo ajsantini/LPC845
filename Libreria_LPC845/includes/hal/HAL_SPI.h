@@ -10,8 +10,12 @@
 #define HAL_SPI_H_
 
 #include <stdint.h>
-#include <HAL_SYSCON.h>
-#include <HAL_GPIO.h>
+#include "HAL_SYSCON.h"
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 #define		HAL_SPI_DUMMY_BYTE		(0xFF)
 
@@ -142,5 +146,9 @@ void hal_spi_master_mode_tx_register_callback(hal_spi_sel_en inst, void (*new_ca
  * @param[in] new_callback Nuevo callback a ejecutar en RXRDY
  */
 void hal_spi_master_mode_rx_register_callback(hal_spi_sel_en inst, void (*new_callback)(void));
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_SPI_H_ */

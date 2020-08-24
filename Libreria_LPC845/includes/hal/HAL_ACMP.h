@@ -69,7 +69,11 @@
 #ifndef HAL_ACMP_H_
 #define HAL_ACMP_H_
 
-#include <HAL_GPIO.h>
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 /** Selección de sincronismo de la señal digital de salida del comparador analógico.*/
 typedef enum
@@ -215,6 +219,10 @@ void hal_acmp_output_pin_set(hal_gpio_portpin_en port_pin);
  * @see hal_acmp_output_pin_set
  */
 void hal_acmp_output_pin_clear();
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_ACMP_H_ */
 

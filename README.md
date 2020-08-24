@@ -20,9 +20,9 @@ de la librería. En caso de no ser posible, es recomendable que al menos para ca
 única capa de abstracción. Estas tres capas están explicados a continuación.
 
 > Toda la documentación acerca de los distintos periféricos implementados en la documentación de la 
-librería, están referidos a la *Capa de aplicación*, pero se explica la estructura de la librería 
-dado que usuarios más avanzados en el campo de sistemas embebidos puedan llegar a utilizar con mayor 
-frecuencia las dos capas inferiores.
+> librería, están referidos a la *Capa de aplicación*, pero se explica la estructura de la librería 
+> dado que usuarios más avanzados en el campo de sistemas embebidos puedan llegar a utilizar con mayor 
+> frecuencia las dos capas inferiores.
 
 ## Capa de abstracción de hardware (HAL)
 

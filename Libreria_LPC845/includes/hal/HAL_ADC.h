@@ -240,6 +240,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 /** Selección de fuente de clock para el *ADC* */
 typedef enum
 {
@@ -570,6 +574,10 @@ void hal_adc_threshold_register_interrupt(adc_comparison_interrupt_t callback);
  * @see hal_adc_channel_compare_result_t
  */
 void hal_adc_threshold_get_comparison_results(hal_adc_channel_compare_result_t *results);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_ADC_H_ */
 

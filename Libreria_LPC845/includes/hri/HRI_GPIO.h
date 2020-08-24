@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	GPIO_BASE	0xA0000000
 
 typedef struct
@@ -100,5 +104,9 @@ typedef struct
 	const uint8_t RESERVED_11[0x78];
 	GPIO_DIRNOT_reg_t DIRNOT[2];
 }GPIO_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_GPIO_H_ */

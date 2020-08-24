@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	SYSTICK_BASE	0xE000E000 //!< Base del periferico SYSTICK
 
 typedef struct
@@ -56,5 +60,9 @@ typedef struct
 	SYSTICK_CVR_reg_t CVR;
 	SYSTICK_CALIB_reg_t CALIB;
 }SYSTICK_reg_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_SYSTICK_H_ */

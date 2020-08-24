@@ -9,7 +9,11 @@
 #ifndef HPL_WKT_H_
 #define HPL_WKT_H_
 
-#include <HRI_WKT.h>
+#include "HRI_WKT.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile WKT_per_t * const WKT; //!< Periferico WKT
 
@@ -86,5 +90,9 @@ static inline void WKT_write_count(uint32_t count)
 {
 	WKT->COUNT.VALUE = count;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_WKT_H_ */

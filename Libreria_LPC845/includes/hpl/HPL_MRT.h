@@ -9,7 +9,11 @@
 #ifndef HPL_MRT_H_
 #define HPL_MRT_H_
 
-#include <HRI_MRT.h>
+#include "HRI_MRT.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile MRT_per_t * const MRT; //!< Periferico MRT
 
@@ -129,5 +133,9 @@ static inline void MRT_clear_irq_flag(MRT_channel_sel_en channel)
 
 	return 0;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_MRT_H_ */

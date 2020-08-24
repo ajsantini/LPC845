@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	UART0_BASE		0x40064000
 #define	UART1_BASE		0x40068000
 #define	UART2_BASE		0x4006C000
@@ -198,5 +202,9 @@ typedef struct
 	USART_OSR_reg_t OSR;
 	USART_ADDR_reg_t ADDR;
 }USART_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_USART_H_ */

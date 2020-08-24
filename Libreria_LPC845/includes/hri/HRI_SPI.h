@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	SPI0_BASE		0x40058000
 #define	SPI1_BASE		0x4005C000
 
@@ -154,5 +158,9 @@ typedef struct
 	SPI_DIV_reg_t DIV;
 	const SPI_INTSTAT_reg_t INTSTAT;
 }SPI_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_SPI_H_ */
