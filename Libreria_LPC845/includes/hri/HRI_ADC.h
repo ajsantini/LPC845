@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	ADC_BASE	0x4001C000 //!< Direccion base del ADC
 
 //! Registro de control del ADC
@@ -174,5 +178,9 @@ typedef struct
 	ADC_FLAGS_reg_t FLAGS;
 	ADC_TRM_reg_t TRM;
 }ADC_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_ADC_H_ */

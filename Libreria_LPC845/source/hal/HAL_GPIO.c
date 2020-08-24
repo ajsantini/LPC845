@@ -31,6 +31,13 @@ void hal_gpio_init(hal_gpio_port_en port)
  * @param[in] portpin Número de puerto/pin a configurar
  * @param[in] dir Dirección deseada
  * @param[in] initial_state Estado inicial (aplica únicamente para salidas)
+ *
+ * @note Es importante recordar que el @ref IOCON controla aspectos de hardware del puerto/pin, por ejemplo la
+ * inversión en la lógica del mismo, y que esta función no configura ninguno de esos aspectos. En caso de ser
+ * necesario configurar dichas características, ver @ref hal_iocon_config_io.
+ *
+ * @see hal_gpio_portpin_en
+ * @see hal_gpio_dir_en
  * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_set_dir(hal_gpio_portpin_en portpin, hal_gpio_dir_en dir, uint8_t initial_state)
@@ -131,7 +138,6 @@ void hal_gpio_masked_clear_port(hal_gpio_port_en port, uint32_t bits_to_clear)
  * @param[in] portpin Número de puerto/pin a accionar
  *
  * @see hal_gpio_portpin_en
- * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_toggle_pin(hal_gpio_portpin_en portpin)
 {

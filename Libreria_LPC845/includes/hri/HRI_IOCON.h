@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	IOCON_BASE	0x40044000
 
 /*
@@ -94,5 +98,9 @@ typedef struct
 	IOCON_PIO_reg_t PIO1_11;
 	IOCON_PIO_reg_t PIO1_10;
 }IOCON_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_IOCON_H_ */

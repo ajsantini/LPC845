@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define			WKT_BASE		0x40008000
 
 typedef struct
@@ -33,5 +37,9 @@ typedef struct
 	const uint32_t RESERVED[2];
 	WKT_COUNT_reg_t COUNT;
 }WKT_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_WKT_H_ */

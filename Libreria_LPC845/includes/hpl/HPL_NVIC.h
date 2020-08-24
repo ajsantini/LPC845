@@ -9,7 +9,11 @@
 #ifndef HPL_NVIC_H_
 #define HPL_NVIC_H_
 
-#include <HRI_NVIC.h>
+#include "HRI_NVIC.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile NVIC_per_t * const NVIC; //!< Periferico NVIC
 
@@ -143,5 +147,9 @@ static inline void NVIC_set_irq_priority(NVIC_irq_sel_en irq, NVIC_irq_priority_
 
 	}
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_NVIC_H_ */

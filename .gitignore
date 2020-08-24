@@ -32,4 +32,5 @@
 
 /Libreria_LPC845/Debug
 
-# No ignorar documentacion
+# Lib documentation folder only
+/Libreria_LPC845/docu

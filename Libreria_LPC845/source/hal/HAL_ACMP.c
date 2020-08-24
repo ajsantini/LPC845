@@ -62,8 +62,10 @@ void hal_acmp_deinit(void)
  * - Rango de histérisis sobre la comparación para validar un cambio de la salida del comparador.
  * - Habilitación o deshabilitación de interrupciones, y según qué tipo de flanco se quiera
  * de la salida del comparador.
+ * .
  *
  * @param[in] acmp_config Puntero a estructura con parámetros a configurar.
+ *
  * @see hal_acpm_config_t
  * @see hal_acmp_ladder_config
  * @see hal_acmp_input_select
@@ -83,15 +85,17 @@ void hal_acmp_config(const hal_acpm_config_t *acmp_config)
 }
 
 /**
- * @brief Configuración de la escalera de tensión del comparador analógico.
+ * @brief Configuración de la Voltage Ladder del comparador analógico.
  *
- * Configura las siguientes características de la escalera de tensión del comparador:
+ * Configura las siguientes características de la Voltage Ladder del comparador:
  *
  * - Habilitación o no.
  * - Tensión de referencia.
  * - Fracción ('step') utilizada de dicha tensión de referencia.
+ * .
  *
- * @param[in] config Puntero a estructura con parámetros de configuración deseados de la escalera de tensión.
+ * @param[in] ladder_config Puntero a estructura con parámetros de configuración deseados de la Voltage Ladder.
+ *
  * @see hal_acmp_ladder_config_t
  * @see hal_acmp_config
  * @see hal_acmp_ladder_config
@@ -132,7 +136,7 @@ void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *ladder_config)
 /**
  * @brief Selecciona las entradas positiva y negativa deseadas para el comparador.
  *
- * Para entradas analógicas además realiza la configuración necesaria del pin externo de entrada analógica.
+ * Para entradas analógicas además realiza la configuración necesaria del pin externo.
  *
  * @param[in] positive_input Selección de entrada para la entrada positiva del comparador analógico.
  * @param[in] negative_input Selección de entrada para la entrada negativa del comparador analógico.

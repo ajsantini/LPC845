@@ -11,26 +11,26 @@
  *
  * # Introducción
  *
- * El periférico \e GPIO es el encargado de controlar tanto las entradas como la salidas <b>digitales</b>. Esto
- * implica que las salidas solamente podrán tomar valores <em>cero</em> o <em>uno</em> y que las entradas
- * únicamente interpretarán valores <em>cero</em> o <em>uno</em>.
+ * El periférico *GPIO* es el encargado de controlar tanto las entradas como la salidas **digitales**. Esto
+ * implica que las salidas solamente podrán tomar valores *cero* o *uno* y que las entradas
+ * únicamente interpretarán valores *cero* o *uno*.
  *
- * Cada uno de los pines del microcontrolador están descriptos mediante un número de \e puerto y un número de
- * <em>pin</em>. En este caso se tienen 2 \e puertos (0 y 1) con 32 \e pines cada uno (0 a 31). Cabe destacar
+ * Cada uno de los pines del microcontrolador están descriptos mediante un número de *puerto* y un número de
+ * *pin*. En este caso se tienen 2 *puertos* (0 y 1) con 32 *pines* cada uno (0 a 31). Cabe destacar
  * que si bien están definidas las condiciones para que se tengan un total de 64 pines de entrada/salida, la
  * cantidad real disponible en el microcontrolador depende del encapsulado. En el caso del encapsulado trabajado
- * en esta librería (por ahora), se tienen todos los pines del \e puerto 0, y los pines del 0 al 9 del \e puerto 1.
+ * en esta librería (por ahora), se tienen todos los pines del *puerto* 0, y los pines del 0 al 9 del *puerto* 1.
  * Referirse a la sección @ref acerca_del_stick para más información.
  *
- * @note Este periférico está intimamente relacionado con el periférico \e IOCON, particularmente para el manejo de
+ * @note Este periférico está intimamente relacionado con el periférico *IOCON*, particularmente para el manejo de
  * ciertos aspectos de hardware de los pines. Para más información, referirse a la sección @ref IOCON.
  *
  * # Funcionamiento de entradas
  *
- * Cuando un pin en particular es configurado como <em>entrada</em>, se podrá leer en el mismo, el estado de una
- * <em>señal digital externa</em>. Es importante que el usuario entienda que si la señal externa está en valores
- * que correspondan a la <em>zona prohibida</em> de los niveles de señal digital, la lectura del valor será
- * indefinida. En caso de necesitar leer valores <em>analógicos</em>, referirse al periférico @ref ADC en esta
+ * Cuando un pin en particular es configurado como *entrada*, se podrá leer en el mismo, el estado de una
+ * *señal digital externa*. Es importante que el usuario entienda que si la señal externa está en valores
+ * que correspondan a la *zona prohibida* de los niveles de señal digital, la lectura del valor será
+ * indefinida. En caso de necesitar leer valores *analógicos*, referirse al periférico @ref ADC en esta
  * misma documentación.
  *
  * @note Las entradas son configuradas como tales mediante la función @ref hal_gpio_set_dir y son
@@ -38,8 +38,8 @@
  *
  * # Funcionamiento de salidas
  *
- * Cuando un pin en particular es configurado como <em>salida</em>, se podrán colocar en el mismo, <em>valores
- * digitales</em>. Es importante que el usuario entienda que no hay forma de colocar un valor \e analógico en
+ * Cuando un pin en particular es configurado como *salida*, se podrán colocar en el mismo, *valores
+ * digitales*. Es importante que el usuario entienda que no hay forma de colocar un valor *analógico* en
  * un pin mediante este periférico. Para dicha funcionalidad, referirse al periférico @ref DAC en esta misma
  * documentación.
  *
@@ -49,22 +49,22 @@
  *
  * # Enmascaramiento de entradas/salidas
  *
- * El periférico \e GPIO dispone de la habilidad de \e enmascarar uno o más pines en particular. El hecho de
- * \e enmascarar un pin implica que:
+ * El periférico *GPIO* dispone de la habilidad de *enmascarar* uno o más pines en particular. El hecho de
+ * *enmascarar* un pin implica que:
  * 		- Si el mismo estaba configurado como salida: Se inhabilita la posibilidad de cambiar el estado actual
  * 		del pin.
  * 		- Si el mismo estaba configurado como entrada: Siempre se lee dicho pin como cero.
  * 		.
  *
- * @note Las máscaras son configuradas mediante las funciones @ref hal_gpio_set_mask_bits, @ref hal_gpio_lear_mask_bits y
+ * @note Las máscaras son configuradas mediante las funciones @ref hal_gpio_set_mask_bits, @ref hal_gpio_clear_mask_bits y
  * @ref hal_gpio_toggle_mask_bits.
  *
  * # Lectura/Escritura de Puerto/Pin
  *
  * Al usuario puede serle de utilidad la posibilidad de leer/escribir el estado de un pin en particular, así
  * como también la posibilidad de leer/escribir varios pines a la vez. Si se encuentra en el segundo caso,
- * el periférico \e GPIO dispone de la habilidad de hacerlo, siempre y cuando los múltiples pines se encuentren
- * <b>en el mismo puerto</b>.
+ * el periférico *GPIO* dispone de la habilidad de hacerlo, siempre y cuando los múltiples pines se encuentren
+ * **en el mismo puerto**.
  *
  * Es importante también destacar, que las lecturas/escrituras respetarán las máscaras explicadas anteriormente,
  * por lo cual es recomendable configurar dicha funcionalidad a la hora de leer/escribir múltiples pines, y
@@ -93,17 +93,17 @@
  *
  * Ver @ref acerca_del_stick para más información.
  *
- * Se configura el \e Systick para generar ticks cada 1 milisegundo.
+ * Se configura el *Systick* para generar ticks cada 1 milisegundo.
  *
  * Se configura el pin del pulsador para utilizar lógica invertida en su hardware.
  *
  * # Funcionamiento del programa
  *
- * El \e Systick se utiliza para generar un titileo en el LED RGB \e rojo siempre y cuando el pulsador de usuario
- * no esté presionado. Mientras el pulsador de usuario se encuentre presionado, el LED RGB \e azul estará fijo y
- * el \e rojo quedará apagado. El titileo nunca deja de suceder, sino que se enmascara la salida correspondiente.
- * Esto implica que si el pulsador se deja de presionar en el momento en que el mismo tiene el LED RGB \e rojo
- * encendido, no se va a ver el LED RGB \e azul encender, dado el tipo de conexión en el stick de desarrollo
+ * El *Systick* se utiliza para generar un titileo en el LED RGB *rojo* siempre y cuando el pulsador de usuario
+ * no esté presionado. Mientras el pulsador de usuario se encuentre presionado, el LED RGB *azul* estará fijo y
+ * el *rojo* quedará apagado. El titileo nunca deja de suceder, sino que se enmascara la salida correspondiente.
+ * Esto implica que si el pulsador se deja de presionar en el momento en que el mismo tiene el LED RGB *rojo*
+ * encendido, no se va a ver el LED RGB *azul* encender, dado el tipo de conexión en el stick de desarrollo
  * y los valores de tensión de LED.
  */
 
@@ -112,8 +112,12 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 /** Macro para obtener número de puerto a partir de un puerto/pin */
-#define		HAL_GPIO_PORTPIN_TO_PORT(x)		(x / 32)
+#define		HAL_GPIO_PORTPIN_TO_PORT(x)		((hal_gpio_port_en)(x / 32))
 
 /** Macro para obtener número de pin a partir de un puerto/pin */
 #define		HAL_GPIO_PORTPIN_TO_PIN(x)		(x % 32)
@@ -347,6 +351,10 @@ void hal_gpio_clear_mask_bits(hal_gpio_port_en port, uint32_t mask);
  * @pre Haber inicializado el puerto correspondiente
  */
 void hal_gpio_toggle_mask_bits(hal_gpio_port_en port, uint32_t mask);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_GPIO_H_ */
 

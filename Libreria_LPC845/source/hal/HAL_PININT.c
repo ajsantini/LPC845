@@ -8,14 +8,24 @@
 
 #include <stddef.h>
 #include <HAL_PININT.h>
-#include <HAL_UART.h>
+#include <HAL_USART.h>
 #include <HPL_PININT.h>
 #include <HPL_SYSCON.h>
 #include <HPL_SWM.h>
 #include <HPL_NVIC.h>
 
-/** Cantidad de canales de \e PININT disponibles */
+/** Cantidad de canales de *PININT* disponibles */
 #define		PININT_CHANNEL_AMOUNT		(8)
+
+/**
+ * @brief Interrupcion de UART3
+ */
+extern void UART3_irq(void);
+
+/**
+ * @brief Interrupcion de UART4
+ */
+extern void UART4_irq(void);
 
 static void dummy_irq_callback(void);
 
@@ -72,7 +82,7 @@ void hal_pinint_deinit(void)
 }
 
 /**
- * @brief Configuración de canal de \e PININT
+ * @brief Configuración de canal de *PININT*
  *
  * @note Esta función no configura el modo de detección. Ver: @ref hal_pinint_edge_detections_config y
  * @ref hal_pinint_level_detections_config

@@ -10,7 +10,11 @@
 #ifndef HPL_CTIMER_H_
 #define HPL_CTIMER_H_
 
-#include <HRI_CTIMER.h>
+#include "HRI_CTIMER.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile CTIMER_per_t * const CTIMER; //!< Periferico CTIMER
 
@@ -679,5 +683,9 @@ static inline void CTIMER_write_shadow_register(CTIMER_match_sel_en match, uint3
 {
 	CTIMER->MSR[match].SHADOW = value;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_CTIMER_H_ */

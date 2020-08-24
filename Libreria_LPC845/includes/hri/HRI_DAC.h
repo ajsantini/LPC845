@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	DAC0_BASE	0x40014000
 #define	DAC1_BASE	0x40018000
 
@@ -43,5 +47,9 @@ typedef struct
 	DAC_CTRL_reg_t CTRL;
 	DAC_CNTVAL_reg_t CNTVAL;
 }DAC_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_DAC_H_ */

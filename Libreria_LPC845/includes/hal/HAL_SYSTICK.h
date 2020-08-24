@@ -11,7 +11,7 @@
  *
  * # Introducción
  *
- * El periférico \e SYSTICK es un timer básico cuya funcionalidad principal es mantener una base de tiempos, en
+ * El periférico *SYSTICK* es un timer básico cuya funcionalidad principal es mantener una base de tiempos, en
  * general fija, para múltiples tareas que necesiten cierta periodicidad o una base de tiempo. La frecuencia con
  * la que ocurren dichos ticks es configurable y valores típicos pueden ser: 1 milisegundo, 2.5 milisegundos,
  * 10 milisegundos entre otros.
@@ -25,7 +25,7 @@
  *
  * # Configuración de tiempo de tick
  *
- * Para configurar el tiempo de tick del periférico, el mismo cuenta con un contador descendente de <em>24 bits</em>
+ * Para configurar el tiempo de tick del periférico, el mismo cuenta con un contador descendente de *24 bits*
  * el cual cuando desborda, activa un flag, pudiendo el mismo generar una interrupción o no. La librería implementa
  * una función @ref hal_systick_init a la cual simplemente se le asigna el tiempo de tick deseado en microsegundos
  * y automáticamente configura el periférico para generar ticks con dicha base de tiempo, pudiendo ejecutar un
@@ -42,7 +42,7 @@
  *
  * # Inhibición de tick
  *
- * Para ciertos procesos críticos, es deseable inhibir las interrupciones del \e SYSTICK. Para este propósito
+ * Para ciertos procesos críticos, es deseable inhibir las interrupciones del *SYSTICK*. Para este propósito
  * se disponen de las funciones @ref hal_systick_inhibit_set y @ref hal_systick_inhibit_clear.
  *
  * @{
@@ -53,7 +53,11 @@
 
 #include <stdint.h>
 
-/** Tipo de dato para callbacks del \e SYSTICK */
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
+/** Tipo de dato para callbacks del *SYSTICK* */
 typedef void (*hal_systick_callback_t)(void);
 
 /**
@@ -67,19 +71,23 @@ void hal_systick_init(uint32_t tick_us, void (*callback)(void));
  * @brief Actualizar callback del SYSTICK
  * @param[in] callback Nuevo callback a ejecutar en cada tick
  *
- * Si se pasa como parámetro \e NULL, se inhabilitarán las interrupciones
+ * Si se pasa como parámetro *NULL*, se inhabilitarán las interrupciones
  */
 void hal_systick_update_callback(hal_systick_callback_t callback);
 
 /**
- * @brief Inhabilitar interrupciones de \e SYSTICK
+ * @brief Inhabilitar interrupciones de *SYSTICK*
  */
 void hal_systick_inhibit_set(void);
 
 /**
- * @brief Habilitar interrupciones de \e SYSTICK
+ * @brief Habilitar interrupciones de *SYSTICK*
  */
 void hal_systick_inhibit_clear(void);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_SYSTICK_H_ */
 

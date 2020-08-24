@@ -1,3 +1,5 @@
+# Página principal # {#mainpage}
+
 # Introducción
 
 Esta librería esta diseñada para ser utilizada con la línea de microcontroladores **LPC845** de la firma **NXP**.
@@ -18,9 +20,9 @@ de la librería. En caso de no ser posible, es recomendable que al menos para ca
 única capa de abstracción. Estas tres capas están explicados a continuación.
 
 > Toda la documentación acerca de los distintos periféricos implementados en la documentación de la 
-librería, están referidos a la *Capa de aplicación*, pero se explica la estructura de la librería 
-dado que usuarios más avanzados en el campo de sistemas embebidos puedan llegar a utilizar con mayor 
-frecuencia las dos capas inferiores.
+> librería, están referidos a la *Capa de aplicación*, pero se explica la estructura de la librería 
+> dado que usuarios más avanzados en el campo de sistemas embebidos puedan llegar a utilizar con mayor 
+> frecuencia las dos capas inferiores.
 
 ## Capa de abstracción de hardware (HAL)
 
@@ -43,7 +45,7 @@ en la *Capa de abstracción de hardware* se deberá utilizar esta capa.
 
 -----------------------------------------------------------------------------------------------------------------
 
-# Acerca del stick de desarrollo LPC845_BRK
+# Acerca del stick de desarrollo LPC845_BRK {#acerca_del_stick}
 
 ![Pinout del LPC845_BRK](https://raw.githubusercontent.com/ajs93/LPC845/develop_augusto/Imagenes/LPC845_BRK_PINOUT.png)
 

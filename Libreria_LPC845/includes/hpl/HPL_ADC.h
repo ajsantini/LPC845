@@ -9,7 +9,11 @@
 #ifndef HPL_ADC_H_
 #define HPL_ADC_H_
 
-#include <HRI_ADC.h>
+#include "HRI_ADC.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile ADC_per_t * const ADC; //!< Periferico ADC
 
@@ -529,5 +533,9 @@ static inline void ADC_clear_threshold_flags(void)
 	ADC->FLAGS.THCMP10 = 1;
 	ADC->FLAGS.THCMP11 = 1;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_ADC_H_ */

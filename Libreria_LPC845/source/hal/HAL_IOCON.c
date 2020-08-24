@@ -12,8 +12,14 @@
 
 /**
  * @brief Configuracion de un pin
+ *
+ * Nótese que las configuraciones de modo analógico no están en la estructura de configuración
+ * @ref hal_iocon_config_t. Esto es debido a que dichas configuraciones se realizarán en el periférico
+ * correspondiente, sea el @ref ADC o @ref DAC.
+ *
  * @param[in] portpin Puerto/pin a configurar
- * @param[in] pin_config Puntero a estructura de configuracion del pin
+ * @param[in] config Puntero a estructura de configuracion del pin
+ * @pre Configuración de divisores de clock de bancos de filtro de glitches en caso de ser necesario.
  */
 void hal_iocon_config_io(hal_gpio_portpin_en portpin, const hal_iocon_config_t *config)
 {

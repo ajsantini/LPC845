@@ -17,7 +17,7 @@
  *
  * Al cargar un valor distinto de cero en la cuenta del periférico, el mismo se enciende automáticamente y
  * comienza el conteo. Una vez transcurrido el conteo, el periférico genera la interrupción correspondiente
- * y se vuelve a apagar hasta un próximo conteo, es decir, es un timer de tipo <em>one-shot</em>.
+ * y se vuelve a apagar hasta un próximo conteo, es decir, es un timer de tipo *one-shot*.
  *
  * @note El periférico se inicializa mediante la función @ref hal_wkt_init y se dispara un conteo mediante las
  * funciones @ref hal_wkt_start_count o @ref hal_wkt_start_count_with_value dependiendo de la necesidad del
@@ -26,11 +26,11 @@
  * # Fuentes de clock
  *
  * Se puede excitar al periférico con tres fuentes de clock distintas:
- * 		- <em>FRO dividido</em>: FRO dividido por 16
- * 		- <em>Oscilador de bajo consumo</em>: Oscilador siempre encendido con una frecuencia de
+ * 		- *FRO dividido*: FRO dividido por 16
+ * 		- *Oscilador de bajo consumo*: Oscilador siempre encendido con una frecuencia de
  * 		10KHz más/menos 40%. La ventaja de este oscilador es que sigue encendido inclusive en modos de ultra
  * 		bajo consumo, pudiendo despertar al microcontrolador de los mismos.
- * 		- <em>Fuente de clock externo en el pin WKTLCKIN: Ubicado en Puerto 0 ; Pin 28
+ * 		- *Fuente de clock externo en el pin WKTLCKIN: Ubicado en Puerto 0 ; Pin 28
  * 		.
  *
  * @note La fuente de clock es seleccionada mediante la función @ref hal_wkt_select_clock_source o en la
@@ -64,14 +64,14 @@
  * El programa utiliza la configuración del clock por default, es decir, FRO como fuente de clock principal,
  * y el mismo con una frecuencia de 12MHz.
  *
- * El periférico \e WKT es configurado para utilizar como fuente de clock el oscilador de bajo consumo, o el
+ * El periférico *WKT* es configurado para utilizar como fuente de clock el oscilador de bajo consumo, o el
  * FRO dividido, dependiendo de un define ubicado en el código. De esta forma, se puede probar la presición de
  * ambas fuentes de clock, y se puede observar la gran incertidumbre en el clock de bajo consumo.
  *
  * # Funcionamiento del programa
  *
- * En el callback de interrupción del \e WKT configurado, se genera una inversión en el estado del pin del LED
- * RGB \e verde y se vuelve a disparar el conteo. Esto se realiza cada aproximadamente 1 milisegundo.
+ * En el callback de interrupción del *WKT* configurado, se genera una inversión en el estado del pin del LED
+ * RGB *verde* y se vuelve a disparar el conteo. Esto se realiza cada aproximadamente 1 milisegundo.
  *
  * Nótese que la carga del valor de conteo es realizada mediante la función @ref hal_wkt_start_count_with_value
  * y no con @ref hal_wkt_start_count. Esto se debe a que el tiempo que queremos disparar es conocido, y es un
@@ -85,7 +85,11 @@
 
 #include <stdint.h>
 
-/** Selección de fuente de clock para el \e WKT */
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
+/** Selección de fuente de clock para el *WKT* */
 typedef enum
 {
 	HAL_WKT_CLOCK_SOURCE_FRO_DIV = 0, /**< Fuente de clock FRO dividido */
@@ -94,7 +98,7 @@ typedef enum
 }hal_wkt_clock_source_en;
 
 /**
- * @brief Tipo de dato para el callback de interrupción del \e WKT
+ * @brief Tipo de dato para el callback de interrupción del *WKT*
  * @note Es importante recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que
  * el usuario deberá tener en cuenta todas las consideraciones necesarias a la hora de escribir el mismo.
  */
@@ -142,6 +146,10 @@ void hal_wkt_start_count(uint32_t time_useg);
  * @param[in] value Valor deseado a poner en el conteo (útil para una actualización mas rapida)
  */
 void hal_wkt_start_count_with_value(uint32_t value);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_WKT_H_ */
 

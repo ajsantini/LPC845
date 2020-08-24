@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define	NVIC_BASE	0xE000E000
 
 typedef struct
@@ -310,5 +314,9 @@ typedef struct
 	NVIC_IPR6_reg_t IPR6;
 	NVIC_IPR7_reg_t IPR7;
 }NVIC_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_NVIC_H_ */

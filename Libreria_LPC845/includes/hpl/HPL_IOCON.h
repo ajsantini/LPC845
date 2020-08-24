@@ -10,8 +10,12 @@
 #ifndef HPL_IOCON_H_
 #define HPL_IOCON_H_
 
-#include <HPL_SYSCON.h>
-#include <HRI_IOCON.h>
+#include "HPL_SYSCON.h"
+#include "HRI_IOCON.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile IOCON_per_t * const IOCON; //!< Periferico IOCON
 extern volatile IOCON_PIO_reg_t * const IOCON_PIN_TABLE[2][32];//!< Tabla de registros de configuracion
@@ -165,7 +169,7 @@ static inline void IOCON_config_clock_source(uint8_t port, uint8_t pin, IOCON_cl
 
 /**
  * @brief Inhabilitar pull-up/pull-down en entrada analógica del periférico ADC.
- * @param[in] channel Canal de \e ADC
+ * @param[in] channel Canal de *ADC*
  */
 static inline void IOCON_disable_pullup_adc(uint8_t channel)
 {
@@ -262,5 +266,9 @@ static inline void IOCON_select_iic0_sda(IOCON_iic_mode_en iic_mode)
 {
 	IOCON_PIN_TABLE[0][11]->I2CMODE = iic_mode;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_IOCON_H_ */

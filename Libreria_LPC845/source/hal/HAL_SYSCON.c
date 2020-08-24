@@ -228,7 +228,9 @@ void hal_syscon_frg_config(uint8_t inst, hal_syscon_frg_clock_sel_en clock_sourc
 /**
  * @brief Configuración del watchdog oscillator
  * @param[in] clkana_sel Selección de frecuencia base del oscilador
- * @param[in] div Divisor
+ * @param[in] div Divisor. El valor efectivo de división es: 2 (1 + div)
+ *
+ * @note Recordar que la presición de este oscilador es de más/menos 40%
  */
 void hal_syscon_watchdog_oscillator_config(hal_syscon_watchdog_clkana_sel_en clkana_sel, uint8_t div)
 {

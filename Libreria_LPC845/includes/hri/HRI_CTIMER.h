@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define		CTIMER_BASE		0x40038000
 
 typedef struct
@@ -150,5 +154,9 @@ typedef struct
 	CTIMER_PWMC_reg_t PWMC;
 	CTIMER_MSR_reg_t MSR[4];
 }CTIMER_per_t;
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_CTIMER_H_ */

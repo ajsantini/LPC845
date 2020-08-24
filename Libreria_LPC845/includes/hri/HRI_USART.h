@@ -1,15 +1,19 @@
 /**
- * @file HRI_UART.h
+ * @file HRI_USART.h
  * @brief Definiciones a nivel de registros del modulo UART (LPC845)
  * @author Augusto Santini
  * @date 6/2019
  * @version 1.0
  */
 
-#ifndef HRI_UART_H_
-#define HRI_UART_H_
+#ifndef HRI_USART_H_
+#define HRI_USART_H_
 
 #include <stdint.h>
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 #define	UART0_BASE		0x40064000
 #define	UART1_BASE		0x40068000
@@ -40,7 +44,7 @@ typedef struct
 	uint32_t RXPOL : 1;
 	uint32_t TXPOL : 1;
 	uint32_t : 8;
-}UART_CFG_reg_t;
+}USART_CFG_reg_t;
 
 typedef struct
 {
@@ -55,7 +59,7 @@ typedef struct
 	uint32_t : 6;
 	uint32_t AUTOBAUD : 1;
 	uint32_t : 15;
-}UART_CTL_reg_t;
+}USART_CTL_reg_t;
 
 typedef struct
 {
@@ -77,7 +81,7 @@ typedef struct
 	uint32_t RXNOISEINT : 1;
 	uint32_t ABERR : 1;
 	uint32_t : 14;
-}UART_STAT_reg_t;
+}USART_STAT_reg_t;
 
 typedef struct
 {
@@ -98,7 +102,7 @@ typedef struct
 	uint32_t RXNOISEEN : 1;
 	uint32_t ABERREN : 1;
 	uint32_t : 14;
-}UART_INTENSET_reg_t;
+}USART_INTENSET_reg_t;
 
 typedef struct
 {
@@ -119,13 +123,13 @@ typedef struct
 	uint32_t RXNOISECLR : 1;
 	uint32_t ABERRCLR : 1;
 	uint32_t : 14;
-}UART_INTENCLR_reg_t;
+}USART_INTENCLR_reg_t;
 
 typedef struct
 {
 	uint32_t RXDAT : 9;
 	uint32_t : 23;
-}UART_RXDAT_reg_t;
+}USART_RXDAT_reg_t;
 
 typedef struct
 {
@@ -135,20 +139,20 @@ typedef struct
 	uint32_t PARITYERR : 1;
 	uint32_t RXNOISE : 1;
 	uint32_t : 17;
-}UART_RXDATSTAT_reg_t;
+}USART_RXDATSTAT_reg_t;
 
 
 typedef struct
 {
 	uint32_t TXDAT : 9;
 	uint32_t : 23;
-}UART_TXDAT_reg_t;
+}USART_TXDAT_reg_t;
 
 typedef struct
 {
 	uint32_t BRGVAL : 16;
 	uint32_t : 16;
-}UART_BRG_reg_t;
+}USART_BRG_reg_t;
 
 typedef struct
 {
@@ -169,34 +173,38 @@ typedef struct
 	uint32_t RXNOISEINT : 1;
 	uint32_t ABERR : 1;
 	uint32_t : 15;
-}UART_INTSTAT_reg_t;
+}USART_INTSTAT_reg_t;
 
 typedef struct
 {
 	uint32_t OSRVAL : 4;
 	uint32_t : 28;
-}UART_OSR_reg_t;
+}USART_OSR_reg_t;
 
 typedef struct
 {
 	uint32_t ADDRESS : 8;
 	uint32_t : 24;
-}UART_ADDR_reg_t;
+}USART_ADDR_reg_t;
 
 typedef struct
 {
-	UART_CFG_reg_t CFG;
-	UART_CTL_reg_t CTL;
-	UART_STAT_reg_t STAT;
-	UART_INTENSET_reg_t INTENSET;
-	UART_INTENCLR_reg_t INTENCLR;
-	const UART_RXDAT_reg_t RXDAT;
-	const UART_RXDATSTAT_reg_t RXDATSTAT;
-	UART_TXDAT_reg_t TXDAT;
-	UART_BRG_reg_t BRG;
-	const UART_INTSTAT_reg_t INTSTAT;
-	UART_OSR_reg_t OSR;
-	UART_ADDR_reg_t ADDR;
-}UART_per_t;
+	USART_CFG_reg_t CFG;
+	USART_CTL_reg_t CTL;
+	USART_STAT_reg_t STAT;
+	USART_INTENSET_reg_t INTENSET;
+	USART_INTENCLR_reg_t INTENCLR;
+	const USART_RXDAT_reg_t RXDAT;
+	const USART_RXDATSTAT_reg_t RXDATSTAT;
+	USART_TXDAT_reg_t TXDAT;
+	USART_BRG_reg_t BRG;
+	const USART_INTSTAT_reg_t INTSTAT;
+	USART_OSR_reg_t OSR;
+	USART_ADDR_reg_t ADDR;
+}USART_per_t;
 
-#endif /* HRI_UART_H_ */
+#if defined (__cplusplus)
+} // extern "C"
+#endif
+
+#endif /* HRI_USART_H_ */

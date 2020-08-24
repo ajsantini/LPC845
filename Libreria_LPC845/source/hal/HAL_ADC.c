@@ -22,10 +22,10 @@
 /** Máxima frecuencia de conversión admitida por el ADC (modo asincrónico) */
 #define	ADC_MAX_FREQ_ASYNC		((uint32_t) 0.6e6)
 
-/** Cantidad de ciclos de clock necesarios por el \e ADC para generar una conversión */
+/** Cantidad de ciclos de clock necesarios por el *ADC* para generar una conversión */
 #define	ADC_CYCLE_DELAY			(25)
 
-/** Cantidad de canales disponibles en el \e ADC */
+/** Cantidad de canales disponibles en el *ADC* */
 #define	ADC_CHANNEL_AMOUNT		(12)
 
 static void dummy_irq_callback(void);
@@ -56,17 +56,17 @@ static flag_sequence_burst_mode_t flag_seq_burst_mode =
 };
 
 /**
- * @brief Inicializar el \e ADC en modo \b asincrónico
+ * @brief Inicializar el *ADC* en modo **asincrónico**
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
- * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del *ADC*.
  *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
  * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] div Divisor para la lógica del \e ADC
- * @param[in] clock_source Fuente de clock para el \e ADC
+ * @param[in] div Divisor para la lógica del *ADC*
+ * @param[in] clock_source Fuente de clock para el *ADC*
  * @param[in] low_power Selección de modo de bajo consumo
  * @pre Configuración del clock a utilizar
  */
@@ -112,11 +112,11 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
 }
 
 /**
- * @brief Inicializar el \e ADC en modo \b sincrónico
+ * @brief Inicializar el *ADC* en modo **sincrónico**
  *
  * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
  *
- * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del \e ADC.
+ * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del *ADC*.
  *
  * @see hal_adc_clock_source_en
  * @see hal_adc_low_power_mode_en
@@ -159,7 +159,7 @@ void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_
 }
 
 /**
- * @brief De-inicialización del \e ADC
+ * @brief De-inicialización del *ADC*
  *
  * Además, desliga todos los pines externos posiblemente utilizados por el ADC de su función analógica.
  */
@@ -303,7 +303,7 @@ void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_seq
  * Si la secuencia está configurada en modo hal_adc_sequence_config_t::burst
  * esta función comenzará conversiones consecutivas en todos los canales configurados.
  *
- * Si la secuencia \b no utiliza el modo hal_adc_sequence_config_t::burst, entonces esta función disparará una sola conversión en un canal
+ * Si la secuencia **no utiliza** el modo hal_adc_sequence_config_t::burst, entonces esta función disparará una sola conversión en un canal
  * o una conversión en todos los canales configurados de la secuencia, dependiendo del parámetro hal_adc_sequence_config_t::single_step.
  *
  * @note En todos los casos, esta función habilita la secuencia antes de disparar la conversión (si corresponde).
@@ -365,7 +365,7 @@ void hal_adc_sequence_stop(hal_adc_sequence_sel_en sequence)
  * de la configuracion hal_adc_sequence_config_t::mode. En caso de estar configurada para interrumpir al final de cada
  * conversión, la función únicamente guardara el resultado de la conversión en el primer lugar
  * del parámetro hal_adc_sequence_result_t::result, caso contrario, guardara la cantidad de canales habilitados en la
- * conversión en los distintos lugares del parámetro <em>result</em>.
+ * conversión en los distintos lugares del parámetro *result*.
  *
  * @see hal_adc_sequence_result_en
  * @see hal_adc_sequence_sel_en
@@ -490,7 +490,7 @@ void hal_adc_threshold_register_interrupt(void (*callback)(void))
  * @brief Obtener resultados de comparación de la última conversión
  * @param[out] results Puntero a donde guardar los resultados
  *
- * El usuario \b debe garantizar que hayan por lo menos la cantidad de memoria reservada de este tipo
+ * El usuario **debe** garantizar que hayan por lo menos la cantidad de memoria reservada de este tipo
  * como cantidad de canales habilitados para comparar contra un umbral.
  *
  * @see hal_adc_channel_compare_result_t
@@ -530,7 +530,7 @@ static void dummy_irq_callback(void)
 }
 
 /**
- * @brief Función de interrupción cuando termina la secuencia de conversión A del \e ADC
+ * @brief Función de interrupción cuando termina la secuencia de conversión A del *ADC*
  */
 void ADC_SEQA_IRQHandler(void)
 {
@@ -543,7 +543,7 @@ void ADC_SEQA_IRQHandler(void)
 }
 
 /**
- * @brief Función de interrupción cuando termina la secuencia de conversión B del \e ADC
+ * @brief Función de interrupción cuando termina la secuencia de conversión B del *ADC*
  */
 void ADC_SEQB_IRQHandler(void)
 {

@@ -17,9 +17,10 @@
  * El comparador tiene 2 entradas, una considerada positiva y otra negativa.
  * - Si la señal conectada a la entrada positiva es mayor, la salida del comparador estará en estado alto.
  * - Si la señal conectada a la entrada negativa es mayor, la salida del comparador estará en estado bajo.
+ * .
  *
  * Este periférico cuenta además con la posibilidad de generar un pedido de interrupción
- * según el tipo de flanco generado por un cambio a la salida del comparador.
+ * según el tipo de flanco generado un cambio en la salida del comparador.
  *
  * # Selección de las entradas analógicas al comparador
  *
@@ -27,15 +28,16 @@
  * y algunas señales internas del microcontrolador.
  *
  * Las entradas seleccionables son:
- * - Tensión de salida de la <em>Voltage Ladder</em>.
+ * - Tensión de salida de la *Voltage Ladder*.
  * - 5 entradas analógicas externas.
- * - Tensión de referencia interna <em>Bandgap</em>.
- * - Salida del conversor digital a analógico <em>DAC</em>.
+ * - Tensión de referencia interna *Bandgap*.
+ * - Salida del conversor digital a analógico *DAC*.
+ * .
  *
  * # Voltage Ladder
  *
- * La <em>Voltage Ladder</em> puede ser utilizada para generar una tensión determinada a partir de una tensión externa,
- *  o de la propia alimentación del microcontrolador V_{DD}.
+ * El módulo *Voltage Ladder* puede ser utilizado para generar una tensión determinada a partir de una tensión externa,
+ *  o de la propia alimentación del microcontrolador \f$V_{DD}\f$.
  *
  * La tensión de salida es configurable por el usuario y responde a la siguiente ecuación
  * (en función de la tensión de referencia elegida):
@@ -46,18 +48,20 @@
  *
  * Donde:
  * - n: Entero entre 0 y 31.
- * - V_{ref}: Tensión de referencia de la <em>Voltage Ladder</em>.
+ * - \f$V_{ref}\f$: Tensión de referencia de la *Voltage Ladder*.
  *
  * # Salida del comparador como trigger de hardware de otros periféricos
  *
- * Es posible utilizar la salida del comparador como trigger por hardware para otros periféricos
- * para que estos lleven a cabo alguna funcionalidad sin la necesidad de intervención por software del microcontrolador .
+ * Es posible interconectar la salida del *ACMP* a señales de otros periféricos, de modo de implementar
+ * ciertas funcionalidades sin intervención del microcontrolador.
  *
- * De hecho, este es uno de los triggers por hardware de disparo de conversiones del periférico <em>ADC</em>.
+ * Por ejemplo, uno de los posibles triggers de hardware para disparar conversiones del periférico *ADC*, es esta señal de salida del *ACMP*.
  *
  * # Campos de aplicación típicos
  *
- * Loren Ipsum
+ * - Comparación de niveles analógicos sin necesidad de convertir los mismos.
+ * - Accionamiento a partir de monitoreo de señal analógica externa con punto de referencia variable.
+ * .
  *
  * @{
  */
@@ -65,7 +69,11 @@
 #ifndef HAL_ACMP_H_
 #define HAL_ACMP_H_
 
-#include <HAL_GPIO.h>
+#include "HAL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 /** Selección de sincronismo de la señal digital de salida del comparador analógico.*/
 typedef enum
@@ -90,8 +98,9 @@ typedef enum
 	HAL_ACMP_LADDER_VREF_VDDCMP_PIN /**< Tensión de referencia tomada del pin externo con función analógica VDDCMP.*/
 }hal_acmp_ladder_vref_sel_en;
 
-/** Selección de tipo de flanco de la señal de salida
- * del comparador analógico que será trigger de interrupción. */
+/**
+ * Selección de tipo de flanco de la señal de salida del comparador analógico que será trigger de interrupción.
+ */
 typedef enum
 {
 	HAL_ACMP_EDGE_FALLING = 0, /**< Flanco descendente.*/
@@ -153,8 +162,10 @@ void hal_acmp_deinit(void);
  * - Rango de histérisis sobre la comparación para validar un cambio de la salida del comparador.
  * - Habilitación o deshabilitación de interrupciones, y según qué tipo de flanco se quiera
  * de la salida del comparador.
+ * .
  *
  * @param[in] acmp_config Puntero a estructura con parámetros a configurar.
+ *
  * @see hal_acpm_config_t
  * @see hal_acmp_ladder_config
  * @see hal_acmp_input_select
@@ -169,15 +180,17 @@ void hal_acmp_config(const hal_acpm_config_t *acmp_config);
  * - Habilitación o no.
  * - Tensión de referencia.
  * - Fracción ('step') utilizada de dicha tensión de referencia.
+ * .
  *
- * @param[in] config Puntero a estructura con parámetros de configuración deseados de la Voltage Ladder.
+ * @param[in] ladder_config Puntero a estructura con parámetros de configuración deseados de la Voltage Ladder.
+ *
  * @see hal_acmp_ladder_config_t
  * @see hal_acmp_config
  * @see hal_acmp_ladder_config
  * @see hal_acmp_input_select
  * @see hal_acmp_deinit
  */
-void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *config);
+void hal_acmp_ladder_config(const hal_acmp_ladder_config_t *ladder_config);
 
 /**
  * @brief Selecciona las entradas positiva y negativa deseadas para el comparador.
@@ -206,6 +219,10 @@ void hal_acmp_output_pin_set(hal_gpio_portpin_en port_pin);
  * @see hal_acmp_output_pin_set
  */
 void hal_acmp_output_pin_clear();
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_ACMP_H_ */
 

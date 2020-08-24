@@ -9,7 +9,11 @@
 #ifndef HPL_PMU_H_
 #define HPL_PMU_H_
 
-#include <HRI_PMU.h>
+#include "HRI_PMU.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile SCR_reg_t * const SCR; //!< Registro SCR
 
@@ -278,5 +282,9 @@ static inline void PMU_disable_reset(void)
 {
 	PMU->DPDCTRL.RESET_DISABLE = 1;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_PMU_H_ */

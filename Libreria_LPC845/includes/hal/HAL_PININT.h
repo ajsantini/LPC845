@@ -7,21 +7,21 @@
  */
 
 /**
- * @defgroup PININT Interrupciones de pin / Motor de patrones (PININT)
+ * @defgroup PININT Interrupciones de pin/Motor de patrones (PININT)
  *
  * # Introducción
  *
- * El periférico \e PININT puede funcionar tanto como <em>Interrupciones de pin</em> como <em>Motor de
- * detección de patrones</em>.
+ * El periférico *PININT* puede funcionar tanto como *Interrupciones de pin* como *Motor de
+ * detección de patrones*.
  *
- * # Funcionamiento como <em>Interrupciones de pin</em>
+ * # Funcionamiento como *Interrupciones de pin*
  *
  * El periférico dispone de 8 canales configurables para detección de distintos eventos externos al
  * microcontrolador. Cada uno de estos canales es configurable para detectar cambios de nivel o de flanco
  * en el pin asociado, pudiendo así también detectar flancos ascendentes/descendentes como nivel alto/bajo. Cada
  * canal tiene su propia configuración independiente de los demás.
  *
- * # Funcionamiento como <em>Motor de detección de patrones</em>
+ * # Funcionamiento como *Motor de detección de patrones*
  *
  * @warning Falta desarrollar!
  *
@@ -40,24 +40,28 @@
  *
  * # Configuraciones
  *
- * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el <em>Free Running
- * Oscillator</em> funcionando a 12MHz
+ * El programa utiliza el clock por default con el que comienza el microcontrolador, es decir, el *Free Running
+ * Oscillator* funcionando a 12MHz
  *
- * El periférico \e PININT será configurado de la siguiente manera:
+ * El periférico *PININT* será configurado de la siguiente manera:
  * 		- Canal 0 en el pulsador de usuario (Puerto 0 ; Pin 4)
  * 		- Detecciones por nivel (inicialmente nivel bajo, ver descripción de programa)
  * 		.
  *
- * Se configura el pin correspondiente al LED RGB \e Rojo como salida.
+ * Se configura el pin correspondiente al LED RGB *Rojo* como salida.
  */
 
 #ifndef HAL_PININT_H_
 #define HAL_PININT_H_
 
 #include <stdint.h>
-#include <HAL_GPIO.h>
+#include "HAL_GPIO.h"
 
-/** Seleccion de canal de \e PININT */
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
+/** Seleccion de canal de *PININT* */
 typedef enum
 {
 	HAL_PININT_CHANNEL_0 = 0, /**< Canal 0 */
@@ -88,7 +92,7 @@ typedef enum
 }hal_pinint_level_detections_en;
 
 /**
- * @brief Tipo de dato para callback de \e PININT
+ * @brief Tipo de dato para callback de *PININT*
  *
  * @note Cabe recordar que estos callbacks se ejecutan bajo el contexto de una interrupción, por lo que el
  * mismo deberá tener todas las consideraciones necesarias
@@ -106,7 +110,7 @@ void hal_pinint_init(void);
 void hal_pinint_deinit(void);
 
 /**
- * @brief Configuración de canal de \e PININT
+ * @brief Configuración de canal de *PININT*
  *
  * @note Esta función no configura el modo de detección. Ver: @ref hal_pinint_edge_detections_config y
  * @ref hal_pinint_level_detections_config
@@ -133,6 +137,10 @@ void hal_pinint_edge_detections_config(hal_pinint_channel_en channel, hal_pinint
  * @pre Haber inicializado el periférico
  */
 void hal_pinint_level_detections_config(hal_pinint_channel_en channel, hal_pinint_level_detections_en level);
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HAL_PININT_H_ */
 

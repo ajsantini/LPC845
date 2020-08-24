@@ -11,6 +11,10 @@
 
 #include <stdint.h>
 
+#if defined (__cplusplus)
+extern "C" {
+#endif
+
 #define			ACMP_BASE			0x40024000 //!< Direccion base del Comparador Analígico
 
 //! Registro de control del comparador analógico
@@ -49,5 +53,9 @@ typedef struct
 }ACMP_per_t;
 
 extern volatile ACMP_per_t * const ACMP; //!< Periferico Comparador Analógico.
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HRI_ACMP_H_ */

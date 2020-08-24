@@ -51,6 +51,8 @@ void hal_systick_init(uint32_t tick_us, void (*callback)(void))
 /**
  * @brief Actualizar callback del SYSTICK
  * @param[in] callback Nuevo callback a ejecutar en cada tick
+ *
+ * Si se pasa como parámetro *NULL*, se inhabilitarán las interrupciones
  */
 void hal_systick_update_callback(void (*callback)(void))
 {
@@ -67,7 +69,7 @@ void hal_systick_update_callback(void (*callback)(void))
 }
 
 /**
- * @brief Inhabilitar interrupciones de \e SYSTICK
+ * @brief Inhabilitar interrupciones de *SYSTICK*
  */
 void hal_systick_inhibit_set(void)
 {
@@ -75,7 +77,7 @@ void hal_systick_inhibit_set(void)
 }
 
 /**
- * @brief Habilitar interrupciones de \e SYSTICK
+ * @brief Habilitar interrupciones de *SYSTICK*
  */
 void hal_systick_inhibit_clear(void)
 {

@@ -9,8 +9,12 @@
 #ifndef HPL_SYSCON_H_
 #define HPL_SYSCON_H_
 
-#include <HRI_SYSCON.h>
-#include <HPL_GPIO.h>
+#include "HRI_SYSCON.h"
+#include "HPL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile SYSCON_per_t * const SYSCON; //!< Periferico SYSCON
 
@@ -730,5 +734,9 @@ static inline uint32_t SYSCON_get_device_id(void)
 {
 	return SYSCON->DEVICE_ID.DEVICE_ID;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_SYSCON_H_ */

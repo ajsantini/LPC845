@@ -90,6 +90,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Libreria_LPC845/Debug}&quot;"/>
 								</option>
 								<option id="com.crt.advproject.link.gcc.multicore.slave.1823169184" name="Multicore configuration" superClass="com.crt.advproject.link.gcc.multicore.slave"/>
+								<option defaultValue="com.crt.advproject.heapAndStack.lpcXpressoStyle" id="com.crt.advproject.link.memory.heapAndStack.style.776110073" superClass="com.crt.advproject.link.memory.heapAndStack.style" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1356882550" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -172,6 +173,7 @@
 								</option>
 								<option id="com.crt.advproject.link.gcc.hdrlib.653773049" name="Library" superClass="com.crt.advproject.link.gcc.hdrlib" value="com.crt.advproject.gcc.link.hdrlib.codered.none" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.crpenable.133191341" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.crpenable"/>
+								<option defaultValue="com.crt.advproject.heapAndStack.lpcXpressoStyle" id="com.crt.advproject.link.memory.heapAndStack.style.1018530129" superClass="com.crt.advproject.link.memory.heapAndStack.style" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.895516455" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

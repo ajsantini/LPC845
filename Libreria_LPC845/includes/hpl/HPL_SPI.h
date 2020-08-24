@@ -9,7 +9,11 @@
 #ifndef HPL_SPI_H_
 #define HPL_SPI_H_
 
-#include <HRI_SPI.h>
+#include "HRI_SPI.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile SPI_per_t * const SPI[]; //!< Perifericos SPI
 
@@ -490,5 +494,9 @@ static inline uint8_t SPI_get_irq_flag_status(uint8_t inst, SPI_irq_sel_en irq)
 
 	return 0;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_SPI_H_ */

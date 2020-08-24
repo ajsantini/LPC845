@@ -8,7 +8,7 @@
 #include <HAL_ADC.h>
 #include <HAL_SYSCON.h>
 #include <HAL_SYSTICK.h>
-#include <HAL_UART.h>
+#include <HAL_USART.h>
 #include <HAL_GPIO.h>
 #include <HAL_CTIMER.h>
 #include <HAL_PININT.h>
@@ -86,12 +86,12 @@ static const hal_adc_sequence_config_t adc_config =
 	.callback = adc_callback
 };
 
-static const hal_uart_config_t uart_config =
+static const hal_usart_config_t uart_config =
 {
-	.data_length = HAL_UART_DATALEN_8BIT,
-	.parity = HAL_UART_PARITY_NO_PARITY,
-	.stop_bits = HAL_UART_STOPLEN_1BIT,
-	.oversampling = HAL_UART_OVERSAMPLING_X16,
+	.data_length = HAL_USART_DATALEN_8BIT,
+	.parity = HAL_USART_PARITY_NO_PARITY,
+	.stop_bits = HAL_USART_STOPLEN_1BIT,
+	.oversampling = HAL_USART_OVERSAMPLING_X16,
 	.clock_selection = HAL_SYSCON_PERIPHERAL_CLOCK_SEL_FRG0,
 	.baudrate = UART_BAUDRATE,
 	.tx_portpin = UART_TX_PORTPIN,
@@ -99,6 +99,7 @@ static const hal_uart_config_t uart_config =
 	.tx_ready_callback = tx_callback,
 	.rx_ready_callback = rx_callback
 };
+
 static const hal_iocon_config_t pin_config =
 {
 	.pull_mode = HAL_IOCON_PULL_UP,
@@ -245,11 +246,11 @@ int main(void)
 	hal_adc_init_async_mode(ADC_FREQUENCY, 0, HAL_ADC_CLOCK_SOURCE_FRO, HAL_ADC_LOW_POWER_MODE_DISABLED);
 	hal_adc_sequence_config(ADC_SEQUENCE, &adc_config);
 
-	hal_uart_init(UART_NUMBER, &uart_config);
+	hal_usart_init(UART_NUMBER, &uart_config);
 
 	hal_pinint_init();
 
-	hal_pinint_pin_interrupt_config(&pinint_config);
+	//hal_pinint_pin_interrupt_config(&pinint_config);
 
 #ifndef	CTIMER_IN_PWM_MODE
 	hal_ctimer_timer_mode_init(0); // Divisor de prescaler en 1
@@ -343,11 +344,11 @@ static void rx_callback(void)
 {
 	uint32_t data;
 
-	hal_uart_rx_data(UART_NUMBER, &data);
+	hal_usart_rx_data(UART_NUMBER, &data);
 
 	if((char) data == ' ')
 	{
-		hal_uart_tx_data(UART_NUMBER, trama[trama_counter++]);
+		hal_usart_tx_data(UART_NUMBER, trama[trama_counter++]);
 	}
 }
 
@@ -355,7 +356,7 @@ static void tx_callback(void)
 {
 	if(trama[trama_counter] != '\0')
 	{
-		hal_uart_tx_data(UART_NUMBER, trama[trama_counter++]);
+		hal_usart_tx_data(UART_NUMBER, trama[trama_counter++]);
 	}
 	else
 	{

@@ -9,9 +9,13 @@
 #ifndef HPL_SWM_H_
 #define HPL_SWM_H_
 
-#include <HRI_SWM.h>
-#include <HPL_SYSCON.h>
-#include <HPL_GPIO.h>
+#include "HRI_SWM.h"
+#include "HPL_SYSCON.h"
+#include "HPL_GPIO.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile SWM_per_t * const SWM; //!< Periferico SWM
 
@@ -594,5 +598,9 @@ static inline void SWM_enable_CAPYH(SWM_enable_en en_dis)
 {
 	SWM->PINENABLE1.CAPT_YH = en_dis;
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_SWM_H_ */

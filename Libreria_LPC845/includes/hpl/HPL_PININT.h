@@ -9,7 +9,11 @@
 #ifndef HPL_PININT_H_
 #define HPL_PININT_H_
 
-#include <HRI_PININT.h>
+#include "HRI_PININT.h"
+
+#if defined (__cplusplus)
+extern "C" {
+#endif
 
 extern volatile PININT_per_t * const PININT; //!< Periferico PININT
 
@@ -283,5 +287,9 @@ static inline void PINITN_config_slice_mode(uint8_t slice, PININT_match_contribu
 	case 6: { PININT->PMCFG.CFG6 = mode; break; }
 	}
 }
+
+#if defined (__cplusplus)
+} // extern "C"
+#endif
 
 #endif /* HPL_PININT_H_ */
