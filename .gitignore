@@ -33,4 +33,7 @@
 /Libreria_LPC845/Debug
 
 # Lib documentation folder only
-/Libreria_LPC845/docu
+/Libreria_LPC845/docu/*
+/Libreria_LPC845/html/*
+/Libreria_LPC845/latex/*
+/Libreria_LPC845/tags
