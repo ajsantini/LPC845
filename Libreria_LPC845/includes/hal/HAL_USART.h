@@ -70,20 +70,89 @@
  *
  * # Configuración y consideraciones para la generación del Baudrate
  *
- * El periférico *USART* puede utilizar una de las siguientes fuentes de clock para la generación de
- * su *Baudrate*:
+ * El periférico <em>USART</em> puede utilizar una de las siguientes fuentes de clock para la generación de
+ * su <em>Baudrate</em>:
  * 		- FRO
  * 		- Main Clock
- * 		- FRG0/1
- * 		- FRO / 2
- * 		.
+ * 		- FRG0
+ * 		- FRG1
+ * 		- \f$ \frac{\mathrm{FRO}}{2}\f$
  *
  * En particular, si se necesita un bajo error en la comunicación, es deseable utilizar alguna instancia de
- * *FRG* como fuente de clock para la generación del baudrate, dado que permitirá obtener valores de clock
+ * <em>FRG</em> como fuente de clock para la generación del baudrate, dado que permitirá obtener valores de clock
  * más flexibles que las demás fuentes de clock. Es aconsejable utilizar una fuente de clock que sea lo más
- * alta y lo más cercana a un múltiplo del *baudrate* deseado posible, para así minimizar el error.
+ * alta y lo más cercana a un múltiplo del <em>Baudrate</em> deseado posible, para así minimizar el error.
+ *
+ * ## Ejemplo para obtener un Baudrate de 115200 bps
+ *
+ * \f{eqnarray*}{
+ * 		Baudrate = \frac{CLK_{USART}}{(OSRVAL+1) \cdot (BRGVAL+1)}
+ * \f}
+ *
+ * Donde:
+ * - \f$CLK_{USART}\f$ : el clock seleccionado para la USART que utilicemos.
+ * - \f$OSRVAL\f$ :
+ * - \f$BRGVAL\f$ :
+ *
+ * \f{eqnarray*}{
+ * 		BRGVAL = \frac{CLK_{USART}}{(OSRVAL+1) \cdot Baudrate} - 1
+ * \f}
  *
  * @{
+ */
+
+/**
+ * @example Ejemplo_USART.c
+ *
+ * @brief
+ * Ejemplo de configuración del perifério <b>USART</b> para establecer una comunicación entrante y saliente
+ * al microcontrolador.
+ *
+ * @note
+ * Este ejemplo establece la <b>comunicación serie con la computadora a través
+ * del cable USB conectado al stick de desarrollo</b>. \n
+ * Ver @ref acerca_del_stick para más información sobre este punto en particular.
+ *
+ * ## Configuraciones
+ *
+ * El programa utiliza como Main Clock el <em>Free Running Oscilator</em> configurado sin divisor, es decir,
+ * con una frecuencia de 24MHz.
+ *
+ * Se utiliza el periférico USART0, con los pines RX y TX que corresponden al puerto serie a través del
+ * puerto USB:
+ * - USART0 RX: Puerto 0, Pin 24
+ * - USART0 TX: Puerto 0, Pin 25
+ *
+ * La configuración del protocolo es la siguiente:
+ * - Baudrate:	115200 bps
+ * - Trama 8 bits
+ * - Sin paridad
+ * - 1 bit de stop
+ * - X16 Oversampling
+ *
+ * Además, la USART0 está configurada para generar interrupciones cuando se haya recibido un dato
+ * y cada vez que se haya completado la transmisión de una trama de datos.
+ *
+ * # Descripción de funcionamiento
+ *
+ * El programa estará a la espera de la recepción del caracter 'S' y cada vez que reciba
+ * dicho caracter responderá enviando el mensaje "Trama de respuesta automatica\n".
+ *
+ * Una vez cargado el ejemplo en el microcontrolador, el usuario puede verificar su funcionamiento
+ * a través de cualquier software de terminal serie.
+ * Por ejemplo, en sistemas Linux, puede utilizarse el programa 'Cutecom'.
+ *
+ * A través de dichos programas el usuario deberá enviar el caracter 'S' para luego visualizar la respuesta
+ * del programa.
+ *
+ * @note El usuario debe asegurarse de haber detenido la sesión de debug del MCUXpresso antes
+ * de probar el ejemplo. \n
+ * Esto se debe a qué el puerto USB es compartido con el debugger
+ * propio del LPC845, y no debe utilizarse en simultáneo con la comunicación configurada en este ejemplo.
+ *
+ * @author Augusto Santini
+ * @author Esteban Chiama
+ * @date 4/2020
  */
 
 #ifndef HAL_USART_H_

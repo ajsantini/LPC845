@@ -32,7 +32,7 @@
  * 		ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}}
  * \f}
  *
- * @note Cabe destacar, que las conversiones serán redondeadas **siempre** hacia abajo, es decir, se descartan los
+ * @note Cabe destacar, que las conversiones serán redondeadas <b>siempre<\b> hacia abajo, es decir, se descartan los
  * valores decimales.
  *
  * # Concepto de Secuencia de conversión

@@ -255,7 +255,7 @@ void hal_ctimer_timer_mode_match_config(hal_ctimer_match_sel_en match_sel, const
  * @see hal_ctimer_timer_mode_match_config
  * @see hal_ctimer_timer_mode_stop
  */
-void hal_ctimer_timer_mode_run(void);
+void hal_ctimer_timer_mode_start(void);
 
 /**
  * @brief Inhabilita el conteo del *CTIMER*.

@@ -1,13 +1,3 @@
-/**
- * @file Ejemplo_USART.c
- * @brief Ejemplo de utilización del *USART* con la librería (capa de aplicación)
- *
- *
- *
- * @author Augusto Santini
- * @date 4/2020
- */
-
 #include <HAL_USART.h>
 
 /** Instancia de USART a utilizar */
@@ -47,13 +37,11 @@ static const hal_usart_config_t uart_config =
  */
 int main(void)
 {
+	// Configuro el Main Clock como el FRO @24MHz
 	hal_syscon_fro_clock_config(1);
 	hal_syscon_system_clock_set_source(HAL_SYSCON_SYSTEM_CLOCK_SEL_FRO);
 
-	// Configuro el fraccional para poder tener buena presicion para un baudrate de 115200bps
-	// El DIV siempre debe estar en 256 (especificacion del manual de usuario)
-	// Como fuente utilizo el FRO a 24MHz ya configurado
-	// 24MHz / (1 + (47 / 256)) = 20.2772272MHz
+	// Configuro el clock fraccional para poder tener buena presicion para un baudrate de 115200bps
 	hal_syscon_frg_config(0, HAL_SYSCON_FRG_CLOCK_SEL_MAIN_CLOCK, 47);
 
 	// Inicialización de USART
@@ -82,7 +70,7 @@ static void rx_callback(void)
 
 	hal_usart_rx_data(UART_NUMBER, &data);
 
-	if((char) data == ' ')
+	if((char) data == 'S')
 	{
 		hal_usart_tx_data(UART_NUMBER, trama[trama_counter++]);
 	}
