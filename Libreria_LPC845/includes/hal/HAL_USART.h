@@ -70,8 +70,8 @@
  *
  * # Configuración y consideraciones para la generación del Baudrate
  *
- * El periférico <em>USART</em> puede utilizar una de las siguientes fuentes de clock para la generación de
- * su <em>Baudrate</em>:
+ * El periférico *USART* puede utilizar una de las siguientes fuentes de clock para la generación de
+ * su *Baudrate*:
  * 		- FRO
  * 		- Main Clock
  * 		- FRG0
@@ -79,9 +79,9 @@
  * 		- \f$ \frac{\mathrm{FRO}}{2}\f$
  *
  * En particular, si se necesita un bajo error en la comunicación, es deseable utilizar alguna instancia de
- * <em>FRG</em> como fuente de clock para la generación del baudrate, dado que permitirá obtener valores de clock
+ * *FRG* como fuente de clock para la generación del baudrate, dado que permitirá obtener valores de clock
  * más flexibles que las demás fuentes de clock. Es aconsejable utilizar una fuente de clock que sea lo más
- * alta y lo más cercana a un múltiplo del <em>Baudrate</em> deseado posible, para así minimizar el error.
+ * alta y lo más cercana a un múltiplo del *Baudrate* deseado posible, para así minimizar el error.
  *
  * ## Ejemplo para obtener un Baudrate de 115200 bps
  *
@@ -105,20 +105,20 @@
  * @example Ejemplo_USART.c
  *
  * @brief
- * Ejemplo de configuración del perifério <b>USART</b> para establecer una comunicación entrante y saliente
+ * Ejemplo de configuración del perifério **USART** para establecer una comunicación entrante y saliente
  * al microcontrolador.
  *
  * @note
- * Este ejemplo establece la <b>comunicación serie con la computadora a través
- * del cable USB conectado al stick de desarrollo</b>. \n
+ * Este ejemplo establece la **comunicación serie con la computadora a través
+ * del cable USB conectado al stick de desarrollo**. \n
  * Ver @ref acerca_del_stick para más información sobre este punto en particular.
  *
  * ## Configuraciones
  *
- * El programa utiliza como Main Clock el <em>Free Running Oscilator</em> configurado sin divisor, es decir,
+ * El programa utiliza como Main Clock el *FRO (Free Running Oscilator)* configurado sin divisor, es decir,
  * con una frecuencia de 24MHz.
  *
- * Se utiliza el periférico USART0, con los pines RX y TX que corresponden al puerto serie a través del
+ * Se utiliza el periférico *USART0*, con los pines RX y TX que corresponden al puerto serie a través del
  * puerto USB:
  * - USART0 RX: Puerto 0, Pin 24
  * - USART0 TX: Puerto 0, Pin 25
