@@ -300,7 +300,7 @@ static void hal_usart_handle_irq(uint8_t inst)
  */
 void UART0_IRQHandler(void)
 {
-	hal_usart_handle_irq(0);
+	hal_usart_handle_irq(HAL_USART_SEL_0);
 }
 
 /**
@@ -308,7 +308,7 @@ void UART0_IRQHandler(void)
  */
 void UART1_IRQHandler(void)
 {
-	hal_usart_handle_irq(1);
+	hal_usart_handle_irq(HAL_USART_SEL_1);
 }
 
 /**
@@ -316,7 +316,7 @@ void UART1_IRQHandler(void)
  */
 void UART2_IRQHandler(void)
 {
-	hal_usart_handle_irq(2);
+	hal_usart_handle_irq(HAL_USART_SEL_2);
 }
 
 /*
@@ -336,7 +336,7 @@ void UART2_IRQHandler(void)
  */
 void UART3_irq(void)
 {
-	hal_usart_handle_irq(3);
+	hal_usart_handle_irq(HAL_USART_SEL_3);
 }
 
 /**
@@ -344,5 +344,5 @@ void UART3_irq(void)
  */
 void UART4_irq(void)
 {
-	hal_usart_handle_irq(4);
+	hal_usart_handle_irq(HAL_USART_SEL_4);
 }
