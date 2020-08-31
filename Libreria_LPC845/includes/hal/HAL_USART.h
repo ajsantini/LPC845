@@ -166,6 +166,17 @@
 extern "C" {
 #endif
 
+/** Seleccion de instancia de USART */
+typedef enum
+{
+	HAL_USART_SEL_0, /**< Instancia 0 */
+	HAL_USART_SEL_1, /**< Instancia 1 */
+	HAL_USART_SEL_2, /**< Instancia 2 */
+	HAL_USART_SEL_3, /**< Instancia 3 */
+	HAL_USART_SEL_4, /**< Instancia 4 */
+	HAL_USART_SEL_AMOUNT /**< Cantidad de instancias */
+}hal_usart_sel_en;
+
 /** Cantidad de bits en cada dato */
 typedef enum
 {
@@ -225,14 +236,14 @@ typedef enum
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
-typedef void (*hal_usart_rx_callback)(void);
+typedef void (*hal_usart_rx_callback)(hal_usart_sel_en);
 
 /**
  * @brief Tipo de dato para los callback en transmisión de dato completa
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
-typedef void (*hal_usart_tx_callback)(void);
+typedef void (*hal_usart_tx_callback)(hal_usart_sel_en);
 
 /** Estructura de configuración de una instancia de UART */
 typedef struct
@@ -255,7 +266,7 @@ typedef struct
  * @param[in] config Configuración deseada de la instancia
  * @pre Haber inicializado la fuente de clock a utilizar correctamente. Ver @ref SYSCON
  */
-void hal_usart_init(uint8_t inst, const hal_usart_config_t * config);
+void hal_usart_init(hal_usart_sel_en inst, const hal_usart_config_t * config);
 
 /**
  * @brief Transmitir un dato mediante una instancia USART
@@ -263,7 +274,7 @@ void hal_usart_init(uint8_t inst, const hal_usart_config_t * config);
  * @param[in] data Dato a transmitir. Puede ser de 7, 8 o 9 bits
  * @pre Haber inicializado la instancia mediante @ref hal_usart_init
  */
-hal_usart_tx_result hal_usart_tx_data(uint8_t inst, uint32_t data);
+hal_usart_tx_result hal_usart_tx_data(hal_usart_sel_en inst, uint32_t data);
 
 /**
  * @brief Recibir un dato de una instancia USART
@@ -272,7 +283,7 @@ hal_usart_tx_result hal_usart_tx_data(uint8_t inst, uint32_t data);
  * @return Estado de la recepción
  * @pre Haber inicializado la instancia mediante @ref hal_usart_init
  */
-hal_usart_rx_result hal_usart_rx_data(uint8_t inst, uint32_t *data);
+hal_usart_rx_result hal_usart_rx_data(hal_usart_sel_en inst, uint32_t *data);
 
 /**
  * @brief Registrar el callback a ser llamado en la recepcion de un dato por USART
@@ -281,7 +292,7 @@ hal_usart_rx_result hal_usart_rx_data(uint8_t inst, uint32_t *data);
  * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
  * tener todas las consideraciones encesarias en el mismo.
  */
-void hal_usart_rx_register_callback(uint8_t inst, hal_usart_rx_callback new_callback);
+void hal_usart_rx_register_callback(hal_usart_sel_en inst, hal_usart_rx_callback new_callback);
 
 /**
  * @brief Registrar el callback a ser llamado una vez finalizada la transmision de un dato por USART
@@ -290,7 +301,7 @@ void hal_usart_rx_register_callback(uint8_t inst, hal_usart_rx_callback new_call
  * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
  * tener todas las consideraciones encesarias en el mismo.
  */
-void hal_usart_tx_register_callback(uint8_t inst, hal_usart_tx_callback new_callback);
+void hal_usart_tx_register_callback(hal_usart_sel_en inst, hal_usart_tx_callback new_callback);
 
 #if defined (__cplusplus)
 } // extern "C"

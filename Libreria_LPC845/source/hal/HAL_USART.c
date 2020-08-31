@@ -14,9 +14,9 @@
 #include <HPL_SYSCON.h>
 #include <HPL_USART.h>
 
-static void dummy_callback(void);
+static void dummy_callback(hal_usart_sel_en d);
 
-static void (*usart_rx_callback[])(void) = //!< Callbacks registrados a la recepcion de un dato por USART
+static void (*usart_rx_callback[])(hal_usart_sel_en) = //!< Callbacks registrados a la recepcion de un dato por USART
 {
 		dummy_callback,
 		dummy_callback,
@@ -25,7 +25,7 @@ static void (*usart_rx_callback[])(void) = //!< Callbacks registrados a la recep
 		dummy_callback
 };
 
-static void (*usart_tx_callback[])(void) = //!< Callbacks registrados a la finalizacion de transmision de un dato por USART
+static void (*usart_tx_callback[])(hal_usart_sel_en) = //!< Callbacks registrados a la finalizacion de transmision de un dato por USART
 {
 		dummy_callback,
 		dummy_callback,
@@ -43,7 +43,7 @@ static void hal_usart_handle_irq(uint8_t inst);
  * @param[in] config Configuración deseada de la instancia
  * @pre Haber inicializado la fuente de clock a utilizar correctamente. Ver @ref SYSCON
  */
-void hal_usart_init(uint8_t inst, const hal_usart_config_t * config)
+void hal_usart_init(hal_usart_sel_en inst, const hal_usart_config_t * config)
 {
 	uint32_t aux;
 
@@ -168,7 +168,7 @@ void hal_usart_init(uint8_t inst, const hal_usart_config_t * config)
  * @param[in] data Dato a transmitir. Puede ser de 7, 8 o 9 bits
  * @pre Haber inicializado la instancia mediante @ref hal_usart_init
  */
-hal_usart_tx_result hal_usart_tx_data(uint8_t inst, uint32_t data)
+hal_usart_tx_result hal_usart_tx_data(hal_usart_sel_en inst, uint32_t data)
 {
 	// Chequeo si se puede enviar data
 	if(USART_get_flag_TXRDY(inst))
@@ -197,7 +197,7 @@ hal_usart_tx_result hal_usart_tx_data(uint8_t inst, uint32_t data)
  * @return Estado de la recepción
  * @pre Haber inicializado la instancia mediante @ref hal_usart_init
  */
-hal_usart_rx_result hal_usart_rx_data(uint8_t inst, uint32_t *data)
+hal_usart_rx_result hal_usart_rx_data(hal_usart_sel_en inst, uint32_t *data)
 {
 	if(USART_get_flag_RXRDY(inst))
 	{
@@ -218,7 +218,7 @@ hal_usart_rx_result hal_usart_rx_data(uint8_t inst, uint32_t *data)
  * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
  * tener todas las consideraciones encesarias en el mismo.
  */
-void hal_usart_rx_register_callback(uint8_t inst, hal_usart_rx_callback new_callback)
+void hal_usart_rx_register_callback(hal_usart_sel_en inst, hal_usart_rx_callback new_callback)
 {
 	if(new_callback == NULL)
 	{
@@ -239,7 +239,7 @@ void hal_usart_rx_register_callback(uint8_t inst, hal_usart_rx_callback new_call
  * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
  * tener todas las consideraciones encesarias en el mismo.
  */
-void hal_usart_tx_register_callback(uint8_t inst, hal_usart_tx_callback new_callback)
+void hal_usart_tx_register_callback(hal_usart_sel_en inst, hal_usart_tx_callback new_callback)
 {
 	if(new_callback == NULL)
 	{
@@ -255,7 +255,7 @@ void hal_usart_tx_register_callback(uint8_t inst, hal_usart_tx_callback new_call
 /**
  * @brief Llamado a funcion dummy para irq iniciales
  */
-static void dummy_callback(void)
+static void dummy_callback(hal_usart_sel_en d)
 {
 	return;
 }
@@ -278,7 +278,7 @@ static void hal_usart_handle_irq(uint8_t inst)
 	{
 		uint32_t dummy_data;
 
-		usart_rx_callback[inst]();
+		usart_rx_callback[inst](inst);
 
 		// Limpio flag de interrupcion leyendo el registro correspondiente
 		dummy_data = USART_get_data(inst);
@@ -291,7 +291,7 @@ static void hal_usart_handle_irq(uint8_t inst)
 		USART_disable_irq_TXRDY(inst);
 
 		// Es probable que en este callback se inicie otra transmision, en cuyo caso se volveran a habilitar
-		usart_tx_callback[inst]();
+		usart_tx_callback[inst](inst);
 	}
 }
 

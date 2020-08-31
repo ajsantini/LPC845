@@ -21,11 +21,11 @@
  * @param[in] settling_time Velocidad de conversión del DAC
  * @param[in] initial_value Valor inicial del DAC
  */
-void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32_t initial_value)
+void hal_dac_init(hal_dac_sel_en dac, hal_dac_settling_time_en settling_time, uint32_t initial_value)
 {
 	SWM_init();
 	IOCON_init();
-	if(dac == HAL_DAC_0)
+	if(dac == HAL_DAC_SEL_0)
 	{
 		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_DAC0);
 		SYSCON_power_up_peripheral(SYSCON_POWER_SEL_DAC0);
@@ -52,7 +52,7 @@ void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32
  * @param[in] new_value Nuevo valor a poner en el DAC
  * @pre Haber inicializado el periférico
  */
-void hal_dac_update_value(hal_dac_en dac, uint16_t new_value)
+void hal_dac_update_value(hal_dac_sel_en dac, uint16_t new_value)
 {
 	DAC_write(dac, new_value);
 }
@@ -63,7 +63,7 @@ void hal_dac_update_value(hal_dac_en dac, uint16_t new_value)
  * @param[in] config Configuración deseada
  * @pre Haber inicializado el periférico
  */
-void hal_dac_config_ctrl(hal_dac_en dac, hal_dac_ctrl_config_t * config)
+void hal_dac_config_ctrl(hal_dac_sel_en dac, hal_dac_ctrl_config_t * config)
 {
 	if(config->count_enable)
 	{

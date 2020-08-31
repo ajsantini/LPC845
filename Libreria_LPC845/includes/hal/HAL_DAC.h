@@ -82,9 +82,10 @@ extern "C" {
 /** Enumeraciones de instancias disponibles de *DAC* */
 typedef enum
 {
-	HAL_DAC_0 = 0, /**< Instancia 0 */
-	HAL_DAC_1 /**< Instancia 1 */
-}hal_dac_en;
+	HAL_DAC_SEL_0 = 0, /**< Instancia 0 */
+	HAL_DAC_SEL_1, /**< Instancia 1 */
+	HAL_DAC_SEL_AMOUNT /**< Cantidad de instancias */
+}hal_dac_sel_en;
 
 /** Tiempos de establecimiento disponibles para el *DAC* */
 typedef enum
@@ -111,7 +112,7 @@ typedef struct
  * @param[in] settling_time Velocidad de conversión del DAC
  * @param[in] initial_value Valor inicial del DAC
  */
-void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32_t initial_value);
+void hal_dac_init(hal_dac_sel_en dac, hal_dac_settling_time_en settling_time, uint32_t initial_value);
 
 /**
  * @brief Actualización del valor actual del DAC
@@ -119,7 +120,7 @@ void hal_dac_init(hal_dac_en dac, hal_dac_settling_time_en settling_time, uint32
  * @param[in] new_value Nuevo valor a poner en el DAC
  * @pre Haber inicializado el periférico
  */
-void hal_dac_update_value(hal_dac_en dac, uint16_t new_value);
+void hal_dac_update_value(hal_dac_sel_en dac, uint16_t new_value);
 
 /**
  * @brief Configuración del registro de control del DAC
@@ -127,7 +128,7 @@ void hal_dac_update_value(hal_dac_en dac, uint16_t new_value);
  * @param[in] config Configuración deseada
  * @pre Haber inicializado el periférico
  */
-void hal_dac_config_ctrl(hal_dac_en dac, hal_dac_ctrl_config_t * config);
+void hal_dac_config_ctrl(hal_dac_sel_en dac, hal_dac_ctrl_config_t * config);
 
 #if defined (__cplusplus)
 } // extern "C"
