@@ -123,7 +123,9 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 
 /**
  * @brief Registrar un callback para la interrupción del WKT
- * @param[in] new_callback Nuevo callback para la interrupción del WKT
+ * Si el nuevo callback es **NULL**, se deshabilitarán las interrupciones del WKT.
+ * Estas volverán a habilitarse, de forma segura, en cuanto se registre un nuevo callback.
+ * @param[in] new_callback Nuevo callback para la interrupción del WKT.
  * @note Es importante recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que
  * el usuario deberá tener en cuenta todas las consideraciones necesarias a la hora de escribir el mismo.
  */
@@ -146,6 +148,15 @@ void hal_wkt_start_count(uint32_t time_useg);
  * @param[in] value Valor deseado a poner en el conteo (útil para una actualización mas rapida)
  */
 void hal_wkt_start_count_with_value(uint32_t value);
+
+
+/**
+ * @brief Detener el conteo del WKT.
+ *
+ * @note Para volver a habilitar el conteo del WKT basta con llamar a alguna de las siguientes funciones:
+ * hal_wkt_start_count() o hal_wkt_start_count_with_value().
+ */
+void hal_wkt_stop_count(void);
 
 #if defined (__cplusplus)
 } // extern "C"
