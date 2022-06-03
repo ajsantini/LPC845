@@ -66,7 +66,7 @@ typedef enum
  */
 static inline void NVIC_enable_interrupt(NVIC_irq_sel_en irq)
 {
-	*((uint32_t *) &NVIC->ISER0) |= (1 << irq);
+	*((uint32_t *) &NVIC->ISER0) = (1 << irq);
 }
 
 /**
@@ -75,7 +75,7 @@ static inline void NVIC_enable_interrupt(NVIC_irq_sel_en irq)
  */
 static inline void NVIC_disable_interrupt(NVIC_irq_sel_en irq)
 {
-	*((uint32_t *) &NVIC->ICER0) |= (1 << irq);
+	*((uint32_t *) &NVIC->ICER0) = (1 << irq);
 }
 
 /**
@@ -84,7 +84,7 @@ static inline void NVIC_disable_interrupt(NVIC_irq_sel_en irq)
  */
 static inline void NVIC_set_pending_interrupt(NVIC_irq_sel_en irq)
 {
-	*((uint32_t *) &NVIC->ISPR0) |= (1 << irq);
+	*((uint32_t *) &NVIC->ISPR0) = (1 << irq);
 }
 
 /**
@@ -93,7 +93,7 @@ static inline void NVIC_set_pending_interrupt(NVIC_irq_sel_en irq)
  */
 static inline void NVIC_clear_pending_interrupt(NVIC_irq_sel_en irq)
 {
-	*((uint32_t *) &NVIC->ICPR0) |= (1 << irq);
+	*((uint32_t *) &NVIC->ICPR0) = (1 << irq);
 }
 
 /**
