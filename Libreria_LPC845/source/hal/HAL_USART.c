@@ -14,9 +14,9 @@
 #include <HPL_SYSCON.h>
 #include <HPL_USART.h>
 
-static void dummy_callback(hal_usart_sel_en d);
+static void dummy_callback(hal_usart_sel_en d, void *e);
 
-static void (*usart_rx_callback[])(hal_usart_sel_en) = //!< Callbacks registrados a la recepcion de un dato por USART
+static void (*usart_rx_callback[])(hal_usart_sel_en, void *) = //!< Callbacks registrados a la recepcion de un dato por USART
 {
 		dummy_callback,
 		dummy_callback,
@@ -25,24 +25,66 @@ static void (*usart_rx_callback[])(hal_usart_sel_en) = //!< Callbacks registrado
 		dummy_callback
 };
 
-static void (*usart_tx_callback[])(hal_usart_sel_en) = //!< Callbacks registrados a la finalizacion de transmision de un dato por USART
+static void *usart_rx_data[] = { //!< Datos registrados a la recepcion de un dato
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL
+};
+
+static void (*usart_tx_callback[])(hal_usart_sel_en, void *) = //!< Callbacks registrados a la finalizacion de transmision de un dato por USART
 {
 		dummy_callback,
 		dummy_callback,
 		dummy_callback,
 		dummy_callback,
 		dummy_callback
+};
+
+static void *usart_tx_data[] = { //!< Datos registrados a la transmision de un dato
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL
 };
 
 static inline uint16_t hal_usart_calculate_brgval(uint32_t usart_clock, uint32_t baudrate, uint8_t oversampling);
 static void hal_usart_handle_irq(uint8_t inst);
 
-/**
- * @brief Inicializar USART con los parámetros deseados
- * @param[in] inst Instancia de USART inicializar
- * @param[in] config Configuración deseada de la instancia
- * @pre Haber inicializado la fuente de clock a utilizar correctamente. Ver @ref SYSCON
- */
+static const SYSCON_peripheral_sel_en USART_SYSCON_PER[] = {
+	SYSCON_PERIPHERAL_SEL_UART0,
+	SYSCON_PERIPHERAL_SEL_UART1,
+	SYSCON_PERIPHERAL_SEL_UART2,
+	SYSCON_PERIPHERAL_SEL_UART3,
+	SYSCON_PERIPHERAL_SEL_UART4,
+};
+
+static const SYSCON_enable_clock_sel_en USART_SYSCON_CLOCK_ENABLE[] = {
+	SYSCON_ENABLE_CLOCK_SEL_UART0,
+	SYSCON_ENABLE_CLOCK_SEL_UART1,
+	SYSCON_ENABLE_CLOCK_SEL_UART2,
+	SYSCON_ENABLE_CLOCK_SEL_UART3,
+	SYSCON_ENABLE_CLOCK_SEL_UART4,
+};
+
+static const SYSCON_reset_sel_en USART_SYSCON_RESET_SEL[] = {
+	SYSCON_RESET_SEL_UART0,
+	SYSCON_RESET_SEL_UART1,
+	SYSCON_RESET_SEL_UART2,
+	SYSCON_RESET_SEL_UART3,
+	SYSCON_RESET_SEL_UART4,
+};
+
+static const NVIC_irq_sel_en USART_NVICS[] = {
+	NVIC_IRQ_SEL_UART0,
+	NVIC_IRQ_SEL_UART1,
+	NVIC_IRQ_SEL_UART2,
+	NVIC_IRQ_SEL_PININT6_UART3,
+	NVIC_IRQ_SEL_PININT7_UART4,
+};
+
 void hal_usart_init(hal_usart_sel_en inst, const hal_usart_config_t * config)
 {
 	uint32_t aux;
@@ -61,89 +103,20 @@ void hal_usart_init(hal_usart_sel_en inst, const hal_usart_config_t * config)
 
 	SWM_deinit();
 
-	switch(inst)
-	{
-	case 0:
-		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART0, config->clock_selection);
+	SYSCON_set_peripheral_clock_source(USART_SYSCON_PER[inst], config->clock_selection);
 
-		aux = hal_usart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART0),
-										config->baudrate,
-										config->oversampling);
+	aux = hal_usart_calculate_brgval(hal_syscon_peripheral_clock_get(USART_SYSCON_PER[inst]),
+									config->baudrate,
+									config->oversampling);
 
-		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART0);
-
-		SYSCON_clear_reset(SYSCON_RESET_SEL_UART0);
-
-		NVIC_enable_interrupt(NVIC_IRQ_SEL_UART0);
-
-		break;
-	case 1:
-		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART1, config->clock_selection);
-
-		aux = hal_usart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART1),
-										config->baudrate,
-										config->oversampling);
-
-		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART1);
-
-		SYSCON_clear_reset(SYSCON_RESET_SEL_UART1);
-
-		NVIC_enable_interrupt(NVIC_IRQ_SEL_UART1);
-
-		break;
-	case 2:
-		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART2, config->clock_selection);
-
-		aux = hal_usart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART2),
-										config->baudrate,
-										config->oversampling);
-
-		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART2);
-
-		SYSCON_clear_reset(SYSCON_RESET_SEL_UART2);
-
-		NVIC_enable_interrupt(NVIC_IRQ_SEL_UART2);
-
-		break;
-	case 3:
-		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART3, config->clock_selection);
-
-		aux = hal_usart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART3),
-										config->baudrate,
-										config->oversampling);
-
-		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART3);
-
-		SYSCON_clear_reset(SYSCON_RESET_SEL_UART3);
-
-		NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT6_UART3);
-
-		break;
-	case 4:
-		SYSCON_set_peripheral_clock_source(SYSCON_PERIPHERAL_SEL_UART4, config->clock_selection);
-
-		aux = hal_usart_calculate_brgval(hal_syscon_peripheral_clock_get(HAL_SYSCON_PERIPHERAL_SEL_UART4),
-										config->baudrate,
-										config->oversampling);
-
-		SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_UART4);
-
-		SYSCON_clear_reset(SYSCON_RESET_SEL_UART4);
-
-		NVIC_enable_interrupt(NVIC_IRQ_SEL_PININT7_UART4);
-
-		break;
-	default: { return; break; }
-	}
+	SYSCON_enable_clock(USART_SYSCON_CLOCK_ENABLE[inst]);
+	SYSCON_clear_reset(USART_SYSCON_RESET_SEL[inst]);
+	NVIC_enable_interrupt(USART_NVICS[inst]);
 
 	USART_set_OSRVAL(inst, config->oversampling);
-
 	USART_config_data_length(inst, config->data_length);
-
 	USART_config_parity(inst, config->parity);
-
 	USART_config_stop_bits(inst, config->stop_bits);
-
 	USART_set_BRGVAL(inst, aux);
 
 	// Las interrupciones de TX se habilitaran cuando se envie algun byte
@@ -151,23 +124,17 @@ void hal_usart_init(hal_usart_sel_en inst, const hal_usart_config_t * config)
 	if(config->rx_ready_callback != NULL)
 	{
 		USART_enable_irq_RXRDY(inst);
-		hal_usart_rx_register_callback(inst, config->rx_ready_callback);
+		hal_usart_rx_register_callback(inst, config->rx_ready_callback, config->rx_ready_data);
 	}
 
 	if(config->tx_ready_callback != NULL)
 	{
-		hal_usart_tx_register_callback(inst, config->tx_ready_callback);
+		hal_usart_tx_register_callback(inst, config->tx_ready_callback, config->tx_ready_data);
 	}
 
 	USART_enable(inst);
 }
 
-/**
- * @brief Transmitir un dato mediante una instancia USART
- * @param[in] inst Instancia a utilizar
- * @param[in] data Dato a transmitir. Puede ser de 7, 8 o 9 bits
- * @pre Haber inicializado la instancia mediante @ref hal_usart_init
- */
 hal_usart_tx_result hal_usart_tx_data(hal_usart_sel_en inst, uint32_t data)
 {
 	// Chequeo si se puede enviar data
@@ -190,13 +157,6 @@ hal_usart_tx_result hal_usart_tx_data(hal_usart_sel_en inst, uint32_t data)
 	return HAL_USART_TX_RESULT_OK;
 }
 
-/**
- * @brief Recibir un dato de una instancia USART
- * @param[in] inst Instancia a utilizar
- * @param[in] data Puntero a donde guardar el dato recibido
- * @return Estado de la recepción
- * @pre Haber inicializado la instancia mediante @ref hal_usart_init
- */
 hal_usart_rx_result hal_usart_rx_data(hal_usart_sel_en inst, uint32_t *data)
 {
 	if(USART_get_flag_RXRDY(inst))
@@ -211,62 +171,55 @@ hal_usart_rx_result hal_usart_rx_data(hal_usart_sel_en inst, uint32_t *data)
 	return HAL_USART_RX_RESULT_OK;
 }
 
-/**
- * @brief Registrar el callback a ser llamado en la recepcion de un dato por USART
- * @param[in] inst A que instancia de USART registrar el callback
- * @param[in] new_callback Callback a ejectutar cada vez que se recibe un dato por USART
- * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
- * tener todas las consideraciones encesarias en el mismo.
- */
-void hal_usart_rx_register_callback(hal_usart_sel_en inst, hal_usart_rx_callback new_callback)
+void hal_usart_inhibit_interrupts(hal_usart_sel_en inst) {
+	NVIC_disable_interrupt(USART_NVICS[inst]);
+}
+
+void hal_usart_deinhibit_interrupts(hal_usart_sel_en inst) {
+	NVIC_enable_interrupt(USART_NVICS[inst]);
+}
+
+void hal_usart_rx_register_callback(hal_usart_sel_en inst, hal_usart_rx_callback new_callback, void *cb_data)
 {
 	if(new_callback == NULL)
 	{
 		USART_disable_irq_RXRDY(inst);
 		usart_rx_callback[inst] = dummy_callback;
+		usart_rx_data[inst] = NULL;
 	}
 	else
 	{
 		USART_enable_irq_RXRDY(inst);
 		usart_rx_callback[inst] = new_callback;
+		usart_rx_data[inst] = cb_data;
 	}
 }
 
-/**
- * @brief Registrar el callback a ser llamado una vez finalizada la transmision de un dato por USART
- * @param[in] inst A que instancia de USART registrar el callback
- * @param[in] new_callback Callback a ejecutar cada vez que se termina de enviar un dato por USART
- * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
- * tener todas las consideraciones encesarias en el mismo.
- */
-void hal_usart_tx_register_callback(hal_usart_sel_en inst, hal_usart_tx_callback new_callback)
+void hal_usart_tx_register_callback(hal_usart_sel_en inst, hal_usart_tx_callback new_callback, void *cb_data)
 {
 	if(new_callback == NULL)
 	{
 		usart_tx_callback[inst] = dummy_callback;
+		usart_tx_data[inst] = NULL;
 	}
 	else
 	{
 		// Las interrupciones de TX se habilitaran (en caso de ser necesario) en el envio de un dato
 		usart_tx_callback[inst] = new_callback;
+		usart_tx_data[inst] = cb_data;
 	}
 }
 
 /**
  * @brief Llamado a funcion dummy para irq iniciales
  */
-static void dummy_callback(hal_usart_sel_en d)
+static void dummy_callback(hal_usart_sel_en d, void *e)
 {
+	(void) d;
+	(void) e;
 	return;
 }
 
-/**
- * @brief Calculo del valor para el registro de Baudrate.
- * @param[in] uart_clock Clock asociado con la UART.
- * @param[in] baudrate Baudrate deseado a calcular.
- * @param[in] oversampling Oversampling deseado para la UART.
- * @return Valor a poner en el registro BRG.
- */
 static inline uint16_t hal_usart_calculate_brgval(uint32_t uart_clock, uint32_t baudrate, uint8_t oversampling)
 {
 	return ((uart_clock) / ((oversampling + 1) * baudrate)) - 1;
@@ -278,7 +231,7 @@ static void hal_usart_handle_irq(uint8_t inst)
 	{
 		uint32_t dummy_data;
 
-		usart_rx_callback[inst](inst);
+		usart_rx_callback[inst](inst, usart_rx_data[inst]);
 
 		// Limpio flag de interrupcion leyendo el registro correspondiente
 		dummy_data = USART_get_data(inst);
@@ -291,29 +244,20 @@ static void hal_usart_handle_irq(uint8_t inst)
 		USART_disable_irq_TXRDY(inst);
 
 		// Es probable que en este callback se inicie otra transmision, en cuyo caso se volveran a habilitar
-		usart_tx_callback[inst](inst);
+		usart_tx_callback[inst](inst, usart_tx_data[inst]);
 	}
 }
 
-/**
- * @brief Interrupcion de UART0
- */
 void UART0_IRQHandler(void)
 {
 	hal_usart_handle_irq(0);
 }
 
-/**
- * @brief Interrupcion de UART1
- */
 void UART1_IRQHandler(void)
 {
 	hal_usart_handle_irq(1);
 }
 
-/**
- * @brief Interrupcion de UART2
- */
 void UART2_IRQHandler(void)
 {
 	hal_usart_handle_irq(2);
@@ -331,17 +275,11 @@ void UART2_IRQHandler(void)
  * o fue llamada porque tambien estaba configurada alguna PININT.
  */
 
-/**
- * @brief Interrupcion de UART3
- */
 void UART3_irq(void)
 {
 	hal_usart_handle_irq(3);
 }
 
-/**
- * @brief Interrupcion de UART4
- */
 void UART4_irq(void)
 {
 	hal_usart_handle_irq(4);

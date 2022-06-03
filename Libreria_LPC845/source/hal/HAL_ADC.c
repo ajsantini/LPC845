@@ -28,18 +28,30 @@
 /** Cantidad de canales disponibles en el *ADC* */
 #define	ADC_CHANNEL_AMOUNT		(12)
 
-static void dummy_irq_callback(void);
+static void dummy_irq_callback(void* data);
 
 /** Callback cuando terminan las secuencias de conversión */
-static void (*adc_seq_completed_callback[2])(void) =
+static void (*adc_seq_completed_callback[2])(void *) =
 {
 	dummy_irq_callback,
 	dummy_irq_callback
 };
 
-static void (*adc_overrun_callback)(void) = dummy_irq_callback; //!< Callback cuando ocurre un overrun
+/** Datos para pasarle al callback cuando se terminan las secuencias de conversion */
+static void *adc_seq_completed_callback_data[2] = {
+	NULL,
+	NULL
+};
 
-static void (*adc_compare_callback)(void) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
+static void (*adc_overrun_callback)(void*) = dummy_irq_callback; //!< Callback cuando ocurre un overrun
+
+/** Datos para pasarle al callback de overrun */
+static void *adc_overrun_callback_data = NULL;
+
+static void (*adc_compare_callback)(void*) = dummy_irq_callback; //!< Callbacks para las comparaciones de ADC
+
+/** Datos para pasarle al callback de compare */
+static void *adc_compare_callback_data = NULL;
 
 /** Flags para determinar si cada secuencia fue configurada en modo burst o no */
 typedef struct
@@ -55,21 +67,6 @@ static flag_sequence_burst_mode_t flag_seq_burst_mode =
 	.SEQB_burst = 0
 };
 
-/**
- * @brief Inicializar el *ADC* en modo **asincrónico**
- *
- * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
- *
- * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del *ADC*.
- *
- * @see hal_adc_clock_source_en
- * @see hal_adc_low_power_mode_en
- * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] div Divisor para la lógica del *ADC*
- * @param[in] clock_source Fuente de clock para el *ADC*
- * @param[in] low_power Selección de modo de bajo consumo
- * @pre Configuración del clock a utilizar
- */
 void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_source_en clock_source, hal_adc_low_power_mode_en low_power)
 {
 	uint32_t aux;
@@ -111,19 +108,6 @@ void hal_adc_init_async_mode(uint32_t sample_freq, uint8_t div, hal_adc_clock_so
 	ADC_control_config(div, ADC_OPERATION_MODE_ASYNCHRONOUS, low_power);
 }
 
-/**
- * @brief Inicializar el *ADC* en modo **sincrónico**
- *
- * Realiza la calibración de hardware y fija la frecuencia de muestreo deseada.
- *
- * @note Solamente se debe realizar el llamado a una de las dos funciones de inicialización del *ADC*.
- *
- * @see hal_adc_clock_source_en
- * @see hal_adc_low_power_mode_en
- * @param[in] sample_freq Frecuencia de sampleo deseada
- * @param[in] low_power Selección de modo de bajo consumo
- * @pre Configuración del clock a utilizar
- */
 void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_power)
 {
 	uint32_t aux;
@@ -158,11 +142,6 @@ void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_
 	ADC_control_config((uint8_t) aux, ADC_OPERATION_MODE_SYNCHRONOUS, low_power);
 }
 
-/**
- * @brief De-inicialización del *ADC*
- *
- * Además, desliga todos los pines externos posiblemente utilizados por el ADC de su función analógica.
- */
 void hal_adc_deinit(void)
 {
 	SYSCON_assert_reset(SYSCON_RESET_SEL_ADC);
@@ -187,19 +166,22 @@ void hal_adc_deinit(void)
 	SWM_deinit();
 }
 
-/**
- * @brief Configurar una secuencia de conversión
- *
- * Una vez configurado un canal del ADC con este método, el pin externo correspondiente a él quedará ligado
- * a su función analógica hasta de-inicializar el periférico por medio de la función hal_adc_deinit()
- *
- * @note Esta función no habilita las secuencias.
- *
- * @param[in] sequence Seleccion de secuencia a configurar
- * @param[in] config Configuracion deseada para la secuencia
- * @see hal_adc_sequence_sel_en
- * @see hal_adc_sequence_config_t
- */
+void hal_adc_inhibit_sequence_interrupts(hal_adc_sequence_sel_en sequence) {
+	if (sequence == HAL_ADC_SEQUENCE_SEL_A) {
+		NVIC_enable_interrupt(NVIC_IRQ_SEL_ADC_SEQA);
+	} else {
+		NVIC_enable_interrupt(NVIC_IRQ_SEL_ADC_SEQB);
+	}
+}
+
+void hal_adc_deinhibit_sequence_interrupts(hal_adc_sequence_sel_en sequence) {
+	if (sequence == HAL_ADC_SEQUENCE_SEL_A) {
+		NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_SEQA);
+	} else {
+		NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_SEQB);
+	}
+}
+
 void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_sequence_config_t *config)
 {
 	uint8_t counter;
@@ -251,11 +233,13 @@ void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 	if(config->callback != NULL)
 	{
 		adc_seq_completed_callback[sequence] = config->callback;
+		adc_seq_completed_callback_data[sequence] = config->cb_data;
 		ADC_enable_sequence_interrupt(sequence);
 	}
 	else
 	{
 		adc_seq_completed_callback[sequence] = dummy_irq_callback;
+		adc_seq_completed_callback_data[sequence] = NULL;
 		ADC_disable_sequence_interrupt(sequence);
 	}
 
@@ -292,27 +276,6 @@ void hal_adc_sequence_config(hal_adc_sequence_sel_en sequence, const hal_adc_seq
 	}
 }
 
-/**
- * @brief Disparar conversiones en una secuencia
- *
- * @pre Si se están utilizando triggers por hardware, esta función simplemente habilitará la secuencia,
- * sin disparar una conversión. Sin embargo, para evitar un trigger espúrio, es necesario asegurar que
- * la señal de trigger se encuentre inactiva según cómo se lo haya definido en el parámetro
- * hal_adc_sequence_config_t::trigger_pol
- *
- * Si la secuencia está configurada en modo hal_adc_sequence_config_t::burst
- * esta función comenzará conversiones consecutivas en todos los canales configurados.
- *
- * Si la secuencia **no utiliza** el modo hal_adc_sequence_config_t::burst, entonces esta función disparará una sola conversión en un canal
- * o una conversión en todos los canales configurados de la secuencia, dependiendo del parámetro hal_adc_sequence_config_t::single_step.
- *
- * @note En todos los casos, esta función habilita la secuencia antes de disparar la conversión (si corresponde).
- *
- * @param[in] sequence Secuencia a disparar
- * @see hal_adc_sequence_sel_en
- * @see hal_adc_sequence_start
- * @see hal_adc_sequence_config_t
- */
 void hal_adc_sequence_start(hal_adc_sequence_sel_en sequence)
 {
 	if(flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A))
@@ -330,18 +293,6 @@ void hal_adc_sequence_start(hal_adc_sequence_sel_en sequence)
 	}
 }
 
-/**
- * @brief Detener conversiones en una secuencia de conversión.
- *
- * Si hay una conversión en curso, al finalizar ésta ya no se realizará otra.
- *
- * @note Esta función, además, deshabilita la secuencia. Esto es necesario para cambiar las
- * configuraciones de secuencias ya en uso de forma segura.
- *
- * @param[in] sequence Secuencia a detener
- * @see hal_adc_sequence_sel_en
- * @see hal_adc_start_sequence
- */
 void hal_adc_sequence_stop(hal_adc_sequence_sel_en sequence)
 {
 	if(flag_seq_burst_mode.SEQA_burst && (sequence ==  HAL_ADC_SEQUENCE_SEL_A))
@@ -358,25 +309,6 @@ void hal_adc_sequence_stop(hal_adc_sequence_sel_en sequence)
 	}
 }
 
-/**
- * @brief Obtener resultado de la secuencia
- *
- * El comportamiento de esta funcion depende de la configuración de la secuencia, en particular
- * de la configuracion hal_adc_sequence_config_t::mode. En caso de estar configurada para interrumpir al final de cada
- * conversión, la función únicamente guardara el resultado de la conversión en el primer lugar
- * del parámetro hal_adc_sequence_result_t::result, caso contrario, guardara la cantidad de canales habilitados en la
- * conversión en los distintos lugares del parámetro *result*.
- *
- * @see hal_adc_sequence_result_en
- * @see hal_adc_sequence_sel_en
- * @see hal_adc_sequence_result_t
- * @param[in] sequence Secuencia de la cual obtener el resultado
- * @param[out] result Lugares donde guardar los resultados de la secuencia
- *
- * El usuario debe garantizar que existe lugar para la misma cantidad de canales habilitados en la secuencia.
- *
- * @return Resultado de la función
- */
 hal_adc_sequence_result_en hal_adc_sequence_get_result(hal_adc_sequence_sel_en sequence, hal_adc_sequence_result_t *result)
 {
 	if(ADC_sequence_get_mode(sequence) == ADC_INTERRUPT_MODE_EOC)
@@ -419,32 +351,12 @@ hal_adc_sequence_result_en hal_adc_sequence_get_result(hal_adc_sequence_sel_en s
 	}
 }
 
-/**
- * @brief Configurar valor de umbral de comparación.
- * @param[in] threshold	Selección de umbral a configurar
- * @param[in] low Umbral bajo
- * @param[in] high Umbral alto
- * @see hal_adc_threshold_sel_en
- */
 void hal_adc_threshold_config(hal_adc_threshold_sel_en threshold, uint16_t low, uint16_t high)
 {
 	ADC_set_compare_low_threshold(threshold, low);
 	ADC_set_compare_high_threshold(threshold, high);
 }
 
-/**
- * @brief Configura un canal para utilizar la funcionalidad de comparación con un umbral y su tipo de interrupción deseada.
- *
- * Puede utilizarse como método de deshabilitación de las interrupciones, debidas a comparación, de canales específicos.
- * Para deshabilitar las interrupciones, debidas a comparación, de todos los canales a la vez puede utilizarse la función
- * hal_adc_threshold_register_interrupt()
- *
- * @param[in] adc_channel Canal de ADC en el cual configurar el umbral
- * @param[in] threshold	Selección de umbral a configurar
- * @param[in] irq_mode Indica el tipo evento por el cual la comparación con el umbral dispara la interrupción, o la desactiva.
- * @see hal_adc_threshold_sel_en
- * @see hal_adc_threshold_interrupt_sel_en
- */
 void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel_en threshold, hal_adc_threshold_interrupt_sel_en irq_mode)
 {
 	ADC_set_channel_threshold(adc_channel, threshold);
@@ -459,42 +371,22 @@ void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel
 	}
 }
 
-/**
- * @brief Registrar un callabck de interrupción para interrupción por threshold.
- *
- * Si se le pasa NULL, esta función efectivamente deshabilita las interrupciones, debidas a comparaciones, de todos los canales del ADC.
- * Sin embargo, esto no altera en modo alguno la configuración ya establecida por el usuario para las comparaciones de cada canal.
- *
- * En caso de querer volver a habilitar las interrupciones debidas a comparación, de todos los canales del ADC
- * configurados para ello de antemano, con simplemente llamar a esta función con un puntero a función válido (no NULL) para la interrupción
- * es suficiente.
- *
- * @param[in] callback Callback a ejecutar en interrupción por threshold
- * @see hal_adc_threshold_channel_config
- */
-void hal_adc_threshold_register_interrupt(void (*callback)(void))
+void hal_adc_threshold_register_interrupt(adc_comparison_interrupt_t callback, void *data)
 {
 	if(callback != NULL)
 	{
 		adc_compare_callback = callback;
+		adc_compare_callback_data = data;
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_ADC_THCMP);
 	}
 	else
 	{
 		adc_compare_callback = dummy_irq_callback;
+		adc_compare_callback_data = NULL;
 		NVIC_disable_interrupt(NVIC_IRQ_SEL_ADC_THCMP);
 	}
 }
 
-/**
- * @brief Obtener resultados de comparación de la última conversión
- * @param[out] results Puntero a donde guardar los resultados
- *
- * El usuario **debe** garantizar que hayan por lo menos la cantidad de memoria reservada de este tipo
- * como cantidad de canales habilitados para comparar contra un umbral.
- *
- * @see hal_adc_channel_compare_result_t
- */
 void hal_adc_threshold_get_comparison_results(hal_adc_channel_compare_result_t *results)
 {
 	ADC_interrupt_flags_t aux_flags_reg = ADC_get_interrupt_flags();
@@ -521,20 +413,17 @@ void hal_adc_threshold_get_comparison_results(hal_adc_channel_compare_result_t *
 	}
 }
 
-/**
- * @brief Funcion dummy para usar como default para las interrupciones
- */
-static void dummy_irq_callback(void)
+static void dummy_irq_callback(void* data)
 {
+	(void) data;
 	return;
 }
 
-/**
- * @brief Función de interrupción cuando termina la secuencia de conversión A del *ADC*
- */
 void ADC_SEQA_IRQHandler(void)
 {
-	adc_seq_completed_callback[ADC_SEQUENCE_SEL_A]();
+	if (adc_seq_completed_callback[ADC_SEQUENCE_SEL_A] != NULL) {
+		adc_seq_completed_callback[ADC_SEQUENCE_SEL_A](adc_seq_completed_callback_data[ADC_SEQUENCE_SEL_A]);
+	}
 
 	if(ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_A].MODE == 1)
 	{
@@ -542,12 +431,11 @@ void ADC_SEQA_IRQHandler(void)
 	}
 }
 
-/**
- * @brief Función de interrupción cuando termina la secuencia de conversión B del *ADC*
- */
 void ADC_SEQB_IRQHandler(void)
 {
-	adc_seq_completed_callback[ADC_SEQUENCE_SEL_B]();
+	if (adc_seq_completed_callback[ADC_SEQUENCE_SEL_B] != NULL) {
+		adc_seq_completed_callback[ADC_SEQUENCE_SEL_B](adc_seq_completed_callback_data[ADC_SEQUENCE_SEL_B]);
+	}
 
 	if(ADC->SEQ_CTRL[ADC_SEQUENCE_SEL_B].MODE == 1)
 	{
@@ -555,12 +443,11 @@ void ADC_SEQB_IRQHandler(void)
 	}
 }
 
-/**
- * @brief Función de interrupción cuando se detecta alguna de las condiciones de threshold establecidas
- */
 void ADC_THCMP_IRQHandler(void)
 {
-	adc_compare_callback();
+	if (adc_compare_callback != NULL) {
+		adc_compare_callback(adc_compare_callback_data);
+	}
 
 	if(ADC_get_interrupt_flags().THCMP_INT)
 	{
@@ -568,11 +455,10 @@ void ADC_THCMP_IRQHandler(void)
 	}
 }
 
-/**
- * @brief Función de interrupción cuando se detecta alguna de las condiciones de overrun
- */
 void ADC_OVR_IRQHandler(void)
 {
 	#warning Habria que ver que flags y como limpiarlos si es que hace falta
-	adc_overrun_callback();
+	if (adc_overrun_callback != NULL) {
+		adc_overrun_callback(adc_overrun_callback_data);
+	}
 }

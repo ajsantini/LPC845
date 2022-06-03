@@ -26,20 +26,15 @@ static hal_wkt_clock_source_en current_clock_source = HAL_WKT_CLOCK_SOURCE_FRO_D
 /** Frecuencia actual externa configurada para el *WKT* */
 static uint32_t current_ext_clock = 0;
 
-static void dummy_irq(void);
+static void dummy_irq(void *data);
 
 /** Puntero al callback a ejecutar en interrupción de *WKT* */
 static hal_wkt_callback_t hal_wkt_irq_callback = dummy_irq;
 
-/**
- * @brief Inicializar el WKT
- * @param[in] clock_sel Selección de clock deseada para el WKT
- * @param[in] ext_clock_value Valor de clock externo (si la selección es interna, no importa este parámetro)
- * @param[in] callback Callback a ejecutar en la interrupción del WKT
- * @note Es importante recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que
- * el usuario deberá tener en cuenta todas las consideraciones necesarias a la hora de escribir el mismo.
- */
-void hal_wkt_init(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value, void (*callback)(void))
+/** Puntero a los datos a pasarle al callback cuando se ejecute la interrupcion de WKT */
+static void *hal_wkt_irq_callback_data = NULL;
+
+void hal_wkt_init(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value, hal_wkt_callback_t callback, void *data)
 {
 	SYSCON_enable_clock(SYSCON_ENABLE_CLOCK_SEL_WKT);
 
@@ -48,14 +43,9 @@ void hal_wkt_init(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value, v
 	hal_wkt_select_clock_source(clock_sel, ext_clock_value);
 	current_ext_clock = ext_clock_value;
 
-	hal_wkt_register_callback(callback);
+	hal_wkt_register_callback(callback, data);
 }
 
-/**
- * @brief Configurar fuente de clock para el WKT
- * @param[in] clock_sel Selección de clock deseada para el WKT
- * @param[in] ext_clock_value Valor de clock externo (si la selección es interna, no importa este parámetro)
- */
 void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value)
 {
 	switch(clock_sel)
@@ -91,13 +81,7 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 	}
 }
 
-/**
- * @brief Registrar un callback para la interrupción del WKT
- * @param[in] new_callback Nuevo callback para la interrupción del WKT
- * @note Es importante recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que
- * el usuario deberá tener en cuenta todas las consideraciones necesarias a la hora de escribir el mismo.
- */
-void hal_wkt_register_callback(void (*new_callback)(void))
+void hal_wkt_register_callback(hal_wkt_callback_t new_callback, void *data)
 {
 	if(new_callback == NULL)
 	{
@@ -107,18 +91,12 @@ void hal_wkt_register_callback(void (*new_callback)(void))
 	else
 	{
 		hal_wkt_irq_callback = new_callback;
+		hal_wkt_irq_callback_data = data;
 		NVIC_clear_pending_interrupt(NVIC_IRQ_SEL_WKT);
 		NVIC_enable_interrupt(NVIC_IRQ_SEL_WKT);
 	}
 }
 
-/**
- * @brief Iniciar el conteo con el WKT en base a un tiempo
- *
- * @note Esta función utiliza variables con punto flotante por lo que tarda un tiempo considerable en ejecutarse.
- *
- * @param[in] time_useg Tiempo en microsegundos deseado (se redondeará al valor primer posible hacia arriba)
- */
 void hal_wkt_start_count(uint32_t time_useg)
 {
 	float clock_base_value;
@@ -136,23 +114,14 @@ void hal_wkt_start_count(uint32_t time_useg)
 	WKT_write_count(calculated_count);
 }
 
-/**
- * @brief Iniciar el conteo con el WKT en base a un valor
- *
- * @note El usuario es responsable de colocar un valor que tenga sentido en base al clock utilizado.
- *
- * @param[in] value Valor deseado a poner en el conteo (útil para una actualización mas rapida)
- */
 void hal_wkt_start_count_with_value(uint32_t value)
 {
 	WKT_write_count(value);
 }
 
-/**
- * @brief Funcion dummy para inicializar punteros a funcion de interrupcion
- */
-static void dummy_irq(void)
+static void dummy_irq(void* data)
 {
+	(void) data;
 	return;
 }
 
@@ -161,7 +130,7 @@ static void dummy_irq(void)
  */
 void WKT_IRQHandler(void)
 {
-	hal_wkt_irq_callback();
+	hal_wkt_irq_callback(hal_wkt_irq_callback_data);
 
 	if(WKT_get_alarm_flag())
 	{
