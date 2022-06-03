@@ -4,7 +4,7 @@
 
 Esta librería esta diseñada para ser utilizada con la línea de microcontroladores **LPC845** de la firma **NXP**.
 En particular, la misma actualmente está siendo desarrollada para el **LPC845** en encapsulado **QFP48** teniendo en
-cuenta que el mismo se encuentra en el stick de desarrollo *LPC845\_BRK*.
+cuenta que el mismo se encuentra en el stick de desarrollo LPC845\_BRK*.
 
 El desarrollo está siendo orientado hacia la mayor flexibilidad posible para el usuario final, pudiendo el mismo
 ser un usuario con diferentes grados de conocimiento en programación orientada a sistemas embebidos como así 
