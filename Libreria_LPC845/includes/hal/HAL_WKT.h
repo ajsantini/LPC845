@@ -99,20 +99,22 @@ typedef enum
 
 /**
  * @brief Tipo de dato para el callback de interrupción del *WKT*
+ * @param[in] data Puntero a los datos que el usuario desee pasar en el callback
  * @note Es importante recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que
  * el usuario deberá tener en cuenta todas las consideraciones necesarias a la hora de escribir el mismo.
  */
-typedef void (*hal_wkt_callback_t)(void);
+typedef void (*hal_wkt_callback_t)(void *data);
 
 /**
  * @brief Inicializar el WKT
  * @param[in] clock_sel Selección de clock deseada para el WKT
  * @param[in] ext_clock_value Valor de clock externo (si la selección es interna, no importa este parámetro)
  * @param[in] callback Callback a ejecutar en la interrupción del WKT
+ * @param[in] data Puntero con datos del usuario a pasar en el callback de interrupcion
  * @note Es importante recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que
  * el usuario deberá tener en cuenta todas las consideraciones necesarias a la hora de escribir el mismo.
  */
-void hal_wkt_init(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value, hal_wkt_callback_t callback);
+void hal_wkt_init(hal_wkt_clock_source_en clock_sel, uint32_t ext_clock_value, hal_wkt_callback_t callback, void *data);
 
 /**
  * @brief Configurar fuente de clock para el WKT
@@ -124,10 +126,11 @@ void hal_wkt_select_clock_source(hal_wkt_clock_source_en clock_sel, uint32_t ext
 /**
  * @brief Registrar un callback para la interrupción del WKT
  * @param[in] new_callback Nuevo callback para la interrupción del WKT
+ * @param[in] data Datos que el usuario haya configurado para pasar al callback
  * @note Es importante recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que
  * el usuario deberá tener en cuenta todas las consideraciones necesarias a la hora de escribir el mismo.
  */
-void hal_wkt_register_callback(hal_wkt_callback_t new_callback);
+void hal_wkt_register_callback(hal_wkt_callback_t new_callback, void *data);
 
 /**
  * @brief Iniciar el conteo con el WKT en base a un tiempo

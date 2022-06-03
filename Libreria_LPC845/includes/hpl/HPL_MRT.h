@@ -130,8 +130,6 @@ static inline void MRT_clear_irq_flag(MRT_channel_sel_en channel)
 	case MRT_CHANNEL_2: { MRT->IRQ_FLAG.CFLAG2 = 1; break; }
 	case MRT_CHANNEL_3: { MRT->IRQ_FLAG.CFLAG3 = 1; break; }
 	}
-
-	return 0;
 }
 
 #if defined (__cplusplus)

@@ -32,7 +32,7 @@
  * 		ADC_{conv} = \frac{V_{ADC_{in}}}{ADC_{res}}
  * \f}
  *
- * @note Cabe destacar, que las conversiones serán redondeadas <b>siempre<\b> hacia abajo, es decir, se descartan los
+ * @note Cabe destacar, que las conversiones serán redondeadas **siempre** hacia abajo, es decir, se descartan los
  * valores decimales.
  *
  * # Concepto de Secuencia de conversión
@@ -363,7 +363,7 @@ typedef enum
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
-typedef void (*adc_sequence_interrupt_t)(void);
+typedef void (*adc_sequence_interrupt_t)(void*);
 
 /**
  * @brief Tipo de dato para callback de interrupcion de comparación
@@ -371,7 +371,7 @@ typedef void (*adc_sequence_interrupt_t)(void);
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
-typedef void (*adc_comparison_interrupt_t)(void);
+typedef void (*adc_comparison_interrupt_t)(void*);
 
 /** Configuración de secuencia de *ADC* */
 typedef struct
@@ -394,6 +394,7 @@ typedef struct
 	adc_sequence_interrupt_t callback; /**< Callback a ejecutar en interrupción de secuencia. La misma se generará
 											al final de la conversión de cada canal, o de toda la secuencia,
 											dependiendo de la configuración global del *ADC* */
+	void *cb_data; /**< Datos del usuario para pasar al callback de interrupcion de secuencia */
 }hal_adc_sequence_config_t;
 
 /** Dato que representa el resultado de una conversión (sea de secuencia completa o de canal) */
@@ -450,6 +451,18 @@ void hal_adc_init_sync_mode(uint32_t sample_freq, hal_adc_low_power_mode_en low_
  * Además, desliga todos los pines externos posiblemente utilizados por el ADC de su función analógica.
  */
 void hal_adc_deinit(void);
+
+/**
+ * @brief Inhibir las interrupciones de secuencia de ADC
+ * @param[in] sequence Sequenca a inhibir
+ */
+void hal_adc_inhibit_sequence_interrupts(hal_adc_sequence_sel_en sequence);
+
+/**
+ * @brief Desinhibir las interrupciones de secuencia de ADC
+ * @param[in] sequence Sequenca a desinhibir
+ */
+void hal_adc_deinhibit_sequence_interrupts(hal_adc_sequence_sel_en sequence);
 
 /**
  * @brief Configurar una secuencia de conversión
@@ -560,9 +573,10 @@ void hal_adc_threshold_channel_config(uint8_t adc_channel, hal_adc_threshold_sel
  * es suficiente.
  *
  * @param[in] callback Callback a ejecutar en interrupción por threshold
+ * @param[in] data Datos para pasarle al callback a ejecutar
  * @see hal_adc_threshold_channel_config
  */
-void hal_adc_threshold_register_interrupt(adc_comparison_interrupt_t callback);
+void hal_adc_threshold_register_interrupt(adc_comparison_interrupt_t callback, void *data);
 
 /**
  * @brief Obtener resultados de comparación de la última conversión

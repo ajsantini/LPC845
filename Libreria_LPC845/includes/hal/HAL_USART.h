@@ -236,14 +236,14 @@ typedef enum
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
-typedef void (*hal_usart_rx_callback)(hal_usart_sel_en);
+typedef void (*hal_usart_rx_callback)(hal_usart_sel_en, void *);
 
 /**
  * @brief Tipo de dato para los callback en transmisión de dato completa
  * @note Estos callbacks son ejecutados desde un contexto de interrupción, por lo que el usuario deberá tener
  * todas las consideraciones necesarias al respecto.
  */
-typedef void (*hal_usart_tx_callback)(hal_usart_sel_en);
+typedef void (*hal_usart_tx_callback)(hal_usart_sel_en, void *);
 
 /** Estructura de configuración de una instancia de UART */
 typedef struct
@@ -258,6 +258,8 @@ typedef struct
 	hal_gpio_portpin_en rx_portpin; /**< Puerto/pin donde configurar las recepciones */
 	hal_usart_tx_callback tx_ready_callback; /**< Callback a ejecutar en una transmisión exitosa (Cuando se terminó de enviar un dato) */
 	hal_usart_rx_callback rx_ready_callback; /**< Callback a ejecutar en una recepción exitosa (Cuando se terminó de recibir un dato) */
+	void *tx_ready_data; /**< Datos a pasar al callback de transmisión exitosa */
+	void *rx_ready_data; /**< Datos a pasar al callback de recepción exitosa */
 }hal_usart_config_t;
 
 /**
@@ -286,22 +288,36 @@ hal_usart_tx_result hal_usart_tx_data(hal_usart_sel_en inst, uint32_t data);
 hal_usart_rx_result hal_usart_rx_data(hal_usart_sel_en inst, uint32_t *data);
 
 /**
+ * @brief Inhibir las interrupciones de una instancia USART
+ * @param[in] inst Instancia a inhibir
+ */
+void hal_usart_inhibit_interrupts(hal_usart_sel_en inst);
+
+/**
+ * @brief Deinhibir las interrupciones de una instancia USART
+ * @param[in] inst Instancia a deinhibir
+ */
+void hal_usart_deinhibit_interrupts(hal_usart_sel_en inst);
+
+/**
  * @brief Registrar el callback a ser llamado en la recepcion de un dato por USART
  * @param[in] inst A que instancia de USART registrar el callback
  * @param[in] new_callback Callback a ejectutar cada vez que se recibe un dato por USART
+ * @param[in] cb_data Datos a pasar al calback cada vez que se recibe un dato por USART
  * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
  * tener todas las consideraciones encesarias en el mismo.
  */
-void hal_usart_rx_register_callback(hal_usart_sel_en inst, hal_usart_rx_callback new_callback);
+void hal_usart_rx_register_callback(hal_usart_sel_en inst, hal_usart_rx_callback new_callback, void *cb_data);
 
 /**
  * @brief Registrar el callback a ser llamado una vez finalizada la transmision de un dato por USART
  * @param[in] inst A que instancia de USART registrar el callback
  * @param[in] new_callback Callback a ejecutar cada vez que se termina de enviar un dato por USART
+ * @param[in] cb_data Datos a pasar al calback cada vez que se recibe un dato por USART
  * @note Recordar que estos callbacks se ejecutan en el contexto de una interrupción, por lo que se deberán
  * tener todas las consideraciones encesarias en el mismo.
  */
-void hal_usart_tx_register_callback(hal_usart_sel_en inst, hal_usart_tx_callback new_callback);
+void hal_usart_tx_register_callback(hal_usart_sel_en inst, hal_usart_tx_callback new_callback, void *cb_data);
 
 #if defined (__cplusplus)
 } // extern "C"
